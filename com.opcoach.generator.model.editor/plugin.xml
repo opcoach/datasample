@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.opcoach.generator.basic.presentation.BasicModelWizardID"
+            name="%_UI_BasicModelWizard_label"
+            class="com.opcoach.generator.basic.presentation.BasicModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BasicModelFile.gif">
+         <description>%_UI_BasicModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="com.opcoach.generator.basic.presentation.BasicEditorID"
+            name="%_UI_BasicEditor_label"
+            icon="icons/full/obj16/BasicModelFile.gif"
+            extensions="basic"
+            class="com.opcoach.generator.basic.presentation.BasicEditor"
+            contributorClass="com.opcoach.generator.basic.presentation.BasicActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
