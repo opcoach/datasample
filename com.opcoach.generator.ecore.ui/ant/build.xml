@@ -1,0 +1,126 @@
+<project name="Generate Java DataSample" default="fillProjectStructure" basedir=".">
+	<description>
+		
+		
+        This ant file can : 
+    	- create a new java project containing all dependencies to the data sample project 
+        - regenerate all java file for data sample generators 
+		
+		This ant file is called bye the GenerateDataSampleHandler which has previously extracted
+		the bundle files into a tmp directory. This directory is store in the homedsgen2java property. 
+		This project (dsgen2java) is a bundle when it's used here. So its files must be extracted
+		before running this 
+    	
+    	Parameters : 
+		dsgen2javaBundleName : name of the dsgen2java bundle project
+		homedsgen2java : path to the root directory where homedsgen2java was extracted
+		projectName : name of the project to create.
+		ecoreSource : name of ecore file source used to create this project
+		ecoreSourceProject : name of project containing ecoreSource
+		ecoreSourceLocation : Full path of ecore selected file
+    </description>
+
+	<!-- remettre cette ligne quand la livraison de la tache sera faite dans mwe
+	<taskdef name="workflow" classname="org.eclipse.emf.mwe.core.ant.WorkflowAntTask"/>
+	-->
+	<taskdef name="workflow" classname="com.opcoach.generator.ecore.ui.handlers.ant.WorkflowAntTask" classpath="../bin" />
+
+
+	<!-- set global properties for this build -->
+	<!-- projectname is supposed to be already created -->
+	<property name="homeWorkspace" location="${basedir}/tmp" />
+	<property name="projectName" value="defaultProject" />
+	<property name="packageName" value="defaultPackage" />
+	<property name="homeProject" value="${homeWorkspace}/${projectName}" />
+	<property name="srcProject" value="${homeProject}/src" />
+	<property name="homedsgen2java" value="TO_BE_PASSED_AS_PARAMETER" />
+	<property name="ecoreSource" value="TO_BE_PASSED_AS_PARAMETER" />
+	<property name="ecoreSourceProject" value="TO_BE_PASSED_AS_PARAMETER" />
+	<property name="ecoreSourceLocation" value="TO_BE_PASSED_AS_PARAMETER" />
+	<property name="workflowPath" value="${homedsgen2java}/src/workflow" />
+	<property name="templatePath" value="${homedsgen2java}/src/template" />
+	<property name="manifestTemplate" value = "${homeProject}/META-INF/MANIFEST_ForTargetProject.MF"/>
+	<property name="manifestFinal" value = "${homeProject}/META-INF/MANIFEST.MF"/>
+	<property name="workflowTemplate" value = "${homeProject}/src/workflow/generator_ForTargetProject.mwe"/>
+	<property name="workflowFinal" value = "${homeProject}/src/workflow/generator.mwe"/>
+	
+	<target name="fillProjectStructure">
+		<tstamp />
+		<!-- Create the project directory structure -->
+		<echo message="Create project Structure in ${homeProject}" />
+		<echo message="homedsgen2java :  ${homedsgen2java}" />
+
+		<!-- On recopie tout le projet d'exemple tel quel sauf .project et Manifest.MF -->
+		<copy todir="${homeProject}">
+			<fileset dir="${homedsgen2java}" includes="**" excludes=".project,META-INF/MANIFEST.MF,bin/**"/>
+		</copy>
+		<mkdir dir="${homeProject}/src-gen"/>
+		
+		<!-- Copie le fichier ecore de modele -->
+		<copy todir="${srcProject}" file="${ecoreSourceLocation}"/>
+		
+		<!-- On surcharge le fichier .project avec le bon nom de projet -->
+		<echo message="Replace in .project ${dsgen2javaBundleName} into new name : ${projectName}" />
+		<copy file="${homedsgen2java}/.project" todir="${homeProject}" overwrite="true">
+			<filterset begintoken="&lt;name&gt;" endtoken="&lt;/name&gt;">
+				<filter token="${dsgen2javaBundleName}" value="&lt;name&gt;${projectName}&lt;/name&gt;"></filter>
+			</filterset>
+		</copy>
+		
+		<!-- On surcharge le fichier MANIFEST.MF avec le bon nom de bundle -->
+		<echo message="Replace data in MANIFEST.MF" />
+		<copy file="${manifestTemplate}" tofile="${manifestFinal}" overwrite="true">
+			<filterset begintoken="@" endtoken="@">
+				<filter token="symbolicName" value="${projectName}"></filter>
+				<filter token="rootProject" value="${rootProject}"></filter>
+				<filter token="name" value="Data Sample project created from ${ecoreSource} defined in ${ecoreSourceProject} project"></filter>
+			</filterset>
+		</copy>
+		<delete file="${manifestTemplate}"/>
+		
+		<!-- On surcharge le fichier workflow.mwe avec le bon nom de projet -->
+		<echo message="Replace data in workflow.mwe" />
+		<copy file="${workflowTemplate}" tofile="${workflowFinal}" overwrite="true">
+			<filterset begintoken="@" endtoken="@">
+				<filter token="projectName" value="${projectName}"></filter>
+				<filter token="packagePath" value="${packagePath}"></filter>
+				<filter token="rootProject" value="${rootProject}"></filter>
+			</filterset>
+		</copy>
+		<delete file="${workflowTemplate}"/>
+
+
+		
+		<eclipse.refreshLocal resource="${projectName}" depth="infinite" />
+		<echo message="WorkflowPath = ${workflowPath}" />
+		<echo message="TemplatePath = ${templatePath}" />
+	</target>
+
+	<target name='generate' depends="fillProjectStructure">
+		<workflow file='${workflowPath}/workflow.mwe'>
+			<param name='baseDir' value='/tmp/base/' />
+		</workflow>
+	</target>
+
+
+	<!--
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <javac srcdir="${src}" destdir="${build}"/>
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+    <mkdir dir="${dist}/lib"/>
+
+    <jar jarfile="${dist}/lib/Rental-${DSTAMP}.jar" basedir="${build}"/>
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+	
+	-->
+</project>
