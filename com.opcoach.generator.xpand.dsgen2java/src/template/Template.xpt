@@ -1,0 +1,161 @@
+
+«IMPORT dsgen»
+«IMPORT ecore»
+«IMPORT com::opcoach::generator::ecore::dsgen::helpers::DSGenHelper»
+
+«EXTENSION template::ecoreType2GeneratorType»
+
+«DEFINE main(String packageName, String rootProject) FOR dsgen::DSGenPackage»
+
+«FILE this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator.java"»
+
+package «packageName»;
+
+
+// ------------------------------------------------
+// OPCoach Generated File
+// © OPCoach 2010     http://www.opcoach.com
+// ------------------------------------------------ 
+
+
+import com.opcoach.generator.*;
+import com.opcoach.generator.basic.*;
+import com.opcoach.generator.impl.*;
+import «rootProject».«ecorePackage.name.toString()».*;
+
+/** 
+ * Exemple de code de ce qu'on voudrait gŽenerer.
+ * @author OPCoach
+ *
+ */
+public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"»
+{
+  «EXPAND constanteDef FOREACH dsgenClassifiers.typeSelect(DSGenClass)»
+  	
+	private GeneratorFactory gp = GeneratorFactory.eINSTANCE;
+	private BasicFactory bf = BasicFactory.eINSTANCE;
+	private «this.ecorePackage.name.toString().toFirstUpper()»Factory factory = «this.ecorePackage.name.toString().toFirstUpper()»Factory.eINSTANCE;
+	
+	// Eclass generators
+	«EXPAND classGen FOREACH dsgenClassifiers.typeSelect(DSGenClass)»
+	
+	// Fields generators
+    «EXPAND attributeGen FOREACH dsgenClassifiers.typeSelect(DSGenClass).eAllContents.typeSelect(DSGenAttribute)»		
+    «EXPAND referenceGen FOREACH dsgenClassifiers.typeSelect(DSGenClass).eAllContents.typeSelect(DSGenReference)»		
+	
+	«EXPAND createOneInstance FOREACH dsgenClassifiers.typeSelect(DSGenClass).withoutLast()»
+
+	«EXPAND createAllInstances FOREACH dsgenClassifiers.typeSelect(DSGenClass).withoutLast()»
+	
+	«EXPAND createMainObject FOR dsgenClassifiers.typeSelect(DSGenClass).last()»
+
+	
+	public static void main(String[] arg)
+	{
+	«this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"» gen = new «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"»();
+	«dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name» result = gen.create«dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name»();
+	
+	
+	}
+}
+   «ENDFILE»
+   
+
+«ENDDEFINE»
+
+
+ «DEFINE constanteDef FOR DSGenClass»
+    public static int NB_«this.ecoreClass.name.toUpperCase()» = «instanceNumber»;
+ «ENDDEFINE»
+ 
+ 
+  «DEFINE createMainObject FOR DSGenClassifier»
+   // createMainObject for DSGenClassifier Not Implemented
+ «ENDDEFINE»
+ 
+ 
+ «DEFINE createMainObject FOR DSGenClass»
+    // Main method to create the root object («ecoreClass.name»)
+    public «this.ecoreClass.name» create«this.ecoreClass.name»()
+    {
+        «ecoreClass.name» result = factory.create«ecoreClass.name»();
+         
+        // Call all create for each main class except last (the current one)
+        «EXPAND callCreateAll FOREACH this.dsgenPackage.dsgenClassifiers.typeSelect(DSGenClass).select(c|c.ecoreClass.name != this.ecoreClass.name)»  
+
+		// Set all fields
+        «EXPAND setValue FOREACH dsgenFeatures»	
+        
+        return result;	
+    }
+ «ENDDEFINE»
+ 
+ 
+ «DEFINE callCreateAll FOR DSGenClass»
+       createAll«ecoreClass.name»s();
+ «ENDDEFINE»
+ 
+ 
+
+ «DEFINE classGen FOR DSGenClass»
+ 	private ReferenceGenerator<«this.ecoreClass.name»> «this.ecoreClass.name.toLowerCase()»Generator = gp.createReferenceGenerator();
+  «ENDDEFINE»
+
+ «DEFINE attributeGen FOR DSGenAttribute»
+    // «ecoreFeature.eType.instanceClassName»
+ 	private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = bf.create«getGeneratorTypeForDSGenAttribute(this)»();
+  «ENDDEFINE»
+
+ «DEFINE referenceGen FOR DSGenReference»
+    // «ecoreFeature.eType.name»
+ 	private ReferenceGenerator<«ecoreFeature.eType.name»> «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
+  «ENDDEFINE»
+
+«DEFINE createAllInstances FOR DSGenClass»
+public void createAll«ecoreClass.name»s() {
+		for (int i = 0; i <  NB_«ecoreClass.name.toUpperCase()»; i++) {
+			«ecoreClass.name» o = create«ecoreClass.name»();
+			«this.ecoreClass.name.toLowerCase()»Generator.addValue(o);
+		}
+	}
+
+«ENDDEFINE»
+
+«DEFINE createOneInstance FOR DSGenClass»
+public  «ecoreClass.name» create«ecoreClass.name»() {
+    «ecoreClass.name» result = factory.create«ecoreClass.name»();
+    «EXPAND setValue FOREACH dsgenFeatures»		
+    return result;
+	}
+	
+«ENDDEFINE»
+
+«DEFINE setValue FOR DSGenFeature-»
+«ENDDEFINE»
+
+«DEFINE setValue FOR DSGenAttribute»
+   	result.set«ecoreFeature.name.toString().toFirstUpper()»(«ecoreFeature.eContainingClass.name»_«ecoreFeature.name».generateValue());
+«ENDDEFINE»
+  
+ 
+ «DEFINE setValue FOR DSGenReference»    
+       «IF isContainment(ecoreFeature)»
+         // «ecoreFeature.name» is a composition
+         «IF isMultipleRelation(ecoreFeature)-»
+         result.get«ecoreFeature.name.toString().toFirstUpper()»().addAll(«ecoreFeature.eType.name.toLowerCase()»Generator.getValues());
+         «ELSE»
+         result.set«ecoreFeature.name.toString().toFirstUpper()»(«ecoreFeature.eType.name.toLowerCase()»Generator.getValues().iterator().next());
+         «ENDIF»
+       «ELSE»
+         // «ecoreFeature.name» is an association
+         «IF isMultipleRelation(ecoreFeature) == "true"-»      
+   	     result.get«ecoreFeature.name.toString().toFirstUpper()»().add(«ecoreFeature.eContainingClass.name»_«ecoreFeature.name».generateValue());
+         «ELSE»
+         result.set«ecoreFeature.name.toString().toFirstUpper()»(«ecoreFeature.eContainingClass.name»_«ecoreFeature.name».generateValue());
+         «ENDIF»       
+       «ENDIF»
+ «ENDDEFINE»
+ 
+   
+ 
+

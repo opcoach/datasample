@@ -1,0 +1,24 @@
+
+import dsgen;
+import ecore;
+
+String getGeneratorTypeForDSGenAttribute(dsgen::DSGenAttribute this) :
+ if (ecoreFeature.eType.instanceClassName == "java.lang.String") then "StringGenerator"
+   else if (ecoreFeature.eType.instanceClassName == "java.util.Date") then "DateGenerator"
+   else if (ecoreFeature.eType.instanceClassName == "int") then "IntGenerator"
+   else if (ecoreFeature.eType.instanceClassName == "long") then "LongGenerator"
+   else if (ecoreFeature.eType.instanceClassName == "float") then "FloatGenerator"
+   else if (ecoreFeature.eType.instanceClassName == "boolean") then "BooleanGenerator"
+   else "NullValueGenerator";
+    
+  
+Boolean isContainment(Object this) : 
+   JAVA com.opcoach.generator.ecore.dsgen.helpers.DSGenHelper.isContainment(org.eclipse.emf.ecore.EStructuralFeature);
+   
+Boolean isMultipleRelation(Object this) : 
+   JAVA com.opcoach.generator.ecore.dsgen.helpers.DSGenHelper.isMultipleRelation(org.eclipse.emf.ecore.EStructuralFeature);
+   
+Boolean isOpposite(Object this) : 
+   JAVA com.opcoach.generator.ecore.dsgen.helpers.DSGenHelper.isOpposite(org.eclipse.emf.ecore.EStructuralFeature);
+   
+   

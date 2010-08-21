@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<workflow>
+    <property name="rootProject" value="@rootProject@"/>
+    <property name="projectHome" value="@projectName@"/>
+    <property name="packagePath" value="@packagePath@"/>
+    <property name="packageName" value="@projectName@"/>
+    <property name="dsGenFile" value="rental.dsgen"/>
+	<property name="model" value="${projectHome}/src/${dsGenFile}"/>
+	<property name="src-gen" value="src-gen" />
+	
+	<bean id="mm_emf" class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel"/>
+	
+	<!-- set up EMF for standalone execution -->
+	<bean class="org.eclipse.emf.mwe.utils.StandaloneSetup" >
+		<platformUri value=".."/>
+	    <registerGeneratedEPackage value="com.opcoach.generator.ecore.dsgen.DataSampleGenPackage"/>
+	    <registerGeneratedEPackage value="com.opcoach.generator.GeneratorPackage"/>
+	    <registerGeneratedEPackage value="org.eclipse.emf.ecore.EcorePackage"/>
+	    
+	</bean>
+
+	<!-- load model and store it in slot 'model' -->
+	<component class="org.eclipse.emf.mwe.utils.Reader">
+		<uri value="platform:/resource/${model}" />
+		<modelSlot value="model" />
+	</component>
+	
+	<!--
+	<component class="org.eclipse.emf.mwe.utils.Reader">
+		<uri value="platform:/resource/com.opcoach.generator.ecore.dsgenmodel/model/dataSample.ecore" />
+		<modelSlot value="dataSampleMetaModel" />
+	</component>
+	-->
+	
+	
+	
+
+	<!-- check model 
+	<component class="org.eclipse.xtend.check.CheckComponent">
+		<metaModel id="mm"
+			class="org.eclipse.xtend.typesystem.emf.EmfRegistryMetaModel"/>
+			
+	
+		<checkFile value="metamodel::Checks" />
+		<emfAllChildrenSlot value="model" />
+	</component>
+	-->
+
+	<!--  generate code -->
+	<component class="org.eclipse.xpand2.Generator">
+	    
+		<metaModel id="dsgenMetaModel" class="org.eclipse.xtend.typesystem.emf.EmfMetaModel">
+		   <metaModelPackage value="com.opcoach.generator.ecore.dsgen.DataSampleGenPackage"/>
+		   <!--
+           <metaModelFile value="platform:/resource/com.opcoach.generator.ecore.dsgenmodel/model/dataSample.ecore"/> 
+           -->
+         </metaModel> 
+         
+         <dumpContext value="true"/>
+         
+         
+         
+	      <!--metaModel idRef="dsgenMetaModel"/-->
+		<fileEncoding value="ISO-8859-1"/>		
+		<expand
+			value='template::Template::main("${packageName}", "${rootProject}") FOR model' />
+		<outlet path="${src-gen}/${packagePath}" >
+			<postprocessor class="org.eclipse.xpand2.output.JavaBeautifier" />
+		</outlet>
+	</component>
+</workflow>
