@@ -7,15 +7,31 @@
 package com.opcoach.generator.ecore.dsgen.impl;
 
 import com.opcoach.generator.ecore.dsgen.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import com.opcoach.generator.ecore.dsgen.DSGenAnnotation;
+import com.opcoach.generator.ecore.dsgen.DSGenAttribute;
+import com.opcoach.generator.ecore.dsgen.DSGenClass;
+import com.opcoach.generator.ecore.dsgen.DSGenDataType;
+import com.opcoach.generator.ecore.dsgen.DSGenDelegationKind;
+import com.opcoach.generator.ecore.dsgen.DSGenEnum;
+import com.opcoach.generator.ecore.dsgen.DSGenEnumLiteral;
+import com.opcoach.generator.ecore.dsgen.DSGenFeature;
+import com.opcoach.generator.ecore.dsgen.DSGenJDKLevel;
+import com.opcoach.generator.ecore.dsgen.DSGenModel;
+import com.opcoach.generator.ecore.dsgen.DSGenPackage;
+import com.opcoach.generator.ecore.dsgen.DSGenPropertyKind;
+import com.opcoach.generator.ecore.dsgen.DSGenReference;
+import com.opcoach.generator.ecore.dsgen.DSGenResourceKind;
+import com.opcoach.generator.ecore.dsgen.DSGenRuntimeVersion;
+import com.opcoach.generator.ecore.dsgen.DSGenTypeParameter;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenFactory;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
 
 /**
  * <!-- begin-user-doc -->

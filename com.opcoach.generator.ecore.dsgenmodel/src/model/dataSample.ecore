@@ -28,6 +28,8 @@
         defaultValueLiteral="false" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbAssociationRefTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//DSGenClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenFeature" eSuperTypes="#//DSGenTypedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullableValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -63,14 +65,14 @@
   <eClassifiers xsi:type="ecore:EEnum" name="DSGenResourceKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenAttribute" eSuperTypes="#//DSGenFeature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="generator" containment="true">
-      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+      <eGenericType eClassifier="ecore:EClass ../../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenReference" eSuperTypes="#//DSGenFeature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="generator" containment="true">
-      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ReferenceGenerator">
+      <eGenericType eClassifier="ecore:EClass ../../../com.opcoach.generator.model/model/generator.ecore#//ReferenceGenerator">
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>

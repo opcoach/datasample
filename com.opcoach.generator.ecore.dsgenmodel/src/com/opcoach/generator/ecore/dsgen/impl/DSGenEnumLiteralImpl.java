@@ -6,10 +6,10 @@
  */
 package com.opcoach.generator.ecore.dsgen.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import com.opcoach.generator.ecore.dsgen.DSGenEnumLiteral;
 import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

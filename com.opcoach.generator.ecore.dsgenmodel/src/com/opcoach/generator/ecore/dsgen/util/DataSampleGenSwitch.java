@@ -7,11 +7,26 @@
 package com.opcoach.generator.ecore.dsgen.util;
 
 import com.opcoach.generator.ecore.dsgen.*;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+
+import com.opcoach.generator.ecore.dsgen.DSGenAnnotation;
+import com.opcoach.generator.ecore.dsgen.DSGenAttribute;
+import com.opcoach.generator.ecore.dsgen.DSGenBase;
+import com.opcoach.generator.ecore.dsgen.DSGenClass;
+import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
+import com.opcoach.generator.ecore.dsgen.DSGenDataType;
+import com.opcoach.generator.ecore.dsgen.DSGenEnum;
+import com.opcoach.generator.ecore.dsgen.DSGenEnumLiteral;
+import com.opcoach.generator.ecore.dsgen.DSGenFeature;
+import com.opcoach.generator.ecore.dsgen.DSGenModel;
+import com.opcoach.generator.ecore.dsgen.DSGenPackage;
+import com.opcoach.generator.ecore.dsgen.DSGenReference;
+import com.opcoach.generator.ecore.dsgen.DSGenTypeParameter;
+import com.opcoach.generator.ecore.dsgen.DSGenTypedElement;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
 
 /**
  * <!-- begin-user-doc -->

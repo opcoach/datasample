@@ -6,6 +6,8 @@
  */
 package com.opcoach.generator.ecore.dsgen;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -18,6 +20,7 @@ package com.opcoach.generator.ecore.dsgen;
  *   <li>{@link com.opcoach.generator.ecore.dsgen.DSGenClass#getInstanceNumber <em>Instance Number</em>}</li>
  *   <li>{@link com.opcoach.generator.ecore.dsgen.DSGenClass#isRootObject <em>Root Object</em>}</li>
  *   <li>{@link com.opcoach.generator.ecore.dsgen.DSGenClass#getNbAssociationRefTo <em>Nb Association Ref To</em>}</li>
+ *   <li>{@link com.opcoach.generator.ecore.dsgen.DSGenClass#getChildren <em>Children</em>}</li>
  * </ul>
  * </p>
  *
@@ -107,5 +110,21 @@ public interface DSGenClass extends DSGenClassifier
 	 * @generated
 	 */
 	void setNbAssociationRefTo(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Children</b></em>' reference list.
+	 * The list contents are of type {@link com.opcoach.generator.ecore.dsgen.DSGenClass}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Children</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Children</em>' reference list.
+	 * @see com.opcoach.generator.ecore.dsgen.DataSampleGenPackage#getDSGenClass_Children()
+	 * @model
+	 * @generated
+	 */
+	EList<DSGenClass> getChildren();
 
 } // DSGenClass

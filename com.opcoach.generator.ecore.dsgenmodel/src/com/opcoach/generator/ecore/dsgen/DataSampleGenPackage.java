@@ -266,13 +266,22 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_CLASS__NB_ASSOCIATION_REF_TO = DS_GEN_CLASSIFIER_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CLASS__CHILDREN = DS_GEN_CLASSIFIER_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>DS Gen Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CLASS_FEATURE_COUNT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 3;
+	int DS_GEN_CLASS_FEATURE_COUNT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenTypedElementImpl <em>DS Gen Typed Element</em>}' class.
@@ -811,6 +820,17 @@ public interface DataSampleGenPackage extends EPackage
 	EAttribute getDSGenClass_NbAssociationRefTo();
 
 	/**
+	 * Returns the meta object for the reference list '{@link com.opcoach.generator.ecore.dsgen.DSGenClass#getChildren <em>Children</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Children</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenClass#getChildren()
+	 * @see #getDSGenClass()
+	 * @generated
+	 */
+	EReference getDSGenClass_Children();
+
+	/**
 	 * Returns the meta object for class '{@link com.opcoach.generator.ecore.dsgen.DSGenFeature <em>DS Gen Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1198,6 +1218,14 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute DS_GEN_CLASS__NB_ASSOCIATION_REF_TO = eINSTANCE.getDSGenClass_NbAssociationRefTo();
+
+		/**
+		 * The meta object literal for the '<em><b>Children</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DS_GEN_CLASS__CHILDREN = eINSTANCE.getDSGenClass_Children();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenFeatureImpl <em>DS Gen Feature</em>}' class.

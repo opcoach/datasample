@@ -6,16 +6,14 @@
  */
 package com.opcoach.generator.ecore.dsgen.impl;
 
-import com.opcoach.generator.ecore.dsgen.DSGenEnum;
-import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import com.opcoach.generator.ecore.dsgen.DSGenEnum;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
 
 /**
  * <!-- begin-user-doc -->
