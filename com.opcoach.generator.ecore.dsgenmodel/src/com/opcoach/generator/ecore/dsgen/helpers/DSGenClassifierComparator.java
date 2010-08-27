@@ -9,25 +9,57 @@ import java.util.Comparator;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EReference;
 
-import com.opcoach.generator.ecore.dsgen.DSGenClass;
+import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
+import com.opcoach.generator.ecore.dsgen.DSGenDataType;
+import com.opcoach.generator.ecore.dsgen.DSGenEnum;
 
 /**
  * Compare 2 DSGenClass DSGenClass is bound to the corresponding eCore class EClasses who has no relations are sorted before EClasses with the most relations to other classes are sorted at the end
  * 
  * @author olivier
  */
-public class DSGenClassComparator implements Comparator<DSGenClass>
+public class DSGenClassifierComparator implements Comparator<DSGenClassifier>
 {
 
 	/*
 	 * (non-Javadoc)
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
 	 */
-	public int compare(DSGenClass o1, DSGenClass o2)
+	public int compare(DSGenClassifier o1, DSGenClassifier o2)
 	{	
-		// Get the 2 ecore classes
+		
+		// Try to sort EEnum
+		DSGenEnum e1 = (o1 instanceof DSGenEnum) ? (DSGenEnum) o1 :  null;
+		DSGenEnum e2 = (o2 instanceof DSGenEnum) ? (DSGenEnum) o2 :  null;
+		if (e1 != null)
+		{
+			return (e2 != null) ? (e1.getEcoreEnum().getName().compareTo(e2.getEcoreEnum().getName())) : -1;
+			
+		}
+		if (e2 != null)
+		{
+			return (e1 != null) ? (e1.getEcoreEnum().getName().compareTo(e2.getEcoreEnum().getName())) : 1;
+		}
+
+		
+		// Try to sort EDataType
+		DSGenDataType d1 = (o1 instanceof DSGenDataType) ? (DSGenDataType) o1 :  null;
+		DSGenDataType d2 = (o2 instanceof DSGenDataType) ? (DSGenDataType) o2 :  null;
+		if (d1 != null)
+		{
+			return (d2 != null) ? (d1.getDataType().getName().compareTo(d2.getDataType().getName())) : -1;
+			
+		}
+		if (d2 != null)
+		{
+			return (d1 != null) ? (d1.getDataType().getName().compareTo(d2.getDataType().getName())) : 1;
+		}
+		
+
+		// Try to sort 2 DSGenClass and their ecore classes
 		EClass c1 = o1.getEcoreClass();
 		EClass c2 = o2.getEcoreClass();
 
@@ -117,23 +149,23 @@ public class DSGenClassComparator implements Comparator<DSGenClass>
 	 * @param c2 the target eclass
 	 * @return
 	 */
-	private boolean isComposedOf(EClass c1, EClass c2)
+	private boolean isComposedOf(EClass cl1, EClass cl2)
 	{
 		boolean result = false;
 		
-		for (EReference ref : c1.getEAllContainments())
+		for (EReference ref : cl1.getEAllContainments())
 		{
 			EClassifier target = ref.getEType();
 			if ((ref.isContainment() &&  (target instanceof EClass)))
 			{
 				EClass targetEClass = (EClass) target;
-				if (targetEClass.equals(c2) || c2.isSuperTypeOf(targetEClass))
+				if (targetEClass.equals(cl2) || cl2.isSuperTypeOf(targetEClass))
 				{
 					result = true;
 					break;
 				}
 				// Check if target is composed of c2.
-				if (isComposedOf(targetEClass, c2))
+				if (isComposedOf(targetEClass, cl2))
 				{
 					result = true;
 					break;

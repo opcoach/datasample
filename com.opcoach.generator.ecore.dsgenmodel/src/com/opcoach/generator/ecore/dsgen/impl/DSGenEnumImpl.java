@@ -6,46 +6,48 @@
  */
 package com.opcoach.generator.ecore.dsgen.impl;
 
-import com.opcoach.generator.ecore.dsgen.DSGenDataType;
+import com.opcoach.generator.ecore.dsgen.DSGenEnum;
 import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Data Type</b></em>'.
+ * An implementation of the model object '<em><b>DS Gen Enum</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.opcoach.generator.ecore.dsgen.impl.DSGenDataTypeImpl#getDataType <em>Data Type</em>}</li>
+ *   <li>{@link com.opcoach.generator.ecore.dsgen.impl.DSGenEnumImpl#getEcoreEnum <em>Ecore Enum</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class DSGenDataTypeImpl extends DSGenClassifierImpl implements DSGenDataType
+public class DSGenEnumImpl extends DSGenDataTypeImpl implements DSGenEnum
 {
 	/**
-	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
+	 * The cached value of the '{@link #getEcoreEnum() <em>Ecore Enum</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDataType()
+	 * @see #getEcoreEnum()
 	 * @generated
 	 * @ordered
 	 */
-	protected EDataType dataType;
+	protected EEnum ecoreEnum;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DSGenDataTypeImpl()
+	protected DSGenEnumImpl()
 	{
 		super();
 	}
@@ -58,7 +60,7 @@ public class DSGenDataTypeImpl extends DSGenClassifierImpl implements DSGenDataT
 	@Override
 	protected EClass eStaticClass()
 	{
-		return DataSampleGenPackage.Literals.DS_GEN_DATA_TYPE;
+		return DataSampleGenPackage.Literals.DS_GEN_ENUM;
 	}
 
 	/**
@@ -66,19 +68,19 @@ public class DSGenDataTypeImpl extends DSGenClassifierImpl implements DSGenDataT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getDataType()
+	public EEnum getEcoreEnum()
 	{
-		if (dataType != null && dataType.eIsProxy())
+		if (ecoreEnum != null && ecoreEnum.eIsProxy())
 		{
-			InternalEObject oldDataType = (InternalEObject)dataType;
-			dataType = (EDataType)eResolveProxy(oldDataType);
-			if (dataType != oldDataType)
+			InternalEObject oldEcoreEnum = (InternalEObject)ecoreEnum;
+			ecoreEnum = (EEnum)eResolveProxy(oldEcoreEnum);
+			if (ecoreEnum != oldEcoreEnum)
 			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_DATA_TYPE__DATA_TYPE, oldDataType, dataType));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM, oldEcoreEnum, ecoreEnum));
 			}
 		}
-		return dataType;
+		return ecoreEnum;
 	}
 
 	/**
@@ -86,9 +88,9 @@ public class DSGenDataTypeImpl extends DSGenClassifierImpl implements DSGenDataT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType basicGetDataType()
+	public EEnum basicGetEcoreEnum()
 	{
-		return dataType;
+		return ecoreEnum;
 	}
 
 	/**
@@ -96,12 +98,12 @@ public class DSGenDataTypeImpl extends DSGenClassifierImpl implements DSGenDataT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDataType(EDataType newDataType)
+	public void setEcoreEnum(EEnum newEcoreEnum)
 	{
-		EDataType oldDataType = dataType;
-		dataType = newDataType;
+		EEnum oldEcoreEnum = ecoreEnum;
+		ecoreEnum = newEcoreEnum;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_DATA_TYPE__DATA_TYPE, oldDataType, dataType));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM, oldEcoreEnum, ecoreEnum));
 	}
 
 	/**
@@ -114,9 +116,9 @@ public class DSGenDataTypeImpl extends DSGenClassifierImpl implements DSGenDataT
 	{
 		switch (featureID)
 		{
-			case DataSampleGenPackage.DS_GEN_DATA_TYPE__DATA_TYPE:
-				if (resolve) return getDataType();
-				return basicGetDataType();
+			case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
+				if (resolve) return getEcoreEnum();
+				return basicGetEcoreEnum();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -131,8 +133,8 @@ public class DSGenDataTypeImpl extends DSGenClassifierImpl implements DSGenDataT
 	{
 		switch (featureID)
 		{
-			case DataSampleGenPackage.DS_GEN_DATA_TYPE__DATA_TYPE:
-				setDataType((EDataType)newValue);
+			case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
+				setEcoreEnum((EEnum)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -148,8 +150,8 @@ public class DSGenDataTypeImpl extends DSGenClassifierImpl implements DSGenDataT
 	{
 		switch (featureID)
 		{
-			case DataSampleGenPackage.DS_GEN_DATA_TYPE__DATA_TYPE:
-				setDataType((EDataType)null);
+			case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
+				setEcoreEnum((EEnum)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -165,10 +167,10 @@ public class DSGenDataTypeImpl extends DSGenClassifierImpl implements DSGenDataT
 	{
 		switch (featureID)
 		{
-			case DataSampleGenPackage.DS_GEN_DATA_TYPE__DATA_TYPE:
-				return dataType != null;
+			case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
+				return ecoreEnum != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //DSGenDataTypeImpl
+} //DSGenEnumImpl

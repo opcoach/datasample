@@ -75,7 +75,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	 */
 	public EList<DSGenPackage> getDsgenPackages()
 	{
-		if (dsgenPackages == null) {
+		if (dsgenPackages == null)
+		{
 			dsgenPackages = new EObjectContainmentWithInverseEList<DSGenPackage>(DSGenPackage.class, this, DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES, DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL);
 		}
 		return dsgenPackages;
@@ -90,7 +91,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDsgenPackages()).basicAdd(otherEnd, msgs);
 		}
@@ -105,7 +107,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES:
 				return ((InternalEList<?>)getDsgenPackages()).basicRemove(otherEnd, msgs);
 		}
@@ -120,7 +123,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES:
 				return getDsgenPackages();
 		}
@@ -136,7 +140,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES:
 				getDsgenPackages().clear();
 				getDsgenPackages().addAll((Collection<? extends DSGenPackage>)newValue);
@@ -153,7 +158,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES:
 				getDsgenPackages().clear();
 				return;
@@ -169,7 +175,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES:
 				return dsgenPackages != null && !dsgenPackages.isEmpty();
 		}

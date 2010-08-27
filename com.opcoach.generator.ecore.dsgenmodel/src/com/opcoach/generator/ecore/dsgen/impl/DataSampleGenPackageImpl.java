@@ -25,6 +25,7 @@ import com.opcoach.generator.ecore.dsgen.DSGenClass;
 import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
 import com.opcoach.generator.ecore.dsgen.DSGenDataType;
 import com.opcoach.generator.ecore.dsgen.DSGenDelegationKind;
+import com.opcoach.generator.ecore.dsgen.DSGenEnum;
 import com.opcoach.generator.ecore.dsgen.DSGenEnumLiteral;
 import com.opcoach.generator.ecore.dsgen.DSGenFeature;
 import com.opcoach.generator.ecore.dsgen.DSGenJDKLevel;
@@ -139,6 +140,13 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 * @generated
 	 */
 	private EClass dsGenReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dsGenEnumEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -327,6 +335,24 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDSGenClass_RootObject() {
+		return (EAttribute)dsGenClassEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDSGenClass_NbAssociationRefTo() {
+		return (EAttribute)dsGenClassEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDSGenFeature()
 	{
 		return dsGenFeatureEClass;
@@ -447,6 +473,16 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDSGenDataType_DataType()
+	{
+		return (EReference)dsGenDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDSGenTypedElement()
 	{
 		return dsGenTypedElementEClass;
@@ -510,6 +546,26 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	public EReference getDSGenReference_Generator()
 	{
 		return (EReference)dsGenReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDSGenEnum()
+	{
+		return dsGenEnumEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDSGenEnum_EcoreEnum()
+	{
+		return (EReference)dsGenEnumEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -602,6 +658,8 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 
 		dsGenClassEClass = createEClass(DS_GEN_CLASS);
 		createEAttribute(dsGenClassEClass, DS_GEN_CLASS__INSTANCE_NUMBER);
+		createEAttribute(dsGenClassEClass, DS_GEN_CLASS__ROOT_OBJECT);
+		createEAttribute(dsGenClassEClass, DS_GEN_CLASS__NB_ASSOCIATION_REF_TO);
 
 		dsGenFeatureEClass = createEClass(DS_GEN_FEATURE);
 		createEAttribute(dsGenFeatureEClass, DS_GEN_FEATURE__NULLABLE_VALUE);
@@ -619,6 +677,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		createEReference(dsGenClassifierEClass, DS_GEN_CLASSIFIER__DSGEN_PACKAGE);
 
 		dsGenDataTypeEClass = createEClass(DS_GEN_DATA_TYPE);
+		createEReference(dsGenDataTypeEClass, DS_GEN_DATA_TYPE__DATA_TYPE);
 
 		dsGenTypedElementEClass = createEClass(DS_GEN_TYPED_ELEMENT);
 
@@ -631,6 +690,9 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 
 		dsGenReferenceEClass = createEClass(DS_GEN_REFERENCE);
 		createEReference(dsGenReferenceEClass, DS_GEN_REFERENCE__GENERATOR);
+
+		dsGenEnumEClass = createEClass(DS_GEN_ENUM);
+		createEReference(dsGenEnumEClass, DS_GEN_ENUM__ECORE_ENUM);
 
 		// Create enums
 		dsGenRuntimeVersionEEnum = createEEnum(DS_GEN_RUNTIME_VERSION);
@@ -685,6 +747,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		dsGenTypeParameterEClass.getESuperTypes().add(this.getDSGenBase());
 		dsGenAttributeEClass.getESuperTypes().add(this.getDSGenFeature());
 		dsGenReferenceEClass.getESuperTypes().add(this.getDSGenFeature());
+		dsGenEnumEClass.getESuperTypes().add(this.getDSGenDataType());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(dsGenModelEClass, DSGenModel.class, "DSGenModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -696,7 +759,9 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		initEReference(getDSGenPackage_DsgenClassifiers(), this.getDSGenClassifier(), this.getDSGenClassifier_DsgenPackage(), "dsgenClassifiers", null, 0, -1, DSGenPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dsGenClassEClass, DSGenClass.class, "DSGenClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDSGenClass_InstanceNumber(), ecorePackage.getEInt(), "instanceNumber", "1", 0, 1, DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDSGenClass_InstanceNumber(), ecorePackage.getEInt(), "instanceNumber", "50", 0, 1, DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDSGenClass_RootObject(), ecorePackage.getEBoolean(), "rootObject", "false", 0, 1, DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDSGenClass_NbAssociationRefTo(), ecorePackage.getEInt(), "nbAssociationRefTo", "0", 0, 1, DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(dsGenFeatureEClass, DSGenFeature.class, "DSGenFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDSGenFeature_NullableValue(), ecorePackage.getEBoolean(), "nullableValue", "false", 0, 1, DSGenFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -714,6 +779,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		initEReference(getDSGenClassifier_DsgenPackage(), this.getDSGenPackage(), this.getDSGenPackage_DsgenClassifiers(), "dsgenPackage", null, 1, 1, DSGenClassifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dsGenDataTypeEClass, DSGenDataType.class, "DSGenDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDSGenDataType_DataType(), theEcorePackage.getEDataType(), null, "dataType", null, 1, 1, DSGenDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dsGenTypedElementEClass, DSGenTypedElement.class, "DSGenTypedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -732,6 +798,9 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEReference(getDSGenReference_Generator(), g1, null, "generator", null, 0, 1, DSGenReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dsGenEnumEClass, DSGenEnum.class, "DSGenEnum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDSGenEnum_EcoreEnum(), theEcorePackage.getEEnum(), null, "ecoreEnum", null, 1, 1, DSGenEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dsGenRuntimeVersionEEnum, DSGenRuntimeVersion.class, "DSGenRuntimeVersion");
@@ -766,7 +835,8 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		addAnnotation
 		  (this, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "foo", "bar"
 		   });	
 	}
@@ -783,7 +853,8 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		addAnnotation
 		  (dsGenPackageEClass, 
 		   source, 
-		   new String[] {
+		   new String[] 
+		   {
 			 "foo", "bar"
 		   });
 	}

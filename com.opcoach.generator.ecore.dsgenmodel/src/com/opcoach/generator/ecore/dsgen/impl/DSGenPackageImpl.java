@@ -93,10 +93,12 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	 */
 	public EPackage getEcorePackage()
 	{
-		if (ecorePackage != null && ecorePackage.eIsProxy()) {
+		if (ecorePackage != null && ecorePackage.eIsProxy())
+		{
 			InternalEObject oldEcorePackage = (InternalEObject)ecorePackage;
 			ecorePackage = (EPackage)eResolveProxy(oldEcorePackage);
-			if (ecorePackage != oldEcorePackage) {
+			if (ecorePackage != oldEcorePackage)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE, oldEcorePackage, ecorePackage));
 			}
@@ -156,7 +158,8 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	 */
 	public void setDsgenModel(DSGenModel newDsgenModel)
 	{
-		if (newDsgenModel != eInternalContainer() || (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL && newDsgenModel != null)) {
+		if (newDsgenModel != eInternalContainer() || (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL && newDsgenModel != null))
+		{
 			if (EcoreUtil.isAncestor(this, newDsgenModel))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -178,7 +181,8 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	 */
 	public EList<DSGenClassifier> getDsgenClassifiers()
 	{
-		if (dsgenClassifiers == null) {
+		if (dsgenClassifiers == null)
+		{
 			dsgenClassifiers = new EObjectContainmentWithInverseEList<DSGenClassifier>(DSGenClassifier.class, this, DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS, DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_PACKAGE);
 		}
 		return dsgenClassifiers;
@@ -193,7 +197,8 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -212,7 +217,8 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
 				return basicSetDsgenModel(null, msgs);
 			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
@@ -229,7 +235,8 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
 				return eInternalContainer().eInverseRemove(this, DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES, DSGenModel.class, msgs);
 		}
@@ -244,7 +251,8 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
 				if (resolve) return getEcorePackage();
 				return basicGetEcorePackage();
@@ -265,7 +273,8 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
 				setEcorePackage((EPackage)newValue);
 				return;
@@ -288,7 +297,8 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
 				setEcorePackage((EPackage)null);
 				return;
@@ -310,7 +320,8 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
 				return ecorePackage != null;
 			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:

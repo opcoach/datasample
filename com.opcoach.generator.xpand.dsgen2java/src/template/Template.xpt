@@ -22,6 +22,7 @@ import com.opcoach.generator.*;
 import com.opcoach.generator.basic.*;
 import com.opcoach.generator.impl.*;
 import «rootProject».«ecorePackage.name.toString()».*;
+«EXPAND dataTypeImport FOREACH dsgenClassifiers.typeSelect(DSGenDataType)-»
 
 /** 
  * Exemple de code de ce qu'on voudrait gŽenerer.
@@ -36,8 +37,8 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
 	private BasicFactory bf = BasicFactory.eINSTANCE;
 	private «this.ecorePackage.name.toString().toFirstUpper()»Factory factory = «this.ecorePackage.name.toString().toFirstUpper()»Factory.eINSTANCE;
 	
-	// Eclass generators
-	«EXPAND classGen FOREACH dsgenClassifiers.typeSelect(DSGenClass)»
+	// Eclass, EEnum and EDataType generators
+	«EXPAND dataTypeGen FOREACH dsgenClassifiers»  
 	
 	// Fields generators
     «EXPAND attributeGen FOREACH dsgenClassifiers.typeSelect(DSGenClass).eAllContents.typeSelect(DSGenAttribute)»		
@@ -64,8 +65,18 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
 «ENDDEFINE»
 
 
+«DEFINE dataTypeImport FOR DSGenEnum»
+«ENDDEFINE»
+
+«DEFINE dataTypeImport FOR DSGenDataType»
+import «dataType.instanceClassName»;
+«ENDDEFINE»
+
+
  «DEFINE constanteDef FOR DSGenClass»
+ «IF !this.rootObject-»
     public static int NB_«this.ecoreClass.name.toUpperCase()» = «instanceNumber»;
+ «ENDIF»
  «ENDDEFINE»
  
  
@@ -81,7 +92,7 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
         «ecoreClass.name» result = factory.create«ecoreClass.name»();
          
         // Call all create for each main class except last (the current one)
-        «EXPAND callCreateAll FOREACH this.dsgenPackage.dsgenClassifiers.typeSelect(DSGenClass).select(c|c.ecoreClass.name != this.ecoreClass.name)»  
+        «EXPAND callCreateAll FOREACH this.dsgenPackage.dsgenClassifiers.typeSelect(DSGenClass).select(c|(c.ecoreClass.name != this.ecoreClass.name))»  
 
 		// Set all fields
         «EXPAND setValue FOREACH dsgenFeatures»	
@@ -92,19 +103,47 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
  
  
  «DEFINE callCreateAll FOR DSGenClass»
-       createAll«ecoreClass.name»s();
+  «IF this.nbAssociationRefTo > 0-»
+       createAll«ecoreClass.name»s(); 
+  «ENDIF»
  «ENDDEFINE»
  
  
 
- «DEFINE classGen FOR DSGenClass»
+ «DEFINE dataTypeGen FOR DSGenClass»
  	private ReferenceGenerator<«this.ecoreClass.name»> «this.ecoreClass.name.toLowerCase()»Generator = gp.createReferenceGenerator();
   «ENDDEFINE»
-
- «DEFINE attributeGen FOR DSGenAttribute»
-    // «ecoreFeature.eType.instanceClassName»
- 	private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = bf.create«getGeneratorTypeForDSGenAttribute(this)»();
+  
+   «DEFINE dataTypeGen FOR DSGenEnum»
+ 	private ReferenceGenerator<«this.ecoreEnum.name»> «this.ecoreEnum.name.toLowerCase()»Generator = gp.createReferenceGenerator();
   «ENDDEFINE»
+  
+   «DEFINE dataTypeGen FOR DSGenDataType»
+ 	private ReferenceGenerator<«this.dataType.name»> «this.dataType.name.toLowerCase()»Generator = gp.createReferenceGenerator();
+  «ENDDEFINE»
+  
+   «DEFINE dataTypeGen FOR DSGenClassifier-»
+  «ENDDEFINE»
+  
+
+ «DEFINE attributeGen FOR dsgen::DSGenAttribute»
+    // «ecoreFeature.name» is «ecoreFeature.eType.metaType.toString()»
+    «IF ecoreFeature.eType.metaType.toString() == "ecore::EEnum"»
+        // AN ENUM GENERATOR
+     	private ReferenceGenerator<«ecoreFeature.eType.name»> «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
+    «ELSE»
+       // A DATATYPE GENERATOR
+       «IF this.dsgenClass.dsgenPackage.dsgenClassifiers.typeSelect(DSGenDataType).exists(e| e.dataType.instanceClassName == ecoreFeature.eType.instanceClassName)»
+            // DATATYPE IS EXTERNAL
+        	private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
+       «ELSE»
+          private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = bf.create«getGeneratorTypeForDSGenAttribute(this)»();
+       «ENDIF»
+    «ENDIF»
+  «ENDDEFINE»
+  
+
+  
 
  «DEFINE referenceGen FOR DSGenReference»
     // «ecoreFeature.eType.name»

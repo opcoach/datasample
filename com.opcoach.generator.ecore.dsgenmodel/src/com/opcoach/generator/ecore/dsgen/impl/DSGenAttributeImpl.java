@@ -83,7 +83,8 @@ public class DSGenAttributeImpl extends DSGenFeatureImpl implements DSGenAttribu
 	{
 		ValueGenerator<?> oldGenerator = generator;
 		generator = newGenerator;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_ATTRIBUTE__GENERATOR, oldGenerator, newGenerator);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -97,7 +98,8 @@ public class DSGenAttributeImpl extends DSGenFeatureImpl implements DSGenAttribu
 	 */
 	public void setGenerator(ValueGenerator<?> newGenerator)
 	{
-		if (newGenerator != generator) {
+		if (newGenerator != generator)
+		{
 			NotificationChain msgs = null;
 			if (generator != null)
 				msgs = ((InternalEObject)generator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataSampleGenPackage.DS_GEN_ATTRIBUTE__GENERATOR, null, msgs);
@@ -118,7 +120,8 @@ public class DSGenAttributeImpl extends DSGenFeatureImpl implements DSGenAttribu
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_ATTRIBUTE__GENERATOR:
 				return basicSetGenerator(null, msgs);
 		}
@@ -133,7 +136,8 @@ public class DSGenAttributeImpl extends DSGenFeatureImpl implements DSGenAttribu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_ATTRIBUTE__GENERATOR:
 				return getGenerator();
 		}
@@ -148,7 +152,8 @@ public class DSGenAttributeImpl extends DSGenFeatureImpl implements DSGenAttribu
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_ATTRIBUTE__GENERATOR:
 				setGenerator((ValueGenerator<?>)newValue);
 				return;
@@ -164,7 +169,8 @@ public class DSGenAttributeImpl extends DSGenFeatureImpl implements DSGenAttribu
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_ATTRIBUTE__GENERATOR:
 				setGenerator((ValueGenerator<?>)null);
 				return;
@@ -180,7 +186,8 @@ public class DSGenAttributeImpl extends DSGenFeatureImpl implements DSGenAttribu
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_ATTRIBUTE__GENERATOR:
 				return generator != null;
 		}

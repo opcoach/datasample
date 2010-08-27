@@ -22,7 +22,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenPackage/dsgenClassifiers"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenClass">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/instanceNumber"/>
+      <genFeatures createChild="false" propertyCategory="User Parameter" propertyDescription="Define the number of instance to be generated. If root object, this property is set to 1."
+          ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/instanceNumber"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="internal"
+          propertyDescription="This value is computed. True if the EClass is the main root object"
+          ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/rootObject"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="internal"
+          propertyDescription="This value is computed. Contains the number of external associations refering to the associated EClass"
+          ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/nbAssociationRefTo"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenFeature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenFeature/nullableValue"/>
@@ -37,7 +44,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClassifier/dsgenFeatures"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClassifier/dsgenPackage"/>
     </genClasses>
-    <genClasses ecoreClass="dataSample.ecore#//DSGenDataType"/>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenDataType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenDataType/dataType"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="dataSample.ecore#//DSGenTypedElement"/>
     <genClasses ecoreClass="dataSample.ecore#//DSGenAnnotation"/>
     <genClasses ecoreClass="dataSample.ecore#//DSGenTypeParameter"/>
@@ -46,6 +55,9 @@
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenReference">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenReference/generator"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenEnum">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenEnum/ecoreEnum"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

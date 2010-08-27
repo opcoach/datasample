@@ -32,7 +32,8 @@ public enum DSGenPropertyKind implements Enumerator
 	 * @generated
 	 */
 	private static final DSGenPropertyKind[] VALUES_ARRAY =
-		new DSGenPropertyKind[] {
+		new DSGenPropertyKind[]
+		{
 		};
 
 	/**
@@ -51,9 +52,11 @@ public enum DSGenPropertyKind implements Enumerator
 	 */
 	public static DSGenPropertyKind get(String literal)
 	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			DSGenPropertyKind result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -68,9 +71,11 @@ public enum DSGenPropertyKind implements Enumerator
 	 */
 	public static DSGenPropertyKind getByName(String name)
 	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			DSGenPropertyKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -85,7 +90,8 @@ public enum DSGenPropertyKind implements Enumerator
 	 */
 	public static DSGenPropertyKind get(int value)
 	{
-		switch (value) {
+		switch (value)
+		{
 		}
 		return null;
 	}

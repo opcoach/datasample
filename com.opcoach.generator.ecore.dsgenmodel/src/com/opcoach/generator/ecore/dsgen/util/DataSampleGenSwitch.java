@@ -42,7 +42,8 @@ public class DataSampleGenSwitch<T> {
 	 * @generated
 	 */
 	public DataSampleGenSwitch() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = DataSampleGenPackage.eINSTANCE;
 		}
 	}
@@ -66,10 +67,12 @@ public class DataSampleGenSwitch<T> {
 	 * @generated
 	 */
 	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if (theEClass.eContainer() == modelPackage) {
+		if (theEClass.eContainer() == modelPackage)
+		{
 			return doSwitch(theEClass.getClassifierID(), theEObject);
 		}
-		else {
+		else
+		{
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
 			return
 				eSuperTypes.isEmpty() ?
@@ -86,22 +89,26 @@ public class DataSampleGenSwitch<T> {
 	 * @generated
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch (classifierID) {
-			case DataSampleGenPackage.DS_GEN_MODEL: {
+		switch (classifierID)
+		{
+			case DataSampleGenPackage.DS_GEN_MODEL:
+			{
 				DSGenModel dsGenModel = (DSGenModel)theEObject;
 				T result = caseDSGenModel(dsGenModel);
 				if (result == null) result = caseDSGenBase(dsGenModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_PACKAGE: {
+			case DataSampleGenPackage.DS_GEN_PACKAGE:
+			{
 				DSGenPackage dsGenPackage = (DSGenPackage)theEObject;
 				T result = caseDSGenPackage(dsGenPackage);
 				if (result == null) result = caseDSGenBase(dsGenPackage);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_CLASS: {
+			case DataSampleGenPackage.DS_GEN_CLASS:
+			{
 				DSGenClass dsGenClass = (DSGenClass)theEObject;
 				T result = caseDSGenClass(dsGenClass);
 				if (result == null) result = caseDSGenClassifier(dsGenClass);
@@ -109,7 +116,8 @@ public class DataSampleGenSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_FEATURE: {
+			case DataSampleGenPackage.DS_GEN_FEATURE:
+			{
 				DSGenFeature dsGenFeature = (DSGenFeature)theEObject;
 				T result = caseDSGenFeature(dsGenFeature);
 				if (result == null) result = caseDSGenTypedElement(dsGenFeature);
@@ -117,27 +125,31 @@ public class DataSampleGenSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_BASE: {
+			case DataSampleGenPackage.DS_GEN_BASE:
+			{
 				DSGenBase dsGenBase = (DSGenBase)theEObject;
 				T result = caseDSGenBase(dsGenBase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_ENUM_LITERAL: {
+			case DataSampleGenPackage.DS_GEN_ENUM_LITERAL:
+			{
 				DSGenEnumLiteral dsGenEnumLiteral = (DSGenEnumLiteral)theEObject;
 				T result = caseDSGenEnumLiteral(dsGenEnumLiteral);
 				if (result == null) result = caseDSGenBase(dsGenEnumLiteral);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_CLASSIFIER: {
+			case DataSampleGenPackage.DS_GEN_CLASSIFIER:
+			{
 				DSGenClassifier dsGenClassifier = (DSGenClassifier)theEObject;
 				T result = caseDSGenClassifier(dsGenClassifier);
 				if (result == null) result = caseDSGenBase(dsGenClassifier);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_DATA_TYPE: {
+			case DataSampleGenPackage.DS_GEN_DATA_TYPE:
+			{
 				DSGenDataType dsGenDataType = (DSGenDataType)theEObject;
 				T result = caseDSGenDataType(dsGenDataType);
 				if (result == null) result = caseDSGenClassifier(dsGenDataType);
@@ -145,28 +157,32 @@ public class DataSampleGenSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_TYPED_ELEMENT: {
+			case DataSampleGenPackage.DS_GEN_TYPED_ELEMENT:
+			{
 				DSGenTypedElement dsGenTypedElement = (DSGenTypedElement)theEObject;
 				T result = caseDSGenTypedElement(dsGenTypedElement);
 				if (result == null) result = caseDSGenBase(dsGenTypedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_ANNOTATION: {
+			case DataSampleGenPackage.DS_GEN_ANNOTATION:
+			{
 				DSGenAnnotation dsGenAnnotation = (DSGenAnnotation)theEObject;
 				T result = caseDSGenAnnotation(dsGenAnnotation);
 				if (result == null) result = caseDSGenBase(dsGenAnnotation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_TYPE_PARAMETER: {
+			case DataSampleGenPackage.DS_GEN_TYPE_PARAMETER:
+			{
 				DSGenTypeParameter dsGenTypeParameter = (DSGenTypeParameter)theEObject;
 				T result = caseDSGenTypeParameter(dsGenTypeParameter);
 				if (result == null) result = caseDSGenBase(dsGenTypeParameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_ATTRIBUTE: {
+			case DataSampleGenPackage.DS_GEN_ATTRIBUTE:
+			{
 				DSGenAttribute dsGenAttribute = (DSGenAttribute)theEObject;
 				T result = caseDSGenAttribute(dsGenAttribute);
 				if (result == null) result = caseDSGenFeature(dsGenAttribute);
@@ -175,12 +191,23 @@ public class DataSampleGenSwitch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DataSampleGenPackage.DS_GEN_REFERENCE: {
+			case DataSampleGenPackage.DS_GEN_REFERENCE:
+			{
 				DSGenReference dsGenReference = (DSGenReference)theEObject;
 				T result = caseDSGenReference(dsGenReference);
 				if (result == null) result = caseDSGenFeature(dsGenReference);
 				if (result == null) result = caseDSGenTypedElement(dsGenReference);
 				if (result == null) result = caseDSGenBase(dsGenReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DataSampleGenPackage.DS_GEN_ENUM:
+			{
+				DSGenEnum dsGenEnum = (DSGenEnum)theEObject;
+				T result = caseDSGenEnum(dsGenEnum);
+				if (result == null) result = caseDSGenDataType(dsGenEnum);
+				if (result == null) result = caseDSGenClassifier(dsGenEnum);
+				if (result == null) result = caseDSGenBase(dsGenEnum);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -380,6 +407,22 @@ public class DataSampleGenSwitch<T> {
 	 * @generated
 	 */
 	public T caseDSGenReference(DSGenReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>DS Gen Enum</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>DS Gen Enum</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDSGenEnum(DSGenEnum object)
+	{
 		return null;
 	}
 

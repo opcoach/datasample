@@ -8,13 +8,12 @@ package com.opcoach.generator.ecore.dsgen.helpers;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -25,13 +24,17 @@ import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicFactory;
 import com.opcoach.generator.ecore.dsgen.DSGenAttribute;
 import com.opcoach.generator.ecore.dsgen.DSGenClass;
+import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
+import com.opcoach.generator.ecore.dsgen.DSGenDataType;
+import com.opcoach.generator.ecore.dsgen.DSGenEnum;
 import com.opcoach.generator.ecore.dsgen.DSGenFeature;
 import com.opcoach.generator.ecore.dsgen.DSGenPackage;
 import com.opcoach.generator.ecore.dsgen.DSGenReference;
 import com.opcoach.generator.ecore.dsgen.DataSampleGenFactory;
 
 /**
- * An helper class to manage Data Sample Generation models. Will probably be moved in dsgenmodel
+ * An helper class to manage Data Sample Generation models. Will probably be
+ * moved in dsgenmodel
  * 
  * @author olivier
  */
@@ -42,14 +45,16 @@ public class DSGenHelper
 	/**
 	 * Create a DSGenPackage from an EPackage
 	 * 
-	 * @param rootPackage the initial package used to create
+	 * @param rootPackage
+	 *            the initial package used to create
 	 * @return a datasample generation package
 	 */
 	public static DSGenPackage createDSGenPackage(EPackage rootPackage)
 	{
-		// Intermediate array list of dsgen class that will be sorted before added in package
-		ArrayList<DSGenClass> classes = new ArrayList<DSGenClass>();
-		
+		// Intermediate array list of dsgen class that will be sorted before
+		// added in package
+		ArrayList<DSGenClassifier> classes = new ArrayList<DSGenClassifier>();
+
 		// Creer le modèle dsgen en parcourant le modèle lu
 		DataSampleGenFactory factory = DataSampleGenFactory.eINSTANCE;
 		DSGenPackage dsPack = factory.createDSGenPackage();
@@ -60,22 +65,85 @@ public class DSGenHelper
 			{
 				DSGenClass dscl = createDSGenClass((EClass) ec);
 				classes.add(dscl);
+			} else if (ec instanceof EEnum)
+			{
+				DSGenEnum dsen = createDSGenEnum((EEnum) ec);
+				classes.add(dsen);
+				
+			} else if (ec instanceof EDataType)
+			{
+				DSGenDataType dst = createDSGenDataType((EDataType) ec);
+				classes.add(dst);
 			}
 		}
 		
-		// Sort the list of dsgenClass
-	     Collections.sort(classes, new DSGenClassComparator());
-	     
+		// Then compute the nb of associations refering to each EClass
+		for (DSGenClassifier dsc : classes)
+		{
+			if (dsc instanceof DSGenClass)
+				computeNbAssociationReferencesTo((DSGenClass) dsc, classes);
+		}
+
+
+		// Sort the list of dsgenClass (less referenced before...)
+		Collections.sort(classes, new DSGenClassifierComparator());
+
+		// With the sort algorithm, the last class is the root object.
+		DSGenClass rootClass = (DSGenClass) classes.get(classes.size() - 1);
+		rootClass.setRootObject(true);
+		
 		// Add all in package
 		dsPack.getDsgenClassifiers().addAll(classes);
+
 
 		return dsPack;
 	}
 
 	/**
+	 * @return the number of association references to dsc, looping on the
+	 *         classes list.
+	 * @param dsc
+	 *            : the dsgenclass that is computing the nb of association to
+	 *            itself
+	 * @param classes
+	 *            : the list of other EClasses to loop on
+	 * @return nothing (init directly the nbAssociationRefTo field in dsc)
+	 */
+	private static void computeNbAssociationReferencesTo(DSGenClass dsc,
+			ArrayList<DSGenClassifier> classes)
+	{
+
+		EClass dsEcoreClass = dsc.getEcoreClass();
+		int nbAssoRef = 0;
+		for (DSGenClassifier c : classes)
+		{
+			if ((c instanceof DSGenClass) && (c != dsc))
+			{
+				for (EReference ref : c.getEcoreClass().getEReferences())
+				{
+					EClassifier target = ref.getEType();
+					if ((target instanceof EClass) && !ref.isContainment())
+					{
+						EClass targetEClass = (EClass) target;
+						if (targetEClass.equals(dsEcoreClass) || dsEcoreClass.isSuperTypeOf(targetEClass))
+						{
+							System.out.println("The class " + c.getEcoreClass().getName() + " refer to source DSC : " + dsEcoreClass.getName() + " on field : " +ref.getName());
+							nbAssoRef++;
+						}
+					}
+				}
+			}
+		}
+
+		dsc.setNbAssociationRefTo(nbAssoRef);
+
+	}
+
+	/**
 	 * Create a DSGenClass from an EClass
 	 * 
-	 * @param rootClass the initial class used to create
+	 * @param rootClass
+	 *            the initial class used to create
 	 * @return a datasample generation class
 	 */
 	public static DSGenClass createDSGenClass(EClass rootClass)
@@ -84,18 +152,17 @@ public class DSGenHelper
 
 		DSGenClass dscl = factory.createDSGenClass();
 		dscl.setEcoreClass((EClass) rootClass);
-		dscl.setInstanceNumber(50);
+		dscl.setInstanceNumber(50); // Default but for main object will be 1.
 		Collection<DSGenFeature> features = dscl.getDsgenFeatures();
 
-		for (EStructuralFeature sf : rootClass.getEStructuralFeatures() )
+		for (EStructuralFeature sf : rootClass.getEStructuralFeatures())
 		{
 
 			DSGenFeature dsf = null;
 			if (sf instanceof EAttribute)
 			{
 				dsf = createDSGenAttribute((EAttribute) sf);
-			}
-			else if (sf instanceof EReference)
+			} else if (sf instanceof EReference)
 			{
 				dsf = createDSGenReference((EReference) sf);
 			}
@@ -108,9 +175,44 @@ public class DSGenHelper
 	}
 
 	/**
+	 * Create a DSGenEnum from an EEnum
+	 * 
+	 * @param rootEnum
+	 *            the initial enum used to create
+	 * @return a datasample generation class
+	 */
+	public static DSGenEnum createDSGenEnum(EEnum rootEnum)
+	{
+		DataSampleGenFactory factory = DataSampleGenFactory.eINSTANCE;
+
+		DSGenEnum dsen = factory.createDSGenEnum();
+		dsen.setEcoreEnum((EEnum) rootEnum);
+
+		return dsen;
+	}
+
+	/**
+	 * Create a DSGenDataType from an EDataType
+	 * 
+	 * @param rootDataType
+	 *            the initial dataType used to create
+	 * @return a datasample generation class
+	 */
+	public static DSGenDataType createDSGenDataType(EDataType rootDataType)
+	{
+		DataSampleGenFactory factory = DataSampleGenFactory.eINSTANCE;
+
+		DSGenDataType dsdt = factory.createDSGenDataType();
+		dsdt.setDataType((EDataType) rootDataType);
+
+		return dsdt;
+	}
+
+	/**
 	 * Create a DSGenAttribute from an EAttribute
 	 * 
-	 * @param rootAttr the initial Attribute used to create
+	 * @param rootAttr
+	 *            the initial Attribute used to create
 	 * @return a datasample generation class
 	 */
 	public static DSGenAttribute createDSGenAttribute(EAttribute rootAttr)
@@ -119,20 +221,21 @@ public class DSGenHelper
 
 		DSGenAttribute result = factory.createDSGenAttribute();
 		result.setEcoreFeature(rootAttr);
-		
+
 		// Add the generator according to the field type...
-		EDataType dt =  (rootAttr.getEAttributeType());
-		
+		EDataType dt = (rootAttr.getEAttributeType());
+
 		ValueGenerator<?> gen = getGeneratorFromType(dt);
 		result.setGenerator(gen);
-		
+
 		return result;
 	}
 
 	/**
 	 * Create a DSGenAttribute from an EAttribute
 	 * 
-	 * @param rootAttr the initial Attribute used to create
+	 * @param rootAttr
+	 *            the initial Attribute used to create
 	 * @return a datasample generation class
 	 */
 	public static DSGenReference createDSGenReference(EReference rootRef)
@@ -141,18 +244,18 @@ public class DSGenHelper
 		DSGenReference result = factory.createDSGenReference();
 
 		result.setEcoreFeature(rootRef);
-		
+
 		// Set the generator.
 		EClass target = rootRef.getEReferenceType();
-		ReferenceGenerator<?> refGen = GeneratorFactory.eINSTANCE.createReferenceGenerator();
+		ReferenceGenerator<?> refGen = GeneratorFactory.eINSTANCE
+				.createReferenceGenerator();
 		refGen.setType(target.getInstanceClass());
 		result.setGenerator(refGen);
-		
 
 		return result;
 	}
-	
-	// May be these constants are already defined somewhere ? 
+
+	// May be these constants are already defined somewhere ?
 	private static final String STRING_TYPE = "EString";
 	private static final String INT_TYPE = "EInt";
 	private static final String INT_OBJECT_TYPE = "EInteger";
@@ -163,75 +266,74 @@ public class DSGenHelper
 	private static final String DOUBLE_TYPE = "EDouble";
 	private static final String DOUBLE_OBJECT_TYPE = "EDoubleObject";
 	private static final String DATE_TYPE = "EDate";
-	
-	
+
 	private static ValueGenerator<?> getGeneratorFromType(EDataType dt)
 	{
 		String typeName = dt.getName();
 		ValueGenerator<?> result = null;
-		
+
 		if (STRING_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createStringGenerator();
-		}
-		else if (DATE_TYPE.equals(typeName))
+		} else if (DATE_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createDateGenerator();
 
-		}
-		else if (INT_TYPE.equals(typeName) || INT_OBJECT_TYPE.equals(typeName))
+		} else if (INT_TYPE.equals(typeName)
+				|| INT_OBJECT_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createIntGenerator();
 
-		}
-		else if (LONG_TYPE.equals(typeName) || LONG_OBJECT_TYPE.equals(typeName))
+		} else if (LONG_TYPE.equals(typeName)
+				|| LONG_OBJECT_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createLongGenerator();
 
-		}
-		else if (FLOAT_TYPE.equals(typeName) || FLOAT_OBJECT_TYPE.equals(typeName))
+		} else if (FLOAT_TYPE.equals(typeName)
+				|| FLOAT_OBJECT_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createFloatGenerator();
 
-		}
-		else if (DOUBLE_TYPE.equals(typeName) || DOUBLE_OBJECT_TYPE.equals(typeName))
+		} else if (DOUBLE_TYPE.equals(typeName)
+				|| DOUBLE_OBJECT_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createDoubleGenerator();
 
 		}
-		 return result;
-		
+		return result;
+
 	}
-	
-	
+
 	public static boolean isContainment(EStructuralFeature sf)
 	{
-		return ((sf instanceof EReference) && ((EReference)sf).isContainment());
+		return ((sf instanceof EReference) && ((EReference) sf).isContainment());
 	}
-	
+
 	public static boolean isMultipleRelation(EStructuralFeature sf)
 	{
-		if (! (sf instanceof EReference))
+		if (!(sf instanceof EReference))
 			return false;
-		
+
 		EReference ref = (EReference) sf;
 		boolean val = (ref.getUpperBound() > 1) || (ref.getUpperBound() == -1);
-		//System.out.println("Valeur de isMultipleRelation pour sf " + ref.getName() + " upper = " + ref.getUpperBound() + "  value = " + val);
+		// System.out.println("Valeur de isMultipleRelation pour sf " +
+		// ref.getName() + " upper = " + ref.getUpperBound() + "  value = " +
+		// val);
 		return val;
 	}
-	
+
 	public static boolean isOpposite(EStructuralFeature sf)
 	{
 		if (sf instanceof EAttribute)
 			return false;
 
-		EReference ref = (EReference)sf;
+		EReference ref = (EReference) sf;
 		EReference refOpp = ref.getEOpposite();
-		
-		System.out.println("Ref " + ref.getName() + " est il opposite de " + ((refOpp == null) ? "none" : refOpp.getName()));
-		return (!ref.isContainment() && (refOpp != null) && refOpp.isContainment() && (refOpp.getEOpposite() == ref));
+
+		System.out.println("Ref " + ref.getName() + " est il opposite de "
+				+ ((refOpp == null) ? "none" : refOpp.getName()));
+		return (!ref.isContainment() && (refOpp != null)
+				&& refOpp.isContainment() && (refOpp.getEOpposite() == ref));
 	}
-	
-	
 
 }

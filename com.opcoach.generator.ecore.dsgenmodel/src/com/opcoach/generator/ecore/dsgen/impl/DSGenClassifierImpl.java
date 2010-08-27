@@ -92,10 +92,12 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	 */
 	public EClass getEcoreClass()
 	{
-		if (ecoreClass != null && ecoreClass.eIsProxy()) {
+		if (ecoreClass != null && ecoreClass.eIsProxy())
+		{
 			InternalEObject oldEcoreClass = (InternalEObject)ecoreClass;
 			ecoreClass = (EClass)eResolveProxy(oldEcoreClass);
-			if (ecoreClass != oldEcoreClass) {
+			if (ecoreClass != oldEcoreClass)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_CLASSIFIER__ECORE_CLASS, oldEcoreClass, ecoreClass));
 			}
@@ -133,7 +135,8 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	 */
 	public EList<DSGenFeature> getDsgenFeatures()
 	{
-		if (dsgenFeatures == null) {
+		if (dsgenFeatures == null)
+		{
 			dsgenFeatures = new EObjectContainmentWithInverseEList<DSGenFeature>(DSGenFeature.class, this, DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES, DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS);
 		}
 		return dsgenFeatures;
@@ -168,7 +171,8 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	 */
 	public void setDsgenPackage(DSGenPackage newDsgenPackage)
 	{
-		if (newDsgenPackage != eInternalContainer() || (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_PACKAGE && newDsgenPackage != null)) {
+		if (newDsgenPackage != eInternalContainer() || (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_PACKAGE && newDsgenPackage != null))
+		{
 			if (EcoreUtil.isAncestor(this, newDsgenPackage))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -192,7 +196,8 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDsgenFeatures()).basicAdd(otherEnd, msgs);
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_PACKAGE:
@@ -211,7 +216,8 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES:
 				return ((InternalEList<?>)getDsgenFeatures()).basicRemove(otherEnd, msgs);
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_PACKAGE:
@@ -228,7 +234,8 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_PACKAGE:
 				return eInternalContainer().eInverseRemove(this, DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS, DSGenPackage.class, msgs);
 		}
@@ -243,7 +250,8 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__ECORE_CLASS:
 				if (resolve) return getEcoreClass();
 				return basicGetEcoreClass();
@@ -264,7 +272,8 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__ECORE_CLASS:
 				setEcoreClass((EClass)newValue);
 				return;
@@ -287,7 +296,8 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__ECORE_CLASS:
 				setEcoreClass((EClass)null);
 				return;
@@ -309,7 +319,8 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__ECORE_CLASS:
 				return ecoreClass != null;
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES:

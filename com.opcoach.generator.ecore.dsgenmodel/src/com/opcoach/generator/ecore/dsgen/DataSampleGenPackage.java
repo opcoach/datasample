@@ -248,13 +248,31 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_CLASS__INSTANCE_NUMBER = DS_GEN_CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Root Object</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CLASS__ROOT_OBJECT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Nb Association Ref To</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CLASS__NB_ASSOCIATION_REF_TO = DS_GEN_CLASSIFIER_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>DS Gen Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CLASS_FEATURE_COUNT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 1;
+	int DS_GEN_CLASS_FEATURE_COUNT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenTypedElementImpl <em>DS Gen Typed Element</em>}' class.
@@ -387,13 +405,22 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_DATA_TYPE__DSGEN_PACKAGE = DS_GEN_CLASSIFIER__DSGEN_PACKAGE;
 
 	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_DATA_TYPE__DATA_TYPE = DS_GEN_CLASSIFIER_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>DS Gen Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_DATA_TYPE_FEATURE_COUNT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 0;
+	int DS_GEN_DATA_TYPE_FEATURE_COUNT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenAnnotationImpl <em>DS Gen Annotation</em>}' class.
@@ -562,6 +589,70 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_REFERENCE_FEATURE_COUNT = DS_GEN_FEATURE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenEnumImpl <em>DS Gen Enum</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.generator.ecore.dsgen.impl.DSGenEnumImpl
+	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenEnum()
+	 * @generated
+	 */
+	int DS_GEN_ENUM = 13;
+
+	/**
+	 * The feature id for the '<em><b>Ecore Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_ENUM__ECORE_CLASS = DS_GEN_DATA_TYPE__ECORE_CLASS;
+
+	/**
+	 * The feature id for the '<em><b>Dsgen Features</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_ENUM__DSGEN_FEATURES = DS_GEN_DATA_TYPE__DSGEN_FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>Dsgen Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_ENUM__DSGEN_PACKAGE = DS_GEN_DATA_TYPE__DSGEN_PACKAGE;
+
+	/**
+	 * The feature id for the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_ENUM__DATA_TYPE = DS_GEN_DATA_TYPE__DATA_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Ecore Enum</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_ENUM__ECORE_ENUM = DS_GEN_DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>DS Gen Enum</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_ENUM_FEATURE_COUNT = DS_GEN_DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -569,7 +660,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenRuntimeVersion()
 	 * @generated
 	 */
-	int DS_GEN_RUNTIME_VERSION = 13;
+	int DS_GEN_RUNTIME_VERSION = 14;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenJDKLevel <em>DS Gen JDK Level</em>}' enum.
@@ -579,7 +670,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenJDKLevel()
 	 * @generated
 	 */
-	int DS_GEN_JDK_LEVEL = 14;
+	int DS_GEN_JDK_LEVEL = 15;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenDelegationKind <em>DS Gen Delegation Kind</em>}' enum.
@@ -589,7 +680,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenDelegationKind()
 	 * @generated
 	 */
-	int DS_GEN_DELEGATION_KIND = 15;
+	int DS_GEN_DELEGATION_KIND = 16;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenPropertyKind <em>DS Gen Property Kind</em>}' enum.
@@ -599,7 +690,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenPropertyKind()
 	 * @generated
 	 */
-	int DS_GEN_PROPERTY_KIND = 16;
+	int DS_GEN_PROPERTY_KIND = 17;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenResourceKind <em>DS Gen Resource Kind</em>}' enum.
@@ -609,7 +700,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenResourceKind()
 	 * @generated
 	 */
-	int DS_GEN_RESOURCE_KIND = 17;
+	int DS_GEN_RESOURCE_KIND = 18;
 
 
 	/**
@@ -696,6 +787,28 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getDSGenClass_InstanceNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.generator.ecore.dsgen.DSGenClass#isRootObject <em>Root Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Root Object</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenClass#isRootObject()
+	 * @see #getDSGenClass()
+	 * @generated
+	 */
+	EAttribute getDSGenClass_RootObject();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.generator.ecore.dsgen.DSGenClass#getNbAssociationRefTo <em>Nb Association Ref To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nb Association Ref To</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenClass#getNbAssociationRefTo()
+	 * @see #getDSGenClass()
+	 * @generated
+	 */
+	EAttribute getDSGenClass_NbAssociationRefTo();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.generator.ecore.dsgen.DSGenFeature <em>DS Gen Feature</em>}'.
@@ -825,6 +938,17 @@ public interface DataSampleGenPackage extends EPackage
 	EClass getDSGenDataType();
 
 	/**
+	 * Returns the meta object for the reference '{@link com.opcoach.generator.ecore.dsgen.DSGenDataType#getDataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data Type</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenDataType#getDataType()
+	 * @see #getDSGenDataType()
+	 * @generated
+	 */
+	EReference getDSGenDataType_DataType();
+
+	/**
 	 * Returns the meta object for class '{@link com.opcoach.generator.ecore.dsgen.DSGenTypedElement <em>DS Gen Typed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -895,6 +1019,27 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 */
 	EReference getDSGenReference_Generator();
+
+	/**
+	 * Returns the meta object for class '{@link com.opcoach.generator.ecore.dsgen.DSGenEnum <em>DS Gen Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>DS Gen Enum</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenEnum
+	 * @generated
+	 */
+	EClass getDSGenEnum();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.opcoach.generator.ecore.dsgen.DSGenEnum#getEcoreEnum <em>Ecore Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ecore Enum</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenEnum#getEcoreEnum()
+	 * @see #getDSGenEnum()
+	 * @generated
+	 */
+	EReference getDSGenEnum_EcoreEnum();
 
 	/**
 	 * Returns the meta object for enum '{@link com.opcoach.generator.ecore.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}'.
@@ -1039,6 +1184,22 @@ public interface DataSampleGenPackage extends EPackage
 		EAttribute DS_GEN_CLASS__INSTANCE_NUMBER = eINSTANCE.getDSGenClass_InstanceNumber();
 
 		/**
+		 * The meta object literal for the '<em><b>Root Object</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DS_GEN_CLASS__ROOT_OBJECT = eINSTANCE.getDSGenClass_RootObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Nb Association Ref To</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DS_GEN_CLASS__NB_ASSOCIATION_REF_TO = eINSTANCE.getDSGenClass_NbAssociationRefTo();
+
+		/**
 		 * The meta object literal for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenFeatureImpl <em>DS Gen Feature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1145,6 +1306,14 @@ public interface DataSampleGenPackage extends EPackage
 		EClass DS_GEN_DATA_TYPE = eINSTANCE.getDSGenDataType();
 
 		/**
+		 * The meta object literal for the '<em><b>Data Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DS_GEN_DATA_TYPE__DATA_TYPE = eINSTANCE.getDSGenDataType_DataType();
+
+		/**
 		 * The meta object literal for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenTypedElementImpl <em>DS Gen Typed Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1209,6 +1378,24 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EReference DS_GEN_REFERENCE__GENERATOR = eINSTANCE.getDSGenReference_Generator();
+
+		/**
+		 * The meta object literal for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenEnumImpl <em>DS Gen Enum</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.generator.ecore.dsgen.impl.DSGenEnumImpl
+		 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenEnum()
+		 * @generated
+		 */
+		EClass DS_GEN_ENUM = eINSTANCE.getDSGenEnum();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Enum</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DS_GEN_ENUM__ECORE_ENUM = eINSTANCE.getDSGenEnum_EcoreEnum();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.generator.ecore.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}' enum.

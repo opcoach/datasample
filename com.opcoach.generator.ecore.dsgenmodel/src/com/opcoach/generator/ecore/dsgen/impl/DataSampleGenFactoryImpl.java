@@ -33,13 +33,16 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	 */
 	public static DataSampleGenFactory init()
 	{
-		try {
+		try
+		{
 			DataSampleGenFactory theDataSampleGenFactory = (DataSampleGenFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.opcoach.com/dsgen/1.0"); 
-			if (theDataSampleGenFactory != null) {
+			if (theDataSampleGenFactory != null)
+			{
 				return theDataSampleGenFactory;
 			}
 		}
-		catch (Exception exception) {
+		catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DataSampleGenFactoryImpl();
@@ -64,7 +67,8 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	@Override
 	public EObject create(EClass eClass)
 	{
-		switch (eClass.getClassifierID()) {
+		switch (eClass.getClassifierID())
+		{
 			case DataSampleGenPackage.DS_GEN_MODEL: return createDSGenModel();
 			case DataSampleGenPackage.DS_GEN_PACKAGE: return createDSGenPackage();
 			case DataSampleGenPackage.DS_GEN_CLASS: return createDSGenClass();
@@ -75,6 +79,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 			case DataSampleGenPackage.DS_GEN_TYPE_PARAMETER: return createDSGenTypeParameter();
 			case DataSampleGenPackage.DS_GEN_ATTRIBUTE: return createDSGenAttribute();
 			case DataSampleGenPackage.DS_GEN_REFERENCE: return createDSGenReference();
+			case DataSampleGenPackage.DS_GEN_ENUM: return createDSGenEnum();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -88,7 +93,8 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue)
 	{
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case DataSampleGenPackage.DS_GEN_RUNTIME_VERSION:
 				return createDSGenRuntimeVersionFromString(eDataType, initialValue);
 			case DataSampleGenPackage.DS_GEN_JDK_LEVEL:
@@ -112,7 +118,8 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue)
 	{
-		switch (eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID())
+		{
 			case DataSampleGenPackage.DS_GEN_RUNTIME_VERSION:
 				return convertDSGenRuntimeVersionToString(eDataType, instanceValue);
 			case DataSampleGenPackage.DS_GEN_JDK_LEVEL:
@@ -236,6 +243,17 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	{
 		DSGenReferenceImpl dsGenReference = new DSGenReferenceImpl();
 		return dsGenReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DSGenEnum createDSGenEnum()
+	{
+		DSGenEnumImpl dsGenEnum = new DSGenEnumImpl();
+		return dsGenEnum;
 	}
 
 	/**

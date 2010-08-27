@@ -186,7 +186,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	 */
 	public void setDsgenClass(DSGenClassifier newDsgenClass)
 	{
-		if (newDsgenClass != eInternalContainer() || (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS && newDsgenClass != null)) {
+		if (newDsgenClass != eInternalContainer() || (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS && newDsgenClass != null))
+		{
 			if (EcoreUtil.isAncestor(this, newDsgenClass))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
@@ -208,10 +209,12 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	 */
 	public EStructuralFeature getEcoreFeature()
 	{
-		if (ecoreFeature != null && ecoreFeature.eIsProxy()) {
+		if (ecoreFeature != null && ecoreFeature.eIsProxy())
+		{
 			InternalEObject oldEcoreFeature = (InternalEObject)ecoreFeature;
 			ecoreFeature = (EStructuralFeature)eResolveProxy(oldEcoreFeature);
-			if (ecoreFeature != oldEcoreFeature) {
+			if (ecoreFeature != oldEcoreFeature)
+			{
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE, oldEcoreFeature, ecoreFeature));
 			}
@@ -250,7 +253,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -267,7 +271,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
 				return basicSetDsgenClass(null, msgs);
 		}
@@ -282,7 +287,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID()) {
+		switch (eContainerFeatureID())
+		{
 			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
 				return eInternalContainer().eInverseRemove(this, DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES, DSGenClassifier.class, msgs);
 		}
@@ -297,7 +303,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
 				return isNullableValue();
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
@@ -319,7 +326,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
 				setNullableValue((Boolean)newValue);
 				return;
@@ -344,7 +352,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
 				setNullableValue(NULLABLE_VALUE_EDEFAULT);
 				return;
@@ -369,7 +378,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
 				return nullableValue != NULLABLE_VALUE_EDEFAULT;
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:

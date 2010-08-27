@@ -32,7 +32,8 @@ public enum DSGenResourceKind implements Enumerator
 	 * @generated
 	 */
 	private static final DSGenResourceKind[] VALUES_ARRAY =
-		new DSGenResourceKind[] {
+		new DSGenResourceKind[]
+		{
 		};
 
 	/**
@@ -51,9 +52,11 @@ public enum DSGenResourceKind implements Enumerator
 	 */
 	public static DSGenResourceKind get(String literal)
 	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			DSGenResourceKind result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
+			if (result.toString().equals(literal))
+			{
 				return result;
 			}
 		}
@@ -68,9 +71,11 @@ public enum DSGenResourceKind implements Enumerator
 	 */
 	public static DSGenResourceKind getByName(String name)
 	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
 			DSGenResourceKind result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
+			if (result.getName().equals(name))
+			{
 				return result;
 			}
 		}
@@ -85,7 +90,8 @@ public enum DSGenResourceKind implements Enumerator
 	 */
 	public static DSGenResourceKind get(int value)
 	{
-		switch (value) {
+		switch (value)
+		{
 		}
 		return null;
 	}

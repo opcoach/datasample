@@ -81,7 +81,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	{
 		ReferenceGenerator<?> oldGenerator = generator;
 		generator = newGenerator;
-		if (eNotificationRequired()) {
+		if (eNotificationRequired())
+		{
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, oldGenerator, newGenerator);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
@@ -95,7 +96,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	 */
 	public void setGenerator(ReferenceGenerator<?> newGenerator)
 	{
-		if (newGenerator != generator) {
+		if (newGenerator != generator)
+		{
 			NotificationChain msgs = null;
 			if (generator != null)
 				msgs = ((InternalEObject)generator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, null, msgs);
@@ -116,7 +118,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
 				return basicSetGenerator(null, msgs);
 		}
@@ -131,7 +134,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
 				return getGenerator();
 		}
@@ -146,7 +150,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
 				setGenerator((ReferenceGenerator<?>)newValue);
 				return;
@@ -162,7 +167,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
 				setGenerator((ReferenceGenerator<?>)null);
 				return;
@@ -178,7 +184,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
+		switch (featureID)
+		{
 			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
 				return generator != null;
 		}

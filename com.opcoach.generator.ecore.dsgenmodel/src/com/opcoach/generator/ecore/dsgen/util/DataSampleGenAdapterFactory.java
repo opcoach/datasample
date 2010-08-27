@@ -39,7 +39,8 @@ public class DataSampleGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public DataSampleGenAdapterFactory() {
-		if (modelPackage == null) {
+		if (modelPackage == null)
+		{
 			modelPackage = DataSampleGenPackage.eINSTANCE;
 		}
 	}
@@ -54,10 +55,12 @@ public class DataSampleGenAdapterFactory extends AdapterFactoryImpl {
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if (object == modelPackage) {
+		if (object == modelPackage)
+		{
 			return true;
 		}
-		if (object instanceof EObject) {
+		if (object instanceof EObject)
+		{
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -70,61 +73,81 @@ public class DataSampleGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected DataSampleGenSwitch<Adapter> modelSwitch =
-		new DataSampleGenSwitch<Adapter>() {
+		new DataSampleGenSwitch<Adapter>()
+		{
 			@Override
-			public Adapter caseDSGenModel(DSGenModel object) {
+			public Adapter caseDSGenModel(DSGenModel object)
+			{
 				return createDSGenModelAdapter();
 			}
 			@Override
-			public Adapter caseDSGenPackage(DSGenPackage object) {
+			public Adapter caseDSGenPackage(DSGenPackage object)
+			{
 				return createDSGenPackageAdapter();
 			}
 			@Override
-			public Adapter caseDSGenClass(DSGenClass object) {
+			public Adapter caseDSGenClass(DSGenClass object)
+			{
 				return createDSGenClassAdapter();
 			}
 			@Override
-			public Adapter caseDSGenFeature(DSGenFeature object) {
+			public Adapter caseDSGenFeature(DSGenFeature object)
+			{
 				return createDSGenFeatureAdapter();
 			}
 			@Override
-			public Adapter caseDSGenBase(DSGenBase object) {
+			public Adapter caseDSGenBase(DSGenBase object)
+			{
 				return createDSGenBaseAdapter();
 			}
 			@Override
-			public Adapter caseDSGenEnumLiteral(DSGenEnumLiteral object) {
+			public Adapter caseDSGenEnumLiteral(DSGenEnumLiteral object)
+			{
 				return createDSGenEnumLiteralAdapter();
 			}
 			@Override
-			public Adapter caseDSGenClassifier(DSGenClassifier object) {
+			public Adapter caseDSGenClassifier(DSGenClassifier object)
+			{
 				return createDSGenClassifierAdapter();
 			}
 			@Override
-			public Adapter caseDSGenDataType(DSGenDataType object) {
+			public Adapter caseDSGenDataType(DSGenDataType object)
+			{
 				return createDSGenDataTypeAdapter();
 			}
 			@Override
-			public Adapter caseDSGenTypedElement(DSGenTypedElement object) {
+			public Adapter caseDSGenTypedElement(DSGenTypedElement object)
+			{
 				return createDSGenTypedElementAdapter();
 			}
 			@Override
-			public Adapter caseDSGenAnnotation(DSGenAnnotation object) {
+			public Adapter caseDSGenAnnotation(DSGenAnnotation object)
+			{
 				return createDSGenAnnotationAdapter();
 			}
 			@Override
-			public Adapter caseDSGenTypeParameter(DSGenTypeParameter object) {
+			public Adapter caseDSGenTypeParameter(DSGenTypeParameter object)
+			{
 				return createDSGenTypeParameterAdapter();
 			}
 			@Override
-			public Adapter caseDSGenAttribute(DSGenAttribute object) {
+			public Adapter caseDSGenAttribute(DSGenAttribute object)
+			{
 				return createDSGenAttributeAdapter();
 			}
 			@Override
-			public Adapter caseDSGenReference(DSGenReference object) {
+			public Adapter caseDSGenReference(DSGenReference object)
+			{
 				return createDSGenReferenceAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object) {
+			public Adapter caseDSGenEnum(DSGenEnum object)
+			{
+				return createDSGenEnumAdapter();
+			}
+			@Override
+			public Adapter defaultCase(EObject object)
+			{
 				return createEObjectAdapter();
 			}
 		};
@@ -322,6 +345,21 @@ public class DataSampleGenAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDSGenReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.ecore.dsgen.DSGenEnum <em>DS Gen Enum</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenEnum
+	 * @generated
+	 */
+	public Adapter createDSGenEnumAdapter()
+	{
 		return null;
 	}
 
