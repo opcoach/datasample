@@ -24,8 +24,7 @@ import com.opcoach.generator.impl.*;
 import «rootProject».«ecorePackage.name.toString()».*;
 «EXPAND dataTypeImport FOREACH dsgenClassifiers.typeSelect(DSGenDataType)-»
 
-/** 
- * Exemple de code de ce qu'on voudrait gŽenerer.
+/** Generator class to create an instance of «dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name»
  * @author OPCoach
  *
  */
@@ -53,11 +52,11 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
 	
 	public static void main(String[] arg)
 	{
-	«this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"» gen = new «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"»();
-	«dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name» result = gen.create«dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name»();
-	
-	
+	  «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"» gen = new «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"»();
+	  «dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name» result = gen.create«dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name»();
 	}
+	
+	«EXPAND modelInformation FOR this»
 }
    «ENDFILE»
    
@@ -129,12 +128,11 @@ import «dataType.instanceClassName»;
  «DEFINE attributeGen FOR dsgen::DSGenAttribute»
     // «ecoreFeature.name» is «ecoreFeature.eType.metaType.toString()»
     «IF ecoreFeature.eType.metaType.toString() == "ecore::EEnum"»
-        // AN ENUM GENERATOR
+        // An enum generator
      	private ReferenceGenerator<«ecoreFeature.eType.name»> «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
     «ELSE»
-       // A DATATYPE GENERATOR
        «IF this.dsgenClass.dsgenPackage.dsgenClassifiers.typeSelect(DSGenDataType).exists(e| e.dataType.instanceClassName == ecoreFeature.eType.instanceClassName)»
-            // DATATYPE IS EXTERNAL
+            // An externa DataType generator
         	private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
        «ELSE»
           private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = bf.create«getGeneratorTypeForDSGenAttribute(this)»();
@@ -151,13 +149,14 @@ import «dataType.instanceClassName»;
   «ENDDEFINE»
 
 «DEFINE createAllInstances FOR DSGenClass»
+  «IF this.nbAssociationRefTo > 0-»
 public void createAll«ecoreClass.name»s() {
 		for (int i = 0; i <  NB_«ecoreClass.name.toUpperCase()»; i++) {
 			«ecoreClass.name» o = create«ecoreClass.name»();
 			«this.ecoreClass.name.toLowerCase()»Generator.addValue(o);
 		}
 	}
-
+«ENDIF»
 «ENDDEFINE»
 
 «DEFINE createOneInstance FOR DSGenClass»
@@ -183,7 +182,15 @@ public  «ecoreClass.name» create«ecoreClass.name»() {
          «IF isMultipleRelation(ecoreFeature)-»
          result.get«ecoreFeature.name.toString().toFirstUpper()»().addAll(«ecoreFeature.eType.name.toLowerCase()»Generator.getValues());
          «ELSE»
-         result.set«ecoreFeature.name.toString().toFirstUpper()»(«ecoreFeature.eType.name.toLowerCase()»Generator.getValues().iterator().next());
+         «LET dsgenClass.dsgenPackage.dsgenClassifiers.typeSelect(DSGenClass).select(e|e.ecoreClass.name == this.ecoreFeature.eType).first() AS targetClass»
+           «IF targetClass.nbAssociationRefTo > 0»
+              result.set«ecoreFeature.name.toString().toFirstUpper()»(«ecoreFeature.eType.name.toLowerCase()»Generator.getValues().iterator().next());
+           «ELSE»
+               // CALL DIRECTLY CREATE
+               result.set«ecoreFeature.name.toString().toFirstUpper()»(create«ecoreFeature.eType.name»());
+           «ENDIF»
+         «ENDLET»
+        
          «ENDIF»
        «ELSE»
          // «ecoreFeature.name» is an association
@@ -195,6 +202,27 @@ public  «ecoreClass.name» create«ecoreClass.name»() {
        «ENDIF»
  «ENDDEFINE»
  
+ «DEFINE modelInformation FOR DSGenPackage-»
+   //--------------------------------------------------------------------------
+   // DSGen Model Information for Package «this.ecorePackage.name»
+   //--------------------------------------------------------------------------
+   «EXPAND modelInformation FOREACH this.dsgenClassifiers»
+ «ENDDEFINE»
+ 
+  «DEFINE modelInformation FOR DSGenClassifier-»
+ «ENDDEFINE»
+   
+  «DEFINE modelInformation FOR DSGenClass-»
+   // DSGenClass : «this.ecoreClass.name» «IF rootObject» is the main object «ENDIF» has «nbAssociationRefTo»  association reference to it
+ «ENDDEFINE»
+   
+  «DEFINE modelInformation FOR DSGenDataType-»
+   // External DataType : «this.dataType.name» is mapped to «this.dataType.instanceClassName» 
+ «ENDDEFINE»
+   
+ «DEFINE modelInformation FOR DSGenEnum-»
+   // Enum : «this.ecoreEnum.name»  
+ «ENDDEFINE»
    
  
 
