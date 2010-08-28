@@ -63,7 +63,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="DSGenResourceKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenAttribute" eSuperTypes="#//DSGenFeature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="generator" containment="true">
-      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
@@ -78,5 +78,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="DSGenEnum" eSuperTypes="#//DSGenDataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ecoreEnum" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenChildren">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenClass" lowerBound="1"
+        eType="#//DSGenClass"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>
