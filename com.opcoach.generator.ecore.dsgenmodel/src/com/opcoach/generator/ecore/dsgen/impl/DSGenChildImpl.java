@@ -28,8 +28,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <ul>
  *   <li>{@link com.opcoach.generator.ecore.dsgen.impl.DSGenChildImpl#getDsgenClass <em>Dsgen Class</em>}</li>
  *   <li>{@link com.opcoach.generator.ecore.dsgen.impl.DSGenChildImpl#isSingle <em>Single</em>}</li>
- *   <li>{@link com.opcoach.generator.ecore.dsgen.impl.DSGenChildImpl#getOppositeReference <em>Opposite Reference</em>}</li>
  *   <li>{@link com.opcoach.generator.ecore.dsgen.impl.DSGenChildImpl#getSourceReference <em>Source Reference</em>}</li>
+ *   <li>{@link com.opcoach.generator.ecore.dsgen.impl.DSGenChildImpl#getOppositeReference <em>Opposite Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -68,16 +68,6 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	protected boolean single = SINGLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOppositeReference() <em>Opposite Reference</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOppositeReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected DSGenReference oppositeReference;
-
-	/**
 	 * The cached value of the '{@link #getSourceReference() <em>Source Reference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,6 +76,16 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	 * @ordered
 	 */
 	protected DSGenReference sourceReference;
+
+	/**
+	 * The cached value of the '{@link #getOppositeReference() <em>Opposite Reference</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOppositeReference()
+	 * @generated
+	 * @ordered
+	 */
+	protected DSGenReference oppositeReference;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -275,12 +275,12 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 				return basicGetDsgenClass();
 			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 				return isSingle();
-			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
-				if (resolve) return getOppositeReference();
-				return basicGetOppositeReference();
 			case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
 				if (resolve) return getSourceReference();
 				return basicGetSourceReference();
+			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
+				if (resolve) return getOppositeReference();
+				return basicGetOppositeReference();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -301,11 +301,11 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 				setSingle((Boolean)newValue);
 				return;
-			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
-				setOppositeReference((DSGenReference)newValue);
-				return;
 			case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
 				setSourceReference((DSGenReference)newValue);
+				return;
+			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
+				setOppositeReference((DSGenReference)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -327,11 +327,11 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 				setSingle(SINGLE_EDEFAULT);
 				return;
-			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
-				setOppositeReference((DSGenReference)null);
-				return;
 			case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
 				setSourceReference((DSGenReference)null);
+				return;
+			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
+				setOppositeReference((DSGenReference)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -351,10 +351,10 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 				return dsgenClass != null;
 			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 				return single != SINGLE_EDEFAULT;
-			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
-				return oppositeReference != null;
 			case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
 				return sourceReference != null;
+			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
+				return oppositeReference != null;
 		}
 		return super.eIsSet(featureID);
 	}

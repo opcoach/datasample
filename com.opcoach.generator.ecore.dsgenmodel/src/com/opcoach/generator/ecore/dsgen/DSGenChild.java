@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.opcoach.generator.ecore.dsgen.DSGenChild#getDsgenClass <em>Dsgen Class</em>}</li>
  *   <li>{@link com.opcoach.generator.ecore.dsgen.DSGenChild#isSingle <em>Single</em>}</li>
- *   <li>{@link com.opcoach.generator.ecore.dsgen.DSGenChild#getOppositeReference <em>Opposite Reference</em>}</li>
  *   <li>{@link com.opcoach.generator.ecore.dsgen.DSGenChild#getSourceReference <em>Source Reference</em>}</li>
+ *   <li>{@link com.opcoach.generator.ecore.dsgen.DSGenChild#getOppositeReference <em>Opposite Reference</em>}</li>
  * </ul>
  * </p>
  *

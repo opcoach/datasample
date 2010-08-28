@@ -690,22 +690,22 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_CHILD__SINGLE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Opposite Reference</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DS_GEN_CHILD__OPPOSITE_REFERENCE = 2;
-
-	/**
 	 * The feature id for the '<em><b>Source Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CHILD__SOURCE_REFERENCE = 3;
+	int DS_GEN_CHILD__SOURCE_REFERENCE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Opposite Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CHILD__OPPOSITE_REFERENCE = 3;
 
 	/**
 	 * The number of structural features of the '<em>DS Gen Child</em>' class.

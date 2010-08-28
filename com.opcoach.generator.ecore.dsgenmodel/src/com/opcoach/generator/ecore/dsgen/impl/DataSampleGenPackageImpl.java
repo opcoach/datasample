@@ -622,7 +622,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 */
 	public EReference getDSGenChild_OppositeReference()
 	{
-		return (EReference)dsGenChildEClass.getEStructuralFeatures().get(2);
+		return (EReference)dsGenChildEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -632,7 +632,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 */
 	public EReference getDSGenChild_SourceReference()
 	{
-		return (EReference)dsGenChildEClass.getEStructuralFeatures().get(3);
+		return (EReference)dsGenChildEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -765,8 +765,8 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		dsGenChildEClass = createEClass(DS_GEN_CHILD);
 		createEReference(dsGenChildEClass, DS_GEN_CHILD__DSGEN_CLASS);
 		createEAttribute(dsGenChildEClass, DS_GEN_CHILD__SINGLE);
-		createEReference(dsGenChildEClass, DS_GEN_CHILD__OPPOSITE_REFERENCE);
 		createEReference(dsGenChildEClass, DS_GEN_CHILD__SOURCE_REFERENCE);
+		createEReference(dsGenChildEClass, DS_GEN_CHILD__OPPOSITE_REFERENCE);
 
 		// Create enums
 		dsGenRuntimeVersionEEnum = createEEnum(DS_GEN_RUNTIME_VERSION);
@@ -880,8 +880,8 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		initEClass(dsGenChildEClass, DSGenChild.class, "DSGenChild", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDSGenChild_DsgenClass(), this.getDSGenClass(), null, "dsgenClass", null, 1, 1, DSGenChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDSGenChild_Single(), ecorePackage.getEBoolean(), "single", null, 0, 1, DSGenChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDSGenChild_OppositeReference(), this.getDSGenReference(), null, "oppositeReference", null, 0, 1, DSGenChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDSGenChild_SourceReference(), this.getDSGenReference(), null, "sourceReference", null, 1, 1, DSGenChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSGenChild_OppositeReference(), this.getDSGenReference(), null, "oppositeReference", null, 0, 1, DSGenChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dsGenRuntimeVersionEEnum, DSGenRuntimeVersion.class, "DSGenRuntimeVersion");
