@@ -6,6 +6,7 @@
  */
 package com.opcoach.generator.impl;
 
+import java.util.Collections;
 import java.util.Vector;
 
 import com.opcoach.generator.GeneratorPackage;
@@ -119,9 +120,10 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@SuppressWarnings("unchecked")
 	public Collection<T> getValues()
 	{
-		return values;
+		return (values == null) ? Collections.EMPTY_LIST : values;
 	}
 	
 	
@@ -132,7 +134,7 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 	{
 		// Find a random index in the array.
 		lastGeneratedIndex = getRandomizer().nextInt(values.size());
-		return values.get(lastGeneratedIndex);
+		return (values == null) ? null : values.get(lastGeneratedIndex);
 
 	}
 
@@ -151,7 +153,7 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 			}
 		}
 		
-		return values.get(lastGeneratedIndex);
+		return (values == null) ? null : values.get(lastGeneratedIndex);
 	}
 
 
