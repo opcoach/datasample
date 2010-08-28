@@ -27,9 +27,9 @@ import «rootProject».«ecorePackage.name.toString()».*;
  * @author OPCoach
  *
  */
-public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"»
+public class «this.ecorePackage.name.toString().toFirstUpper()»SampleGenerator
 {
-  «EXPAND constanteDef FOREACH dsgenClassifiers.typeSelect(DSGenClass)»
+  «EXPAND constanteDef FOREACH dsgenClassifiers.typeSelect(DSGenClass) -»
   	
 	private GeneratorFactory gp = GeneratorFactory.eINSTANCE;
 	private BasicFactory bf = BasicFactory.eINSTANCE;
@@ -39,12 +39,30 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
 	«EXPAND dataTypeGen FOREACH dsgenClassifiers»  
 	
 	// Fields generators
-    «EXPAND attributeGen FOREACH dsgenClassifiers.typeSelect(DSGenClass).eAllContents.typeSelect(DSGenAttribute)»		
-    «EXPAND referenceGen FOREACH dsgenClassifiers.typeSelect(DSGenClass).eAllContents.typeSelect(DSGenReference)»		
+    «EXPAND attributeGen FOREACH dsgenClassifiers.typeSelect(DSGenClass).eAllContents.typeSelect(DSGenAttribute)-»		
+    «EXPAND referenceGen FOREACH dsgenClassifiers.typeSelect(DSGenClass).eAllContents.typeSelect(DSGenReference)-»	
+    
+    // Constructor
+    public «this.ecorePackage.name.toString().toFirstUpper()»SampleGenerator()
+    {
+      «FOREACH dsgenClassifiers.typeSelect(DSGenEnum) AS e -»
+         init«e.ecoreEnum.name»Generator();
+      «ENDFOREACH»
+   
+      «FOREACH dsgenClassifiers.typeSelect(DSGenDataType) AS d -»
+         init«d.dataType.name»Generator();
+      «ENDFOREACH»
+   
+    }
+	       
+	«EXPAND initEnumGenerator FOREACH dsgenClassifiers.typeSelect(DSGenEnum) -»
 	
-	«EXPAND createOneInstance FOREACH dsgenClassifiers.typeSelect(DSGenClass).withoutLast()»
+	«EXPAND initExternalDataTypeGenerator FOREACH dsgenClassifiers.typeSelect(DSGenDataType) -»
 	
-	«EXPAND createMainObject FOR dsgenClassifiers.typeSelect(DSGenClass).last()»
+	
+	«EXPAND createOneInstance FOREACH dsgenClassifiers.typeSelect(DSGenClass).withoutLast() -»
+	
+	«EXPAND createMainObject FOR dsgenClassifiers.typeSelect(DSGenClass).last() -»
 
 	
 	public static void main(String[] arg)
@@ -56,6 +74,8 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
 	  «FOREACH dsgenClassifiers.typeSelect(DSGenClass).last().children AS c»
 	   «IF !c.single»
 	   System.out.println("" + result.get«c.sourceReference.ecoreFeature.name.toString().toFirstUpper()»().size() + " «c.dsgenClass.ecoreClass.name»s");
+	   for («c.dsgenClass.ecoreClass.name» o : result.get«c.sourceReference.ecoreFeature.name.toString().toFirstUpper()»())
+	      System.out.println("«c.dsgenClass.ecoreClass.name» : " + o.toString());
 	   «ENDIF»
 	  «ENDFOREACH»
 	}
@@ -68,6 +88,23 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
 «ENDDEFINE»
 
 
+«DEFINE initEnumGenerator FOR DSGenEnum»
+   private void init«this.ecoreEnum.name»Generator()
+   {
+    «FOREACH ecoreEnum.eLiterals AS l»
+       «this.ecoreEnum.name.toLowerCase()»Generator.addValue(«this.ecoreEnum.name».«l.toString().toString().toUpperCase()»);
+    «ENDFOREACH»
+   }
+«ENDDEFINE»
+
+«DEFINE initExternalDataTypeGenerator FOR DSGenDataType»
+   private void init«this.dataType.name»Generator()
+   {
+      //TODO : Initialize «dataType.name» generator here...
+      // «this.dataType.name.toLowerCase()»Generator.addValue(new «dataType.name»());
+   }
+«ENDDEFINE»
+
 «DEFINE dataTypeImport FOR DSGenEnum»
 «ENDDEFINE»
 
@@ -76,7 +113,7 @@ import «dataType.instanceClassName»;
 «ENDDEFINE»
 
 
- «DEFINE constanteDef FOR DSGenClass»
+ «DEFINE constanteDef FOR DSGenClass-»
  «IF !this.rootObject-»
     public static int NB_«this.ecoreClass.name.toUpperCase()» = «instanceNumber»;
  «ENDIF»
@@ -104,31 +141,31 @@ import «dataType.instanceClassName»;
     }
  «ENDDEFINE»
  
- «DEFINE createChildren(DSGenClass parent) FOR DSGenChild»
+ «DEFINE createChildren(DSGenClass parent) FOR DSGenChild -»
      // Create child for «sourceReference.ecoreFeature.name»
-    «IF single»
+    «IF single -»
        «REM»The single composition may be internal to this object, or must be shared for future assocation ref to«ENDREM»
-       «IF dsgenClass.nbAssociationRefTo > 0»
+       «IF dsgenClass.nbAssociationRefTo > 0 -»
           // Create adress but store it in the reference generator for future association
           «sourceReference.ecoreFeature.eType.name» p_«sourceReference.ecoreFeature.eType.name.toLowerCase()» = create«sourceReference.ecoreFeature.eType.name»();
           «sourceReference.ecoreFeature.eType.name.toLowerCase()»Generator.addValue(p_«sourceReference.ecoreFeature.eType.name.toLowerCase()»);
           result.set«sourceReference.ecoreFeature.name.toString().toFirstUpper()»(p_«sourceReference.ecoreFeature.eType.name.toLowerCase()»);
-       «ELSE»
+       «ELSE-»
           // Create directly the child inside...
           result.set«sourceReference.ecoreFeature.name.toString().toFirstUpper()»(create«sourceReference.ecoreFeature.eType.name»());
        «ENDIF»
-    «ELSE»
+    «ELSE-»
        «REM»Multiple relation must create all objects here on each object...«ENDREM» 
        for (int i = 0; i <  NB_«dsgenClass.ecoreClass.name.toUpperCase()»; i++)
        {
 			«dsgenClass.ecoreClass.name» o = create«dsgenClass.ecoreClass.name»();
-			«IF dsgenClass.nbAssociationRefTo > 0»
+			«IF dsgenClass.nbAssociationRefTo > 0 -»
 			 «sourceReference.ecoreFeature.eType.name.toLowerCase()»Generator.addValue(o);
-			 «ELSE»
+			 «ELSE-»
 			 result.get«sourceReference.ecoreFeature.name.toString().toFirstUpper()»().add(o);
 			 «ENDIF»
 		}
-		«IF dsgenClass.nbAssociationRefTo > 0»
+		«IF dsgenClass.nbAssociationRefTo > 0 -»
 		result.get«sourceReference.ecoreFeature.name.toString().toFirstUpper()»().addAll(«sourceReference.ecoreFeature.eType.name.toLowerCase()»Generator.getValues());
        «ENDIF»
     «ENDIF»
@@ -136,32 +173,29 @@ import «dataType.instanceClassName»;
  
  
 
- «DEFINE dataTypeGen FOR DSGenClass»
- 	private ReferenceGenerator<«this.ecoreClass.name»> «this.ecoreClass.name.toLowerCase()»Generator = gp.createReferenceGenerator();
+ «DEFINE dataTypeGen FOR DSGenClass-»
+ 	private ReferenceGenerator<«this.ecoreClass.name-»> «this.ecoreClass.name.toLowerCase()-»Generator = gp.createReferenceGenerator();
   «ENDDEFINE»
   
-   «DEFINE dataTypeGen FOR DSGenEnum»
- 	private ReferenceGenerator<«this.ecoreEnum.name»> «this.ecoreEnum.name.toLowerCase()»Generator = gp.createReferenceGenerator();
+   «DEFINE dataTypeGen FOR DSGenEnum-»
+ 	private ReferenceGenerator<«this.ecoreEnum.name-»> «this.ecoreEnum.name.toLowerCase()-»Generator = gp.createReferenceGenerator();
   «ENDDEFINE»
   
-   «DEFINE dataTypeGen FOR DSGenDataType»
- 	private ReferenceGenerator<«this.dataType.name»> «this.dataType.name.toLowerCase()»Generator = gp.createReferenceGenerator();
+   «DEFINE dataTypeGen FOR DSGenDataType-»
+ 	private ReferenceGenerator<«this.dataType.name-»> «this.dataType.name.toLowerCase()-»Generator = gp.createReferenceGenerator();
   «ENDDEFINE»
   
    «DEFINE dataTypeGen FOR DSGenClassifier-»
   «ENDDEFINE»
   
 
- «DEFINE attributeGen FOR dsgen::DSGenAttribute»
-    // «ecoreFeature.name» is «ecoreFeature.eType.metaType.toString()»
-    «IF ecoreFeature.eType.metaType.toString() == "ecore::EEnum"»
-        // An enum generator
+ «DEFINE attributeGen FOR dsgen::DSGenAttribute-»
+    «IF ecoreFeature.eType.metaType.toString() == "ecore::EEnum"-»
      	private ReferenceGenerator<«ecoreFeature.eType.name»> «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
-    «ELSE»
-       «IF this.dsgenClass.dsgenPackage.dsgenClassifiers.typeSelect(DSGenDataType).exists(e| e.dataType.instanceClassName == ecoreFeature.eType.instanceClassName)»
-            // An externa DataType generator
+    «ELSE-»
+       «IF this.dsgenClass.dsgenPackage.dsgenClassifiers.typeSelect(DSGenDataType).exists(e| e.dataType.instanceClassName == ecoreFeature.eType.instanceClassName)-»
         	private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
-       «ELSE»
+       «ELSE-»
           private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = bf.create«getGeneratorTypeForDSGenAttribute(this)»();
        «ENDIF»
     «ENDIF»
@@ -170,8 +204,7 @@ import «dataType.instanceClassName»;
 
   
 
- «DEFINE referenceGen FOR DSGenReference»
-    // «ecoreFeature.eType.name»
+ «DEFINE referenceGen FOR DSGenReference-»
  	private ReferenceGenerator<«ecoreFeature.eType.name»> «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
   «ENDDEFINE»
 
