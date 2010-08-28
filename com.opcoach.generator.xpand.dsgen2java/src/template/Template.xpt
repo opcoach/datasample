@@ -1,7 +1,6 @@
 
 «IMPORT dsgen»
 «IMPORT ecore»
-«IMPORT com::opcoach::generator::ecore::dsgen::helpers::DSGenHelper»
 
 «EXTENSION template::ecoreType2GeneratorType»
 
@@ -44,8 +43,6 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
     «EXPAND referenceGen FOREACH dsgenClassifiers.typeSelect(DSGenClass).eAllContents.typeSelect(DSGenReference)»		
 	
 	«EXPAND createOneInstance FOREACH dsgenClassifiers.typeSelect(DSGenClass).withoutLast()»
-
-	«EXPAND createAllInstances FOREACH dsgenClassifiers.typeSelect(DSGenClass).withoutLast()»
 	
 	«EXPAND createMainObject FOR dsgenClassifiers.typeSelect(DSGenClass).last()»
 
@@ -54,6 +51,13 @@ public class «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerato
 	{
 	  «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"» gen = new «this.ecorePackage.name.toString().toFirstUpper() + "SampleGenerator"»();
 	  «dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name» result = gen.create«dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name»();
+
+	    System.out.println("«dsgenClassifiers.typeSelect(DSGenClass).last().ecoreClass.name» is created with :");
+	  «FOREACH dsgenClassifiers.typeSelect(DSGenClass).last().children AS c»
+	   «IF !c.single»
+	   System.out.println("" + result.get«c.sourceReference.ecoreFeature.name.toString().toFirstUpper()»().size() + " «c.dsgenClass.ecoreClass.name»s");
+	   «ENDIF»
+	  «ENDFOREACH»
 	}
 	
 	«EXPAND modelInformation FOR this»
@@ -89,9 +93,9 @@ import «dataType.instanceClassName»;
     public «this.ecoreClass.name» create«this.ecoreClass.name»()
     {
         «ecoreClass.name» result = factory.create«ecoreClass.name»();
-         
-        // Call all create for each main class except last (the current one)
-        «EXPAND callCreateAll FOREACH this.dsgenPackage.dsgenClassifiers.typeSelect(DSGenClass).select(c|(c.ecoreClass.name != this.ecoreClass.name))»  
+        
+        // Call children creation for all children...
+        «EXPAND createChildren(this) FOREACH children»  
 
 		// Set all fields
         «EXPAND setValue FOREACH dsgenFeatures»	
@@ -100,11 +104,34 @@ import «dataType.instanceClassName»;
     }
  «ENDDEFINE»
  
- 
- «DEFINE callCreateAll FOR DSGenClass»
-  «IF this.nbAssociationRefTo > 0-»
-       createAll«ecoreClass.name»s(); 
-  «ENDIF»
+ «DEFINE createChildren(DSGenClass parent) FOR DSGenChild»
+     // Create child for «sourceReference.ecoreFeature.name»
+    «IF single»
+       «REM»The single composition may be internal to this object, or must be shared for future assocation ref to«ENDREM»
+       «IF dsgenClass.nbAssociationRefTo > 0»
+          // Create adress but store it in the reference generator for future association
+          «sourceReference.ecoreFeature.eType.name» p_«sourceReference.ecoreFeature.eType.name.toLowerCase()» = create«sourceReference.ecoreFeature.eType.name»();
+          «sourceReference.ecoreFeature.eType.name.toLowerCase()»Generator.addValue(p_«sourceReference.ecoreFeature.eType.name.toLowerCase()»);
+          result.set«sourceReference.ecoreFeature.name.toString().toFirstUpper()»(p_«sourceReference.ecoreFeature.eType.name.toLowerCase()»);
+       «ELSE»
+          // Create directly the child inside...
+          result.set«sourceReference.ecoreFeature.name.toString().toFirstUpper()»(create«sourceReference.ecoreFeature.eType.name»());
+       «ENDIF»
+    «ELSE»
+       «REM»Multiple relation must create all objects here on each object...«ENDREM» 
+       for (int i = 0; i <  NB_«dsgenClass.ecoreClass.name.toUpperCase()»; i++)
+       {
+			«dsgenClass.ecoreClass.name» o = create«dsgenClass.ecoreClass.name»();
+			«IF dsgenClass.nbAssociationRefTo > 0»
+			 «sourceReference.ecoreFeature.eType.name.toLowerCase()»Generator.addValue(o);
+			 «ELSE»
+			 result.get«sourceReference.ecoreFeature.name.toString().toFirstUpper()»().add(o);
+			 «ENDIF»
+		}
+		«IF dsgenClass.nbAssociationRefTo > 0»
+		result.get«sourceReference.ecoreFeature.name.toString().toFirstUpper()»().addAll(«sourceReference.ecoreFeature.eType.name.toLowerCase()»Generator.getValues());
+       «ENDIF»
+    «ENDIF»
  «ENDDEFINE»
  
  
@@ -148,24 +175,16 @@ import «dataType.instanceClassName»;
  	private ReferenceGenerator<«ecoreFeature.eType.name»> «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
   «ENDDEFINE»
 
-«DEFINE createAllInstances FOR DSGenClass»
-  «IF this.nbAssociationRefTo > 0-»
-public void createAll«ecoreClass.name»s() {
-		for (int i = 0; i <  NB_«ecoreClass.name.toUpperCase()»; i++) {
-			«ecoreClass.name» o = create«ecoreClass.name»();
-			«this.ecoreClass.name.toLowerCase()»Generator.addValue(o);
-		}
-	}
-«ENDIF»
-«ENDDEFINE»
 
 «DEFINE createOneInstance FOR DSGenClass»
 public  «ecoreClass.name» create«ecoreClass.name»() {
     «ecoreClass.name» result = factory.create«ecoreClass.name»();
+    // Call children creation for all children...
+    «EXPAND createChildren(this) FOREACH children»  
+    // Then init all features
     «EXPAND setValue FOREACH dsgenFeatures»		
     return result;
 	}
-	
 «ENDDEFINE»
 
 «DEFINE setValue FOR DSGenFeature-»
@@ -176,23 +195,9 @@ public  «ecoreClass.name» create«ecoreClass.name»() {
 «ENDDEFINE»
   
  
- «DEFINE setValue FOR DSGenReference»    
-       «IF isContainment(ecoreFeature)»
-         // «ecoreFeature.name» is a composition
-         «IF isMultipleRelation(ecoreFeature)-»
-         result.get«ecoreFeature.name.toString().toFirstUpper()»().addAll(«ecoreFeature.eType.name.toLowerCase()»Generator.getValues());
-         «ELSE»
-         «LET dsgenClass.dsgenPackage.dsgenClassifiers.typeSelect(DSGenClass).select(e|e.ecoreClass.name == this.ecoreFeature.eType).first() AS targetClass»
-           «IF targetClass.nbAssociationRefTo > 0»
-              result.set«ecoreFeature.name.toString().toFirstUpper()»(«ecoreFeature.eType.name.toLowerCase()»Generator.getValues().iterator().next());
-           «ELSE»
-               // CALL DIRECTLY CREATE
-               result.set«ecoreFeature.name.toString().toFirstUpper()»(create«ecoreFeature.eType.name»());
-           «ENDIF»
-         «ENDLET»
-        
-         «ENDIF»
-       «ELSE»
+ «DEFINE setValue FOR DSGenReference»   
+       «REM»Composition already managed with children...«ENDREM» 
+       «IF !isContainment(ecoreFeature)»
          // «ecoreFeature.name» is an association
          «IF isMultipleRelation(ecoreFeature) == "true"-»      
    	     result.get«ecoreFeature.name.toString().toFirstUpper()»().add(«ecoreFeature.eContainingClass.name»_«ecoreFeature.name».generateValue());
