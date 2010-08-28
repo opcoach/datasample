@@ -7,18 +7,12 @@
 package com.opcoach.generator.ecore.dsgen.provider;
 
 
-import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
-import com.opcoach.generator.ecore.dsgen.DataSampleGenFactory;
-import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,6 +21,10 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenFactory;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
 
 /**
  * This is the item provider adapter for a {@link com.opcoach.generator.ecore.dsgen.DSGenClassifier} object.
@@ -60,7 +58,8 @@ public class DSGenClassifierItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addEcoreClassPropertyDescriptor(object);
@@ -100,7 +99,8 @@ public class DSGenClassifierItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DataSampleGenPackage.Literals.DS_GEN_CLASSIFIER__DSGEN_FEATURES);
 		}
@@ -124,10 +124,11 @@ public class DSGenClassifierItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT	
 	 */
 	@Override
 	public String getText(Object object) {
+		DSGenClassifier c = (DSGenClassifier) object;
 		return getString("_UI_DSGenClassifier_type");
 	}
 
@@ -142,7 +143,8 @@ public class DSGenClassifierItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DSGenClassifier.class)) {
+		switch (notification.getFeatureID(DSGenClassifier.class))
+		{
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

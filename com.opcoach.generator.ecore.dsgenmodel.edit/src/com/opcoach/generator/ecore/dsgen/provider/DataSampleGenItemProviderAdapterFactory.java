@@ -6,15 +6,12 @@
  */
 package com.opcoach.generator.ecore.dsgen.provider;
 
-import com.opcoach.generator.ecore.dsgen.util.DataSampleGenAdapterFactory;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -26,6 +23,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import com.opcoach.generator.ecore.dsgen.util.DataSampleGenAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -91,7 +90,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenModelAdapter() {
-		if (dsGenModelItemProvider == null) {
+		if (dsGenModelItemProvider == null)
+		{
 			dsGenModelItemProvider = new DSGenModelItemProvider(this);
 		}
 
@@ -114,7 +114,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenPackageAdapter() {
-		if (dsGenPackageItemProvider == null) {
+		if (dsGenPackageItemProvider == null)
+		{
 			dsGenPackageItemProvider = new DSGenPackageItemProvider(this);
 		}
 
@@ -137,7 +138,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenClassAdapter() {
-		if (dsGenClassItemProvider == null) {
+		if (dsGenClassItemProvider == null)
+		{
 			dsGenClassItemProvider = new DSGenClassItemProvider(this);
 		}
 
@@ -160,7 +162,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenFeatureAdapter() {
-		if (dsGenFeatureItemProvider == null) {
+		if (dsGenFeatureItemProvider == null)
+		{
 			dsGenFeatureItemProvider = new DSGenFeatureItemProvider(this);
 		}
 
@@ -183,7 +186,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenEnumLiteralAdapter() {
-		if (dsGenEnumLiteralItemProvider == null) {
+		if (dsGenEnumLiteralItemProvider == null)
+		{
 			dsGenEnumLiteralItemProvider = new DSGenEnumLiteralItemProvider(this);
 		}
 
@@ -206,7 +210,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenDataTypeAdapter() {
-		if (dsGenDataTypeItemProvider == null) {
+		if (dsGenDataTypeItemProvider == null)
+		{
 			dsGenDataTypeItemProvider = new DSGenDataTypeItemProvider(this);
 		}
 
@@ -229,7 +234,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenAnnotationAdapter() {
-		if (dsGenAnnotationItemProvider == null) {
+		if (dsGenAnnotationItemProvider == null)
+		{
 			dsGenAnnotationItemProvider = new DSGenAnnotationItemProvider(this);
 		}
 
@@ -252,7 +258,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenTypeParameterAdapter() {
-		if (dsGenTypeParameterItemProvider == null) {
+		if (dsGenTypeParameterItemProvider == null)
+		{
 			dsGenTypeParameterItemProvider = new DSGenTypeParameterItemProvider(this);
 		}
 
@@ -275,7 +282,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenAttributeAdapter() {
-		if (dsGenAttributeItemProvider == null) {
+		if (dsGenAttributeItemProvider == null)
+		{
 			dsGenAttributeItemProvider = new DSGenAttributeItemProvider(this);
 		}
 
@@ -298,11 +306,62 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenReferenceAdapter() {
-		if (dsGenReferenceItemProvider == null) {
+		if (dsGenReferenceItemProvider == null)
+		{
 			dsGenReferenceItemProvider = new DSGenReferenceItemProvider(this);
 		}
 
 		return dsGenReferenceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.opcoach.generator.ecore.dsgen.DSGenEnum} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DSGenEnumItemProvider dsGenEnumItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.opcoach.generator.ecore.dsgen.DSGenEnum}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDSGenEnumAdapter()
+	{
+		if (dsGenEnumItemProvider == null)
+		{
+			dsGenEnumItemProvider = new DSGenEnumItemProvider(this);
+		}
+
+		return dsGenEnumItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.opcoach.generator.ecore.dsgen.DSGenChild} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DSGenChildItemProvider dsGenChildItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.opcoach.generator.ecore.dsgen.DSGenChild}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDSGenChildAdapter()
+	{
+		if (dsGenChildItemProvider == null)
+		{
+			dsGenChildItemProvider = new DSGenChildItemProvider(this);
+		}
+
+		return dsGenChildItemProvider;
 	}
 
 	/**
@@ -353,9 +412,11 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type)) {
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -392,7 +453,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -414,6 +476,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 		if (dsGenTypeParameterItemProvider != null) dsGenTypeParameterItemProvider.dispose();
 		if (dsGenAttributeItemProvider != null) dsGenAttributeItemProvider.dispose();
 		if (dsGenReferenceItemProvider != null) dsGenReferenceItemProvider.dispose();
+		if (dsGenEnumItemProvider != null) dsGenEnumItemProvider.dispose();
+		if (dsGenChildItemProvider != null) dsGenChildItemProvider.dispose();
 	}
 
 }

@@ -7,18 +7,12 @@
 package com.opcoach.generator.ecore.dsgen.provider;
 
 
-import com.opcoach.generator.ecore.dsgen.DSGenPackage;
-import com.opcoach.generator.ecore.dsgen.DataSampleGenFactory;
-import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,6 +21,10 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.opcoach.generator.ecore.dsgen.DSGenPackage;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenFactory;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
 
 /**
  * This is the item provider adapter for a {@link com.opcoach.generator.ecore.dsgen.DSGenPackage} object.
@@ -60,7 +58,8 @@ public class DSGenPackageItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addEcorePackagePropertyDescriptor(object);
@@ -100,7 +99,8 @@ public class DSGenPackageItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
+		if (childrenFeatures == null)
+		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DataSampleGenPackage.Literals.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS);
 		}
@@ -153,7 +153,8 @@ public class DSGenPackageItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DSGenPackage.class)) {
+		switch (notification.getFeatureID(DSGenPackage.class))
+		{
 			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -181,6 +182,11 @@ public class DSGenPackageItemProvider
 			(createChildParameter
 				(DataSampleGenPackage.Literals.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS,
 				 DataSampleGenFactory.eINSTANCE.createDSGenDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataSampleGenPackage.Literals.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS,
+				 DataSampleGenFactory.eINSTANCE.createDSGenEnum()));
 	}
 
 }

@@ -7,15 +7,12 @@
 package com.opcoach.generator.ecore.dsgen.provider;
 
 
-import com.opcoach.generator.ecore.dsgen.DSGenClass;
-import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,16 +21,21 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import com.opcoach.generator.ecore.dsgen.DSGenChild;
+import com.opcoach.generator.ecore.dsgen.DSGenClass;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
+
 /**
- * This is the item provider adapter for a {@link com.opcoach.generator.ecore.dsgen.DSGenClass} object.
+ * This is the item provider adapter for a {@link com.opcoach.generator.ecore.dsgen.DSGenChild} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DSGenClassItemProvider
-	extends DSGenClassifierItemProvider
+public class DSGenChildItemProvider
+	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -47,7 +49,7 @@ public class DSGenClassItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DSGenClassItemProvider(AdapterFactory adapterFactory)
+	public DSGenChildItemProvider(AdapterFactory adapterFactory)
 	{
 		super(adapterFactory);
 	}
@@ -65,98 +67,29 @@ public class DSGenClassItemProvider
 		{
 			super.getPropertyDescriptors(object);
 
-			addInstanceNumberPropertyDescriptor(object);
-			addRootObjectPropertyDescriptor(object);
-			addNbAssociationRefToPropertyDescriptor(object);
-			addChildrenPropertyDescriptor(object);
+			addDsgenClassPropertyDescriptor(object);
+			addSinglePropertyDescriptor(object);
+			addOppositeReferencePropertyDescriptor(object);
+			addSourceReferencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Instance Number feature.
+	 * This adds a property descriptor for the Dsgen Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addInstanceNumberPropertyDescriptor(Object object)
+	protected void addDsgenClassPropertyDescriptor(Object object)
 	{
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DSGenClass_instanceNumber_feature"),
-				 getString("_UI_DSGenClass_instanceNumber_description"),
-				 DataSampleGenPackage.Literals.DS_GEN_CLASS__INSTANCE_NUMBER,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_UserParameterPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Root Object feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRootObjectPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DSGenClass_rootObject_feature"),
-				 getString("_UI_DSGenClass_rootObject_description"),
-				 DataSampleGenPackage.Literals.DS_GEN_CLASS__ROOT_OBJECT,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 getString("_UI_internalPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Nb Association Ref To feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNbAssociationRefToPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DSGenClass_nbAssociationRefTo_feature"),
-				 getString("_UI_DSGenClass_nbAssociationRefTo_description"),
-				 DataSampleGenPackage.Literals.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI_internalPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Children feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addChildrenPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DSGenClass_children_feature"),
-				 getString("_UI_DSGenClass_children_description"),
-				 DataSampleGenPackage.Literals.DS_GEN_CLASS__CHILDREN,
+				 getString("_UI_DSGenChild_dsgenClass_feature"),
+				 getString("_UI_DSGenChild_dsgenClass_description"),
+				 DataSampleGenPackage.Literals.DS_GEN_CHILD__DSGEN_CLASS,
 				 false,
 				 false,
 				 true,
@@ -166,7 +99,76 @@ public class DSGenClassItemProvider
 	}
 
 	/**
-	 * This returns DSGenClass.gif.
+	 * This adds a property descriptor for the Single feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSinglePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DSGenChild_single_feature"),
+				 getString("_UI_DSGenChild_single_description"),
+				 DataSampleGenPackage.Literals.DS_GEN_CHILD__SINGLE,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 getString("_UI_internalPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Opposite Reference feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOppositeReferencePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DSGenChild_oppositeReference_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DSGenChild_oppositeReference_feature", "_UI_DSGenChild_type"),
+				 DataSampleGenPackage.Literals.DS_GEN_CHILD__OPPOSITE_REFERENCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Source Reference feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourceReferencePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DSGenChild_sourceReference_feature"),
+				 getString("_UI_DSGenChild_sourceReference_description"),
+				 DataSampleGenPackage.Literals.DS_GEN_CHILD__SOURCE_REFERENCE,
+				 false,
+				 false,
+				 true,
+				 null,
+				 getString("_UI_internalPropertyCategory"),
+				 null));
+	}
+
+	/**
+	 * This returns DSGenChild.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -174,7 +176,7 @@ public class DSGenClassItemProvider
 	@Override
 	public Object getImage(Object object)
 	{
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DSGenClass"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DSGenChild"));
 	}
 
 	/**
@@ -183,14 +185,14 @@ public class DSGenClassItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
+	@SuppressWarnings("restriction")
 	@Override
-	
-	public String getText(Object object) {
-		DSGenClass dsGenClass = (DSGenClass)object;
-		@SuppressWarnings("restriction")
-		String name = dsGenClass.getEcoreClass().getName();
-		String desc = dsGenClass.isRootObject() ? " is the Root Object " : dsGenClass.getInstanceNumber() + " instances";
-		return name + " " + desc ;
+	public String getText(Object object)
+	{
+		DSGenChild dsGenChild = (DSGenChild)object;
+		DSGenClass c = dsGenChild.getDsgenClass();
+		String card = (dsGenChild.isSingle() ? "One " : "Many ");
+		return card + c.getEcoreClass().getName() ;
 	}
 
 	/**
@@ -205,11 +207,9 @@ public class DSGenClassItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DSGenClass.class))
+		switch (notification.getFeatureID(DSGenChild.class))
 		{
-			case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
-			case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
-			case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
+			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -227,6 +227,18 @@ public class DSGenClassItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator()
+	{
+		return DataSampleEditPlugin.INSTANCE;
 	}
 
 }

@@ -6,13 +6,11 @@
  */
 package com.opcoach.generator.ecore.dsgen.provider;
 
-import com.opcoach.generator.provider.GeneratorEditPlugin;
-
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
+import com.opcoach.generator.provider.GeneratorEditPlugin;
 
 /**
  * This is the central singleton for the DataSample edit plugin.
@@ -45,7 +43,8 @@ public final class DataSampleEditPlugin extends EMFPlugin {
 	 */
 	public DataSampleEditPlugin() {
 		super
-		  (new ResourceLocator [] {
+		  (new ResourceLocator [] 
+		   {
 		     EcoreEditPlugin.INSTANCE,
 		     GeneratorEditPlugin.INSTANCE,
 		   });

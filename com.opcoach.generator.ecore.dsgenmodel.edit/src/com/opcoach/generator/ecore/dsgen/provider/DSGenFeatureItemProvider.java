@@ -7,15 +7,11 @@
 package com.opcoach.generator.ecore.dsgen.provider;
 
 
-import com.opcoach.generator.ecore.dsgen.DSGenFeature;
-import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,6 +21,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.opcoach.generator.ecore.dsgen.DSGenFeature;
+import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
 
 /**
  * This is the item provider adapter for a {@link com.opcoach.generator.ecore.dsgen.DSGenFeature} object.
@@ -58,7 +57,8 @@ public class DSGenFeatureItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addNullableValuePropertyDescriptor(object);
@@ -168,7 +168,8 @@ public class DSGenFeatureItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DSGenFeature.class)) {
+		switch (notification.getFeatureID(DSGenFeature.class))
+		{
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

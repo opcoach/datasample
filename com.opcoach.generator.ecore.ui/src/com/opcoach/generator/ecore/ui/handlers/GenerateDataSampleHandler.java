@@ -82,6 +82,10 @@ public class GenerateDataSampleHandler extends AbstractHandler
 		try
 		{
 			targetProject.refreshLocal(IResource.DEPTH_INFINITE, null);
+			
+			// Open the folders of this project
+			
+			
 		} catch (CoreException e)
 		{
 			// TODO Auto-generated catch block
@@ -129,7 +133,16 @@ public class GenerateDataSampleHandler extends AbstractHandler
 		String ecoreName = ecoreSource.getName();
 		int ecorePos = ecoreName.lastIndexOf(".ecore");
 		String dsgenName = targetProj.getLocation() + "/src/" + ecoreName.substring(0,ecorePos) + ".dsgen";
-		DSGenPackage genPack = DSGenHelper.createDSGenPackage(rootPackage);
+		DSGenPackage genPack = null;
+		try
+		{
+		 genPack = DSGenHelper.createDSGenPackage(rootPackage);
+		}
+		catch (Throwable t)
+		{
+			System.out.println("Erreur when creating DSGenPackage model");
+			t.printStackTrace();
+		}
 
 		// Store the dsgen model in dsgenname file
 		rset.getResourceFactoryRegistry().getExtensionToFactoryMap().put("dsgen", new XMIResourceFactoryImpl());
@@ -144,6 +157,8 @@ public class GenerateDataSampleHandler extends AbstractHandler
  			System.out.println("Dsgen model saved in : " + res2.getURI());
 		} catch (IOException e)
 		{
+			System.out.println("---------- UNALBE TO STORE DSGEN MODEL in " + dsgenName);
+			e.printStackTrace();
 			throw new ExecutionException("Unable to create dsgen model in  : " + dsgenName, e);
 		}
 

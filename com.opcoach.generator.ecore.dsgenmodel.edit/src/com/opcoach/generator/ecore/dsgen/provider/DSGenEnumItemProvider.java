@@ -20,30 +20,32 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
-import com.opcoach.generator.ecore.dsgen.DSGenDataType;
+import com.opcoach.generator.ecore.dsgen.DSGenEnum;
 import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
 
 /**
- * This is the item provider adapter for a {@link com.opcoach.generator.ecore.dsgen.DSGenDataType} object.
+ * This is the item provider adapter for a {@link com.opcoach.generator.ecore.dsgen.DSGenEnum} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DSGenDataTypeItemProvider
-	extends DSGenClassifierItemProvider
+public class DSGenEnumItemProvider
+	extends DSGenDataTypeItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
 		IItemLabelProvider,
-		IItemPropertySource {
+		IItemPropertySource
+{
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DSGenDataTypeItemProvider(AdapterFactory adapterFactory) {
+	public DSGenEnumItemProvider(AdapterFactory adapterFactory)
+	{
 		super(adapterFactory);
 	}
 
@@ -54,31 +56,32 @@ public class DSGenDataTypeItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
+	{
 		if (itemPropertyDescriptors == null)
 		{
 			super.getPropertyDescriptors(object);
 
-			addDataTypePropertyDescriptor(object);
+			addEcoreEnumPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Data Type feature.
+	 * This adds a property descriptor for the Ecore Enum feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDataTypePropertyDescriptor(Object object)
+	protected void addEcoreEnumPropertyDescriptor(Object object)
 	{
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DSGenDataType_dataType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DSGenDataType_dataType_feature", "_UI_DSGenDataType_type"),
-				 DataSampleGenPackage.Literals.DS_GEN_DATA_TYPE__DATA_TYPE,
+				 getString("_UI_DSGenEnum_ecoreEnum_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DSGenEnum_ecoreEnum_feature", "_UI_DSGenEnum_type"),
+				 DataSampleGenPackage.Literals.DS_GEN_ENUM__ECORE_ENUM,
 				 true,
 				 false,
 				 true,
@@ -88,14 +91,15 @@ public class DSGenDataTypeItemProvider
 	}
 
 	/**
-	 * This returns DSGenDataType.gif.
+	 * This returns DSGenEnum.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DSGenDataType"));
+	public Object getImage(Object object)
+	{
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/DSGenEnum"));
 	}
 
 	/**
@@ -105,9 +109,10 @@ public class DSGenDataTypeItemProvider
 	 * @generated NOT
 	 */
 	@Override
-	public String getText(Object object) {
-		DSGenDataType dt = (DSGenDataType) object;
-		return "type " + dt.getDataType().getName() + "(" + dt.getDataType().getInstanceClassName() + ")";
+	public String getText(Object object)
+	{
+		DSGenEnum dse = (DSGenEnum) object;
+		return "enum " + dse.getEcoreEnum().getName();
 	}
 
 	/**
@@ -118,7 +123,8 @@ public class DSGenDataTypeItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(Notification notification)
+	{
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -131,7 +137,8 @@ public class DSGenDataTypeItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
+	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
