@@ -27,11 +27,11 @@ public class LongGeneratorImpl extends RangeGeneratorImpl<Long> implements LongG
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected LongGeneratorImpl()
 	{
-		super();
+		this(Long.MIN_VALUE, Long.MAX_VALUE);
 	}
 	
 	/** Build it with low and high bounds */

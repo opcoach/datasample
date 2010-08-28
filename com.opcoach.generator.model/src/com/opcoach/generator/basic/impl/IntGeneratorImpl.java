@@ -26,11 +26,11 @@ public class IntGeneratorImpl extends RangeGeneratorImpl<Integer> implements Int
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IntGeneratorImpl()
 	{
-		super();
+		this(Integer.MIN_VALUE, Integer.MAX_VALUE);
 	}
 	
 	
