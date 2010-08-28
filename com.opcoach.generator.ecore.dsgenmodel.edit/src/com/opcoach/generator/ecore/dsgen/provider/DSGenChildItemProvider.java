@@ -69,8 +69,8 @@ public class DSGenChildItemProvider
 
 			addDsgenClassPropertyDescriptor(object);
 			addSinglePropertyDescriptor(object);
-			addOppositeReferencePropertyDescriptor(object);
 			addSourceReferencePropertyDescriptor(object);
+			addOppositeReferencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -134,13 +134,13 @@ public class DSGenChildItemProvider
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DSGenChild_oppositeReference_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DSGenChild_oppositeReference_feature", "_UI_DSGenChild_type"),
+				 getString("_UI_DSGenChild_oppositeReference_description"),
 				 DataSampleGenPackage.Literals.DS_GEN_CHILD__OPPOSITE_REFERENCE,
-				 true,
+				 false,
 				 false,
 				 true,
 				 null,
-				 null,
+				 getString("_UI_internalPropertyCategory"),
 				 null));
 	}
 
