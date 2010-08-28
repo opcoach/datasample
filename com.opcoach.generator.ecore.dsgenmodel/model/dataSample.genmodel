@@ -30,6 +30,7 @@
       <genFeatures property="Readonly" createChild="false" propertyCategory="internal"
           propertyDescription="This value is computed. Contains the number of external associations refering to the associated EClass"
           ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/nbAssociationRefTo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClass/children"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenFeature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenFeature/nullableValue"/>
@@ -58,6 +59,19 @@
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenEnum">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenEnum/ecoreEnum"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenChild">
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="internal"
+          propertyDescription="DSGenClass of the children" propertySortChoices="true"
+          ecoreFeature="ecore:EReference dataSample.ecore#//DSGenChild/dsgenClass"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="internal"
+          propertyDescription="Is this composition a single relation ? " ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenChild/single"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="internal"
+          propertyDescription="The source DSGenRef which supports this composition"
+          propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenChild/sourceReference"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="internal"
+          propertyDescription="The possible opposite reference of this composition"
+          propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenChild/oppositeReference"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
