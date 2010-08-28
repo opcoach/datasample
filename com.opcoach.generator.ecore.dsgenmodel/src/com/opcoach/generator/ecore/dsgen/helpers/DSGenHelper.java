@@ -8,6 +8,8 @@ package com.opcoach.generator.ecore.dsgen.helpers;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -23,6 +25,7 @@ import com.opcoach.generator.ReferenceGenerator;
 import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicFactory;
 import com.opcoach.generator.ecore.dsgen.DSGenAttribute;
+import com.opcoach.generator.ecore.dsgen.DSGenChild;
 import com.opcoach.generator.ecore.dsgen.DSGenClass;
 import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
 import com.opcoach.generator.ecore.dsgen.DSGenDataType;
@@ -41,6 +44,8 @@ import com.opcoach.generator.ecore.dsgen.DataSampleGenFactory;
 public class DSGenHelper
 {
 	private static BasicFactory generatorFactory = BasicFactory.eINSTANCE;
+	
+	private static Map<EReference, DSGenReference> refCache = new HashMap<EReference, DSGenReference>();
 
 	/**
 	 * Create a DSGenPackage from an EPackage
@@ -69,21 +74,22 @@ public class DSGenHelper
 			{
 				DSGenEnum dsen = createDSGenEnum((EEnum) ec);
 				classes.add(dsen);
-				
+
 			} else if (ec instanceof EDataType)
 			{
 				DSGenDataType dst = createDSGenDataType((EDataType) ec);
 				classes.add(dst);
 			}
 		}
-		
-		// Then compute the nb of associations refering to each EClass
+
+		// Then compute the nb of associations refering to each EClass 
 		for (DSGenClassifier dsc : classes)
 		{
 			if (dsc instanceof DSGenClass)
+			{
 				computeNbAssociationReferencesTo((DSGenClass) dsc, classes);
+			}
 		}
-
 
 		// Sort the list of dsgenClass (less referenced before...)
 		Collections.sort(classes, new DSGenClassifierComparator());
@@ -91,9 +97,18 @@ public class DSGenHelper
 		// With the sort algorithm, the last class is the root object.
 		DSGenClass rootClass = (DSGenClass) classes.get(classes.size() - 1);
 		rootClass.setRootObject(true);
-		
+
 		// Add all in package
 		dsPack.getDsgenClassifiers().addAll(classes);
+		
+		// Initialize children field
+		for (DSGenClassifier dsc : classes)
+		{
+			if (dsc instanceof DSGenClass)
+			{
+				initChildren((DSGenClass) dsc);
+			}
+		}
 
 
 		return dsPack;
@@ -125,9 +140,14 @@ public class DSGenHelper
 					if ((target instanceof EClass) && !ref.isContainment())
 					{
 						EClass targetEClass = (EClass) target;
-						if (targetEClass.equals(dsEcoreClass) || dsEcoreClass.isSuperTypeOf(targetEClass))
+						if (targetEClass.equals(dsEcoreClass)
+								|| dsEcoreClass.isSuperTypeOf(targetEClass))
 						{
-							System.out.println("The class " + c.getEcoreClass().getName() + " refer to source DSC : " + dsEcoreClass.getName() + " on field : " +ref.getName());
+							System.out.println("The class "
+									+ c.getEcoreClass().getName()
+									+ " refer to source DSC : "
+									+ dsEcoreClass.getName() + " on field : "
+									+ ref.getName());
 							nbAssoRef++;
 						}
 					}
@@ -164,7 +184,8 @@ public class DSGenHelper
 				dsf = createDSGenAttribute((EAttribute) sf);
 			} else if (sf instanceof EReference)
 			{
-				dsf = createDSGenReference((EReference) sf);
+				EReference ref = (EReference) sf;
+				dsf = createDSGenReference(ref);
 			}
 			System.out.println("Add this ds feature : " + sf.getName());
 			features.add(dsf);
@@ -172,6 +193,58 @@ public class DSGenHelper
 		}
 
 		return dscl;
+	}
+
+	/**
+	 * Init children for an DSGenClass
+	 * 
+	 * @param rootClass
+	 *            the initial class used to create
+	 * @return a datasample generation class
+	 */
+	public static void initChildren(DSGenClass gClass)
+	{
+		DSGenPackage pack = gClass.getDsgenPackage();
+		EClass rootClass = gClass.getEcoreClass();
+		for (EStructuralFeature sf : rootClass.getEStructuralFeatures())
+		{
+			if (sf instanceof EReference)
+			{
+				EReference ref = (EReference) sf;
+				if (ref.isContainment())
+				{
+					String targetName = ref.getEType().getName();
+					DSGenClass c = searchDSGenClass(pack, targetName);
+					
+					DSGenChild child = DataSampleGenFactory.eINSTANCE.createDSGenChild();
+					child.setDsgenClass(c);
+					child.setSingle((ref.getUpperBound() == 1));
+					EReference opp = ref.getEOpposite();
+					child.setOppositeReference((opp == null) ? null : refCache.get(opp));
+					child.setSourceReference(refCache.get(ref));
+					gClass.getChildren().add(child);
+				}
+			}
+
+		}
+	}
+
+	private static Map<String, DSGenClass> genClassMap = null;
+
+	public static DSGenClass searchDSGenClass(DSGenPackage pack, String name)
+	{
+		if (genClassMap == null)
+		{
+			genClassMap = new HashMap<String, DSGenClass>();
+			// Init map
+			for (DSGenClassifier dc : pack.getDsgenClassifiers())
+			{
+				if (dc instanceof DSGenClass)
+					genClassMap.put(dc.getEcoreClass().getName(), (DSGenClass) dc);
+			}
+		}
+		
+		return genClassMap.get(name);
 	}
 
 	/**
@@ -251,6 +324,9 @@ public class DSGenHelper
 				.createReferenceGenerator();
 		refGen.setType(target.getInstanceClass());
 		result.setGenerator(refGen);
+		
+		// Store it in a cache...
+		refCache.put(rootRef, result);
 
 		return result;
 	}

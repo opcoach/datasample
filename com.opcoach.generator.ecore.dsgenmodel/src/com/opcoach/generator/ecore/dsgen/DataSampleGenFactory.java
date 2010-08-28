@@ -126,6 +126,15 @@ public interface DataSampleGenFactory extends EFactory
 	DSGenEnum createDSGenEnum();
 
 	/**
+	 * Returns a new object of class '<em>DS Gen Child</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DS Gen Child</em>'.
+	 * @generated
+	 */
+	DSGenChild createDSGenChild();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

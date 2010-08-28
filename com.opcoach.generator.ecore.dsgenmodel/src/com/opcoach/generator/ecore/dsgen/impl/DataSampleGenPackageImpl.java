@@ -21,6 +21,7 @@ import com.opcoach.generator.basic.impl.BasicPackageImpl;
 import com.opcoach.generator.ecore.dsgen.DSGenAnnotation;
 import com.opcoach.generator.ecore.dsgen.DSGenAttribute;
 import com.opcoach.generator.ecore.dsgen.DSGenBase;
+import com.opcoach.generator.ecore.dsgen.DSGenChild;
 import com.opcoach.generator.ecore.dsgen.DSGenClass;
 import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
 import com.opcoach.generator.ecore.dsgen.DSGenDataType;
@@ -146,6 +147,13 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 * @generated
 	 */
 	private EClass dsGenEnumEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dsGenChildEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -582,6 +590,56 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDSGenChild()
+	{
+		return dsGenChildEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDSGenChild_DsgenClass()
+	{
+		return (EReference)dsGenChildEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDSGenChild_Single()
+	{
+		return (EAttribute)dsGenChildEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDSGenChild_OppositeReference()
+	{
+		return (EReference)dsGenChildEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDSGenChild_SourceReference()
+	{
+		return (EReference)dsGenChildEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDSGenRuntimeVersion()
 	{
 		return dsGenRuntimeVersionEEnum;
@@ -704,6 +762,12 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		dsGenEnumEClass = createEClass(DS_GEN_ENUM);
 		createEReference(dsGenEnumEClass, DS_GEN_ENUM__ECORE_ENUM);
 
+		dsGenChildEClass = createEClass(DS_GEN_CHILD);
+		createEReference(dsGenChildEClass, DS_GEN_CHILD__DSGEN_CLASS);
+		createEAttribute(dsGenChildEClass, DS_GEN_CHILD__SINGLE);
+		createEReference(dsGenChildEClass, DS_GEN_CHILD__OPPOSITE_REFERENCE);
+		createEReference(dsGenChildEClass, DS_GEN_CHILD__SOURCE_REFERENCE);
+
 		// Create enums
 		dsGenRuntimeVersionEEnum = createEEnum(DS_GEN_RUNTIME_VERSION);
 		dsGenJDKLevelEEnum = createEEnum(DS_GEN_JDK_LEVEL);
@@ -772,7 +836,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		initEAttribute(getDSGenClass_InstanceNumber(), ecorePackage.getEInt(), "instanceNumber", "50", 0, 1, DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDSGenClass_RootObject(), ecorePackage.getEBoolean(), "rootObject", "false", 0, 1, DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDSGenClass_NbAssociationRefTo(), ecorePackage.getEInt(), "nbAssociationRefTo", "0", 0, 1, DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getDSGenClass_Children(), this.getDSGenClass(), null, "children", null, 0, -1, DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSGenClass_Children(), this.getDSGenChild(), null, "children", null, 0, -1, DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dsGenFeatureEClass, DSGenFeature.class, "DSGenFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDSGenFeature_NullableValue(), ecorePackage.getEBoolean(), "nullableValue", "false", 0, 1, DSGenFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -812,6 +876,12 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 
 		initEClass(dsGenEnumEClass, DSGenEnum.class, "DSGenEnum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDSGenEnum_EcoreEnum(), theEcorePackage.getEEnum(), null, "ecoreEnum", null, 1, 1, DSGenEnum.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dsGenChildEClass, DSGenChild.class, "DSGenChild", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDSGenChild_DsgenClass(), this.getDSGenClass(), null, "dsgenClass", null, 1, 1, DSGenChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDSGenChild_Single(), ecorePackage.getEBoolean(), "single", null, 0, 1, DSGenChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSGenChild_OppositeReference(), this.getDSGenReference(), null, "oppositeReference", null, 0, 1, DSGenChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSGenChild_SourceReference(), this.getDSGenReference(), null, "sourceReference", null, 1, 1, DSGenChild.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dsGenRuntimeVersionEEnum, DSGenRuntimeVersion.class, "DSGenRuntimeVersion");

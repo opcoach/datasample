@@ -6,12 +6,17 @@
  */
 package com.opcoach.generator.ecore.dsgen.impl;
 
+import com.opcoach.generator.ecore.dsgen.DSGenChild;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import com.opcoach.generator.ecore.dsgen.DSGenClass;
@@ -96,14 +101,14 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	protected int nbAssociationRefTo = NB_ASSOCIATION_REF_TO_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getChildren() <em>Children</em>}' reference list.
+	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DSGenClass> children;
+	protected EList<DSGenChild> children;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,11 +173,11 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNbAssociationRefTo(int newNbAssociationRefTo) {
+	public void setNbAssociationRefToGen(int newNbAssociationRefTo)
+	{
 		int oldNbAssociationRefTo = nbAssociationRefTo;
 		nbAssociationRefTo = newNbAssociationRefTo;
 		if (eNotificationRequired())
@@ -182,15 +187,45 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setNbAssociationRefTo(int newNbAssociationRefTo) {
+		setNbAssociationRefToGen(newNbAssociationRefTo);
+		if (newNbAssociationRefTo == 0)
+		{
+			// Unset the nb of instance (will be created directly)
+			setInstanceNumber(-1);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DSGenClass> getChildren()
+	public EList<DSGenChild> getChildren()
 	{
 		if (children == null)
 		{
-			children = new EObjectResolvingEList<DSGenClass>(DSGenClass.class, this, DataSampleGenPackage.DS_GEN_CLASS__CHILDREN);
+			children = new EObjectContainmentEList<DSGenChild>(DSGenChild.class, this, DataSampleGenPackage.DS_GEN_CLASS__CHILDREN);
 		}
 		return children;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
+				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -260,7 +295,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 				return;
 			case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
 				getChildren().clear();
-				getChildren().addAll((Collection<? extends DSGenClass>)newValue);
+				getChildren().addAll((Collection<? extends DSGenChild>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

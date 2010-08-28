@@ -266,7 +266,7 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_CLASS__NB_ASSOCIATION_REF_TO = DS_GEN_CLASSIFIER_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -662,6 +662,61 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_ENUM_FEATURE_COUNT = DS_GEN_DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenChildImpl <em>DS Gen Child</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.generator.ecore.dsgen.impl.DSGenChildImpl
+	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenChild()
+	 * @generated
+	 */
+	int DS_GEN_CHILD = 14;
+
+	/**
+	 * The feature id for the '<em><b>Dsgen Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CHILD__DSGEN_CLASS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Single</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CHILD__SINGLE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Opposite Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CHILD__OPPOSITE_REFERENCE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Source Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CHILD__SOURCE_REFERENCE = 3;
+
+	/**
+	 * The number of structural features of the '<em>DS Gen Child</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CHILD_FEATURE_COUNT = 4;
+
+	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -669,7 +724,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenRuntimeVersion()
 	 * @generated
 	 */
-	int DS_GEN_RUNTIME_VERSION = 14;
+	int DS_GEN_RUNTIME_VERSION = 15;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenJDKLevel <em>DS Gen JDK Level</em>}' enum.
@@ -679,7 +734,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenJDKLevel()
 	 * @generated
 	 */
-	int DS_GEN_JDK_LEVEL = 15;
+	int DS_GEN_JDK_LEVEL = 16;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenDelegationKind <em>DS Gen Delegation Kind</em>}' enum.
@@ -689,7 +744,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenDelegationKind()
 	 * @generated
 	 */
-	int DS_GEN_DELEGATION_KIND = 16;
+	int DS_GEN_DELEGATION_KIND = 17;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenPropertyKind <em>DS Gen Property Kind</em>}' enum.
@@ -699,7 +754,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenPropertyKind()
 	 * @generated
 	 */
-	int DS_GEN_PROPERTY_KIND = 17;
+	int DS_GEN_PROPERTY_KIND = 18;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.ecore.dsgen.DSGenResourceKind <em>DS Gen Resource Kind</em>}' enum.
@@ -709,7 +764,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenResourceKind()
 	 * @generated
 	 */
-	int DS_GEN_RESOURCE_KIND = 18;
+	int DS_GEN_RESOURCE_KIND = 19;
 
 
 	/**
@@ -820,10 +875,10 @@ public interface DataSampleGenPackage extends EPackage
 	EAttribute getDSGenClass_NbAssociationRefTo();
 
 	/**
-	 * Returns the meta object for the reference list '{@link com.opcoach.generator.ecore.dsgen.DSGenClass#getChildren <em>Children</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.opcoach.generator.ecore.dsgen.DSGenClass#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Children</em>'.
+	 * @return the meta object for the containment reference list '<em>Children</em>'.
 	 * @see com.opcoach.generator.ecore.dsgen.DSGenClass#getChildren()
 	 * @see #getDSGenClass()
 	 * @generated
@@ -1062,6 +1117,60 @@ public interface DataSampleGenPackage extends EPackage
 	EReference getDSGenEnum_EcoreEnum();
 
 	/**
+	 * Returns the meta object for class '{@link com.opcoach.generator.ecore.dsgen.DSGenChild <em>DS Gen Child</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>DS Gen Child</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenChild
+	 * @generated
+	 */
+	EClass getDSGenChild();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.opcoach.generator.ecore.dsgen.DSGenChild#getDsgenClass <em>Dsgen Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Dsgen Class</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenChild#getDsgenClass()
+	 * @see #getDSGenChild()
+	 * @generated
+	 */
+	EReference getDSGenChild_DsgenClass();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.generator.ecore.dsgen.DSGenChild#isSingle <em>Single</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Single</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenChild#isSingle()
+	 * @see #getDSGenChild()
+	 * @generated
+	 */
+	EAttribute getDSGenChild_Single();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.opcoach.generator.ecore.dsgen.DSGenChild#getOppositeReference <em>Opposite Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Opposite Reference</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenChild#getOppositeReference()
+	 * @see #getDSGenChild()
+	 * @generated
+	 */
+	EReference getDSGenChild_OppositeReference();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.opcoach.generator.ecore.dsgen.DSGenChild#getSourceReference <em>Source Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source Reference</em>'.
+	 * @see com.opcoach.generator.ecore.dsgen.DSGenChild#getSourceReference()
+	 * @see #getDSGenChild()
+	 * @generated
+	 */
+	EReference getDSGenChild_SourceReference();
+
+	/**
 	 * Returns the meta object for enum '{@link com.opcoach.generator.ecore.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1220,7 +1329,7 @@ public interface DataSampleGenPackage extends EPackage
 		EAttribute DS_GEN_CLASS__NB_ASSOCIATION_REF_TO = eINSTANCE.getDSGenClass_NbAssociationRefTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Children</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1424,6 +1533,48 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EReference DS_GEN_ENUM__ECORE_ENUM = eINSTANCE.getDSGenEnum_EcoreEnum();
+
+		/**
+		 * The meta object literal for the '{@link com.opcoach.generator.ecore.dsgen.impl.DSGenChildImpl <em>DS Gen Child</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.generator.ecore.dsgen.impl.DSGenChildImpl
+		 * @see com.opcoach.generator.ecore.dsgen.impl.DataSampleGenPackageImpl#getDSGenChild()
+		 * @generated
+		 */
+		EClass DS_GEN_CHILD = eINSTANCE.getDSGenChild();
+
+		/**
+		 * The meta object literal for the '<em><b>Dsgen Class</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DS_GEN_CHILD__DSGEN_CLASS = eINSTANCE.getDSGenChild_DsgenClass();
+
+		/**
+		 * The meta object literal for the '<em><b>Single</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DS_GEN_CHILD__SINGLE = eINSTANCE.getDSGenChild_Single();
+
+		/**
+		 * The meta object literal for the '<em><b>Opposite Reference</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DS_GEN_CHILD__OPPOSITE_REFERENCE = eINSTANCE.getDSGenChild_OppositeReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Source Reference</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DS_GEN_CHILD__SOURCE_REFERENCE = eINSTANCE.getDSGenChild_SourceReference();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.generator.ecore.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}' enum.

@@ -112,19 +112,19 @@ public interface DSGenClass extends DSGenClassifier
 	void setNbAssociationRefTo(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Children</b></em>' reference list.
-	 * The list contents are of type {@link com.opcoach.generator.ecore.dsgen.DSGenClass}.
+	 * Returns the value of the '<em><b>Children</b></em>' containment reference list.
+	 * The list contents are of type {@link com.opcoach.generator.ecore.dsgen.DSGenChild}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Children</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Children</em>' reference list.
+	 * @return the value of the '<em>Children</em>' containment reference list.
 	 * @see com.opcoach.generator.ecore.dsgen.DataSampleGenPackage#getDSGenClass_Children()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<DSGenClass> getChildren();
+	EList<DSGenChild> getChildren();
 
 } // DSGenClass
