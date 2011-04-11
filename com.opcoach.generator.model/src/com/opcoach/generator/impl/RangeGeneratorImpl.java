@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class RangeGeneratorImpl<T> extends ValueGeneratorImpl<T> implements RangeGenerator<T>
+public abstract class RangeGeneratorImpl<T extends Comparable> extends ValueGeneratorImpl<T> implements RangeGenerator<T>
 {
 	
 	
@@ -183,6 +183,19 @@ public abstract class RangeGeneratorImpl<T> extends ValueGeneratorImpl<T> implem
 	}
 	
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setBounds(T low, T high)
+	{
+		if (low.compareTo(high) >= 0)
+			throw new IllegalArgumentException("Low value ("+low+") must be lesser than high value("+high+")");
+		setLow(low);
+		setHigh(high);
+	}
+
 	/** Default implementation for bounds */
 	protected String computeDescription()
 	{

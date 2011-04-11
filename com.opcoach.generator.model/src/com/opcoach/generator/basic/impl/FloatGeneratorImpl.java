@@ -40,7 +40,7 @@ public class FloatGeneratorImpl extends RangeGeneratorImpl<Float> implements Flo
 	public FloatGeneratorImpl(Float vlow, Float vhigh) 
 	{
 		super(vlow, vhigh);
-		step = 1.0f;
+		step = 1.0f;  // must be adjusted if high-low < 1.0
 		setType(Float.class);
 	}
 	
@@ -49,11 +49,11 @@ public class FloatGeneratorImpl extends RangeGeneratorImpl<Float> implements Flo
 	protected Float generateRandomValue()
 	{
 		 // Generate random value.
-	   	  float result = low + getRandomizer().nextFloat();
+	   	  float result =  getRandomizer().nextFloat();
 	   	  if (result > (high - low))
 	   	  {
 	   		  // Must adjust the value. 
-	   		  result = (float) (result * (high-low)/(Long.MAX_VALUE - Long.MIN_VALUE));
+	   		  result = (float) (result - 0.5f);
 	   	  }
 	   	  // Can return the result .
 	   	  return low + result;

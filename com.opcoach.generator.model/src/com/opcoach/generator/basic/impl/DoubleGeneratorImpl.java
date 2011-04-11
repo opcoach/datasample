@@ -41,7 +41,7 @@ public class DoubleGeneratorImpl extends RangeGeneratorImpl<Double> implements D
 	public DoubleGeneratorImpl(Double vlow, Double vhigh) 
 	{
 		super(vlow, vhigh);
-		step = 1.0;
+		step = 1.0d;
 		setType(Double.class);
 	}
 	
@@ -50,11 +50,11 @@ public class DoubleGeneratorImpl extends RangeGeneratorImpl<Double> implements D
 	protected Double generateRandomValue()
 	{
 		 // Generate random value.
-	   	  double result = low + getRandomizer().nextDouble();
+	   	  double result = getRandomizer().nextDouble();
 	   	  if (result > (high - low))
 	   	  {
 	   		  // Must adjust the value. 
-	   		  result = (double) (result * (high-low)/(Long.MAX_VALUE - Long.MIN_VALUE));
+	   		  result = (double) (result - 0.5d);
 	   	  }
 	   	  // Can return the result .
 	   	  return low + result;

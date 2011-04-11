@@ -88,6 +88,8 @@ public class GeneratorFactoryImpl extends EFactoryImpl implements GeneratorFacto
 		{
 			case GeneratorPackage.COLLECTION:
 				return createCollectionFromString(eDataType, initialValue);
+			case GeneratorPackage.COMPARABLE:
+				return createComparableFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -105,6 +107,8 @@ public class GeneratorFactoryImpl extends EFactoryImpl implements GeneratorFacto
 		{
 			case GeneratorPackage.COLLECTION:
 				return convertCollectionToString(eDataType, instanceValue);
+			case GeneratorPackage.COMPARABLE:
+				return convertComparableToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -139,6 +143,26 @@ public class GeneratorFactoryImpl extends EFactoryImpl implements GeneratorFacto
 	public String convertCollectionToString(EDataType eDataType, Object instanceValue)
 	{
 		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Comparable createComparableFromString(EDataType eDataType, String initialValue)
+	{
+		return (Comparable)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertComparableToString(EDataType eDataType, Object instanceValue)
+	{
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

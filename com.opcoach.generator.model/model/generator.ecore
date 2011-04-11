@@ -36,7 +36,17 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RangeGenerator" abstract="true">
-    <eTypeParameters name="T"/>
+    <eTypeParameters name="T">
+      <eBounds eClassifier="#//Comparable"/>
+    </eTypeParameters>
+    <eOperations name="setBounds">
+      <eParameters name="low">
+        <eGenericType eTypeParameter="#//RangeGenerator/T"/>
+      </eParameters>
+      <eParameters name="high">
+        <eGenericType eTypeParameter="#//RangeGenerator/T"/>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="low">
       <eGenericType eTypeParameter="#//RangeGenerator/T"/>
     </eStructuralFeatures>
@@ -75,6 +85,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="Collection" instanceClassName="java.util.Collection">
     <eTypeParameters name="T"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Comparable" instanceClassName="java.lang.Comparable"/>
   <eSubpackages name="basic" nsURI="http://www.opcoach.com/generator/basic/1.0" nsPrefix="genbasic">
     <eClassifiers xsi:type="ecore:EClass" name="BooleanGenerator">
       <eGenericSuperTypes eClassifier="#_vHkHcBQDEd-QiqGdp3e77Q">

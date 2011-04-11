@@ -6,21 +6,20 @@
  */
 package com.opcoach.generator.basic.impl;
 
-import com.opcoach.generator.basic.BasicPackage;
-import com.opcoach.generator.basic.StringGenerator;
-
-import com.opcoach.generator.impl.ReferenceGeneratorImpl;
+import java.io.File;
+import java.io.FileReader;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import com.opcoach.generator.basic.BasicPackage;
+import com.opcoach.generator.basic.StringGenerator;
+import com.opcoach.generator.impl.ReferenceGeneratorImpl;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>String Generator</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>String Generator</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -30,12 +29,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implements StringGenerator
+public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
+		implements StringGenerator
 {
 	/**
 	 * The default value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -51,8 +51,8 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 	/**
 	 * The cached value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -60,21 +60,16 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	protected String dataFilename = DATA_FILENAME_EDEFAULT;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected StringGeneratorImpl()
 	{
 		super();
-		// Temporary init
-		for (int i = 0; i < 100; i ++)
-		    addValue("valeur_"+i);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -84,8 +79,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getDataFilename()
@@ -94,11 +88,10 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDataFilename(String newDataFilename)
+	public void setDataFilenameGen(String newDataFilename)
 	{
 		String oldDataFilename = dataFilename;
 		dataFilename = newDataFilename;
@@ -107,8 +100,19 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public void setDataFilename(String newDataFilename)
+	{
+		setDataFilenameGen(newDataFilename);
+		// Reset the values
+		readValues();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -123,8 +127,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -140,8 +143,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -157,8 +159,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -173,8 +174,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -189,13 +189,36 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 		return result.toString();
 	}
 
-	/* (non-Javadoc)
-	 * @see com.opcoach.generator.basic.StringGenerator#setRootData(java.lang.String)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.opcoach.generator.basic.StringGenerator#setRootData(java.lang.String)
 	 */
 	public static void setRootData(String root)
 	{
 		// TODO Auto-generated method stub
-		
+
 	}
 
-} //StringGeneratorImpl
+	/** Read the datafile, and initialize values */
+	private void readValues()
+	{
+		values = null;
+		try
+		{
+			File f = new File(getDataFilename());
+			if (f.exists())
+			{
+				FileReader reader = new FileReader(f);
+			//	String s = reader.readLine();
+				//addValue(s);
+			}
+		} catch (Exception ex)
+		{
+			System.out.println("Unable to read values in file : "
+					+ getDataFilename());
+		}
+	}
+
+} // StringGeneratorImpl

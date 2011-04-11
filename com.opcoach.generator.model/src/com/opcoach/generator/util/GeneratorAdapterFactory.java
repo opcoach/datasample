@@ -84,7 +84,7 @@ public class GeneratorAdapterFactory extends AdapterFactoryImpl
 				return createValueGeneratorAdapter();
 			}
 			@Override
-			public <T> Adapter caseRangeGenerator(RangeGenerator<T> object)
+			public <T extends Comparable> Adapter caseRangeGenerator(RangeGenerator<T> object)
 			{
 				return createRangeGeneratorAdapter();
 			}

@@ -329,6 +329,17 @@ public interface GeneratorPackage extends EPackage
 
 
 	/**
+	 * The meta object id for the '<em>Comparable</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.Comparable
+	 * @see com.opcoach.generator.impl.GeneratorPackageImpl#getComparable()
+	 * @generated
+	 */
+	int COMPARABLE = 4;
+
+
+	/**
 	 * Returns the meta object for class '{@link com.opcoach.generator.ValueGenerator <em>Value Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -480,6 +491,17 @@ public interface GeneratorPackage extends EPackage
 	EDataType getCollection();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.Comparable <em>Comparable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Comparable</em>'.
+	 * @see java.lang.Comparable
+	 * @model instanceClass="java.lang.Comparable"
+	 * @generated
+	 */
+	EDataType getComparable();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -621,6 +643,16 @@ public interface GeneratorPackage extends EPackage
 		 * @generated
 		 */
 		EDataType COLLECTION = eINSTANCE.getCollection();
+
+		/**
+		 * The meta object literal for the '<em>Comparable</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.Comparable
+		 * @see com.opcoach.generator.impl.GeneratorPackageImpl#getComparable()
+		 * @generated
+		 */
+		EDataType COMPARABLE = eINSTANCE.getComparable();
 
 	}
 

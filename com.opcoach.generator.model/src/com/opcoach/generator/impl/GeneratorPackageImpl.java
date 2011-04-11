@@ -63,6 +63,13 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 	private EDataType collectionEDataType = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType comparableEDataType = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -275,6 +282,16 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getComparable()
+	{
+		return comparableEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GeneratorFactory getGeneratorFactory()
 	{
 		return (GeneratorFactory)getEFactoryInstance();
@@ -318,6 +335,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 
 		// Create data types
 		collectionEDataType = createEDataType(COLLECTION);
+		comparableEDataType = createEDataType(COMPARABLE);
 	}
 
 	/**
@@ -357,9 +375,11 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		addETypeParameter(collectionEDataType, "T");
 
 		// Set bounds for type parameters
+		EGenericType g1 = createEGenericType(this.getComparable());
+		rangeGeneratorEClass_T.getEBounds().add(g1);
 
 		// Add supertypes to classes
-		EGenericType g1 = createEGenericType(this.getValueGenerator());
+		g1 = createEGenericType(this.getValueGenerator());
 		EGenericType g2 = createEGenericType(rangeGeneratorEClass_T);
 		g1.getETypeArguments().add(g2);
 		rangeGeneratorEClass.getEGenericSuperTypes().add(g1);
@@ -396,6 +416,12 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		g1 = createEGenericType(rangeGeneratorEClass_T);
 		initEAttribute(getRangeGenerator_Step(), g1, "step", null, 0, 1, RangeGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		op = addEOperation(rangeGeneratorEClass, null, "setBounds", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(rangeGeneratorEClass_T);
+		addEParameter(op, g1, "low", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(rangeGeneratorEClass_T);
+		addEParameter(op, g1, "high", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(referenceGeneratorEClass, ReferenceGenerator.class, "ReferenceGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReferenceGenerator_Step(), ecorePackage.getEInt(), "step", "1", 0, 1, ReferenceGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -411,6 +437,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 
 		// Initialize data types
 		initEDataType(collectionEDataType, Collection.class, "Collection", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(comparableEDataType, Comparable.class, "Comparable", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -10,6 +10,7 @@
     <genDataTypes ecoreDataType="generator.ecore#//Collection">
       <genTypeParameters ecoreTypeParameter="generator.ecore#//Collection/T"/>
     </genDataTypes>
+    <genDataTypes ecoreDataType="generator.ecore#//Comparable"/>
     <genClasses ecoreClass="generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
       <genTypeParameters ecoreTypeParameter="generator.ecore#_wGyv0BQDEd-QiqGdp3e77Q"/>
       <genFeatures createChild="false" propertyCategory="Bad Values" propertyDescription="Percent of bad values to be generated"
@@ -21,15 +22,18 @@
       <genFeatures createChild="false" propertyCategory="Random" propertyDescription="In case of random generator, the seed to use (0 is no random)"
           ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/randomSeed"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/objectType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/type"/>
       <genOperations ecoreOperation="generator.ecore#//ValueGenerator/generateValue"/>
-      <genOperations ecoreOperation="generator.ecore#//ValueGenerator/getType"/>
     </genClasses>
     <genClasses ecoreClass="generator.ecore#//RangeGenerator">
       <genTypeParameters ecoreTypeParameter="generator.ecore#//RangeGenerator/T"/>
       <genFeatures createChild="false" propertyCategory="bounds" ecoreFeature="ecore:EAttribute generator.ecore#//RangeGenerator/low"/>
       <genFeatures createChild="false" propertyCategory="bounds" ecoreFeature="ecore:EAttribute generator.ecore#//RangeGenerator/high"/>
       <genFeatures createChild="false" propertyCategory="bounds" ecoreFeature="ecore:EAttribute generator.ecore#//RangeGenerator/step"/>
+      <genOperations ecoreOperation="generator.ecore#//RangeGenerator/setBounds">
+        <genParameters ecoreParameter="generator.ecore#//RangeGenerator/setBounds/low"/>
+        <genParameters ecoreParameter="generator.ecore#//RangeGenerator/setBounds/high"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="generator.ecore#//ReferenceGenerator">
       <genTypeParameters ecoreTypeParameter="generator.ecore#//ReferenceGenerator/T"/>
