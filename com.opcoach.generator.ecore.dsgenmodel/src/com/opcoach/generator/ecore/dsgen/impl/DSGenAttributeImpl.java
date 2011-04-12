@@ -6,6 +6,7 @@
  */
 package com.opcoach.generator.ecore.dsgen.impl;
 
+import com.opcoach.generator.RangeGenerator;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;

@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.opcoach.generator.GeneratorFactory;
+import com.opcoach.generator.RangeGenerator;
 import com.opcoach.generator.ReferenceGenerator;
 import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicFactory;

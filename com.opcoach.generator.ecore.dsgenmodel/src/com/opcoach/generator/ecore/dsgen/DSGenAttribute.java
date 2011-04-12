@@ -6,6 +6,7 @@
  */
 package com.opcoach.generator.ecore.dsgen;
 
+import com.opcoach.generator.RangeGenerator;
 import com.opcoach.generator.ValueGenerator;
 
 
