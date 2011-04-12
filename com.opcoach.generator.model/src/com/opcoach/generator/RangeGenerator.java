@@ -22,10 +22,10 @@ package com.opcoach.generator;
  * </p>
  *
  * @see com.opcoach.generator.GeneratorPackage#getRangeGenerator()
- * @model abstract="true" TBounds="com.opcoach.generator.Comparable"
+ * @model abstract="true"
  * @generated
  */
-public interface RangeGenerator<T extends Comparable> extends ValueGenerator<T>
+public interface RangeGenerator<T> extends ValueGenerator<T>
 {
 	/**
 	 * Returns the value of the '<em><b>Low</b></em>' attribute.
@@ -36,7 +36,7 @@ public interface RangeGenerator<T extends Comparable> extends ValueGenerator<T>
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Low</em>' attribute.
-	 * @see #setLow(Comparable)
+	 * @see #setLow(Object)
 	 * @see com.opcoach.generator.GeneratorPackage#getRangeGenerator_Low()
 	 * @model
 	 * @generated
@@ -63,7 +63,7 @@ public interface RangeGenerator<T extends Comparable> extends ValueGenerator<T>
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>High</em>' attribute.
-	 * @see #setHigh(Comparable)
+	 * @see #setHigh(Object)
 	 * @see com.opcoach.generator.GeneratorPackage#getRangeGenerator_High()
 	 * @model
 	 * @generated
@@ -89,7 +89,7 @@ public interface RangeGenerator<T extends Comparable> extends ValueGenerator<T>
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Step</em>' attribute.
-	 * @see #setStep(Comparable)
+	 * @see #setStep(Object)
 	 * @see com.opcoach.generator.GeneratorPackage#getRangeGenerator_Step()
 	 * @model
 	 * @generated

@@ -353,7 +353,7 @@ public class BasicSwitch<T1>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T extends Comparable> T1 caseRangeGenerator(RangeGenerator<T> object)
+	public <T> T1 caseRangeGenerator(RangeGenerator<T> object)
 	{
 		return null;
 	}

@@ -10,7 +10,6 @@
     <genDataTypes ecoreDataType="generator.ecore#//Collection">
       <genTypeParameters ecoreTypeParameter="generator.ecore#//Collection/T"/>
     </genDataTypes>
-    <genDataTypes ecoreDataType="generator.ecore#//Comparable"/>
     <genClasses ecoreClass="generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
       <genTypeParameters ecoreTypeParameter="generator.ecore#_wGyv0BQDEd-QiqGdp3e77Q"/>
       <genFeatures createChild="false" propertyCategory="Bad Values" propertyDescription="Percent of bad values to be generated"

@@ -30,7 +30,7 @@ public class IntGeneratorImpl extends RangeGeneratorImpl<Integer> implements Int
 	 */
 	protected IntGeneratorImpl()
 	{
-		this(Integer.MIN_VALUE, Integer.MAX_VALUE);
+		this(0, Integer.MAX_VALUE);
 	}
 	
 	
