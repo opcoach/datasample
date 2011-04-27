@@ -6,13 +6,19 @@
  */
 package com.opcoach.generator.basic.impl;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
 
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.osgi.framework.Bundle;
 
+import com.opcoach.generator.GeneratorActivator;
 import com.opcoach.generator.basic.BasicPackage;
 import com.opcoach.generator.basic.StringGenerator;
 import com.opcoach.generator.impl.ReferenceGeneratorImpl;
@@ -23,19 +29,28 @@ import com.opcoach.generator.impl.ReferenceGeneratorImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getDataFilename <em>Data Filename</em>}</li>
+ * <li>
+ * {@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getDataFilename
+ * <em>Data Filename</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 		implements StringGenerator
 {
 	/**
-	 * The default value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
+	 * The location where data files should be searched (initialized by default
+	 * with the bundle location)
+	 */
+	public static String rootData = null;
+
+	/**
+	 * The default value of the '{@link #getDataFilename()
+	 * <em>Data Filename</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -50,9 +65,10 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	}
 
 	/**
-	 * The cached value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getDataFilename()
+	 * <em>Data Filename</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -61,15 +77,35 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringGeneratorImpl()
 	{
 		super();
+
+		if (rootData == null)
+		{
+			// Get root data from bundle (default value).
+			Bundle b = GeneratorActivator.getBundle();
+			URL dataUrl = b.getEntry("data");
+			try
+			{
+				URL fdata = FileLocator.toFileURL(dataUrl);
+				System.out.println("Initialize rootData with " + fdata.getFile());
+				setRootData(fdata.getFile());
+			} catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,6 +116,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDataFilename()
@@ -89,6 +126,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDataFilenameGen(String newDataFilename)
@@ -96,7 +134,9 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 		String oldDataFilename = dataFilename;
 		dataFilename = newDataFilename;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__DATA_FILENAME, oldDataFilename, dataFilename));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					BasicPackage.STRING_GENERATOR__DATA_FILENAME,
+					oldDataFilename, dataFilename));
 	}
 
 	/**
@@ -113,6 +153,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -120,14 +161,15 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	{
 		switch (featureID)
 		{
-			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-				return getDataFilename();
+		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+			return getDataFilename();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,15 +177,16 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	{
 		switch (featureID)
 		{
-			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-				setDataFilename((String)newValue);
-				return;
+		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+			setDataFilename((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -151,15 +194,16 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	{
 		switch (featureID)
 		{
-			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-				setDataFilename(DATA_FILENAME_EDEFAULT);
-				return;
+		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+			setDataFilename(DATA_FILENAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,20 +211,23 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	{
 		switch (featureID)
 		{
-			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-				return DATA_FILENAME_EDEFAULT == null ? dataFilename != null : !DATA_FILENAME_EDEFAULT.equals(dataFilename);
+		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+			return DATA_FILENAME_EDEFAULT == null ? dataFilename != null
+					: !DATA_FILENAME_EDEFAULT.equals(dataFilename);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (dataFilename: ");
@@ -197,7 +244,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	 */
 	public static void setRootData(String root)
 	{
-		// TODO Auto-generated method stub
+		rootData = root;
 
 	}
 
@@ -211,14 +258,64 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 			if (f.exists())
 			{
 				FileReader reader = new FileReader(f);
-			//	String s = reader.readLine();
-				//addValue(s);
+				BufferedReader bf = new BufferedReader(reader);
+				String s = null;
+				while ((s = bf.readLine()) != null)
+				{
+					addValue(s);
+				}
 			}
 		} catch (Exception ex)
 		{
 			System.out.println("Unable to read values in file : "
 					+ getDataFilename());
 		}
+	}
+
+	@Override
+	public void setID(String newID)
+	{
+		super.setID(newID);
+		final String DATA_FILE_EXT = ".txt";
+		// According to ID, try to read a file containing possible values
+		// Id may be set with several parts : rental.Customer.FirstName :
+		// P1.P2.P3
+		// Use the rootData if it has been set.
+		// Search order is like this :
+		// 1. rootData/P1.P2.P3.txt
+		// 2. rootData/P2.P3.txt
+		// 3. rootData/P3.txt
+		// By default rootData is initialized with the location of
+		// com.opcoach.generator Bundle
+
+		// 1. search for rootData/P1.P2.P3.txt
+		String fname = rootData + File.separator + newID + DATA_FILE_EXT;
+		File f = new File(fname);
+		if (f.exists())
+			setDataFilename(fname);
+		else
+		{
+			// 2. rootData/P2.P3.txt
+			String[] names = newID.split(".");
+			System.out.println("Found this names : " + names);
+			if (names.length == 3)
+			{
+				fname = rootData + File.separator + names[1] + "." + names[2]
+						+ DATA_FILE_EXT;
+				f = new File(fname);
+				if (f.exists())
+					setDataFilename(fname);
+
+			} else if (names.length == 2)
+			{
+				fname = rootData + File.separator + names[1] + DATA_FILE_EXT;
+				f = new File(fname);
+				if (f.exists())
+					setDataFilename(fname);
+			}
+
+		}
+
 	}
 
 } // StringGeneratorImpl
