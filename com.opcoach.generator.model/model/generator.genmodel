@@ -45,6 +45,11 @@
     </genClasses>
     <nestedGenPackages prefix="Basic" basePackage="com.opcoach.generator" disposableProviderFactory="true"
         contentTypeIdentifier="" ecorePackage="generator.ecore#//basic">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="generator.ecore#//basic/CasePolicyType">
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//basic/CasePolicyType/DEFAULT"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//basic/CasePolicyType/UPPERCASE"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//basic/CasePolicyType/LOWERCASE"/>
+      </genEnums>
       <genClasses ecoreClass="generator.ecore#//basic/BooleanGenerator"/>
       <genClasses ecoreClass="generator.ecore#//basic/DateGenerator">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//basic/DateGenerator/generateNow"/>
@@ -60,6 +65,7 @@
       <genClasses ecoreClass="generator.ecore#//basic/NullValueGenerator"/>
       <genClasses ecoreClass="generator.ecore#//basic/StringGenerator">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//basic/StringGenerator/dataFilename"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//basic/StringGenerator/casePolicy"/>
         <genOperations ecoreOperation="generator.ecore#//basic/StringGenerator/setRootData2"/>
       </genClasses>
     </nestedGenPackages>

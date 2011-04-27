@@ -640,8 +640,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		String oldID = id;
 		id = newID;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					GeneratorPackage.VALUE_GENERATOR__ID, oldID, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__ID, oldID, id));
 	}
 
 

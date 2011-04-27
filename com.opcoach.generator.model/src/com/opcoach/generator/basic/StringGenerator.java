@@ -17,6 +17,7 @@ import com.opcoach.generator.ReferenceGenerator;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.opcoach.generator.basic.StringGenerator#getDataFilename <em>Data Filename</em>}</li>
+ *   <li>{@link com.opcoach.generator.basic.StringGenerator#getCasePolicy <em>Case Policy</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +52,44 @@ public interface StringGenerator extends ReferenceGenerator<String>
 	 * @generated
 	 */
 	void setDataFilename(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Case Policy</b></em>' attribute.
+	 * The default value is <code>"DEFAULT"</code>.
+	 * The literals are from the enumeration {@link com.opcoach.generator.basic.CasePolicyType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Case Policy</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Case Policy</em>' attribute.
+	 * @see com.opcoach.generator.basic.CasePolicyType
+	 * @see #setCasePolicy(CasePolicyType)
+	 * @see com.opcoach.generator.basic.BasicPackage#getStringGenerator_CasePolicy()
+	 * @model default="DEFAULT"
+	 * @generated
+	 */
+	CasePolicyType getCasePolicy();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.generator.basic.StringGenerator#getCasePolicy <em>Case Policy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Case Policy</em>' attribute.
+	 * @see com.opcoach.generator.basic.CasePolicyType
+	 * @see #getCasePolicy()
+	 * @generated
+	 */
+	void setCasePolicy(CasePolicyType value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void setRootData2();
 	
 
 	

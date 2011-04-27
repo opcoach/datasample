@@ -10,6 +10,7 @@ import com.opcoach.generator.GeneratorPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -973,14 +974,33 @@ public interface BasicPackage extends EPackage
 	int STRING_GENERATOR__DATA_FILENAME = GeneratorPackage.REFERENCE_GENERATOR_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Case Policy</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_GENERATOR__CASE_POLICY = GeneratorPackage.REFERENCE_GENERATOR_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>String Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_GENERATOR_FEATURE_COUNT = GeneratorPackage.REFERENCE_GENERATOR_FEATURE_COUNT + 1;
+	int STRING_GENERATOR_FEATURE_COUNT = GeneratorPackage.REFERENCE_GENERATOR_FEATURE_COUNT + 2;
 
+
+	/**
+	 * The meta object id for the '{@link com.opcoach.generator.basic.CasePolicyType <em>Case Policy Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.generator.basic.CasePolicyType
+	 * @see com.opcoach.generator.basic.impl.BasicPackageImpl#getCasePolicyType()
+	 * @generated
+	 */
+	int CASE_POLICY_TYPE = 9;
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.generator.basic.BooleanGenerator <em>Boolean Generator</em>}'.
@@ -1117,6 +1137,27 @@ public interface BasicPackage extends EPackage
 	EAttribute getStringGenerator_DataFilename();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.generator.basic.StringGenerator#getCasePolicy <em>Case Policy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Case Policy</em>'.
+	 * @see com.opcoach.generator.basic.StringGenerator#getCasePolicy()
+	 * @see #getStringGenerator()
+	 * @generated
+	 */
+	EAttribute getStringGenerator_CasePolicy();
+
+	/**
+	 * Returns the meta object for enum '{@link com.opcoach.generator.basic.CasePolicyType <em>Case Policy Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Case Policy Type</em>'.
+	 * @see com.opcoach.generator.basic.CasePolicyType
+	 * @generated
+	 */
+	EEnum getCasePolicyType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1248,6 +1289,22 @@ public interface BasicPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute STRING_GENERATOR__DATA_FILENAME = eINSTANCE.getStringGenerator_DataFilename();
+		/**
+		 * The meta object literal for the '<em><b>Case Policy</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_GENERATOR__CASE_POLICY = eINSTANCE.getStringGenerator_CasePolicy();
+		/**
+		 * The meta object literal for the '{@link com.opcoach.generator.basic.CasePolicyType <em>Case Policy Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.generator.basic.CasePolicyType
+		 * @see com.opcoach.generator.basic.impl.BasicPackageImpl#getCasePolicyType()
+		 * @generated
+		 */
+		EEnum CASE_POLICY_TYPE = eINSTANCE.getCasePolicyType();
 
 	}
 

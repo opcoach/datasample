@@ -8,6 +8,7 @@ package com.opcoach.generator.basic.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -16,6 +17,8 @@ import com.opcoach.generator.GeneratorPackage;
 import com.opcoach.generator.basic.BasicFactory;
 import com.opcoach.generator.basic.BasicPackage;
 import com.opcoach.generator.basic.BooleanGenerator;
+import com.opcoach.generator.basic.CasePolicyType;
+import com.opcoach.generator.basic.CaseType;
 import com.opcoach.generator.basic.DateGenerator;
 import com.opcoach.generator.basic.DoubleGenerator;
 import com.opcoach.generator.basic.FloatGenerator;
@@ -94,6 +97,13 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 	 * @generated
 	 */
 	private EClass stringGeneratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum casePolicyTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -298,6 +308,26 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getStringGenerator_CasePolicy()
+	{
+		return (EAttribute)stringGeneratorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getCasePolicyType()
+	{
+		return casePolicyTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public BasicFactory getBasicFactory()
 	{
 		return (BasicFactory)getEFactoryInstance();
@@ -344,6 +374,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 
 		stringGeneratorEClass = createEClass(STRING_GENERATOR);
 		createEAttribute(stringGeneratorEClass, STRING_GENERATOR__DATA_FILENAME);
+		createEAttribute(stringGeneratorEClass, STRING_GENERATOR__CASE_POLICY);
+
+		// Create enums
+		casePolicyTypeEEnum = createEEnum(CASE_POLICY_TYPE);
 	}
 
 	/**
@@ -437,6 +471,15 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 
 		initEClass(stringGeneratorEClass, StringGenerator.class, "StringGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringGenerator_DataFilename(), ecorePackage.getEString(), "dataFilename", null, 0, 1, StringGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringGenerator_CasePolicy(), this.getCasePolicyType(), "casePolicy", "DEFAULT", 0, 1, StringGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(stringGeneratorEClass, null, "setRootData2", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(casePolicyTypeEEnum, CasePolicyType.class, "CasePolicyType");
+		addEEnumLiteral(casePolicyTypeEEnum, CasePolicyType.DEFAULT);
+		addEEnumLiteral(casePolicyTypeEEnum, CasePolicyType.UPPERCASE);
+		addEEnumLiteral(casePolicyTypeEEnum, CasePolicyType.LOWERCASE);
 	}
 
 } //BasicPackageImpl

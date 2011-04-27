@@ -20,6 +20,8 @@ import org.osgi.framework.Bundle;
 
 import com.opcoach.generator.GeneratorActivator;
 import com.opcoach.generator.basic.BasicPackage;
+import com.opcoach.generator.basic.CasePolicyType;
+import com.opcoach.generator.basic.CaseType;
 import com.opcoach.generator.basic.StringGenerator;
 import com.opcoach.generator.impl.ReferenceGeneratorImpl;
 
@@ -29,12 +31,11 @@ import com.opcoach.generator.impl.ReferenceGeneratorImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>
- * {@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getDataFilename
- * <em>Data Filename</em>}</li>
+ *   <li>{@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getDataFilename <em>Data Filename</em>}</li>
+ *   <li>{@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getCasePolicy <em>Case Policy</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
@@ -47,10 +48,9 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	public static String rootData = null;
 
 	/**
-	 * The default value of the '{@link #getDataFilename()
-	 * <em>Data Filename</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -63,12 +63,31 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 		// TODO Auto-generated method stub
 		return super.generateSimpleValue();
 	}
+	
+	
+
+	@Override
+	public String generateValue()
+	{
+		// Manage the case policy
+		String result = super.generateValue();
+		switch (casePolicy)
+		{
+		case LOWERCASE : result = result.toLowerCase(); break;
+		case UPPERCASE : result =  result.toUpperCase(); break;
+		default : break;
+		}
+		
+		return result;
+		
+	}
+
+
 
 	/**
-	 * The cached value of the '{@link #getDataFilename()
-	 * <em>Data Filename</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -76,45 +95,36 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	protected String dataFilename = DATA_FILENAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getCasePolicy() <em>Case Policy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCasePolicy()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final CasePolicyType CASE_POLICY_EDEFAULT = CasePolicyType.DEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCasePolicy() <em>Case Policy</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCasePolicy()
+	 * @generated
+	 * @ordered
+	 */
+	protected CasePolicyType casePolicy = CASE_POLICY_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected StringGeneratorImpl()
 	{
 		super();
-
-		if (rootData == null)
-		{
-			// Get root data from bundle (default value).
-			Bundle b = GeneratorActivator.getBundle();
-			if (b == null)
-			{
-				System.out
-						.println("-->> Not an OSGi runtime. No rootData initialized for String Generators");
-			} 
-			else
-			{
-				URL dataUrl = b.getEntry("data");
-				try
-				{
-					URL fdata = FileLocator.toFileURL(dataUrl);
-					System.out.println("Initialize rootData with "
-							+ fdata.getFile());
-					setRootData(fdata.getFile());
-				} catch (IOException e)
-				{
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-
-		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,7 +135,6 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getDataFilename()
@@ -135,7 +144,6 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setDataFilenameGen(String newDataFilename)
@@ -143,9 +151,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 		String oldDataFilename = dataFilename;
 		dataFilename = newDataFilename;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					BasicPackage.STRING_GENERATOR__DATA_FILENAME,
-					oldDataFilename, dataFilename));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__DATA_FILENAME, oldDataFilename, dataFilename));
 	}
 
 	/**
@@ -161,8 +167,42 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CasePolicyType getCasePolicy()
+	{
+		return casePolicy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCasePolicy(CasePolicyType newCasePolicy)
+	{
+		CasePolicyType oldCasePolicy = casePolicy;
+		casePolicy = newCasePolicy == null ? CASE_POLICY_EDEFAULT : newCasePolicy;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__CASE_POLICY, oldCasePolicy, casePolicy));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRootData2()
+	{
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -170,15 +210,16 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	{
 		switch (featureID)
 		{
-		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-			return getDataFilename();
+			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+				return getDataFilename();
+			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+				return getCasePolicy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -186,16 +227,18 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	{
 		switch (featureID)
 		{
-		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-			setDataFilename((String) newValue);
-			return;
+			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+				setDataFilename((String)newValue);
+				return;
+			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+				setCasePolicy((CasePolicyType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -203,16 +246,18 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	{
 		switch (featureID)
 		{
-		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-			setDataFilename(DATA_FILENAME_EDEFAULT);
-			return;
+			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+				setDataFilename(DATA_FILENAME_EDEFAULT);
+				return;
+			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+				setCasePolicy(CASE_POLICY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -220,27 +265,28 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	{
 		switch (featureID)
 		{
-		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-			return DATA_FILENAME_EDEFAULT == null ? dataFilename != null
-					: !DATA_FILENAME_EDEFAULT.equals(dataFilename);
+			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+				return DATA_FILENAME_EDEFAULT == null ? dataFilename != null : !DATA_FILENAME_EDEFAULT.equals(dataFilename);
+			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+				return casePolicy != CASE_POLICY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (dataFilename: ");
 		result.append(dataFilename);
+		result.append(", casePolicy: ");
+		result.append(casePolicy);
 		result.append(')');
 		return result.toString();
 	}
@@ -305,7 +351,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 		else
 		{
 			// 2. rootData/P2.P3.txt
-			String[] names = newID.split(".");
+			String[] names = newID.split("\\.",3);
 			System.out.println("Found this names : " + names);
 			if (names.length == 3)
 			{
