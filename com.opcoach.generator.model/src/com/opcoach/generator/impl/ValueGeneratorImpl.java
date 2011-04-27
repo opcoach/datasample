@@ -632,16 +632,28 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setID(String newID)
+	public void setIDGen(String newID)
 	{
 		String oldID = id;
 		id = newID;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__ID, oldID, id));
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					GeneratorPackage.VALUE_GENERATOR__ID, oldID, id));
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setID(String newID)
+	{
+		// Id are always managed in lower case, because used after for file name detection.
+		setIDGen(newID.toLowerCase());  
 	}
 
 
