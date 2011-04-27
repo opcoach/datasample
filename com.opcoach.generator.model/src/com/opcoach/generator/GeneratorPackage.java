@@ -126,13 +126,22 @@ public interface GeneratorPackage extends EPackage
 	int VALUE_GENERATOR__TYPE = 5;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_GENERATOR__ID = 6;
+
+	/**
 	 * The number of structural features of the '<em>Value Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_GENERATOR_FEATURE_COUNT = 6;
+	int VALUE_GENERATOR_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.impl.RangeGeneratorImpl <em>Range Generator</em>}' class.
@@ -197,6 +206,15 @@ public interface GeneratorPackage extends EPackage
 	 * @ordered
 	 */
 	int RANGE_GENERATOR__TYPE = VALUE_GENERATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGE_GENERATOR__ID = VALUE_GENERATOR__ID;
 
 	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -298,6 +316,15 @@ public interface GeneratorPackage extends EPackage
 	 * @ordered
 	 */
 	int REFERENCE_GENERATOR__TYPE = VALUE_GENERATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_GENERATOR__ID = VALUE_GENERATOR__ID;
 
 	/**
 	 * The feature id for the '<em><b>Step</b></em>' attribute.
@@ -403,6 +430,17 @@ public interface GeneratorPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getValueGenerator_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.generator.ValueGenerator#getID <em>ID</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>ID</em>'.
+	 * @see com.opcoach.generator.ValueGenerator#getID()
+	 * @see #getValueGenerator()
+	 * @generated
+	 */
+	EAttribute getValueGenerator_ID();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.generator.RangeGenerator <em>Range Generator</em>}'.
@@ -559,6 +597,14 @@ public interface GeneratorPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute VALUE_GENERATOR__TYPE = eINSTANCE.getValueGenerator_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>ID</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_GENERATOR__ID = eINSTANCE.getValueGenerator_ID();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.generator.impl.RangeGeneratorImpl <em>Range Generator</em>}' class.

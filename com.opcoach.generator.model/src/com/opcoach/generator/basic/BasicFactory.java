@@ -115,5 +115,35 @@ public interface BasicFactory extends EFactory
 	 * @generated
 	 */
 	BasicPackage getBasicPackage();
+	
+	
+	
+	
+	
+	BooleanGenerator createBooleanGenerator(String id);
+
+	
+	DateGenerator createDateGenerator(String id);
+
+	
+	DoubleGenerator createDoubleGenerator(String id);
+
+	
+	FloatGenerator createFloatGenerator(String id);
+
+	
+	IDGenerator createIDGenerator(String id);
+
+	
+	IntGenerator createIntGenerator(String id);
+
+	
+	LongGenerator createLongGenerator(String id);
+
+	
+	NullValueGenerator createNullValueGenerator(String id);
+
+	
+	StringGenerator createStringGenerator(String id);
 
 } //BasicFactory

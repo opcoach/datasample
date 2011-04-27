@@ -205,6 +205,16 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getValueGenerator_ID()
+	{
+		return (EAttribute)valueGeneratorEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRangeGenerator()
 	{
 		return rangeGeneratorEClass;
@@ -307,6 +317,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		createEAttribute(valueGeneratorEClass, VALUE_GENERATOR__RANDOM_SEED);
 		createEAttribute(valueGeneratorEClass, VALUE_GENERATOR__DESCRIPTION);
 		createEAttribute(valueGeneratorEClass, VALUE_GENERATOR__TYPE);
+		createEAttribute(valueGeneratorEClass, VALUE_GENERATOR__ID);
 
 		rangeGeneratorEClass = createEClass(RANGE_GENERATOR);
 		createEAttribute(rangeGeneratorEClass, RANGE_GENERATOR__LOW);
@@ -383,6 +394,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEAttribute(getValueGenerator_Type(), g1, "type", null, 0, 1, ValueGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getValueGenerator_ID(), ecorePackage.getEString(), "ID", null, 0, 1, ValueGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(valueGeneratorEClass, null, "generateValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(valueGeneratorEClass_T);

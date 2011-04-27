@@ -22,6 +22,7 @@
           ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/randomSeed"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/ID"/>
       <genOperations ecoreOperation="generator.ecore#//ValueGenerator/generateValue"/>
     </genClasses>
     <genClasses ecoreClass="generator.ecore#//RangeGenerator">
@@ -59,6 +60,7 @@
       <genClasses ecoreClass="generator.ecore#//basic/NullValueGenerator"/>
       <genClasses ecoreClass="generator.ecore#//basic/StringGenerator">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//basic/StringGenerator/dataFilename"/>
+        <genOperations ecoreOperation="generator.ecore#//basic/StringGenerator/setRootData2"/>
       </genClasses>
     </nestedGenPackages>
   </genPackages>

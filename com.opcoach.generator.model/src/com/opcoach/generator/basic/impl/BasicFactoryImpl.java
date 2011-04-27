@@ -203,4 +203,84 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory
 		return BasicPackage.eINSTANCE;
 	}
 
+	@Override
+	public BooleanGenerator createBooleanGenerator(String id)
+	{
+		BooleanGenerator g = createBooleanGenerator();
+		g.setID(id);
+		return g;
+	}
+
+	@Override
+	public DateGenerator createDateGenerator(String id)
+	{
+		DateGenerator g = createDateGenerator();
+		g.setID(id);
+		return g;
+
+	}
+
+	@Override
+	public DoubleGenerator createDoubleGenerator(String id)
+	{
+		DoubleGenerator g = createDoubleGenerator();
+		g.setID(id);
+		return g;
+
+	}
+
+	@Override
+	public FloatGenerator createFloatGenerator(String id)
+	{
+		FloatGenerator g = createFloatGenerator();
+		g.setID(id);
+		return g;
+
+	}
+
+	@Override
+	public IDGenerator createIDGenerator(String id)
+	{
+		IDGenerator g = createIDGenerator();
+		g.setID(id);
+		return g;
+
+	}
+
+	@Override
+	public IntGenerator createIntGenerator(String id)
+	{
+		IntGenerator g = createIntGenerator();
+		g.setID(id);
+		return g;
+
+	}
+
+	@Override
+	public LongGenerator createLongGenerator(String id)
+	{
+		LongGenerator g = createLongGenerator();
+		g.setID(id);
+		return g;
+
+	}
+
+	@Override
+	public NullValueGenerator createNullValueGenerator(String id)
+	{
+		NullValueGenerator g = createNullValueGenerator();
+		g.setID(id);
+		return g;
+
+	}
+
+	@Override
+	public StringGenerator createStringGenerator(String id)
+	{
+		StringGenerator g = createStringGenerator();
+		g.setID(id);
+		return g;
+
+	}
+
 } //BasicFactoryImpl

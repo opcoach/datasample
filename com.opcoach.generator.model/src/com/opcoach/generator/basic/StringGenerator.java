@@ -52,5 +52,6 @@ public interface StringGenerator extends ReferenceGenerator<String>
 	 */
 	void setDataFilename(String value);
 	
+
 	
 } // StringGenerator

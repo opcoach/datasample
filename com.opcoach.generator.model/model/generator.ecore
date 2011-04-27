@@ -34,6 +34,7 @@
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RangeGenerator" abstract="true">
     <eTypeParameters name="T"/>
@@ -129,6 +130,7 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StringGenerator">
+      <eOperations name="setRootData2"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFilename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eGenericSuperTypes eClassifier="#//ReferenceGenerator">
         <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

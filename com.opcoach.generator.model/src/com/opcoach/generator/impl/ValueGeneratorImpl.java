@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getRandomSeed <em>Random Seed</em>}</li>
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getID <em>ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -136,6 +137,26 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	 * @ordered
 	 */
 	protected Class<?> type;
+
+	/**
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getID()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/** The generator randomizer (if null -> no random) */
 	private Random randomizer = null;
@@ -463,6 +484,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 				return getDescription();
 			case GeneratorPackage.VALUE_GENERATOR__TYPE:
 				return getType();
+			case GeneratorPackage.VALUE_GENERATOR__ID:
+				return getID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -490,6 +513,9 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 			case GeneratorPackage.VALUE_GENERATOR__TYPE:
 				setType((Class<?>)newValue);
 				return;
+			case GeneratorPackage.VALUE_GENERATOR__ID:
+				setID((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -515,6 +541,9 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 				return;
 			case GeneratorPackage.VALUE_GENERATOR__TYPE:
 				setType((Class<?>)null);
+				return;
+			case GeneratorPackage.VALUE_GENERATOR__ID:
+				setID(ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -542,6 +571,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case GeneratorPackage.VALUE_GENERATOR__TYPE:
 				return type != null;
+			case GeneratorPackage.VALUE_GENERATOR__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -567,6 +598,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		result.append(description);
 		result.append(", type: ");
 		result.append(type);
+		result.append(", ID: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}
@@ -584,6 +617,31 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		type = newType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__TYPE, oldType, type));
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getID()
+	{
+		return id;
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setID(String newID)
+	{
+		String oldID = id;
+		id = newID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__ID, oldID, id));
 	}
 
 

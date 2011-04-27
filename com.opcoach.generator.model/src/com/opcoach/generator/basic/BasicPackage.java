@@ -126,6 +126,15 @@ public interface BasicPackage extends EPackage
 	int BOOLEAN_GENERATOR__TYPE = GeneratorPackage.VALUE_GENERATOR__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_GENERATOR__ID = GeneratorPackage.VALUE_GENERATOR__ID;
+
+	/**
 	 * The number of structural features of the '<em>Boolean Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -198,6 +207,15 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int DATE_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
 
 	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -309,6 +327,15 @@ public interface BasicPackage extends EPackage
 	int DOUBLE_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
+
+	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -407,6 +434,15 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int FLOAT_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOAT_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
 
 	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -510,6 +546,15 @@ public interface BasicPackage extends EPackage
 	int ID_GENERATOR__TYPE = GeneratorPackage.VALUE_GENERATOR__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ID_GENERATOR__ID = GeneratorPackage.VALUE_GENERATOR__ID;
+
+	/**
 	 * The feature id for the '<em><b>Key Length</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -599,6 +644,15 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int INT_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INT_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
 
 	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -701,6 +755,15 @@ public interface BasicPackage extends EPackage
 	int LONG_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LONG_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
+
+	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -801,6 +864,15 @@ public interface BasicPackage extends EPackage
 	int NULL_VALUE_GENERATOR__TYPE = GeneratorPackage.VALUE_GENERATOR__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_VALUE_GENERATOR__ID = GeneratorPackage.VALUE_GENERATOR__ID;
+
+	/**
 	 * The number of structural features of the '<em>Null Value Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -872,6 +944,15 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int STRING_GENERATOR__TYPE = GeneratorPackage.REFERENCE_GENERATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_GENERATOR__ID = GeneratorPackage.REFERENCE_GENERATOR__ID;
 
 	/**
 	 * The feature id for the '<em><b>Step</b></em>' attribute.
