@@ -14,6 +14,7 @@
     	Parameters : 
 		dsgen2javaBundleName : name of the dsgen2java bundle project
 		homedsgen2java : path to the root directory where homedsgen2java was extracted
+		homeForStringData : the bundle containing the data directory with samples for strings
 		projectName : name of the project to create.
 		ecoreSource : name of ecore file source used to create this project
 		ecoreSourceProject : name of project containing ecoreSource
@@ -34,6 +35,7 @@
 	<property name="homeProject" value="${homeWorkspace}/${projectName}" />
 	<property name="srcProject" value="${homeProject}/src" />
 	<property name="homedsgen2java" value="TO_BE_PASSED_AS_PARAMETER" />
+	<property name="homeForStringData" value="TO_BE_PASSED_AS_PARAMETER" />
 	<property name="ecoreSource" value="TO_BE_PASSED_AS_PARAMETER" />
 	<property name="ecoreSourceProject" value="TO_BE_PASSED_AS_PARAMETER" />
 	<property name="ecoreSourceLocation" value="TO_BE_PASSED_AS_PARAMETER" />
@@ -88,6 +90,14 @@
 			</filterset>
 		</copy>
 		<delete file="${workflowTemplate}"/>
+		
+		<!-- Copy the data files in generator.model as string generators samples -->
+		<echo message="---> Copy the string samples in ${homeForStringData} into ${homeProject}/data " />
+		<mkdir dir="${homeProject}/data"/>
+	    <copy todir="${homeProject}/data">
+			<fileset dir="${homeForStringData}" includes="**" />
+		</copy>
+
 
 
 		

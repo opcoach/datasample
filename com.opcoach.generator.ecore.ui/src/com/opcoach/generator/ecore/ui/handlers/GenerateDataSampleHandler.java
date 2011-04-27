@@ -52,6 +52,7 @@ public class GenerateDataSampleHandler extends AbstractHandler
 {
 
 	private static final String DSGEN2JAVA_BUNDLE_ID = "com.opcoach.generator.xpand.dsgen2java";
+	private static final String GENERATOR_BUNDLE_ID = "com.opcoach.generator.model";
 	private final static String ECORE_EXT = "ecore";
 
 	/** The selected ecore file */
@@ -157,7 +158,7 @@ public class GenerateDataSampleHandler extends AbstractHandler
  			System.out.println("Dsgen model saved in : " + res2.getURI());
 		} catch (IOException e)
 		{
-			System.out.println("---------- UNALBE TO STORE DSGEN MODEL in " + dsgenName);
+			System.out.println("---------- UNABLE TO STORE DSGEN MODEL in " + dsgenName);
 			e.printStackTrace();
 			throw new ExecutionException("Unable to create dsgen model in  : " + dsgenName, e);
 		}
@@ -228,10 +229,21 @@ public class GenerateDataSampleHandler extends AbstractHandler
 		//-------------------------------------------------------
 		// Get the bundle location for workflow and templates
 		//-------------------------------------------------------
-		// String homedsgen2java = getDestDirForBundle(b);  // Calcule un repertoire temporaire (si on a dezippé).
 		String homedsgen2java = "UNDEFINED";
 		try {
 			homedsgen2java = FileLocator.toFileURL(b.getEntry("/")).getFile();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}  // On retourne directement l'endroit où est intallé le bundle.
+
+		//-------------------------------------------------------
+		// Get the bundle location for generator model and its sample data
+		//-------------------------------------------------------
+		Bundle bgen = Platform.getBundle(GENERATOR_BUNDLE_ID);
+		String homeForStringData = "UNDEFINED";
+		try {
+			homeForStringData = FileLocator.toFileURL(bgen.getEntry("data")).getFile();
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -255,6 +267,7 @@ public class GenerateDataSampleHandler extends AbstractHandler
 				// "-DtemplatePath="+templatePath,
 				"-DhomeWorkspace="+getHomeWorkspace(),
 				"-Dhomedsgen2java="+homedsgen2java,
+				"-DhomeForStringData="+homeForStringData,
 				"-DrootProject="+rootProject,
 				"-DprojectName="+proj.getName(),
 				"-DpackagePath="+proj.getName().replace('.','/'),
