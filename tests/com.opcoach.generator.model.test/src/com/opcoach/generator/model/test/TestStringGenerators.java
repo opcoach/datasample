@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.opcoach.generator.basic.BasicFactory;
+import com.opcoach.generator.basic.CasePolicyType;
 import com.opcoach.generator.basic.StringGenerator;
 import com.opcoach.generator.basic.impl.StringGeneratorImpl;
 
@@ -101,6 +102,29 @@ public class TestStringGenerators
 	}
 	
 	@Test
+	public void testGenStringWithAFileCustomerFirstname()
+	{
+		// Create a gen Ref containing the firstname sample values...
+		StringGenerator genRef = f.createStringGenerator();
+		genRef.setID("firstname");
+		
+		// Create the real generator which must use the same values than genRef, because Customer.firstname does not exists
+		gen = f.createStringGenerator();
+		gen.setID("Customer.firstname");
+		System.out.println("---->  Valeurs possibles : " + gen.getValues());
+		for (int i = 0; i < gen.getValues().size() ; i++)
+		{
+			// First generated value must be first in array... until end of array
+			String v = gen.generateValue();
+			System.out.println("Generate : " + v);
+			assertTrue("Generated value (" + v + ") must be in registered list of possible values : " + genRef.getValues(), genRef.getValues().contains(v));
+			
+		}
+
+	}
+
+	
+	@Test
 	public void testGenRandomStringWithAFile()
 	{
 		gen = f.createStringGenerator();
@@ -118,6 +142,32 @@ public class TestStringGenerators
 
 	}
 	
+	
+	@Test
+	public void testUpperCaseGen()
+	{
+		gen = f.createStringGenerator();
+		gen.setRandomSeed(10);
+		gen.setID("lastname");
+		gen.setCasePolicy(CasePolicyType.UPPERCASE);
+		String v = gen.generateValue();
+		
+		assertEquals("Generated value must be in uppercase", v, v.toUpperCase());
+
+	}
+
+	@Test
+	public void testLowerCaseGen()
+	{
+		gen = f.createStringGenerator();
+		gen.setRandomSeed(10);
+		gen.setID("lastname");
+		gen.setCasePolicy(CasePolicyType.LOWERCASE);
+		String v = gen.generateValue();
+		assertEquals("Generated value must be in lowercase", v, v.toLowerCase());
+
+	}
+
 	
 	
 }
