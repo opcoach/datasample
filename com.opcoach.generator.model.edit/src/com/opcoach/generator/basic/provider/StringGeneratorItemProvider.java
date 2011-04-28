@@ -71,6 +71,7 @@ public class StringGeneratorItemProvider
 			super.getPropertyDescriptors(object);
 
 			addDataFilenamePropertyDescriptor(object);
+			addCasePolicyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +91,29 @@ public class StringGeneratorItemProvider
 				 getString("_UI_StringGenerator_dataFilename_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_StringGenerator_dataFilename_feature", "_UI_StringGenerator_type"),
 				 BasicPackage.Literals.STRING_GENERATOR__DATA_FILENAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Case Policy feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCasePolicyPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_StringGenerator_casePolicy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_StringGenerator_casePolicy_feature", "_UI_StringGenerator_type"),
+				 BasicPackage.Literals.STRING_GENERATOR__CASE_POLICY,
 				 true,
 				 false,
 				 false,
@@ -119,7 +143,7 @@ public class StringGeneratorItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		String label = ((StringGenerator)object).getDataFilename();
+		String label = ((StringGenerator)object).getID();
 		return label == null || label.length() == 0 ?
 			getString("_UI_StringGenerator_type") :
 			getString("_UI_StringGenerator_type") + " " + label;
@@ -140,6 +164,7 @@ public class StringGeneratorItemProvider
 		switch (notification.getFeatureID(StringGenerator.class))
 		{
 			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

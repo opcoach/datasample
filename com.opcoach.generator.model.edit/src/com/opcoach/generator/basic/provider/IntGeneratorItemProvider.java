@@ -91,8 +91,10 @@ public class IntGeneratorItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		IntGenerator intGenerator = (IntGenerator)object;
-		return getString("_UI_IntGenerator_type") + " " + intGenerator.getBadValueProportion();
+		String label = ((IntGenerator)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_IntGenerator_type") :
+			getString("_UI_IntGenerator_type") + " " + label;
 	}
 
 	/**

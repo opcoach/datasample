@@ -91,8 +91,10 @@ public class LongGeneratorItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		LongGenerator longGenerator = (LongGenerator)object;
-		return getString("_UI_LongGenerator_type") + " " + longGenerator.getBadValueProportion();
+		String label = ((LongGenerator)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_LongGenerator_type") :
+			getString("_UI_LongGenerator_type") + " " + label;
 	}
 
 	/**

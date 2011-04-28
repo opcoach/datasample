@@ -143,8 +143,10 @@ public class IDGeneratorItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		IDGenerator idGenerator = (IDGenerator)object;
-		return getString("_UI_IDGenerator_type") + " " + idGenerator.getBadValueProportion();
+		String label = ((IDGenerator)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_IDGenerator_type") :
+			getString("_UI_IDGenerator_type") + " " + label;
 	}
 
 	/**

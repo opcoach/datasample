@@ -163,8 +163,10 @@ public class RangeGeneratorItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		RangeGenerator<?> rangeGenerator = (RangeGenerator<?>)object;
-		return getString("_UI_RangeGenerator_type") + " " + rangeGenerator.getBadValueProportion();
+		String label = ((RangeGenerator<?>)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_RangeGenerator_type") :
+			getString("_UI_RangeGenerator_type") + " " + label;
 	}
 
 	/**

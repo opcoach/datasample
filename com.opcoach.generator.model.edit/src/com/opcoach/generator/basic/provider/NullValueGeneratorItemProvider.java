@@ -91,8 +91,10 @@ public class NullValueGeneratorItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		NullValueGenerator nullValueGenerator = (NullValueGenerator)object;
-		return getString("_UI_NullValueGenerator_type") + " " + nullValueGenerator.getBadValueProportion();
+		String label = ((NullValueGenerator)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_NullValueGenerator_type") :
+			getString("_UI_NullValueGenerator_type") + " " + label;
 	}
 
 	/**

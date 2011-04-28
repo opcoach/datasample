@@ -77,6 +77,7 @@ public class ValueGeneratorItemProvider
 			addRandomSeedPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
+			addIDPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -220,6 +221,29 @@ public class ValueGeneratorItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the ID feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIDPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ValueGenerator_ID_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ValueGenerator_ID_feature", "_UI_ValueGenerator_type"),
+				 GeneratorPackage.Literals.VALUE_GENERATOR__ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -273,8 +297,10 @@ public class ValueGeneratorItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		ValueGenerator<?> valueGenerator = (ValueGenerator<?>)object;
-		return getString("_UI_ValueGenerator_type") + " " + valueGenerator.getBadValueProportion();
+		String label = ((ValueGenerator<?>)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ValueGenerator_type") :
+			getString("_UI_ValueGenerator_type") + " " + label;
 	}
 
 	/**
@@ -296,6 +322,7 @@ public class ValueGeneratorItemProvider
 			case GeneratorPackage.VALUE_GENERATOR__RANDOM_SEED:
 			case GeneratorPackage.VALUE_GENERATOR__DESCRIPTION:
 			case GeneratorPackage.VALUE_GENERATOR__TYPE:
+			case GeneratorPackage.VALUE_GENERATOR__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

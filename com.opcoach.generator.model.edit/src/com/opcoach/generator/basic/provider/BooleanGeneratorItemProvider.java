@@ -93,8 +93,10 @@ public class BooleanGeneratorItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		BooleanGenerator booleanGenerator = (BooleanGenerator)object;
-		return getString("_UI_BooleanGenerator_type") + " " + booleanGenerator.getBadValueProportion();
+		String label = ((BooleanGenerator)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_BooleanGenerator_type") :
+			getString("_UI_BooleanGenerator_type") + " " + label;
 	}
 
 	/**

@@ -102,8 +102,10 @@ public class ReferenceGeneratorItemProvider
 	@Override
 	public String getText(Object object)
 	{
-		ReferenceGenerator<?> referenceGenerator = (ReferenceGenerator<?>)object;
-		return getString("_UI_ReferenceGenerator_type") + " " + referenceGenerator.getBadValueProportion();
+		String label = ((ReferenceGenerator<?>)object).getID();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ReferenceGenerator_type") :
+			getString("_UI_ReferenceGenerator_type") + " " + label;
 	}
 
 	/**
