@@ -116,11 +116,38 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected StringGeneratorImpl()
 	{
 		super();
+
+		if (rootData == null)
+		{
+			// Get root data from bundle (default value).
+			Bundle b = GeneratorActivator.getBundle();
+			if (b == null)
+			{
+				System.out
+						.println("-->> Not an OSGi runtime. No rootData initialized for String Generators");
+			} 
+			else
+			{
+				URL dataUrl = b.getEntry("data");
+				try
+				{
+					URL fdata = FileLocator.toFileURL(dataUrl);
+					System.out.println("Initialize rootData with "
+							+ fdata.getFile());
+					setRootData(fdata.getFile());
+				} catch (IOException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+		}
 	}
 
 	/**
