@@ -12,7 +12,6 @@ import org.junit.Test;
 import com.opcoach.generator.basic.BasicFactory;
 import com.opcoach.generator.basic.CasePolicyType;
 import com.opcoach.generator.basic.StringGenerator;
-import com.opcoach.generator.basic.impl.StringGeneratorImpl;
 
 /**
  * @author olivier
