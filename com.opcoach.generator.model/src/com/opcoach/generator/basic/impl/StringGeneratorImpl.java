@@ -21,7 +21,6 @@ import org.osgi.framework.Bundle;
 import com.opcoach.generator.GeneratorActivator;
 import com.opcoach.generator.basic.BasicPackage;
 import com.opcoach.generator.basic.CasePolicyType;
-import com.opcoach.generator.basic.CaseType;
 import com.opcoach.generator.basic.StringGenerator;
 import com.opcoach.generator.impl.ReferenceGeneratorImpl;
 

@@ -18,7 +18,6 @@ import com.opcoach.generator.basic.BasicFactory;
 import com.opcoach.generator.basic.BasicPackage;
 import com.opcoach.generator.basic.BooleanGenerator;
 import com.opcoach.generator.basic.CasePolicyType;
-import com.opcoach.generator.basic.CaseType;
 import com.opcoach.generator.basic.DateGenerator;
 import com.opcoach.generator.basic.DoubleGenerator;
 import com.opcoach.generator.basic.FloatGenerator;
