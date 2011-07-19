@@ -79,6 +79,39 @@
             </command>
          </toolbar>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.jdt.ui.PackageExplorer?after=additions">
+         <menu
+               icon="icons/datasample.png"
+               id="com.opcoach.generator.ecore.ui.menu"
+               label="Data Sample"
+               tooltip="Access to all opcoach commands">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="com.opcoach.generator.ecore.ui.ecoreSelected">
+               </reference>
+            </visibleWhen>
+            <separator
+                  name="commands"
+                  visible="false">
+            </separator>
+            <command
+                  commandId="com.opcoach.generator.ecore.ui.commands.ecore2dsgen"
+                  icon="icons/ecore2dsgen.png"
+                  label="Genere Data Sample Project"
+                  style="push"
+                  tooltip="Generate a datasample project">
+               <visibleWhen
+                     checkEnabled="false">
+                  <reference
+                        definitionId="com.opcoach.generator.ecore.ui.ecoreSelected">
+                  </reference>
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
    </extension>
    <extension
          point="org.eclipse.core.expressions.definitions">

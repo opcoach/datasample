@@ -13,9 +13,10 @@ package «packageName»;
 
 // ------------------------------------------------
 // OPCoach Generated File
-// © OPCoach 2010     http://www.opcoach.com
+// © OPCoach 2011     http://www.opcoach.com
 // ------------------------------------------------ 
 
+import java.io.File;
 
 import com.opcoach.generator.*;
 import com.opcoach.generator.basic.*;
@@ -29,6 +30,18 @@ import «rootProject».«ecorePackage.name.toString()».*;
  */
 public class «this.ecorePackage.name.toString().toFirstUpper()»SampleGenerator
 {
+    static
+	{
+		// Initialize root Data path for String Generator to find data sample files
+		// These files named class.field.txt contain on each line a possible value
+		// Sample files are copied from the com.opcoach.generator/data folder
+		Class<?> c = «this.ecorePackage.name.toString().toFirstUpper()»SampleGenerator.class;
+		String pname = c.getPackage().getName();
+		String f = c.getResource(".").getFile();
+		String prefix = f.substring(0,f.indexOf(pname) + pname.length());
+		com.opcoach.generator.basic.impl.StringGeneratorImpl.setRootData(prefix + File.separator + "data");
+	}
+
   «EXPAND constanteDef FOREACH dsgenClassifiers.typeSelect(DSGenClass) -»
   	
 	private GeneratorFactory gp = GeneratorFactory.eINSTANCE;
@@ -196,7 +209,7 @@ import «dataType.instanceClassName»;
        «IF this.dsgenClass.dsgenPackage.dsgenClassifiers.typeSelect(DSGenDataType).exists(e| e.dataType.instanceClassName == ecoreFeature.eType.instanceClassName)-»
         	private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = «ecoreFeature.eType.name.toLowerCase()»Generator;
        «ELSE-»
-          private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = bf.create«getGeneratorTypeForDSGenAttribute(this)»();
+          private «getGeneratorTypeForDSGenAttribute(this)» «ecoreFeature.eContainingClass.name»_«ecoreFeature.name» = bf.create«getGeneratorTypeForDSGenAttribute(this)»("«this.ecoreFeature.eContainingClass.name».«this.ecoreFeature.name»");
        «ENDIF»
     «ENDIF»
   «ENDDEFINE»
