@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="StringData" name="String Data" schema="schema/StringData.exsd"/>
+   <extension
+         point="com.opcoach.generator.data.StringData">
+      <StringData
+            attributeNames="nom, nomdefamille"
+            description="Liste de noms français"
+            file="data/fr/nom.txt"
+            locale="fr">
+      </StringData>
+   </extension>
+
+</plugin>

@@ -130,7 +130,6 @@
       </eGenericSuperTypes>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StringGenerator">
-      <eOperations name="setRootData2"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFilename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="casePolicy" eType="#//basic/CasePolicyType"
           defaultValueLiteral="DEFAULT"/>

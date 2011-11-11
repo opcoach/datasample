@@ -215,17 +215,6 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__CASE_POLICY, oldCasePolicy, casePolicy));
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRootData2()
-	{
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->

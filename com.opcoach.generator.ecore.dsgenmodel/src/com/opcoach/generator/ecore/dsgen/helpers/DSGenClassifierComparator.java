@@ -19,6 +19,7 @@ import com.opcoach.generator.ecore.dsgen.DSGenEnum;
  * Compare 2 DSGenClass DSGenClass is bound to the corresponding eCore class EClasses who has no relations are sorted before EClasses with the most relations to other classes are sorted at the end
  * 
  * @author olivier
+ * @deprecated use now com.opcoach.dsgen.core.helpers instead (this project is only generated)
  */
 public class DSGenClassifierComparator implements Comparator<DSGenClassifier>
 {

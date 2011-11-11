@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import com.opcoach.generator.RangeGenerator;
 import com.opcoach.generator.ReferenceGenerator;
 import com.opcoach.generator.ValueGenerator;
+import com.opcoach.generator.basic.*;
 import com.opcoach.generator.basic.BasicPackage;
 import com.opcoach.generator.basic.BooleanGenerator;
 import com.opcoach.generator.basic.DateGenerator;

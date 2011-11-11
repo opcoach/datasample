@@ -41,6 +41,7 @@ import com.opcoach.generator.ecore.dsgen.DataSampleGenFactory;
  * moved in dsgenmodel
  * 
  * @author olivier
+ *  * @deprecated use now com.opcoach.dsgen.core.helpers instead (this project is only generated)
  */
 public class DSGenHelper
 {

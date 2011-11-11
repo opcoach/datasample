@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Core
+Bundle-SymbolicName: com.opcoach.dsgen.core
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.opcoach.dsgen.core.DSGenCoreActivator
+Bundle-Vendor: OPCOACH
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.7.100",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.7.0",
+ com.opcoach.generator.model;bundle-version="1.0.0";visibility:=reexport,
+ com.opcoach.generator.ecore.dsgenmodel;bundle-version="1.0.0";visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.opcoach.dsgen.core

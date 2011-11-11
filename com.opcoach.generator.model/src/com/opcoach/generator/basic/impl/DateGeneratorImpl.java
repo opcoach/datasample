@@ -252,7 +252,7 @@ public class DateGeneratorImpl extends RangeGeneratorImpl<Date> implements DateG
 			return "Now Date";
 		else
 		{
-			SimpleDateFormat df = new SimpleDateFormat("DD/MM/YY");
+			SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy");
 			String lowStr = df.format(getLow());
 			String highStr = df.format(getHigh());
 			return " [" + lowStr + "," + highStr + "] " + super.computeDescription();

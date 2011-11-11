@@ -83,14 +83,6 @@ public interface StringGenerator extends ReferenceGenerator<String>
 	 */
 	void setCasePolicy(CasePolicyType value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void setRootData2();
-	
 
 	
 } // StringGenerator

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="com.opcoach.dsgen.ui.dsgenCategory"
+            class="com.opcoach.dsgen.ui.views.DSGenDashBoard"
+            icon="icons/datasample.png"
+            id="com.opcoach.dsgen.ui.views.DSGenDashboard"
+            name="DSGen Dashboard">
+      </view>
+      <category
+            id="com.opcoach.dsgen.ui.dsgenCategory"
+            name="Data Sample">
+      </category>
+   </extension>
+</plugin>

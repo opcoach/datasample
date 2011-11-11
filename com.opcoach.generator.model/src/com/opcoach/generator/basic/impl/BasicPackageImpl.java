@@ -472,8 +472,6 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 		initEAttribute(getStringGenerator_DataFilename(), ecorePackage.getEString(), "dataFilename", null, 0, 1, StringGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStringGenerator_CasePolicy(), this.getCasePolicyType(), "casePolicy", "DEFAULT", 0, 1, StringGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(stringGeneratorEClass, null, "setRootData2", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		// Initialize enums and add enum literals
 		initEEnum(casePolicyTypeEEnum, CasePolicyType.class, "CasePolicyType");
 		addEEnumLiteral(casePolicyTypeEEnum, CasePolicyType.DEFAULT);
