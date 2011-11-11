@@ -8,12 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.core.databinding.DataBindingContext;
-import org.eclipse.core.databinding.UpdateValueStrategy;
 import org.eclipse.core.databinding.observable.value.IObservableValue;
 import org.eclipse.emf.databinding.EMFDataBindingContext;
 import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -41,7 +42,9 @@ import org.eclipse.ui.PartInitException;
 
 import com.opcoach.dsgen.core.Ecore2DSGenFactory;
 import com.opcoach.dsgen.ui.DSGenUIActivator;
+import com.opcoach.generator.GeneratorPackage;
 import com.opcoach.generator.ValueGenerator;
+import com.opcoach.generator.basic.BasicPackage;
 import com.opcoach.generator.ecore.dsgen.DSGenAttribute;
 import com.opcoach.generator.ecore.dsgen.DSGenPackage;
 import com.opcoach.generator.ecore.dsgen.DSGenReference;
@@ -62,7 +65,7 @@ public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionLis
 
 	private StackLayout generatorGroupLayout;
 	private StackLayout generationGroupLayout;
-	
+
 	// A context for emf databinding.
 	private DataBindingContext context = null;
 
@@ -84,6 +87,7 @@ public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionLis
 		// Init the right part (3 composites according to ECore type, in a stack
 		// layout).
 		initRightPart();
+
 	}
 
 	private void initExcludedProperties()
@@ -169,6 +173,7 @@ public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionLis
 			// For boolean create a button
 			Button b = new Button(attComposite, SWT.CHECK);
 			b.setText(getTextForFeature(at));
+			b.setToolTipText("Aide sur attribut : " + getTextForFeature(at));
 			result = b;
 		} else
 		{
@@ -176,14 +181,24 @@ public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionLis
 			Label attTitle = new Label(attComposite, SWT.NONE);
 			attTitle.setText(getTextForFeature(at) + " : ");
 			attTitle.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
+			attTitle.setToolTipText("Aide sur attribut : " + getTextForFeature(at));
+
+			/*
+			 * if ((at.getEAttributeType() == EcorePackage.Literals.EINT) &&
+			 * (at.getName().endsWith("Percent"))) { // Spinner not supported by
+			 * databinding... :-/ Spinner s = new Spinner(attComposite,
+			 * SWT.HORIZONTAL); s.setMinimum(0); s.setMaximum(100);
+			 * s.setIncrement(1); result = s; } else {
+			 */
 			Text t = new Text(attComposite, SWT.NONE);
 			t.setText(" ");
 			t.setLayoutData(new GridData(SWT.FILL, SWT.NONE, true, true, 1, 1));
-			t.setData(at);
 			result = t;
+			// }
 		}
 		System.out.println("Création du composite pour l'att " + at.getName());
 
+		result.setData(at);
 		return result;
 	}
 
@@ -195,6 +210,7 @@ public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionLis
 		Label attTitle = new Label(refComposite, SWT.NONE);
 		attTitle.setText(getTextForFeature(ref) + " : ");
 		attTitle.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
+		attTitle.setToolTipText("Aide sur attribut : " + getTextForFeature(ref));
 		Combo c = new Combo(refComposite, SWT.NONE);
 		c.setText(" ");
 		c.setLayoutData(new GridData(SWT.FILL, SWT.NONE, true, true, 1, 1));
@@ -203,7 +219,7 @@ public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionLis
 
 		return c;
 	}
-	
+
 	private String getTextForFeature(EStructuralFeature f)
 	{
 		// To be translated in a few time..
@@ -306,6 +322,7 @@ public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionLis
 
 		genGroupParent.layout();
 		right.layout();
+
 	}
 
 	private void bindValues(EObject o, Collection<Control> ctrls)
@@ -321,6 +338,25 @@ public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionLis
 				ISWTObservableValue observeSWT = WidgetProperties.text(SWT.Modify).observe(c);
 				context.bindValue(observeSWT, observeEMF);
 			} else if (c instanceof Combo)
+			{
+				// Must set the items according to reference in EAttribute !
+				EReference ref = (EReference) c.getData();
+				if (ref.getEReferenceType() == GeneratorPackage.Literals.VALUE_GENERATOR || ref.getEReferenceType() == GeneratorPackage.Literals.RANGE_GENERATOR
+						|| ref.getEReferenceType() == GeneratorPackage.Literals.REFERENCE_GENERATOR)
+				{
+					// Get the dataType of corresponding attribute. Selected object is probably  a DSGenAttribute
+					if (o instanceof DSGenAttribute)
+					{
+						DSGenAttribute parentAttribute = (DSGenAttribute) o;
+						EAttribute at = (EAttribute) parentAttribute.getEcoreFeature();
+						EDataType dt = at.getEAttributeType();
+						((Combo) c).setItems(GeneratorRegistry.getGeneratorNamesFor(dt));
+					}
+				}
+
+				ISWTObservableValue observeSWT = WidgetProperties.selection().observe(c);
+				context.bindValue(observeSWT, observeEMF);
+			} else if (c instanceof Button)
 			{
 				ISWTObservableValue observeSWT = WidgetProperties.selection().observe(c);
 				context.bindValue(observeSWT, observeEMF);
