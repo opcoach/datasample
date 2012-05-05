@@ -108,6 +108,24 @@ public interface BasicFactory extends EFactory
 	StringGenerator createStringGenerator();
 
 	/**
+	 * Returns a new object of class '<em>True Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>True Generator</em>'.
+	 * @generated
+	 */
+	TrueGenerator createTrueGenerator();
+
+	/**
+	 * Returns a new object of class '<em>False Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>False Generator</em>'.
+	 * @generated
+	 */
+	FalseGenerator createFalseGenerator();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

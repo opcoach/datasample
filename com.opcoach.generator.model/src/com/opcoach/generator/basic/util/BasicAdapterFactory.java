@@ -128,6 +128,16 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 				return createStringGeneratorAdapter();
 			}
 			@Override
+			public Adapter caseTrueGenerator(TrueGenerator object)
+			{
+				return createTrueGeneratorAdapter();
+			}
+			@Override
+			public Adapter caseFalseGenerator(FalseGenerator object)
+			{
+				return createFalseGeneratorAdapter();
+			}
+			@Override
 			public <T> Adapter caseValueGenerator(ValueGenerator<T> object)
 			{
 				return createValueGeneratorAdapter();
@@ -295,6 +305,36 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createStringGeneratorAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.TrueGenerator <em>True Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.opcoach.generator.basic.TrueGenerator
+	 * @generated
+	 */
+	public Adapter createTrueGeneratorAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.FalseGenerator <em>False Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.opcoach.generator.basic.FalseGenerator
+	 * @generated
+	 */
+	public Adapter createFalseGeneratorAdapter()
 	{
 		return null;
 	}

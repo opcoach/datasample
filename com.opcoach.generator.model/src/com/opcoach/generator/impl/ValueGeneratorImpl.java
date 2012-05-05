@@ -293,6 +293,20 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void setLastGeneratedValue(T newLastGeneratedValue)
+	{
+		T oldLastGeneratedValue = lastGeneratedValue;
+		lastGeneratedValue = newLastGeneratedValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__LAST_GENERATED_VALUE, oldLastGeneratedValue, lastGeneratedValue));
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public long getRandomSeed()
 	{
 		return randomSeed;
@@ -507,6 +521,9 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 			case GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR:
 				setBadValueGenerator((ValueGenerator<T>)newValue);
 				return;
+			case GeneratorPackage.VALUE_GENERATOR__LAST_GENERATED_VALUE:
+				setLastGeneratedValue((T)newValue);
+				return;
 			case GeneratorPackage.VALUE_GENERATOR__RANDOM_SEED:
 				setRandomSeed((Long)newValue);
 				return;
@@ -535,6 +552,9 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 				return;
 			case GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR:
 				setBadValueGenerator((ValueGenerator<T>)null);
+				return;
+			case GeneratorPackage.VALUE_GENERATOR__LAST_GENERATED_VALUE:
+				setLastGeneratedValue((T)null);
 				return;
 			case GeneratorPackage.VALUE_GENERATOR__RANDOM_SEED:
 				unsetRandomSeed();

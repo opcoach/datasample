@@ -20,12 +20,14 @@ import com.opcoach.generator.basic.BooleanGenerator;
 import com.opcoach.generator.basic.CasePolicyType;
 import com.opcoach.generator.basic.DateGenerator;
 import com.opcoach.generator.basic.DoubleGenerator;
+import com.opcoach.generator.basic.FalseGenerator;
 import com.opcoach.generator.basic.FloatGenerator;
 import com.opcoach.generator.basic.IDGenerator;
 import com.opcoach.generator.basic.IntGenerator;
 import com.opcoach.generator.basic.LongGenerator;
 import com.opcoach.generator.basic.NullValueGenerator;
 import com.opcoach.generator.basic.StringGenerator;
+import com.opcoach.generator.basic.TrueGenerator;
 import com.opcoach.generator.impl.GeneratorPackageImpl;
 
 /**
@@ -96,6 +98,20 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 	 * @generated
 	 */
 	private EClass stringGeneratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass trueGeneratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass falseGeneratorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -317,6 +333,26 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getTrueGenerator()
+	{
+		return trueGeneratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFalseGenerator()
+	{
+		return falseGeneratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getCasePolicyType()
 	{
 		return casePolicyTypeEEnum;
@@ -374,6 +410,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 		stringGeneratorEClass = createEClass(STRING_GENERATOR);
 		createEAttribute(stringGeneratorEClass, STRING_GENERATOR__DATA_FILENAME);
 		createEAttribute(stringGeneratorEClass, STRING_GENERATOR__CASE_POLICY);
+
+		trueGeneratorEClass = createEClass(TRUE_GENERATOR);
+
+		falseGeneratorEClass = createEClass(FALSE_GENERATOR);
 
 		// Create enums
 		casePolicyTypeEEnum = createEEnum(CASE_POLICY_TYPE);
@@ -447,6 +487,8 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 		g2 = createEGenericType(ecorePackage.getEString());
 		g1.getETypeArguments().add(g2);
 		stringGeneratorEClass.getEGenericSuperTypes().add(g1);
+		trueGeneratorEClass.getESuperTypes().add(this.getBooleanGenerator());
+		falseGeneratorEClass.getESuperTypes().add(this.getBooleanGenerator());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(booleanGeneratorEClass, BooleanGenerator.class, "BooleanGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -471,6 +513,10 @@ public class BasicPackageImpl extends EPackageImpl implements BasicPackage
 		initEClass(stringGeneratorEClass, StringGenerator.class, "StringGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringGenerator_DataFilename(), ecorePackage.getEString(), "dataFilename", null, 0, 1, StringGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStringGenerator_CasePolicy(), this.getCasePolicyType(), "casePolicy", "DEFAULT", 0, 1, StringGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(trueGeneratorEClass, TrueGenerator.class, "TrueGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(falseGeneratorEClass, FalseGenerator.class, "FalseGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(casePolicyTypeEEnum, CasePolicyType.class, "CasePolicyType");

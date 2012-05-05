@@ -387,7 +387,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		g1.getETypeArguments().add(g2);
 		initEReference(getValueGenerator_BadValueGenerator(), g1, null, "badValueGenerator", null, 0, 1, ValueGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(valueGeneratorEClass_T);
-		initEAttribute(getValueGenerator_LastGeneratedValue(), g1, "lastGeneratedValue", null, 0, 1, ValueGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getValueGenerator_LastGeneratedValue(), g1, "lastGeneratedValue", null, 0, 1, ValueGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getValueGenerator_RandomSeed(), ecorePackage.getELong(), "randomSeed", "0", 0, 1, ValueGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getValueGenerator_Description(), ecorePackage.getEString(), "description", null, 0, 1, ValueGenerator.class, IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEJavaClass());

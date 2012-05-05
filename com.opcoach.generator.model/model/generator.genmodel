@@ -2,8 +2,9 @@
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.opcoach.generator.model/src"
-    modelPluginID="com.opcoach.generator.model" modelName="Generator" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="5.0" copyrightFields="false">
+    modelPluginID="com.opcoach.generator.model" templateDirectory="" redirection=""
+    modelName="Generator" modelPluginClass="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false" interfaceNamePattern="" classNamePattern="">
   <foreignModel>generator.ecore</foreignModel>
   <genPackages prefix="Generator" basePackage="com.opcoach" disposableProviderFactory="true"
       ecorePackage="generator.ecore#_n2OAwBQDEd-QiqGdp3e77Q">
@@ -17,7 +18,7 @@
       <genFeatures notify="false" children="true" createChild="true" propertyCategory="Bad Values"
           propertyDescription="A specific value generator to use for bad values" propertySortChoices="true"
           ecoreFeature="ecore:EReference generator.ecore#//ValueGenerator/badValueGenerator"/>
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/lastGeneratedValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/lastGeneratedValue"/>
       <genFeatures createChild="false" propertyCategory="Random" propertyDescription="In case of random generator, the seed to use (0 is no random)"
           ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/randomSeed"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/description"/>
@@ -67,6 +68,8 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//basic/StringGenerator/dataFilename"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//basic/StringGenerator/casePolicy"/>
       </genClasses>
+      <genClasses ecoreClass="generator.ecore#//basic/TrueGenerator"/>
+      <genClasses ecoreClass="generator.ecore#//basic/FalseGenerator"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>

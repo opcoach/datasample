@@ -993,6 +993,170 @@ public interface BasicPackage extends EPackage
 
 
 	/**
+	 * The meta object id for the '{@link com.opcoach.generator.basic.impl.TrueGeneratorImpl <em>True Generator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.generator.basic.impl.TrueGeneratorImpl
+	 * @see com.opcoach.generator.basic.impl.BasicPackageImpl#getTrueGenerator()
+	 * @generated
+	 */
+	int TRUE_GENERATOR = 9;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Proportion</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_GENERATOR__BAD_VALUE_PROPORTION = BOOLEAN_GENERATOR__BAD_VALUE_PROPORTION;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_GENERATOR__BAD_VALUE_GENERATOR = BOOLEAN_GENERATOR__BAD_VALUE_GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Last Generated Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_GENERATOR__LAST_GENERATED_VALUE = BOOLEAN_GENERATOR__LAST_GENERATED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Random Seed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_GENERATOR__RANDOM_SEED = BOOLEAN_GENERATOR__RANDOM_SEED;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_GENERATOR__DESCRIPTION = BOOLEAN_GENERATOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_GENERATOR__TYPE = BOOLEAN_GENERATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_GENERATOR__ID = BOOLEAN_GENERATOR__ID;
+
+	/**
+	 * The number of structural features of the '<em>True Generator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_GENERATOR_FEATURE_COUNT = BOOLEAN_GENERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link com.opcoach.generator.basic.impl.FalseGeneratorImpl <em>False Generator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.generator.basic.impl.FalseGeneratorImpl
+	 * @see com.opcoach.generator.basic.impl.BasicPackageImpl#getFalseGenerator()
+	 * @generated
+	 */
+	int FALSE_GENERATOR = 10;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Proportion</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_GENERATOR__BAD_VALUE_PROPORTION = BOOLEAN_GENERATOR__BAD_VALUE_PROPORTION;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_GENERATOR__BAD_VALUE_GENERATOR = BOOLEAN_GENERATOR__BAD_VALUE_GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Last Generated Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_GENERATOR__LAST_GENERATED_VALUE = BOOLEAN_GENERATOR__LAST_GENERATED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Random Seed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_GENERATOR__RANDOM_SEED = BOOLEAN_GENERATOR__RANDOM_SEED;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_GENERATOR__DESCRIPTION = BOOLEAN_GENERATOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_GENERATOR__TYPE = BOOLEAN_GENERATOR__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_GENERATOR__ID = BOOLEAN_GENERATOR__ID;
+
+	/**
+	 * The number of structural features of the '<em>False Generator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_GENERATOR_FEATURE_COUNT = BOOLEAN_GENERATOR_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link com.opcoach.generator.basic.CasePolicyType <em>Case Policy Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1000,7 +1164,7 @@ public interface BasicPackage extends EPackage
 	 * @see com.opcoach.generator.basic.impl.BasicPackageImpl#getCasePolicyType()
 	 * @generated
 	 */
-	int CASE_POLICY_TYPE = 9;
+	int CASE_POLICY_TYPE = 11;
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.generator.basic.BooleanGenerator <em>Boolean Generator</em>}'.
@@ -1146,6 +1310,26 @@ public interface BasicPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getStringGenerator_CasePolicy();
+
+	/**
+	 * Returns the meta object for class '{@link com.opcoach.generator.basic.TrueGenerator <em>True Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>True Generator</em>'.
+	 * @see com.opcoach.generator.basic.TrueGenerator
+	 * @generated
+	 */
+	EClass getTrueGenerator();
+
+	/**
+	 * Returns the meta object for class '{@link com.opcoach.generator.basic.FalseGenerator <em>False Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>False Generator</em>'.
+	 * @see com.opcoach.generator.basic.FalseGenerator
+	 * @generated
+	 */
+	EClass getFalseGenerator();
 
 	/**
 	 * Returns the meta object for enum '{@link com.opcoach.generator.basic.CasePolicyType <em>Case Policy Type</em>}'.
@@ -1296,6 +1480,24 @@ public interface BasicPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute STRING_GENERATOR__CASE_POLICY = eINSTANCE.getStringGenerator_CasePolicy();
+		/**
+		 * The meta object literal for the '{@link com.opcoach.generator.basic.impl.TrueGeneratorImpl <em>True Generator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.generator.basic.impl.TrueGeneratorImpl
+		 * @see com.opcoach.generator.basic.impl.BasicPackageImpl#getTrueGenerator()
+		 * @generated
+		 */
+		EClass TRUE_GENERATOR = eINSTANCE.getTrueGenerator();
+		/**
+		 * The meta object literal for the '{@link com.opcoach.generator.basic.impl.FalseGeneratorImpl <em>False Generator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.generator.basic.impl.FalseGeneratorImpl
+		 * @see com.opcoach.generator.basic.impl.BasicPackageImpl#getFalseGenerator()
+		 * @generated
+		 */
+		EClass FALSE_GENERATOR = eINSTANCE.getFalseGenerator();
 		/**
 		 * The meta object literal for the '{@link com.opcoach.generator.basic.CasePolicyType <em>Case Policy Type</em>}' enum.
 		 * <!-- begin-user-doc -->

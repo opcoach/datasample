@@ -78,6 +78,8 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory
 			case BasicPackage.LONG_GENERATOR: return createLongGenerator();
 			case BasicPackage.NULL_VALUE_GENERATOR: return createNullValueGenerator();
 			case BasicPackage.STRING_GENERATOR: return createStringGenerator();
+			case BasicPackage.TRUE_GENERATOR: return createTrueGenerator();
+			case BasicPackage.FALSE_GENERATOR: return createFalseGenerator();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -214,6 +216,28 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory
 	{
 		StringGeneratorImpl stringGenerator = new StringGeneratorImpl();
 		return stringGenerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TrueGenerator createTrueGenerator()
+	{
+		TrueGeneratorImpl trueGenerator = new TrueGeneratorImpl();
+		return trueGenerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FalseGenerator createFalseGenerator()
+	{
+		FalseGeneratorImpl falseGenerator = new FalseGeneratorImpl();
+		return falseGenerator;
 	}
 
 	/**

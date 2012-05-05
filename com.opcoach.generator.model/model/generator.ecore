@@ -22,7 +22,7 @@
         <eTypeArguments eTypeParameter="#_wGyv0BQDEd-QiqGdp3e77Q"/>
       </eGenericType>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastGeneratedValue" changeable="false">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastGeneratedValue" derived="true">
       <eGenericType eTypeParameter="#_wGyv0BQDEd-QiqGdp3e77Q"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="randomSeed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
@@ -142,5 +142,7 @@
       <eLiterals name="UPPERCASE" value="1"/>
       <eLiterals name="LOWERCASE" value="2"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TrueGenerator" eSuperTypes="#//basic/BooleanGenerator"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FalseGenerator" eSuperTypes="#//basic/BooleanGenerator"/>
   </eSubpackages>
 </ecore:EPackage>

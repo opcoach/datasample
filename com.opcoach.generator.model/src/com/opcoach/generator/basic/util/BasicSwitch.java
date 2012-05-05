@@ -166,6 +166,24 @@ public class BasicSwitch<T1> extends Switch<T1>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case BasicPackage.TRUE_GENERATOR:
+			{
+				TrueGenerator trueGenerator = (TrueGenerator)theEObject;
+				T1 result = caseTrueGenerator(trueGenerator);
+				if (result == null) result = caseBooleanGenerator(trueGenerator);
+				if (result == null) result = caseValueGenerator(trueGenerator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case BasicPackage.FALSE_GENERATOR:
+			{
+				FalseGenerator falseGenerator = (FalseGenerator)theEObject;
+				T1 result = caseFalseGenerator(falseGenerator);
+				if (result == null) result = caseBooleanGenerator(falseGenerator);
+				if (result == null) result = caseValueGenerator(falseGenerator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -310,6 +328,38 @@ public class BasicSwitch<T1> extends Switch<T1>
 	 * @generated
 	 */
 	public T1 caseStringGenerator(StringGenerator object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>True Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>True Generator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseTrueGenerator(TrueGenerator object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>False Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>False Generator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseFalseGenerator(FalseGenerator object)
 	{
 		return null;
 	}

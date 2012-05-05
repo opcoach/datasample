@@ -103,11 +103,22 @@ public interface ValueGenerator<T> extends EObject
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Last Generated Value</em>' attribute.
+	 * @see #setLastGeneratedValue(Object)
 	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_LastGeneratedValue()
-	 * @model changeable="false"
+	 * @model derived="true"
 	 * @generated
 	 */
 	T getLastGeneratedValue();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getLastGeneratedValue <em>Last Generated Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Last Generated Value</em>' attribute.
+	 * @see #getLastGeneratedValue()
+	 * @generated
+	 */
+	void setLastGeneratedValue(T value);
 
 	/**
 	 * Returns the value of the '<em><b>Random Seed</b></em>' attribute.
