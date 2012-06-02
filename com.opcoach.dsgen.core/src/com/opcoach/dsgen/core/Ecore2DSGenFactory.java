@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import com.opcoach.dsgen.DSGenPackage;
 import com.opcoach.dsgen.core.helpers.DSGenHelper;
-import com.opcoach.generator.ecore.dsgen.DSGenPackage;
 
 
 /**

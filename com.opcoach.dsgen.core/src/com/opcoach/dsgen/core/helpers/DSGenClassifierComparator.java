@@ -11,9 +11,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EReference;
 
-import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
-import com.opcoach.generator.ecore.dsgen.DSGenDataType;
-import com.opcoach.generator.ecore.dsgen.DSGenEnum;
+import com.opcoach.dsgen.DSGenClassifier;
+import com.opcoach.dsgen.DSGenDataType;
+import com.opcoach.dsgen.DSGenEnum;
 
 /**
  * Compare 2 DSGenClass DSGenClass is bound to the corresponding eCore class EClasses who has no relations are sorted before EClasses with the most relations to other classes are sorted at the end

@@ -20,21 +20,21 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import com.opcoach.dsgen.DSGenAttribute;
+import com.opcoach.dsgen.DSGenChild;
+import com.opcoach.dsgen.DSGenClass;
+import com.opcoach.dsgen.DSGenClassifier;
+import com.opcoach.dsgen.DSGenDataType;
+import com.opcoach.dsgen.DSGenEnum;
+import com.opcoach.dsgen.DSGenFeature;
+import com.opcoach.dsgen.DSGenPackage;
+import com.opcoach.dsgen.DSGenReference;
+import com.opcoach.dsgen.DataSampleGenFactory;
 import com.opcoach.generator.GeneratorFactory;
 import com.opcoach.generator.RangeGenerator;
 import com.opcoach.generator.ReferenceGenerator;
 import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicFactory;
-import com.opcoach.generator.ecore.dsgen.DSGenAttribute;
-import com.opcoach.generator.ecore.dsgen.DSGenChild;
-import com.opcoach.generator.ecore.dsgen.DSGenClass;
-import com.opcoach.generator.ecore.dsgen.DSGenClassifier;
-import com.opcoach.generator.ecore.dsgen.DSGenDataType;
-import com.opcoach.generator.ecore.dsgen.DSGenEnum;
-import com.opcoach.generator.ecore.dsgen.DSGenFeature;
-import com.opcoach.generator.ecore.dsgen.DSGenPackage;
-import com.opcoach.generator.ecore.dsgen.DSGenReference;
-import com.opcoach.generator.ecore.dsgen.DataSampleGenFactory;
 
 /**
  * An helper class to manage Data Sample Generation models. Will probably be
