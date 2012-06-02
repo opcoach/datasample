@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dsgenmodel"
+    nsURI="http://www.opcoach.com/dmodel/1.0" nsPrefix="dsg">
+  <eAnnotations source="dsg">
+    <details key="foo" value="bar"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenModel" eSuperTypes="#//DSGenBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenPackages" upperBound="-1"
+        eType="#//DSGenPackage" containment="true" eOpposite="#//DSGenPackage/dsgenModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenPackage" eSuperTypes="#//DSGenBase">
+    <eAnnotations source="dsg.name">
+      <details key="foo" value="bar"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ecorePackage" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenModel" lowerBound="1"
+        eType="#//DSGenModel" eOpposite="#//DSGenModel/dsgenPackages"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenClassifiers" upperBound="-1"
+        eType="#//DSGenClassifier" containment="true" eOpposite="#//DSGenClassifier/dsgenPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenClass" eSuperTypes="#//DSGenClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenFeature" eSuperTypes="#//DSGenTypedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenClass" lowerBound="1"
+        eType="#//DSGenClassifier" eOpposite="#//DSGenClassifier/dsgenFeatures"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ecoreFeature" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenBase" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenEnumLiteral" eSuperTypes="#//DSGenBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenClassifier" abstract="true" eSuperTypes="#//DSGenBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ecoreClass" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenFeatures" upperBound="-1"
+        eType="#//DSGenFeature" containment="true" eOpposite="#//DSGenFeature/dsgenClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenPackage" lowerBound="1"
+        eType="#//DSGenPackage" eOpposite="#//DSGenPackage/dsgenClassifiers"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenDataType" eSuperTypes="#//DSGenClassifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenTypedElement" abstract="true" eSuperTypes="#//DSGenBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenAnnotation" eSuperTypes="#//DSGenBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenTypeParameter" eSuperTypes="#//DSGenBase"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DSGenRuntimeVersion"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DSGenJDKLevel"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DSGenDelegationKind"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DSGenValueGeneratorKind">
+    <eLiterals name="Random"/>
+    <eLiterals name="Circular" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DSGenPropertyKind"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="DSGenResourceKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenAttribute" eSuperTypes="#//DSGenFeature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataFilename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenReference" eSuperTypes="#//DSGenFeature"/>
+</ecore:EPackage>

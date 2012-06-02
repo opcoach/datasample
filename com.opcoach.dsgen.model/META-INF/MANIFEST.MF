@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.opcoach.dsgen.model;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: com.opcoach.dsgen,
+ com.opcoach.dsgen.helpers,
+ com.opcoach.dsgen.impl,
+ com.opcoach.dsgen.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ com.opcoach.generator.model;visibility:=reexport
+Bundle-ActivationPolicy: lazy

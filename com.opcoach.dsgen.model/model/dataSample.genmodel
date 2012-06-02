@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.opcoach.generator.ecore.dsgenmodel/src" editDirectory="/com.opcoach.dsgen.model.edit/src"
+    editorDirectory="/com.opcoach.dsgen.model.editor/src" modelPluginID="com.opcoach.generator.ecore.dsgenmodel"
+    modelName="DataSample" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" editPluginID="com.opcoach.dsgen.model.edit" editorPluginID="com.opcoach.dsgen.model.editor"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../com.opcoach.generator.model/model/generator.genmodel#//generator">
+  <foreignModel>dataSample.ecore</foreignModel>
+  <genPackages prefix="DataSampleGen" basePackage="com.opcoach" disposableProviderFactory="true"
+      fileExtensions="dsgen" ecorePackage="dataSample.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dataSample.ecore#//DSGenRuntimeVersion"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dataSample.ecore#//DSGenJDKLevel"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dataSample.ecore#//DSGenDelegationKind"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dataSample.ecore#//DSGenPropertyKind"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dataSample.ecore#//DSGenResourceKind"/>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenModel/dsgenPackages"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenPackage">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenPackage/ecorePackage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenPackage/dsgenModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenPackage/dsgenClassifiers"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenClass">
+      <genFeatures createChild="false" propertyCategory="User Parameter" propertyDescription="Define the number of instance to be generated. If root object, this property is set to 1."
+          ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/instanceNumber"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="internal"
+          propertyDescription="This value is computed. True if the EClass is the main root object"
+          ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/rootObject"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="internal"
+          propertyDescription="This value is computed. Contains the number of external associations refering to the associated EClass"
+          ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/nbAssociationRefTo"/>
+      <genFeatures property="Readonly" children="true" createChild="false" propertyCategory="internal"
+          propertyDescription="Composition children (computed)" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClass/children"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenFeature/nullableValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenFeature/nullablePercent"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenFeature/dsgenClass"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenFeature/ecoreFeature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dataSample.ecore#//DSGenBase"/>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenEnumLiteral"/>
+    <genClasses image="false" ecoreClass="dataSample.ecore#//DSGenClassifier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClassifier/ecoreClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClassifier/dsgenFeatures"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClassifier/dsgenPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenDataType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenDataType/dataType"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="dataSample.ecore#//DSGenTypedElement"/>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenAnnotation"/>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenTypeParameter"/>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenAttribute/generator"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenReference/generator"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenEnum">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenEnum/ecoreEnum"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//DSGenChild">
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="internal"
+          propertyDescription="DSGenClass of the children" propertySortChoices="true"
+          ecoreFeature="ecore:EReference dataSample.ecore#//DSGenChild/dsgenClass"/>
+      <genFeatures property="Readonly" createChild="false" propertyCategory="internal"
+          propertyDescription="Is this composition a single relation ? " ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenChild/single"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="internal"
+          propertyDescription="The source DSGenRef which supports this composition"
+          propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenChild/sourceReference"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="internal"
+          propertyDescription="The possible opposite reference of this composition"
+          propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenChild/oppositeReference"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
