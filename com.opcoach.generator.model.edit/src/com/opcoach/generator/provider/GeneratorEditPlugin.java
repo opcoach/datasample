@@ -43,8 +43,7 @@ public final class GeneratorEditPlugin extends EMFPlugin
 	public GeneratorEditPlugin()
 	{
 		super
-		  (new ResourceLocator [] 
-		   {
+		  (new ResourceLocator [] {
 		   });
 	}
 

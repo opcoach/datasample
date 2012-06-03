@@ -67,8 +67,7 @@ public class ValueGeneratorItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addBadValueProportionPropertyDescriptor(object);
@@ -143,7 +142,7 @@ public class ValueGeneratorItemProvider
 				 getString("_UI_ValueGenerator_lastGeneratedValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ValueGenerator_lastGeneratedValue_feature", "_UI_ValueGenerator_type"),
 				 GeneratorPackage.Literals.VALUE_GENERATOR__LAST_GENERATED_VALUE,
-				 false,
+				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -254,8 +253,7 @@ public class ValueGeneratorItemProvider
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
 	{
-		if (childrenFeatures == null)
-		{
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR);
 		}
@@ -315,8 +313,7 @@ public class ValueGeneratorItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ValueGenerator.class))
-		{
+		switch (notification.getFeatureID(ValueGenerator.class)) {
 			case GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_PROPORTION:
 			case GeneratorPackage.VALUE_GENERATOR__LAST_GENERATED_VALUE:
 			case GeneratorPackage.VALUE_GENERATOR__RANDOM_SEED:
@@ -390,6 +387,16 @@ public class ValueGeneratorItemProvider
 			(createChildParameter
 				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
 				 BasicFactory.eINSTANCE.createStringGenerator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
+				 BasicFactory.eINSTANCE.createTrueGenerator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
+				 BasicFactory.eINSTANCE.createFalseGenerator()));
 	}
 
 	/**

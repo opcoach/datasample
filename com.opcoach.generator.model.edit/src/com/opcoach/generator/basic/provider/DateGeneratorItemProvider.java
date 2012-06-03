@@ -63,8 +63,7 @@ public class DateGeneratorItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addGenerateNowPropertyDescriptor(object);
@@ -132,8 +131,7 @@ public class DateGeneratorItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DateGenerator.class))
-		{
+		switch (notification.getFeatureID(DateGenerator.class)) {
 			case BasicPackage.DATE_GENERATOR__GENERATE_NOW:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

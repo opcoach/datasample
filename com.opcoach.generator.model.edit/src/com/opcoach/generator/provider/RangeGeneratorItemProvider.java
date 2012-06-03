@@ -62,8 +62,7 @@ public class RangeGeneratorItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addLowPropertyDescriptor(object);
@@ -181,8 +180,7 @@ public class RangeGeneratorItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RangeGenerator.class))
-		{
+		switch (notification.getFeatureID(RangeGenerator.class)) {
 			case GeneratorPackage.RANGE_GENERATOR__LOW:
 			case GeneratorPackage.RANGE_GENERATOR__HIGH:
 			case GeneratorPackage.RANGE_GENERATOR__STEP:

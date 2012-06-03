@@ -94,8 +94,7 @@ public class GeneratorItemProviderAdapterFactory extends GeneratorAdapterFactory
 	@Override
 	public Adapter createReferenceGeneratorAdapter()
 	{
-		if (referenceGeneratorItemProvider == null)
-		{
+		if (referenceGeneratorItemProvider == null) {
 			referenceGeneratorItemProvider = new ReferenceGeneratorItemProvider(this);
 		}
 
@@ -155,11 +154,9 @@ public class GeneratorItemProviderAdapterFactory extends GeneratorAdapterFactory
 	@Override
 	public Object adapt(Object object, Object type)
 	{
-		if (isFactoryForType(type))
-		{
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -199,8 +196,7 @@ public class GeneratorItemProviderAdapterFactory extends GeneratorAdapterFactory
 	{
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

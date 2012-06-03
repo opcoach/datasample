@@ -61,8 +61,7 @@ public class ReferenceGeneratorItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addStepPropertyDescriptor(object);
@@ -120,8 +119,7 @@ public class ReferenceGeneratorItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ReferenceGenerator.class))
-		{
+		switch (notification.getFeatureID(ReferenceGenerator.class)) {
 			case GeneratorPackage.REFERENCE_GENERATOR__STEP:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
