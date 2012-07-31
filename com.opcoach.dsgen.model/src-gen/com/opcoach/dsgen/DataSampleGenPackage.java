@@ -25,7 +25,6 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see com.opcoach.dsgen.DataSampleGenFactory
  * @model kind="package"
- *        annotation="dsg foo='bar'"
  * @generated
  */
 public interface DataSampleGenPackage extends EPackage

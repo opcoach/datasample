@@ -895,27 +895,8 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		createResource(eNS_URI);
 
 		// Create annotations
-		// dsg
-		createDsgAnnotations();
 		// dsg.name
-		createDsg_1Annotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>dsg</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createDsgAnnotations()
-	{
-		String source = "dsg";		
-		addAnnotation
-		  (this, 
-		   source, 
-		   new String[] {
-			 "foo", "bar"
-		   });	
+		createDsgAnnotations();
 	}
 
 	/**
@@ -924,9 +905,9 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createDsg_1Annotations()
+	protected void createDsgAnnotations()
 	{
-		String source = "dsg.name";			
+		String source = "dsg.name";		
 		addAnnotation
 		  (dsGenPackageEClass, 
 		   source, 
