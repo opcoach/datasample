@@ -57,8 +57,7 @@ public class DSGenFeatureItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNullableValuePropertyDescriptor(object);
@@ -168,8 +167,7 @@ public class DSGenFeatureItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DSGenFeature.class))
-		{
+		switch (notification.getFeatureID(DSGenFeature.class)) {
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
 			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

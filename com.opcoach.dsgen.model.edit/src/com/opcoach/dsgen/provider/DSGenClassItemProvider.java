@@ -63,8 +63,7 @@ public class DSGenClassItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addInstanceNumberPropertyDescriptor(object);
@@ -178,8 +177,7 @@ public class DSGenClassItemProvider
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
 	{
-		if (childrenFeatures == null)
-		{
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DataSampleGenPackage.Literals.DS_GEN_CLASS__CHILDREN);
 		}
@@ -241,8 +239,7 @@ public class DSGenClassItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DSGenClass.class))
-		{
+		switch (notification.getFeatureID(DSGenClass.class)) {
 			case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
 			case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
 			case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:

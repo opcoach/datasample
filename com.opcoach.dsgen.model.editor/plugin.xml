@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.opcoach.dsgen.presentation.DataSampleGenModelWizardID"
+            name="%_UI_DataSampleGenModelWizard_label"
+            class="com.opcoach.dsgen.presentation.DataSampleGenModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DataSampleGenModelFile.gif">
+         <description>%_UI_DataSampleGenModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="com.opcoach.dsgen.presentation.DataSampleGenEditorID"
+            name="%_UI_DataSampleGenEditor_label"
+            icon="icons/full/obj16/DataSampleGenModelFile.gif"
+            extensions="dsgen"
+            class="com.opcoach.dsgen.presentation.DataSampleGenEditor"
+            contributorClass="com.opcoach.dsgen.presentation.DataSampleGenActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

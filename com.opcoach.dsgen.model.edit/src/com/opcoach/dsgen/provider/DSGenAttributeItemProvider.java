@@ -58,8 +58,7 @@ public class DSGenAttributeItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -76,8 +75,7 @@ public class DSGenAttributeItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DataSampleGenPackage.Literals.DS_GEN_ATTRIBUTE__GENERATOR);
 		}
@@ -132,8 +130,7 @@ public class DSGenAttributeItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DSGenAttribute.class))
-		{
+		switch (notification.getFeatureID(DSGenAttribute.class)) {
 			case DataSampleGenPackage.DS_GEN_ATTRIBUTE__GENERATOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -201,6 +198,16 @@ public class DSGenAttributeItemProvider
 			(createChildParameter
 				(DataSampleGenPackage.Literals.DS_GEN_ATTRIBUTE__GENERATOR,
 				 BasicFactory.eINSTANCE.createStringGenerator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataSampleGenPackage.Literals.DS_GEN_ATTRIBUTE__GENERATOR,
+				 BasicFactory.eINSTANCE.createTrueGenerator()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DataSampleGenPackage.Literals.DS_GEN_ATTRIBUTE__GENERATOR,
+				 BasicFactory.eINSTANCE.createFalseGenerator()));
 	}
 
 }

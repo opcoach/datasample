@@ -58,8 +58,7 @@ public class DSGenClassifierItemProvider
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addEcoreClassPropertyDescriptor(object);
@@ -99,8 +98,7 @@ public class DSGenClassifierItemProvider
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null)
-		{
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DataSampleGenPackage.Literals.DS_GEN_CLASSIFIER__DSGEN_FEATURES);
 		}
@@ -143,8 +141,7 @@ public class DSGenClassifierItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DSGenClassifier.class))
-		{
+		switch (notification.getFeatureID(DSGenClassifier.class)) {
 			case DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

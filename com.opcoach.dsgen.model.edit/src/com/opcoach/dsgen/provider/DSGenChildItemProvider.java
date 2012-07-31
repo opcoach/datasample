@@ -63,8 +63,7 @@ public class DSGenChildItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addDsgenClassPropertyDescriptor(object);
@@ -207,8 +206,7 @@ public class DSGenChildItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DSGenChild.class))
-		{
+		switch (notification.getFeatureID(DSGenChild.class)) {
 			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

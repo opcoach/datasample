@@ -90,8 +90,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenModelAdapter() {
-		if (dsGenModelItemProvider == null)
-		{
+		if (dsGenModelItemProvider == null) {
 			dsGenModelItemProvider = new DSGenModelItemProvider(this);
 		}
 
@@ -114,8 +113,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenPackageAdapter() {
-		if (dsGenPackageItemProvider == null)
-		{
+		if (dsGenPackageItemProvider == null) {
 			dsGenPackageItemProvider = new DSGenPackageItemProvider(this);
 		}
 
@@ -138,8 +136,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenClassAdapter() {
-		if (dsGenClassItemProvider == null)
-		{
+		if (dsGenClassItemProvider == null) {
 			dsGenClassItemProvider = new DSGenClassItemProvider(this);
 		}
 
@@ -162,8 +159,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenFeatureAdapter() {
-		if (dsGenFeatureItemProvider == null)
-		{
+		if (dsGenFeatureItemProvider == null) {
 			dsGenFeatureItemProvider = new DSGenFeatureItemProvider(this);
 		}
 
@@ -186,8 +182,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenEnumLiteralAdapter() {
-		if (dsGenEnumLiteralItemProvider == null)
-		{
+		if (dsGenEnumLiteralItemProvider == null) {
 			dsGenEnumLiteralItemProvider = new DSGenEnumLiteralItemProvider(this);
 		}
 
@@ -210,8 +205,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenDataTypeAdapter() {
-		if (dsGenDataTypeItemProvider == null)
-		{
+		if (dsGenDataTypeItemProvider == null) {
 			dsGenDataTypeItemProvider = new DSGenDataTypeItemProvider(this);
 		}
 
@@ -234,8 +228,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenAnnotationAdapter() {
-		if (dsGenAnnotationItemProvider == null)
-		{
+		if (dsGenAnnotationItemProvider == null) {
 			dsGenAnnotationItemProvider = new DSGenAnnotationItemProvider(this);
 		}
 
@@ -258,8 +251,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenTypeParameterAdapter() {
-		if (dsGenTypeParameterItemProvider == null)
-		{
+		if (dsGenTypeParameterItemProvider == null) {
 			dsGenTypeParameterItemProvider = new DSGenTypeParameterItemProvider(this);
 		}
 
@@ -282,8 +274,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenAttributeAdapter() {
-		if (dsGenAttributeItemProvider == null)
-		{
+		if (dsGenAttributeItemProvider == null) {
 			dsGenAttributeItemProvider = new DSGenAttributeItemProvider(this);
 		}
 
@@ -306,8 +297,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Adapter createDSGenReferenceAdapter() {
-		if (dsGenReferenceItemProvider == null)
-		{
+		if (dsGenReferenceItemProvider == null) {
 			dsGenReferenceItemProvider = new DSGenReferenceItemProvider(this);
 		}
 
@@ -331,8 +321,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	@Override
 	public Adapter createDSGenEnumAdapter()
 	{
-		if (dsGenEnumItemProvider == null)
-		{
+		if (dsGenEnumItemProvider == null) {
 			dsGenEnumItemProvider = new DSGenEnumItemProvider(this);
 		}
 
@@ -356,8 +345,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	@Override
 	public Adapter createDSGenChildAdapter()
 	{
-		if (dsGenChildItemProvider == null)
-		{
+		if (dsGenChildItemProvider == null) {
 			dsGenChildItemProvider = new DSGenChildItemProvider(this);
 		}
 
@@ -412,11 +400,9 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if (isFactoryForType(type))
-		{
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -453,8 +439,7 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

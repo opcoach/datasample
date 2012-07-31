@@ -31,7 +31,6 @@ import com.opcoach.dsgen.DSGenPackage;
 import com.opcoach.dsgen.DSGenReference;
 import com.opcoach.dsgen.DataSampleGenFactory;
 import com.opcoach.generator.GeneratorFactory;
-import com.opcoach.generator.RangeGenerator;
 import com.opcoach.generator.ReferenceGenerator;
 import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicFactory;

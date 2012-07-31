@@ -41,8 +41,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.osgi.framework.Bundle;
 
-import com.opcoach.generator.ecore.dsgen.DSGenPackage;
-import com.opcoach.generator.ecore.dsgen.helpers.DSGenHelper;
+import com.opcoach.dsgen.DSGenPackage;
+import com.opcoach.dsgen.helpers.DSGenHelper;
 import com.opcoach.generator.ecore.ui.GeneratorEcoreUIActivator;
 
 /**

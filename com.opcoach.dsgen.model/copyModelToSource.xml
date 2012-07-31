@@ -10,7 +10,7 @@
 		<mkdir dir="src/model"/>
 		<copy todir="src/model" file="model/dataSample.ecore"/>
 			
-		<eclipse.refreshLocal  resource="com.opcoach.generator.ecore.dsgenmodel" depth="infinite" />
+		<eclipse.refreshLocal  resource="com.opcoach.dsgen.model" depth="infinite" />
 	</target>
 
 	

@@ -43,8 +43,7 @@ public final class DataSampleEditPlugin extends EMFPlugin {
 	 */
 	public DataSampleEditPlugin() {
 		super
-		  (new ResourceLocator [] 
-		   {
+		  (new ResourceLocator [] {
 		     EcoreEditPlugin.INSTANCE,
 		     GeneratorEditPlugin.INSTANCE,
 		   });
