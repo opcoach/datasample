@@ -67,6 +67,7 @@ public class DSGenModelItemProvider extends DSGenBaseItemProvider implements IEd
 
 			addRandomSeedPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addLanguagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -101,6 +102,22 @@ public class DSGenModelItemProvider extends DSGenBaseItemProvider implements IEd
 				getString("_UI_PropertyDescriptor_description", "_UI_DSGenModel_name_feature", "_UI_DSGenModel_type"),
 				DataSampleGenPackage.Literals.DS_GEN_MODEL__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Language feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLanguagePropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_DSGenModel_language_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_DSGenModel_language_feature", "_UI_DSGenModel_type"),
+				DataSampleGenPackage.Literals.DS_GEN_MODEL__LANGUAGE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -176,6 +193,7 @@ public class DSGenModelItemProvider extends DSGenBaseItemProvider implements IEd
 		{
 		case DataSampleGenPackage.DS_GEN_MODEL__RANDOM_SEED:
 		case DataSampleGenPackage.DS_GEN_MODEL__NAME:
+		case DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES:

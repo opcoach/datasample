@@ -6,6 +6,7 @@
         eType="#//DSGenPackage" containment="true" eOpposite="#//DSGenPackage/dsgenModel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="randomSeed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenPackage" eSuperTypes="#//DSGenBase">
     <eAnnotations source="dsg.name">

@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.opcoach.dsgen.DSGenModel#getDsgenPackages <em>Dsgen Packages</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenModel#getRandomSeed <em>Random Seed</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenModel#getName <em>Name</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.DSGenModel#getLanguage <em>Language</em>}</li>
  * </ul>
  * </p>
  *
@@ -102,5 +103,31 @@ public interface DSGenModel extends DSGenBase
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Language</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Language</em>' attribute.
+	 * @see #setLanguage(String)
+	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenModel_Language()
+	 * @model
+	 * @generated
+	 */
+	String getLanguage();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenModel#getLanguage <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Language</em>' attribute.
+	 * @see #getLanguage()
+	 * @generated
+	 */
+	void setLanguage(String value);
 
 } // DSGenModel

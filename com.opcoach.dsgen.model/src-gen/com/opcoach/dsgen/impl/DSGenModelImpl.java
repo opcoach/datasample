@@ -30,6 +30,7 @@ import com.opcoach.dsgen.DataSampleGenPackage;
  *   <li>{@link com.opcoach.dsgen.impl.DSGenModelImpl#getDsgenPackages <em>Dsgen Packages</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenModelImpl#getRandomSeed <em>Random Seed</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenModelImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.impl.DSGenModelImpl#getLanguage <em>Language</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,6 +89,25 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LANGUAGE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getLanguage() <em>Language</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLanguage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String language = LANGUAGE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -170,6 +190,30 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLanguage()
+	{
+		return language;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLanguage(String newLanguage)
+	{
+		String oldLanguage = language;
+		language = newLanguage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE, oldLanguage,
+					language));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -215,6 +259,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 			return getRandomSeed();
 		case DataSampleGenPackage.DS_GEN_MODEL__NAME:
 			return getName();
+		case DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE:
+			return getLanguage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,6 +285,9 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 		case DataSampleGenPackage.DS_GEN_MODEL__NAME:
 			setName((String) newValue);
 			return;
+		case DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE:
+			setLanguage((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -261,6 +310,9 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 		case DataSampleGenPackage.DS_GEN_MODEL__NAME:
 			setName(NAME_EDEFAULT);
 			return;
+		case DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE:
+			setLanguage(LANGUAGE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -280,6 +332,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 			return randomSeed != RANDOM_SEED_EDEFAULT;
 		case DataSampleGenPackage.DS_GEN_MODEL__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE:
+			return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -300,6 +354,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 		result.append(randomSeed);
 		result.append(", name: ");
 		result.append(name);
+		result.append(", language: ");
+		result.append(language);
 		result.append(')');
 		return result.toString();
 	}

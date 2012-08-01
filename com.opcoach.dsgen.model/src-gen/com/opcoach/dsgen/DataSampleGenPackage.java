@@ -120,12 +120,21 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_MODEL__NAME = DS_GEN_BASE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_MODEL__LANGUAGE = DS_GEN_BASE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>DS Gen Model</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_MODEL_FEATURE_COUNT = DS_GEN_BASE_FEATURE_COUNT + 3;
+	int DS_GEN_MODEL_FEATURE_COUNT = DS_GEN_BASE_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.impl.DSGenPackageImpl <em>DS Gen Package</em>}' class.
@@ -796,6 +805,17 @@ public interface DataSampleGenPackage extends EPackage
 	EAttribute getDSGenModel_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.dsgen.DSGenModel#getLanguage <em>Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Language</em>'.
+	 * @see com.opcoach.dsgen.DSGenModel#getLanguage()
+	 * @see #getDSGenModel()
+	 * @generated
+	 */
+	EAttribute getDSGenModel_Language();
+
+	/**
 	 * Returns the meta object for class '{@link com.opcoach.dsgen.DSGenPackage <em>DS Gen Package</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>DS Gen Package</em>'.
@@ -1271,6 +1291,14 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute DS_GEN_MODEL__NAME = eINSTANCE.getDSGenModel_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DS_GEN_MODEL__LANGUAGE = eINSTANCE.getDSGenModel_Language();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.dsgen.impl.DSGenPackageImpl <em>DS Gen Package</em>}' class.

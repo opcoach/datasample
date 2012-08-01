@@ -45,6 +45,7 @@ public class Ecore2DSGenFactory
 		long seed = System.currentTimeMillis();
 		model.setName(ecoreSource.getName().substring(0,ecoreSource.getName().indexOf(ECORE_FILE_EXT)-1));
 		model.setRandomSeed(seed);
+		model.setLanguage("en");  // the language to generate data
 		
 		DSGenPackage genPack = createDSGenPackage(ecoreSource.getLocationURI());
 		model.getDsgenPackages().add(genPack);

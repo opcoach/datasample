@@ -281,6 +281,16 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDSGenModel_Language()
+	{
+		return (EAttribute) dsGenModelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -682,6 +692,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		createEReference(dsGenModelEClass, DS_GEN_MODEL__DSGEN_PACKAGES);
 		createEAttribute(dsGenModelEClass, DS_GEN_MODEL__RANDOM_SEED);
 		createEAttribute(dsGenModelEClass, DS_GEN_MODEL__NAME);
+		createEAttribute(dsGenModelEClass, DS_GEN_MODEL__LANGUAGE);
 
 		dsGenPackageEClass = createEClass(DS_GEN_PACKAGE);
 		createEReference(dsGenPackageEClass, DS_GEN_PACKAGE__ECORE_PACKAGE);
@@ -797,6 +808,8 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDSGenModel_Name(), ecorePackage.getEString(), "name", null, 0, 1, DSGenModel.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDSGenModel_Language(), ecorePackage.getEString(), "language", null, 0, 1, DSGenModel.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dsGenPackageEClass, DSGenPackage.class, "DSGenPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDSGenPackage_EcorePackage(), theEcorePackage.getEPackage(), null, "ecorePackage", null, 1, 1,
