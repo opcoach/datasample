@@ -9,9 +9,8 @@ package com.opcoach.dsgen;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>DS Gen Base</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>DS Gen Base</b></em>'. <!-- end-user-doc -->
  *
  *
  * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenBase()
@@ -20,4 +19,10 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface DSGenBase extends EObject
 {
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "© OPCoach 2012";
 } // DSGenBase

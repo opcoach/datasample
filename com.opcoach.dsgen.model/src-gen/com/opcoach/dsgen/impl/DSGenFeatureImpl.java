@@ -19,9 +19,8 @@ import com.opcoach.dsgen.DSGenFeature;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Feature</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Feature</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -37,9 +36,15 @@ import com.opcoach.dsgen.DataSampleGenPackage;
 public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeature
 {
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+
+	/**
 	 * The default value of the '{@link #isNullableValue() <em>Nullable Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #isNullableValue()
 	 * @generated
 	 * @ordered
@@ -48,8 +53,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 
 	/**
 	 * The cached value of the '{@link #isNullableValue() <em>Nullable Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #isNullableValue()
 	 * @generated
 	 * @ordered
@@ -58,8 +63,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 
 	/**
 	 * The default value of the '{@link #getNullablePercent() <em>Nullable Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getNullablePercent()
 	 * @generated
 	 * @ordered
@@ -68,8 +73,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 
 	/**
 	 * The cached value of the '{@link #getNullablePercent() <em>Nullable Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getNullablePercent()
 	 * @generated
 	 * @ordered
@@ -78,8 +83,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 
 	/**
 	 * The cached value of the '{@link #getEcoreFeature() <em>Ecore Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getEcoreFeature()
 	 * @generated
 	 * @ordered
@@ -87,8 +92,7 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	protected EStructuralFeature ecoreFeature;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DSGenFeatureImpl()
@@ -97,8 +101,7 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -108,8 +111,7 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isNullableValue()
@@ -118,8 +120,7 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setNullableValue(boolean newNullableValue)
@@ -127,12 +128,12 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 		boolean oldNullableValue = nullableValue;
 		nullableValue = newNullableValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE, oldNullableValue, nullableValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE,
+					oldNullableValue, nullableValue));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getNullablePercent()
@@ -141,8 +142,7 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setNullablePercent(int newNullablePercent)
@@ -150,74 +150,78 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 		int oldNullablePercent = nullablePercent;
 		nullablePercent = newNullablePercent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT, oldNullablePercent, nullablePercent));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT,
+					oldNullablePercent, nullablePercent));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenClassifier getDsgenClass()
 	{
-		if (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS) return null;
-		return (DSGenClassifier)eContainer();
+		if (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS)
+			return null;
+		return (DSGenClassifier) eContainer();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetDsgenClass(DSGenClassifier newDsgenClass, NotificationChain msgs)
 	{
-		msgs = eBasicSetContainer((InternalEObject)newDsgenClass, DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newDsgenClass, DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS, msgs);
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setDsgenClass(DSGenClassifier newDsgenClass)
 	{
-		if (newDsgenClass != eInternalContainer() || (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS && newDsgenClass != null)) {
+		if (newDsgenClass != eInternalContainer()
+				|| (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS && newDsgenClass != null))
+		{
 			if (EcoreUtil.isAncestor(this, newDsgenClass))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newDsgenClass != null)
-				msgs = ((InternalEObject)newDsgenClass).eInverseAdd(this, DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES, DSGenClassifier.class, msgs);
+				msgs = ((InternalEObject) newDsgenClass).eInverseAdd(this, DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES,
+						DSGenClassifier.class, msgs);
 			msgs = basicSetDsgenClass(newDsgenClass, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS, newDsgenClass, newDsgenClass));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS, newDsgenClass,
+					newDsgenClass));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EStructuralFeature getEcoreFeature()
 	{
-		if (ecoreFeature != null && ecoreFeature.eIsProxy()) {
-			InternalEObject oldEcoreFeature = (InternalEObject)ecoreFeature;
-			ecoreFeature = (EStructuralFeature)eResolveProxy(oldEcoreFeature);
-			if (ecoreFeature != oldEcoreFeature) {
+		if (ecoreFeature != null && ecoreFeature.eIsProxy())
+		{
+			InternalEObject oldEcoreFeature = (InternalEObject) ecoreFeature;
+			ecoreFeature = (EStructuralFeature) eResolveProxy(oldEcoreFeature);
+			if (ecoreFeature != oldEcoreFeature)
+			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE, oldEcoreFeature, ecoreFeature));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE,
+							oldEcoreFeature, ecoreFeature));
 			}
 		}
 		return ecoreFeature;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EStructuralFeature basicGetEcoreFeature()
@@ -226,8 +230,7 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setEcoreFeature(EStructuralFeature newEcoreFeature)
@@ -235,158 +238,161 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 		EStructuralFeature oldEcoreFeature = ecoreFeature;
 		ecoreFeature = newEcoreFeature;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE, oldEcoreFeature, ecoreFeature));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE,
+					oldEcoreFeature, ecoreFeature));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetDsgenClass((DSGenClassifier)otherEnd, msgs);
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetDsgenClass((DSGenClassifier) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
-				return basicSetDsgenClass(null, msgs);
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
+			return basicSetDsgenClass(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
 	{
-		switch (eContainerFeatureID()) {
-			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
-				return eInternalContainer().eInverseRemove(this, DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES, DSGenClassifier.class, msgs);
+		switch (eContainerFeatureID())
+		{
+		case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
+			return eInternalContainer().eInverseRemove(this, DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_FEATURES,
+					DSGenClassifier.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
-				return isNullableValue();
-			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
-				return getNullablePercent();
-			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
-				return getDsgenClass();
-			case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
-				if (resolve) return getEcoreFeature();
-				return basicGetEcoreFeature();
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
+			return isNullableValue();
+		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
+			return getNullablePercent();
+		case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
+			return getDsgenClass();
+		case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
+			if (resolve)
+				return getEcoreFeature();
+			return basicGetEcoreFeature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
-				setNullableValue((Boolean)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
-				setNullablePercent((Integer)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
-				setDsgenClass((DSGenClassifier)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
-				setEcoreFeature((EStructuralFeature)newValue);
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
+			setNullableValue((Boolean) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
+			setNullablePercent((Integer) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
+			setDsgenClass((DSGenClassifier) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
+			setEcoreFeature((EStructuralFeature) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
-				setNullableValue(NULLABLE_VALUE_EDEFAULT);
-				return;
-			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
-				setNullablePercent(NULLABLE_PERCENT_EDEFAULT);
-				return;
-			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
-				setDsgenClass((DSGenClassifier)null);
-				return;
-			case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
-				setEcoreFeature((EStructuralFeature)null);
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
+			setNullableValue(NULLABLE_VALUE_EDEFAULT);
+			return;
+		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
+			setNullablePercent(NULLABLE_PERCENT_EDEFAULT);
+			return;
+		case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
+			setDsgenClass((DSGenClassifier) null);
+			return;
+		case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
+			setEcoreFeature((EStructuralFeature) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
-				return nullableValue != NULLABLE_VALUE_EDEFAULT;
-			case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
-				return nullablePercent != NULLABLE_PERCENT_EDEFAULT;
-			case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
-				return getDsgenClass() != null;
-			case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
-				return ecoreFeature != null;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
+			return nullableValue != NULLABLE_VALUE_EDEFAULT;
+		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
+			return nullablePercent != NULLABLE_PERCENT_EDEFAULT;
+		case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
+			return getDsgenClass() != null;
+		case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
+			return ecoreFeature != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (nullableValue: ");
@@ -397,4 +403,4 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 		return result.toString();
 	}
 
-} //DSGenFeatureImpl
+} // DSGenFeatureImpl

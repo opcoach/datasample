@@ -8,11 +8,9 @@ package com.opcoach.dsgen;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>DS Gen Class</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>DS Gen Class</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -30,6 +28,12 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface DSGenClass extends DSGenClassifier
 {
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "© OPCoach 2012";
+
 	/**
 	 * Returns the value of the '<em><b>Instance Number</b></em>' attribute.
 	 * The default value is <code>"50"</code>.
@@ -49,8 +53,8 @@ public interface DSGenClass extends DSGenClassifier
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenClass#getInstanceNumber <em>Instance Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Instance Number</em>' attribute.
 	 * @see #getInstanceNumber()
 	 * @generated
@@ -62,8 +66,8 @@ public interface DSGenClass extends DSGenClassifier
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Root Object</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Root Object</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Root Object</em>' attribute.
@@ -76,8 +80,8 @@ public interface DSGenClass extends DSGenClassifier
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenClass#isRootObject <em>Root Object</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Root Object</em>' attribute.
 	 * @see #isRootObject()
 	 * @generated
@@ -89,8 +93,8 @@ public interface DSGenClass extends DSGenClassifier
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Nb Association Ref To</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Nb Association Ref To</em>' attribute isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nb Association Ref To</em>' attribute.
@@ -103,8 +107,8 @@ public interface DSGenClass extends DSGenClassifier
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenClass#getNbAssociationRefTo <em>Nb Association Ref To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Nb Association Ref To</em>' attribute.
 	 * @see #getNbAssociationRefTo()
 	 * @generated

@@ -7,9 +7,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>DS Gen Package</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>DS Gen Package</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -24,15 +23,23 @@ import org.eclipse.emf.ecore.EPackage;
  * @model annotation="dsg.name foo='bar'"
  * @generated
  */
-public interface DSGenPackage extends DSGenBase {
+public interface DSGenPackage extends DSGenBase
+{
 	/**
-	 * Returns the value of the '<em><b>Ecore Package</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "© OPCoach 2012";
+
+	/**
+	 * Returns the value of the '<em><b>Ecore Package</b></em>' reference. <!--
+	 * begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ecore Package</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Ecore Package</em>' reference.
 	 * @see #setEcorePackage(EPackage)
 	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenPackage_EcorePackage()
@@ -43,8 +50,8 @@ public interface DSGenPackage extends DSGenBase {
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenPackage#getEcorePackage <em>Ecore Package</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Ecore Package</em>' reference.
 	 * @see #getEcorePackage()
 	 * @generated
@@ -56,8 +63,8 @@ public interface DSGenPackage extends DSGenBase {
 	 * It is bidirectional and its opposite is '{@link com.opcoach.dsgen.DSGenModel#getDsgenPackages <em>Dsgen Packages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dsgen Model</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Dsgen Model</em>' container reference isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dsgen Model</em>' container reference.
@@ -71,8 +78,7 @@ public interface DSGenPackage extends DSGenBase {
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenPackage#getDsgenModel <em>Dsgen Model</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Dsgen Model</em>' container reference.
 	 * @see #getDsgenModel()
 	 * @generated
@@ -85,8 +91,8 @@ public interface DSGenPackage extends DSGenBase {
 	 * It is bidirectional and its opposite is '{@link com.opcoach.dsgen.DSGenClassifier#getDsgenPackage <em>Dsgen Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dsgen Classifiers</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Dsgen Classifiers</em>' containment reference
+	 * list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dsgen Classifiers</em>' containment reference list.

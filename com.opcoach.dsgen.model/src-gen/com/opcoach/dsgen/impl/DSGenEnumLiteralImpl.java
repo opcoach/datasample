@@ -12,9 +12,8 @@ import com.opcoach.dsgen.DSGenEnumLiteral;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Enum Literal</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Enum Literal</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -23,8 +22,13 @@ import com.opcoach.dsgen.DataSampleGenPackage;
 public class DSGenEnumLiteralImpl extends DSGenBaseImpl implements DSGenEnumLiteral
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DSGenEnumLiteralImpl()
@@ -33,8 +37,7 @@ public class DSGenEnumLiteralImpl extends DSGenBaseImpl implements DSGenEnumLite
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -43,4 +46,4 @@ public class DSGenEnumLiteralImpl extends DSGenBaseImpl implements DSGenEnumLite
 		return DataSampleGenPackage.Literals.DS_GEN_ENUM_LITERAL;
 	}
 
-} //DSGenEnumLiteralImpl
+} // DSGenEnumLiteralImpl

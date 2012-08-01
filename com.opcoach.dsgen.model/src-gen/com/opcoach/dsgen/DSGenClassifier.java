@@ -10,9 +10,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>DS Gen Classifier</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>DS Gen Classifier</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -30,13 +29,20 @@ import org.eclipse.emf.ecore.EClass;
 public interface DSGenClassifier extends DSGenBase
 {
 	/**
-	 * Returns the value of the '<em><b>Ecore Class</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "© OPCoach 2012";
+
+	/**
+	 * Returns the value of the '<em><b>Ecore Class</b></em>' reference. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ecore Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Ecore Class</em>' reference isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Ecore Class</em>' reference.
 	 * @see #setEcoreClass(EClass)
 	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenClassifier_EcoreClass()
@@ -47,8 +53,8 @@ public interface DSGenClassifier extends DSGenBase
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenClassifier#getEcoreClass <em>Ecore Class</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Ecore Class</em>' reference.
 	 * @see #getEcoreClass()
 	 * @generated
@@ -61,8 +67,8 @@ public interface DSGenClassifier extends DSGenBase
 	 * It is bidirectional and its opposite is '{@link com.opcoach.dsgen.DSGenFeature#getDsgenClass <em>Dsgen Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dsgen Features</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Dsgen Features</em>' containment reference
+	 * list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dsgen Features</em>' containment reference list.
@@ -78,8 +84,8 @@ public interface DSGenClassifier extends DSGenBase
 	 * It is bidirectional and its opposite is '{@link com.opcoach.dsgen.DSGenPackage#getDsgenClassifiers <em>Dsgen Classifiers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dsgen Package</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Dsgen Package</em>' container reference isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dsgen Package</em>' container reference.

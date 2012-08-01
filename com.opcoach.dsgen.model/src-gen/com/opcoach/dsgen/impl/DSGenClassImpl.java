@@ -21,11 +21,9 @@ import com.opcoach.dsgen.DSGenChild;
 import com.opcoach.dsgen.DSGenClass;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
-
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Class</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Class</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -41,9 +39,15 @@ import com.opcoach.dsgen.DataSampleGenPackage;
 public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 {
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+
+	/**
 	 * The default value of the '{@link #getInstanceNumber() <em>Instance Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getInstanceNumber()
 	 * @generated
 	 * @ordered
@@ -52,8 +56,8 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 
 	/**
 	 * The cached value of the '{@link #getInstanceNumber() <em>Instance Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getInstanceNumber()
 	 * @generated
 	 * @ordered
@@ -62,8 +66,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 
 	/**
 	 * The default value of the '{@link #isRootObject() <em>Root Object</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isRootObject()
 	 * @generated
 	 * @ordered
@@ -72,8 +75,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 
 	/**
 	 * The cached value of the '{@link #isRootObject() <em>Root Object</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isRootObject()
 	 * @generated
 	 * @ordered
@@ -82,8 +84,8 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 
 	/**
 	 * The default value of the '{@link #getNbAssociationRefTo() <em>Nb Association Ref To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getNbAssociationRefTo()
 	 * @generated
 	 * @ordered
@@ -92,8 +94,8 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 
 	/**
 	 * The cached value of the '{@link #getNbAssociationRefTo() <em>Nb Association Ref To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getNbAssociationRefTo()
 	 * @generated
 	 * @ordered
@@ -102,8 +104,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 
 	/**
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -111,8 +112,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	protected EList<DSGenChild> children;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DSGenClassImpl()
@@ -121,8 +121,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -132,8 +131,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getInstanceNumber()
@@ -142,8 +140,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setInstanceNumber(int newInstanceNumber)
@@ -151,24 +148,25 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		int oldInstanceNumber = instanceNumber;
 		instanceNumber = newInstanceNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER, oldInstanceNumber, instanceNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER,
+					oldInstanceNumber, instanceNumber));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isRootObject() {
+	public boolean isRootObject()
+	{
 		return rootObject;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getNbAssociationRefTo() {
+	public int getNbAssociationRefTo()
+	{
 		return nbAssociationRefTo;
 	}
 
@@ -181,15 +179,17 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		int oldNbAssociationRefTo = nbAssociationRefTo;
 		nbAssociationRefTo = newNbAssociationRefTo;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO, oldNbAssociationRefTo, nbAssociationRefTo));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO,
+					oldNbAssociationRefTo, nbAssociationRefTo));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
-	public void setNbAssociationRefTo(int newNbAssociationRefTo) {
+	public void setNbAssociationRefTo(int newNbAssociationRefTo)
+	{
 		setNbAssociationRefToGen(newNbAssociationRefTo);
 		if (newNbAssociationRefTo == 0)
 		{
@@ -199,29 +199,29 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<DSGenChild> getChildren()
 	{
-		if (children == null) {
+		if (children == null)
+		{
 			children = new EObjectContainmentEList<DSGenChild>(DSGenChild.class, this, DataSampleGenPackage.DS_GEN_CLASS__CHILDREN);
 		}
 		return children;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
+			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -235,126 +235,126 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		boolean oldRootObject = rootObject;
 		rootObject = newRootObject;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT, oldRootObject, rootObject));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT, oldRootObject,
+					rootObject));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
-	public void setRootObject(boolean newRootObject) {
+	public void setRootObject(boolean newRootObject)
+	{
 		setRootObjectGen(newRootObject);
 		// Main object implies only one instance will be created.
-		setInstanceNumber(1);	}
-
+		setInstanceNumber(1);
+	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
-				return getInstanceNumber();
-			case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
-				return isRootObject();
-			case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
-				return getNbAssociationRefTo();
-			case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-				return getChildren();
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
+			return getInstanceNumber();
+		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
+			return isRootObject();
+		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
+			return getNbAssociationRefTo();
+		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
+			return getChildren();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
-				setInstanceNumber((Integer)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
-				setRootObject((Boolean)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
-				setNbAssociationRefTo((Integer)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-				getChildren().clear();
-				getChildren().addAll((Collection<? extends DSGenChild>)newValue);
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
+			setInstanceNumber((Integer) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
+			setRootObject((Boolean) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
+			setNbAssociationRefTo((Integer) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
+			getChildren().clear();
+			getChildren().addAll((Collection<? extends DSGenChild>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
-				setInstanceNumber(INSTANCE_NUMBER_EDEFAULT);
-				return;
-			case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
-				setRootObject(ROOT_OBJECT_EDEFAULT);
-				return;
-			case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
-				setNbAssociationRefTo(NB_ASSOCIATION_REF_TO_EDEFAULT);
-				return;
-			case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-				getChildren().clear();
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
+			setInstanceNumber(INSTANCE_NUMBER_EDEFAULT);
+			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
+			setRootObject(ROOT_OBJECT_EDEFAULT);
+			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
+			setNbAssociationRefTo(NB_ASSOCIATION_REF_TO_EDEFAULT);
+			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
+			getChildren().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
-				return instanceNumber != INSTANCE_NUMBER_EDEFAULT;
-			case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
-				return rootObject != ROOT_OBJECT_EDEFAULT;
-			case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
-				return nbAssociationRefTo != NB_ASSOCIATION_REF_TO_EDEFAULT;
-			case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-				return children != null && !children.isEmpty();
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
+			return instanceNumber != INSTANCE_NUMBER_EDEFAULT;
+		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
+			return rootObject != ROOT_OBJECT_EDEFAULT;
+		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
+			return nbAssociationRefTo != NB_ASSOCIATION_REF_TO_EDEFAULT;
+		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
+			return children != null && !children.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public String toString()
 	{
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (instanceNumber: ");
+		result.append(" (related ecoreClass : ");
+		result.append((getEcoreClass() == null ? "NONE" : getEcoreClass().getName()));
+		result.append("instanceNumber: ");
 		result.append(instanceNumber);
 		result.append(", rootObject: ");
 		result.append(rootObject);
@@ -364,4 +364,4 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		return result.toString();
 	}
 
-} //DSGenClassImpl
+} // DSGenClassImpl

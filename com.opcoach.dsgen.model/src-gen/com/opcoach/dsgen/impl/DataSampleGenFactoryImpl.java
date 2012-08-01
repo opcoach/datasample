@@ -34,30 +34,37 @@ import com.opcoach.dsgen.DSGenTypeParameter;
 import com.opcoach.dsgen.DataSampleGenFactory;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
-
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
+ * end-user-doc -->
  * @generated
  */
 public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSampleGenFactory
 {
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+
+	/**
 	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public static DataSampleGenFactory init()
 	{
-		try {
-			DataSampleGenFactory theDataSampleGenFactory = (DataSampleGenFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.opcoach.com/dsgen/1.0"); 
-			if (theDataSampleGenFactory != null) {
+		try
+		{
+			DataSampleGenFactory theDataSampleGenFactory = (DataSampleGenFactory) EPackage.Registry.INSTANCE
+					.getEFactory("http://www.opcoach.com/dsgen/1.0");
+			if (theDataSampleGenFactory != null)
+			{
 				return theDataSampleGenFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception)
+		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DataSampleGenFactoryImpl();
@@ -65,8 +72,8 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 
 	/**
 	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public DataSampleGenFactoryImpl()
@@ -75,82 +82,93 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass)
 	{
-		switch (eClass.getClassifierID()) {
-			case DataSampleGenPackage.DS_GEN_MODEL: return createDSGenModel();
-			case DataSampleGenPackage.DS_GEN_PACKAGE: return createDSGenPackage();
-			case DataSampleGenPackage.DS_GEN_CLASS: return createDSGenClass();
-			case DataSampleGenPackage.DS_GEN_FEATURE: return createDSGenFeature();
-			case DataSampleGenPackage.DS_GEN_ENUM_LITERAL: return createDSGenEnumLiteral();
-			case DataSampleGenPackage.DS_GEN_DATA_TYPE: return createDSGenDataType();
-			case DataSampleGenPackage.DS_GEN_ANNOTATION: return createDSGenAnnotation();
-			case DataSampleGenPackage.DS_GEN_TYPE_PARAMETER: return createDSGenTypeParameter();
-			case DataSampleGenPackage.DS_GEN_ATTRIBUTE: return createDSGenAttribute();
-			case DataSampleGenPackage.DS_GEN_REFERENCE: return createDSGenReference();
-			case DataSampleGenPackage.DS_GEN_ENUM: return createDSGenEnum();
-			case DataSampleGenPackage.DS_GEN_CHILD: return createDSGenChild();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		switch (eClass.getClassifierID())
+		{
+		case DataSampleGenPackage.DS_GEN_MODEL:
+			return createDSGenModel();
+		case DataSampleGenPackage.DS_GEN_PACKAGE:
+			return createDSGenPackage();
+		case DataSampleGenPackage.DS_GEN_CLASS:
+			return createDSGenClass();
+		case DataSampleGenPackage.DS_GEN_FEATURE:
+			return createDSGenFeature();
+		case DataSampleGenPackage.DS_GEN_ENUM_LITERAL:
+			return createDSGenEnumLiteral();
+		case DataSampleGenPackage.DS_GEN_DATA_TYPE:
+			return createDSGenDataType();
+		case DataSampleGenPackage.DS_GEN_ANNOTATION:
+			return createDSGenAnnotation();
+		case DataSampleGenPackage.DS_GEN_TYPE_PARAMETER:
+			return createDSGenTypeParameter();
+		case DataSampleGenPackage.DS_GEN_ATTRIBUTE:
+			return createDSGenAttribute();
+		case DataSampleGenPackage.DS_GEN_REFERENCE:
+			return createDSGenReference();
+		case DataSampleGenPackage.DS_GEN_ENUM:
+			return createDSGenEnum();
+		case DataSampleGenPackage.DS_GEN_CHILD:
+			return createDSGenChild();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue)
 	{
-		switch (eDataType.getClassifierID()) {
-			case DataSampleGenPackage.DS_GEN_RUNTIME_VERSION:
-				return createDSGenRuntimeVersionFromString(eDataType, initialValue);
-			case DataSampleGenPackage.DS_GEN_JDK_LEVEL:
-				return createDSGenJDKLevelFromString(eDataType, initialValue);
-			case DataSampleGenPackage.DS_GEN_DELEGATION_KIND:
-				return createDSGenDelegationKindFromString(eDataType, initialValue);
-			case DataSampleGenPackage.DS_GEN_PROPERTY_KIND:
-				return createDSGenPropertyKindFromString(eDataType, initialValue);
-			case DataSampleGenPackage.DS_GEN_RESOURCE_KIND:
-				return createDSGenResourceKindFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID())
+		{
+		case DataSampleGenPackage.DS_GEN_RUNTIME_VERSION:
+			return createDSGenRuntimeVersionFromString(eDataType, initialValue);
+		case DataSampleGenPackage.DS_GEN_JDK_LEVEL:
+			return createDSGenJDKLevelFromString(eDataType, initialValue);
+		case DataSampleGenPackage.DS_GEN_DELEGATION_KIND:
+			return createDSGenDelegationKindFromString(eDataType, initialValue);
+		case DataSampleGenPackage.DS_GEN_PROPERTY_KIND:
+			return createDSGenPropertyKindFromString(eDataType, initialValue);
+		case DataSampleGenPackage.DS_GEN_RESOURCE_KIND:
+			return createDSGenResourceKindFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue)
 	{
-		switch (eDataType.getClassifierID()) {
-			case DataSampleGenPackage.DS_GEN_RUNTIME_VERSION:
-				return convertDSGenRuntimeVersionToString(eDataType, instanceValue);
-			case DataSampleGenPackage.DS_GEN_JDK_LEVEL:
-				return convertDSGenJDKLevelToString(eDataType, instanceValue);
-			case DataSampleGenPackage.DS_GEN_DELEGATION_KIND:
-				return convertDSGenDelegationKindToString(eDataType, instanceValue);
-			case DataSampleGenPackage.DS_GEN_PROPERTY_KIND:
-				return convertDSGenPropertyKindToString(eDataType, instanceValue);
-			case DataSampleGenPackage.DS_GEN_RESOURCE_KIND:
-				return convertDSGenResourceKindToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		switch (eDataType.getClassifierID())
+		{
+		case DataSampleGenPackage.DS_GEN_RUNTIME_VERSION:
+			return convertDSGenRuntimeVersionToString(eDataType, instanceValue);
+		case DataSampleGenPackage.DS_GEN_JDK_LEVEL:
+			return convertDSGenJDKLevelToString(eDataType, instanceValue);
+		case DataSampleGenPackage.DS_GEN_DELEGATION_KIND:
+			return convertDSGenDelegationKindToString(eDataType, instanceValue);
+		case DataSampleGenPackage.DS_GEN_PROPERTY_KIND:
+			return convertDSGenPropertyKindToString(eDataType, instanceValue);
+		case DataSampleGenPackage.DS_GEN_RESOURCE_KIND:
+			return convertDSGenResourceKindToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenModel createDSGenModel()
@@ -160,8 +178,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenPackage createDSGenPackage()
@@ -171,8 +188,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenClass createDSGenClass()
@@ -182,8 +198,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenFeature createDSGenFeature()
@@ -193,8 +208,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenEnumLiteral createDSGenEnumLiteral()
@@ -204,8 +218,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenDataType createDSGenDataType()
@@ -215,8 +228,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenAnnotation createDSGenAnnotation()
@@ -226,8 +238,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenTypeParameter createDSGenTypeParameter()
@@ -237,8 +248,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenAttribute createDSGenAttribute()
@@ -248,8 +258,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenReference createDSGenReference()
@@ -259,8 +268,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenEnum createDSGenEnum()
@@ -270,8 +278,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenChild createDSGenChild()
@@ -281,20 +288,20 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenRuntimeVersion createDSGenRuntimeVersionFromString(EDataType eDataType, String initialValue)
 	{
 		DSGenRuntimeVersion result = DSGenRuntimeVersion.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertDSGenRuntimeVersionToString(EDataType eDataType, Object instanceValue)
@@ -303,20 +310,20 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenJDKLevel createDSGenJDKLevelFromString(EDataType eDataType, String initialValue)
 	{
 		DSGenJDKLevel result = DSGenJDKLevel.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertDSGenJDKLevelToString(EDataType eDataType, Object instanceValue)
@@ -325,20 +332,20 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenDelegationKind createDSGenDelegationKindFromString(EDataType eDataType, String initialValue)
 	{
 		DSGenDelegationKind result = DSGenDelegationKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertDSGenDelegationKindToString(EDataType eDataType, Object instanceValue)
@@ -347,20 +354,20 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenPropertyKind createDSGenPropertyKindFromString(EDataType eDataType, String initialValue)
 	{
 		DSGenPropertyKind result = DSGenPropertyKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertDSGenPropertyKindToString(EDataType eDataType, Object instanceValue)
@@ -369,20 +376,20 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenResourceKind createDSGenResourceKindFromString(EDataType eDataType, String initialValue)
 	{
 		DSGenResourceKind result = DSGenResourceKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '"
+					+ eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertDSGenResourceKindToString(EDataType eDataType, Object instanceValue)
@@ -391,18 +398,16 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DataSampleGenPackage getDataSampleGenPackage()
 	{
-		return (DataSampleGenPackage)getEPackage();
+		return (DataSampleGenPackage) getEPackage();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -412,4 +417,4 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 		return DataSampleGenPackage.eINSTANCE;
 	}
 
-} //DataSampleGenFactoryImpl
+} // DataSampleGenFactoryImpl

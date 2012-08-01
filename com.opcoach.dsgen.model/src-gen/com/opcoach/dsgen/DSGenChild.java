@@ -9,9 +9,8 @@ package com.opcoach.dsgen;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>DS Gen Child</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>DS Gen Child</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -30,13 +29,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface DSGenChild extends EObject
 {
 	/**
-	 * Returns the value of the '<em><b>Dsgen Class</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "© OPCoach 2012";
+
+	/**
+	 * Returns the value of the '<em><b>Dsgen Class</b></em>' reference. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dsgen Class</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Dsgen Class</em>' reference isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Dsgen Class</em>' reference.
 	 * @see #setDsgenClass(DSGenClass)
 	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenChild_DsgenClass()
@@ -47,8 +53,8 @@ public interface DSGenChild extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenChild#getDsgenClass <em>Dsgen Class</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Dsgen Class</em>' reference.
 	 * @see #getDsgenClass()
 	 * @generated
@@ -56,13 +62,14 @@ public interface DSGenChild extends EObject
 	void setDsgenClass(DSGenClass value);
 
 	/**
-	 * Returns the value of the '<em><b>Single</b></em>' attribute.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Single</b></em>' attribute. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Single</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Single</em>' attribute isn't clear, there
+	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Single</em>' attribute.
 	 * @see #setSingle(boolean)
 	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenChild_Single()
@@ -72,10 +79,12 @@ public interface DSGenChild extends EObject
 	boolean isSingle();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenChild#isSingle <em>Single</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Single</em>' attribute.
+	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenChild#isSingle
+	 * <em>Single</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Single</em>' attribute.
 	 * @see #isSingle()
 	 * @generated
 	 */
@@ -85,8 +94,8 @@ public interface DSGenChild extends EObject
 	 * Returns the value of the '<em><b>Opposite Reference</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Opposite Reference</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Opposite Reference</em>' reference isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Opposite Reference</em>' reference.
@@ -99,8 +108,8 @@ public interface DSGenChild extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenChild#getOppositeReference <em>Opposite Reference</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Opposite Reference</em>' reference.
 	 * @see #getOppositeReference()
 	 * @generated
@@ -125,8 +134,8 @@ public interface DSGenChild extends EObject
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenChild#getSourceReference <em>Source Reference</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Source Reference</em>' reference.
 	 * @see #getSourceReference()
 	 * @generated

@@ -12,9 +12,8 @@ import com.opcoach.dsgen.DSGenTypedElement;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Typed Element</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Typed Element</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -23,8 +22,13 @@ import com.opcoach.dsgen.DataSampleGenPackage;
 public abstract class DSGenTypedElementImpl extends DSGenBaseImpl implements DSGenTypedElement
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DSGenTypedElementImpl()
@@ -33,8 +37,7 @@ public abstract class DSGenTypedElementImpl extends DSGenBaseImpl implements DSG
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -43,4 +46,4 @@ public abstract class DSGenTypedElementImpl extends DSGenBaseImpl implements DSG
 		return DataSampleGenPackage.Literals.DS_GEN_TYPED_ELEMENT;
 	}
 
-} //DSGenTypedElementImpl
+} // DSGenTypedElementImpl

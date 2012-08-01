@@ -13,9 +13,8 @@ import com.opcoach.dsgen.DSGenBase;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Base</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Base</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -24,8 +23,13 @@ import com.opcoach.dsgen.DataSampleGenPackage;
 public abstract class DSGenBaseImpl extends EObjectImpl implements DSGenBase
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DSGenBaseImpl()
@@ -34,8 +38,7 @@ public abstract class DSGenBaseImpl extends EObjectImpl implements DSGenBase
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -44,4 +47,4 @@ public abstract class DSGenBaseImpl extends EObjectImpl implements DSGenBase
 		return DataSampleGenPackage.Literals.DS_GEN_BASE;
 	}
 
-} //DSGenBaseImpl
+} // DSGenBaseImpl

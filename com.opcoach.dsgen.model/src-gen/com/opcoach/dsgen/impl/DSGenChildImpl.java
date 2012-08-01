@@ -18,9 +18,8 @@ import com.opcoach.dsgen.DSGenReference;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Child</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Child</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -36,9 +35,14 @@ import com.opcoach.dsgen.DataSampleGenPackage;
 public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 {
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+
+	/**
 	 * The cached value of the '{@link #getDsgenClass() <em>Dsgen Class</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDsgenClass()
 	 * @generated
 	 * @ordered
@@ -47,8 +51,7 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 
 	/**
 	 * The default value of the '{@link #isSingle() <em>Single</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSingle()
 	 * @generated
 	 * @ordered
@@ -57,8 +60,7 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 
 	/**
 	 * The cached value of the '{@link #isSingle() <em>Single</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isSingle()
 	 * @generated
 	 * @ordered
@@ -67,8 +69,8 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 
 	/**
 	 * The cached value of the '{@link #getSourceReference() <em>Source Reference</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getSourceReference()
 	 * @generated
 	 * @ordered
@@ -77,8 +79,8 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 
 	/**
 	 * The cached value of the '{@link #getOppositeReference() <em>Opposite Reference</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getOppositeReference()
 	 * @generated
 	 * @ordered
@@ -86,8 +88,7 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	protected DSGenReference oppositeReference;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DSGenChildImpl()
@@ -96,8 +97,7 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -107,26 +107,27 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenClass getDsgenClass()
 	{
-		if (dsgenClass != null && dsgenClass.eIsProxy()) {
-			InternalEObject oldDsgenClass = (InternalEObject)dsgenClass;
-			dsgenClass = (DSGenClass)eResolveProxy(oldDsgenClass);
-			if (dsgenClass != oldDsgenClass) {
+		if (dsgenClass != null && dsgenClass.eIsProxy())
+		{
+			InternalEObject oldDsgenClass = (InternalEObject) dsgenClass;
+			dsgenClass = (DSGenClass) eResolveProxy(oldDsgenClass);
+			if (dsgenClass != oldDsgenClass)
+			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS, oldDsgenClass, dsgenClass));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS,
+							oldDsgenClass, dsgenClass));
 			}
 		}
 		return dsgenClass;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenClass basicGetDsgenClass()
@@ -135,8 +136,7 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setDsgenClass(DSGenClass newDsgenClass)
@@ -144,12 +144,12 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 		DSGenClass oldDsgenClass = dsgenClass;
 		dsgenClass = newDsgenClass;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS, oldDsgenClass, dsgenClass));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS, oldDsgenClass,
+					dsgenClass));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isSingle()
@@ -158,8 +158,7 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setSingle(boolean newSingle)
@@ -171,26 +170,27 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenReference getOppositeReference()
 	{
-		if (oppositeReference != null && oppositeReference.eIsProxy()) {
-			InternalEObject oldOppositeReference = (InternalEObject)oppositeReference;
-			oppositeReference = (DSGenReference)eResolveProxy(oldOppositeReference);
-			if (oppositeReference != oldOppositeReference) {
+		if (oppositeReference != null && oppositeReference.eIsProxy())
+		{
+			InternalEObject oldOppositeReference = (InternalEObject) oppositeReference;
+			oppositeReference = (DSGenReference) eResolveProxy(oldOppositeReference);
+			if (oppositeReference != oldOppositeReference)
+			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE, oldOppositeReference, oppositeReference));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE, oldOppositeReference, oppositeReference));
 			}
 		}
 		return oppositeReference;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenReference basicGetOppositeReference()
@@ -199,8 +199,7 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setOppositeReference(DSGenReference newOppositeReference)
@@ -208,30 +207,32 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 		DSGenReference oldOppositeReference = oppositeReference;
 		oppositeReference = newOppositeReference;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE, oldOppositeReference, oppositeReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE,
+					oldOppositeReference, oppositeReference));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenReference getSourceReference()
 	{
-		if (sourceReference != null && sourceReference.eIsProxy()) {
-			InternalEObject oldSourceReference = (InternalEObject)sourceReference;
-			sourceReference = (DSGenReference)eResolveProxy(oldSourceReference);
-			if (sourceReference != oldSourceReference) {
+		if (sourceReference != null && sourceReference.eIsProxy())
+		{
+			InternalEObject oldSourceReference = (InternalEObject) sourceReference;
+			sourceReference = (DSGenReference) eResolveProxy(oldSourceReference);
+			if (sourceReference != oldSourceReference)
+			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE, oldSourceReference, sourceReference));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE,
+							oldSourceReference, sourceReference));
 			}
 		}
 		return sourceReference;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public DSGenReference basicGetSourceReference()
@@ -240,8 +241,7 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setSourceReference(DSGenReference newSourceReference)
@@ -249,113 +249,117 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 		DSGenReference oldSourceReference = sourceReference;
 		sourceReference = newSourceReference;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE, oldSourceReference, sourceReference));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE,
+					oldSourceReference, sourceReference));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
-				if (resolve) return getDsgenClass();
-				return basicGetDsgenClass();
-			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
-				return isSingle();
-			case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
-				if (resolve) return getSourceReference();
-				return basicGetSourceReference();
-			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
-				if (resolve) return getOppositeReference();
-				return basicGetOppositeReference();
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
+			if (resolve)
+				return getDsgenClass();
+			return basicGetDsgenClass();
+		case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
+			return isSingle();
+		case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
+			if (resolve)
+				return getSourceReference();
+			return basicGetSourceReference();
+		case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
+			if (resolve)
+				return getOppositeReference();
+			return basicGetOppositeReference();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
-				setDsgenClass((DSGenClass)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
-				setSingle((Boolean)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
-				setSourceReference((DSGenReference)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
-				setOppositeReference((DSGenReference)newValue);
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
+			setDsgenClass((DSGenClass) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
+			setSingle((Boolean) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
+			setSourceReference((DSGenReference) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
+			setOppositeReference((DSGenReference) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
-				setDsgenClass((DSGenClass)null);
-				return;
-			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
-				setSingle(SINGLE_EDEFAULT);
-				return;
-			case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
-				setSourceReference((DSGenReference)null);
-				return;
-			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
-				setOppositeReference((DSGenReference)null);
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
+			setDsgenClass((DSGenClass) null);
+			return;
+		case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
+			setSingle(SINGLE_EDEFAULT);
+			return;
+		case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
+			setSourceReference((DSGenReference) null);
+			return;
+		case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
+			setOppositeReference((DSGenReference) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
-				return dsgenClass != null;
-			case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
-				return single != SINGLE_EDEFAULT;
-			case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
-				return sourceReference != null;
-			case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
-				return oppositeReference != null;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
+			return dsgenClass != null;
+		case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
+			return single != SINGLE_EDEFAULT;
+		case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
+			return sourceReference != null;
+		case DataSampleGenPackage.DS_GEN_CHILD__OPPOSITE_REFERENCE:
+			return oppositeReference != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (single: ");
@@ -364,4 +368,4 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 		return result.toString();
 	}
 
-} //DSGenChildImpl
+} // DSGenChildImpl

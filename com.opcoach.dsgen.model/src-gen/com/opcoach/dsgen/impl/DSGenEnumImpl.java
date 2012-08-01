@@ -16,9 +16,8 @@ import com.opcoach.dsgen.DSGenEnum;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Enum</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Enum</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -31,9 +30,13 @@ import com.opcoach.dsgen.DataSampleGenPackage;
 public class DSGenEnumImpl extends DSGenDataTypeImpl implements DSGenEnum
 {
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+	/**
 	 * The cached value of the '{@link #getEcoreEnum() <em>Ecore Enum</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getEcoreEnum()
 	 * @generated
 	 * @ordered
@@ -41,8 +44,7 @@ public class DSGenEnumImpl extends DSGenDataTypeImpl implements DSGenEnum
 	protected EEnum ecoreEnum;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DSGenEnumImpl()
@@ -51,8 +53,7 @@ public class DSGenEnumImpl extends DSGenDataTypeImpl implements DSGenEnum
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -62,26 +63,27 @@ public class DSGenEnumImpl extends DSGenDataTypeImpl implements DSGenEnum
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEnum getEcoreEnum()
 	{
-		if (ecoreEnum != null && ecoreEnum.eIsProxy()) {
-			InternalEObject oldEcoreEnum = (InternalEObject)ecoreEnum;
-			ecoreEnum = (EEnum)eResolveProxy(oldEcoreEnum);
-			if (ecoreEnum != oldEcoreEnum) {
+		if (ecoreEnum != null && ecoreEnum.eIsProxy())
+		{
+			InternalEObject oldEcoreEnum = (InternalEObject) ecoreEnum;
+			ecoreEnum = (EEnum) eResolveProxy(oldEcoreEnum);
+			if (ecoreEnum != oldEcoreEnum)
+			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM, oldEcoreEnum, ecoreEnum));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM,
+							oldEcoreEnum, ecoreEnum));
 			}
 		}
 		return ecoreEnum;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EEnum basicGetEcoreEnum()
@@ -90,8 +92,7 @@ public class DSGenEnumImpl extends DSGenDataTypeImpl implements DSGenEnum
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setEcoreEnum(EEnum newEcoreEnum)
@@ -99,70 +100,72 @@ public class DSGenEnumImpl extends DSGenDataTypeImpl implements DSGenEnum
 		EEnum oldEcoreEnum = ecoreEnum;
 		ecoreEnum = newEcoreEnum;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM, oldEcoreEnum, ecoreEnum));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM, oldEcoreEnum,
+					ecoreEnum));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
-				if (resolve) return getEcoreEnum();
-				return basicGetEcoreEnum();
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
+			if (resolve)
+				return getEcoreEnum();
+			return basicGetEcoreEnum();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
-				setEcoreEnum((EEnum)newValue);
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
+			setEcoreEnum((EEnum) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
-				setEcoreEnum((EEnum)null);
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
+			setEcoreEnum((EEnum) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
-				return ecoreEnum != null;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_ENUM__ECORE_ENUM:
+			return ecoreEnum != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //DSGenEnumImpl
+} // DSGenEnumImpl

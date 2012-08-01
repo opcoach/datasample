@@ -9,9 +9,8 @@ package com.opcoach.dsgen;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>DS Gen Feature</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '
+ * <em><b>DS Gen Feature</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -29,6 +28,12 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  */
 public interface DSGenFeature extends DSGenTypedElement
 {
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "© OPCoach 2012";
+
 	/**
 	 * Returns the value of the '<em><b>Nullable Value</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
@@ -48,8 +53,8 @@ public interface DSGenFeature extends DSGenTypedElement
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenFeature#isNullableValue <em>Nullable Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Nullable Value</em>' attribute.
 	 * @see #isNullableValue()
 	 * @generated
@@ -75,8 +80,8 @@ public interface DSGenFeature extends DSGenTypedElement
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenFeature#getNullablePercent <em>Nullable Percent</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Nullable Percent</em>' attribute.
 	 * @see #getNullablePercent()
 	 * @generated
@@ -88,8 +93,8 @@ public interface DSGenFeature extends DSGenTypedElement
 	 * It is bidirectional and its opposite is '{@link com.opcoach.dsgen.DSGenClassifier#getDsgenFeatures <em>Dsgen Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dsgen Class</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Dsgen Class</em>' container reference isn't
+	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dsgen Class</em>' container reference.
@@ -103,8 +108,7 @@ public interface DSGenFeature extends DSGenTypedElement
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenFeature#getDsgenClass <em>Dsgen Class</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Dsgen Class</em>' container reference.
 	 * @see #getDsgenClass()
 	 * @generated
@@ -112,13 +116,14 @@ public interface DSGenFeature extends DSGenTypedElement
 	void setDsgenClass(DSGenClassifier value);
 
 	/**
-	 * Returns the value of the '<em><b>Ecore Feature</b></em>' reference.
-	 * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Ecore Feature</b></em>' reference. <!--
+	 * begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ecore Feature</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Ecore Feature</em>' containment reference
+	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Ecore Feature</em>' reference.
 	 * @see #setEcoreFeature(EStructuralFeature)
 	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenFeature_EcoreFeature()
@@ -129,8 +134,8 @@ public interface DSGenFeature extends DSGenTypedElement
 
 	/**
 	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenFeature#getEcoreFeature <em>Ecore Feature</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @param value the new value of the '<em>Ecore Feature</em>' reference.
 	 * @see #getEcoreFeature()
 	 * @generated

@@ -40,7 +40,6 @@ import com.opcoach.generator.basic.BasicFactory;
  * moved in dsgenmodel
  * 
  * @author olivier
- *  * @deprecated use now com.opcoach.dsgen.core.helpers instead (this project is only generated)
  */
 public class DSGenHelper
 {

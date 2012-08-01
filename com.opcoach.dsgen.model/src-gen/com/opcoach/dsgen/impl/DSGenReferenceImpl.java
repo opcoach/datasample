@@ -17,9 +17,8 @@ import com.opcoach.dsgen.DataSampleGenPackage;
 import com.opcoach.generator.ReferenceGenerator;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Reference</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Reference</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -32,9 +31,13 @@ import com.opcoach.generator.ReferenceGenerator;
 public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReference
 {
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+	/**
 	 * The cached value of the '{@link #getGenerator() <em>Generator</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getGenerator()
 	 * @generated
 	 * @ordered
@@ -42,8 +45,7 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	protected ReferenceGenerator<?> generator;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DSGenReferenceImpl()
@@ -52,8 +54,7 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -63,8 +64,7 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ReferenceGenerator<?> getGenerator()
@@ -73,116 +73,123 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetGenerator(ReferenceGenerator<?> newGenerator, NotificationChain msgs)
 	{
 		ReferenceGenerator<?> oldGenerator = generator;
 		generator = newGenerator;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, oldGenerator, newGenerator);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, oldGenerator, newGenerator);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setGenerator(ReferenceGenerator<?> newGenerator)
 	{
-		if (newGenerator != generator) {
+		if (newGenerator != generator)
+		{
 			NotificationChain msgs = null;
 			if (generator != null)
-				msgs = ((InternalEObject)generator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, null, msgs);
+				msgs = ((InternalEObject) generator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, null, msgs);
 			if (newGenerator != null)
-				msgs = ((InternalEObject)newGenerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, null, msgs);
+				msgs = ((InternalEObject) newGenerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, null, msgs);
 			msgs = basicSetGenerator(newGenerator, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, newGenerator, newGenerator));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, newGenerator,
+					newGenerator));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-				return basicSetGenerator(null, msgs);
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
+			return basicSetGenerator(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-				return getGenerator();
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
+			return getGenerator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-				setGenerator((ReferenceGenerator<?>)newValue);
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
+			setGenerator((ReferenceGenerator<?>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-				setGenerator((ReferenceGenerator<?>)null);
-				return;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
+			setGenerator((ReferenceGenerator<?>) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID)
 	{
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-				return generator != null;
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
+			return generator != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //DSGenReferenceImpl
+} // DSGenReferenceImpl

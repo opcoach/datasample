@@ -12,9 +12,8 @@ import com.opcoach.dsgen.DSGenTypeParameter;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Type Parameter</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Type Parameter</b></em>'. <!-- end-user-doc -->
  * <p>
  * </p>
  *
@@ -23,8 +22,13 @@ import com.opcoach.dsgen.DataSampleGenPackage;
 public class DSGenTypeParameterImpl extends DSGenBaseImpl implements DSGenTypeParameter
 {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected DSGenTypeParameterImpl()
@@ -33,8 +37,7 @@ public class DSGenTypeParameterImpl extends DSGenBaseImpl implements DSGenTypePa
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -43,4 +46,4 @@ public class DSGenTypeParameterImpl extends DSGenBaseImpl implements DSGenTypePa
 		return DataSampleGenPackage.Literals.DS_GEN_TYPE_PARAMETER;
 	}
 
-} //DSGenTypeParameterImpl
+} // DSGenTypeParameterImpl

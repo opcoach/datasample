@@ -21,9 +21,8 @@ import com.opcoach.dsgen.DSGenPackage;
 import com.opcoach.dsgen.DataSampleGenPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>DS Gen Package</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>DS Gen Package</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -35,11 +34,18 @@ import com.opcoach.dsgen.DataSampleGenPackage;
  *
  * @generated
  */
-public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage {
+public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
+{
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "© OPCoach 2012";
+
 	/**
 	 * The cached value of the '{@link #getEcorePackage() <em>Ecore Package</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getEcorePackage()
 	 * @generated
 	 * @ordered
@@ -47,9 +53,10 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage {
 	protected EPackage ecorePackage;
 
 	/**
-	 * The cached value of the '{@link #getDsgenClassifiers() <em>Dsgen Classifiers</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getDsgenClassifiers()
+	 * <em>Dsgen Classifiers</em>}' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getDsgenClassifiers()
 	 * @generated
 	 * @ordered
@@ -57,243 +64,263 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage {
 	protected EList<DSGenClassifier> dsgenClassifiers;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DSGenPackageImpl() {
+	protected DSGenPackageImpl()
+	{
 		super();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected EClass eStaticClass() {
+	protected EClass eStaticClass()
+	{
 		return DataSampleGenPackage.Literals.DS_GEN_PACKAGE;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EPackage getEcorePackage() {
-		if (ecorePackage != null && ecorePackage.eIsProxy()) {
-			InternalEObject oldEcorePackage = (InternalEObject)ecorePackage;
-			ecorePackage = (EPackage)eResolveProxy(oldEcorePackage);
-			if (ecorePackage != oldEcorePackage) {
+	public EPackage getEcorePackage()
+	{
+		if (ecorePackage != null && ecorePackage.eIsProxy())
+		{
+			InternalEObject oldEcorePackage = (InternalEObject) ecorePackage;
+			ecorePackage = (EPackage) eResolveProxy(oldEcorePackage);
+			if (ecorePackage != oldEcorePackage)
+			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE, oldEcorePackage, ecorePackage));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE,
+							oldEcorePackage, ecorePackage));
 			}
 		}
 		return ecorePackage;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EPackage basicGetEcorePackage() {
+	public EPackage basicGetEcorePackage()
+	{
 		return ecorePackage;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEcorePackage(EPackage newEcorePackage) {
+	public void setEcorePackage(EPackage newEcorePackage)
+	{
 		EPackage oldEcorePackage = ecorePackage;
 		ecorePackage = newEcorePackage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE, oldEcorePackage, ecorePackage));
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE,
+					oldEcorePackage, ecorePackage));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DSGenModel getDsgenModel() {
-		if (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL) return null;
-		return (DSGenModel)eContainer();
+	public DSGenModel getDsgenModel()
+	{
+		if (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL)
+			return null;
+		return (DSGenModel) eContainer();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetDsgenModel(DSGenModel newDsgenModel, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDsgenModel, DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL, msgs);
+	public NotificationChain basicSetDsgenModel(DSGenModel newDsgenModel, NotificationChain msgs)
+	{
+		msgs = eBasicSetContainer((InternalEObject) newDsgenModel, DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL, msgs);
 		return msgs;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDsgenModel(DSGenModel newDsgenModel) {
-		if (newDsgenModel != eInternalContainer() || (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL && newDsgenModel != null)) {
+	public void setDsgenModel(DSGenModel newDsgenModel)
+	{
+		if (newDsgenModel != eInternalContainer()
+				|| (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL && newDsgenModel != null))
+		{
 			if (EcoreUtil.isAncestor(this, newDsgenModel))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newDsgenModel != null)
-				msgs = ((InternalEObject)newDsgenModel).eInverseAdd(this, DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES, DSGenModel.class, msgs);
+				msgs = ((InternalEObject) newDsgenModel).eInverseAdd(this, DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES,
+						DSGenModel.class, msgs);
 			msgs = basicSetDsgenModel(newDsgenModel, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL, newDsgenModel, newDsgenModel));
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL, newDsgenModel,
+					newDsgenModel));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DSGenClassifier> getDsgenClassifiers() {
-		if (dsgenClassifiers == null) {
-			dsgenClassifiers = new EObjectContainmentWithInverseEList<DSGenClassifier>(DSGenClassifier.class, this, DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS, DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_PACKAGE);
+	public EList<DSGenClassifier> getDsgenClassifiers()
+	{
+		if (dsgenClassifiers == null)
+		{
+			dsgenClassifiers = new EObjectContainmentWithInverseEList<DSGenClassifier>(DSGenClassifier.class, this,
+					DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS, DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_PACKAGE);
 		}
 		return dsgenClassifiers;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetDsgenModel((DSGenModel)otherEnd, msgs);
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDsgenClassifiers()).basicAdd(otherEnd, msgs);
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			return basicSetDsgenModel((DSGenModel) otherEnd, msgs);
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getDsgenClassifiers()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
-				return basicSetDsgenModel(null, msgs);
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
-				return ((InternalEList<?>)getDsgenClassifiers()).basicRemove(otherEnd, msgs);
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
+			return basicSetDsgenModel(null, msgs);
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
+			return ((InternalEList<?>) getDsgenClassifiers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
-				return eInternalContainer().eInverseRemove(this, DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES, DSGenModel.class, msgs);
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
+	{
+		switch (eContainerFeatureID())
+		{
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
+			return eInternalContainer().eInverseRemove(this, DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES, DSGenModel.class,
+					msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
-				if (resolve) return getEcorePackage();
-				return basicGetEcorePackage();
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
-				return getDsgenModel();
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
-				return getDsgenClassifiers();
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
+			if (resolve)
+				return getEcorePackage();
+			return basicGetEcorePackage();
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
+			return getDsgenModel();
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
+			return getDsgenClassifiers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
-				setEcorePackage((EPackage)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
-				setDsgenModel((DSGenModel)newValue);
-				return;
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
-				getDsgenClassifiers().clear();
-				getDsgenClassifiers().addAll((Collection<? extends DSGenClassifier>)newValue);
-				return;
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
+			setEcorePackage((EPackage) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
+			setDsgenModel((DSGenModel) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
+			getDsgenClassifiers().clear();
+			getDsgenClassifiers().addAll((Collection<? extends DSGenClassifier>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
-				setEcorePackage((EPackage)null);
-				return;
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
-				setDsgenModel((DSGenModel)null);
-				return;
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
-				getDsgenClassifiers().clear();
-				return;
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
+			setEcorePackage((EPackage) null);
+			return;
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
+			setDsgenModel((DSGenModel) null);
+			return;
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
+			getDsgenClassifiers().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
-				return ecorePackage != null;
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
-				return getDsgenModel() != null;
-			case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
-				return dsgenClassifiers != null && !dsgenClassifiers.isEmpty();
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+		case DataSampleGenPackage.DS_GEN_PACKAGE__ECORE_PACKAGE:
+			return ecorePackage != null;
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL:
+			return getDsgenModel() != null;
+		case DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_CLASSIFIERS:
+			return dsgenClassifiers != null && !dsgenClassifiers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //DSGenPackageImpl
+} // DSGenPackageImpl

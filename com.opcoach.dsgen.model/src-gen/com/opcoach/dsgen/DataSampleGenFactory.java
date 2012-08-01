@@ -9,108 +9,111 @@ package com.opcoach.dsgen;
 import org.eclipse.emf.ecore.EFactory;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>Factory</b> for the model.
- * It provides a create method for each non-abstract class of the model.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> The <b>Factory</b> for the model. It provides a
+ * create method for each non-abstract class of the model. <!-- end-user-doc -->
  * @see com.opcoach.dsgen.DataSampleGenPackage
  * @generated
  */
 public interface DataSampleGenFactory extends EFactory
 {
 	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "© OPCoach 2012";
+	/**
 	 * The singleton instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	DataSampleGenFactory eINSTANCE = com.opcoach.dsgen.impl.DataSampleGenFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Model</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Model</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Model</em>'.
 	 * @generated
 	 */
 	DSGenModel createDSGenModel();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Package</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Package</em>'.
 	 * @generated
 	 */
 	DSGenPackage createDSGenPackage();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Class</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Class</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Class</em>'.
 	 * @generated
 	 */
 	DSGenClass createDSGenClass();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Feature</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Feature</em>'.
 	 * @generated
 	 */
 	DSGenFeature createDSGenFeature();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Enum Literal</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Enum Literal</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Enum Literal</em>'.
 	 * @generated
 	 */
 	DSGenEnumLiteral createDSGenEnumLiteral();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Data Type</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Data Type</em>'.
 	 * @generated
 	 */
 	DSGenDataType createDSGenDataType();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Annotation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Annotation</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Annotation</em>'.
 	 * @generated
 	 */
 	DSGenAnnotation createDSGenAnnotation();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Type Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Type Parameter</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Type Parameter</em>'.
 	 * @generated
 	 */
 	DSGenTypeParameter createDSGenTypeParameter();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Attribute</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Attribute</em>'.
 	 * @generated
 	 */
 	DSGenAttribute createDSGenAttribute();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Reference</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Reference</em>'.
 	 * @generated
 	 */
@@ -118,17 +121,17 @@ public interface DataSampleGenFactory extends EFactory
 
 	/**
 	 * Returns a new object of class '<em>DS Gen Enum</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @return a new object of class '<em>DS Gen Enum</em>'.
 	 * @generated
 	 */
 	DSGenEnum createDSGenEnum();
 
 	/**
-	 * Returns a new object of class '<em>DS Gen Child</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns a new object of class '<em>DS Gen Child</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>DS Gen Child</em>'.
 	 * @generated
 	 */
@@ -143,4 +146,4 @@ public interface DataSampleGenFactory extends EFactory
 	 */
 	DataSampleGenPackage getDataSampleGenPackage();
 
-} //DataSampleGenFactory
+} // DataSampleGenFactory
