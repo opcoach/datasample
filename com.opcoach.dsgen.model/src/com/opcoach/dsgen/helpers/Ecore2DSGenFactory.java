@@ -21,7 +21,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import com.opcoach.dsgen.DSGenModel;
 import com.opcoach.dsgen.DSGenPackage;
+import com.opcoach.dsgen.DataSampleGenFactory;
 
 
 /**
@@ -39,9 +41,13 @@ public class Ecore2DSGenFactory
 
 	public void createDSGenFile(IResource ecoreSource, String dsgenPath) throws IOException 
 	{
-		
+		DSGenModel model = DataSampleGenFactory.eINSTANCE.createDSGenModel();
+		long seed = System.currentTimeMillis();
+		model.setName(ecoreSource.getName().substring(0,ecoreSource.getName().indexOf(ECORE_FILE_EXT)-1));
+		model.setRandomSeed(seed);
 		
 		DSGenPackage genPack = createDSGenPackage(ecoreSource.getLocationURI());
+		model.getDsgenPackages().add(genPack);
 		
 		String dsgenName = ecoreSource.getProject().getLocation() + "/.." + dsgenPath;
 		
@@ -49,7 +55,7 @@ public class Ecore2DSGenFactory
 		rset.getResourceFactoryRegistry().getExtensionToFactoryMap().put("dsgen", new XMIResourceFactoryImpl());
 
 		Resource res2 = rset.createResource(org.eclipse.emf.common.util.URI.createFileURI(dsgenName));
-		res2.getContents().add(genPack);
+		res2.getContents().add(model);
 		try
 		{
 			final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
@@ -100,6 +106,7 @@ public class Ecore2DSGenFactory
 	 */
 	public DSGenPackage createDSGenPackage(EPackage rootPackage)
 	{
+		// Print information on model.
 		for (EClassifier ec : rootPackage.getEClassifiers())
 		{
 			if (ec instanceof EClass)
