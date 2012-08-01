@@ -2,7 +2,6 @@
  */
 package com.opcoach.dsgen.presentation;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -73,7 +72,6 @@ import com.opcoach.dsgen.DataSampleGenFactory;
 import com.opcoach.dsgen.DataSampleGenPackage;
 import com.opcoach.dsgen.provider.DataSampleEditPlugin;
 
-
 import org.eclipse.core.runtime.Path;
 
 import org.eclipse.jface.viewers.ISelection;
@@ -84,31 +82,37 @@ import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 
-
 /**
  * This is a simple wizard for creating a new model file.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc
+ * --> <!-- end-user-doc -->
  * @generated
  */
-public class DataSampleGenModelWizard extends Wizard implements INewWizard {
+public class DataSampleGenModelWizard extends Wizard implements INewWizard
+{
 	/**
-	 * The supported extensions for created files.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(DataSampleEditorPlugin.INSTANCE.getString("_UI_DataSampleGenEditorFilenameExtensions").split("\\s*,\\s*")));
+	public static final String copyright = "© OPCoach 2012";
 
 	/**
-	 * A formatted list of supported file extensions, suitable for display.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The supported extensions for created files.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
-	public static final String FORMATTED_FILE_EXTENSIONS =
-		DataSampleEditorPlugin.INSTANCE.getString("_UI_DataSampleGenEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(DataSampleEditorPlugin.INSTANCE
+			.getString("_UI_DataSampleGenEditorFilenameExtensions").split("\\s*,\\s*")));
+
+	/**
+	 * A formatted list of supported file extensions, suitable for display. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static final String FORMATTED_FILE_EXTENSIONS = DataSampleEditorPlugin.INSTANCE.getString(
+			"_UI_DataSampleGenEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -127,25 +131,24 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 	protected DataSampleGenFactory dataSampleGenFactory = dataSampleGenPackage.getDataSampleGenFactory();
 
 	/**
-	 * This is the file creation page.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This is the file creation page. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
 	 * @generated
 	 */
 	protected DataSampleGenModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected DataSampleGenModelWizardInitialObjectCreationPage initialObjectCreationPage;
 
 	/**
 	 * Remember the selection during initialization for populating the default container.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected IStructuredSelection selection;
@@ -160,38 +163,43 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Caches the names of the types that can be created as the root object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected List<String> initialObjectNames;
 
 	/**
 	 * This just records the information.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
-	public void init(IWorkbench workbench, IStructuredSelection selection) {
+	public void init(IWorkbench workbench, IStructuredSelection selection)
+	{
 		this.workbench = workbench;
 		this.selection = selection;
 		setWindowTitle(DataSampleEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(DataSampleEditorPlugin.INSTANCE.getImage("full/wizban/NewDataSampleGen")));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(DataSampleEditorPlugin.INSTANCE
+				.getImage("full/wizban/NewDataSampleGen")));
 	}
 
 	/**
 	 * Returns the names of the types that can be created as the root object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Collection<String> getInitialObjectNames() {
-		if (initialObjectNames == null) {
+	protected Collection<String> getInitialObjectNames()
+	{
+		if (initialObjectNames == null)
+		{
 			initialObjectNames = new ArrayList<String>();
-			for (EClassifier eClassifier : dataSampleGenPackage.getEClassifiers()) {
-				if (eClassifier instanceof EClass) {
-					EClass eClass = (EClass)eClassifier;
-					if (!eClass.isAbstract()) {
+			for (EClassifier eClassifier : dataSampleGenPackage.getEClassifiers())
+			{
+				if (eClassifier instanceof EClass)
+				{
+					EClass eClass = (EClass) eClassifier;
+					if (!eClass.isAbstract())
+					{
 						initialObjectNames.add(eClass.getName());
 					}
 				}
@@ -203,36 +211,40 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * Create a new model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected EObject createInitialModel() {
-		EClass eClass = (EClass)dataSampleGenPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
+	protected EObject createInitialModel()
+	{
+		EClass eClass = (EClass) dataSampleGenPackage.getEClassifier(initialObjectCreationPage.getInitialObjectName());
 		EObject rootObject = dataSampleGenFactory.create(eClass);
 		return rootObject;
 	}
 
 	/**
 	 * Do the work after everything is specified.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public boolean performFinish() {
-		try {
+	public boolean performFinish()
+	{
+		try
+		{
 			// Remember the file.
 			//
 			final IFile modelFile = getModelFile();
 
 			// Do the work within an operation.
 			//
-			WorkspaceModifyOperation operation =
-				new WorkspaceModifyOperation() {
+			WorkspaceModifyOperation operation = new WorkspaceModifyOperation()
+				{
 					@Override
-					protected void execute(IProgressMonitor progressMonitor) {
-						try {
+					protected void execute(IProgressMonitor progressMonitor)
+					{
+						try
+						{
 							// Create a resource set
 							//
 							ResourceSet resourceSet = new ResourceSetImpl();
@@ -248,7 +260,8 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 							// Add the initial model object to the contents.
 							//
 							EObject rootObject = createInitialModel();
-							if (rootObject != null) {
+							if (rootObject != null)
+							{
 								resource.getContents().add(rootObject);
 							}
 
@@ -257,11 +270,11 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 							Map<Object, Object> options = new HashMap<Object, Object>();
 							options.put(XMLResource.OPTION_ENCODING, initialObjectCreationPage.getEncoding());
 							resource.save(options);
-						}
-						catch (Exception exception) {
+						} catch (Exception exception)
+						{
 							DataSampleEditorPlugin.INSTANCE.log(exception);
-						}
-						finally {
+						} finally
+						{
 							progressMonitor.done();
 						}
 					}
@@ -274,31 +287,34 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
 			IWorkbenchPage page = workbenchWindow.getActivePage();
 			final IWorkbenchPart activePart = page.getActivePart();
-			if (activePart instanceof ISetSelectionTarget) {
+			if (activePart instanceof ISetSelectionTarget)
+			{
 				final ISelection targetSelection = new StructuredSelection(modelFile);
-				getShell().getDisplay().asyncExec
-					(new Runnable() {
-						 public void run() {
-							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
-						 }
-					 });
+				getShell().getDisplay().asyncExec(new Runnable()
+					{
+						public void run()
+						{
+							((ISetSelectionTarget) activePart).selectReveal(targetSelection);
+						}
+					});
 			}
 
 			// Open an editor on the new file.
 			//
-			try {
-				page.openEditor
-					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
-			}
-			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), DataSampleEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+			try
+			{
+				page.openEditor(new FileEditorInput(modelFile),
+						workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());
+			} catch (PartInitException exception)
+			{
+				MessageDialog.openError(workbenchWindow.getShell(),
+						DataSampleEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
-		}
-		catch (Exception exception) {
+		} catch (Exception exception)
+		{
 			DataSampleEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
@@ -306,34 +322,38 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 
 	/**
 	 * This is the one page of the wizard.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
-	public class DataSampleGenModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
+	public class DataSampleGenModelWizardNewFileCreationPage extends WizardNewFileCreationPage
+	{
 		/**
 		 * Pass in the selection.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		public DataSampleGenModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
+		public DataSampleGenModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection)
+		{
 			super(pageId, selection);
 		}
 
 		/**
-		 * The framework calls this to see if the file is correct.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The framework calls this to see if the file is correct. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		@Override
-		protected boolean validatePage() {
-			if (super.validatePage()) {
+		protected boolean validatePage()
+		{
+			if (super.validatePage())
+			{
 				String extension = new Path(getFileName()).getFileExtension();
-				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
+				if (extension == null || !FILE_EXTENSIONS.contains(extension))
+				{
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(DataSampleEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(DataSampleEditorPlugin.INSTANCE.getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -342,60 +362,58 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 		}
 
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		public IFile getModelFile() {
+		public IFile getModelFile()
+		{
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
 		}
 	}
 
 	/**
-	 * This is the page where the type of object to create is selected.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This is the page where the type of object to create is selected. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	public class DataSampleGenModelWizardInitialObjectCreationPage extends WizardPage {
+	public class DataSampleGenModelWizardInitialObjectCreationPage extends WizardPage
+	{
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		protected Combo initialObjectField;
 
 		/**
-		 * @generated
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * @generated <!-- begin-user-doc --> <!-- end-user-doc -->
 		 */
 		protected List<String> encodings;
 
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		protected Combo encodingField;
 
 		/**
 		 * Pass in the selection.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		public DataSampleGenModelWizardInitialObjectCreationPage(String pageId) {
+		public DataSampleGenModelWizardInitialObjectCreationPage(String pageId)
+		{
 			super(pageId);
 		}
 
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE); {
+		public void createControl(Composite parent)
+		{
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -425,11 +443,13 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 				initialObjectField.setLayoutData(data);
 			}
 
-			for (String objectName : getInitialObjectNames()) {
+			for (String objectName : getInitialObjectNames())
+			{
 				initialObjectField.add(getLabel(objectName));
 			}
 
-			if (initialObjectField.getItemCount() == 1) {
+			if (initialObjectField.getItemCount() == 1)
+			{
 				initialObjectField.select(0);
 			}
 			initialObjectField.addModifyListener(validator);
@@ -450,7 +470,8 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 				encodingField.setLayoutData(data);
 			}
 
-			for (String encoding : getEncodings()) {
+			for (String encoding : getEncodings())
+			{
 				encodingField.add(encoding);
 			}
 
@@ -462,40 +483,42 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 		}
 
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected ModifyListener validator =
-			new ModifyListener() {
-				public void modifyText(ModifyEvent e) {
+		protected ModifyListener validator = new ModifyListener()
+			{
+				public void modifyText(ModifyEvent e)
+				{
 					setPageComplete(validatePage());
 				}
 			};
 
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected boolean validatePage() {
+		protected boolean validatePage()
+		{
 			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
 		}
 
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		@Override
-		public void setVisible(boolean visible) {
+		public void setVisible(boolean visible)
+		{
 			super.setVisible(visible);
-			if (visible) {
-				if (initialObjectField.getItemCount() == 1) {
+			if (visible)
+			{
+				if (initialObjectField.getItemCount() == 1)
+				{
 					initialObjectField.clearSelection();
 					encodingField.setFocus();
-				}
-				else {
+				} else
+				{
 					encodingField.clearSelection();
 					initialObjectField.setFocus();
 				}
@@ -503,15 +526,17 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 		}
 
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		public String getInitialObjectName() {
+		public String getInitialObjectName()
+		{
 			String label = initialObjectField.getText();
 
-			for (String name : getInitialObjectNames()) {
-				if (getLabel(name).equals(label)) {
+			for (String name : getInitialObjectNames())
+			{
+				if (getLabel(name).equals(label))
+				{
 					return name;
 				}
 			}
@@ -519,39 +544,44 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 		}
 
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		public String getEncoding() {
+		public String getEncoding()
+		{
 			return encodingField.getText();
 		}
 
 		/**
 		 * Returns the label for the specified type name.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc
+		 * --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected String getLabel(String typeName) {
-			try {
+		protected String getLabel(String typeName)
+		{
+			try
+			{
 				return DataSampleEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-			}
-			catch(MissingResourceException mre) {
+			} catch (MissingResourceException mre)
+			{
 				DataSampleEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
 		}
 
 		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
-		protected Collection<String> getEncodings() {
-			if (encodings == null) {
+		protected Collection<String> getEncodings()
+		{
+			if (encodings == null)
+			{
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(DataSampleEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(
+						DataSampleEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();)
+				{
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -560,48 +590,56 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 	}
 
 	/**
-	 * The framework calls this to create the contents of the wizard.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The framework calls this to create the contents of the wizard. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-		@Override
-	public void addPages() {
+	@Override
+	public void addPages()
+	{
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new DataSampleGenModelWizardNewFileCreationPage("Whatever", selection);
 		newFileCreationPage.setTitle(DataSampleEditorPlugin.INSTANCE.getString("_UI_DataSampleGenModelWizard_label"));
 		newFileCreationPage.setDescription(DataSampleEditorPlugin.INSTANCE.getString("_UI_DataSampleGenModelWizard_description"));
-		newFileCreationPage.setFileName(DataSampleEditorPlugin.INSTANCE.getString("_UI_DataSampleGenEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage.setFileName(DataSampleEditorPlugin.INSTANCE.getString("_UI_DataSampleGenEditorFilenameDefaultBase")
+				+ "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
 		//
-		if (selection != null && !selection.isEmpty()) {
+		if (selection != null && !selection.isEmpty())
+		{
 			// Get the resource...
 			//
 			Object selectedElement = selection.iterator().next();
-			if (selectedElement instanceof IResource) {
+			if (selectedElement instanceof IResource)
+			{
 				// Get the resource parent, if its a file.
 				//
-				IResource selectedResource = (IResource)selectedElement;
-				if (selectedResource.getType() == IResource.FILE) {
+				IResource selectedResource = (IResource) selectedElement;
+				if (selectedResource.getType() == IResource.FILE)
+				{
 					selectedResource = selectedResource.getParent();
 				}
 
 				// This gives us a directory...
 				//
-				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+				if (selectedResource instanceof IFolder || selectedResource instanceof IProject)
+				{
 					// Set this for the container.
 					//
 					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = DataSampleEditorPlugin.INSTANCE.getString("_UI_DataSampleGenEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = DataSampleEditorPlugin.INSTANCE
+							.getString("_UI_DataSampleGenEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
+					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i)
+					{
 						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
 					}
 					newFileCreationPage.setFileName(modelFilename);
@@ -610,17 +648,18 @@ public class DataSampleGenModelWizard extends Wizard implements INewWizard {
 		}
 		initialObjectCreationPage = new DataSampleGenModelWizardInitialObjectCreationPage("Whatever2");
 		initialObjectCreationPage.setTitle(DataSampleEditorPlugin.INSTANCE.getString("_UI_DataSampleGenModelWizard_label"));
-		initialObjectCreationPage.setDescription(DataSampleEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		initialObjectCreationPage
+				.setDescription(DataSampleEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
 
 	/**
 	 * Get the file from the page.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IFile getModelFile() {
+	public IFile getModelFile()
+	{
 		return newFileCreationPage.getModelFile();
 	}
 
