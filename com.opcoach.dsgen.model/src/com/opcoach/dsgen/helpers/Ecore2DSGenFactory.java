@@ -29,21 +29,16 @@ import com.opcoach.dsgen.DataSampleGenFactory;
 /**
  * Handler to generate the dsgen model from ecore model
  */
-public class Ecore2DSGenFactory 
+public class Ecore2DSGenFactory implements DSGenConstants
 {
 
 	private ResourceSet rset =null ;
-
-	public static final String DSGEN_FILE_EXT = "dsgen";
-	public static final String ECORE_FILE_EXT = "ecore";
-	public static final String DSGEN_DOT_EXT = "." + DSGEN_FILE_EXT;
-
 
 	public void createDSGenFile(IResource ecoreSource, String dsgenPath) throws IOException 
 	{
 		DSGenModel model = DataSampleGenFactory.eINSTANCE.createDSGenModel();
 		long seed = System.currentTimeMillis();
-		model.setName(ecoreSource.getName().substring(0,ecoreSource.getName().indexOf(ECORE_FILE_EXT)-1));
+		model.setName(ecoreSource.getName().substring(0,ecoreSource.getName().indexOf(DSGenConstants.ECORE_FILE_EXT)-1));
 		model.setRandomSeed(seed);
 		model.setLanguage("en");  // the language to generate data
 		
@@ -53,7 +48,7 @@ public class Ecore2DSGenFactory
 		String dsgenName = ecoreSource.getProject().getLocation() + "/.." + dsgenPath;
 		
 		// Store the dsgen model in dsgenname file
-		rset.getResourceFactoryRegistry().getExtensionToFactoryMap().put("dsgen", new XMIResourceFactoryImpl());
+		rset.getResourceFactoryRegistry().getExtensionToFactoryMap().put(DSGEN_FILE_EXT, new XMIResourceFactoryImpl());
 
 		Resource res2 = rset.createResource(org.eclipse.emf.common.util.URI.createFileURI(dsgenName));
 		res2.getContents().add(model);
@@ -93,7 +88,7 @@ public class Ecore2DSGenFactory
 
 		// Create a new ResourceSet to forget previous calls
 		rset = new ResourceSetImpl();
-		rset.getResourceFactoryRegistry().getExtensionToFactoryMap().put(ECORE_FILE_EXT, new XMIResourceFactoryImpl());
+		rset.getResourceFactoryRegistry().getExtensionToFactoryMap().put(DSGenConstants.ECORE_FILE_EXT, new XMIResourceFactoryImpl());
 
 		//Resource res = rset.getResource(URI.createFileURI(ecoreSource.getLocation().toString()), true);
 		Resource res = rset.getResource(org.eclipse.emf.common.util.URI.createURI(ecoreSourceURI.toString()), true);

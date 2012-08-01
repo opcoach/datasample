@@ -23,6 +23,7 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
+import com.opcoach.dsgen.helpers.DSGenConstants;
 import com.opcoach.dsgen.helpers.Ecore2DSGenFactory;
 import com.opcoach.dsgen.ui.DSGenUIActivator;
 
@@ -52,7 +53,7 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 			if (super.validatePage())
 			{
 				String extension = new Path(getFileName()).getFileExtension();
-				if (extension == null || !extension.equals(Ecore2DSGenFactory.DSGEN_FILE_EXT))
+				if (extension == null || !extension.equals(DSGenConstants.DSGEN_FILE_EXT))
 				{
 					setErrorMessage("The filename must end with the dsgen suffix");
 					return false;
@@ -78,7 +79,7 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 				if (modelFile != null)
 				{
 					String fileName = modelFile.getFullPath().removeFileExtension().lastSegment();
-					setFileName(fileName + Ecore2DSGenFactory.DSGEN_DOT_EXT);
+					setFileName(fileName + DSGenConstants.DSGEN_DOT_EXT);
 				} else
 				{
 					if (getFileName() == null)
@@ -166,7 +167,7 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 		Object selected = selection.getFirstElement();
 		if (selected instanceof IFile)
 		{
-			if (Ecore2DSGenFactory.ECORE_FILE_EXT.equals(((IFile) selected).getFileExtension()))
+			if (DSGenConstants.ECORE_FILE_EXT.equals(((IFile) selected).getFileExtension()))
 			{
 				System.out.println("On a trouvé le modèle");
 				modelFile = (IFile) selected;
@@ -177,7 +178,7 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 	protected String getDefaultDSGenModelFileName()
 	{
 		//return defaultPath == null ? "My" + DOT_FILE_EXT_DSGEN : defaultPath.removeFirstSegments(defaultPath.segmentCount() - 1).toString();
-		return modelFile == null ? "My" + Ecore2DSGenFactory.DSGEN_DOT_EXT : modelFile.getName() + Ecore2DSGenFactory.DSGEN_DOT_EXT;
+		return modelFile == null ? "My" + DSGenConstants.DSGEN_DOT_EXT : modelFile.getName() + DSGenConstants.DSGEN_DOT_EXT;
 		
 	}
 

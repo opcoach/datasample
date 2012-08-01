@@ -44,7 +44,7 @@ import com.opcoach.generator.basic.BasicFactory;
 public class DSGenHelper
 {
 	private static BasicFactory generatorFactory = BasicFactory.eINSTANCE;
-	
+
 	private static Map<EReference, DSGenReference> refCache = new HashMap<EReference, DSGenReference>();
 
 	/**
@@ -82,7 +82,7 @@ public class DSGenHelper
 			}
 		}
 
-		// Then compute the nb of associations refering to each EClass 
+		// Then compute the nb of associations refering to each EClass
 		for (DSGenClassifier dsc : classes)
 		{
 			if (dsc instanceof DSGenClass)
@@ -100,7 +100,7 @@ public class DSGenHelper
 
 		// Add all in package
 		dsPack.getDsgenClassifiers().addAll(classes);
-		
+
 		// Initialize children field
 		for (DSGenClassifier dsc : classes)
 		{
@@ -109,7 +109,6 @@ public class DSGenHelper
 				initChildren((DSGenClass) dsc);
 			}
 		}
-
 
 		return dsPack;
 	}
@@ -124,8 +123,7 @@ public class DSGenHelper
 	 *            : the list of other EClasses to loop on
 	 * @return nothing (init directly the nbAssociationRefTo field in dsc)
 	 */
-	private static void computeNbAssociationReferencesTo(DSGenClass dsc,
-			ArrayList<DSGenClassifier> classes)
+	private static void computeNbAssociationReferencesTo(DSGenClass dsc, ArrayList<DSGenClassifier> classes)
 	{
 
 		EClass dsEcoreClass = dsc.getEcoreClass();
@@ -140,14 +138,10 @@ public class DSGenHelper
 					if ((target instanceof EClass) && !ref.isContainment())
 					{
 						EClass targetEClass = (EClass) target;
-						if (targetEClass.equals(dsEcoreClass)
-								|| dsEcoreClass.isSuperTypeOf(targetEClass))
+						if (targetEClass.equals(dsEcoreClass) || dsEcoreClass.isSuperTypeOf(targetEClass))
 						{
-							System.out.println("The class "
-									+ c.getEcoreClass().getName()
-									+ " refer to source DSC : "
-									+ dsEcoreClass.getName() + " on field : "
-									+ ref.getName());
+							System.out.println("The class " + c.getEcoreClass().getName() + " refer to source DSC : "
+									+ dsEcoreClass.getName() + " on field : " + ref.getName());
 							nbAssoRef++;
 						}
 					}
@@ -215,7 +209,7 @@ public class DSGenHelper
 				{
 					String targetName = ref.getEType().getName();
 					DSGenClass c = searchDSGenClass(pack, targetName);
-					
+
 					DSGenChild child = DataSampleGenFactory.eINSTANCE.createDSGenChild();
 					child.setDsgenClass(c);
 					child.setSingle((ref.getUpperBound() == 1));
@@ -243,7 +237,7 @@ public class DSGenHelper
 					genClassMap.put(dc.getEcoreClass().getName(), (DSGenClass) dc);
 			}
 		}
-		
+
 		return genClassMap.get(name);
 	}
 
@@ -320,11 +314,10 @@ public class DSGenHelper
 
 		// Set the generator.
 		EClass target = rootRef.getEReferenceType();
-		ReferenceGenerator<?> refGen = GeneratorFactory.eINSTANCE
-				.createReferenceGenerator();
+		ReferenceGenerator<?> refGen = GeneratorFactory.eINSTANCE.createReferenceGenerator();
 		refGen.setType(target.getInstanceClass());
 		result.setGenerator(refGen);
-		
+
 		// Store it in a cache...
 		refCache.put(rootRef, result);
 
@@ -355,23 +348,19 @@ public class DSGenHelper
 		{
 			result = generatorFactory.createDateGenerator();
 
-		} else if (INT_TYPE.equals(typeName)
-				|| INT_OBJECT_TYPE.equals(typeName))
+		} else if (INT_TYPE.equals(typeName) || INT_OBJECT_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createIntGenerator();
 
-		} else if (LONG_TYPE.equals(typeName)
-				|| LONG_OBJECT_TYPE.equals(typeName))
+		} else if (LONG_TYPE.equals(typeName) || LONG_OBJECT_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createLongGenerator();
 
-		} else if (FLOAT_TYPE.equals(typeName)
-				|| FLOAT_OBJECT_TYPE.equals(typeName))
+		} else if (FLOAT_TYPE.equals(typeName) || FLOAT_OBJECT_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createFloatGenerator();
 
-		} else if (DOUBLE_TYPE.equals(typeName)
-				|| DOUBLE_OBJECT_TYPE.equals(typeName))
+		} else if (DOUBLE_TYPE.equals(typeName) || DOUBLE_OBJECT_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createDoubleGenerator();
 
@@ -406,10 +395,8 @@ public class DSGenHelper
 		EReference ref = (EReference) sf;
 		EReference refOpp = ref.getEOpposite();
 
-		System.out.println("Ref " + ref.getName() + " est il opposite de "
-				+ ((refOpp == null) ? "none" : refOpp.getName()));
-		return (!ref.isContainment() && (refOpp != null)
-				&& refOpp.isContainment() && (refOpp.getEOpposite() == ref));
+		System.out.println("Ref " + ref.getName() + " est il opposite de " + ((refOpp == null) ? "none" : refOpp.getName()));
+		return (!ref.isContainment() && (refOpp != null) && refOpp.isContainment() && (refOpp.getEOpposite() == ref));
 	}
 
 }

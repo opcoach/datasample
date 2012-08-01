@@ -16,5 +16,15 @@
             class="com.opcoach.dsgen.DataSampleGenPackage"
             genModel="model/dataSample.genmodel"/>
    </extension>
+   <extension
+         point="org.eclipse.core.runtime.adapters">
+      <factory
+            adaptableType="com.opcoach.dsgen.DSGenFeature"
+            class="com.opcoach.dsgen.helpers.DSGenToGeneratorFactory">
+         <adapter
+               type="com.opcoach.generator.ValueGenerator">
+         </adapter>
+      </factory>
+   </extension>
 
 </plugin>
