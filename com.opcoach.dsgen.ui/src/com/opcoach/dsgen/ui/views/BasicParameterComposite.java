@@ -1,8 +1,8 @@
 package com.opcoach.dsgen.ui.views;
 
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.custom.SashForm;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.SashForm;
+import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Tree;
 
 public class BasicParameterComposite extends Composite

@@ -6,8 +6,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import com.opcoach.generator.ecore.dsgen.DSGenClass;
-import com.opcoach.generator.ecore.dsgen.DSGenPackage;
+import com.opcoach.dsgen.DSGenClass;
+import com.opcoach.dsgen.DSGenPackage;
 
 public class DSGenContentProvider implements ITreeContentProvider
 {

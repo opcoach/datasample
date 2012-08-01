@@ -15,4 +15,23 @@
             name="Data Sample">
       </category>
    </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="com.opcoach.dsgen.ui.dsgenCategory"
+            name="Data Sample">
+      </category>
+      <wizard
+            category="com.opcoach.dsgen.ui.dsgenCategory"
+            class="com.opcoach.dsgen.ui.wizards.DSGenNewWizard"
+            hasPages="true"
+            icon="icons/ecore2dsgen.png"
+            id="com.opcoach.dsgen.ui.dsgenNewWizard"
+            name="DSGen New Wizard">
+         <selection
+               class="org.eclipse.core.resources.IFile"
+               name="*.ecore">
+         </selection>
+      </wizard>
+   </extension>
 </plugin>

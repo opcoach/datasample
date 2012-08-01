@@ -14,7 +14,6 @@ import org.eclipse.emf.databinding.EMFProperties;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -40,15 +39,14 @@ import org.eclipse.ui.IViewSite;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PartInitException;
 
-import com.opcoach.dsgen.core.Ecore2DSGenFactory;
+import com.opcoach.dsgen.DSGenAttribute;
+import com.opcoach.dsgen.DSGenPackage;
+import com.opcoach.dsgen.DSGenReference;
+import com.opcoach.dsgen.DataSampleGenPackage;
+import com.opcoach.dsgen.helpers.Ecore2DSGenFactory;
 import com.opcoach.dsgen.ui.DSGenUIActivator;
 import com.opcoach.generator.GeneratorPackage;
 import com.opcoach.generator.ValueGenerator;
-import com.opcoach.generator.basic.BasicPackage;
-import com.opcoach.generator.ecore.dsgen.DSGenAttribute;
-import com.opcoach.generator.ecore.dsgen.DSGenPackage;
-import com.opcoach.generator.ecore.dsgen.DSGenReference;
-import com.opcoach.generator.ecore.dsgen.DataSampleGenPackage;
 
 public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionListener
 {

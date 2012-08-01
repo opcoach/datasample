@@ -7,11 +7,11 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Display;
 
-import com.opcoach.generator.ecore.dsgen.DSGenAttribute;
-import com.opcoach.generator.ecore.dsgen.DSGenClass;
-import com.opcoach.generator.ecore.dsgen.DSGenEnum;
-import com.opcoach.generator.ecore.dsgen.DSGenPackage;
-import com.opcoach.generator.ecore.dsgen.DSGenReference;
+import com.opcoach.dsgen.DSGenAttribute;
+import com.opcoach.dsgen.DSGenClass;
+import com.opcoach.dsgen.DSGenEnum;
+import com.opcoach.dsgen.DSGenPackage;
+import com.opcoach.dsgen.DSGenReference;
 
 public class DSGenLabelProvider extends LabelProvider implements IColorProvider
 {
