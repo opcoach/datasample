@@ -11,6 +11,8 @@ package com.opcoach.dsgen.ui.wizards;
  *   IBM - Initial API and implementation
  */
 
+import java.io.IOException;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
@@ -21,17 +23,12 @@ import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
+import com.opcoach.dsgen.helpers.Ecore2DSGenFactory;
 import com.opcoach.dsgen.ui.DSGenUIActivator;
 
-/**
- * @since 2.1.0
- */
 
 public class DSGenNewWizard extends Wizard implements INewWizard
 {
-	private static final String FILE_EXT_DSGEN = "dsgen";
-	private static final String FILE_EXT_ECORE = "ecore";
-	private static final String DOT_FILE_EXT_DSGEN = "." + FILE_EXT_DSGEN;
 
 	public class NewDSGenModelFileCreationPage extends WizardNewFileCreationPage
 	{
@@ -55,14 +52,14 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 			if (super.validatePage())
 			{
 				String extension = new Path(getFileName()).getFileExtension();
-				if (extension == null || !extension.equals(FILE_EXT_DSGEN))
+				if (extension == null || !extension.equals(Ecore2DSGenFactory.DSGEN_FILE_EXT))
 				{
 					setErrorMessage("The filename must end with the dsgen suffix");
 					return false;
 				} else
 				{
-					genModelContainerPath = getContainerFullPath();
-					genModelFileName = getFileName();
+					dsgenModelContainerPath = getContainerFullPath();
+					dsgenModelFileName = getFileName();
 					return true;
 				}
 			} else
@@ -81,7 +78,7 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 				if (modelFile != null)
 				{
 					String fileName = modelFile.getFullPath().removeFileExtension().lastSegment();
-					setFileName(fileName + DOT_FILE_EXT_DSGEN);
+					setFileName(fileName + Ecore2DSGenFactory.DSGEN_DOT_EXT);
 				} else
 				{
 					if (getFileName() == null)
@@ -96,20 +93,18 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 		public void setFileName(String value)
 		{
 			super.setFileName(value);
-			genModelFileName = value;
+			dsgenModelFileName = value;
 		}
 	}
 
 	protected IStructuredSelection selection;
 	protected IWorkbench workbench;
-	protected IPath genModelContainerPath;
-	protected String genModelFileName;
+	protected IPath dsgenModelContainerPath;
+	protected String dsgenModelFileName;
 
 	protected IFile modelFile;
-	// protected ModelConverterDescriptorSelectionPage selectionPage;
 
 	protected IPath defaultPath;
-	protected String defaultDescriptorID;
 
 	public DSGenNewWizard()
 	{
@@ -129,14 +124,14 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 	{
 		selection = null;
 		workbench = null;
-		genModelContainerPath = null;
+		dsgenModelContainerPath = null;
 
 		super.dispose();
 	}
 
 	protected ImageDescriptor getDefaultImageDescriptor()
 	{
-		return DSGenUIActivator.getDefault().getImageRegistry().getDescriptor(DSGenUIActivator.ECORE2DSGEN);
+		return DSGenUIActivator.getDefault().getImageRegistry().getDescriptor(DSGenUIActivator.ECORE2DSGEN_IMG);
 	}
 
 	@Override
@@ -171,7 +166,7 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 		Object selected = selection.getFirstElement();
 		if (selected instanceof IFile)
 		{
-			if (FILE_EXT_ECORE.equals(((IFile) selected).getFileExtension()))
+			if (Ecore2DSGenFactory.ECORE_FILE_EXT.equals(((IFile) selected).getFileExtension()))
 			{
 				System.out.println("On a trouvé le modèle");
 				modelFile = (IFile) selected;
@@ -182,7 +177,7 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 	protected String getDefaultDSGenModelFileName()
 	{
 		//return defaultPath == null ? "My" + DOT_FILE_EXT_DSGEN : defaultPath.removeFirstSegments(defaultPath.segmentCount() - 1).toString();
-		return modelFile == null ? "My" + DOT_FILE_EXT_DSGEN : modelFile.getName() + DOT_FILE_EXT_DSGEN;
+		return modelFile == null ? "My" + Ecore2DSGenFactory.DSGEN_DOT_EXT : modelFile.getName() + Ecore2DSGenFactory.DSGEN_DOT_EXT;
 		
 	}
 
@@ -200,25 +195,22 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 	@Override
 	public boolean performFinish()
 	{
-		return true;
+		boolean result = true;
+ 
+		Ecore2DSGenFactory factory = new Ecore2DSGenFactory();
+		try
+		{
+			factory.createDSGenFile(modelFile, dsgenModelContainerPath + "/" + dsgenModelFileName);
+		} catch (IOException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = false;
+		}
+		return result;
 	}
 
-	/**
-	 * Sets the model importer descriptor that will be selected when this wizard
-	 * is presented to the user. This method has to be invoke before the wizard
-	 * pages are added.
-	 * 
-	 * @param id
-	 */
-	public void setDefaultModelImporterDescriptorID(String id)
-	{
-		defaultDescriptorID = id;
-	}
 
-	public String getDefaultModelImporterDescriptorID()
-	{
-		return defaultDescriptorID;
-	}
 
 	/**
 	 * Sets the path of the genmodel that will be used when this wizard is

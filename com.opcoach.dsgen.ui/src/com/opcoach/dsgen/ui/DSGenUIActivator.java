@@ -8,7 +8,7 @@ import org.osgi.framework.BundleContext;
  */
 public class DSGenUIActivator extends AbstractUIPlugin {
 
-	public static final String ECORE2DSGEN = "ecore2dsgen";
+	public static final String ECORE2DSGEN_IMG = "ecore2dsgen_img";
 
 	// The plug-in ID
 	public static final String PLUGIN_ID = "com.opcoach.dsgen.ui"; //$NON-NLS-1$
@@ -51,7 +51,7 @@ public class DSGenUIActivator extends AbstractUIPlugin {
 	
 	protected void initializeImageRegistry(org.eclipse.jface.resource.ImageRegistry reg)
 	{
-		reg.put(ECORE2DSGEN, imageDescriptorFromPlugin(PLUGIN_ID, "icons/ecore2dsgen.png"));
-	};
+		reg.put(ECORE2DSGEN_IMG, imageDescriptorFromPlugin(PLUGIN_ID, "icons/ecore2dsgen.png"));
+	}
 
 }
