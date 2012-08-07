@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import com.opcoach.dsgen.DSGenClass;
+import com.opcoach.dsgen.DSGenClassifier;
 import com.opcoach.dsgen.DSGenModel;
 import com.opcoach.dsgen.DSGenPackage;
 import com.opcoach.dsgen.DataSampleGenPackage;
@@ -211,6 +213,32 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE, oldLanguage,
 					language));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public DSGenClass getRoot()
+	{
+		DSGenClass result = null;
+		for (DSGenPackage p : getDsgenPackages())
+		{
+			for (DSGenClassifier c : p.getDsgenClassifiers())
+			{
+				if (c instanceof DSGenClass)
+				{
+					if (((DSGenClass) c).isRootObject())
+					{
+						result = (DSGenClass) c;
+						break;
+					}
+				}
+			}
+			
+		}
+		return result;
 	}
 
 	/**

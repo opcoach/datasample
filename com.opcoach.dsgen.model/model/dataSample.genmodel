@@ -20,6 +20,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenModel/randomSeed"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenModel/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenModel/language"/>
+      <genOperations ecoreOperation="dataSample.ecore#//DSGenModel/getRootClass"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenPackage">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenPackage/ecorePackage"/>

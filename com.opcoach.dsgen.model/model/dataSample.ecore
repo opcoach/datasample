@@ -2,6 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dsgen" nsURI="http://www.opcoach.com/dsgen/1.0" nsPrefix="dsgen">
   <eClassifiers xsi:type="ecore:EClass" name="DSGenModel" eSuperTypes="#//DSGenBase">
+    <eOperations name="getRoot" eType="#//DSGenClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenPackages" upperBound="-1"
         eType="#//DSGenPackage" containment="true" eOpposite="#//DSGenPackage/dsgenModel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="randomSeed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
@@ -63,7 +64,7 @@
   <eClassifiers xsi:type="ecore:EEnum" name="DSGenResourceKind"/>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenAttribute" eSuperTypes="#//DSGenFeature">
     <eStructuralFeatures xsi:type="ecore:EReference" name="generator" containment="true">
-      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>

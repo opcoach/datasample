@@ -7,6 +7,7 @@
 package com.opcoach.dsgen;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object '
@@ -129,5 +130,13 @@ public interface DSGenModel extends DSGenBase
 	 * @generated
 	 */
 	void setLanguage(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	DSGenClass getRoot();
 
 } // DSGenModel

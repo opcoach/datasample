@@ -162,9 +162,7 @@ public class DSGenHelper
 	 */
 	public static DSGenClass createDSGenClass(EClass rootClass)
 	{
-		DataSampleGenFactory factory = DataSampleGenFactory.eINSTANCE;
-
-		DSGenClass dscl = factory.createDSGenClass();
+		DSGenClass dscl = DataSampleGenFactory.eINSTANCE.createDSGenClass();
 		dscl.setEcoreClass((EClass) rootClass);
 		dscl.setInstanceNumber(50); // Default but for main object will be 1.
 		Collection<DSGenFeature> features = dscl.getDsgenFeatures();
@@ -293,6 +291,10 @@ public class DSGenHelper
 		EDataType dt = (rootAttr.getEAttributeType());
 
 		ValueGenerator<?> gen = getGeneratorFromType(dt);
+		if (gen != null)
+		{
+		    gen.setID(rootAttr.getEContainingClass().getName() + "." +rootAttr.getName());
+		}
 		result.setGenerator(gen);
 
 		return result;
@@ -307,8 +309,7 @@ public class DSGenHelper
 	 */
 	public static DSGenReference createDSGenReference(EReference rootRef)
 	{
-		DataSampleGenFactory factory = DataSampleGenFactory.eINSTANCE;
-		DSGenReference result = factory.createDSGenReference();
+		DSGenReference result = DataSampleGenFactory.eINSTANCE.createDSGenReference();
 
 		result.setEcoreFeature(rootRef);
 

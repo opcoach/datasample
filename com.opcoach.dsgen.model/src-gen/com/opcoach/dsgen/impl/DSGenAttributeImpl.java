@@ -191,5 +191,12 @@ public class DSGenAttributeImpl extends DSGenFeatureImpl implements DSGenAttribu
 		}
 		return super.eIsSet(featureID);
 	}
+	
+	@Override
+	public String toString()
+	{
+		// TODO Auto-generated method stub
+		return "DSGenAtt (for " + ((EClass)getEcoreFeature().eContainer()).getName() + "." + getEcoreFeature().getName() +")";
+	}
 
 } // DSGenAttributeImpl

@@ -109,7 +109,7 @@ public class Ecore2DSGenFactory implements DSGenConstants
 			{
 				System.out.println("--> Classe : " + ec.getName());
 
-			for (EStructuralFeature sf : ((EClass) ec).getEAllStructuralFeatures())
+				for (EStructuralFeature sf : ((EClass) ec).getEAllStructuralFeatures())
 				{
 					String t = (sf instanceof EReference) ? "   Reference : " : "   Field : ";
 					System.out.println( t + sf.getName());

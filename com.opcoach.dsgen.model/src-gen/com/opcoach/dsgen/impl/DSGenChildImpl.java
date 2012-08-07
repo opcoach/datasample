@@ -362,6 +362,7 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" sourceRef :  ").append(sourceReference.getEcoreFeature().getName());
 		result.append(" (single: ");
 		result.append(single);
 		result.append(')');

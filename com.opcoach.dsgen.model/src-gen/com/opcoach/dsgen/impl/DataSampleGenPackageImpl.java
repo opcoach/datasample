@@ -811,6 +811,8 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		initEAttribute(getDSGenModel_Language(), ecorePackage.getEString(), "language", null, 0, 1, DSGenModel.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		addEOperation(dsGenModelEClass, ecorePackage.getEClass(), "getRootClass", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(dsGenPackageEClass, DSGenPackage.class, "DSGenPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDSGenPackage_EcorePackage(), theEcorePackage.getEPackage(), null, "ecorePackage", null, 1, 1,
 				DSGenPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
