@@ -86,9 +86,9 @@
             <command
                   commandId="com.opcoach.dsgen.ui.commands.dsgen2sample"
                   icon="icons/ecore2dsgen.png"
-                  label="Genere Data Sample Project"
+                  label="Genere Sample"
                   style="push"
-                  tooltip="Generate a datasample project">
+                  tooltip="Generate a sample from dsgen">
                <visibleWhen
                      checkEnabled="false">
                   <reference
