@@ -56,11 +56,16 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	 */
 	protected static final String DATA_FILENAME_EDEFAULT = null;
 
+	private static int counter = 0;
+	
 	@Override
 	protected String generateSimpleValue()
 	{
-		// TODO Auto-generated method stub
-		return super.generateSimpleValue();
+		String result = super.generateSimpleValue();
+		if (result == null)
+			result = getID() + counter++;
+		
+		return result;
 	}
 	
 	
