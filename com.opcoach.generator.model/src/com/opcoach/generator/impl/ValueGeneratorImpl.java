@@ -6,24 +6,22 @@
  */
 package com.opcoach.generator.impl;
 
+import java.util.Locale;
 import java.util.Random;
 
-import com.opcoach.generator.GeneratorPackage;
-import com.opcoach.generator.ValueGenerator;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import com.opcoach.generator.GeneratorPackage;
+import com.opcoach.generator.ValueGenerator;
+
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Value Generator</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '
+ * <em><b>Value Generator</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -34,6 +32,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getID <em>ID</em>}</li>
+ *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getLocale <em>Locale</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,8 +42,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 {
 	/**
 	 * The default value of the '{@link #getBadValueProportion() <em>Bad Value Proportion</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getBadValueProportion()
 	 * @generated
 	 * @ordered
@@ -53,8 +52,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 
 	/**
 	 * The cached value of the '{@link #getBadValueProportion() <em>Bad Value Proportion</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getBadValueProportion()
 	 * @generated
 	 * @ordered
@@ -63,8 +62,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 
 	/**
 	 * The cached value of the '{@link #getBadValueGenerator() <em>Bad Value Generator</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @see #getBadValueGenerator()
 	 * @generated
 	 * @ordered
@@ -73,36 +72,33 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 
 	/**
 	 * The cached value of the '{@link #getLastGeneratedValue() <em>Last Generated Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @see #getLastGeneratedValue()
 	 * @generated
 	 * @ordered
 	 */
 	protected T lastGeneratedValue;
-	
-	
-	 /**
+
+	/**
 	 * The default value of the '{@link #getRandomSeed() <em>Random Seed</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getRandomSeed()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final long RANDOM_SEED_EDEFAULT = 0L;
 
-		/** The default SEED value for 'no random' */
-    public static long NO_SEED = -1L;
-    
- 
+	/** The default SEED value for 'no random' */
+	public static long NO_SEED = -1L;
+
 	/** random seed. If NO_SEED -> no random */
 	private long randomSeed = NO_SEED;
-	
+
 	/**
-	 * This is true if the Random Seed attribute has been set.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This is true if the Random Seed attribute has been set. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -110,8 +106,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 
 	/**
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -120,8 +115,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 
 	/**
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -130,8 +124,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -139,9 +132,9 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	protected Class<?> type;
 
 	/**
-	 * The default value of the '{@link #getID() <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getID() <em>ID</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getID()
 	 * @generated
 	 * @ordered
@@ -149,14 +142,34 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	protected static final String ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getID() <em>ID</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getID()
 	 * @generated
 	 * @ordered
 	 */
 	protected String id = ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLocale() <em>Locale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocale()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Locale LOCALE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLocale() <em>Locale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocale()
+	 * @generated
+	 * @ordered
+	 */
+	protected Locale locale = LOCALE_EDEFAULT;
 
 	/** The generator randomizer (if null -> no random) */
 	private Random randomizer = null;
@@ -166,19 +179,16 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	private static final long BAD_VALUE_SEED = 1L;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ValueGeneratorImpl()
 	{
 		super();
 	}
-	
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -188,8 +198,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getBadValueProportion()
@@ -210,29 +219,28 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public void setBadValueProportion(int newBadValueProportion)
 	{
 		int boundedValue = Math.max(0, newBadValueProportion);
 		boundedValue = Math.min(boundedValue, 100);
-		
+
 		setBadValueProportionGen(boundedValue);
-		
+
 		if (badValueProportion == 0)
 			badValueRandomizer = null;
 		else
 			badValueRandomizer = new Random(BAD_VALUE_SEED);
-		
+
 		// Force description to be recomputed.
 		description = null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ValueGenerator<T> getBadValueGenerator()
@@ -241,8 +249,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetBadValueGenerator(ValueGenerator<T> newBadValueGenerator, NotificationChain msgs)
@@ -258,8 +265,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setBadValueGenerator(ValueGenerator<T> newBadValueGenerator)
@@ -279,8 +285,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public T getLastGeneratedValue()
@@ -289,8 +294,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setLastGeneratedValue(T newLastGeneratedValue)
@@ -301,10 +305,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__LAST_GENERATED_VALUE, oldLastGeneratedValue, lastGeneratedValue));
 	}
 
-
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public long getRandomSeed()
@@ -327,8 +329,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public void setRandomSeed(long newRandomSeed)
@@ -341,8 +343,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void unsetRandomSeed()
@@ -356,8 +357,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isSetRandomSeed()
@@ -366,8 +366,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public String getDescription()
@@ -376,13 +376,12 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		{
 			description = computeDescription();
 		}
-		
+
 		return description;
 	}
-	
+
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Class<?> getType()
@@ -390,17 +389,16 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		return type;
 	}
 
-
 	protected String computeDescription()
 	{
 		// Compute a default description...
 		return (badValueProportion == 0) ? "with no errors" : "with " + badValueProportion + " % of errors";
 	}
 
-
+	
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public T generateValue()
@@ -408,11 +406,10 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		T result = null;
 		if (generateNowABadValue())
 		{
-			    result = generateBadValue();
-		}
-		else
+			result = generateBadValue();
+		} else
 		{
-			// Generate random value ? 
+			// Generate random value ?
 			if (randomizer != null)
 				result = generateRandomValue();
 			else
@@ -421,19 +418,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 
 		lastGeneratedValue = result;
 		return result;
+
 	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-/*	public Class<?> getType()
-	{
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}*/
 
 	/** @return true if it's time to generate a bad value */
 	protected boolean generateNowABadValue()
@@ -448,20 +434,21 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		return (val == 0);
 	}
 
-	
-	/** A protected method to generate a bad value. Use the badvaludgenerator if fixed. 
-	 * Can be overriden
+	/**
+	 * A protected method to generate a bad value. Use the bad value generator
+	 * if fixed. Can be overriden
 	 * 
 	 * @return a bad value for Type T
 	 */
 	protected T generateBadValue()
 	{
-		T  result = (badValueGenerator == null) ? null : badValueGenerator.generateValue();
+		T result = (badValueGenerator == null) ? null : badValueGenerator.generateValue();
 		return result;
 	}
-	
-	
-	/** Get the randomizer (for subclasses)
+
+	/**
+	 * Get the randomizer (for subclasses)
+	 * 
 	 * @return the randomizer to generate data
 	 */
 	protected Random getRandomizer()
@@ -477,8 +464,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	abstract protected T generateSimpleValue();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -500,13 +486,14 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 				return getType();
 			case GeneratorPackage.VALUE_GENERATOR__ID:
 				return getID();
+			case GeneratorPackage.VALUE_GENERATOR__LOCALE:
+				return getLocale();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -533,13 +520,15 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 			case GeneratorPackage.VALUE_GENERATOR__ID:
 				setID((String)newValue);
 				return;
+			case GeneratorPackage.VALUE_GENERATOR__LOCALE:
+				setLocale((Locale)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -565,13 +554,15 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 			case GeneratorPackage.VALUE_GENERATOR__ID:
 				setID(ID_EDEFAULT);
 				return;
+			case GeneratorPackage.VALUE_GENERATOR__LOCALE:
+				setLocale(LOCALE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -593,13 +584,14 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 				return type != null;
 			case GeneratorPackage.VALUE_GENERATOR__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case GeneratorPackage.VALUE_GENERATOR__LOCALE:
+				return LOCALE_EDEFAULT == null ? locale != null : !LOCALE_EDEFAULT.equals(locale);
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -620,15 +612,14 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		result.append(type);
 		result.append(", ID: ");
 		result.append(id);
+		result.append(", locale: ");
+		result.append(locale);
 		result.append(')');
 		return result.toString();
 	}
 
-
-
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setType(Class<?> newType)
@@ -639,17 +630,14 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__TYPE, oldType, type));
 	}
 
-
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getID()
 	{
 		return id;
 	}
-
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -663,22 +651,43 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__ID, oldID, id));
 	}
 
-
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	public void setID(String newID)
 	{
-		// Id are always managed in lower case, because used after for file name detection.
-		setIDGen(newID.toLowerCase());  
+		// Id are always managed in lower case, because used after for file name
+		// detection.
+		setIDGen(newID.toLowerCase());
 	}
-
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Locale getLocale()
+	{
+		return locale;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLocale(Locale newLocale)
+	{
+		Locale oldLocale = locale;
+		locale = newLocale;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__LOCALE, oldLocale, locale));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -692,4 +701,4 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-} //ValueGeneratorImpl
+} // ValueGeneratorImpl

@@ -6,12 +6,13 @@
  */
 package com.opcoach.generator.basic.impl;
 
-import com.opcoach.generator.basic.BasicPackage;
-import com.opcoach.generator.basic.DoubleGenerator;
-
-import com.opcoach.generator.impl.RangeGeneratorImpl;
+import java.util.Locale;
 
 import org.eclipse.emf.ecore.EClass;
+
+import com.opcoach.generator.basic.BasicPackage;
+import com.opcoach.generator.basic.DoubleGenerator;
+import com.opcoach.generator.impl.RangeGeneratorImpl;
 
 /**
  * <!-- begin-user-doc -->

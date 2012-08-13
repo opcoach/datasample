@@ -66,7 +66,8 @@ public class StringGeneratorItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addDataFilenamePropertyDescriptor(object);
@@ -160,7 +161,8 @@ public class StringGeneratorItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(StringGenerator.class)) {
+		switch (notification.getFeatureID(StringGenerator.class))
+		{
 			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
 			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

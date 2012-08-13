@@ -94,7 +94,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Adapter createBooleanGeneratorAdapter()
 	{
-		if (booleanGeneratorItemProvider == null) {
+		if (booleanGeneratorItemProvider == null)
+		{
 			booleanGeneratorItemProvider = new BooleanGeneratorItemProvider(this);
 		}
 
@@ -118,7 +119,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Adapter createDateGeneratorAdapter()
 	{
-		if (dateGeneratorItemProvider == null) {
+		if (dateGeneratorItemProvider == null)
+		{
 			dateGeneratorItemProvider = new DateGeneratorItemProvider(this);
 		}
 
@@ -142,7 +144,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Adapter createDoubleGeneratorAdapter()
 	{
-		if (doubleGeneratorItemProvider == null) {
+		if (doubleGeneratorItemProvider == null)
+		{
 			doubleGeneratorItemProvider = new DoubleGeneratorItemProvider(this);
 		}
 
@@ -166,7 +169,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Adapter createFloatGeneratorAdapter()
 	{
-		if (floatGeneratorItemProvider == null) {
+		if (floatGeneratorItemProvider == null)
+		{
 			floatGeneratorItemProvider = new FloatGeneratorItemProvider(this);
 		}
 
@@ -190,7 +194,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Adapter createIDGeneratorAdapter()
 	{
-		if (idGeneratorItemProvider == null) {
+		if (idGeneratorItemProvider == null)
+		{
 			idGeneratorItemProvider = new IDGeneratorItemProvider(this);
 		}
 
@@ -214,7 +219,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Adapter createIntGeneratorAdapter()
 	{
-		if (intGeneratorItemProvider == null) {
+		if (intGeneratorItemProvider == null)
+		{
 			intGeneratorItemProvider = new IntGeneratorItemProvider(this);
 		}
 
@@ -238,7 +244,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Adapter createLongGeneratorAdapter()
 	{
-		if (longGeneratorItemProvider == null) {
+		if (longGeneratorItemProvider == null)
+		{
 			longGeneratorItemProvider = new LongGeneratorItemProvider(this);
 		}
 
@@ -262,7 +269,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Adapter createNullValueGeneratorAdapter()
 	{
-		if (nullValueGeneratorItemProvider == null) {
+		if (nullValueGeneratorItemProvider == null)
+		{
 			nullValueGeneratorItemProvider = new NullValueGeneratorItemProvider(this);
 		}
 
@@ -286,7 +294,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Adapter createStringGeneratorAdapter()
 	{
-		if (stringGeneratorItemProvider == null) {
+		if (stringGeneratorItemProvider == null)
+		{
 			stringGeneratorItemProvider = new StringGeneratorItemProvider(this);
 		}
 
@@ -309,7 +318,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createTrueGeneratorAdapter() {
-		if (trueGeneratorItemProvider == null) {
+		if (trueGeneratorItemProvider == null)
+		{
 			trueGeneratorItemProvider = new TrueGeneratorItemProvider(this);
 		}
 
@@ -332,7 +342,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	 */
 	@Override
 	public Adapter createFalseGeneratorAdapter() {
-		if (falseGeneratorItemProvider == null) {
+		if (falseGeneratorItemProvider == null)
+		{
 			falseGeneratorItemProvider = new FalseGeneratorItemProvider(this);
 		}
 
@@ -392,9 +403,11 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	@Override
 	public Object adapt(Object object, Object type)
 	{
-		if (isFactoryForType(type)) {
+		if (isFactoryForType(type))
+		{
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
+			{
 				return adapter;
 			}
 		}
@@ -434,7 +447,8 @@ public class BasicItemProviderAdapterFactory extends BasicAdapterFactory impleme
 	{
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
+		if (parentAdapterFactory != null)
+		{
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

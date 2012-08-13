@@ -11,6 +11,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collection;
+import java.util.Locale;
+import java.util.Vector;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.emf.common.notify.Notification;
@@ -37,14 +40,16 @@ import com.opcoach.generator.impl.ReferenceGeneratorImpl;
  *
  * @generated
  */
-public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
-		implements StringGenerator
+public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implements StringGenerator
 {
 	/**
 	 * The location where data files should be searched (initialized by default
 	 * with the bundle location)
 	 */
 	public static String rootData = null;
+
+	/** A lock to know if data should be read (use the locale) */
+	private boolean mustReadValues = true;
 
 	/**
 	 * The default value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
@@ -56,19 +61,36 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	 */
 	protected static final String DATA_FILENAME_EDEFAULT = null;
 
+	/** A counter to generate value with ID, when no data have been found */
 	private static int counter = 0;
-	
+
 	@Override
 	protected String generateSimpleValue()
 	{
+		// Read the file if it's the first time, then do like ancestor.
+		if (mustReadValues)
+			readValues();
+
 		String result = super.generateSimpleValue();
 		if (result == null)
 			result = getID() + counter++;
-		
+
 		return result;
 	}
-	
-	
+
+	@Override
+	protected String generateRandomValue()
+	{
+		// TODO Auto-generated method stub
+		String result = super.generateRandomValue();
+		if (result == null)
+		{
+			String ID = getID();
+			result = ((ID == null) ? "" : ID) + counter++;
+
+		}
+		return result;
+	}
 
 	@Override
 	public String generateValue()
@@ -77,16 +99,19 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 		String result = super.generateValue();
 		switch (casePolicy)
 		{
-		case LOWERCASE : result = result.toLowerCase(); break;
-		case UPPERCASE : result =  result.toUpperCase(); break;
-		default : break;
+		case LOWERCASE:
+			result = result.toLowerCase();
+			break;
+		case UPPERCASE:
+			result = result.toUpperCase();
+			break;
+		default:
+			break;
 		}
-		
+
 		return result;
-		
+
 	}
-
-
 
 	/**
 	 * The cached value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
@@ -100,8 +125,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * The default value of the '{@link #getCasePolicy() <em>Case Policy</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCasePolicy()
 	 * @generated
 	 * @ordered
@@ -110,8 +134,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * The cached value of the '{@link #getCasePolicy() <em>Case Policy</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCasePolicy()
 	 * @generated
 	 * @ordered
@@ -120,6 +143,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected StringGeneratorImpl()
@@ -132,17 +156,14 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 			Bundle b = GeneratorActivator.getBundle();
 			if (b == null)
 			{
-				System.out
-						.println("-->> Not an OSGi runtime. No rootData initialized for String Generators");
-			} 
-			else
+				System.out.println("-->> Not an OSGi runtime. No rootData initialized for String Generators");
+			} else
 			{
 				URL dataUrl = b.getEntry("data");
 				try
 				{
 					URL fdata = FileLocator.toFileURL(dataUrl);
-					System.out.println("Initialize rootData with "
-							+ fdata.getFile());
+					System.out.println("Initialize rootData with " + fdata.getFile());
 					setRootData(fdata.getFile());
 				} catch (IOException e)
 				{
@@ -152,6 +173,17 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 			}
 
 		}
+	}
+	
+	@Override
+	public Collection<String> getValues()
+	{
+		if (mustReadValues)
+		{
+			readValues();
+		}
+		// Get the values according to filename and current locale
+		return super.getValues();
 	}
 
 	/**
@@ -177,7 +209,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDataFilenameGen(String newDataFilename)
+	public void setDataFilename(String newDataFilename)
 	{
 		String oldDataFilename = dataFilename;
 		dataFilename = newDataFilename;
@@ -187,19 +219,6 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public void setDataFilename(String newDataFilename)
-	{
-		setDataFilenameGen(newDataFilename);
-		// Reset the values
-		readValues();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public CasePolicyType getCasePolicy()
@@ -208,8 +227,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setCasePolicy(CasePolicyType newCasePolicy)
@@ -219,7 +237,6 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__CASE_POLICY, oldCasePolicy, casePolicy));
 	}
-
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -326,36 +343,56 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 	/** Read the datafile, and initialize values */
 	private void readValues()
 	{
-		values = null;
+		computeFileName();
+		String df = getDataFilename();
+		if (df == null)
+			return;
+
+		BufferedReader bf = null;
 		try
 		{
-			File f = new File(getDataFilename());
+			File f = new File(df);
 			if (f.exists())
 			{
+				values = new Vector<String>();
 				FileReader reader = new FileReader(f);
-				BufferedReader bf = new BufferedReader(reader);
+				bf = new BufferedReader(reader);
 				String s = null;
 				while ((s = bf.readLine()) != null)
 				{
 					addValue(s);
 				}
+
 			}
 		} catch (Exception ex)
 		{
-			System.out.println("Unable to read values in file : "
-					+ getDataFilename());
+			System.out.println("Unable to read values in file : " + df);
+		} finally
+		{
+			if (bf != null)
+				try
+				{
+					bf.close();
+				} catch (IOException e)
+				{
+					e.printStackTrace();
+				}
 		}
+		mustReadValues = false;
+
 	}
 
-	@Override
-	public void setID(String newID)
+	private void computeFileName()
 	{
-		super.setID(newID);
 		final String DATA_FILE_EXT = ".txt";
+
+		if (getID() == null)
+			return;
+
 		// According to ID, try to read a file containing possible values
 		// Id may be set with several parts : rental.Customer.FirstName :
 		// P1.P2.P3
-		// Use the rootData if it has been set.
+		// Use the rootData if it has been set and the locale (optional)
 		// Search order is like this :
 		// 1. rootData/P1.P2.P3.txt
 		// 2. rootData/P2.P3.txt
@@ -363,20 +400,20 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String>
 		// By default rootData is initialized with the location of
 		// com.opcoach.generator Bundle
 
-		// 1. search for rootData/P1.P2.P3.txt
-		String fname = rootData + File.separator + newID + DATA_FILE_EXT;
+		String nl = (getLocale() == null) ? "" : getLocale().getLanguage();
+		// 1. search for rootData/nl/P1.P2.P3.txt
+		String fname = rootData + File.separator + nl + File.separator + getID() + DATA_FILE_EXT;
 		File f = new File(fname);
 		if (f.exists())
 			setDataFilename(fname);
 		else
 		{
-			// 2. rootData/P2.P3.txt
-			String[] names = newID.split("\\.",3);
+			// 2. rootData/nl/P2.P3.txt
+			String[] names = getID().split("\\.", 3);
 			System.out.println("Found this names : " + names);
 			if (names.length == 3)
 			{
-				fname = rootData + File.separator + names[1] + "." + names[2]
-						+ DATA_FILE_EXT;
+				fname = rootData + File.separator + names[1] + "." + names[2] + DATA_FILE_EXT;
 				f = new File(fname);
 				if (f.exists())
 					setDataFilename(fname);

@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -88,6 +89,7 @@ public class TestStringGenerators
 	{
 		gen = f.createStringGenerator();
 		gen.setID("firstname");
+		gen.setLocale(Locale.ENGLISH);
 		System.out.println("---->  Valeurs possibles : " + gen.getValues());
 		for (int i = 0; i < gen.getValues().size() ; i++)
 		{
@@ -110,6 +112,7 @@ public class TestStringGenerators
 		// Create the real generator which must use the same values than genRef, because Customer.firstname does not exists
 		gen = f.createStringGenerator();
 		gen.setID("Customer.firstname");
+		gen.setLocale(Locale.ENGLISH);
 		System.out.println("---->  Valeurs possibles : " + gen.getValues());
 		for (int i = 0; i < gen.getValues().size() ; i++)
 		{
@@ -124,11 +127,33 @@ public class TestStringGenerators
 
 	
 	@Test
-	public void testGenRandomStringWithAFile()
+	public void testGenRandomStringWithAnEnglishFile()
 	{
 		gen = f.createStringGenerator();
 		gen.setRandomSeed(10);
 		gen.setID("firstname");
+		gen.setLocale(Locale.ENGLISH);
+		assertTrue("There must be values in generator ", gen.getValues().size() > 0);
+		System.out.println("---->  Valeurs possibles : " + gen.getValues());
+		for (int i = 0; i < gen.getValues().size() * 4 ; i++)
+		{
+			// First generated value must be first in array... until end of array
+			String v = gen.generateValue();
+			System.out.println("Generate : " + v);
+			assertTrue("Generated value (" + v + ") must be in registered list of possible values : " + gen.getValues(), gen.getValues().contains(v));
+			
+		}
+
+	}
+	
+	@Test
+	public void testGenRandomStringWithAFrenchFile()
+	{
+		gen = f.createStringGenerator();
+		gen.setRandomSeed(10);
+		gen.setID("prenom");
+		gen.setLocale(Locale.FRANCE);
+		assertTrue("There must be values in generator ", gen.getValues().size() > 0);
 		System.out.println("---->  Valeurs possibles : " + gen.getValues());
 		for (int i = 0; i < gen.getValues().size() * 4 ; i++)
 		{

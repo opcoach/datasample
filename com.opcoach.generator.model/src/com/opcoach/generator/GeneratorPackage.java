@@ -135,13 +135,22 @@ public interface GeneratorPackage extends EPackage
 	int VALUE_GENERATOR__ID = 6;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_GENERATOR__LOCALE = 7;
+
+	/**
 	 * The number of structural features of the '<em>Value Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_GENERATOR_FEATURE_COUNT = 7;
+	int VALUE_GENERATOR_FEATURE_COUNT = 8;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.generator.impl.RangeGeneratorImpl <em>Range Generator</em>}' class.
@@ -215,6 +224,15 @@ public interface GeneratorPackage extends EPackage
 	 * @ordered
 	 */
 	int RANGE_GENERATOR__ID = VALUE_GENERATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RANGE_GENERATOR__LOCALE = VALUE_GENERATOR__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -327,6 +345,15 @@ public interface GeneratorPackage extends EPackage
 	int REFERENCE_GENERATOR__ID = VALUE_GENERATOR__ID;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_GENERATOR__LOCALE = VALUE_GENERATOR__LOCALE;
+
+	/**
 	 * The feature id for the '<em><b>Step</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,6 +380,17 @@ public interface GeneratorPackage extends EPackage
 	 * @generated
 	 */
 	int COLLECTION = 3;
+
+
+	/**
+	 * The meta object id for the '<em>Locale</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.Locale
+	 * @see com.opcoach.generator.impl.GeneratorPackageImpl#getLocale()
+	 * @generated
+	 */
+	int LOCALE = 4;
 
 
 	/**
@@ -443,6 +481,17 @@ public interface GeneratorPackage extends EPackage
 	EAttribute getValueGenerator_ID();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.generator.ValueGenerator#getLocale <em>Locale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Locale</em>'.
+	 * @see com.opcoach.generator.ValueGenerator#getLocale()
+	 * @see #getValueGenerator()
+	 * @generated
+	 */
+	EAttribute getValueGenerator_Locale();
+
+	/**
 	 * Returns the meta object for class '{@link com.opcoach.generator.RangeGenerator <em>Range Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -516,6 +565,17 @@ public interface GeneratorPackage extends EPackage
 	 * @generated
 	 */
 	EDataType getCollection();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.Locale <em>Locale</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Locale</em>'.
+	 * @see java.util.Locale
+	 * @model instanceClass="java.util.Locale"
+	 * @generated
+	 */
+	EDataType getLocale();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -607,6 +667,14 @@ public interface GeneratorPackage extends EPackage
 		EAttribute VALUE_GENERATOR__ID = eINSTANCE.getValueGenerator_ID();
 
 		/**
+		 * The meta object literal for the '<em><b>Locale</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_GENERATOR__LOCALE = eINSTANCE.getValueGenerator_Locale();
+
+		/**
 		 * The meta object literal for the '{@link com.opcoach.generator.impl.RangeGeneratorImpl <em>Range Generator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -667,6 +735,16 @@ public interface GeneratorPackage extends EPackage
 		 * @generated
 		 */
 		EDataType COLLECTION = eINSTANCE.getCollection();
+
+		/**
+		 * The meta object literal for the '<em>Locale</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.Locale
+		 * @see com.opcoach.generator.impl.GeneratorPackageImpl#getLocale()
+		 * @generated
+		 */
+		EDataType LOCALE = eINSTANCE.getLocale();
 
 	}
 

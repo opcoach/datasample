@@ -66,7 +66,8 @@ public class IDGeneratorItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null)
+		{
 			super.getPropertyDescriptors(object);
 
 			addKeyLengthPropertyDescriptor(object);
@@ -160,7 +161,8 @@ public class IDGeneratorItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(IDGenerator.class)) {
+		switch (notification.getFeatureID(IDGenerator.class))
+		{
 			case BasicPackage.ID_GENERATOR__KEY_LENGTH:
 			case BasicPackage.ID_GENERATOR__PREFIX:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

@@ -9,6 +9,7 @@ package com.opcoach.generator.impl;
 import com.opcoach.generator.*;
 
 import java.util.Collection;
+import java.util.Locale;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -88,6 +89,8 @@ public class GeneratorFactoryImpl extends EFactoryImpl implements GeneratorFacto
 		{
 			case GeneratorPackage.COLLECTION:
 				return createCollectionFromString(eDataType, initialValue);
+			case GeneratorPackage.LOCALE:
+				return createLocaleFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -105,6 +108,8 @@ public class GeneratorFactoryImpl extends EFactoryImpl implements GeneratorFacto
 		{
 			case GeneratorPackage.COLLECTION:
 				return convertCollectionToString(eDataType, instanceValue);
+			case GeneratorPackage.LOCALE:
+				return convertLocaleToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -139,6 +144,26 @@ public class GeneratorFactoryImpl extends EFactoryImpl implements GeneratorFacto
 	public String convertCollectionToString(EDataType eDataType, Object instanceValue)
 	{
 		return super.convertToString(instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Locale createLocaleFromString(EDataType eDataType, String initialValue)
+	{
+		return (Locale)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLocaleToString(EDataType eDataType, Object instanceValue)
+	{
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

@@ -6,6 +6,7 @@
  */
 package com.opcoach.generator;
 
+import java.util.Locale;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.opcoach.generator.ValueGenerator#getDescription <em>Description</em>}</li>
  *   <li>{@link com.opcoach.generator.ValueGenerator#getType <em>Type</em>}</li>
  *   <li>{@link com.opcoach.generator.ValueGenerator#getID <em>ID</em>}</li>
+ *   <li>{@link com.opcoach.generator.ValueGenerator#getLocale <em>Locale</em>}</li>
  * </ul>
  * </p>
  *
@@ -240,6 +242,32 @@ public interface ValueGenerator<T> extends EObject
 	 * @generated
 	 */
 	void setID(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Locale</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Locale</em>' attribute.
+	 * @see #setLocale(Locale)
+	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_Locale()
+	 * @model dataType="com.opcoach.generator.Locale"
+	 * @generated
+	 */
+	Locale getLocale();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getLocale <em>Locale</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Locale</em>' attribute.
+	 * @see #getLocale()
+	 * @generated
+	 */
+	void setLocale(Locale value);
 
 	/**
 	 * <!-- begin-user-doc -->

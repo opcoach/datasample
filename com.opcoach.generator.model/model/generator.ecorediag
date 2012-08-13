@@ -43,7 +43,7 @@
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_BjVGkbH6EeCytLX7lm7FcA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
       <element xmi:type="ecore:EClass" href="generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjVGkrH6EeCytLX7lm7FcA" x="160" y="32"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BjVGkrH6EeCytLX7lm7FcA" x="184" y="20"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_BkarsrH6EeCytLX7lm7FcA" type="1001">
       <children xmi:type="notation:Node" xmi:id="_BkbSwrH6EeCytLX7lm7FcA" type="4001"/>
@@ -75,7 +75,7 @@
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_BkbSwLH6EeCytLX7lm7FcA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
       <element xmi:type="ecore:EClass" href="generator.ecore#//RangeGenerator"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BkbSwbH6EeCytLX7lm7FcA" x="68" y="304"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BkbSwbH6EeCytLX7lm7FcA" x="52" y="336"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_BkdH9LH6EeCytLX7lm7FcA" type="1001">
       <children xmi:type="notation:Node" xmi:id="_BkdvALH6EeCytLX7lm7FcA" type="4001"/>
@@ -103,7 +103,7 @@
       </children>
       <styles xmi:type="notation:ShapeStyle" xmi:id="_BkdH9bH6EeCytLX7lm7FcA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
       <element xmi:type="ecore:EClass" href="generator.ecore#//ReferenceGenerator"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BkdH9rH6EeCytLX7lm7FcA" x="356" y="304"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BkdH9rH6EeCytLX7lm7FcA" x="464" y="332"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="_BkgyULH6EeCytLX7lm7FcA" type="1004">
       <children xmi:type="notation:Node" xmi:id="_BkhZYLH6EeCytLX7lm7FcA" type="4008"/>

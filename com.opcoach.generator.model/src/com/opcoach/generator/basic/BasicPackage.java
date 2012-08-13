@@ -136,6 +136,15 @@ public interface BasicPackage extends EPackage
 	int BOOLEAN_GENERATOR__ID = GeneratorPackage.VALUE_GENERATOR__ID;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_GENERATOR__LOCALE = GeneratorPackage.VALUE_GENERATOR__LOCALE;
+
+	/**
 	 * The number of structural features of the '<em>Boolean Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -217,6 +226,15 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int DATE_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_GENERATOR__LOCALE = GeneratorPackage.RANGE_GENERATOR__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -337,6 +355,15 @@ public interface BasicPackage extends EPackage
 	int DOUBLE_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_GENERATOR__LOCALE = GeneratorPackage.RANGE_GENERATOR__LOCALE;
+
+	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -444,6 +471,15 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int FLOAT_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOAT_GENERATOR__LOCALE = GeneratorPackage.RANGE_GENERATOR__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -556,6 +592,15 @@ public interface BasicPackage extends EPackage
 	int ID_GENERATOR__ID = GeneratorPackage.VALUE_GENERATOR__ID;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ID_GENERATOR__LOCALE = GeneratorPackage.VALUE_GENERATOR__LOCALE;
+
+	/**
 	 * The feature id for the '<em><b>Key Length</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -654,6 +699,15 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int INT_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INT_GENERATOR__LOCALE = GeneratorPackage.RANGE_GENERATOR__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
@@ -765,6 +819,15 @@ public interface BasicPackage extends EPackage
 	int LONG_GENERATOR__ID = GeneratorPackage.RANGE_GENERATOR__ID;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LONG_GENERATOR__LOCALE = GeneratorPackage.RANGE_GENERATOR__LOCALE;
+
+	/**
 	 * The feature id for the '<em><b>Low</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -874,6 +937,15 @@ public interface BasicPackage extends EPackage
 	int NULL_VALUE_GENERATOR__ID = GeneratorPackage.VALUE_GENERATOR__ID;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NULL_VALUE_GENERATOR__LOCALE = GeneratorPackage.VALUE_GENERATOR__LOCALE;
+
+	/**
 	 * The number of structural features of the '<em>Null Value Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -954,6 +1026,15 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int STRING_GENERATOR__ID = GeneratorPackage.REFERENCE_GENERATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_GENERATOR__LOCALE = GeneratorPackage.REFERENCE_GENERATOR__LOCALE;
 
 	/**
 	 * The feature id for the '<em><b>Step</b></em>' attribute.
@@ -1066,6 +1147,15 @@ public interface BasicPackage extends EPackage
 	int TRUE_GENERATOR__ID = BOOLEAN_GENERATOR__ID;
 
 	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRUE_GENERATOR__LOCALE = BOOLEAN_GENERATOR__LOCALE;
+
+	/**
 	 * The number of structural features of the '<em>True Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1146,6 +1236,15 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int FALSE_GENERATOR__ID = BOOLEAN_GENERATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FALSE_GENERATOR__LOCALE = BOOLEAN_GENERATOR__LOCALE;
 
 	/**
 	 * The number of structural features of the '<em>False Generator</em>' class.

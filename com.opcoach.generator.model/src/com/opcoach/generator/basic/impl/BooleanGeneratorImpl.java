@@ -6,12 +6,13 @@
  */
 package com.opcoach.generator.basic.impl;
 
-import com.opcoach.generator.basic.BasicPackage;
-import com.opcoach.generator.basic.BooleanGenerator;
-
-import com.opcoach.generator.impl.ValueGeneratorImpl;
+import java.util.Locale;
 
 import org.eclipse.emf.ecore.EClass;
+
+import com.opcoach.generator.basic.BasicPackage;
+import com.opcoach.generator.basic.BooleanGenerator;
+import com.opcoach.generator.impl.ValueGeneratorImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +40,6 @@ public class BooleanGeneratorImpl extends ValueGeneratorImpl<Boolean> implements
 	@Override
 	protected Boolean generateRandomValue()
 	{
-		// TODO Auto-generated method stub
 		return getRandomizer().nextBoolean();
 	}
 

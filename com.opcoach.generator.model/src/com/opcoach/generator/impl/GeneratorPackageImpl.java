@@ -15,6 +15,7 @@ import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicPackage;
 import com.opcoach.generator.basic.impl.BasicPackageImpl;
 import java.util.Collection;
+import java.util.Locale;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -61,6 +62,13 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 	 * @generated
 	 */
 	private EDataType collectionEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType localeEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -215,6 +223,16 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getValueGenerator_Locale()
+	{
+		return (EAttribute)valueGeneratorEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRangeGenerator()
 	{
 		return rangeGeneratorEClass;
@@ -285,6 +303,16 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getLocale()
+	{
+		return localeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GeneratorFactory getGeneratorFactory()
 	{
 		return (GeneratorFactory)getEFactoryInstance();
@@ -318,6 +346,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		createEAttribute(valueGeneratorEClass, VALUE_GENERATOR__DESCRIPTION);
 		createEAttribute(valueGeneratorEClass, VALUE_GENERATOR__TYPE);
 		createEAttribute(valueGeneratorEClass, VALUE_GENERATOR__ID);
+		createEAttribute(valueGeneratorEClass, VALUE_GENERATOR__LOCALE);
 
 		rangeGeneratorEClass = createEClass(RANGE_GENERATOR);
 		createEAttribute(rangeGeneratorEClass, RANGE_GENERATOR__LOW);
@@ -329,6 +358,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 
 		// Create data types
 		collectionEDataType = createEDataType(COLLECTION);
+		localeEDataType = createEDataType(LOCALE);
 	}
 
 	/**
@@ -395,6 +425,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		g1.getETypeArguments().add(g2);
 		initEAttribute(getValueGenerator_Type(), g1, "type", null, 0, 1, ValueGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getValueGenerator_ID(), ecorePackage.getEString(), "ID", null, 0, 1, ValueGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getValueGenerator_Locale(), this.getLocale(), "locale", null, 0, 1, ValueGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(valueGeneratorEClass, null, "generateValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(valueGeneratorEClass_T);
@@ -429,6 +460,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 
 		// Initialize data types
 		initEDataType(collectionEDataType, Collection.class, "Collection", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(localeEDataType, Locale.class, "Locale", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
