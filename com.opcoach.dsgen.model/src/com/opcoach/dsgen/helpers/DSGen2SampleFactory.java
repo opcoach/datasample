@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -76,7 +77,8 @@ public class DSGen2SampleFactory implements DSGenConstants
 		try
 		{
 			final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
-			//saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+			// saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED,
+			// Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 			saveOptions.put(XMLResource.OPTION_KEEP_DEFAULT_CONTENT, Boolean.TRUE);
 			res2.save(saveOptions);
 			System.out.println("sample model saved in : " + res2.getURI());
@@ -107,12 +109,28 @@ public class DSGen2SampleFactory implements DSGenConstants
 			System.out.println("Child trouvé " + child.toString());
 			Collection<EObject> children = generateSampleForEClass(child.getDsgenClass());
 			// Add these children in parent reference
-			if (children != null)
+			if ((children != null) && !children.isEmpty())
 			{
+				// Get the structural feature in parent that contains this child
+				/*EStructuralFeature sf = child.getDsgenClass().getEcoreClass().eContainingFeature();
+				if (sf instanceof EReference)
+				{
+					EReference containmentRef = (EReference) sf;
+					System.out.println("Found this reference " + ((EClass)sf.eContainer()).getName() +"." + sf.getName() + " for the child " + child.toString());
+					parent.eSet(sf, children);
+				}*/
+				
 				DSGenReference dsgenRef = child.getSourceReference();
 				EReference ref = (EReference) dsgenRef.getEcoreFeature();
-				EList<EObject> childrenListinRoot = (EList<EObject>) parent.eGet(ref);
+				if (ref.getUpperBound() == 1)
+					parent.eSet(ref, children.iterator().next());
+					else
+					{
+				Object sss = parent.eGet(ref);
+				System.out.println("classe du child " + sss.getClass().toString());
+				EList<EObject> childrenListinRoot = (EList<EObject>)sss ;
 				childrenListinRoot.addAll(children);
+					}
 			}
 
 		}
@@ -121,11 +139,12 @@ public class DSGen2SampleFactory implements DSGenConstants
 	private Collection<EObject> generateSampleForEClass(DSGenClass c)
 	{
 		System.out.println("----->  Must create " + c.getInstanceNumber() + " instance(s) of : " + c);
-		Collection<EObject> result = null;
-		if (c.getInstanceNumber() == -1)
-			return result;
-		result = new ArrayList<EObject>();
-		for (int i = 0; i < c.getInstanceNumber(); i++)
+		Collection<EObject> result = new ArrayList<EObject>();
+		int nbInstanceToCreate = c.getInstanceNumber() ;
+		if (nbInstanceToCreate == -1 && c.getNbAssociationRefTo() == 0)
+			nbInstanceToCreate = 1;
+		
+		for (int i = 0; i < nbInstanceToCreate; i++)
 		{
 			EObject obj = instanciateEObject(c);
 			if (obj != null)
@@ -162,19 +181,20 @@ public class DSGen2SampleFactory implements DSGenConstants
 				String genClass = (gen == null) ? "" : " generator class : " + gen.getClass().toString();
 				Object genval = (gen == null) ? null : gen.generateValue();
 				Object val = (gen == null) ? null : genval;
-				System.out.println("For the feature : " + ft.getEcoreFeature().getName() + " generate this value : " + val
-						+ genClass);
+				System.out.println("For the feature : " + ft.getEcoreFeature().getName() + " generate this value : " + val);
 				obj.eSet(ft.getEcoreFeature(), val);
 			} else if (ft instanceof DSGenReference)
 			{
-				// / A REVOIR-> Il faut pas créer les child, mais uniquement les
-				// associations
-				ReferenceGenerator<?> gen = ((DSGenReference) ft).getGenerator();
-				String genClass = (gen == null) ? "" : " generator class : " + gen.getClass().toString();
-				Object genval = (gen == null) ? null : gen.generateValue();
-				Object val = (gen == null) ? "NO GENERATOR" : genval;
-				System.out.println("For the feature : " + ft.getEcoreFeature().getName() + " generate this value : " + val
-						+ genClass);
+
+				if (!isChildren((DSGenReference) ft, c))
+				{
+					ReferenceGenerator<?> gen = ((DSGenReference) ft).getGenerator();
+					String genClass = (gen == null) ? "" : " generator class : " + gen.getClass().toString();
+					Object genval = (gen == null) ? null : gen.generateValue();
+					Object val = (gen == null) ? "NO GENERATOR" : genval;
+					System.out.println("For the feature : " + ft.getEcoreFeature().getName() + " generate this value : " + val
+							+ genClass);
+				}
 			}
 		}
 
@@ -183,9 +203,14 @@ public class DSGen2SampleFactory implements DSGenConstants
 		return obj;
 	}
 
-	private void generateSampleForEDataType(DSGenDataType c)
+	private boolean isChildren(DSGenReference ref, DSGenClass parent)
 	{
-		// TODO Auto-generated method stub
+		for (DSGenChild c : parent.getChildren())
+		{
+			if (c.getSourceReference() == ref)
+				return true;
+		}
+		return false;
 
 	}
 
