@@ -22,11 +22,10 @@ public class DSGenLabelProvider extends LabelProvider implements IColorProvider
 		if (element instanceof DSGenClass)
 		{
 			DSGenClass cl = (DSGenClass) element;
-			String nbInstances;
+			String nbInstances = "";
 			if (cl.isRootObject())
 				nbInstances = " (Root object) ";
-			else
-				nbInstances = (cl.getInstanceNumber() == -1) ? " (defined by parent)" : " ("+ cl.getInstanceNumber() + ")";
+			
 			return cl.getEcoreClass().getName() + nbInstances;
 		}
 		else if (element instanceof DSGenPackage)
@@ -52,7 +51,7 @@ public class DSGenLabelProvider extends LabelProvider implements IColorProvider
 			if (cl.isRootObject())
 				c = SWT.COLOR_DARK_BLUE;
 			else
-				c = (cl.getInstanceNumber() == -1) ? SWT.COLOR_BLUE : SWT.COLOR_BLACK;
+				c = SWT.COLOR_BLACK ;
 			return Display.getCurrent().getSystemColor(c);
 		}
 		
