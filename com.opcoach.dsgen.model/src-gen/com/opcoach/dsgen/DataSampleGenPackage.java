@@ -258,22 +258,13 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_CLASS__DSGEN_PACKAGE = DS_GEN_CLASSIFIER__DSGEN_PACKAGE;
 
 	/**
-	 * The feature id for the '<em><b>Instance Number</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int DS_GEN_CLASS__INSTANCE_NUMBER = DS_GEN_CLASSIFIER_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Root Object</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CLASS__ROOT_OBJECT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 1;
+	int DS_GEN_CLASS__ROOT_OBJECT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Nb Association Ref To</b></em>' attribute.
@@ -281,7 +272,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CLASS__NB_ASSOCIATION_REF_TO = DS_GEN_CLASSIFIER_FEATURE_COUNT + 2;
+	int DS_GEN_CLASS__NB_ASSOCIATION_REF_TO = DS_GEN_CLASSIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -289,7 +280,16 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CLASS__CHILDREN = DS_GEN_CLASSIFIER_FEATURE_COUNT + 3;
+	int DS_GEN_CLASS__CHILDREN = DS_GEN_CLASSIFIER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CLASS__GENERATOR = DS_GEN_CLASSIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>DS Gen Class</em>' class.
@@ -362,12 +362,21 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_FEATURE__ECORE_FEATURE = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_FEATURE__GENERATOR = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>DS Gen Feature</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_FEATURE_FEATURE_COUNT = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 4;
+	int DS_GEN_FEATURE_FEATURE_COUNT = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.impl.DSGenEnumLiteralImpl <em>DS Gen Enum Literal</em>}' class.
@@ -526,7 +535,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_ATTRIBUTE__GENERATOR = DS_GEN_FEATURE_FEATURE_COUNT + 0;
+	int DS_GEN_ATTRIBUTE__GENERATOR = DS_GEN_FEATURE__GENERATOR;
 
 	/**
 	 * The number of structural features of the '<em>DS Gen Attribute</em>' class.
@@ -534,7 +543,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_ATTRIBUTE_FEATURE_COUNT = DS_GEN_FEATURE_FEATURE_COUNT + 1;
+	int DS_GEN_ATTRIBUTE_FEATURE_COUNT = DS_GEN_FEATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.impl.DSGenReferenceImpl <em>DS Gen Reference</em>}' class.
@@ -587,7 +596,16 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_REFERENCE__GENERATOR = DS_GEN_FEATURE_FEATURE_COUNT + 0;
+	int DS_GEN_REFERENCE__GENERATOR = DS_GEN_FEATURE__GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Target DS Gen Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS = DS_GEN_FEATURE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>DS Gen Reference</em>' class.
@@ -671,22 +689,13 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_CHILD = 14;
 
 	/**
-	 * The feature id for the '<em><b>Dsgen Class</b></em>' reference. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int DS_GEN_CHILD__DSGEN_CLASS = 0;
-
-	/**
 	 * The feature id for the '<em><b>Single</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CHILD__SINGLE = 1;
+	int DS_GEN_CHILD__SINGLE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Source Reference</b></em>' reference. <!--
@@ -695,7 +704,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CHILD__SOURCE_REFERENCE = 2;
+	int DS_GEN_CHILD__SOURCE_REFERENCE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Opposite Reference</b></em>' reference.
@@ -703,7 +712,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CHILD__OPPOSITE_REFERENCE = 3;
+	int DS_GEN_CHILD__OPPOSITE_REFERENCE = 2;
 
 	/**
 	 * The number of structural features of the '<em>DS Gen Child</em>' class.
@@ -711,7 +720,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CHILD_FEATURE_COUNT = 4;
+	int DS_GEN_CHILD_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}' enum.
@@ -868,16 +877,6 @@ public interface DataSampleGenPackage extends EPackage
 	EClass getDSGenClass();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.opcoach.dsgen.DSGenClass#getInstanceNumber <em>Instance Number</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Instance Number</em>'.
-	 * @see com.opcoach.dsgen.DSGenClass#getInstanceNumber()
-	 * @see #getDSGenClass()
-	 * @generated
-	 */
-	EAttribute getDSGenClass_InstanceNumber();
-
-	/**
 	 * Returns the meta object for the attribute '{@link com.opcoach.dsgen.DSGenClass#isRootObject <em>Root Object</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Root Object</em>'.
@@ -910,6 +909,17 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 */
 	EReference getDSGenClass_Children();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.opcoach.dsgen.DSGenClass#getGenerator <em>Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Generator</em>'.
+	 * @see com.opcoach.dsgen.DSGenClass#getGenerator()
+	 * @see #getDSGenClass()
+	 * @generated
+	 */
+	EReference getDSGenClass_Generator();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.dsgen.DSGenFeature <em>DS Gen Feature</em>}'.
@@ -962,6 +972,17 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 */
 	EReference getDSGenFeature_EcoreFeature();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.opcoach.dsgen.DSGenFeature#getGenerator <em>Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Generator</em>'.
+	 * @see com.opcoach.dsgen.DSGenFeature#getGenerator()
+	 * @see #getDSGenFeature()
+	 * @generated
+	 */
+	EReference getDSGenFeature_Generator();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.dsgen.DSGenBase <em>DS Gen Base</em>}'.
@@ -1081,16 +1102,6 @@ public interface DataSampleGenPackage extends EPackage
 	EClass getDSGenAttribute();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.opcoach.dsgen.DSGenAttribute#getGenerator <em>Generator</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Generator</em>'.
-	 * @see com.opcoach.dsgen.DSGenAttribute#getGenerator()
-	 * @see #getDSGenAttribute()
-	 * @generated
-	 */
-	EReference getDSGenAttribute_Generator();
-
-	/**
 	 * Returns the meta object for class '
 	 * {@link com.opcoach.dsgen.DSGenReference <em>DS Gen Reference</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -1102,14 +1113,15 @@ public interface DataSampleGenPackage extends EPackage
 	EClass getDSGenReference();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.opcoach.dsgen.DSGenReference#getGenerator <em>Generator</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Generator</em>'.
-	 * @see com.opcoach.dsgen.DSGenReference#getGenerator()
+	 * Returns the meta object for the reference '{@link com.opcoach.dsgen.DSGenReference#getTargetDSGenClass <em>Target DS Gen Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target DS Gen Class</em>'.
+	 * @see com.opcoach.dsgen.DSGenReference#getTargetDSGenClass()
 	 * @see #getDSGenReference()
 	 * @generated
 	 */
-	EReference getDSGenReference_Generator();
+	EReference getDSGenReference_TargetDSGenClass();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.dsgen.DSGenEnum <em>DS Gen Enum</em>}'.
@@ -1138,16 +1150,6 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 */
 	EClass getDSGenChild();
-
-	/**
-	 * Returns the meta object for the reference '{@link com.opcoach.dsgen.DSGenChild#getDsgenClass <em>Dsgen Class</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Dsgen Class</em>'.
-	 * @see com.opcoach.dsgen.DSGenChild#getDsgenClass()
-	 * @see #getDSGenChild()
-	 * @generated
-	 */
-	EReference getDSGenChild_DsgenClass();
 
 	/**
 	 * Returns the meta object for the attribute '
@@ -1343,13 +1345,6 @@ public interface DataSampleGenPackage extends EPackage
 		EClass DS_GEN_CLASS = eINSTANCE.getDSGenClass();
 
 		/**
-		 * The meta object literal for the '<em><b>Instance Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DS_GEN_CLASS__INSTANCE_NUMBER = eINSTANCE.getDSGenClass_InstanceNumber();
-
-		/**
 		 * The meta object literal for the '<em><b>Root Object</b></em>' attribute feature.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
@@ -1372,6 +1367,14 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EReference DS_GEN_CLASS__CHILDREN = eINSTANCE.getDSGenClass_Children();
+
+		/**
+		 * The meta object literal for the '<em><b>Generator</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DS_GEN_CLASS__GENERATOR = eINSTANCE.getDSGenClass_Generator();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.dsgen.impl.DSGenFeatureImpl <em>DS Gen Feature</em>}' class.
@@ -1411,6 +1414,14 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EReference DS_GEN_FEATURE__ECORE_FEATURE = eINSTANCE.getDSGenFeature_EcoreFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Generator</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DS_GEN_FEATURE__GENERATOR = eINSTANCE.getDSGenFeature_Generator();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.dsgen.impl.DSGenBaseImpl <em>DS Gen Base</em>}' class.
@@ -1522,14 +1533,6 @@ public interface DataSampleGenPackage extends EPackage
 		EClass DS_GEN_ATTRIBUTE = eINSTANCE.getDSGenAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Generator</b></em>' containment reference feature.
-		 * <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
-		 * @generated
-		 */
-		EReference DS_GEN_ATTRIBUTE__GENERATOR = eINSTANCE.getDSGenAttribute_Generator();
-
-		/**
 		 * The meta object literal for the '{@link com.opcoach.dsgen.impl.DSGenReferenceImpl <em>DS Gen Reference</em>}' class.
 		 * <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
@@ -1540,12 +1543,12 @@ public interface DataSampleGenPackage extends EPackage
 		EClass DS_GEN_REFERENCE = eINSTANCE.getDSGenReference();
 
 		/**
-		 * The meta object literal for the '<em><b>Generator</b></em>' containment reference feature.
-		 * <!-- begin-user-doc --> <!--
-		 * end-user-doc -->
+		 * The meta object literal for the '<em><b>Target DS Gen Class</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DS_GEN_REFERENCE__GENERATOR = eINSTANCE.getDSGenReference_Generator();
+		EReference DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS = eINSTANCE.getDSGenReference_TargetDSGenClass();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.dsgen.impl.DSGenEnumImpl <em>DS Gen Enum</em>}' class.
@@ -1571,13 +1574,6 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EClass DS_GEN_CHILD = eINSTANCE.getDSGenChild();
-
-		/**
-		 * The meta object literal for the '<em><b>Dsgen Class</b></em>' reference feature.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DS_GEN_CHILD__DSGEN_CLASS = eINSTANCE.getDSGenChild_DsgenClass();
 
 		/**
 		 * The meta object literal for the '<em><b>Single</b></em>' attribute feature.

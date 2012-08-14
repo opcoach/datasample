@@ -8,6 +8,9 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: com.opcoach.dsgen,
+ com.opcoach.dsgen.generator,
+ com.opcoach.dsgen.generator.impl,
+ com.opcoach.dsgen.generator.util,
  com.opcoach.dsgen.helpers,
  com.opcoach.dsgen.impl,
  com.opcoach.dsgen.util

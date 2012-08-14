@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import com.opcoach.dsgen.DSGenChild;
 import com.opcoach.dsgen.DSGenClass;
 import com.opcoach.dsgen.DataSampleGenPackage;
+import com.opcoach.dsgen.generator.EObjectGenerator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -27,10 +28,10 @@ import com.opcoach.dsgen.DataSampleGenPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getInstanceNumber <em>Instance Number</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#isRootObject <em>Root Object</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getNbAssociationRefTo <em>Nb Association Ref To</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getChildren <em>Children</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getGenerator <em>Generator</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,26 +44,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	 * @generated
 	 */
 	public static final String copyright = "© OPCoach 2012";
-
-	/**
-	 * The default value of the '{@link #getInstanceNumber() <em>Instance Number</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @see #getInstanceNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int INSTANCE_NUMBER_EDEFAULT = 50;
-
-	/**
-	 * The cached value of the '{@link #getInstanceNumber() <em>Instance Number</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @see #getInstanceNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected int instanceNumber = INSTANCE_NUMBER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isRootObject() <em>Root Object</em>}' attribute.
@@ -112,6 +93,16 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	protected EList<DSGenChild> children;
 
 	/**
+	 * The cached value of the '{@link #getGenerator() <em>Generator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGenerator()
+	 * @generated
+	 * @ordered
+	 */
+	protected EObjectGenerator generator;
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -128,28 +119,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	protected EClass eStaticClass()
 	{
 		return DataSampleGenPackage.Literals.DS_GEN_CLASS;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getInstanceNumber()
-	{
-		return instanceNumber;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInstanceNumber(int newInstanceNumber)
-	{
-		int oldInstanceNumber = instanceNumber;
-		instanceNumber = newInstanceNumber;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER,
-					oldInstanceNumber, instanceNumber));
 	}
 
 	/**
@@ -191,11 +160,11 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	public void setNbAssociationRefTo(int newNbAssociationRefTo)
 	{
 		setNbAssociationRefToGen(newNbAssociationRefTo);
-		if (newNbAssociationRefTo == 0)
+		/*if (newNbAssociationRefTo == 0)
 		{
 			// Unset the nb of instance (will be created directly)
 			setInstanceNumber(-1);
-		}
+		} */
 	}
 
 	/**
@@ -212,6 +181,61 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EObjectGenerator getGenerator()
+	{
+		return generator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerator(EObjectGenerator newGenerator, NotificationChain msgs)
+	{
+		EObjectGenerator oldGenerator = generator;
+		generator = newGenerator;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					DataSampleGenPackage.DS_GEN_CLASS__GENERATOR, oldGenerator, newGenerator);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGenerator(EObjectGenerator newGenerator)
+	{
+		if (newGenerator != generator)
+		{
+			NotificationChain msgs = null;
+			if (generator != null)
+				msgs = ((InternalEObject) generator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- DataSampleGenPackage.DS_GEN_CLASS__GENERATOR, null, msgs);
+			if (newGenerator != null)
+				msgs = ((InternalEObject) newGenerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- DataSampleGenPackage.DS_GEN_CLASS__GENERATOR, null, msgs);
+			msgs = basicSetGenerator(newGenerator, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CLASS__GENERATOR, newGenerator,
+					newGenerator));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -222,6 +246,8 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		{
 		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
 			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
+		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
+			return basicSetGenerator(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -230,7 +256,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRootObjectGen(boolean newRootObject)
+	public void setRootObject(boolean newRootObject)
 	{
 		boolean oldRootObject = rootObject;
 		rootObject = newRootObject;
@@ -239,17 +265,7 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 					rootObject));
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public void setRootObject(boolean newRootObject)
-	{
-		setRootObjectGen(newRootObject);
-		// Main object implies only one instance will be created.
-		setInstanceNumber(1);
-	}
+	
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -260,14 +276,14 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
-			return getInstanceNumber();
 		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
 			return isRootObject();
 		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
 			return getNbAssociationRefTo();
 		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
 			return getChildren();
+		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
+			return getGenerator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -282,9 +298,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
-			setInstanceNumber((Integer) newValue);
-			return;
 		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
 			setRootObject((Boolean) newValue);
 			return;
@@ -294,6 +307,9 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
 			getChildren().clear();
 			getChildren().addAll((Collection<? extends DSGenChild>) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
+			setGenerator((EObjectGenerator) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -308,9 +324,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
-			setInstanceNumber(INSTANCE_NUMBER_EDEFAULT);
-			return;
 		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
 			setRootObject(ROOT_OBJECT_EDEFAULT);
 			return;
@@ -319,6 +332,9 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 			return;
 		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
 			getChildren().clear();
+			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
+			setGenerator((EObjectGenerator) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -333,14 +349,14 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
-			return instanceNumber != INSTANCE_NUMBER_EDEFAULT;
 		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
 			return rootObject != ROOT_OBJECT_EDEFAULT;
 		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
 			return nbAssociationRefTo != NB_ASSOCIATION_REF_TO_EDEFAULT;
 		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
 			return children != null && !children.isEmpty();
+		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
+			return generator != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -354,8 +370,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (related ecoreClass : ");
 		result.append((getEcoreClass() == null ? "NONE" : getEcoreClass().getName()));
-		result.append("instanceNumber: ");
-		result.append(instanceNumber);
 		result.append(", rootObject: ");
 		result.append(rootObject);
 		result.append(", nbAssociationRefTo: ");

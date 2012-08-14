@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.opcoach.dsgen.DSGenChild#getDsgenClass <em>Dsgen Class</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenChild#isSingle <em>Single</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenChild#getSourceReference <em>Source Reference</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenChild#getOppositeReference <em>Opposite Reference</em>}</li>
@@ -33,33 +32,6 @@ public interface DSGenChild extends EObject
 	 * @generated
 	 */
 	String copyright = "© OPCoach 2012";
-
-	/**
-	 * Returns the value of the '<em><b>Dsgen Class</b></em>' reference. <!--
-	 * begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Dsgen Class</em>' reference isn't clear, there
-	 * really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Dsgen Class</em>' reference.
-	 * @see #setDsgenClass(DSGenClass)
-	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenChild_DsgenClass()
-	 * @model required="true"
-	 * @generated
-	 */
-	DSGenClass getDsgenClass();
-
-	/**
-	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenChild#getDsgenClass <em>Dsgen Class</em>}' reference.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @param value the new value of the '<em>Dsgen Class</em>' reference.
-	 * @see #getDsgenClass()
-	 * @generated
-	 */
-	void setDsgenClass(DSGenClass value);
 
 	/**
 	 * Returns the value of the '<em><b>Single</b></em>' attribute. <!--

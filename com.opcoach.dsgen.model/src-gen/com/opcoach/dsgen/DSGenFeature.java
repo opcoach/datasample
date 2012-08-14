@@ -6,6 +6,7 @@
  */
 package com.opcoach.dsgen;
 
+import com.opcoach.generator.ValueGenerator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
@@ -19,6 +20,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  *   <li>{@link com.opcoach.dsgen.DSGenFeature#getNullablePercent <em>Nullable Percent</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenFeature#getDsgenClass <em>Dsgen Class</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenFeature#getEcoreFeature <em>Ecore Feature</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.DSGenFeature#getGenerator <em>Generator</em>}</li>
  * </ul>
  * </p>
  *
@@ -141,5 +143,31 @@ public interface DSGenFeature extends DSGenTypedElement
 	 * @generated
 	 */
 	void setEcoreFeature(EStructuralFeature value);
+
+	/**
+	 * Returns the value of the '<em><b>Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Generator</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Generator</em>' containment reference.
+	 * @see #setGenerator(ValueGenerator)
+	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenFeature_Generator()
+	 * @model containment="true"
+	 * @generated
+	 */
+	ValueGenerator<?> getGenerator();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenFeature#getGenerator <em>Generator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Generator</em>' containment reference.
+	 * @see #getGenerator()
+	 * @generated
+	 */
+	void setGenerator(ValueGenerator<?> value);
 
 } // DSGenFeature

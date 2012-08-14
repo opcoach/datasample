@@ -21,14 +21,14 @@
         eType="#//DSGenClassifier" containment="true" eOpposite="#//DSGenClassifier/dsgenPackage"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenClass" eSuperTypes="#//DSGenClassifier">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="50"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootObject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="false" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbAssociationRefTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//DSGenChild" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generator" eType="#//generator/EObjectGenerator"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenFeature" eSuperTypes="#//DSGenTypedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullableValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -39,6 +39,11 @@
         eType="#//DSGenClassifier" eOpposite="#//DSGenClassifier/dsgenFeatures"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ecoreFeature" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generator" containment="true">
+      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenBase" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenEnumLiteral" eSuperTypes="#//DSGenBase"/>
@@ -62,30 +67,50 @@
   <eClassifiers xsi:type="ecore:EEnum" name="DSGenDelegationKind"/>
   <eClassifiers xsi:type="ecore:EEnum" name="DSGenPropertyKind"/>
   <eClassifiers xsi:type="ecore:EEnum" name="DSGenResourceKind"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DSGenAttribute" eSuperTypes="#//DSGenFeature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="generator" containment="true">
-      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DSGenAttribute" eSuperTypes="#//DSGenFeature"/>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenReference" eSuperTypes="#//DSGenFeature">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="generator" containment="true">
-      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ReferenceGenerator">
-        <eTypeArguments/>
-      </eGenericType>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetDSGenClass" eType="#//DSGenClass"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenEnum" eSuperTypes="#//DSGenDataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ecoreEnum" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EEnum"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenChild">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenClass" lowerBound="1"
-        eType="#//DSGenClass"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="single" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourceReference" lowerBound="1"
         eType="#//DSGenReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="oppositeReference" eType="#//DSGenReference"/>
   </eClassifiers>
+  <eSubpackages name="generator" nsURI="http://www.opcoach.com/dsgen/generator/1.0"
+      nsPrefix="dsgenerator">
+    <eClassifiers xsi:type="ecore:EClass" name="EObjectGenerator">
+      <eOperations name="getInstances" eType="#//generator/EObjectCollection">
+        <eParameters name="cl" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetDSGenClass" eType="#//DSGenClass"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+        <eTypeArguments eClassifier="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ChildrenGenerator">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxChildrenNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="50"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+        <eTypeArguments eClassifier="#//generator/EObjectCollection"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="EObjectCollection" instanceTypeName="java.util.Collection&lt;org.eclipse.emf.ecore.EObject>"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SingleAssociationGenerator">
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ReferenceGenerator">
+        <eTypeArguments eClassifier="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MultipleAssociationGenerator">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxAssociationNumber"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="50"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+        <eTypeArguments eClassifier="#//generator/EObjectCollection"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+  </eSubpackages>
 </ecore:EPackage>

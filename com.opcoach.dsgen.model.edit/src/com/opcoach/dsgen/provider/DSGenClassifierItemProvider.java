@@ -66,6 +66,7 @@ public class DSGenClassifierItemProvider extends DSGenBaseItemProvider implement
 			super.getPropertyDescriptors(object);
 
 			addEcoreClassPropertyDescriptor(object);
+			addDsgenFeaturesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +86,23 @@ public class DSGenClassifierItemProvider extends DSGenBaseItemProvider implement
 				getString("_UI_PropertyDescriptor_description", "_UI_DSGenClassifier_ecoreClass_feature",
 						"_UI_DSGenClassifier_type"), DataSampleGenPackage.Literals.DS_GEN_CLASSIFIER__ECORE_CLASS, true, false,
 				true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Dsgen Features feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDsgenFeaturesPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_DSGenClassifier_dsgenFeatures_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_DSGenClassifier_dsgenFeatures_feature",
+						"_UI_DSGenClassifier_type"), DataSampleGenPackage.Literals.DS_GEN_CLASSIFIER__DSGEN_FEATURES, true, false,
+				false, null, null, null));
 	}
 
 	/**

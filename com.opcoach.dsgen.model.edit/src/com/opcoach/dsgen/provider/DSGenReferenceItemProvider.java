@@ -11,7 +11,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -19,12 +19,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import com.opcoach.dsgen.DSGenReference;
 import com.opcoach.dsgen.DataSampleGenPackage;
-import com.opcoach.generator.GeneratorFactory;
-import com.opcoach.generator.basic.BasicFactory;
 
 /**
  * This is the item provider adapter for a {@link com.opcoach.dsgen.DSGenReference} object.
@@ -65,39 +62,26 @@ public class DSGenReferenceItemProvider extends DSGenFeatureItemProvider impleme
 		{
 			super.getPropertyDescriptors(object);
 
+			addTargetDSGenClassPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Target DS Gen Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
+	protected void addTargetDSGenClassPropertyDescriptor(Object object)
 	{
-		if (childrenFeatures == null)
-		{
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(DataSampleGenPackage.Literals.DS_GEN_REFERENCE__GENERATOR);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_DSGenReference_targetDSGenClass_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_DSGenReference_targetDSGenClass_feature",
+						"_UI_DSGenReference_type"), DataSampleGenPackage.Literals.DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS, true,
+				false, true, null, null, null));
 	}
 
 	/**
@@ -137,13 +121,6 @@ public class DSGenReferenceItemProvider extends DSGenFeatureItemProvider impleme
 	public void notifyChanged(Notification notification)
 	{
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(DSGenReference.class))
-		{
-		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 
@@ -158,12 +135,6 @@ public class DSGenReferenceItemProvider extends DSGenFeatureItemProvider impleme
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(DataSampleGenPackage.Literals.DS_GEN_REFERENCE__GENERATOR,
-				GeneratorFactory.eINSTANCE.createReferenceGenerator()));
-
-		newChildDescriptors.add(createChildParameter(DataSampleGenPackage.Literals.DS_GEN_REFERENCE__GENERATOR,
-				BasicFactory.eINSTANCE.createStringGenerator()));
 	}
 
 }

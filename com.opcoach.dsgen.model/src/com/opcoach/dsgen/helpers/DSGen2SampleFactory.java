@@ -11,7 +11,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -27,7 +26,7 @@ import com.opcoach.dsgen.DSGenClass;
 import com.opcoach.dsgen.DSGenFeature;
 import com.opcoach.dsgen.DSGenModel;
 import com.opcoach.dsgen.DSGenReference;
-import com.opcoach.generator.ReferenceGenerator;
+import com.opcoach.dsgen.generator.EObjectGenerator;
 import com.opcoach.generator.ValueGenerator;
 
 /**
@@ -65,7 +64,9 @@ public class DSGen2SampleFactory implements DSGenConstants
 		DSGenModel model = (DSGenModel) res.getContents().get(0);
 
 		DSGenClass dsgenrootClass = model.getRoot();
-		root = instanciateEObject(dsgenrootClass, locale);
+		EObjectGenerator gen = dsgenrootClass.getGenerator();
+		gen.setLocale(locale);
+		root = gen.generateValue();
 
 		// Store the root object
 
@@ -101,7 +102,7 @@ public class DSGen2SampleFactory implements DSGenConstants
 
 	}
 
-	private void addChildren(EObject parent, DSGenClass dsgc, Locale l)
+	/*private void addChildren(EObject parent, DSGenClass dsgc, Locale l)
 	{
 		System.out.println("*$*$*$*$*$  --> Creating children for dsgenclass : " + dsgc.toString());
 		for (DSGenChild child : dsgc.getChildren())
@@ -131,9 +132,9 @@ public class DSGen2SampleFactory implements DSGenConstants
 			}
 
 		}
-	}
+	} */
 
-	private Collection<EObject> generateSampleForEClass(DSGenClass c, Locale l)
+	/*private Collection<EObject> generateSampleForEClass(DSGenClass c, Locale l)
 	{
 		System.out.println("----->  Must create " + c.getInstanceNumber() + " instance(s) of : " + c);
 		Collection<EObject> result = new ArrayList<EObject>();
@@ -149,27 +150,19 @@ public class DSGen2SampleFactory implements DSGenConstants
 
 		}
 		return result;
-	}
+	} */
 
 	/**
-	 * instanciate a sample EObject class from its description in dsgenclass and
-	 * init all fields
+	 * instanciate a sample EObject class from its description in dsgenclass and init all fields
 	 * 
 	 * @param dsgc
 	 * @return
 	 */
-	private EObject instanciateEObject(DSGenClass c, Locale l)
+	/*private EObject instanciateEObject(DSGenClass c, Locale l)
 	{
 		EClass clToInstanciate = c.getEcoreClass();
 		EObject obj = clToInstanciate.getEPackage().getEFactoryInstance().create(clToInstanciate);
-		System.out.println("Instaciate a new " + clToInstanciate.getName()); // +
-																				// " qui sera stocké dans "
-																				// +
-																				// /*((EClass)obj.eContainingFeature().eContainer()).getName()
-																				// +
-																				// "."
-																				// +*/
-																				// obj.eContainingFeature().getName());
+		System.out.println("Instaciate a new " + clToInstanciate.getName());
 		for (DSGenFeature ft : c.getDsgenFeatures())
 		{
 			if (ft instanceof DSGenAttribute)
@@ -184,19 +177,31 @@ public class DSGen2SampleFactory implements DSGenConstants
 				obj.eSet(ft.getEcoreFeature(), val);
 			} else if (ft instanceof DSGenReference)
 			{
-				if (!isChildren((DSGenReference) ft, c))
-				{
-					ReferenceGenerator<?> gen = ((DSGenReference) ft).getGenerator();
+				EReference ref = (EReference) ((DSGenReference)ft).getEcoreFeature();
+				
+					ValueGenerator<?> gen = ((DSGenReference) ft).getGenerator();
 					String genClass = (gen == null) ? "" : " generator class : " + gen.getClass().toString();
 					Object genval = (gen == null) ? null : gen.generateValue();
 					Object val = (gen == null) ? "NO GENERATOR" : genval;
-					System.out.println("For the feature : " + ft.getEcoreFeature().getName() + " generate this value : " + val
+					System.out.println("For the reference : " + ft.getEcoreFeature().getName() + " generate this value : " + val
 							+ genClass);
-				}
+					if (ref.getUpperBound() == 1)
+					{
+						obj.eSet(ref, val);
+
+					}
+					else
+					{
+						// val is a collection, must call addAll
+						Collection<Object> childrenListinRoot = (Collection<Object>)obj.eGet(ref);
+						System.out.println("classe du child " + obj.eGet(ref).getClass().toString());
+						childrenListinRoot.addAll((Collection<Object>)val);
+					}
+				
 			}
 		}
 
-		addChildren(obj, c, l);
+		// addChildren(obj, c, l);
 
 		return obj;
 	}
@@ -210,6 +215,6 @@ public class DSGen2SampleFactory implements DSGenConstants
 		}
 		return false;
 
-	}
+	} */
 
 }

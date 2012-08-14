@@ -6,6 +6,7 @@
  */
 package com.opcoach.dsgen;
 
+import com.opcoach.dsgen.generator.EObjectGenerator;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -15,10 +16,10 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.opcoach.dsgen.DSGenClass#getInstanceNumber <em>Instance Number</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenClass#isRootObject <em>Root Object</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenClass#getNbAssociationRefTo <em>Nb Association Ref To</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenClass#getChildren <em>Children</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.DSGenClass#getGenerator <em>Generator</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,33 +34,6 @@ public interface DSGenClass extends DSGenClassifier
 	 * @generated
 	 */
 	String copyright = "© OPCoach 2012";
-
-	/**
-	 * Returns the value of the '<em><b>Instance Number</b></em>' attribute.
-	 * The default value is <code>"50"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Instance Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instance Number</em>' attribute.
-	 * @see #setInstanceNumber(int)
-	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenClass_InstanceNumber()
-	 * @model default="50"
-	 * @generated
-	 */
-	int getInstanceNumber();
-
-	/**
-	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenClass#getInstanceNumber <em>Instance Number</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @param value the new value of the '<em>Instance Number</em>' attribute.
-	 * @see #getInstanceNumber()
-	 * @generated
-	 */
-	void setInstanceNumber(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Root Object</b></em>' attribute.
@@ -130,5 +104,31 @@ public interface DSGenClass extends DSGenClassifier
 	 * @generated
 	 */
 	EList<DSGenChild> getChildren();
+
+	/**
+	 * Returns the value of the '<em><b>Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Generator</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Generator</em>' containment reference.
+	 * @see #setGenerator(EObjectGenerator)
+	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenClass_Generator()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EObjectGenerator getGenerator();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenClass#getGenerator <em>Generator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Generator</em>' containment reference.
+	 * @see #getGenerator()
+	 * @generated
+	 */
+	void setGenerator(EObjectGenerator value);
 
 } // DSGenClass

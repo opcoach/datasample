@@ -30,19 +30,26 @@ import com.opcoach.dsgen.DSGenFeature;
 import com.opcoach.dsgen.DSGenPackage;
 import com.opcoach.dsgen.DSGenReference;
 import com.opcoach.dsgen.DataSampleGenFactory;
+import com.opcoach.dsgen.generator.ChildrenGenerator;
+import com.opcoach.dsgen.generator.DSGenGeneratorFactory;
+import com.opcoach.dsgen.generator.EObjectGenerator;
+import com.opcoach.dsgen.generator.MultipleAssociationGenerator;
 import com.opcoach.generator.GeneratorFactory;
 import com.opcoach.generator.ReferenceGenerator;
 import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicFactory;
 
 /**
- * An helper class to manage Data Sample Generation models. Will probably be
- * moved in dsgenmodel
+ * An helper class to manage Data Sample Generation models. Will probably be moved in dsgenmodel
  * 
  * @author olivier
  */
 public class DSGenHelper
 {
+	
+	public static int MAX_CHILDREN = 50;
+	public static int MAX_ASSOCIATION = 10;
+	
 	private static BasicFactory generatorFactory = BasicFactory.eINSTANCE;
 
 	private static Map<EReference, DSGenReference> refCache = new HashMap<EReference, DSGenReference>();
@@ -101,24 +108,26 @@ public class DSGenHelper
 		// Add all in package
 		dsPack.getDsgenClassifiers().addAll(classes);
 
-		// Initialize children field
-		for (DSGenClassifier dsc : classes)
+		// Bind the targetDSGenClass for DSGenRef
+		for (DSGenReference ref : refCache.values())
 		{
-			if (dsc instanceof DSGenClass)
-			{
-				initChildren((DSGenClass) dsc);
-			}
+			DSGenClass parent = (DSGenClass) ref.eContainer();
+			String targetName = ref.getEcoreFeature().getEType().getName();
+			DSGenClass targetDSGenClass = searchDSGenClass(parent.getDsgenPackage(), targetName);
+			ref.setTargetDSGenClass(targetDSGenClass);
 		}
+		// Initialize children field
+		/*
+		 * for (DSGenClassifier dsc : classes) { if (dsc instanceof DSGenClass) { initChildren((DSGenClass) dsc); } }
+		 */
 
 		return dsPack;
 	}
 
 	/**
-	 * @return the number of association references to dsc, looping on the
-	 *         classes list.
+	 * @return the number of association references to dsc, looping on the classes list.
 	 * @param dsc
-	 *            : the dsgenclass that is computing the nb of association to
-	 *            itself
+	 *            : the dsgenclass that is computing the nb of association to itself
 	 * @param classes
 	 *            : the list of other EClasses to loop on
 	 * @return nothing (init directly the nbAssociationRefTo field in dsc)
@@ -164,12 +173,11 @@ public class DSGenHelper
 	{
 		DSGenClass dscl = DataSampleGenFactory.eINSTANCE.createDSGenClass();
 		dscl.setEcoreClass((EClass) rootClass);
-		dscl.setInstanceNumber(50); // Default but for main object will be 1.
+		dscl.setGenerator(DSGenGeneratorFactory.eINSTANCE.createEObjectGenerator());
 		Collection<DSGenFeature> features = dscl.getDsgenFeatures();
 
 		for (EStructuralFeature sf : rootClass.getEStructuralFeatures())
 		{
-
 			DSGenFeature dsf = null;
 			if (sf instanceof EAttribute)
 			{
@@ -177,49 +185,19 @@ public class DSGenHelper
 			} else if (sf instanceof EReference)
 			{
 				EReference ref = (EReference) sf;
-				dsf = createDSGenReference(ref);
+				dsf = createDSGenReference(dscl, ref);
 			}
-			System.out.println("Add this ds feature : " + sf.getName());
-			features.add(dsf);
+			if (dsf != null)
+			{
+				features.add(dsf);
+			}
 
 		}
 
 		return dscl;
 	}
 
-	/**
-	 * Init children for an DSGenClass
-	 * 
-	 * @param rootClass
-	 *            the initial class used to create
-	 * @return a datasample generation class
-	 */
-	public static void initChildren(DSGenClass gClass)
-	{
-		DSGenPackage pack = gClass.getDsgenPackage();
-		EClass rootClass = gClass.getEcoreClass();
-		for (EStructuralFeature sf : rootClass.getEStructuralFeatures())
-		{
-			if (sf instanceof EReference)
-			{
-				EReference ref = (EReference) sf;
-				if (ref.isContainment())
-				{
-					String targetName = ref.getEType().getName();
-					DSGenClass c = searchDSGenClass(pack, targetName);
-
-					DSGenChild child = DataSampleGenFactory.eINSTANCE.createDSGenChild();
-					child.setDsgenClass(c);
-					child.setSingle((ref.getUpperBound() == 1));
-					EReference opp = ref.getEOpposite();
-					child.setOppositeReference((opp == null) ? null : refCache.get(opp));
-					child.setSourceReference(refCache.get(ref));
-					gClass.getChildren().add(child);
-				}
-			}
-
-		}
-	}
+	
 
 	private static Map<String, DSGenClass> genClassMap = null;
 
@@ -293,7 +271,7 @@ public class DSGenHelper
 		ValueGenerator<?> gen = getGeneratorFromType(dt);
 		if (gen != null)
 		{
-		    gen.setID(rootAttr.getEContainingClass().getName() + "." +rootAttr.getName());
+			gen.setID(rootAttr.getEContainingClass().getName() + "." + rootAttr.getName());
 		}
 		result.setGenerator(gen);
 
@@ -307,22 +285,70 @@ public class DSGenHelper
 	 *            the initial Attribute used to create
 	 * @return a datasample generation class
 	 */
-	public static DSGenReference createDSGenReference(EReference rootRef)
+	public static DSGenReference createDSGenReference(DSGenClass parentClass, EReference rootRef)
 	{
-		DSGenReference result = DataSampleGenFactory.eINSTANCE.createDSGenReference();
+		if (isOpposite(rootRef))
+			return null;
 
+		DSGenReference result = DataSampleGenFactory.eINSTANCE.createDSGenReference();
 		result.setEcoreFeature(rootRef);
 
-		// Set the generator.
-		EClass target = rootRef.getEReferenceType();
-		ReferenceGenerator<?> refGen = GeneratorFactory.eINSTANCE.createReferenceGenerator();
-		refGen.setType(target.getInstanceClass());
+		ValueGenerator<?> refGen = null;
+
+		// Set the generator (no generator for opposite relations)
+		refGen = getGeneratorForReference(rootRef);
 		result.setGenerator(refGen);
 
 		// Store it in a cache...
 		refCache.put(rootRef, result);
 
 		return result;
+	}
+
+	private static ValueGenerator<?> getGeneratorForReference(EReference rootRef)
+	{
+		if (isOpposite(rootRef))
+			return null;
+
+		ValueGenerator<?> refGen;
+
+		if (isContainment(rootRef))
+		{
+			if (isMultipleRelation(rootRef))
+			{
+				ChildrenGenerator childGen = DSGenGeneratorFactory.eINSTANCE.createChildrenGenerator();
+				childGen.setMaxChildrenNumber(MAX_CHILDREN);
+				// Set random mode only for low level object (for root object let max children)
+				if (rootRef.eContainer().eContainer() != null)
+				{
+				   childGen.setRandomSeed(10L);
+				}
+				refGen = childGen;
+			} else
+			{
+				// Single composition. Associates an EObjectGenerator
+				refGen = DSGenGeneratorFactory.eINSTANCE.createEObjectGenerator();
+			}
+
+		} else
+		{
+			if (isMultipleRelation(rootRef))
+			{
+				MultipleAssociationGenerator mag = DSGenGeneratorFactory.eINSTANCE.createMultipleAssociationGenerator();
+				mag.setMaxAssociationNumber(MAX_ASSOCIATION);
+				mag.setRandomSeed(20L);
+				refGen = mag;
+
+			} else
+			{
+				// Single composition. Associates an EObjectGenerator
+				refGen = DSGenGeneratorFactory.eINSTANCE.createSingleAssociationGenerator();
+			}
+		}
+		
+		refGen.setType(rootRef.getEReferenceType().getInstanceClass());
+
+		return refGen;
 	}
 
 	// May be these constants are already defined somewhere ?

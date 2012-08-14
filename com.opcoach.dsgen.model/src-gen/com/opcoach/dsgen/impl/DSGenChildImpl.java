@@ -23,7 +23,6 @@ import com.opcoach.dsgen.DataSampleGenPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.opcoach.dsgen.impl.DSGenChildImpl#getDsgenClass <em>Dsgen Class</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenChildImpl#isSingle <em>Single</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenChildImpl#getSourceReference <em>Source Reference</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenChildImpl#getOppositeReference <em>Opposite Reference</em>}</li>
@@ -39,15 +38,6 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	 * @generated
 	 */
 	public static final String copyright = "© OPCoach 2012";
-
-	/**
-	 * The cached value of the '{@link #getDsgenClass() <em>Dsgen Class</em>}' reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getDsgenClass()
-	 * @generated
-	 * @ordered
-	 */
-	protected DSGenClass dsgenClass;
 
 	/**
 	 * The default value of the '{@link #isSingle() <em>Single</em>}' attribute.
@@ -104,48 +94,6 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	protected EClass eStaticClass()
 	{
 		return DataSampleGenPackage.Literals.DS_GEN_CHILD;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DSGenClass getDsgenClass()
-	{
-		if (dsgenClass != null && dsgenClass.eIsProxy())
-		{
-			InternalEObject oldDsgenClass = (InternalEObject) dsgenClass;
-			dsgenClass = (DSGenClass) eResolveProxy(oldDsgenClass);
-			if (dsgenClass != oldDsgenClass)
-			{
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS,
-							oldDsgenClass, dsgenClass));
-			}
-		}
-		return dsgenClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DSGenClass basicGetDsgenClass()
-	{
-		return dsgenClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDsgenClass(DSGenClass newDsgenClass)
-	{
-		DSGenClass oldDsgenClass = dsgenClass;
-		dsgenClass = newDsgenClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS, oldDsgenClass,
-					dsgenClass));
 	}
 
 	/**
@@ -262,10 +210,6 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
-			if (resolve)
-				return getDsgenClass();
-			return basicGetDsgenClass();
 		case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 			return isSingle();
 		case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
@@ -289,9 +233,6 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
-			setDsgenClass((DSGenClass) newValue);
-			return;
 		case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 			setSingle((Boolean) newValue);
 			return;
@@ -314,9 +255,6 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
-			setDsgenClass((DSGenClass) null);
-			return;
 		case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 			setSingle(SINGLE_EDEFAULT);
 			return;
@@ -339,8 +277,6 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_CHILD__DSGEN_CLASS:
-			return dsgenClass != null;
 		case DataSampleGenPackage.DS_GEN_CHILD__SINGLE:
 			return single != SINGLE_EDEFAULT;
 		case DataSampleGenPackage.DS_GEN_CHILD__SOURCE_REFERENCE:
@@ -362,7 +298,6 @@ public class DSGenChildImpl extends EObjectImpl implements DSGenChild
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" sourceRef :  ").append(sourceReference.getEcoreFeature().getName());
 		result.append(" (single: ");
 		result.append(single);
 		result.append(')');

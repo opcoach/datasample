@@ -6,16 +6,11 @@
  */
 package com.opcoach.dsgen.provider;
 
-import com.opcoach.dsgen.DSGenClass;
-import com.opcoach.dsgen.DataSampleGenFactory;
-import com.opcoach.dsgen.DataSampleGenPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -27,6 +22,9 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import com.opcoach.dsgen.DSGenClass;
+import com.opcoach.dsgen.DataSampleGenPackage;
 
 /**
  * This is the item provider adapter for a {@link com.opcoach.dsgen.DSGenClass} object.
@@ -66,27 +64,12 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 		{
 			super.getPropertyDescriptors(object);
 
-			addInstanceNumberPropertyDescriptor(object);
 			addRootObjectPropertyDescriptor(object);
 			addNbAssociationRefToPropertyDescriptor(object);
 			addChildrenPropertyDescriptor(object);
+			addGeneratorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Instance Number feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addInstanceNumberPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_DSGenClass_instanceNumber_feature"), getString("_UI_DSGenClass_instanceNumber_description"),
-				DataSampleGenPackage.Literals.DS_GEN_CLASS__INSTANCE_NUMBER, true, false, false,
-				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, getString("_UI_UserParameterPropertyCategory"), null));
 	}
 
 	/**
@@ -131,6 +114,21 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 				getString("_UI_DSGenClass_children_feature"), getString("_UI_DSGenClass_children_description"),
 				DataSampleGenPackage.Literals.DS_GEN_CLASS__CHILDREN, false, false, false, null,
 				getString("_UI_internalPropertyCategory"), null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Generator feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addGeneratorPropertyDescriptor(Object object)
+	{
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_DSGenClass_generator_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_DSGenClass_generator_feature", "_UI_DSGenClass_type"),
+				DataSampleGenPackage.Literals.DS_GEN_CLASS__GENERATOR, true, false, true, null, null, null));
 	}
 
 	/**
@@ -208,7 +206,6 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 
 		switch (notification.getFeatureID(DSGenClass.class))
 		{
-		case DataSampleGenPackage.DS_GEN_CLASS__INSTANCE_NUMBER:
 		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
 		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

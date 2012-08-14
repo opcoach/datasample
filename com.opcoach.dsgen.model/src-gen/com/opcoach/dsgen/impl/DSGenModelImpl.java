@@ -236,7 +236,7 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 					}
 				}
 			}
-			
+
 		}
 		return result;
 	}

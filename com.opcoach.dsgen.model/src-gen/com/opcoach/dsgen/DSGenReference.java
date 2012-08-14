@@ -15,7 +15,7 @@ import com.opcoach.generator.ReferenceGenerator;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.opcoach.dsgen.DSGenReference#getGenerator <em>Generator</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.DSGenReference#getTargetDSGenClass <em>Target DS Gen Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,27 +33,28 @@ public interface DSGenReference extends DSGenFeature
 	String copyright = "© OPCoach 2012";
 
 	/**
-	 * Returns the value of the '<em><b>Generator</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Target DS Gen Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Generator</em>' containment reference isn't
-	 * clear, there really should be more of a description here...
+	 * If the meaning of the '<em>Target DS Gen Class</em>' reference isn't clear,
+	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Generator</em>' containment reference.
-	 * @see #setGenerator(ReferenceGenerator)
-	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenReference_Generator()
-	 * @model containment="true"
+	 * @return the value of the '<em>Target DS Gen Class</em>' reference.
+	 * @see #setTargetDSGenClass(DSGenClass)
+	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenReference_TargetDSGenClass()
+	 * @model
 	 * @generated
 	 */
-	ReferenceGenerator<?> getGenerator();
+	DSGenClass getTargetDSGenClass();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenReference#getGenerator <em>Generator</em>}' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Generator</em>' containment reference.
-	 * @see #getGenerator()
+	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenReference#getTargetDSGenClass <em>Target DS Gen Class</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Target DS Gen Class</em>' reference.
+	 * @see #getTargetDSGenClass()
 	 * @generated
 	 */
-	void setGenerator(ReferenceGenerator<?> value);
+	void setTargetDSGenClass(DSGenClass value);
 } // DSGenReference

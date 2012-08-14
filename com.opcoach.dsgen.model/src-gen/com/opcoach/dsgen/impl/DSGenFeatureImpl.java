@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import com.opcoach.dsgen.DSGenClassifier;
 import com.opcoach.dsgen.DSGenFeature;
 import com.opcoach.dsgen.DataSampleGenPackage;
+import com.opcoach.generator.ValueGenerator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -28,6 +29,7 @@ import com.opcoach.dsgen.DataSampleGenPackage;
  *   <li>{@link com.opcoach.dsgen.impl.DSGenFeatureImpl#getNullablePercent <em>Nullable Percent</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenFeatureImpl#getDsgenClass <em>Dsgen Class</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenFeatureImpl#getEcoreFeature <em>Ecore Feature</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.impl.DSGenFeatureImpl#getGenerator <em>Generator</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,6 +92,16 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	 * @ordered
 	 */
 	protected EStructuralFeature ecoreFeature;
+
+	/**
+	 * The cached value of the '{@link #getGenerator() <em>Generator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGenerator()
+	 * @generated
+	 * @ordered
+	 */
+	protected ValueGenerator<?> generator;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -243,6 +255,61 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ValueGenerator<?> getGenerator()
+	{
+		return generator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGenerator(ValueGenerator<?> newGenerator, NotificationChain msgs)
+	{
+		ValueGenerator<?> oldGenerator = generator;
+		generator = newGenerator;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR, oldGenerator, newGenerator);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGenerator(ValueGenerator<?> newGenerator)
+	{
+		if (newGenerator != generator)
+		{
+			NotificationChain msgs = null;
+			if (generator != null)
+				msgs = ((InternalEObject) generator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR, null, msgs);
+			if (newGenerator != null)
+				msgs = ((InternalEObject) newGenerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR, null, msgs);
+			msgs = basicSetGenerator(newGenerator, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR, newGenerator,
+					newGenerator));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -270,6 +337,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 		{
 		case DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS:
 			return basicSetDsgenClass(null, msgs);
+		case DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR:
+			return basicSetGenerator(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -309,6 +378,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 			if (resolve)
 				return getEcoreFeature();
 			return basicGetEcoreFeature();
+		case DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR:
+			return getGenerator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -333,6 +404,9 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 			return;
 		case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
 			setEcoreFeature((EStructuralFeature) newValue);
+			return;
+		case DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR:
+			setGenerator((ValueGenerator<?>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -359,6 +433,9 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 		case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
 			setEcoreFeature((EStructuralFeature) null);
 			return;
+		case DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR:
+			setGenerator((ValueGenerator<?>) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -380,6 +457,8 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 			return getDsgenClass() != null;
 		case DataSampleGenPackage.DS_GEN_FEATURE__ECORE_FEATURE:
 			return ecoreFeature != null;
+		case DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR:
+			return generator != null;
 		}
 		return super.eIsSet(featureID);
 	}

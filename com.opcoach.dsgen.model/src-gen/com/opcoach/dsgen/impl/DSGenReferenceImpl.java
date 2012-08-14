@@ -6,6 +6,7 @@
  */
 package com.opcoach.dsgen.impl;
 
+import com.opcoach.dsgen.DSGenClass;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -22,7 +23,7 @@ import com.opcoach.generator.ReferenceGenerator;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.opcoach.dsgen.impl.DSGenReferenceImpl#getGenerator <em>Generator</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.impl.DSGenReferenceImpl#getTargetDSGenClass <em>Target DS Gen Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,13 +37,14 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	 */
 	public static final String copyright = "© OPCoach 2012";
 	/**
-	 * The cached value of the '{@link #getGenerator() <em>Generator</em>}' containment reference.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getGenerator()
+	 * The cached value of the '{@link #getTargetDSGenClass() <em>Target DS Gen Class</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTargetDSGenClass()
 	 * @generated
 	 * @ordered
 	 */
-	protected ReferenceGenerator<?> generator;
+	protected DSGenClass targetDSGenClass;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -64,70 +66,48 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReferenceGenerator<?> getGenerator()
+	public DSGenClass getTargetDSGenClass()
 	{
-		return generator;
+		if (targetDSGenClass != null && targetDSGenClass.eIsProxy())
+		{
+			InternalEObject oldTargetDSGenClass = (InternalEObject) targetDSGenClass;
+			targetDSGenClass = (DSGenClass) eResolveProxy(oldTargetDSGenClass);
+			if (targetDSGenClass != oldTargetDSGenClass)
+			{
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
+							DataSampleGenPackage.DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS, oldTargetDSGenClass, targetDSGenClass));
+			}
+		}
+		return targetDSGenClass;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGenerator(ReferenceGenerator<?> newGenerator, NotificationChain msgs)
+	public DSGenClass basicGetTargetDSGenClass()
 	{
-		ReferenceGenerator<?> oldGenerator = generator;
-		generator = newGenerator;
+		return targetDSGenClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTargetDSGenClass(DSGenClass newTargetDSGenClass)
+	{
+		DSGenClass oldTargetDSGenClass = targetDSGenClass;
+		targetDSGenClass = newTargetDSGenClass;
 		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, oldGenerator, newGenerator);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setGenerator(ReferenceGenerator<?> newGenerator)
-	{
-		if (newGenerator != generator)
-		{
-			NotificationChain msgs = null;
-			if (generator != null)
-				msgs = ((InternalEObject) generator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
-						- DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, null, msgs);
-			if (newGenerator != null)
-				msgs = ((InternalEObject) newGenerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
-						- DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, null, msgs);
-			msgs = basicSetGenerator(newGenerator, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR, newGenerator,
-					newGenerator));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-	{
-		switch (featureID)
-		{
-		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-			return basicSetGenerator(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS,
+					oldTargetDSGenClass, targetDSGenClass));
 	}
 
 	/**
@@ -139,8 +119,10 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-			return getGenerator();
+		case DataSampleGenPackage.DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS:
+			if (resolve)
+				return getTargetDSGenClass();
+			return basicGetTargetDSGenClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -154,8 +136,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-			setGenerator((ReferenceGenerator<?>) newValue);
+		case DataSampleGenPackage.DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS:
+			setTargetDSGenClass((DSGenClass) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -170,8 +152,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-			setGenerator((ReferenceGenerator<?>) null);
+		case DataSampleGenPackage.DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS:
+			setTargetDSGenClass((DSGenClass) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -186,8 +168,8 @@ public class DSGenReferenceImpl extends DSGenFeatureImpl implements DSGenReferen
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_REFERENCE__GENERATOR:
-			return generator != null;
+		case DataSampleGenPackage.DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS:
+			return targetDSGenClass != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -66,27 +66,11 @@ public class DSGenChildItemProvider extends ItemProviderAdapter implements IEdit
 		{
 			super.getPropertyDescriptors(object);
 
-			addDsgenClassPropertyDescriptor(object);
 			addSinglePropertyDescriptor(object);
 			addSourceReferencePropertyDescriptor(object);
 			addOppositeReferencePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Dsgen Class feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addDsgenClassPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_DSGenChild_dsgenClass_feature"), getString("_UI_DSGenChild_dsgenClass_description"),
-				DataSampleGenPackage.Literals.DS_GEN_CHILD__DSGEN_CLASS, false, false, true, null,
-				getString("_UI_internalPropertyCategory"), null));
 	}
 
 	/**
@@ -157,7 +141,7 @@ public class DSGenChildItemProvider extends ItemProviderAdapter implements IEdit
 	public String getText(Object object)
 	{
 		DSGenChild dsGenChild = (DSGenChild) object;
-		DSGenClass c = dsGenChild.getDsgenClass();
+		DSGenClass c = null; // dsGenChild.getDsgenClass();
 		String card = (dsGenChild.isSingle() ? "One " : "Many ");
 		return card + ((c == null) ? "NO CLASS FOR THIS CHILD" : c.getEcoreClass().getName());
 	}
