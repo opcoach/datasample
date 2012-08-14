@@ -187,9 +187,8 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 		@SuppressWarnings("restriction")
 		String name = dsGenClass.getEcoreClass().getName();
 		String desc = dsGenClass.isRootObject() ? " is the Root Object " : "";
-		String nbInst = dsGenClass.getInstanceNumber() == -1 ? "nb of instances defined by parent" : dsGenClass.getInstanceNumber()
-				+ " instances";
-		return name + " " + desc + nbInst;
+		
+		return name + " " + desc;
 	}
 
 	/**
