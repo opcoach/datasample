@@ -293,6 +293,16 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getReferenceGenerator_Values()
+	{
+		return (EAttribute)referenceGeneratorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getCollection()
 	{
 		return collectionEDataType;
@@ -355,6 +365,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 
 		referenceGeneratorEClass = createEClass(REFERENCE_GENERATOR);
 		createEAttribute(referenceGeneratorEClass, REFERENCE_GENERATOR__STEP);
+		createEAttribute(referenceGeneratorEClass, REFERENCE_GENERATOR__VALUES);
 
 		// Create data types
 		collectionEDataType = createEDataType(COLLECTION);
@@ -447,16 +458,10 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 
 		initEClass(referenceGeneratorEClass, ReferenceGenerator.class, "ReferenceGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReferenceGenerator_Step(), ecorePackage.getEInt(), "step", "1", 0, 1, ReferenceGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		op = addEOperation(referenceGeneratorEClass, null, "addValue", 0, 1, IS_UNIQUE, IS_ORDERED);
-		g1 = createEGenericType(referenceGeneratorEClass_T);
-		addEParameter(op, g1, "value", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(referenceGeneratorEClass, null, "getValues", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(this.getCollection());
 		g2 = createEGenericType(referenceGeneratorEClass_T);
 		g1.getETypeArguments().add(g2);
-		initEOperation(op, g1);
+		initEAttribute(getReferenceGenerator_Values(), g1, "values", null, 0, 1, ReferenceGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(collectionEDataType, Collection.class, "Collection", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

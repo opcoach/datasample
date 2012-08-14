@@ -1046,6 +1046,15 @@ public interface BasicPackage extends EPackage
 	int STRING_GENERATOR__STEP = GeneratorPackage.REFERENCE_GENERATOR__STEP;
 
 	/**
+	 * The feature id for the '<em><b>Values</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_GENERATOR__VALUES = GeneratorPackage.REFERENCE_GENERATOR__VALUES;
+
+	/**
 	 * The feature id for the '<em><b>Data Filename</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

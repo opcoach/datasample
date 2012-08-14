@@ -8,7 +8,6 @@ package com.opcoach.generator.impl;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Locale;
 import java.util.Vector;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,6 +25,7 @@ import com.opcoach.generator.ReferenceGenerator;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.opcoach.generator.impl.ReferenceGeneratorImpl#getStep <em>Step</em>}</li>
+ *   <li>{@link com.opcoach.generator.impl.ReferenceGeneratorImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,8 +33,6 @@ import com.opcoach.generator.ReferenceGenerator;
  */
 public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements ReferenceGenerator<T>
 {
-	
-	protected Vector<T> values;
 	
 	/** The last generated index */
 	protected int lastGeneratedIndex = -1;
@@ -57,6 +55,8 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 	 * @ordered
 	 */
 	protected int step = STEP_EDEFAULT;
+
+	protected Vector<T> values;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,19 +102,7 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.REFERENCE_GENERATOR__STEP, oldStep, step));
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void addValue(T value)
-	{
-		if (values == null)
-		{
-			values = new Vector<T>();
-		}
-		values.add(value);
-	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +116,28 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 	}
 	
 	
+	public void addValue(T value)
+	{
+		if (values == null)
+			values = new Vector<T>();
+		values.add(value);
+	}
+	
 
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setValues(Collection<T> newValues)
+	{
+		Collection<T> oldValues = values;
+		values = new Vector<T>();
+		values.addAll(newValues);
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.REFERENCE_GENERATOR__VALUES, oldValues, values));
+	}
 
 	@Override
 	protected T generateRandomValue()
@@ -176,6 +185,8 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 		{
 			case GeneratorPackage.REFERENCE_GENERATOR__STEP:
 				return getStep();
+			case GeneratorPackage.REFERENCE_GENERATOR__VALUES:
+				return getValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,6 +196,7 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
@@ -192,6 +204,9 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 		{
 			case GeneratorPackage.REFERENCE_GENERATOR__STEP:
 				setStep((Integer)newValue);
+				return;
+			case GeneratorPackage.REFERENCE_GENERATOR__VALUES:
+				setValues((Collection<T>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -210,6 +225,9 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 			case GeneratorPackage.REFERENCE_GENERATOR__STEP:
 				setStep(STEP_EDEFAULT);
 				return;
+			case GeneratorPackage.REFERENCE_GENERATOR__VALUES:
+				setValues((Collection<T>)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -226,6 +244,8 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 		{
 			case GeneratorPackage.REFERENCE_GENERATOR__STEP:
 				return step != STEP_EDEFAULT;
+			case GeneratorPackage.REFERENCE_GENERATOR__VALUES:
+				return values != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -243,6 +263,8 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (step: ");
 		result.append(step);
+		result.append(", values: ");
+		result.append(values);
 		result.append(')');
 		return result.toString();
 	}

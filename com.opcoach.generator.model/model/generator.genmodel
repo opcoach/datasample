@@ -40,10 +40,7 @@
     <genClasses image="false" ecoreClass="generator.ecore#//ReferenceGenerator">
       <genTypeParameters ecoreTypeParameter="generator.ecore#//ReferenceGenerator/T"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ReferenceGenerator/step"/>
-      <genOperations ecoreOperation="generator.ecore#//ReferenceGenerator/addValue">
-        <genParameters ecoreParameter="generator.ecore#//ReferenceGenerator/addValue/value"/>
-      </genOperations>
-      <genOperations ecoreOperation="generator.ecore#//ReferenceGenerator/getValues"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ReferenceGenerator/values"/>
     </genClasses>
     <nestedGenPackages prefix="Basic" basePackage="com.opcoach.generator" disposableProviderFactory="true"
         contentTypeIdentifier="" ecorePackage="generator.ecore#//basic">

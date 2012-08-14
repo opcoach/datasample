@@ -7,6 +7,7 @@
 package com.opcoach.generator;
 
 import java.util.Collection;
+import org.eclipse.emf.common.util.EList;
 
 
 /**
@@ -18,6 +19,7 @@ import java.util.Collection;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.opcoach.generator.ReferenceGenerator#getStep <em>Step</em>}</li>
+ *   <li>{@link com.opcoach.generator.ReferenceGenerator#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,19 +56,30 @@ public interface ReferenceGenerator<T> extends ValueGenerator<T>
 	void setStep(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Values</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void addValue(T value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model kind="operation" dataType="com.opcoach.generator.Collection<T>"
+	 * @return the value of the '<em>Values</em>' attribute.
+	 * @see #setValues(Collection)
+	 * @see com.opcoach.generator.GeneratorPackage#getReferenceGenerator_Values()
+	 * @model dataType="com.opcoach.generator.Collection<T>"
 	 * @generated
 	 */
 	Collection<T> getValues();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.generator.ReferenceGenerator#getValues <em>Values</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Values</em>' attribute.
+	 * @see #getValues()
+	 * @generated
+	 */
+	void setValues(Collection<T> value);
+	
+	
+	/** Add a value in possible values */
+	public void addValue(T value);
+
 
 } // ReferenceGenerator

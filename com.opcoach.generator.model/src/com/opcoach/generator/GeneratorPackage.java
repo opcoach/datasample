@@ -363,13 +363,22 @@ public interface GeneratorPackage extends EPackage
 	int REFERENCE_GENERATOR__STEP = VALUE_GENERATOR_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Values</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_GENERATOR__VALUES = VALUE_GENERATOR_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Reference Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_GENERATOR_FEATURE_COUNT = VALUE_GENERATOR_FEATURE_COUNT + 1;
+	int REFERENCE_GENERATOR_FEATURE_COUNT = VALUE_GENERATOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '<em>Collection</em>' data type.
@@ -556,6 +565,17 @@ public interface GeneratorPackage extends EPackage
 	EAttribute getReferenceGenerator_Step();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.generator.ReferenceGenerator#getValues <em>Values</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Values</em>'.
+	 * @see com.opcoach.generator.ReferenceGenerator#getValues()
+	 * @see #getReferenceGenerator()
+	 * @generated
+	 */
+	EAttribute getReferenceGenerator_Values();
+
+	/**
 	 * Returns the meta object for data type '{@link java.util.Collection <em>Collection</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -725,6 +745,14 @@ public interface GeneratorPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute REFERENCE_GENERATOR__STEP = eINSTANCE.getReferenceGenerator_Step();
+
+		/**
+		 * The meta object literal for the '<em><b>Values</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REFERENCE_GENERATOR__VALUES = eINSTANCE.getReferenceGenerator_Values();
 
 		/**
 		 * The meta object literal for the '<em>Collection</em>' data type.
