@@ -107,12 +107,14 @@ public class TestStringGenerators
 	{
 		// Create a gen Ref containing the firstname sample values...
 		StringGenerator genRef = f.createStringGenerator();
-		genRef.setID("firstname");
+		genRef.setLocale(Locale.ENGLISH);
+		genRef.setID("FirstName");
 		
 		// Create the real generator which must use the same values than genRef, because Customer.firstname does not exists
 		gen = f.createStringGenerator();
-		gen.setID("Customer.firstname");
+		gen.setID("Customer.Firstname");
 		gen.setLocale(Locale.ENGLISH);
+		assertTrue("There must be values in generator ", gen.getValues().size() > 0);
 		System.out.println("---->  Valeurs possibles : " + gen.getValues());
 		for (int i = 0; i < gen.getValues().size() ; i++)
 		{

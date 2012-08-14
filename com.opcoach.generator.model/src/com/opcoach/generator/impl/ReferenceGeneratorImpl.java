@@ -142,7 +142,8 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 	@Override
 	protected T generateRandomValue()
 	{
-		if (values == null)
+		// Get the values to check if there are samples 
+		if (getValues().isEmpty())
 			return null;
 
 		// Find a random index in the array.
@@ -155,7 +156,7 @@ public class ReferenceGeneratorImpl<T> extends ValueGeneratorImpl<T> implements 
 	@Override
 	protected T generateSimpleValue()
 	{
-		if (values == null)
+		if (getValues().isEmpty())
 			return null;
 		
 		if (lastGeneratedIndex == -1)

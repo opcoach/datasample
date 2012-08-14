@@ -33,11 +33,15 @@ import com.opcoach.generator.impl.ReferenceGeneratorImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getDataFilename <em>Data Filename</em>}</li>
- *   <li>{@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getCasePolicy <em>Case Policy</em>}</li>
+ * <li>
+ * {@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getDataFilename
+ * <em>Data Filename</em>}</li>
+ * <li>
+ * {@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getCasePolicy
+ * <em>Case Policy</em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implements StringGenerator
@@ -52,9 +56,10 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	private boolean mustReadValues = true;
 
 	/**
-	 * The default value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getDataFilename()
+	 * <em>Data Filename</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -67,46 +72,48 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	@Override
 	protected String generateSimpleValue()
 	{
-		// Read the file if it's the first time, then do like ancestor.
-		if (mustReadValues)
-			readValues();
-
 		String result = super.generateSimpleValue();
-		if (result == null)
-			result = getID() + counter++;
 
-		return result;
+		// If no sample file is provided, generate a default string value
+		return (result == null) ? generateDefaultString() : result;
 	}
 
 	@Override
 	protected String generateRandomValue()
 	{
-		// TODO Auto-generated method stub
 		String result = super.generateRandomValue();
-		if (result == null)
-		{
-			String ID = getID();
-			result = ((ID == null) ? "" : ID) + counter++;
+		// If no sample file is provided, generate a default string value
 
-		}
-		return result;
+		return (result == null) ? generateDefaultString() : result;
+	}
+
+	private String generateDefaultString()
+	{
+		String ID = getID();
+		return ((ID == null) ? "" : ID) + counter++;
+
 	}
 
 	@Override
 	public String generateValue()
 	{
-		// Manage the case policy
 		String result = super.generateValue();
-		switch (casePolicy)
+
+		// Manage the case policy
+		if (result != null)
 		{
-		case LOWERCASE:
-			result = result.toLowerCase();
-			break;
-		case UPPERCASE:
-			result = result.toUpperCase();
-			break;
-		default:
-			break;
+			// With bad value generator, it's possible to get here a null value
+			switch (casePolicy)
+			{
+			case LOWERCASE:
+				result = result.toLowerCase();
+				break;
+			case UPPERCASE:
+				result = result.toUpperCase();
+				break;
+			default:
+				break;
+			}
 		}
 
 		return result;
@@ -114,9 +121,10 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	}
 
 	/**
-	 * The cached value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getDataFilename()
+	 * <em>Data Filename</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
+	 * 
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -124,8 +132,9 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	protected String dataFilename = DATA_FILENAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCasePolicy() <em>Case Policy</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The default value of the '{@link #getCasePolicy() <em>Case Policy</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getCasePolicy()
 	 * @generated
 	 * @ordered
@@ -133,8 +142,9 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	protected static final CasePolicyType CASE_POLICY_EDEFAULT = CasePolicyType.DEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCasePolicy() <em>Case Policy</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The cached value of the '{@link #getCasePolicy() <em>Case Policy</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see #getCasePolicy()
 	 * @generated
 	 * @ordered
@@ -174,7 +184,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 		}
 	}
-	
+
 	@Override
 	public Collection<String> getValues()
 	{
@@ -188,6 +198,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -198,6 +209,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDataFilename()
@@ -207,6 +219,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDataFilename(String newDataFilename)
@@ -214,11 +227,13 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 		String oldDataFilename = dataFilename;
 		dataFilename = newDataFilename;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__DATA_FILENAME, oldDataFilename, dataFilename));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__DATA_FILENAME, oldDataFilename,
+					dataFilename));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CasePolicyType getCasePolicy()
@@ -228,6 +243,7 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCasePolicy(CasePolicyType newCasePolicy)
@@ -235,11 +251,13 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 		CasePolicyType oldCasePolicy = casePolicy;
 		casePolicy = newCasePolicy == null ? CASE_POLICY_EDEFAULT : newCasePolicy;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__CASE_POLICY, oldCasePolicy, casePolicy));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__CASE_POLICY, oldCasePolicy,
+					casePolicy));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -247,16 +265,17 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	{
 		switch (featureID)
 		{
-			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-				return getDataFilename();
-			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
-				return getCasePolicy();
+		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+			return getDataFilename();
+		case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+			return getCasePolicy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -264,18 +283,19 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	{
 		switch (featureID)
 		{
-			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-				setDataFilename((String)newValue);
-				return;
-			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
-				setCasePolicy((CasePolicyType)newValue);
-				return;
+		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+			setDataFilename((String) newValue);
+			return;
+		case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+			setCasePolicy((CasePolicyType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -283,18 +303,19 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	{
 		switch (featureID)
 		{
-			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-				setDataFilename(DATA_FILENAME_EDEFAULT);
-				return;
-			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
-				setCasePolicy(CASE_POLICY_EDEFAULT);
-				return;
+		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+			setDataFilename(DATA_FILENAME_EDEFAULT);
+			return;
+		case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+			setCasePolicy(CASE_POLICY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -302,22 +323,24 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	{
 		switch (featureID)
 		{
-			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-				return DATA_FILENAME_EDEFAULT == null ? dataFilename != null : !DATA_FILENAME_EDEFAULT.equals(dataFilename);
-			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
-				return casePolicy != CASE_POLICY_EDEFAULT;
+		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+			return DATA_FILENAME_EDEFAULT == null ? dataFilename != null : !DATA_FILENAME_EDEFAULT.equals(dataFilename);
+		case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+			return casePolicy != CASE_POLICY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (dataFilename: ");
@@ -390,41 +413,53 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 			return;
 
 		// According to ID, try to read a file containing possible values
-		// Id may be set with several parts : rental.Customer.FirstName :
-		// P1.P2.P3
+		// Id may be set with several parts : rental.Customer.FirstName :  P1.P2.P3
+		// WARNING : Files are searched with names in lowercase : Customer.FirstName -> customer.firstname.txt
 		// Use the rootData if it has been set and the locale (optional)
 		// Search order is like this :
-		// 1. rootData/P1.P2.P3.txt
-		// 2. rootData/P2.P3.txt
-		// 3. rootData/P3.txt
+		// 1. rootData/nl/P0.P1.P2.txt
+		// 2. rootData/nl/P0.P1.txt
+		// 3. rootData/nl/P0.txt
 		// By default rootData is initialized with the location of
 		// com.opcoach.generator Bundle
 
 		String nl = (getLocale() == null) ? "" : getLocale().getLanguage();
-		// 1. search for rootData/nl/P1.P2.P3.txt
-		String fname = rootData + File.separator + nl + File.separator + getID() + DATA_FILE_EXT;
+		// 1. search for rootData/nl/P0.P1.P2.txt
+		String rootPath = rootData + nl + File.separator;
+		String fname = rootPath + getID().toLowerCase() + DATA_FILE_EXT;
 		File f = new File(fname);
 		if (f.exists())
 			setDataFilename(fname);
 		else
 		{
-			// 2. rootData/nl/P2.P3.txt
-			String[] names = getID().split("\\.", 3);
+			// 2. rootData/nl/P0.P1.txt
+			String[] names = getID().toLowerCase().split("\\.", 3);
 			System.out.println("Found this names : " + names);
+			int fieldIndex = 1;			
 			if (names.length == 3)
 			{
-				fname = rootData + File.separator + names[1] + "." + names[2] + DATA_FILE_EXT;
+				// This is a package notation : P0.P1.P2, try to find P1.P2 (skip package name)
+				fname = rootPath + names[1] + "." + names[2] + DATA_FILE_EXT;
 				f = new File(fname);
 				if (f.exists())
+				{
 					setDataFilename(fname);
+					return;
+				}
+				fieldIndex = 2;
 
-			} else if (names.length == 2)
-			{
-				fname = rootData + File.separator + names[1] + DATA_FILE_EXT;
-				f = new File(fname);
-				if (f.exists())
-					setDataFilename(fname);
 			}
+			
+			if (names.length == 2)
+				fieldIndex = 1;
+			if (names.length == 1)
+				fieldIndex = 0;
+
+			// Keep only the field name : P1.txt or P2.txt
+			fname = rootPath + names[fieldIndex] + DATA_FILE_EXT;
+			f = new File(fname);
+			if (f.exists())
+				setDataFilename(fname);
 
 		}
 
