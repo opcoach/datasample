@@ -226,6 +226,7 @@ public class ChildrenGeneratorImpl extends ValueGeneratorImpl<Collection<EObject
 	{
 
 		EObjectGenerator generator = DSGenGeneratorFactory.eINSTANCE.createEObjectGenerator();
+		generator.setLocale(getLocale());
 
 		Collection<EObject> result = new ArrayList<EObject>();
 		// This generator is set in a dsgen reference
