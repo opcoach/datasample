@@ -163,5 +163,8 @@ public interface BasicFactory extends EFactory
 
 	
 	StringGenerator createStringGenerator(String id);
+	
+	TrueGenerator createTrueGenerator(String id);
+	FalseGenerator createFalseGenerator(String id);
 
 } //BasicFactory
