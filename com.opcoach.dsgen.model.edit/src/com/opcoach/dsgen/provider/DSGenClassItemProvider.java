@@ -66,7 +66,6 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 
 			addRootObjectPropertyDescriptor(object);
 			addNbAssociationRefToPropertyDescriptor(object);
-			addGeneratorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -98,21 +97,6 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 				getString("_UI_DSGenClass_nbAssociationRefTo_feature"), getString("_UI_DSGenClass_nbAssociationRefTo_description"),
 				DataSampleGenPackage.Literals.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO, false, false, false,
 				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, getString("_UI_internalPropertyCategory"), null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Generator feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addGeneratorPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_DSGenClass_generator_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_DSGenClass_generator_feature", "_UI_DSGenClass_type"),
-				DataSampleGenPackage.Literals.DS_GEN_CLASS__GENERATOR, true, false, true, null, null, null));
 	}
 
 	/**

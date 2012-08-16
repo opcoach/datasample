@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemFontProvider;
@@ -80,7 +81,7 @@ public class DSGenReferenceItemProvider extends DSGenFeatureItemProvider impleme
 				getResourceLocator(),
 				getString("_UI_DSGenReference_targetDSGenClass_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_DSGenReference_targetDSGenClass_feature",
-						"_UI_DSGenReference_type"), DataSampleGenPackage.Literals.DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS, true,
+						"_UI_DSGenReference_type"), DataSampleGenPackage.Literals.DS_GEN_REFERENCE__TARGET_DS_GEN_CLASS, false,
 				false, true, null, null, null));
 	}
 
@@ -106,8 +107,12 @@ public class DSGenReferenceItemProvider extends DSGenFeatureItemProvider impleme
 	@Override
 	public String getText(Object object)
 	{
-		DSGenReference dsGenReference = (DSGenReference) object;
-		return dsGenReference.getEcoreFeature().getName() + " " + dsGenReference.isNullableValue();
+		DSGenReference dsgr = (DSGenReference) object;
+		EReference ref = (EReference)dsgr.getEcoreFeature();
+		String type = ((ref.isContainment()?"Composition" : "Association"));
+		int ub = ref.getUpperBound();
+		String card = ((ub == -1) || (ub > 1)) ? "*" : "1";
+		return super.getText(object) + " (" + type + " " + card + ")";
 	}
 
 	/**

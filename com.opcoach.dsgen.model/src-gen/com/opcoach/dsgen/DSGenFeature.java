@@ -16,8 +16,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.opcoach.dsgen.DSGenFeature#isNullableValue <em>Nullable Value</em>}</li>
- *   <li>{@link com.opcoach.dsgen.DSGenFeature#getNullablePercent <em>Nullable Percent</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenFeature#getDsgenClass <em>Dsgen Class</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenFeature#getEcoreFeature <em>Ecore Feature</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenFeature#getGenerator <em>Generator</em>}</li>
@@ -35,60 +33,6 @@ public interface DSGenFeature extends DSGenTypedElement
 	 * @generated
 	 */
 	String copyright = "© OPCoach 2012";
-
-	/**
-	 * Returns the value of the '<em><b>Nullable Value</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Nullable Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nullable Value</em>' attribute.
-	 * @see #setNullableValue(boolean)
-	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenFeature_NullableValue()
-	 * @model default="false"
-	 * @generated
-	 */
-	boolean isNullableValue();
-
-	/**
-	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenFeature#isNullableValue <em>Nullable Value</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @param value the new value of the '<em>Nullable Value</em>' attribute.
-	 * @see #isNullableValue()
-	 * @generated
-	 */
-	void setNullableValue(boolean value);
-
-	/**
-	 * Returns the value of the '<em><b>Nullable Percent</b></em>' attribute.
-	 * The default value is <code>"10"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Nullable Percent</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nullable Percent</em>' attribute.
-	 * @see #setNullablePercent(int)
-	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenFeature_NullablePercent()
-	 * @model default="10"
-	 * @generated
-	 */
-	int getNullablePercent();
-
-	/**
-	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenFeature#getNullablePercent <em>Nullable Percent</em>}' attribute.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @param value the new value of the '<em>Nullable Percent</em>' attribute.
-	 * @see #getNullablePercent()
-	 * @generated
-	 */
-	void setNullablePercent(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Dsgen Class</b></em>' container reference.

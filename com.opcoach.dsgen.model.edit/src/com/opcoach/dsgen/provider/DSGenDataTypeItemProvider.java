@@ -79,7 +79,7 @@ public class DSGenDataTypeItemProvider extends DSGenClassifierItemProvider imple
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_DSGenDataType_dataType_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_DSGenDataType_dataType_feature", "_UI_DSGenDataType_type"),
-				DataSampleGenPackage.Literals.DS_GEN_DATA_TYPE__DATA_TYPE, true, false, true, null, null, null));
+				DataSampleGenPackage.Literals.DS_GEN_DATA_TYPE__DATA_TYPE, false, false, true, null, null, null));
 	}
 
 	/**

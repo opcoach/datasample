@@ -77,17 +77,16 @@ public class DSGenAttributeItemProvider extends DSGenFeatureItemProvider impleme
 	}
 
 	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * This returns the label text for the adapted class.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @generated NOT
 	 */
 	@SuppressWarnings("restriction")
 	@Override
 	public String getText(Object object)
 	{
-		DSGenAttribute dsGenAttribute = (DSGenAttribute) object;
-		return dsGenAttribute.getEcoreFeature().getName() + " " + dsGenAttribute.isNullableValue();
+		return super.getText(object) + "(Att)";
 	}
 
 	/**

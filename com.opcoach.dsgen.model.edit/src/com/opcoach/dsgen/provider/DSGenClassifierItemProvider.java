@@ -84,7 +84,7 @@ public class DSGenClassifierItemProvider extends DSGenBaseItemProvider implement
 				getResourceLocator(),
 				getString("_UI_DSGenClassifier_ecoreClass_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_DSGenClassifier_ecoreClass_feature",
-						"_UI_DSGenClassifier_type"), DataSampleGenPackage.Literals.DS_GEN_CLASSIFIER__ECORE_CLASS, true, false,
+						"_UI_DSGenClassifier_type"), DataSampleGenPackage.Literals.DS_GEN_CLASSIFIER__ECORE_CLASS, false, false,
 				true, null, null, null));
 	}
 

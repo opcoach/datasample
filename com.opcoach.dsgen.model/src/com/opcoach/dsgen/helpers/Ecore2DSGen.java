@@ -43,6 +43,7 @@ import com.opcoach.dsgen.generator.DSGenGeneratorFactory;
 import com.opcoach.dsgen.generator.MultipleAssociationGenerator;
 import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicFactory;
+import com.opcoach.generator.basic.IDGenerator;
 import com.opcoach.generator.basic.IntGenerator;
 
 /**
@@ -198,7 +199,6 @@ public class Ecore2DSGen implements DSGenConstants
 			DSGenClass targetDSGenClass = searchDSGenClass(parent.getDsgenPackage(), targetName);
 			ref.setTargetDSGenClass(targetDSGenClass);
 		}
-		
 
 		return dsPack;
 	}
@@ -343,9 +343,8 @@ public class Ecore2DSGen implements DSGenConstants
 		result.setEcoreFeature(rootAttr);
 
 		// Add the generator according to the field type...
-		EDataType dt = (rootAttr.getEAttributeType());
 
-		ValueGenerator<?> gen = getGeneratorFromType(dt);
+		ValueGenerator<?> gen = getGeneratorFromType(rootAttr);
 		if (gen != null)
 		{
 			gen.setID(rootAttr.getEContainingClass().getName() + "." + rootAttr.getName());
@@ -425,7 +424,6 @@ public class Ecore2DSGen implements DSGenConstants
 
 		String genID = rootRef.getEContainingClass().getName() + "." + rootRef.getName();
 		refGen.setID(genID);
-		refGen.setType(rootRef.getEReferenceType().getInstanceClass());
 
 		return refGen;
 	}
@@ -444,14 +442,31 @@ public class Ecore2DSGen implements DSGenConstants
 	private static final String BOOLEAN_TYPE = "EBoolean";
 	private static final String BOOLEAN_OBJECT_TYPE = "EBooleanObject";
 
-	protected ValueGenerator<?> getGeneratorFromType(EDataType dt)
+	protected ValueGenerator<?> getGeneratorFromType(EAttribute attr)
 	{
+		EDataType dt = (attr.getEAttributeType());
+
 		String typeName = dt.getName();
 		ValueGenerator<?> result = null;
 
 		if (STRING_TYPE.equals(typeName))
 		{
-			result = generatorFactory.createStringGenerator();
+			if (attr.isID())
+			{
+				IDGenerator gen = generatorFactory.createIDGenerator();
+				String pname = attr.getEContainingClass().getName();
+				// Try to find upper case letters
+				StringBuffer pref = new StringBuffer();
+				for (int i = 0; i < pname.length(); i++)
+				{
+					char c = pname.charAt(i);
+					if (Character.isUpperCase(c))
+						pref.append(c);
+				}
+				gen.setPrefix(pref.toString());
+				result = gen;
+			} else
+				result = generatorFactory.createStringGenerator();
 		} else if (DATE_TYPE.equals(typeName))
 		{
 			result = generatorFactory.createDateGenerator();

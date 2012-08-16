@@ -31,10 +31,6 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenFeature" eSuperTypes="#//DSGenTypedElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullableValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nullablePercent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="10"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenClass" lowerBound="1"
         eType="#//DSGenClassifier" eOpposite="#//DSGenClassifier/dsgenFeatures"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ecoreFeature" lowerBound="1"

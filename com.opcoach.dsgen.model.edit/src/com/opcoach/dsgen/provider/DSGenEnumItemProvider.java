@@ -78,7 +78,7 @@ public class DSGenEnumItemProvider extends DSGenDataTypeItemProvider implements 
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_DSGenEnum_ecoreEnum_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_DSGenEnum_ecoreEnum_feature", "_UI_DSGenEnum_type"),
-				DataSampleGenPackage.Literals.DS_GEN_ENUM__ECORE_ENUM, true, false, true, null, null, null));
+				DataSampleGenPackage.Literals.DS_GEN_ENUM__ECORE_ENUM, false, false, true, null, null, null));
 	}
 
 	/**

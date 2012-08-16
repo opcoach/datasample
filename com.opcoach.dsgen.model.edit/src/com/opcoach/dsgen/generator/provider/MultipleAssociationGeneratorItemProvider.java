@@ -148,18 +148,6 @@ public class MultipleAssociationGeneratorItemProvider extends ValueGeneratorItem
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				DSGenGeneratorFactory.eINSTANCE.createEObjectGenerator()));
-
-		newChildDescriptors.add(createChildParameter(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				DSGenGeneratorFactory.eINSTANCE.createChildrenGenerator()));
-
-		newChildDescriptors.add(createChildParameter(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				DSGenGeneratorFactory.eINSTANCE.createSingleAssociationGenerator()));
-
-		newChildDescriptors.add(createChildParameter(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				DSGenGeneratorFactory.eINSTANCE.createMultipleAssociationGenerator()));
 	}
 
 	/**

@@ -68,45 +68,9 @@ public class DSGenFeatureItemProvider extends DSGenTypedElementItemProvider impl
 		{
 			super.getPropertyDescriptors(object);
 
-			addNullableValuePropertyDescriptor(object);
-			addNullablePercentPropertyDescriptor(object);
 			addEcoreFeaturePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Nullable Value feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addNullableValuePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_DSGenFeature_nullableValue_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_DSGenFeature_nullableValue_feature", "_UI_DSGenFeature_type"),
-				DataSampleGenPackage.Literals.DS_GEN_FEATURE__NULLABLE_VALUE, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Nullable Percent feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addNullablePercentPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(
-						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(),
-						getString("_UI_DSGenFeature_nullablePercent_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_DSGenFeature_nullablePercent_feature",
-								"_UI_DSGenFeature_type"), DataSampleGenPackage.Literals.DS_GEN_FEATURE__NULLABLE_PERCENT, true,
-						false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -121,7 +85,7 @@ public class DSGenFeatureItemProvider extends DSGenTypedElementItemProvider impl
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_DSGenFeature_ecoreFeature_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_DSGenFeature_ecoreFeature_feature", "_UI_DSGenFeature_type"),
-				DataSampleGenPackage.Literals.DS_GEN_FEATURE__ECORE_FEATURE, true, false, true, null, null, null));
+				DataSampleGenPackage.Literals.DS_GEN_FEATURE__ECORE_FEATURE, false, false, true, null, null, null));
 	}
 
 	/**
@@ -178,8 +142,7 @@ public class DSGenFeatureItemProvider extends DSGenTypedElementItemProvider impl
 	@Override
 	public String getText(Object object)
 	{
-		DSGenFeature dsGenFeature = (DSGenFeature) object;
-		return getString("_UI_DSGenFeature_type") + " " + dsGenFeature.isNullableValue();
+		return ((DSGenFeature) object).getEcoreFeature().getName();
 	}
 
 	/**
@@ -196,10 +159,6 @@ public class DSGenFeatureItemProvider extends DSGenTypedElementItemProvider impl
 
 		switch (notification.getFeatureID(DSGenFeature.class))
 		{
-		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_VALUE:
-		case DataSampleGenPackage.DS_GEN_FEATURE__NULLABLE_PERCENT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
 		case DataSampleGenPackage.DS_GEN_FEATURE__GENERATOR:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;

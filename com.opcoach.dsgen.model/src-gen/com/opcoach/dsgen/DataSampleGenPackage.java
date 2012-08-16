@@ -328,30 +328,12 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_FEATURE = 3;
 
 	/**
-	 * The feature id for the '<em><b>Nullable Value</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int DS_GEN_FEATURE__NULLABLE_VALUE = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Nullable Percent</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int DS_GEN_FEATURE__NULLABLE_PERCENT = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Dsgen Class</b></em>' container reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_FEATURE__DSGEN_CLASS = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 2;
+	int DS_GEN_FEATURE__DSGEN_CLASS = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ecore Feature</b></em>' reference. <!--
@@ -360,7 +342,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_FEATURE__ECORE_FEATURE = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 3;
+	int DS_GEN_FEATURE__ECORE_FEATURE = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Generator</b></em>' containment reference.
@@ -369,7 +351,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_FEATURE__GENERATOR = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 4;
+	int DS_GEN_FEATURE__GENERATOR = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>DS Gen Feature</em>' class.
@@ -377,7 +359,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_FEATURE_FEATURE_COUNT = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 5;
+	int DS_GEN_FEATURE_FEATURE_COUNT = DS_GEN_TYPED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.impl.DSGenEnumLiteralImpl <em>DS Gen Enum Literal</em>}' class.
@@ -496,24 +478,6 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_ATTRIBUTE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Nullable Value</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int DS_GEN_ATTRIBUTE__NULLABLE_VALUE = DS_GEN_FEATURE__NULLABLE_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Nullable Percent</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int DS_GEN_ATTRIBUTE__NULLABLE_PERCENT = DS_GEN_FEATURE__NULLABLE_PERCENT;
-
-	/**
 	 * The feature id for the '<em><b>Dsgen Class</b></em>' container reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -555,24 +519,6 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 */
 	int DS_GEN_REFERENCE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Nullable Value</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int DS_GEN_REFERENCE__NULLABLE_VALUE = DS_GEN_FEATURE__NULLABLE_VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Nullable Percent</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int DS_GEN_REFERENCE__NULLABLE_PERCENT = DS_GEN_FEATURE__NULLABLE_PERCENT;
 
 	/**
 	 * The feature id for the '<em><b>Dsgen Class</b></em>' container reference.
@@ -911,29 +857,6 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 */
 	EClass getDSGenFeature();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.opcoach.dsgen.DSGenFeature#isNullableValue <em>Nullable Value</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Nullable Value</em>'.
-	 * @see com.opcoach.dsgen.DSGenFeature#isNullableValue()
-	 * @see #getDSGenFeature()
-	 * @generated
-	 */
-	EAttribute getDSGenFeature_NullableValue();
-
-	/**
-	 * Returns the meta object for the attribute '
-	 * {@link com.opcoach.dsgen.DSGenFeature#getNullablePercent
-	 * <em>Nullable Percent</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 * 
-	 * @return the meta object for the attribute '<em>Nullable Percent</em>'.
-	 * @see com.opcoach.dsgen.DSGenFeature#getNullablePercent()
-	 * @see #getDSGenFeature()
-	 * @generated
-	 */
-	EAttribute getDSGenFeature_NullablePercent();
 
 	/**
 	 * Returns the meta object for the container reference '{@link com.opcoach.dsgen.DSGenFeature#getDsgenClass <em>Dsgen Class</em>}'.
@@ -1341,20 +1264,6 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EClass DS_GEN_FEATURE = eINSTANCE.getDSGenFeature();
-
-		/**
-		 * The meta object literal for the '<em><b>Nullable Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DS_GEN_FEATURE__NULLABLE_VALUE = eINSTANCE.getDSGenFeature_NullableValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Nullable Percent</b></em>' attribute feature.
-		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DS_GEN_FEATURE__NULLABLE_PERCENT = eINSTANCE.getDSGenFeature_NullablePercent();
 
 		/**
 		 * The meta object literal for the '<em><b>Dsgen Class</b></em>' container reference feature.

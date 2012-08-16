@@ -82,7 +82,7 @@ public class DSGenPackageItemProvider extends DSGenBaseItemProvider implements I
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
 				getString("_UI_DSGenPackage_ecorePackage_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_DSGenPackage_ecorePackage_feature", "_UI_DSGenPackage_type"),
-				DataSampleGenPackage.Literals.DS_GEN_PACKAGE__ECORE_PACKAGE, true, false, true, null, null, null));
+				DataSampleGenPackage.Literals.DS_GEN_PACKAGE__ECORE_PACKAGE, false, false, true, null, null, null));
 	}
 
 	/**

@@ -397,27 +397,9 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDSGenFeature_NullableValue()
-	{
-		return (EAttribute) dsGenFeatureEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDSGenFeature_NullablePercent()
-	{
-		return (EAttribute) dsGenFeatureEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getDSGenFeature_DsgenClass()
 	{
-		return (EReference) dsGenFeatureEClass.getEStructuralFeatures().get(2);
+		return (EReference) dsGenFeatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -426,7 +408,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 */
 	public EReference getDSGenFeature_EcoreFeature()
 	{
-		return (EReference) dsGenFeatureEClass.getEStructuralFeatures().get(3);
+		return (EReference) dsGenFeatureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -436,7 +418,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 */
 	public EReference getDSGenFeature_Generator()
 	{
-		return (EReference) dsGenFeatureEClass.getEStructuralFeatures().get(4);
+		return (EReference) dsGenFeatureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -696,8 +678,6 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		createEReference(dsGenClassEClass, DS_GEN_CLASS__GENERATOR);
 
 		dsGenFeatureEClass = createEClass(DS_GEN_FEATURE);
-		createEAttribute(dsGenFeatureEClass, DS_GEN_FEATURE__NULLABLE_VALUE);
-		createEAttribute(dsGenFeatureEClass, DS_GEN_FEATURE__NULLABLE_PERCENT);
 		createEReference(dsGenFeatureEClass, DS_GEN_FEATURE__DSGEN_CLASS);
 		createEReference(dsGenFeatureEClass, DS_GEN_FEATURE__ECORE_FEATURE);
 		createEReference(dsGenFeatureEClass, DS_GEN_FEATURE__GENERATOR);
@@ -830,12 +810,6 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dsGenFeatureEClass, DSGenFeature.class, "DSGenFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDSGenFeature_NullableValue(), ecorePackage.getEBoolean(), "nullableValue", "false", 0, 1,
-				DSGenFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getDSGenFeature_NullablePercent(), ecorePackage.getEInt(), "nullablePercent", "10", 0, 1,
-				DSGenFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEReference(getDSGenFeature_DsgenClass(), this.getDSGenClassifier(), this.getDSGenClassifier_DsgenFeatures(),
 				"dsgenClass", null, 1, 1, DSGenFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

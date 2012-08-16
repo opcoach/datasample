@@ -87,7 +87,7 @@ public interface DSGenGeneratorPackage extends EPackage
 	int EOBJECT_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -121,15 +121,6 @@ public interface DSGenGeneratorPackage extends EPackage
 	 * @ordered
 	 */
 	int EOBJECT_GENERATOR__DESCRIPTION = GeneratorPackage.VALUE_GENERATOR__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EOBJECT_GENERATOR__TYPE = GeneratorPackage.VALUE_GENERATOR__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -187,7 +178,7 @@ public interface DSGenGeneratorPackage extends EPackage
 	int CHILDREN_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -221,15 +212,6 @@ public interface DSGenGeneratorPackage extends EPackage
 	 * @ordered
 	 */
 	int CHILDREN_GENERATOR__DESCRIPTION = GeneratorPackage.VALUE_GENERATOR__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHILDREN_GENERATOR__TYPE = GeneratorPackage.VALUE_GENERATOR__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -287,7 +269,7 @@ public interface DSGenGeneratorPackage extends EPackage
 	int SINGLE_ASSOCIATION_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.REFERENCE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -321,15 +303,6 @@ public interface DSGenGeneratorPackage extends EPackage
 	 * @ordered
 	 */
 	int SINGLE_ASSOCIATION_GENERATOR__DESCRIPTION = GeneratorPackage.REFERENCE_GENERATOR__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SINGLE_ASSOCIATION_GENERATOR__TYPE = GeneratorPackage.REFERENCE_GENERATOR__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -396,7 +369,7 @@ public interface DSGenGeneratorPackage extends EPackage
 	int MULTIPLE_ASSOCIATION_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -430,15 +403,6 @@ public interface DSGenGeneratorPackage extends EPackage
 	 * @ordered
 	 */
 	int MULTIPLE_ASSOCIATION_GENERATOR__DESCRIPTION = GeneratorPackage.VALUE_GENERATOR__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULTIPLE_ASSOCIATION_GENERATOR__TYPE = GeneratorPackage.VALUE_GENERATOR__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
