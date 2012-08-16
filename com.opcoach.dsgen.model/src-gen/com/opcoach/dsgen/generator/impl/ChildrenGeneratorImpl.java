@@ -214,7 +214,7 @@ public class ChildrenGeneratorImpl extends ValueGeneratorImpl<Collection<EObject
 		}
 
 		int result = upperBound;
-		if (isSetRandomSeed() && (upperBound > 1))
+		if ((getRandomizer() != null) && (upperBound > 1))
 		{
 			int lb = dsgenref.getEcoreFeature().getLowerBound();
 			result = lb + getRandomizer().nextInt(upperBound - lb);

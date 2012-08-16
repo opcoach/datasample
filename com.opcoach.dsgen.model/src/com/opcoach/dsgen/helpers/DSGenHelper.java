@@ -346,6 +346,8 @@ public class DSGenHelper
 			}
 		}
 		
+		String genID = rootRef.getEContainingClass().getName() + "." + rootRef.getName();
+		refGen.setID(genID);
 		refGen.setType(rootRef.getEReferenceType().getInstanceClass());
 
 		return refGen;
