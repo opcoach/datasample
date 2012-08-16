@@ -4,7 +4,6 @@ import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.opcoach.dsgen.DSGenAttribute;
-import com.opcoach.dsgen.DSGenFeature;
 import com.opcoach.dsgen.DSGenReference;
 import com.opcoach.generator.ValueGenerator;
 

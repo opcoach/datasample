@@ -1,8 +1,6 @@
 package com.opcoach.dsgen.helpers;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -11,23 +9,16 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import com.opcoach.dsgen.DSGenAttribute;
-import com.opcoach.dsgen.DSGenChild;
 import com.opcoach.dsgen.DSGenClass;
-import com.opcoach.dsgen.DSGenFeature;
 import com.opcoach.dsgen.DSGenModel;
-import com.opcoach.dsgen.DSGenReference;
 import com.opcoach.dsgen.generator.EObjectGenerator;
-import com.opcoach.generator.ValueGenerator;
 
 /**
  * Handler to generate the dsgen model from ecore model

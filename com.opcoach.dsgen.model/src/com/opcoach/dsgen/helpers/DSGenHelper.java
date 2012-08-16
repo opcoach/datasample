@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.opcoach.dsgen.DSGenAttribute;
-import com.opcoach.dsgen.DSGenChild;
 import com.opcoach.dsgen.DSGenClass;
 import com.opcoach.dsgen.DSGenClassifier;
 import com.opcoach.dsgen.DSGenDataType;
@@ -32,10 +31,7 @@ import com.opcoach.dsgen.DSGenReference;
 import com.opcoach.dsgen.DataSampleGenFactory;
 import com.opcoach.dsgen.generator.ChildrenGenerator;
 import com.opcoach.dsgen.generator.DSGenGeneratorFactory;
-import com.opcoach.dsgen.generator.EObjectGenerator;
 import com.opcoach.dsgen.generator.MultipleAssociationGenerator;
-import com.opcoach.generator.GeneratorFactory;
-import com.opcoach.generator.ReferenceGenerator;
 import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicFactory;
 
