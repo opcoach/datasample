@@ -34,6 +34,7 @@ public class BooleanGeneratorImpl extends ValueGeneratorImpl<Boolean> implements
 	protected BooleanGeneratorImpl()
 	{
 		super();
+		lastGeneratedValue = Boolean.FALSE;
 	}
 
 	
