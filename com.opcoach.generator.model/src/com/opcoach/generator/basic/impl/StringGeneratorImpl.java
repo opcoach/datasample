@@ -345,10 +345,13 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	/** Read the datafile, and initialize values */
 	private void readValues()
 	{
-		computeFileName();
+ 		computeFileName();
 		String df = getDataFilename();
 		if (df == null)
+		{
+			mustReadValues = false; // No values to be read
 			return;
+		}
 
 		BufferedReader bf = null;
 		try
