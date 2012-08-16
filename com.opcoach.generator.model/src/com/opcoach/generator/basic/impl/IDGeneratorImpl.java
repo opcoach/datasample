@@ -61,10 +61,10 @@ public class IDGeneratorImpl extends ValueGeneratorImpl<String> implements IDGen
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPrefix()
-	 * @generated
+	 * @generated NOT
 	 * @ordered
 	 */
-	protected static final String PREFIX_EDEFAULT = null;
+	protected static final String PREFIX_EDEFAULT = "";
 	/**
 	 * The cached value of the '{@link #getPrefix() <em>Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -100,8 +100,6 @@ public class IDGeneratorImpl extends ValueGeneratorImpl<String> implements IDGen
 	protected String generateSimpleValue()
 	{
 		/** Generate a value base 36 encoded on 10 letters  */
-
-
         long value;
         // Find a new value
         synchronized (IDGenerator.class)
@@ -118,7 +116,7 @@ public class IDGeneratorImpl extends ValueGeneratorImpl<String> implements IDGen
     
         // And pad it right with zeroes according to the key length so that
         // alphabetical order is also numeric order.
-        int longLength = longString.length();
+        int longLength = longString.length() + prefix.length();
 
         StringBuffer result = new StringBuffer(prefix);
         for (int i = keyLength - longLength; i > 0; i--)

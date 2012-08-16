@@ -32,7 +32,7 @@ public class FloatGeneratorImpl extends RangeGeneratorImpl<Float> implements Flo
 	 */
 	protected FloatGeneratorImpl()
 	{
-		this(0.0f, Float.MAX_VALUE);
+		this(0.0f, 100.0f);
 	}
 
 		
@@ -41,7 +41,6 @@ public class FloatGeneratorImpl extends RangeGeneratorImpl<Float> implements Flo
 	{
 		super(vlow, vhigh);
 		step = 1.0f;  // must be adjusted if high-low < 1.0
-		setType(Float.class);
 	}
 	
 	

@@ -53,8 +53,8 @@ public class DateGeneratorImpl extends RangeGeneratorImpl<Date> implements DateG
 	 * @ordered
 	 */
 	protected boolean generateNow = GENERATE_NOW_EDEFAULT;
-	private static final Date DEFAULT_START_DATE = new GregorianCalendar(2000,1,1).getTime();
-	private static final Date DEFAULT_END_DATE = new GregorianCalendar(2019,12,31).getTime();
+	private static final Date DEFAULT_START_DATE = new GregorianCalendar(2010,1,1).getTime();
+	private static final Date DEFAULT_END_DATE = new GregorianCalendar(2020,1,1).getTime();
 
 	private long dateRange;
 
@@ -75,7 +75,6 @@ public class DateGeneratorImpl extends RangeGeneratorImpl<Date> implements DateG
 		super(vlow, vhigh);
 		dateRange = vhigh.getTime() - vlow.getTime();
 		step = new Date(86400000L);  // By default one day
-		setType(Date.class);
 	}
 	
 	

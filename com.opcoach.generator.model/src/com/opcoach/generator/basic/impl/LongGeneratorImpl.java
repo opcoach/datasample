@@ -31,7 +31,7 @@ public class LongGeneratorImpl extends RangeGeneratorImpl<Long> implements LongG
 	 */
 	protected LongGeneratorImpl()
 	{
-		this(0L, Long.MAX_VALUE);
+		this(0L, 100000L);
 	}
 	
 	/** Build it with low and high bounds */
@@ -39,7 +39,6 @@ public class LongGeneratorImpl extends RangeGeneratorImpl<Long> implements LongG
 	{
 		super(vlow, vhigh);
 		step = 1L;
-		setType(Long.class);
 	}
 
 

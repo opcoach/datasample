@@ -73,12 +73,9 @@ public class ValueGeneratorItemProvider
 
 			addBadValueProportionPropertyDescriptor(object);
 			addBadValueGeneratorPropertyDescriptor(object);
-			addLastGeneratedValuePropertyDescriptor(object);
 			addRandomSeedPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
 			addIDPropertyDescriptor(object);
-			addLocalePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -130,29 +127,6 @@ public class ValueGeneratorItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Last Generated Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLastGeneratedValuePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ValueGenerator_lastGeneratedValue_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ValueGenerator_lastGeneratedValue_feature", "_UI_ValueGenerator_type"),
-				 GeneratorPackage.Literals.VALUE_GENERATOR__LAST_GENERATED_VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Random Seed feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -199,29 +173,6 @@ public class ValueGeneratorItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ValueGenerator_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ValueGenerator_type_feature", "_UI_ValueGenerator_type"),
-				 GeneratorPackage.Literals.VALUE_GENERATOR__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,29 +187,6 @@ public class ValueGeneratorItemProvider
 				 getString("_UI_ValueGenerator_ID_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ValueGenerator_ID_feature", "_UI_ValueGenerator_type"),
 				 GeneratorPackage.Literals.VALUE_GENERATOR__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Locale feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLocalePropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ValueGenerator_locale_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ValueGenerator_locale_feature", "_UI_ValueGenerator_type"),
-				 GeneratorPackage.Literals.VALUE_GENERATOR__LOCALE,
 				 true,
 				 false,
 				 false,
@@ -312,7 +240,6 @@ public class ValueGeneratorItemProvider
 			case GeneratorPackage.VALUE_GENERATOR__LAST_GENERATED_VALUE:
 			case GeneratorPackage.VALUE_GENERATOR__RANDOM_SEED:
 			case GeneratorPackage.VALUE_GENERATOR__DESCRIPTION:
-			case GeneratorPackage.VALUE_GENERATOR__TYPE:
 			case GeneratorPackage.VALUE_GENERATOR__ID:
 			case GeneratorPackage.VALUE_GENERATOR__LOCALE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

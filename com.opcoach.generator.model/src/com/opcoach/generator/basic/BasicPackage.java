@@ -118,15 +118,6 @@ public interface BasicPackage extends EPackage
 	int BOOLEAN_GENERATOR__DESCRIPTION = GeneratorPackage.VALUE_GENERATOR__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_GENERATOR__TYPE = GeneratorPackage.VALUE_GENERATOR__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,15 +199,6 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int DATE_GENERATOR__DESCRIPTION = GeneratorPackage.RANGE_GENERATOR__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -337,15 +319,6 @@ public interface BasicPackage extends EPackage
 	int DOUBLE_GENERATOR__DESCRIPTION = GeneratorPackage.RANGE_GENERATOR__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOUBLE_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -453,15 +426,6 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int FLOAT_GENERATOR__DESCRIPTION = GeneratorPackage.RANGE_GENERATOR__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -574,15 +538,6 @@ public interface BasicPackage extends EPackage
 	int ID_GENERATOR__DESCRIPTION = GeneratorPackage.VALUE_GENERATOR__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ID_GENERATOR__TYPE = GeneratorPackage.VALUE_GENERATOR__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -681,15 +636,6 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int INT_GENERATOR__DESCRIPTION = GeneratorPackage.RANGE_GENERATOR__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -801,15 +747,6 @@ public interface BasicPackage extends EPackage
 	int LONG_GENERATOR__DESCRIPTION = GeneratorPackage.RANGE_GENERATOR__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LONG_GENERATOR__TYPE = GeneratorPackage.RANGE_GENERATOR__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -919,15 +856,6 @@ public interface BasicPackage extends EPackage
 	int NULL_VALUE_GENERATOR__DESCRIPTION = GeneratorPackage.VALUE_GENERATOR__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NULL_VALUE_GENERATOR__TYPE = GeneratorPackage.VALUE_GENERATOR__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1008,15 +936,6 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int STRING_GENERATOR__DESCRIPTION = GeneratorPackage.REFERENCE_GENERATOR__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_GENERATOR__TYPE = GeneratorPackage.REFERENCE_GENERATOR__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -1138,15 +1057,6 @@ public interface BasicPackage extends EPackage
 	int TRUE_GENERATOR__DESCRIPTION = BOOLEAN_GENERATOR__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRUE_GENERATOR__TYPE = BOOLEAN_GENERATOR__TYPE;
-
-	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1227,15 +1137,6 @@ public interface BasicPackage extends EPackage
 	 * @ordered
 	 */
 	int FALSE_GENERATOR__DESCRIPTION = BOOLEAN_GENERATOR__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FALSE_GENERATOR__TYPE = BOOLEAN_GENERATOR__TYPE;
 
 	/**
 	 * The feature id for the '<em><b>ID</b></em>' attribute.

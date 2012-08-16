@@ -30,7 +30,6 @@ import com.opcoach.generator.ValueGenerator;
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getLastGeneratedValue <em>Last Generated Value</em>}</li>
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getRandomSeed <em>Random Seed</em>}</li>
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getID <em>ID</em>}</li>
  *   <li>{@link com.opcoach.generator.impl.ValueGeneratorImpl#getLocale <em>Locale</em>}</li>
  * </ul>
@@ -121,15 +120,6 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	 * @ordered
 	 */
 	protected String description = DESCRIPTION_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected Class<?> type;
 
 	/**
 	 * The default value of the '{@link #getID() <em>ID</em>}' attribute. <!--
@@ -377,15 +367,6 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		return description;
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Class<?> getType()
-	{
-		return type;
-	}
-
 	protected String computeDescription()
 	{
 		// Compute a default description...
@@ -480,8 +461,6 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 				return getRandomSeed();
 			case GeneratorPackage.VALUE_GENERATOR__DESCRIPTION:
 				return getDescription();
-			case GeneratorPackage.VALUE_GENERATOR__TYPE:
-				return getType();
 			case GeneratorPackage.VALUE_GENERATOR__ID:
 				return getID();
 			case GeneratorPackage.VALUE_GENERATOR__LOCALE:
@@ -511,9 +490,6 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 				return;
 			case GeneratorPackage.VALUE_GENERATOR__RANDOM_SEED:
 				setRandomSeed((Long)newValue);
-				return;
-			case GeneratorPackage.VALUE_GENERATOR__TYPE:
-				setType((Class<?>)newValue);
 				return;
 			case GeneratorPackage.VALUE_GENERATOR__ID:
 				setID((String)newValue);
@@ -546,9 +522,6 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 			case GeneratorPackage.VALUE_GENERATOR__RANDOM_SEED:
 				unsetRandomSeed();
 				return;
-			case GeneratorPackage.VALUE_GENERATOR__TYPE:
-				setType((Class<?>)null);
-				return;
 			case GeneratorPackage.VALUE_GENERATOR__ID:
 				setID(ID_EDEFAULT);
 				return;
@@ -578,8 +551,6 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 				return isSetRandomSeed();
 			case GeneratorPackage.VALUE_GENERATOR__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case GeneratorPackage.VALUE_GENERATOR__TYPE:
-				return type != null;
 			case GeneratorPackage.VALUE_GENERATOR__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case GeneratorPackage.VALUE_GENERATOR__LOCALE:
@@ -606,26 +577,12 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		if (randomSeedESet) result.append(randomSeed); else result.append("<unset>");
 		result.append(", description: ");
 		result.append(description);
-		result.append(", type: ");
-		result.append(type);
 		result.append(", ID: ");
 		result.append(id);
 		result.append(", locale: ");
 		result.append(locale);
 		result.append(')');
 		return result.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(Class<?> newType)
-	{
-		Class<?> oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__TYPE, oldType, type));
 	}
 
 	/**

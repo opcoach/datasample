@@ -34,7 +34,7 @@ public class DoubleGeneratorImpl extends RangeGeneratorImpl<Double> implements D
 	 */
 	protected DoubleGeneratorImpl()
 	{
-		this(0.0d, Double.MAX_VALUE);
+		this(0.0d, 100.0d);
 	}
 	
 		
@@ -43,7 +43,6 @@ public class DoubleGeneratorImpl extends RangeGeneratorImpl<Double> implements D
 	{
 		super(vlow, vhigh);
 		step = 1.0d;
-		setType(Double.class);
 	}
 	
 

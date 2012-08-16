@@ -66,7 +66,6 @@ public class ReferenceGeneratorItemProvider
 			super.getPropertyDescriptors(object);
 
 			addStepPropertyDescriptor(object);
-			addValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,29 +89,6 @@ public class ReferenceGeneratorItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Values feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuesPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ReferenceGenerator_values_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReferenceGenerator_values_feature", "_UI_ReferenceGenerator_type"),
-				 GeneratorPackage.Literals.REFERENCE_GENERATOR__VALUES,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}

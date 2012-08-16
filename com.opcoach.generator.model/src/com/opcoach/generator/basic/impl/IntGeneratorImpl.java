@@ -30,7 +30,7 @@ public class IntGeneratorImpl extends RangeGeneratorImpl<Integer> implements Int
 	 */
 	protected IntGeneratorImpl()
 	{
-		this(0, Integer.MAX_VALUE);
+		this(0, 1000);
 	}
 	
 	
@@ -39,7 +39,6 @@ public class IntGeneratorImpl extends RangeGeneratorImpl<Integer> implements Int
 	{
 		super(vlow, vhigh);
 		step = 1;
-		setType(Integer.class);
 	}
 	
 

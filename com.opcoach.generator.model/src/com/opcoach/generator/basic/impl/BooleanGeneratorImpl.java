@@ -29,7 +29,7 @@ public class BooleanGeneratorImpl extends ValueGeneratorImpl<Boolean> implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected BooleanGeneratorImpl()
 	{
