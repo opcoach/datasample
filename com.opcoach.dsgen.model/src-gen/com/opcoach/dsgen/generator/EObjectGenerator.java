@@ -35,7 +35,7 @@ public interface EObjectGenerator extends ValueGenerator<EObject>
 	 * @generated
 	 */
 	String copyright = "© OPCoach 2012";
-	
+
 	EObjectGenerator eInstance = DSGenGeneratorFactory.eINSTANCE.createEObjectGenerator();
 
 	/**

@@ -34,8 +34,6 @@
       <genFeatures property="Readonly" createChild="false" propertyCategory="internal"
           propertyDescription="This value is computed. Contains the number of external associations refering to the associated EClass"
           ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/nbAssociationRefTo"/>
-      <genFeatures property="Readonly" children="true" createChild="false" propertyCategory="internal"
-          propertyDescription="Composition children (computed)" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClass/children"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClass/generator"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenFeature">
@@ -64,16 +62,6 @@
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenEnum">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenEnum/ecoreEnum"/>
-    </genClasses>
-    <genClasses ecoreClass="dataSample.ecore#//DSGenChild">
-      <genFeatures property="Readonly" createChild="false" propertyCategory="internal"
-          propertyDescription="Is this composition a single relation ? " ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenChild/single"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="internal"
-          propertyDescription="The source DSGenRef which supports this composition"
-          propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenChild/sourceReference"/>
-      <genFeatures property="Readonly" notify="false" createChild="false" propertyCategory="internal"
-          propertyDescription="The possible opposite reference of this composition"
-          propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenChild/oppositeReference"/>
     </genClasses>
     <nestedGenPackages prefix="DSGenGenerator" basePackage="com.opcoach.dsgen" disposableProviderFactory="true"
         ecorePackage="dataSample.ecore#//generator">

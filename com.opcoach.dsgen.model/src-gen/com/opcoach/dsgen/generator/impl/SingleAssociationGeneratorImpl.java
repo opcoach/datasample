@@ -56,20 +56,20 @@ public class SingleAssociationGeneratorImpl extends ReferenceGeneratorImpl<EObje
 	{
 		return DSGenGeneratorPackage.Literals.SINGLE_ASSOCIATION_GENERATOR;
 	}
-	
+
 	@Override
 	protected EObject generateRandomValue()
 	{
 		initializeValues();
 		return super.generateRandomValue();
 	}
-	
+
 	@Override
 	protected EObject generateSimpleValue()
 	{
 		initializeValues();
 		return super.generateSimpleValue();
-	
+
 	}
 
 	private void initializeValues()

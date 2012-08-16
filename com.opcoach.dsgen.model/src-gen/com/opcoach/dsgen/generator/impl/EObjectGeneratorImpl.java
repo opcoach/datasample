@@ -5,19 +5,18 @@ package com.opcoach.dsgen.generator.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import com.opcoach.dsgen.DSGenAttribute;
-import com.opcoach.dsgen.DSGenChild;
 import com.opcoach.dsgen.DSGenClass;
 import com.opcoach.dsgen.DSGenFeature;
 import com.opcoach.dsgen.DSGenReference;
@@ -299,15 +298,6 @@ public class EObjectGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 		values.add(o);
 	}
 
-	private boolean isChildren(DSGenReference ref, DSGenClass parent)
-	{
-		for (DSGenChild c : parent.getChildren())
-		{
-			if (c.getSourceReference() == ref)
-				return true;
-		}
-		return false;
-
-	}
+	
 
 } // EObjectGeneratorImpl

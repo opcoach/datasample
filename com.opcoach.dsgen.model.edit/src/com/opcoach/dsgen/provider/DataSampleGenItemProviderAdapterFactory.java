@@ -355,31 +355,6 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.opcoach.dsgen.DSGenChild} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DSGenChildItemProvider dsGenChildItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link com.opcoach.dsgen.DSGenChild}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createDSGenChildAdapter()
-	{
-		if (dsGenChildItemProvider == null)
-		{
-			dsGenChildItemProvider = new DSGenChildItemProvider(this);
-		}
-
-		return dsGenChildItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -508,8 +483,6 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 			dsGenReferenceItemProvider.dispose();
 		if (dsGenEnumItemProvider != null)
 			dsGenEnumItemProvider.dispose();
-		if (dsGenChildItemProvider != null)
-			dsGenChildItemProvider.dispose();
 	}
 
 }

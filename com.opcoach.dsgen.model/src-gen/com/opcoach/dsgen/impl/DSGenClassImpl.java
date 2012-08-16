@@ -30,7 +30,6 @@ import com.opcoach.dsgen.generator.EObjectGenerator;
  * <ul>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#isRootObject <em>Root Object</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getNbAssociationRefTo <em>Nb Association Ref To</em>}</li>
- *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getGenerator <em>Generator</em>}</li>
  * </ul>
  * </p>
@@ -82,15 +81,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	 * @ordered
 	 */
 	protected int nbAssociationRefTo = NB_ASSOCIATION_REF_TO_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see #getChildren()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DSGenChild> children;
 
 	/**
 	 * The cached value of the '{@link #getGenerator() <em>Generator</em>}' containment reference.
@@ -168,19 +158,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<DSGenChild> getChildren()
-	{
-		if (children == null)
-		{
-			children = new EObjectContainmentEList<DSGenChild>(DSGenChild.class, this, DataSampleGenPackage.DS_GEN_CLASS__CHILDREN);
-		}
-		return children;
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -244,8 +221,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	{
 		switch (featureID)
 		{
-		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
 		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
 			return basicSetGenerator(null, msgs);
 		}
@@ -265,8 +240,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 					rootObject));
 	}
 
-	
-
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
@@ -280,8 +253,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 			return isRootObject();
 		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
 			return getNbAssociationRefTo();
-		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-			return getChildren();
 		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
 			return getGenerator();
 		}
@@ -303,10 +274,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 			return;
 		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
 			setNbAssociationRefTo((Integer) newValue);
-			return;
-		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-			getChildren().clear();
-			getChildren().addAll((Collection<? extends DSGenChild>) newValue);
 			return;
 		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
 			setGenerator((EObjectGenerator) newValue);
@@ -330,9 +297,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
 			setNbAssociationRefTo(NB_ASSOCIATION_REF_TO_EDEFAULT);
 			return;
-		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-			getChildren().clear();
-			return;
 		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
 			setGenerator((EObjectGenerator) null);
 			return;
@@ -353,8 +317,6 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 			return rootObject != ROOT_OBJECT_EDEFAULT;
 		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
 			return nbAssociationRefTo != NB_ASSOCIATION_REF_TO_EDEFAULT;
-		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-			return children != null && !children.isEmpty();
 		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
 			return generator != null;
 		}

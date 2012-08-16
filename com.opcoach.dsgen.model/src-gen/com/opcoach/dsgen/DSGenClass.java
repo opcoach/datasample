@@ -18,7 +18,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link com.opcoach.dsgen.DSGenClass#isRootObject <em>Root Object</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenClass#getNbAssociationRefTo <em>Nb Association Ref To</em>}</li>
- *   <li>{@link com.opcoach.dsgen.DSGenClass#getChildren <em>Children</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenClass#getGenerator <em>Generator</em>}</li>
  * </ul>
  * </p>
@@ -88,22 +87,6 @@ public interface DSGenClass extends DSGenClassifier
 	 * @generated
 	 */
 	void setNbAssociationRefTo(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Children</b></em>' containment reference list.
-	 * The list contents are of type {@link com.opcoach.dsgen.DSGenChild}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Children</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Children</em>' containment reference list.
-	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenClass_Children()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<DSGenChild> getChildren();
 
 	/**
 	 * Returns the value of the '<em><b>Generator</b></em>' containment reference.

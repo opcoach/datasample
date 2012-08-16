@@ -66,7 +66,6 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 
 			addRootObjectPropertyDescriptor(object);
 			addNbAssociationRefToPropertyDescriptor(object);
-			addChildrenPropertyDescriptor(object);
 			addGeneratorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -102,21 +101,6 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 	}
 
 	/**
-	 * This adds a property descriptor for the Children feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addChildrenPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_DSGenClass_children_feature"), getString("_UI_DSGenClass_children_description"),
-				DataSampleGenPackage.Literals.DS_GEN_CLASS__CHILDREN, false, false, false, null,
-				getString("_UI_internalPropertyCategory"), null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Generator feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -129,37 +113,6 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 				getString("_UI_DSGenClass_generator_feature"),
 				getString("_UI_PropertyDescriptor_description", "_UI_DSGenClass_generator_feature", "_UI_DSGenClass_type"),
 				DataSampleGenPackage.Literals.DS_GEN_CLASS__GENERATOR, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(DataSampleGenPackage.Literals.DS_GEN_CLASS__CHILDREN);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -187,7 +140,7 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 		@SuppressWarnings("restriction")
 		String name = dsGenClass.getEcoreClass().getName();
 		String desc = dsGenClass.isRootObject() ? " is the Root Object " : "";
-		
+
 		return name + " " + desc;
 	}
 
@@ -208,9 +161,6 @@ public class DSGenClassItemProvider extends DSGenClassifierItemProvider implemen
 		case DataSampleGenPackage.DS_GEN_CLASS__ROOT_OBJECT:
 		case DataSampleGenPackage.DS_GEN_CLASS__NB_ASSOCIATION_REF_TO:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case DataSampleGenPackage.DS_GEN_CLASS__CHILDREN:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
 		super.notifyChanged(notification);

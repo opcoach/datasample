@@ -248,14 +248,6 @@ public class DataSampleGenSwitch<T> extends Switch<T>
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DataSampleGenPackage.DS_GEN_CHILD:
-		{
-			DSGenChild dsGenChild = (DSGenChild) theEObject;
-			T result = caseDSGenChild(dsGenChild);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -467,21 +459,6 @@ public class DataSampleGenSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseDSGenEnum(DSGenEnum object)
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>DS Gen Child</em>'.
-	 * <!-- begin-user-doc --> This implementation
-	 * returns null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>DS Gen Child</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDSGenChild(DSGenChild object)
 	{
 		return null;
 	}

@@ -203,7 +203,7 @@ public class ChildrenGeneratorImpl extends ValueGeneratorImpl<Collection<EObject
 	{
 		return generateChildren(getMaxNbChildrenToCreate());
 	}
-	
+
 	private int getMaxNbChildrenToCreate()
 	{
 		DSGenReference dsgenref = (DSGenReference) eContainer;
@@ -212,16 +212,16 @@ public class ChildrenGeneratorImpl extends ValueGeneratorImpl<Collection<EObject
 		{
 			upperBound = getMaxChildrenNumber();
 		}
-		
+
 		int result = upperBound;
 		if (isSetRandomSeed() && (upperBound > 1))
 		{
 			int lb = dsgenref.getEcoreFeature().getLowerBound();
-			result =  lb + getRandomizer().nextInt(upperBound-lb);
+			result = lb + getRandomizer().nextInt(upperBound - lb);
 		}
 		return result;
 	}
-	
+
 	private Collection<EObject> generateChildren(int nbChildren)
 	{
 
@@ -230,8 +230,8 @@ public class ChildrenGeneratorImpl extends ValueGeneratorImpl<Collection<EObject
 		Collection<EObject> result = new ArrayList<EObject>();
 		// This generator is set in a dsgen reference
 		DSGenReference dsgenref = (DSGenReference) eContainer;
-		System.out.println("¡¡¡¡¡¡¡ Create " + nbChildren + " children on field " + dsgenref.getEcoreFeature().getName() + " for class "
-				+ dsgenref.getDsgenClass().getEcoreClass().getName());
+		System.out.println("¡¡¡¡¡¡¡ Create " + nbChildren + " children on field " + dsgenref.getEcoreFeature().getName()
+				+ " for class " + dsgenref.getDsgenClass().getEcoreClass().getName());
 
 		DSGenClass targetClass = dsgenref.getTargetDSGenClass();
 		generator.setTargetDSGenClass(targetClass);
@@ -244,8 +244,5 @@ public class ChildrenGeneratorImpl extends ValueGeneratorImpl<Collection<EObject
 
 		return result;
 	}
-	
-	
-	
 
 } //ChildrenGeneratorImpl

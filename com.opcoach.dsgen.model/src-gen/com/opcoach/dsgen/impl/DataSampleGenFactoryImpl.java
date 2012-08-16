@@ -112,8 +112,6 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 			return createDSGenReference();
 		case DataSampleGenPackage.DS_GEN_ENUM:
 			return createDSGenEnum();
-		case DataSampleGenPackage.DS_GEN_CHILD:
-			return createDSGenChild();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -275,16 +273,6 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	{
 		DSGenEnumImpl dsGenEnum = new DSGenEnumImpl();
 		return dsGenEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DSGenChild createDSGenChild()
-	{
-		DSGenChildImpl dsGenChild = new DSGenChildImpl();
-		return dsGenChild;
 	}
 
 	/**

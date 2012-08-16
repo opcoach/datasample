@@ -39,24 +39,23 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public static final String copyright = "© OPCoach 2012";
 
 	/**
-	 * The default value of the '{@link #getMaxAssociationNumber() <em>Max Association Number</em>}' attribute. <!-- begin-user-doc
+	 * The default value of the '{@link #getMaxAssociationNumber() <em>Max Association Number</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @see #getMaxAssociationNumber()
 	 * @generated
 	 * @ordered
 	 */
 	protected static final int MAX_ASSOCIATION_NUMBER_EDEFAULT = 50;
 	/**
-	 * The cached value of the '{@link #getMaxAssociationNumber() <em>Max Association Number</em>}' attribute. <!-- begin-user-doc
+	 * The cached value of the '{@link #getMaxAssociationNumber() <em>Max Association Number</em>}' attribute.
+	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
 	 * @see #getMaxAssociationNumber()
 	 * @generated
 	 * @ordered
@@ -65,7 +64,6 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected MultipleAssociationGeneratorImpl()
@@ -75,7 +73,6 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -86,7 +83,6 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public int getMaxAssociationNumber()
@@ -96,7 +92,6 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setMaxAssociationNumber(int newMaxAssociationNumber)
@@ -111,7 +106,6 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -127,7 +121,6 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -144,7 +137,6 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -161,7 +153,6 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,7 +168,6 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -207,10 +197,10 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 
 	private Collection<EObject> generateAssociation(int nbAssociation)
 	{
-		
+
 		ReferenceGenerator<EObject> generator = GeneratorFactory.eINSTANCE.createReferenceGenerator();
 		if (isSetRandomSeed())
-		    generator.setRandomSeed(getRandomSeed());
+			generator.setRandomSeed(getRandomSeed());
 
 		Collection<EObject> result = new ArrayList<EObject>();
 		// This generator is set in a dsgen reference
@@ -228,9 +218,9 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 		}
 
 		return result;
-	
+
 	}
-	
+
 	private int getMaxNbAssociationToCreate()
 	{
 		DSGenReference dsgenref = (DSGenReference) eContainer;
@@ -239,12 +229,12 @@ public class MultipleAssociationGeneratorImpl extends ValueGeneratorImpl<Collect
 		{
 			upperBound = getMaxAssociationNumber();
 		}
-		
+
 		int result = upperBound;
 		if (isSetRandomSeed() && (upperBound > 1))
 		{
 			int lb = dsgenref.getEcoreFeature().getLowerBound();
-			result =  lb + getRandomizer().nextInt(upperBound-lb);
+			result = lb + getRandomizer().nextInt(upperBound - lb);
 		}
 		return result;
 	}
