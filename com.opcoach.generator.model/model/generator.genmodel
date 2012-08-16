@@ -15,9 +15,9 @@
       <genTypeParameters ecoreTypeParameter="generator.ecore#_wGyv0BQDEd-QiqGdp3e77Q"/>
       <genFeatures createChild="false" propertyCategory="Bad Values" propertyDescription="Percent of bad values to be generated"
           ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/badValueProportion"/>
-      <genFeatures notify="false" children="true" createChild="true" propertyCategory="Bad Values"
-          propertyDescription="A specific value generator to use for bad values" propertySortChoices="true"
-          ecoreFeature="ecore:EReference generator.ecore#//ValueGenerator/badValueGenerator"/>
+      <genFeatures notify="false" createChild="false" propertyCategory="Bad Values"
+          propertyDescription="A specific value generator to use for bad values (must be bound to a bad generators defined on model)"
+          propertySortChoices="true" ecoreFeature="ecore:EReference generator.ecore#//ValueGenerator/badValueGenerator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/lastGeneratedValue"/>
       <genFeatures createChild="false" propertyCategory="Random" propertyDescription="In case of random generator, the seed to use (-1 means no random)"
           ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/randomSeed"/>

@@ -66,7 +66,7 @@ public interface ValueGenerator<T> extends EObject
 	void setBadValueProportion(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bad Value Generator</em>' reference isn't clear,
@@ -78,19 +78,19 @@ public interface ValueGenerator<T> extends EObject
 	 * It can ben a NullValueGenerator, or any other generator which could generate an out of bound value.
 	 * This generator must be set if the badValueProportion is defined (> 0)
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Bad Value Generator</em>' containment reference.
+	 * @return the value of the '<em>Bad Value Generator</em>' reference.
 	 * @see #setBadValueGenerator(ValueGenerator)
 	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_BadValueGenerator()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	ValueGenerator<T> getBadValueGenerator();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getBadValueGenerator <em>Bad Value Generator</em>}' containment reference.
+	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getBadValueGenerator <em>Bad Value Generator</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bad Value Generator</em>' containment reference.
+	 * @param value the new value of the '<em>Bad Value Generator</em>' reference.
 	 * @see #getBadValueGenerator()
 	 * @generated
 	 */

@@ -268,39 +268,6 @@ public class ValueGeneratorItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
 	 * This returns ValueGenerator.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -365,66 +332,6 @@ public class ValueGeneratorItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 GeneratorFactory.eINSTANCE.createReferenceGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createBooleanGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createDateGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createDoubleGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createFloatGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createIDGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createIntGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createLongGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createNullValueGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createStringGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createTrueGenerator()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(GeneratorPackage.Literals.VALUE_GENERATOR__BAD_VALUE_GENERATOR,
-				 BasicFactory.eINSTANCE.createFalseGenerator()));
 	}
 
 	/**

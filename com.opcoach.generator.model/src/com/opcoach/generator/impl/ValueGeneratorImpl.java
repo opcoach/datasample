@@ -61,7 +61,7 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	protected int badValueProportion = BAD_VALUE_PROPORTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBadValueGenerator() <em>Bad Value Generator</em>}' containment reference.
+	 * The cached value of the '{@link #getBadValueGenerator() <em>Bad Value Generator</em>}' reference.
 	 * <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 * @see #getBadValueGenerator()
@@ -243,7 +243,28 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	public ValueGenerator<T> getBadValueGenerator()
+	{
+		if (badValueGenerator != null && badValueGenerator.eIsProxy())
+		{
+			InternalEObject oldBadValueGenerator = (InternalEObject)badValueGenerator;
+			badValueGenerator = (ValueGenerator<T>)eResolveProxy(oldBadValueGenerator);
+			if (badValueGenerator != oldBadValueGenerator)
+			{
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR, oldBadValueGenerator, badValueGenerator));
+			}
+		}
+		return badValueGenerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ValueGenerator<T> basicGetBadValueGenerator()
 	{
 		return badValueGenerator;
 	}
@@ -252,36 +273,12 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBadValueGenerator(ValueGenerator<T> newBadValueGenerator, NotificationChain msgs)
+	public void setBadValueGenerator(ValueGenerator<T> newBadValueGenerator)
 	{
 		ValueGenerator<T> oldBadValueGenerator = badValueGenerator;
 		badValueGenerator = newBadValueGenerator;
 		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR, oldBadValueGenerator, newBadValueGenerator);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBadValueGenerator(ValueGenerator<T> newBadValueGenerator)
-	{
-		if (newBadValueGenerator != badValueGenerator)
-		{
-			NotificationChain msgs = null;
-			if (badValueGenerator != null)
-				msgs = ((InternalEObject)badValueGenerator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR, null, msgs);
-			if (newBadValueGenerator != null)
-				msgs = ((InternalEObject)newBadValueGenerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR, null, msgs);
-			msgs = basicSetBadValueGenerator(newBadValueGenerator, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR, newBadValueGenerator, newBadValueGenerator));
+			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR, oldBadValueGenerator, badValueGenerator));
 	}
 
 	/**
@@ -430,8 +427,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		if (badValueProportion == 0)
 			return false;
 
-		int val = badValueRandomizer.nextInt(100 - badValueProportion);
-		return (val == 0);
+		int val = badValueRandomizer.nextInt(100);
+		return (val <= badValueProportion);
 	}
 
 	/**
@@ -475,7 +472,8 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 			case GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_PROPORTION:
 				return getBadValueProportion();
 			case GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR:
-				return getBadValueGenerator();
+				if (resolve) return getBadValueGenerator();
+				return basicGetBadValueGenerator();
 			case GeneratorPackage.VALUE_GENERATOR__LAST_GENERATED_VALUE:
 				return getLastGeneratedValue();
 			case GeneratorPackage.VALUE_GENERATOR__RANDOM_SEED:
@@ -684,21 +682,6 @@ public abstract class ValueGeneratorImpl<T> extends EObjectImpl implements Value
 		locale = newLocale;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, GeneratorPackage.VALUE_GENERATOR__LOCALE, oldLocale, locale));
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-	{
-		switch (featureID)
-		{
-			case GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_GENERATOR:
-				return basicSetBadValueGenerator(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 } // ValueGeneratorImpl

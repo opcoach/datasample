@@ -82,7 +82,7 @@ public interface BasicPackage extends EPackage
 	int BOOLEAN_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -174,7 +174,7 @@ public interface BasicPackage extends EPackage
 	int DATE_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.RANGE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -301,7 +301,7 @@ public interface BasicPackage extends EPackage
 	int DOUBLE_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.RANGE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -419,7 +419,7 @@ public interface BasicPackage extends EPackage
 	int FLOAT_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.RANGE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -538,7 +538,7 @@ public interface BasicPackage extends EPackage
 	int ID_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -647,7 +647,7 @@ public interface BasicPackage extends EPackage
 	int INT_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.RANGE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -765,7 +765,7 @@ public interface BasicPackage extends EPackage
 	int LONG_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.RANGE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -883,7 +883,7 @@ public interface BasicPackage extends EPackage
 	int NULL_VALUE_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.VALUE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -974,7 +974,7 @@ public interface BasicPackage extends EPackage
 	int STRING_GENERATOR__BAD_VALUE_PROPORTION = GeneratorPackage.REFERENCE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1102,7 +1102,7 @@ public interface BasicPackage extends EPackage
 	int TRUE_GENERATOR__BAD_VALUE_PROPORTION = BOOLEAN_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1193,7 +1193,7 @@ public interface BasicPackage extends EPackage
 	int FALSE_GENERATOR__BAD_VALUE_PROPORTION = BOOLEAN_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

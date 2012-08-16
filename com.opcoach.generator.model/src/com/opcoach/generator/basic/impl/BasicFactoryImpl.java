@@ -6,6 +6,7 @@
  */
 package com.opcoach.generator.basic.impl;
 
+import com.opcoach.generator.basic.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;

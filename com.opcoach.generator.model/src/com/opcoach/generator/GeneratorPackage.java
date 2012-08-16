@@ -81,7 +81,7 @@ public interface GeneratorPackage extends EPackage
 	int VALUE_GENERATOR__BAD_VALUE_PROPORTION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -172,7 +172,7 @@ public interface GeneratorPackage extends EPackage
 	int RANGE_GENERATOR__BAD_VALUE_PROPORTION = VALUE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -291,7 +291,7 @@ public interface GeneratorPackage extends EPackage
 	int REFERENCE_GENERATOR__BAD_VALUE_PROPORTION = VALUE_GENERATOR__BAD_VALUE_PROPORTION;
 
 	/**
-	 * The feature id for the '<em><b>Bad Value Generator</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -424,10 +424,10 @@ public interface GeneratorPackage extends EPackage
 	EAttribute getValueGenerator_BadValueProportion();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.opcoach.generator.ValueGenerator#getBadValueGenerator <em>Bad Value Generator</em>}'.
+	 * Returns the meta object for the reference '{@link com.opcoach.generator.ValueGenerator#getBadValueGenerator <em>Bad Value Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Bad Value Generator</em>'.
+	 * @return the meta object for the reference '<em>Bad Value Generator</em>'.
 	 * @see com.opcoach.generator.ValueGenerator#getBadValueGenerator()
 	 * @see #getValueGenerator()
 	 * @generated
@@ -639,7 +639,7 @@ public interface GeneratorPackage extends EPackage
 		EAttribute VALUE_GENERATOR__BAD_VALUE_PROPORTION = eINSTANCE.getValueGenerator_BadValueProportion();
 
 		/**
-		 * The meta object literal for the '<em><b>Bad Value Generator</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Bad Value Generator</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
