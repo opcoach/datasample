@@ -248,6 +248,14 @@ public class DataSampleGenSwitch<T> extends Switch<T>
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case DataSampleGenPackage.BAD_VALUE_GENERATOR_REGISTRY:
+		{
+			BadValueGeneratorRegistry badValueGeneratorRegistry = (BadValueGeneratorRegistry) theEObject;
+			T result = caseBadValueGeneratorRegistry(badValueGeneratorRegistry);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -459,6 +467,22 @@ public class DataSampleGenSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseDSGenEnum(DSGenEnum object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bad Value Generator Registry</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bad Value Generator Registry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBadValueGeneratorRegistry(BadValueGeneratorRegistry object)
 	{
 		return null;
 	}

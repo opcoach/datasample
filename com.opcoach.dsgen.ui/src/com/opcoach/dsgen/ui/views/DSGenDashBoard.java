@@ -43,7 +43,7 @@ import com.opcoach.dsgen.DSGenAttribute;
 import com.opcoach.dsgen.DSGenPackage;
 import com.opcoach.dsgen.DSGenReference;
 import com.opcoach.dsgen.DataSampleGenPackage;
-import com.opcoach.dsgen.helpers.Ecore2DSGenFactory;
+import com.opcoach.dsgen.helpers.Ecore2DSGen;
 import com.opcoach.dsgen.ui.DSGenUIActivator;
 import com.opcoach.generator.GeneratorPackage;
 import com.opcoach.generator.ValueGenerator;
@@ -132,7 +132,7 @@ public class DSGenDashBoard extends DSGenDashboardFrame implements ISelectionLis
 			e.printStackTrace();
 		}
 
-		Ecore2DSGenFactory factory = new Ecore2DSGenFactory();
+		Ecore2DSGen factory = new Ecore2DSGen();
 		DSGenPackage dpack = factory.createDSGenPackage(u);
 
 		Collection<DSGenPackage> cols = new ArrayList<DSGenPackage>();

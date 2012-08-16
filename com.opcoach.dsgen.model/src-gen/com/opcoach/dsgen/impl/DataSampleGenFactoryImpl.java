@@ -112,6 +112,8 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 			return createDSGenReference();
 		case DataSampleGenPackage.DS_GEN_ENUM:
 			return createDSGenEnum();
+		case DataSampleGenPackage.BAD_VALUE_GENERATOR_REGISTRY:
+			return createBadValueGeneratorRegistry();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -273,6 +275,17 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 	{
 		DSGenEnumImpl dsGenEnum = new DSGenEnumImpl();
 		return dsGenEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BadValueGeneratorRegistry createBadValueGeneratorRegistry()
+	{
+		BadValueGeneratorRegistryImpl badValueGeneratorRegistry = new BadValueGeneratorRegistryImpl();
+		return badValueGeneratorRegistry;
 	}
 
 	/**

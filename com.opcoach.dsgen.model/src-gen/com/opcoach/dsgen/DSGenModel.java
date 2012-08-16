@@ -6,6 +6,7 @@
  */
 package com.opcoach.dsgen;
 
+import com.opcoach.generator.ValueGenerator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link com.opcoach.dsgen.DSGenModel#getRandomSeed <em>Random Seed</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenModel#getName <em>Name</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenModel#getLanguage <em>Language</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.DSGenModel#getBadGenerators <em>Bad Generators</em>}</li>
  * </ul>
  * </p>
  *
@@ -130,6 +132,32 @@ public interface DSGenModel extends DSGenBase
 	 * @generated
 	 */
 	void setLanguage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Bad Generators</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bad Generators</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bad Generators</em>' containment reference.
+	 * @see #setBadGenerators(BadValueGeneratorRegistry)
+	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenModel_BadGenerators()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	BadValueGeneratorRegistry getBadGenerators();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenModel#getBadGenerators <em>Bad Generators</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bad Generators</em>' containment reference.
+	 * @see #getBadGenerators()
+	 * @generated
+	 */
+	void setBadGenerators(BadValueGeneratorRegistry value);
 
 	/**
 	 * <!-- begin-user-doc -->

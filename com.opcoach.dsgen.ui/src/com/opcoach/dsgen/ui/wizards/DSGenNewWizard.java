@@ -24,7 +24,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
 import com.opcoach.dsgen.helpers.DSGenConstants;
-import com.opcoach.dsgen.helpers.Ecore2DSGenFactory;
+import com.opcoach.dsgen.helpers.Ecore2DSGen;
 import com.opcoach.dsgen.ui.DSGenUIActivator;
 
 
@@ -198,7 +198,7 @@ public class DSGenNewWizard extends Wizard implements INewWizard
 	{
 		boolean result = true;
  
-		Ecore2DSGenFactory factory = new Ecore2DSGenFactory();
+		Ecore2DSGen factory = new Ecore2DSGen();
 		try
 		{
 			factory.createDSGenFile(modelFile, dsgenModelContainerPath + "/" + dsgenModelFileName);

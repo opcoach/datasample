@@ -6,6 +6,7 @@
  */
 package com.opcoach.dsgen.impl;
 
+import com.opcoach.dsgen.BadValueGeneratorRegistry;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -22,6 +23,7 @@ import com.opcoach.dsgen.DSGenClassifier;
 import com.opcoach.dsgen.DSGenModel;
 import com.opcoach.dsgen.DSGenPackage;
 import com.opcoach.dsgen.DataSampleGenPackage;
+import com.opcoach.generator.ValueGenerator;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -33,6 +35,7 @@ import com.opcoach.dsgen.DataSampleGenPackage;
  *   <li>{@link com.opcoach.dsgen.impl.DSGenModelImpl#getRandomSeed <em>Random Seed</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenModelImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenModelImpl#getLanguage <em>Language</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.impl.DSGenModelImpl#getBadGenerators <em>Bad Generators</em>}</li>
  * </ul>
  * </p>
  *
@@ -110,6 +113,16 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	 * @ordered
 	 */
 	protected String language = LANGUAGE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBadGenerators() <em>Bad Generators</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBadGenerators()
+	 * @generated
+	 * @ordered
+	 */
+	protected BadValueGeneratorRegistry badGenerators;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -218,6 +231,61 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BadValueGeneratorRegistry getBadGenerators()
+	{
+		return badGenerators;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBadGenerators(BadValueGeneratorRegistry newBadGenerators, NotificationChain msgs)
+	{
+		BadValueGeneratorRegistry oldBadGenerators = badGenerators;
+		badGenerators = newBadGenerators;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS, oldBadGenerators, newBadGenerators);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBadGenerators(BadValueGeneratorRegistry newBadGenerators)
+	{
+		if (newBadGenerators != badGenerators)
+		{
+			NotificationChain msgs = null;
+			if (badGenerators != null)
+				msgs = ((InternalEObject) badGenerators).eInverseRemove(this, EOPPOSITE_FEATURE_BASE
+						- DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS, null, msgs);
+			if (newBadGenerators != null)
+				msgs = ((InternalEObject) newBadGenerators).eInverseAdd(this, EOPPOSITE_FEATURE_BASE
+						- DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS, null, msgs);
+			msgs = basicSetBadGenerators(newBadGenerators, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS,
+					newBadGenerators, newBadGenerators));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public DSGenClass getRoot()
@@ -268,6 +336,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 		{
 		case DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES:
 			return ((InternalEList<?>) getDsgenPackages()).basicRemove(otherEnd, msgs);
+		case DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS:
+			return basicSetBadGenerators(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -289,6 +359,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 			return getName();
 		case DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE:
 			return getLanguage();
+		case DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS:
+			return getBadGenerators();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -316,6 +388,9 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 		case DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE:
 			setLanguage((String) newValue);
 			return;
+		case DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS:
+			setBadGenerators((BadValueGeneratorRegistry) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -341,6 +416,9 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 		case DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE:
 			setLanguage(LANGUAGE_EDEFAULT);
 			return;
+		case DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS:
+			setBadGenerators((BadValueGeneratorRegistry) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -362,6 +440,8 @@ public class DSGenModelImpl extends DSGenBaseImpl implements DSGenModel
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case DataSampleGenPackage.DS_GEN_MODEL__LANGUAGE:
 			return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
+		case DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS:
+			return badGenerators != null;
 		}
 		return super.eIsSet(featureID);
 	}

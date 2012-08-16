@@ -8,6 +8,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="randomSeed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="badGenerators" lowerBound="1"
+        eType="#//BadValueGeneratorRegistry" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenPackage" eSuperTypes="#//DSGenBase">
     <eAnnotations source="dsg.name">
@@ -72,6 +74,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="DSGenEnum" eSuperTypes="#//DSGenDataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ecoreEnum" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BadValueGeneratorRegistry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generators" upperBound="-1"
+        containment="true">
+      <eGenericType eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+        <eTypeArguments/>
+      </eGenericType>
+    </eStructuralFeatures>
   </eClassifiers>
   <eSubpackages name="generator" nsURI="http://www.opcoach.com/dsgen/generator/1.0"
       nsPrefix="dsgenerator">

@@ -129,6 +129,15 @@ public interface DataSampleGenFactory extends EFactory
 	DSGenEnum createDSGenEnum();
 
 	/**
+	 * Returns a new object of class '<em>Bad Value Generator Registry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bad Value Generator Registry</em>'.
+	 * @generated
+	 */
+	BadValueGeneratorRegistry createBadValueGeneratorRegistry();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

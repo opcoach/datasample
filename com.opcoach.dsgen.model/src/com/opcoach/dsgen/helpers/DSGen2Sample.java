@@ -23,7 +23,7 @@ import com.opcoach.dsgen.generator.EObjectGenerator;
 /**
  * Handler to generate the dsgen model from ecore model
  */
-public class DSGen2SampleFactory implements DSGenConstants
+public class DSGen2Sample implements DSGenConstants
 {
 
 	/** The created sample */

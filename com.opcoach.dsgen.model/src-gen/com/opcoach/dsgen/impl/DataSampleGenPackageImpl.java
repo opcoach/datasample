@@ -6,6 +6,7 @@
  */
 package com.opcoach.dsgen.impl;
 
+import com.opcoach.dsgen.BadValueGeneratorRegistry;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -137,6 +138,13 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	 * @generated
 	 */
 	private EClass dsGenEnumEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass badValueGeneratorRegistryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -291,6 +299,16 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	public EAttribute getDSGenModel_Language()
 	{
 		return (EAttribute) dsGenModelEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDSGenModel_BadGenerators()
+	{
+		return (EReference) dsGenModelEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -567,6 +585,26 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBadValueGeneratorRegistry()
+	{
+		return badValueGeneratorRegistryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBadValueGeneratorRegistry_Generators()
+	{
+		return (EReference) badValueGeneratorRegistryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -645,6 +683,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		createEAttribute(dsGenModelEClass, DS_GEN_MODEL__RANDOM_SEED);
 		createEAttribute(dsGenModelEClass, DS_GEN_MODEL__NAME);
 		createEAttribute(dsGenModelEClass, DS_GEN_MODEL__LANGUAGE);
+		createEReference(dsGenModelEClass, DS_GEN_MODEL__BAD_GENERATORS);
 
 		dsGenPackageEClass = createEClass(DS_GEN_PACKAGE);
 		createEReference(dsGenPackageEClass, DS_GEN_PACKAGE__ECORE_PACKAGE);
@@ -688,6 +727,9 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 
 		dsGenEnumEClass = createEClass(DS_GEN_ENUM);
 		createEReference(dsGenEnumEClass, DS_GEN_ENUM__ECORE_ENUM);
+
+		badValueGeneratorRegistryEClass = createEClass(BAD_VALUE_GENERATOR_REGISTRY);
+		createEReference(badValueGeneratorRegistryEClass, BAD_VALUE_GENERATOR_REGISTRY__GENERATORS);
 
 		// Create enums
 		dsGenRuntimeVersionEEnum = createEEnum(DS_GEN_RUNTIME_VERSION);
@@ -760,6 +802,9 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDSGenModel_Language(), ecorePackage.getEString(), "language", null, 0, 1, DSGenModel.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDSGenModel_BadGenerators(), this.getBadValueGeneratorRegistry(), null, "badGenerators", null, 1, 1,
+				DSGenModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(dsGenModelEClass, this.getDSGenClass(), "getRoot", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -848,6 +893,15 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		initEReference(getDSGenEnum_EcoreEnum(), theEcorePackage.getEEnum(), null, "ecoreEnum", null, 1, 1, DSGenEnum.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(badValueGeneratorRegistryEClass, BadValueGeneratorRegistry.class, "BadValueGeneratorRegistry", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		g1 = createEGenericType(theGeneratorPackage.getValueGenerator());
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		initEReference(getBadValueGeneratorRegistry_Generators(), g1, null, "generators", null, 0, -1,
+				BadValueGeneratorRegistry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dsGenRuntimeVersionEEnum, DSGenRuntimeVersion.class, "DSGenRuntimeVersion");

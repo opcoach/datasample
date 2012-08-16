@@ -1,16 +1,19 @@
-// ------------------------------------------------
-// OPCoach Training Projects
-// © OPCoach 2010 http://www.opcoach.com
-// ------------------------------------------------
-
 package com.opcoach.dsgen.helpers;
 
+import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -19,13 +22,19 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import com.opcoach.dsgen.BadValueGeneratorRegistry;
 import com.opcoach.dsgen.DSGenAttribute;
 import com.opcoach.dsgen.DSGenClass;
 import com.opcoach.dsgen.DSGenClassifier;
 import com.opcoach.dsgen.DSGenDataType;
 import com.opcoach.dsgen.DSGenEnum;
 import com.opcoach.dsgen.DSGenFeature;
+import com.opcoach.dsgen.DSGenModel;
 import com.opcoach.dsgen.DSGenPackage;
 import com.opcoach.dsgen.DSGenReference;
 import com.opcoach.dsgen.DataSampleGenFactory;
@@ -34,18 +43,95 @@ import com.opcoach.dsgen.generator.DSGenGeneratorFactory;
 import com.opcoach.dsgen.generator.MultipleAssociationGenerator;
 import com.opcoach.generator.ValueGenerator;
 import com.opcoach.generator.basic.BasicFactory;
+import com.opcoach.generator.basic.IntGenerator;
 
 /**
- * An helper class to manage Data Sample Generation models. Will probably be moved in dsgenmodel
- * 
- * @author olivier
+ * Handler to generate the dsgen model from ecore model
  */
-public class DSGenHelper
+public class Ecore2DSGen implements DSGenConstants
 {
-	
-	public static int MAX_CHILDREN = 50;
-	public static int MAX_ASSOCIATION = 10;
-	
+
+	private ResourceSet rset = null;
+
+	public void createDSGenFile(IResource ecoreSource, String dsgenPath) throws IOException
+	{
+		DSGenModel model = DataSampleGenFactory.eINSTANCE.createDSGenModel();
+		long seed = System.currentTimeMillis();
+		model.setName(ecoreSource.getName().substring(0, ecoreSource.getName().indexOf(DSGenConstants.ECORE_FILE_EXT) - 1));
+		model.setRandomSeed(seed);
+		model.setLanguage("en"); // the language to generate data
+		initialiazeBadValueGenerators(model);
+
+		DSGenPackage genPack = createDSGenPackage(ecoreSource.getLocationURI());
+		model.getDsgenPackages().add(genPack);
+
+		String dsgenName = ecoreSource.getProject().getLocation() + "/.." + dsgenPath;
+
+		// Store the dsgen model in dsgenname file
+		rset.getResourceFactoryRegistry().getExtensionToFactoryMap().put(DSGEN_FILE_EXT, new XMIResourceFactoryImpl());
+
+		Resource res2 = rset.createResource(org.eclipse.emf.common.util.URI.createFileURI(dsgenName));
+		res2.getContents().add(model);
+		try
+		{
+			final Map<Object, Object> saveOptions = new HashMap<Object, Object>();
+			saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
+			res2.save(saveOptions);
+			System.out.println("Dsgen model saved in : " + res2.getURI());
+
+			// refresh the folder containing the new generated file
+			IWorkspaceRoot wroot = ecoreSource.getWorkspace().getRoot();
+			Path path = new Path(ecoreSource.getProject().getName() + "/.." + dsgenPath);
+			IFile f = wroot.getFile(path);
+			IProject project = f.getProject();
+			project.refreshLocal(IResource.DEPTH_INFINITE, null);
+
+		} catch (IOException e)
+		{
+			System.out.println("---------- UNABLE TO STORE DSGEN MODEL in " + dsgenName);
+			e.printStackTrace();
+			throw new IOException("Unable to create dsgen model in  : " + dsgenName, e);
+		} catch (CoreException e)
+		{
+			e.printStackTrace();
+			System.out.println("---------- UNABLE TO REFRESH FOLDER " + dsgenName);
+
+		}
+
+	}
+
+	protected void initialiazeBadValueGenerators(DSGenModel model)
+	{
+		BadValueGeneratorRegistry bvgr = DataSampleGenFactory.eINSTANCE.createBadValueGeneratorRegistry();
+		bvgr.getGenerators().add(BasicFactory.eINSTANCE.createNullValueGenerator("nullValueBadGenerator"));
+		bvgr.getGenerators().add(BasicFactory.eINSTANCE.createTrueGenerator("trueValueBadGenerator"));
+		bvgr.getGenerators().add(BasicFactory.eINSTANCE.createFalseGenerator("falseValueBadGenerator"));
+		IntGenerator intgen = BasicFactory.eINSTANCE.createIntGenerator("zeroValueBadGenerator");
+		intgen.setLow(0);
+		intgen.setHigh(0);
+		intgen.setStep(0);
+		bvgr.getGenerators().add(intgen);
+		model.setBadGenerators(bvgr);
+	}
+
+	/**
+	 * the command has been executed, so extract extract the needed information from the application context.
+	 */
+	public DSGenPackage createDSGenPackage(URI ecoreSourceURI)
+	{
+
+		// Create a new ResourceSet to forget previous calls
+		rset = new ResourceSetImpl();
+		rset.getResourceFactoryRegistry().getExtensionToFactoryMap()
+				.put(DSGenConstants.ECORE_FILE_EXT, new XMIResourceFactoryImpl());
+
+		// Resource res = rset.getResource(URI.createFileURI(ecoreSource.getLocation().toString()), true);
+		Resource res = rset.getResource(org.eclipse.emf.common.util.URI.createURI(ecoreSourceURI.toString()), true);
+		EPackage rootPackage = (EPackage) res.getContents().get(0);
+		return createDSGenPackage(rootPackage);
+
+	}
+
 	private static BasicFactory generatorFactory = BasicFactory.eINSTANCE;
 
 	private static Map<EReference, DSGenReference> refCache = new HashMap<EReference, DSGenReference>();
@@ -57,7 +143,7 @@ public class DSGenHelper
 	 *            the initial package used to create
 	 * @return a datasample generation package
 	 */
-	public static DSGenPackage createDSGenPackage(EPackage rootPackage)
+	public DSGenPackage createDSGenPackage(EPackage rootPackage)
 	{
 		// Intermediate array list of dsgen class that will be sorted before
 		// added in package
@@ -112,10 +198,7 @@ public class DSGenHelper
 			DSGenClass targetDSGenClass = searchDSGenClass(parent.getDsgenPackage(), targetName);
 			ref.setTargetDSGenClass(targetDSGenClass);
 		}
-		// Initialize children field
-		/*
-		 * for (DSGenClassifier dsc : classes) { if (dsc instanceof DSGenClass) { initChildren((DSGenClass) dsc); } }
-		 */
+		
 
 		return dsPack;
 	}
@@ -128,7 +211,7 @@ public class DSGenHelper
 	 *            : the list of other EClasses to loop on
 	 * @return nothing (init directly the nbAssociationRefTo field in dsc)
 	 */
-	private static void computeNbAssociationReferencesTo(DSGenClass dsc, ArrayList<DSGenClassifier> classes)
+	private void computeNbAssociationReferencesTo(DSGenClass dsc, ArrayList<DSGenClassifier> classes)
 	{
 
 		EClass dsEcoreClass = dsc.getEcoreClass();
@@ -165,7 +248,7 @@ public class DSGenHelper
 	 *            the initial class used to create
 	 * @return a datasample generation class
 	 */
-	public static DSGenClass createDSGenClass(EClass rootClass)
+	public DSGenClass createDSGenClass(EClass rootClass)
 	{
 		DSGenClass dscl = DataSampleGenFactory.eINSTANCE.createDSGenClass();
 		dscl.setEcoreClass((EClass) rootClass);
@@ -193,11 +276,9 @@ public class DSGenHelper
 		return dscl;
 	}
 
-	
-
 	private static Map<String, DSGenClass> genClassMap = null;
 
-	public static DSGenClass searchDSGenClass(DSGenPackage pack, String name)
+	private DSGenClass searchDSGenClass(DSGenPackage pack, String name)
 	{
 		if (genClassMap == null)
 		{
@@ -220,7 +301,7 @@ public class DSGenHelper
 	 *            the initial enum used to create
 	 * @return a datasample generation class
 	 */
-	public static DSGenEnum createDSGenEnum(EEnum rootEnum)
+	public DSGenEnum createDSGenEnum(EEnum rootEnum)
 	{
 		DataSampleGenFactory factory = DataSampleGenFactory.eINSTANCE;
 
@@ -237,7 +318,7 @@ public class DSGenHelper
 	 *            the initial dataType used to create
 	 * @return a datasample generation class
 	 */
-	public static DSGenDataType createDSGenDataType(EDataType rootDataType)
+	public DSGenDataType createDSGenDataType(EDataType rootDataType)
 	{
 		DataSampleGenFactory factory = DataSampleGenFactory.eINSTANCE;
 
@@ -254,7 +335,7 @@ public class DSGenHelper
 	 *            the initial Attribute used to create
 	 * @return a datasample generation class
 	 */
-	public static DSGenAttribute createDSGenAttribute(EAttribute rootAttr)
+	public DSGenAttribute createDSGenAttribute(EAttribute rootAttr)
 	{
 		DataSampleGenFactory factory = DataSampleGenFactory.eINSTANCE;
 
@@ -281,7 +362,7 @@ public class DSGenHelper
 	 *            the initial Attribute used to create
 	 * @return a datasample generation class
 	 */
-	public static DSGenReference createDSGenReference(DSGenClass parentClass, EReference rootRef)
+	public DSGenReference createDSGenReference(DSGenClass parentClass, EReference rootRef)
 	{
 		if (isOpposite(rootRef))
 			return null;
@@ -301,7 +382,7 @@ public class DSGenHelper
 		return result;
 	}
 
-	private static ValueGenerator<?> getGeneratorForReference(EReference rootRef)
+	ValueGenerator<?> getGeneratorForReference(EReference rootRef)
 	{
 		if (isOpposite(rootRef))
 			return null;
@@ -317,7 +398,7 @@ public class DSGenHelper
 				// Set random mode only for low level object (for root object let max children)
 				if (rootRef.eContainer().eContainer() != null)
 				{
-				   childGen.setRandomSeed(10L);
+					childGen.setRandomSeed(10L);
 				}
 				refGen = childGen;
 			} else
@@ -341,7 +422,7 @@ public class DSGenHelper
 				refGen = DSGenGeneratorFactory.eINSTANCE.createSingleAssociationGenerator();
 			}
 		}
-		
+
 		String genID = rootRef.getEContainingClass().getName() + "." + rootRef.getName();
 		refGen.setID(genID);
 		refGen.setType(rootRef.getEReferenceType().getInstanceClass());
@@ -360,8 +441,10 @@ public class DSGenHelper
 	private static final String DOUBLE_TYPE = "EDouble";
 	private static final String DOUBLE_OBJECT_TYPE = "EDoubleObject";
 	private static final String DATE_TYPE = "EDate";
+	private static final String BOOLEAN_TYPE = "EBoolean";
+	private static final String BOOLEAN_OBJECT_TYPE = "EBooleanObject";
 
-	private static ValueGenerator<?> getGeneratorFromType(EDataType dt)
+	protected ValueGenerator<?> getGeneratorFromType(EDataType dt)
 	{
 		String typeName = dt.getName();
 		ValueGenerator<?> result = null;
@@ -389,17 +472,21 @@ public class DSGenHelper
 		{
 			result = generatorFactory.createDoubleGenerator();
 
+		} else if (BOOLEAN_TYPE.equals(typeName) || BOOLEAN_OBJECT_TYPE.equals(typeName))
+		{
+			result = generatorFactory.createBooleanGenerator();
+
 		}
 		return result;
 
 	}
 
-	public static boolean isContainment(EStructuralFeature sf)
+	boolean isContainment(EStructuralFeature sf)
 	{
 		return ((sf instanceof EReference) && ((EReference) sf).isContainment());
 	}
 
-	public static boolean isMultipleRelation(EStructuralFeature sf)
+	boolean isMultipleRelation(EStructuralFeature sf)
 	{
 		if (!(sf instanceof EReference))
 			return false;
@@ -412,7 +499,7 @@ public class DSGenHelper
 		return val;
 	}
 
-	public static boolean isOpposite(EStructuralFeature sf)
+	boolean isOpposite(EStructuralFeature sf)
 	{
 		if (sf instanceof EAttribute)
 			return false;

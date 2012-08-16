@@ -20,6 +20,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenModel/randomSeed"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenModel/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenModel/language"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          propertyDescription="A list of generators to use for bad value generation."
+          ecoreFeature="ecore:EReference dataSample.ecore#//DSGenModel/badGenerators"/>
       <genOperations ecoreOperation="dataSample.ecore#//DSGenModel/getRoot"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenPackage">
@@ -62,6 +65,9 @@
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenEnum">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenEnum/ecoreEnum"/>
+    </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//BadValueGeneratorRegistry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//BadValueGeneratorRegistry/generators"/>
     </genClasses>
     <nestedGenPackages prefix="DSGenGenerator" basePackage="com.opcoach.dsgen" disposableProviderFactory="true"
         ecorePackage="dataSample.ecore#//generator">

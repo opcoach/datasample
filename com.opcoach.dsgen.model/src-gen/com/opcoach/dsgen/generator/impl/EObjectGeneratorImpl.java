@@ -298,6 +298,4 @@ public class EObjectGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 		values.add(o);
 	}
 
-	
-
 } // EObjectGeneratorImpl

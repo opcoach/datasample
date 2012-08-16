@@ -355,6 +355,31 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.opcoach.dsgen.BadValueGeneratorRegistry} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BadValueGeneratorRegistryItemProvider badValueGeneratorRegistryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.opcoach.dsgen.BadValueGeneratorRegistry}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBadValueGeneratorRegistryAdapter()
+	{
+		if (badValueGeneratorRegistryItemProvider == null)
+		{
+			badValueGeneratorRegistryItemProvider = new BadValueGeneratorRegistryItemProvider(this);
+		}
+
+		return badValueGeneratorRegistryItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -483,6 +508,8 @@ public class DataSampleGenItemProviderAdapterFactory extends DataSampleGenAdapte
 			dsGenReferenceItemProvider.dispose();
 		if (dsGenEnumItemProvider != null)
 			dsGenEnumItemProvider.dispose();
+		if (badValueGeneratorRegistryItemProvider != null)
+			badValueGeneratorRegistryItemProvider.dispose();
 	}
 
 }

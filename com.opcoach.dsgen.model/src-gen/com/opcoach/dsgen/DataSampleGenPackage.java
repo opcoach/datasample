@@ -129,12 +129,21 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_MODEL__LANGUAGE = DS_GEN_BASE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Bad Generators</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_MODEL__BAD_GENERATORS = DS_GEN_BASE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>DS Gen Model</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_MODEL_FEATURE_COUNT = DS_GEN_BASE_FEATURE_COUNT + 4;
+	int DS_GEN_MODEL_FEATURE_COUNT = DS_GEN_BASE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.impl.DSGenPackageImpl <em>DS Gen Package</em>}' class.
@@ -670,6 +679,34 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_ENUM_FEATURE_COUNT = DS_GEN_DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link com.opcoach.dsgen.impl.BadValueGeneratorRegistryImpl <em>Bad Value Generator Registry</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.dsgen.impl.BadValueGeneratorRegistryImpl
+	 * @see com.opcoach.dsgen.impl.DataSampleGenPackageImpl#getBadValueGeneratorRegistry()
+	 * @generated
+	 */
+	int BAD_VALUE_GENERATOR_REGISTRY = 14;
+
+	/**
+	 * The feature id for the '<em><b>Generators</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BAD_VALUE_GENERATOR_REGISTRY__GENERATORS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Bad Value Generator Registry</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BAD_VALUE_GENERATOR_REGISTRY_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}' enum.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -677,7 +714,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.dsgen.impl.DataSampleGenPackageImpl#getDSGenRuntimeVersion()
 	 * @generated
 	 */
-	int DS_GEN_RUNTIME_VERSION = 14;
+	int DS_GEN_RUNTIME_VERSION = 15;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.DSGenJDKLevel <em>DS Gen JDK Level</em>}' enum.
@@ -687,7 +724,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.dsgen.impl.DataSampleGenPackageImpl#getDSGenJDKLevel()
 	 * @generated
 	 */
-	int DS_GEN_JDK_LEVEL = 15;
+	int DS_GEN_JDK_LEVEL = 16;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.DSGenDelegationKind <em>DS Gen Delegation Kind</em>}' enum.
@@ -697,7 +734,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.dsgen.impl.DataSampleGenPackageImpl#getDSGenDelegationKind()
 	 * @generated
 	 */
-	int DS_GEN_DELEGATION_KIND = 16;
+	int DS_GEN_DELEGATION_KIND = 17;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.DSGenPropertyKind <em>DS Gen Property Kind</em>}' enum.
@@ -707,7 +744,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.dsgen.impl.DataSampleGenPackageImpl#getDSGenPropertyKind()
 	 * @generated
 	 */
-	int DS_GEN_PROPERTY_KIND = 17;
+	int DS_GEN_PROPERTY_KIND = 18;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.DSGenResourceKind <em>DS Gen Resource Kind</em>}' enum.
@@ -717,7 +754,7 @@ public interface DataSampleGenPackage extends EPackage
 	 * @see com.opcoach.dsgen.impl.DataSampleGenPackageImpl#getDSGenResourceKind()
 	 * @generated
 	 */
-	int DS_GEN_RESOURCE_KIND = 18;
+	int DS_GEN_RESOURCE_KIND = 19;
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.dsgen.DSGenModel <em>DS Gen Model</em>}'.
@@ -770,6 +807,17 @@ public interface DataSampleGenPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getDSGenModel_Language();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.opcoach.dsgen.DSGenModel#getBadGenerators <em>Bad Generators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Bad Generators</em>'.
+	 * @see com.opcoach.dsgen.DSGenModel#getBadGenerators()
+	 * @see #getDSGenModel()
+	 * @generated
+	 */
+	EReference getDSGenModel_BadGenerators();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.dsgen.DSGenPackage <em>DS Gen Package</em>}'.
@@ -1077,6 +1125,27 @@ public interface DataSampleGenPackage extends EPackage
 	EReference getDSGenEnum_EcoreEnum();
 
 	/**
+	 * Returns the meta object for class '{@link com.opcoach.dsgen.BadValueGeneratorRegistry <em>Bad Value Generator Registry</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bad Value Generator Registry</em>'.
+	 * @see com.opcoach.dsgen.BadValueGeneratorRegistry
+	 * @generated
+	 */
+	EClass getBadValueGeneratorRegistry();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.opcoach.dsgen.BadValueGeneratorRegistry#getGenerators <em>Generators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Generators</em>'.
+	 * @see com.opcoach.dsgen.BadValueGeneratorRegistry#getGenerators()
+	 * @see #getBadValueGeneratorRegistry()
+	 * @generated
+	 */
+	EReference getBadValueGeneratorRegistry_Generators();
+
+	/**
 	 * Returns the meta object for enum '{@link com.opcoach.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}'.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
@@ -1188,6 +1257,14 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute DS_GEN_MODEL__LANGUAGE = eINSTANCE.getDSGenModel_Language();
+
+		/**
+		 * The meta object literal for the '<em><b>Bad Generators</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DS_GEN_MODEL__BAD_GENERATORS = eINSTANCE.getDSGenModel_BadGenerators();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.dsgen.impl.DSGenPackageImpl <em>DS Gen Package</em>}' class.
@@ -1444,6 +1521,24 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EReference DS_GEN_ENUM__ECORE_ENUM = eINSTANCE.getDSGenEnum_EcoreEnum();
+
+		/**
+		 * The meta object literal for the '{@link com.opcoach.dsgen.impl.BadValueGeneratorRegistryImpl <em>Bad Value Generator Registry</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.dsgen.impl.BadValueGeneratorRegistryImpl
+		 * @see com.opcoach.dsgen.impl.DataSampleGenPackageImpl#getBadValueGeneratorRegistry()
+		 * @generated
+		 */
+		EClass BAD_VALUE_GENERATOR_REGISTRY = eINSTANCE.getBadValueGeneratorRegistry();
+
+		/**
+		 * The meta object literal for the '<em><b>Generators</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BAD_VALUE_GENERATOR_REGISTRY__GENERATORS = eINSTANCE.getBadValueGeneratorRegistry_Generators();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.dsgen.DSGenRuntimeVersion <em>DS Gen Runtime Version</em>}' enum.

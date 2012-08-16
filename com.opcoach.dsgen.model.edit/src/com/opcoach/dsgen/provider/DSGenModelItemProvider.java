@@ -26,6 +26,9 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 import com.opcoach.dsgen.DSGenModel;
 import com.opcoach.dsgen.DataSampleGenFactory;
 import com.opcoach.dsgen.DataSampleGenPackage;
+import com.opcoach.dsgen.generator.DSGenGeneratorFactory;
+import com.opcoach.generator.GeneratorFactory;
+import com.opcoach.generator.basic.BasicFactory;
 
 /**
  * This is the item provider adapter for a {@link com.opcoach.dsgen.DSGenModel} object.
@@ -134,6 +137,7 @@ public class DSGenModelItemProvider extends DSGenBaseItemProvider implements IEd
 		{
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DataSampleGenPackage.Literals.DS_GEN_MODEL__DSGEN_PACKAGES);
+			childrenFeatures.add(DataSampleGenPackage.Literals.DS_GEN_MODEL__BAD_GENERATORS);
 		}
 		return childrenFeatures;
 	}
@@ -197,6 +201,7 @@ public class DSGenModelItemProvider extends DSGenBaseItemProvider implements IEd
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case DataSampleGenPackage.DS_GEN_MODEL__DSGEN_PACKAGES:
+		case DataSampleGenPackage.DS_GEN_MODEL__BAD_GENERATORS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -217,6 +222,9 @@ public class DSGenModelItemProvider extends DSGenBaseItemProvider implements IEd
 
 		newChildDescriptors.add(createChildParameter(DataSampleGenPackage.Literals.DS_GEN_MODEL__DSGEN_PACKAGES,
 				DataSampleGenFactory.eINSTANCE.createDSGenPackage()));
+
+		newChildDescriptors.add(createChildParameter(DataSampleGenPackage.Literals.DS_GEN_MODEL__BAD_GENERATORS,
+				DataSampleGenFactory.eINSTANCE.createBadValueGeneratorRegistry()));
 	}
 
 }

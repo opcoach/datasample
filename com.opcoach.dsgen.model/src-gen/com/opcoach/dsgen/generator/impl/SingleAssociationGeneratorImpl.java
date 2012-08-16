@@ -76,9 +76,6 @@ public class SingleAssociationGeneratorImpl extends ReferenceGeneratorImpl<EObje
 	{
 		// This generator is set in a dsgen reference
 		DSGenReference dsgenref = (DSGenReference) eContainer;
-		System.out.println("¡¡¡¡¡¡¡ Create association on field " + dsgenref.getEcoreFeature().getName() + " for class "
-				+ dsgenref.getDsgenClass().getEcoreClass().getName());
-
 		DSGenClass targetClass = dsgenref.getTargetDSGenClass();
 		setValues(EObjectGenerator.eInstance.getInstances(targetClass.getEcoreClass()));
 	}

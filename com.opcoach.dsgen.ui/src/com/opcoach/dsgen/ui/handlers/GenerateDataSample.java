@@ -10,7 +10,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import com.opcoach.dsgen.helpers.DSGen2SampleFactory;
+import com.opcoach.dsgen.helpers.DSGen2Sample;
 import com.opcoach.dsgen.helpers.DSGenConstants;
 
 public class GenerateDataSample extends AbstractHandler
@@ -29,7 +29,7 @@ public class GenerateDataSample extends AbstractHandler
 				if (DSGenConstants.DSGEN_FILE_EXT.equals(file.getFileExtension()))
 				{
 					// This is a dsgen file, we can generate sample
-					DSGen2SampleFactory factory = new DSGen2SampleFactory();
+					DSGen2Sample factory = new DSGen2Sample();
 					try
 					{
 						factory.createDSGenSample(file);
