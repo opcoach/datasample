@@ -19,7 +19,7 @@
           propertyDescription="A specific value generator to use for bad values" propertySortChoices="true"
           ecoreFeature="ecore:EReference generator.ecore#//ValueGenerator/badValueGenerator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/lastGeneratedValue"/>
-      <genFeatures createChild="false" propertyCategory="Random" propertyDescription="In case of random generator, the seed to use (0 is no random)"
+      <genFeatures createChild="false" propertyCategory="Random" propertyDescription="In case of random generator, the seed to use (-1 means no random)"
           ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/randomSeed"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//ValueGenerator/type"/>
