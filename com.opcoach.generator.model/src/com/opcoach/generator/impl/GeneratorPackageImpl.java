@@ -461,7 +461,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		g1 = createEGenericType(this.getCollection());
 		g2 = createEGenericType(referenceGeneratorEClass_T);
 		g1.getETypeArguments().add(g2);
-		initEAttribute(getReferenceGenerator_Values(), g1, "values", null, 0, 1, ReferenceGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getReferenceGenerator_Values(), g1, "values", null, 0, 1, ReferenceGenerator.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(collectionEDataType, Collection.class, "Collection", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);

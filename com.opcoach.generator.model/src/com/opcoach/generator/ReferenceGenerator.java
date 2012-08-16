@@ -62,7 +62,7 @@ public interface ReferenceGenerator<T> extends ValueGenerator<T>
 	 * @return the value of the '<em>Values</em>' attribute.
 	 * @see #setValues(Collection)
 	 * @see com.opcoach.generator.GeneratorPackage#getReferenceGenerator_Values()
-	 * @model dataType="com.opcoach.generator.Collection<T>"
+	 * @model dataType="com.opcoach.generator.Collection<T>" transient="true"
 	 * @generated
 	 */
 	Collection<T> getValues();

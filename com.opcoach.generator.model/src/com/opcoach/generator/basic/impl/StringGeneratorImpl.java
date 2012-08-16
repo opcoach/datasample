@@ -33,15 +33,11 @@ import com.opcoach.generator.impl.ReferenceGeneratorImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>
- * {@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getDataFilename
- * <em>Data Filename</em>}</li>
- * <li>
- * {@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getCasePolicy
- * <em>Case Policy</em>}</li>
+ *   <li>{@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getDataFilename <em>Data Filename</em>}</li>
+ *   <li>{@link com.opcoach.generator.basic.impl.StringGeneratorImpl#getCasePolicy <em>Case Policy</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implements StringGenerator
@@ -56,10 +52,9 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	private boolean mustReadValues = true;
 
 	/**
-	 * The default value of the '{@link #getDataFilename()
-	 * <em>Data Filename</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The default value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -121,10 +116,9 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	}
 
 	/**
-	 * The cached value of the '{@link #getDataFilename()
-	 * <em>Data Filename</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * The cached value of the '{@link #getDataFilename() <em>Data Filename</em>}' attribute.
+	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
 	 * @see #getDataFilename()
 	 * @generated
 	 * @ordered
@@ -132,9 +126,8 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	protected String dataFilename = DATA_FILENAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getCasePolicy() <em>Case Policy</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The default value of the '{@link #getCasePolicy() <em>Case Policy</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCasePolicy()
 	 * @generated
 	 * @ordered
@@ -142,9 +135,8 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	protected static final CasePolicyType CASE_POLICY_EDEFAULT = CasePolicyType.DEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCasePolicy() <em>Case Policy</em>}'
-	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getCasePolicy() <em>Case Policy</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getCasePolicy()
 	 * @generated
 	 * @ordered
@@ -198,7 +190,6 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -209,7 +200,6 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getDataFilename()
@@ -219,7 +209,6 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setDataFilename(String newDataFilename)
@@ -227,13 +216,11 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 		String oldDataFilename = dataFilename;
 		dataFilename = newDataFilename;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__DATA_FILENAME, oldDataFilename,
-					dataFilename));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__DATA_FILENAME, oldDataFilename, dataFilename));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public CasePolicyType getCasePolicy()
@@ -243,7 +230,6 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setCasePolicy(CasePolicyType newCasePolicy)
@@ -251,13 +237,11 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 		CasePolicyType oldCasePolicy = casePolicy;
 		casePolicy = newCasePolicy == null ? CASE_POLICY_EDEFAULT : newCasePolicy;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__CASE_POLICY, oldCasePolicy,
-					casePolicy));
+			eNotify(new ENotificationImpl(this, Notification.SET, BasicPackage.STRING_GENERATOR__CASE_POLICY, oldCasePolicy, casePolicy));
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -265,17 +249,16 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	{
 		switch (featureID)
 		{
-		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-			return getDataFilename();
-		case BasicPackage.STRING_GENERATOR__CASE_POLICY:
-			return getCasePolicy();
+			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+				return getDataFilename();
+			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+				return getCasePolicy();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -283,19 +266,18 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	{
 		switch (featureID)
 		{
-		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-			setDataFilename((String) newValue);
-			return;
-		case BasicPackage.STRING_GENERATOR__CASE_POLICY:
-			setCasePolicy((CasePolicyType) newValue);
-			return;
+			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+				setDataFilename((String)newValue);
+				return;
+			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+				setCasePolicy((CasePolicyType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -303,19 +285,18 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	{
 		switch (featureID)
 		{
-		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-			setDataFilename(DATA_FILENAME_EDEFAULT);
-			return;
-		case BasicPackage.STRING_GENERATOR__CASE_POLICY:
-			setCasePolicy(CASE_POLICY_EDEFAULT);
-			return;
+			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+				setDataFilename(DATA_FILENAME_EDEFAULT);
+				return;
+			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+				setCasePolicy(CASE_POLICY_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -323,24 +304,22 @@ public class StringGeneratorImpl extends ReferenceGeneratorImpl<String> implemen
 	{
 		switch (featureID)
 		{
-		case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
-			return DATA_FILENAME_EDEFAULT == null ? dataFilename != null : !DATA_FILENAME_EDEFAULT.equals(dataFilename);
-		case BasicPackage.STRING_GENERATOR__CASE_POLICY:
-			return casePolicy != CASE_POLICY_EDEFAULT;
+			case BasicPackage.STRING_GENERATOR__DATA_FILENAME:
+				return DATA_FILENAME_EDEFAULT == null ? dataFilename != null : !DATA_FILENAME_EDEFAULT.equals(dataFilename);
+			case BasicPackage.STRING_GENERATOR__CASE_POLICY:
+				return casePolicy != CASE_POLICY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString()
 	{
-		if (eIsProxy())
-			return super.toString();
+		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (dataFilename: ");

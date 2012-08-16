@@ -11,9 +11,11 @@ import java.util.Collections;
 import java.util.Vector;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import com.opcoach.generator.GeneratorPackage;
 import com.opcoach.generator.ReferenceGenerator;
 
