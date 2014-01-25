@@ -71,7 +71,7 @@
          <menu
                icon="icons/datasample.png"
                id="com.opcoach.generator.ecore.ui.menu"
-               label="Data Sample"
+               label="Data Sample OPCoach"
                tooltip="Access to all opcoach commands">
             <visibleWhen
                   checkEnabled="false">
