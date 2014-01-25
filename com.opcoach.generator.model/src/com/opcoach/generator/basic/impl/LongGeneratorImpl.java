@@ -84,4 +84,40 @@ public class LongGeneratorImpl extends RangeGeneratorImpl<Long> implements LongG
 		return BasicPackage.Literals.LONG_GENERATOR;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setLow(Long newLow)
+	{
+		super.setLow(newLow);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setHigh(Long newHigh)
+	{
+		super.setHigh(newHigh);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setStep(Long newStep)
+	{
+		super.setStep(newStep);
+	}
+
 } //LongGeneratorImpl

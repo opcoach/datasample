@@ -17,4 +17,12 @@
             genModel="model/generator.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http://www.opcoach.com/generator/basic/1.0"
+            class="com.opcoach.generator.basic.BasicPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
 </plugin>

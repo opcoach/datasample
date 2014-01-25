@@ -47,7 +47,7 @@ public class BasicFactoryImpl extends EFactoryImpl implements BasicFactory
 	{
 		try
 		{
-			BasicFactory theBasicFactory = (BasicFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.opcoach.com/generator/basic/1.0"); 
+			BasicFactory theBasicFactory = (BasicFactory)EPackage.Registry.INSTANCE.getEFactory(BasicPackage.eNS_URI);
 			if (theBasicFactory != null)
 			{
 				return theBasicFactory;

@@ -96,5 +96,44 @@ public class DoubleGeneratorImpl extends RangeGeneratorImpl<Double> implements D
 	}
 
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setLow(Double newLow)
+	{
+		super.setLow(newLow);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setHigh(Double newHigh)
+	{
+		super.setHigh(newHigh);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setStep(Double newStep)
+	{
+		super.setStep(newStep);
+	}
+
+
 
 } //DoubleGeneratorImpl

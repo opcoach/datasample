@@ -85,4 +85,43 @@ public class IntGeneratorImpl extends RangeGeneratorImpl<Integer> implements Int
 		return BasicPackage.Literals.INT_GENERATOR;
 	}
 
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setLow(Integer newLow)
+	{
+		super.setLow(newLow);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setHigh(Integer newHigh)
+	{
+		super.setHigh(newHigh);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setStep(Integer newStep)
+	{
+		super.setStep(newStep);
+	}
+
 } //IntGeneratorImpl

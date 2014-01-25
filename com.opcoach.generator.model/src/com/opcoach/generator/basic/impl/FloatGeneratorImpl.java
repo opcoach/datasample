@@ -92,4 +92,43 @@ public class FloatGeneratorImpl extends RangeGeneratorImpl<Float> implements Flo
 		return BasicPackage.Literals.FLOAT_GENERATOR;
 	}
 
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setLow(Float newLow)
+	{
+		super.setLow(newLow);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setHigh(Float newHigh)
+	{
+		super.setHigh(newHigh);
+	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setStep(Float newStep)
+	{
+		super.setStep(newStep);
+	}
+
 } //FloatGeneratorImpl

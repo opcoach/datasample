@@ -37,7 +37,7 @@ public class GeneratorFactoryImpl extends EFactoryImpl implements GeneratorFacto
 	{
 		try
 		{
-			GeneratorFactory theGeneratorFactory = (GeneratorFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.opcoach.generator/1.0"); 
+			GeneratorFactory theGeneratorFactory = (GeneratorFactory)EPackage.Registry.INSTANCE.getEFactory(GeneratorPackage.eNS_URI);
 			if (theGeneratorFactory != null)
 			{
 				return theGeneratorFactory;

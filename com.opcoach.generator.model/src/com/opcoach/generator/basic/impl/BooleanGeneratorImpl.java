@@ -63,6 +63,19 @@ public class BooleanGeneratorImpl extends ValueGeneratorImpl<Boolean> implements
 	{
 		return BasicPackage.Literals.BOOLEAN_GENERATOR;
 	}
+
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setLastGeneratedValue(Boolean newLastGeneratedValue)
+	{
+		super.setLastGeneratedValue(newLastGeneratedValue);
+	}
 	
 	
 
