@@ -47,13 +47,21 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 				}
 				else break;
 			case DatasamplePackage.ENTITY_GENERATOR:
-				if(context == grammarAccess.getEntityGeneratorRule()) {
+				if(context == grammarAccess.getEntityGenerator2Rule()) {
+					sequence_EntityGenerator2(context, (EntityGenerator) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getEntityGeneratorRule()) {
 					sequence_EntityGenerator(context, (EntityGenerator) semanticObject); 
 					return; 
 				}
 				else break;
 			case DatasamplePackage.FIELD_GENERATOR:
-				if(context == grammarAccess.getFieldGeneratorRule()) {
+				if(context == grammarAccess.getFieldGenerator2Rule()) {
+					sequence_FieldGenerator2(context, (FieldGenerator) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getFieldGeneratorRule()) {
 					sequence_FieldGenerator(context, (FieldGenerator) semanticObject); 
 					return; 
 				}
@@ -166,14 +174,14 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 * Constraint:
 	 *     (
 	 *         name=EString 
-	 *         seed=EInt? 
-	 *         language=Language? 
-	 *         packageURI=EString? 
+	 *         packageURI=EString 
+	 *         seed=EInt 
+	 *         language=Language 
 	 *         (badValueGeneratorNames+=EString badValueGeneratorNames+=EString*)? 
-	 *         package=[EPackage|EString]? 
-	 *         rootEntity=[EClass|EString]? 
-	 *         (entityGenerators+=EntityGenerator entityGenerators+=EntityGenerator*)? 
-	 *         (fieldGenerators+=FieldGenerator fieldGenerators+=FieldGenerator*)?
+	 *         entityGenerators+=EntityGenerator2 
+	 *         entityGenerators+=EntityGenerator2* 
+	 *         fieldGenerators+=FieldGenerator2 
+	 *         fieldGenerators+=FieldGenerator2*
 	 *     )
 	 */
 	protected void sequence_DataSample(EObject context, DataSample semanticObject) {
@@ -412,9 +420,27 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	
 	/**
 	 * Constraint:
+	 *     (number=EInt entityName=EString)
+	 */
+	protected void sequence_EntityGenerator2(EObject context, EntityGenerator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (number=EInt? entityName=EString? entity=[EClass|EString]?)
 	 */
 	protected void sequence_EntityGenerator(EObject context, EntityGenerator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (entityName=EString fieldName=EString generatorName=EString (errorRate=EInt errorGeneratorName=EString)?)
+	 */
+	protected void sequence_FieldGenerator2(EObject context, FieldGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

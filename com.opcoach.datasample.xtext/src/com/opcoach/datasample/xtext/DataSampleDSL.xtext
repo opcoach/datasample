@@ -8,16 +8,15 @@ import "http://www.opcoach.generator/1.0" as generator
 DataSample returns DataSample:
 	{DataSample}
 	'DataSample'
-	name=EString
+	name=EString 'for' packageURI=EString
 	'{'
-		('seed' seed=EInt)?
-		('language' language=Language)?
-		('packageURI' packageURI=EString)?
+		'seed' seed=EInt
+		'language' language=Language
 		('badValueGeneratorNames' '{' badValueGeneratorNames+=EString ( "," badValueGeneratorNames+=EString)* '}' )?
-		('package' package=[ecore::EPackage|EString])?
-		('rootEntity' rootEntity=[ecore::EClass|EString])?
-		('entityGenerators' '{' entityGenerators+=EntityGenerator ( "," entityGenerators+=EntityGenerator)* '}' )?
-		('fieldGenerators' '{' fieldGenerators+=FieldGenerator ( "," fieldGenerators+=FieldGenerator)* '}' )?
+	//	('package' package=[ecore::EPackage|EString])?
+	//	('rootEntity' rootEntity=[ecore::EClass|EString])?
+		'In the root object generate '  entityGenerators+=EntityGenerator2 ( "," entityGenerators+=EntityGenerator2)* 
+		 fieldGenerators+=FieldGenerator2 ( "," fieldGenerators+=FieldGenerator2)* 
 	'}';
 
 
@@ -64,6 +63,13 @@ EPackage returns ecore::EPackage:
 		('eSubpackages' '{' eSubpackages+=EPackage ( "," eSubpackages+=EPackage)* '}' )?
 	'}';
 
+EntityGenerator2 returns EntityGenerator:
+	{EntityGenerator}
+	number=EInt entityName=EString
+	;
+
+
+
 EntityGenerator returns EntityGenerator:
 	{EntityGenerator}
 	'EntityGenerator'
@@ -72,6 +78,10 @@ EntityGenerator returns EntityGenerator:
 		('entityName' entityName=EString)?
 		('entity' entity=[ecore::EClass|EString])?
 	'}';
+
+FieldGenerator2 returns FieldGenerator:
+	'for'  entityName=EString '.'  fieldName=EString 'use' generatorName=EString ('with errorRate=' errorRate=EInt '% generated with ' errorGeneratorName=EString )?
+	;
 
 FieldGenerator returns FieldGenerator:
 	'FieldGenerator'

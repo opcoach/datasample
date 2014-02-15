@@ -1,0 +1,17 @@
+
+
+DataSample HugeSample for http://www.opcoach.com/rental/1.0
+{
+    seed = 50
+    language = french
+    package = Rental
+    
+    badValueGenerators : BadStringGenerator, BadDateGenerator, NullDateGenerator
+
+   In RentaAgency generate 50 Customer, 100 RentalObject, 40 Rental
+   
+   for Customer.firstname use StringGenerator
+   for Customer.birthDate use DateGenerator[1/1/2000, 31/12/2013] with errorRate=2% generated with NullDateGenerator
+   
+   
+}

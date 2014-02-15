@@ -84,19 +84,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
     public static final int T__52=52;
     public static final int T__53=53;
     public static final int T__54=54;
-    public static final int T__107=107;
-    public static final int T__108=108;
-    public static final int T__109=109;
     public static final int T__103=103;
     public static final int T__59=59;
     public static final int T__104=104;
-    public static final int T__105=105;
-    public static final int T__106=106;
-    public static final int T__111=111;
-    public static final int T__110=110;
     public static final int RULE_INT=6;
-    public static final int T__113=113;
-    public static final int T__112=112;
     public static final int T__50=50;
     public static final int T__42=42;
     public static final int T__43=43;
@@ -331,10 +322,11 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20:7: ( '{' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20:9: '{'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20:7: ( 'for' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20:9: 'for'
             {
-            match('{'); 
+            match("for"); 
+
 
             }
 
@@ -351,10 +343,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21:7: ( '}' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21:9: '}'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21:7: ( '{' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -413,10 +405,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:24:7: ( 'packageURI' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:24:9: 'packageURI'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:24:7: ( 'In the root object generate ' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:24:9: 'In the root object generate '
             {
-            match("packageURI"); 
+            match("In the root object generate "); 
 
 
             }
@@ -434,11 +426,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:25:7: ( 'badValueGeneratorNames' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:25:9: 'badValueGeneratorNames'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:25:7: ( '}' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:25:9: '}'
             {
-            match("badValueGeneratorNames"); 
-
+            match('}'); 
 
             }
 
@@ -455,10 +446,11 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:26:7: ( ',' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:26:9: ','
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:26:7: ( 'badValueGeneratorNames' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:26:9: 'badValueGeneratorNames'
             {
-            match(','); 
+            match("badValueGeneratorNames"); 
+
 
             }
 
@@ -475,11 +467,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:27:7: ( 'package' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:27:9: 'package'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:27:7: ( ',' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:27:9: ','
             {
-            match("package"); 
-
+            match(','); 
 
             }
 
@@ -496,11 +487,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:28:7: ( 'rootEntity' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:28:9: 'rootEntity'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:28:7: ( '-' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:28:9: '-'
             {
-            match("rootEntity"); 
-
+            match('-'); 
 
             }
 
@@ -517,10 +507,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:29:7: ( 'entityGenerators' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:29:9: 'entityGenerators'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:29:7: ( 'EPackage' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:29:9: 'EPackage'
             {
-            match("entityGenerators"); 
+            match("EPackage"); 
 
 
             }
@@ -538,10 +528,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:30:7: ( 'fieldGenerators' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:30:9: 'fieldGenerators'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:30:7: ( 'nsURI' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:30:9: 'nsURI'
             {
-            match("fieldGenerators"); 
+            match("nsURI"); 
 
 
             }
@@ -559,10 +549,11 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:31:7: ( '-' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:31:9: '-'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:31:7: ( 'nsPrefix' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:31:9: 'nsPrefix'
             {
-            match('-'); 
+            match("nsPrefix"); 
+
 
             }
 
@@ -579,10 +570,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:32:7: ( 'EPackage' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:32:9: 'EPackage'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:32:7: ( 'eAnnotations' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:32:9: 'eAnnotations'
             {
-            match("EPackage"); 
+            match("eAnnotations"); 
 
 
             }
@@ -600,10 +591,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:33:7: ( 'nsURI' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:33:9: 'nsURI'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:33:7: ( 'eClassifiers' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:33:9: 'eClassifiers'
             {
-            match("nsURI"); 
+            match("eClassifiers"); 
 
 
             }
@@ -621,10 +612,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:34:7: ( 'nsPrefix' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:34:9: 'nsPrefix'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:34:7: ( 'eSubpackages' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:34:9: 'eSubpackages'
             {
-            match("nsPrefix"); 
+            match("eSubpackages"); 
 
 
             }
@@ -642,11 +633,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:35:7: ( 'eAnnotations' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:35:9: 'eAnnotations'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:35:7: ( '.' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:35:9: '.'
             {
-            match("eAnnotations"); 
-
+            match('.'); 
 
             }
 
@@ -663,10 +653,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:36:7: ( 'eClassifiers' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:36:9: 'eClassifiers'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:36:7: ( 'use' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:36:9: 'use'
             {
-            match("eClassifiers"); 
+            match("use"); 
 
 
             }
@@ -684,10 +674,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:37:7: ( 'eSubpackages' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:37:9: 'eSubpackages'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:37:7: ( 'with errorRate=' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:37:9: 'with errorRate='
             {
-            match("eSubpackages"); 
+            match("with errorRate="); 
 
 
             }
@@ -705,10 +695,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:38:7: ( 'EntityGenerator' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:38:9: 'EntityGenerator'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:38:7: ( '% generated with ' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:38:9: '% generated with '
             {
-            match("EntityGenerator"); 
+            match("% generated with "); 
 
 
             }
@@ -726,10 +716,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:39:7: ( 'number' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:39:9: 'number'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:39:7: ( 'EClass' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:39:9: 'EClass'
             {
-            match("number"); 
+            match("EClass"); 
 
 
             }
@@ -747,10 +737,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:40:7: ( 'entityName' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:40:9: 'entityName'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:40:7: ( 'instanceClassName' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:40:9: 'instanceClassName'
             {
-            match("entityName"); 
+            match("instanceClassName"); 
 
 
             }
@@ -768,10 +758,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:41:7: ( 'entity' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:41:9: 'entity'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:41:7: ( 'instanceTypeName' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:41:9: 'instanceTypeName'
             {
-            match("entity"); 
+            match("instanceTypeName"); 
 
 
             }
@@ -789,10 +779,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:42:7: ( 'FieldGenerator' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:42:9: 'FieldGenerator'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:42:7: ( 'eSuperTypes' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:42:9: 'eSuperTypes'
             {
-            match("FieldGenerator"); 
+            match("eSuperTypes"); 
 
 
             }
@@ -810,11 +800,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:43:7: ( 'generator' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:43:9: 'generator'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:43:7: ( '(' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:43:9: '('
             {
-            match("generator"); 
-
+            match('('); 
 
             }
 
@@ -831,11 +820,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:44:7: ( 'fieldName' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:44:9: 'fieldName'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:44:7: ( ')' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:44:9: ')'
             {
-            match("fieldName"); 
-
+            match(')'); 
 
             }
 
@@ -852,10 +840,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:45:7: ( 'errorRate' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:45:9: 'errorRate'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:45:7: ( 'eTypeParameters' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:45:9: 'eTypeParameters'
             {
-            match("errorRate"); 
+            match("eTypeParameters"); 
 
 
             }
@@ -873,10 +861,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:46:7: ( 'generatorName' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:46:9: 'generatorName'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:46:7: ( 'eOperations' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:46:9: 'eOperations'
             {
-            match("generatorName"); 
+            match("eOperations"); 
 
 
             }
@@ -894,10 +882,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:47:7: ( 'structuralFeature' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:47:9: 'structuralFeature'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:47:7: ( 'eStructuralFeatures' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:47:9: 'eStructuralFeatures'
             {
-            match("structuralFeature"); 
+            match("eStructuralFeatures"); 
 
 
             }
@@ -915,10 +903,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:48:7: ( 'EClass' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:48:9: 'EClass'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:48:7: ( 'eGenericSuperTypes' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:48:9: 'eGenericSuperTypes'
             {
-            match("EClass"); 
+            match("eGenericSuperTypes"); 
 
 
             }
@@ -936,10 +924,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:49:7: ( 'instanceClassName' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:49:9: 'instanceClassName'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:49:7: ( 'EAnnotation' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:49:9: 'EAnnotation'
             {
-            match("instanceClassName"); 
+            match("EAnnotation"); 
 
 
             }
@@ -957,10 +945,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:50:7: ( 'instanceTypeName' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:50:9: 'instanceTypeName'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:50:7: ( 'source' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:50:9: 'source'
             {
-            match("instanceTypeName"); 
+            match("source"); 
 
 
             }
@@ -978,10 +966,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:51:7: ( 'eSuperTypes' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:51:9: 'eSuperTypes'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:51:7: ( 'references' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:51:9: 'references'
             {
-            match("eSuperTypes"); 
+            match("references"); 
 
 
             }
@@ -999,10 +987,11 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:52:7: ( '(' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:52:9: '('
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:52:7: ( 'details' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:52:9: 'details'
             {
-            match('('); 
+            match("details"); 
+
 
             }
 
@@ -1019,10 +1008,11 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:53:7: ( ')' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:53:9: ')'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:53:7: ( 'contents' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:53:9: 'contents'
             {
-            match(')'); 
+            match("contents"); 
+
 
             }
 
@@ -1039,10 +1029,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:54:7: ( 'eTypeParameters' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:54:9: 'eTypeParameters'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:54:7: ( 'EStringToStringMapEntry' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:54:9: 'EStringToStringMapEntry'
             {
-            match("eTypeParameters"); 
+            match("EStringToStringMapEntry"); 
 
 
             }
@@ -1060,10 +1050,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:55:7: ( 'eOperations' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:55:9: 'eOperations'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:55:7: ( 'key' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:55:9: 'key'
             {
-            match("eOperations"); 
+            match("key"); 
 
 
             }
@@ -1081,10 +1071,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:56:7: ( 'eStructuralFeatures' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:56:9: 'eStructuralFeatures'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:56:7: ( 'value' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:56:9: 'value'
             {
-            match("eStructuralFeatures"); 
+            match("value"); 
 
 
             }
@@ -1102,10 +1092,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:57:7: ( 'eGenericSuperTypes' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:57:9: 'eGenericSuperTypes'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:57:7: ( 'EObject' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:57:9: 'EObject'
             {
-            match("eGenericSuperTypes"); 
+            match("EObject"); 
 
 
             }
@@ -1123,10 +1113,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:58:7: ( 'EAnnotation' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:58:9: 'EAnnotation'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:58:7: ( 'ETypeParameter' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:58:9: 'ETypeParameter'
             {
-            match("EAnnotation"); 
+            match("ETypeParameter"); 
 
 
             }
@@ -1144,10 +1134,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:59:7: ( 'source' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:59:9: 'source'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:59:7: ( 'eBounds' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:59:9: 'eBounds'
             {
-            match("source"); 
+            match("eBounds"); 
 
 
             }
@@ -1165,10 +1155,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:60:7: ( 'references' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:60:9: 'references'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:60:7: ( 'EDataType' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:60:9: 'EDataType'
             {
-            match("references"); 
+            match("EDataType"); 
 
 
             }
@@ -1186,10 +1176,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:61:7: ( 'details' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:61:9: 'details'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:61:7: ( 'serializable' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:61:9: 'serializable'
             {
-            match("details"); 
+            match("serializable"); 
 
 
             }
@@ -1207,10 +1197,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:62:7: ( 'contents' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:62:9: 'contents'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:62:7: ( 'EEnum' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:62:9: 'EEnum'
             {
-            match("contents"); 
+            match("EEnum"); 
 
 
             }
@@ -1228,10 +1218,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:63:7: ( 'EStringToStringMapEntry' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:63:9: 'EStringToStringMapEntry'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:63:7: ( 'eLiterals' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:63:9: 'eLiterals'
             {
-            match("EStringToStringMapEntry"); 
+            match("eLiterals"); 
 
 
             }
@@ -1249,10 +1239,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:64:7: ( 'key' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:64:9: 'key'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:64:7: ( 'EGenericType' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:64:9: 'EGenericType'
             {
-            match("key"); 
+            match("EGenericType"); 
 
 
             }
@@ -1270,10 +1260,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:65:7: ( 'value' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:65:9: 'value'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:65:7: ( 'eTypeParameter' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:65:9: 'eTypeParameter'
             {
-            match("value"); 
+            match("eTypeParameter"); 
 
 
             }
@@ -1291,10 +1281,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:66:7: ( 'EObject' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:66:9: 'EObject'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:66:7: ( 'eClassifier' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:66:9: 'eClassifier'
             {
-            match("EObject"); 
+            match("eClassifier"); 
 
 
             }
@@ -1312,10 +1302,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:67:7: ( 'ETypeParameter' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:67:9: 'ETypeParameter'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:67:7: ( 'eUpperBound' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:67:9: 'eUpperBound'
             {
-            match("ETypeParameter"); 
+            match("eUpperBound"); 
 
 
             }
@@ -1333,10 +1323,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:68:7: ( 'eBounds' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:68:9: 'eBounds'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:68:7: ( 'eTypeArguments' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:68:9: 'eTypeArguments'
             {
-            match("eBounds"); 
+            match("eTypeArguments"); 
 
 
             }
@@ -1354,10 +1344,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:69:7: ( 'EDataType' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:69:9: 'EDataType'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:69:7: ( 'eLowerBound' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:69:9: 'eLowerBound'
             {
-            match("EDataType"); 
+            match("eLowerBound"); 
 
 
             }
@@ -1375,10 +1365,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:70:7: ( 'serializable' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:70:9: 'serializable'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:70:7: ( 'EEnumLiteral' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:70:9: 'EEnumLiteral'
             {
-            match("serializable"); 
+            match("EEnumLiteral"); 
 
 
             }
@@ -1396,10 +1386,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:71:7: ( 'EEnum' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:71:9: 'EEnum'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:71:7: ( 'literal' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:71:9: 'literal'
             {
-            match("EEnum"); 
+            match("literal"); 
 
 
             }
@@ -1417,10 +1407,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:72:7: ( 'eLiterals' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:72:9: 'eLiterals'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:72:7: ( 'ReferenceGenerator' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:72:9: 'ReferenceGenerator'
             {
-            match("eLiterals"); 
+            match("ReferenceGenerator"); 
 
 
             }
@@ -1438,10 +1428,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:73:7: ( 'EGenericType' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:73:9: 'EGenericType'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:73:7: ( 'badValueProportion' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:73:9: 'badValueProportion'
             {
-            match("EGenericType"); 
+            match("badValueProportion"); 
 
 
             }
@@ -1459,10 +1449,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:74:7: ( 'eTypeParameter' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:74:9: 'eTypeParameter'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:74:7: ( 'randomSeed' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:74:9: 'randomSeed'
             {
-            match("eTypeParameter"); 
+            match("randomSeed"); 
 
 
             }
@@ -1480,10 +1470,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__75;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:75:7: ( 'eClassifier' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:75:9: 'eClassifier'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:75:7: ( 'ID' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:75:9: 'ID'
             {
-            match("eClassifier"); 
+            match("ID"); 
 
 
             }
@@ -1501,10 +1491,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__76;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:76:7: ( 'eUpperBound' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:76:9: 'eUpperBound'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:76:7: ( 'locale' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:76:9: 'locale'
             {
-            match("eUpperBound"); 
+            match("locale"); 
 
 
             }
@@ -1522,10 +1512,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__77;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:77:7: ( 'eTypeArguments' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:77:9: 'eTypeArguments'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:77:7: ( 'step' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:77:9: 'step'
             {
-            match("eTypeArguments"); 
+            match("step"); 
 
 
             }
@@ -1543,10 +1533,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__78;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:78:7: ( 'eLowerBound' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:78:9: 'eLowerBound'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:78:7: ( 'badValueGenerator' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:78:9: 'badValueGenerator'
             {
-            match("eLowerBound"); 
+            match("badValueGenerator"); 
 
 
             }
@@ -1564,10 +1554,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__79;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:79:7: ( 'EEnumLiteral' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:79:9: 'EEnumLiteral'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:79:7: ( 'EAttribute' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:79:9: 'EAttribute'
             {
-            match("EEnumLiteral"); 
+            match("EAttribute"); 
 
 
             }
@@ -1585,10 +1575,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__80;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:80:7: ( 'literal' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:80:9: 'literal'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:80:7: ( 'ordered' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:80:9: 'ordered'
             {
-            match("literal"); 
+            match("ordered"); 
 
 
             }
@@ -1606,10 +1596,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__81;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:81:7: ( 'ReferenceGenerator' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:81:9: 'ReferenceGenerator'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:81:7: ( 'unique' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:81:9: 'unique'
             {
-            match("ReferenceGenerator"); 
+            match("unique"); 
 
 
             }
@@ -1627,10 +1617,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__82;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:82:7: ( 'badValueProportion' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:82:9: 'badValueProportion'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:82:7: ( 'lowerBound' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:82:9: 'lowerBound'
             {
-            match("badValueProportion"); 
+            match("lowerBound"); 
 
 
             }
@@ -1648,10 +1638,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__83;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:83:7: ( 'randomSeed' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:83:9: 'randomSeed'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:83:7: ( 'upperBound' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:83:9: 'upperBound'
             {
-            match("randomSeed"); 
+            match("upperBound"); 
 
 
             }
@@ -1669,10 +1659,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__84;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:84:7: ( 'ID' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:84:9: 'ID'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:84:7: ( 'changeable' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:84:9: 'changeable'
             {
-            match("ID"); 
+            match("changeable"); 
 
 
             }
@@ -1690,10 +1680,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__85;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:85:7: ( 'locale' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:85:9: 'locale'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:85:7: ( 'defaultValueLiteral' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:85:9: 'defaultValueLiteral'
             {
-            match("locale"); 
+            match("defaultValueLiteral"); 
 
 
             }
@@ -1711,10 +1701,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__86;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:86:7: ( 'step' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:86:9: 'step'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:86:7: ( 'eType' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:86:9: 'eType'
             {
-            match("step"); 
+            match("eType"); 
 
 
             }
@@ -1732,10 +1722,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__87;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:87:7: ( 'badValueGenerator' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:87:9: 'badValueGenerator'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:87:7: ( 'eGenericType' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:87:9: 'eGenericType'
             {
-            match("badValueGenerator"); 
+            match("eGenericType"); 
 
 
             }
@@ -1753,10 +1743,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__88;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:88:7: ( 'EAttribute' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:88:9: 'EAttribute'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:88:7: ( 'EReference' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:88:9: 'EReference'
             {
-            match("EAttribute"); 
+            match("EReference"); 
 
 
             }
@@ -1774,10 +1764,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__89;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:89:7: ( 'ordered' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:89:9: 'ordered'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:89:7: ( 'resolveProxies' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:89:9: 'resolveProxies'
             {
-            match("ordered"); 
+            match("resolveProxies"); 
 
 
             }
@@ -1795,10 +1785,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__90;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:90:7: ( 'unique' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:90:9: 'unique'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:90:7: ( 'eOpposite' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:90:9: 'eOpposite'
             {
-            match("unique"); 
+            match("eOpposite"); 
 
 
             }
@@ -1816,10 +1806,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__91;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:91:7: ( 'lowerBound' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:91:9: 'lowerBound'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:91:7: ( 'eKeys' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:91:9: 'eKeys'
             {
-            match("lowerBound"); 
+            match("eKeys"); 
 
 
             }
@@ -1837,10 +1827,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__92;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:92:7: ( 'upperBound' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:92:9: 'upperBound'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:92:7: ( 'EOperation' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:92:9: 'EOperation'
             {
-            match("upperBound"); 
+            match("EOperation"); 
 
 
             }
@@ -1858,10 +1848,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__93;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:93:7: ( 'changeable' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:93:9: 'changeable'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:93:7: ( 'eExceptions' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:93:9: 'eExceptions'
             {
-            match("changeable"); 
+            match("eExceptions"); 
 
 
             }
@@ -1879,10 +1869,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__94;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:94:7: ( 'defaultValueLiteral' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:94:9: 'defaultValueLiteral'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:94:7: ( 'eParameters' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:94:9: 'eParameters'
             {
-            match("defaultValueLiteral"); 
+            match("eParameters"); 
 
 
             }
@@ -1900,10 +1890,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__95;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:95:7: ( 'eType' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:95:9: 'eType'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:95:7: ( 'eGenericExceptions' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:95:9: 'eGenericExceptions'
             {
-            match("eType"); 
+            match("eGenericExceptions"); 
 
 
             }
@@ -1921,10 +1911,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__96;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:96:7: ( 'eGenericType' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:96:9: 'eGenericType'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:96:7: ( 'EParameter' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:96:9: 'EParameter'
             {
-            match("eGenericType"); 
+            match("EParameter"); 
 
 
             }
@@ -1942,10 +1932,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__97;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:97:7: ( 'EReference' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:97:9: 'EReference'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:97:7: ( 'abstract' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:97:9: 'abstract'
             {
-            match("EReference"); 
+            match("abstract"); 
 
 
             }
@@ -1963,10 +1953,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__98;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:98:7: ( 'resolveProxies' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:98:9: 'resolveProxies'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:98:7: ( 'interface' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:98:9: 'interface'
             {
-            match("resolveProxies"); 
+            match("interface"); 
 
 
             }
@@ -1984,10 +1974,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__99;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:99:7: ( 'eOpposite' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:99:9: 'eOpposite'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:99:7: ( 'volatile' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:99:9: 'volatile'
             {
-            match("eOpposite"); 
+            match("volatile"); 
 
 
             }
@@ -2005,10 +1995,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__100;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:100:8: ( 'eKeys' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:100:10: 'eKeys'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:100:8: ( 'transient' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:100:10: 'transient'
             {
-            match("eKeys"); 
+            match("transient"); 
 
 
             }
@@ -2026,10 +2016,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__101;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:101:8: ( 'EOperation' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:101:10: 'EOperation'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:101:8: ( 'unsettable' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:101:10: 'unsettable'
             {
-            match("EOperation"); 
+            match("unsettable"); 
 
 
             }
@@ -2047,10 +2037,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__102;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:102:8: ( 'eExceptions' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:102:10: 'eExceptions'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:102:8: ( 'derived' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:102:10: 'derived'
             {
-            match("eExceptions"); 
+            match("derived"); 
 
 
             }
@@ -2068,10 +2058,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__103;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:103:8: ( 'eParameters' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:103:10: 'eParameters'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:103:8: ( 'iD' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:103:10: 'iD'
             {
-            match("eParameters"); 
+            match("iD"); 
 
 
             }
@@ -2089,197 +2079,8 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = T__104;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:104:8: ( 'eGenericExceptions' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:104:10: 'eGenericExceptions'
-            {
-            match("eGenericExceptions"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__104"
-
-    // $ANTLR start "T__105"
-    public final void mT__105() throws RecognitionException {
-        try {
-            int _type = T__105;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:105:8: ( 'EParameter' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:105:10: 'EParameter'
-            {
-            match("EParameter"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__105"
-
-    // $ANTLR start "T__106"
-    public final void mT__106() throws RecognitionException {
-        try {
-            int _type = T__106;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:106:8: ( 'abstract' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:106:10: 'abstract'
-            {
-            match("abstract"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__106"
-
-    // $ANTLR start "T__107"
-    public final void mT__107() throws RecognitionException {
-        try {
-            int _type = T__107;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:107:8: ( 'interface' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:107:10: 'interface'
-            {
-            match("interface"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__107"
-
-    // $ANTLR start "T__108"
-    public final void mT__108() throws RecognitionException {
-        try {
-            int _type = T__108;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:108:8: ( 'volatile' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:108:10: 'volatile'
-            {
-            match("volatile"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__108"
-
-    // $ANTLR start "T__109"
-    public final void mT__109() throws RecognitionException {
-        try {
-            int _type = T__109;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:109:8: ( 'transient' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:109:10: 'transient'
-            {
-            match("transient"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__109"
-
-    // $ANTLR start "T__110"
-    public final void mT__110() throws RecognitionException {
-        try {
-            int _type = T__110;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:110:8: ( 'unsettable' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:110:10: 'unsettable'
-            {
-            match("unsettable"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__110"
-
-    // $ANTLR start "T__111"
-    public final void mT__111() throws RecognitionException {
-        try {
-            int _type = T__111;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:111:8: ( 'derived' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:111:10: 'derived'
-            {
-            match("derived"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__111"
-
-    // $ANTLR start "T__112"
-    public final void mT__112() throws RecognitionException {
-        try {
-            int _type = T__112;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:112:8: ( 'iD' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:112:10: 'iD'
-            {
-            match("iD"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__112"
-
-    // $ANTLR start "T__113"
-    public final void mT__113() throws RecognitionException {
-        try {
-            int _type = T__113;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:113:8: ( 'containment' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:113:10: 'containment'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:104:8: ( 'containment' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:104:10: 'containment'
             {
             match("containment"); 
 
@@ -2292,17 +2093,17 @@ public class InternalDataSampleDSLLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__113"
+    // $ANTLR end "T__104"
 
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21702:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21702:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20540:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20540:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21702:11: ( '^' )?
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20540:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -2311,7 +2112,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21702:11: '^'
+                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20540:11: '^'
                     {
                     match('^'); 
 
@@ -2329,7 +2130,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21702:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20540:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -2378,10 +2179,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21704:10: ( ( '0' .. '9' )+ )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21704:12: ( '0' .. '9' )+
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20542:10: ( ( '0' .. '9' )+ )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20542:12: ( '0' .. '9' )+
             {
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21704:12: ( '0' .. '9' )+
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20542:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -2395,7 +2196,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21704:13: '0' .. '9'
+            	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20542:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2427,10 +2228,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -2448,10 +2249,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -2467,7 +2268,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2483,7 +2284,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2508,10 +2309,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -2527,7 +2328,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2543,7 +2344,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21706:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20544:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2586,12 +2387,12 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21708:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21708:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20546:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20546:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21708:24: ( options {greedy=false; } : . )*
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20546:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -2616,7 +2417,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21708:52: .
+            	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20546:52: .
             	    {
             	    matchAny(); 
 
@@ -2646,12 +2447,12 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21710:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21710:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20548:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20548:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21710:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20548:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -2664,7 +2465,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21710:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20548:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2684,7 +2485,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21710:40: ( ( '\\r' )? '\\n' )?
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20548:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2693,9 +2494,9 @@ public class InternalDataSampleDSLLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21710:41: ( '\\r' )? '\\n'
+                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20548:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21710:41: ( '\\r' )?
+                    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20548:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2704,7 +2505,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21710:41: '\\r'
+                            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20548:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2736,10 +2537,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21712:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21712:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20550:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20550:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21712:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20550:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -2793,8 +2594,8 @@ public class InternalDataSampleDSLLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21714:16: ( . )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:21714:18: .
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20552:16: ( . )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:20552:18: .
             {
             matchAny(); 
 
@@ -2809,8 +2610,8 @@ public class InternalDataSampleDSLLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=110;
+        // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:8: ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=101;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -3472,112 +3273,49 @@ public class InternalDataSampleDSLLexer extends Lexer {
                 }
                 break;
             case 95 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:579: T__105
-                {
-                mT__105(); 
-
-                }
-                break;
-            case 96 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:586: T__106
-                {
-                mT__106(); 
-
-                }
-                break;
-            case 97 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:593: T__107
-                {
-                mT__107(); 
-
-                }
-                break;
-            case 98 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:600: T__108
-                {
-                mT__108(); 
-
-                }
-                break;
-            case 99 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:607: T__109
-                {
-                mT__109(); 
-
-                }
-                break;
-            case 100 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:614: T__110
-                {
-                mT__110(); 
-
-                }
-                break;
-            case 101 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:621: T__111
-                {
-                mT__111(); 
-
-                }
-                break;
-            case 102 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:628: T__112
-                {
-                mT__112(); 
-
-                }
-                break;
-            case 103 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:635: T__113
-                {
-                mT__113(); 
-
-                }
-                break;
-            case 104 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:642: RULE_ID
+                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:579: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 105 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:650: RULE_INT
+            case 96 :
+                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:587: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 106 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:659: RULE_STRING
+            case 97 :
+                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:596: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 107 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:671: RULE_ML_COMMENT
+            case 98 :
+                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:608: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 108 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:687: RULE_SL_COMMENT
+            case 99 :
+                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:624: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 109 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:703: RULE_WS
+            case 100 :
+                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:640: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 110 :
-                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:711: RULE_ANY_OTHER
+            case 101 :
+                // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:1:648: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -3591,361 +3329,345 @@ public class InternalDataSampleDSLLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\7\50\2\uffff\4\50\1\uffff\1\50\1\uffff\4\50\2\uffff\10"+
-        "\50\1\46\2\uffff\3\46\2\uffff\1\50\1\uffff\2\50\1\165\1\50\1\170"+
-        "\1\171\15\50\1\u008c\1\u008d\1\50\1\u0090\1\50\2\uffff\10\50\1\uffff"+
-        "\3\50\1\uffff\17\50\2\uffff\6\50\1\u00b9\4\50\5\uffff\4\50\1\uffff"+
-        "\2\50\2\uffff\22\50\2\uffff\2\50\1\uffff\44\50\1\u0100\3\50\1\uffff"+
-        "\6\50\1\u010a\33\50\1\u0126\2\50\1\u0129\40\50\1\uffff\11\50\1\uffff"+
-        "\1\50\1\u0155\10\50\1\u0161\7\50\1\u0169\10\50\1\uffff\2\50\1\uffff"+
-        "\26\50\1\u018b\2\50\1\u018e\7\50\1\u0196\7\50\1\u019e\1\50\1\uffff"+
-        "\2\50\1\u01a4\10\50\1\uffff\7\50\1\uffff\12\50\1\u01be\2\50\1\u01c1"+
-        "\12\50\1\u01cc\10\50\1\uffff\2\50\1\uffff\1\50\1\u01d8\5\50\1\uffff"+
-        "\3\50\1\u01e1\3\50\1\uffff\5\50\1\uffff\13\50\1\u01f5\5\50\1\u01fb"+
-        "\1\50\1\u01fd\5\50\1\uffff\1\50\1\u0204\1\uffff\1\50\1\u0207\10"+
-        "\50\1\uffff\3\50\1\u0213\7\50\1\uffff\7\50\1\u0222\1\uffff\23\50"+
-        "\1\uffff\5\50\1\uffff\1\50\1\uffff\5\50\1\u0244\1\uffff\2\50\1\uffff"+
-        "\5\50\1\u024d\5\50\1\uffff\6\50\1\u0259\2\50\1\u025c\2\50\1\u025f"+
-        "\1\50\1\uffff\2\50\1\u0263\1\u0264\1\50\1\u0266\7\50\1\u026e\3\50"+
-        "\1\u0272\3\50\1\u0276\7\50\1\u027e\3\50\1\uffff\10\50\1\uffff\7"+
-        "\50\1\u0291\3\50\1\uffff\1\50\1\u0297\1\uffff\2\50\1\uffff\3\50"+
-        "\2\uffff\1\50\1\uffff\1\50\1\u029f\5\50\1\uffff\3\50\1\uffff\3\50"+
-        "\1\uffff\7\50\1\uffff\1\u02b2\2\50\1\u02b5\1\u02b6\2\50\1\u02b9"+
-        "\1\u02ba\1\50\1\u02bc\1\u02bd\2\50\1\u02c0\1\50\1\u02c2\1\50\1\uffff"+
-        "\2\50\1\u02c6\2\50\1\uffff\1\50\1\u02ca\1\50\1\u02cc\1\u02cd\2\50"+
-        "\1\uffff\1\50\1\u02d2\1\50\1\u02d4\3\50\1\u02d8\3\50\1\u02dc\1\u02dd"+
-        "\1\u02de\1\u02df\3\50\1\uffff\2\50\2\uffff\2\50\2\uffff\1\50\2\uffff"+
-        "\1\50\1\u02e9\1\uffff\1\50\1\uffff\3\50\1\uffff\2\50\1\u02f0\1\uffff"+
-        "\1\50\2\uffff\2\50\1\u02f4\1\u02f5\1\uffff\1\u02f6\1\uffff\3\50"+
-        "\1\uffff\1\50\1\u02fb\1\50\4\uffff\3\50\1\u0300\5\50\1\uffff\2\50"+
-        "\1\u0308\1\u0309\2\50\1\uffff\3\50\3\uffff\4\50\1\uffff\4\50\1\uffff"+
-        "\7\50\2\uffff\1\50\1\u031f\4\50\1\u0325\1\u0326\10\50\1\u032f\2"+
-        "\50\1\u0332\1\u0333\1\uffff\1\50\1\u0335\2\50\1\u0338\2\uffff\10"+
-        "\50\1\uffff\1\u0341\1\50\2\uffff\1\50\1\uffff\1\u0344\1\50\1\uffff"+
-        "\4\50\1\u034a\3\50\1\uffff\2\50\1\uffff\4\50\1\u0354\1\uffff\1\u0355"+
-        "\1\u0357\4\50\1\u035c\1\u035d\1\50\2\uffff\1\50\1\uffff\1\u0360"+
-        "\1\50\1\u0362\1\u0363\2\uffff\1\u0364\1\50\1\uffff\1\50\3\uffff"+
-        "\4\50\1\u036b\1\50\1\uffff\1\u036d\1\uffff";
+        "\1\uffff\7\50\1\uffff\3\50\1\uffff\1\50\2\uffff\2\50\1\uffff\2\50"+
+        "\1\46\2\uffff\7\50\1\46\2\uffff\3\46\2\uffff\1\50\1\uffff\2\50\1"+
+        "\163\1\50\1\165\1\166\14\50\1\u0088\1\u0089\1\50\1\u008c\1\50\1"+
+        "\uffff\7\50\1\u0097\1\uffff\1\50\2\uffff\13\50\1\uffff\4\50\3\uffff"+
+        "\12\50\5\uffff\4\50\1\uffff\1\u00bb\2\uffff\21\50\2\uffff\2\50\1"+
+        "\uffff\11\50\2\uffff\17\50\1\u00ea\11\50\1\u00f4\6\50\1\u00fb\2"+
+        "\50\1\uffff\26\50\1\u0114\2\50\1\u0117\24\50\1\uffff\11\50\1\uffff"+
+        "\6\50\1\uffff\1\50\1\u013d\5\50\1\u0145\7\50\1\u014d\10\50\1\uffff"+
+        "\2\50\1\uffff\17\50\1\u0168\2\50\1\u016b\4\50\1\uffff\6\50\1\u0176"+
+        "\4\50\1\u017b\1\50\1\uffff\7\50\1\uffff\7\50\1\uffff\11\50\1\u0194"+
+        "\2\50\1\u0197\4\50\1\u019c\10\50\1\uffff\2\50\1\uffff\1\50\1\u01a8"+
+        "\10\50\1\uffff\4\50\1\uffff\13\50\1\u01c0\5\50\1\u01c6\1\50\1\u01c8"+
+        "\4\50\1\uffff\1\50\1\u01ce\1\uffff\4\50\1\uffff\3\50\1\u01d6\7\50"+
+        "\1\uffff\12\50\1\u01e8\14\50\1\uffff\5\50\1\uffff\1\50\1\uffff\4"+
+        "\50\1\u0202\1\uffff\2\50\1\u0206\4\50\1\uffff\6\50\1\u0211\5\50"+
+        "\1\u0217\2\50\1\u021a\1\50\1\uffff\1\u021c\1\u021d\10\50\1\u0226"+
+        "\3\50\1\u022a\7\50\1\u0232\2\50\1\uffff\3\50\1\uffff\6\50\1\u023e"+
+        "\3\50\1\uffff\5\50\1\uffff\2\50\1\uffff\1\50\2\uffff\10\50\1\uffff"+
+        "\3\50\1\uffff\7\50\1\uffff\1\u025c\1\50\1\u025e\2\50\1\u0261\1\50"+
+        "\1\u0263\1\50\1\u0265\1\50\1\uffff\2\50\1\u0269\1\u026a\1\u026b"+
+        "\1\u026c\1\50\1\u026e\1\50\1\u0270\2\50\1\u0274\1\50\1\u0276\3\50"+
+        "\1\u027a\3\50\1\u027e\1\u027f\1\u0280\1\u0281\3\50\1\uffff\1\50"+
+        "\1\uffff\2\50\1\uffff\1\u0288\1\uffff\1\50\1\uffff\3\50\4\uffff"+
+        "\1\50\1\uffff\1\u028e\1\uffff\1\50\1\u0290\1\u0291\1\uffff\1\u0292"+
+        "\1\uffff\3\50\1\uffff\1\50\1\u0297\1\50\4\uffff\3\50\1\u029c\2\50"+
+        "\1\uffff\2\50\1\u02a1\1\u02a2\1\50\1\uffff\1\50\3\uffff\4\50\1\uffff"+
+        "\4\50\1\uffff\4\50\2\uffff\3\50\1\u02b5\1\u02b6\10\50\1\u02bf\1"+
+        "\u02c0\2\50\1\u02c3\2\uffff\10\50\2\uffff\2\50\1\uffff\4\50\1\u02d2"+
+        "\10\50\1\u02db\1\uffff\1\u02dd\4\50\1\u02e2\1\u02e3\1\50\1\uffff"+
+        "\1\50\1\uffff\1\u02e6\1\50\1\u02e8\1\u02e9\2\uffff\1\u02ea\1\50"+
+        "\1\uffff\1\50\3\uffff\4\50\1\u02f1\1\50\1\uffff\1\u02f3\1\uffff";
     static final String DFA12_eofS =
-        "\u036e\uffff";
+        "\u02f4\uffff";
     static final String DFA12_minS =
-        "\1\0\1\157\1\162\1\141\1\101\1\145\1\104\1\141\2\uffff\1\145\3\141"+
-        "\1\uffff\1\141\1\uffff\1\101\1\163\1\151\1\145\2\uffff\1\150\1\145"+
-        "\1\141\1\145\1\104\1\162\1\156\1\142\1\101\2\uffff\2\0\1\52\2\uffff"+
-        "\1\143\1\uffff\1\141\1\154\1\60\1\145\2\60\1\156\1\154\1\164\1\162"+
-        "\1\171\1\160\1\145\1\157\1\151\1\160\1\145\1\170\1\141\2\60\1\163"+
-        "\1\60\1\164\2\uffff\2\145\1\165\1\156\1\164\2\143\1\144\1\uffff"+
-        "\1\157\1\146\1\156\1\uffff\1\141\1\164\1\154\1\156\1\164\1\142\1"+
-        "\171\1\141\1\156\2\145\1\120\1\155\1\145\1\156\2\uffff\1\156\1\141"+
-        "\1\171\2\154\1\146\1\60\1\144\1\151\1\160\1\163\5\uffff\1\141\1"+
-        "\145\1\156\1\163\1\uffff\1\154\1\151\2\uffff\1\156\1\141\1\142\1"+
-        "\162\1\157\1\160\1\145\1\156\1\165\1\164\1\167\1\160\1\171\1\143"+
-        "\1\162\2\141\1\151\2\uffff\1\164\1\145\1\uffff\1\141\1\144\1\151"+
-        "\1\165\1\160\1\162\1\147\1\145\1\141\1\145\1\153\1\126\1\164\1\145"+
-        "\1\157\1\144\1\143\1\151\1\141\1\156\1\164\1\162\1\152\1\145\1\160"+
-        "\1\164\1\165\1\156\1\146\1\122\1\162\1\142\1\154\1\145\1\164\1\156"+
-        "\1\60\1\165\1\141\1\145\1\uffff\1\145\1\161\2\145\1\164\1\154\1"+
-        "\60\1\163\1\145\1\144\1\164\1\157\1\163\1\160\1\145\1\165\1\162"+
-        "\1\145\1\162\1\157\1\145\1\156\3\145\1\163\1\145\1\141\1\151\1\165"+
-        "\1\166\1\141\1\162\1\123\1\60\1\141\1\143\1\60\1\143\1\165\1\162"+
-        "\1\154\1\162\2\141\1\105\1\162\1\154\1\157\1\153\1\141\1\164\1\163"+
-        "\1\157\1\162\1\151\1\145\1\162\1\145\1\141\1\155\2\145\1\111\2\145"+
-        "\1\144\1\162\1\141\1\147\1\uffff\1\145\1\164\2\162\1\165\1\164\2"+
-        "\162\1\145\1\uffff\1\151\1\60\1\107\1\171\1\164\1\163\1\141\1\162"+
-        "\1\143\1\122\1\60\1\141\1\163\1\162\1\144\3\162\1\60\1\160\1\155"+
-        "\2\154\1\145\1\156\1\146\1\141\1\uffff\1\154\1\164\1\uffff\1\145"+
-        "\2\141\1\145\1\102\1\147\1\154\1\156\1\145\1\166\1\155\1\141\1\155"+
-        "\1\171\1\163\1\164\1\151\1\156\1\143\1\141\1\120\1\124\1\60\2\162"+
-        "\1\60\1\146\1\162\1\107\1\141\1\156\1\151\1\145\1\60\1\151\3\145"+
-        "\1\164\1\102\1\141\1\60\1\145\1\uffff\1\145\1\141\1\60\1\141\1\151"+
-        "\1\143\1\124\1\164\2\141\1\162\1\uffff\1\164\2\151\1\163\1\141\2"+
+        "\1\0\1\157\1\162\1\141\1\101\1\145\1\104\1\141\1\uffff\1\145\1\141"+
+        "\1\104\1\uffff\1\141\2\uffff\1\101\1\163\1\uffff\1\156\1\151\1\40"+
+        "\2\uffff\1\141\1\150\1\145\1\141\1\145\1\162\1\142\1\101\2\uffff"+
+        "\2\0\1\52\2\uffff\1\143\1\uffff\1\141\1\154\1\60\1\162\2\60\1\156"+
+        "\1\154\1\164\1\171\1\160\1\145\1\157\1\151\1\160\1\145\1\170\1\141"+
+        "\2\60\1\163\1\60\1\164\1\uffff\1\145\1\165\1\145\1\156\1\164\1\143"+
+        "\1\40\1\60\1\uffff\1\144\2\uffff\1\141\1\154\1\156\1\164\1\142\1"+
+        "\171\1\141\1\156\2\145\1\120\1\uffff\1\145\1\151\1\160\1\164\3\uffff"+
+        "\1\146\2\156\1\141\1\171\2\154\1\146\1\144\1\163\5\uffff\1\141\1"+
+        "\145\1\156\1\163\1\uffff\1\60\2\uffff\1\156\1\141\1\142\1\162\1"+
+        "\160\1\145\1\156\1\165\1\164\1\167\1\160\1\171\1\143\1\162\2\141"+
+        "\1\151\2\uffff\1\164\1\145\1\uffff\1\141\1\144\1\151\1\162\1\160"+
+        "\1\147\1\145\1\141\1\145\2\uffff\1\126\1\143\1\141\1\156\1\164\1"+
+        "\162\1\152\1\145\1\160\1\164\1\165\1\156\1\146\1\122\1\162\1\60"+
+        "\1\161\2\145\1\150\1\145\1\157\1\144\1\164\1\156\1\60\1\165\1\141"+
+        "\2\145\1\164\1\154\1\60\1\163\1\145\1\uffff\1\157\1\163\1\160\1"+
+        "\145\1\165\1\145\1\162\1\157\1\145\1\156\3\145\1\163\1\145\1\141"+
+        "\1\151\1\165\1\166\1\141\1\162\1\123\1\60\1\141\1\143\1\60\1\165"+
+        "\1\162\1\154\1\162\1\141\1\153\1\141\1\163\1\157\1\162\1\151\1\145"+
+        "\1\162\1\145\1\141\1\155\2\145\1\111\1\145\1\uffff\1\165\1\164\1"+
+        "\162\1\40\1\162\1\154\1\157\1\141\1\147\1\uffff\1\145\1\164\3\162"+
+        "\1\145\1\uffff\1\151\1\60\1\164\1\163\1\141\1\162\1\143\1\60\1\141"+
+        "\1\163\1\162\1\144\3\162\1\60\1\160\1\155\2\154\1\145\1\156\1\146"+
+        "\1\141\1\uffff\1\154\1\145\1\uffff\2\141\1\145\1\102\1\154\1\141"+
+        "\1\155\1\163\1\164\1\151\1\156\1\143\1\141\1\120\1\124\1\60\2\162"+
+        "\1\60\1\146\1\145\1\164\1\102\1\uffff\1\145\1\166\1\155\1\156\1"+
+        "\151\1\145\1\60\1\151\2\145\1\141\1\60\1\145\1\uffff\1\141\1\151"+
+        "\1\143\1\124\1\164\1\141\1\162\1\uffff\1\164\2\151\1\163\1\141\2"+
         "\102\1\uffff\1\164\1\145\1\163\1\164\1\144\1\143\1\141\1\155\1\151"+
-        "\1\165\1\60\1\147\1\154\1\60\1\157\1\145\1\165\1\164\1\156\1\145"+
-        "\1\123\1\147\1\145\1\107\1\60\1\141\1\142\1\147\2\164\1\141\1\171"+
-        "\1\151\1\uffff\1\151\1\145\1\uffff\1\151\1\60\1\145\2\164\1\156"+
-        "\1\141\1\uffff\1\154\1\156\1\144\1\60\1\141\1\157\1\143\1\uffff"+
-        "\2\156\1\155\1\145\1\141\1\uffff\1\164\1\146\1\153\1\171\1\165\1"+
-        "\164\1\162\1\147\1\151\1\164\1\143\1\60\1\154\2\157\1\151\1\164"+
-        "\1\60\1\126\1\60\1\145\1\143\1\160\1\172\1\162\1\uffff\1\145\1\60"+
-        "\1\uffff\1\165\1\60\1\145\1\151\1\143\1\120\2\145\1\164\1\145\1"+
-        "\uffff\1\164\1\165\1\124\1\60\1\151\1\162\1\160\1\164\1\143\1\156"+
-        "\1\170\1\uffff\1\156\1\157\1\163\1\155\1\142\1\145\1\143\1\60\1"+
-        "\uffff\1\142\1\165\2\164\2\145\1\156\1\155\2\151\1\141\1\160\1\162"+
-        "\1\145\1\141\1\165\1\157\1\145\1\105\1\uffff\1\163\2\165\1\157\1"+
-        "\145\1\uffff\1\141\1\uffff\1\103\1\145\1\154\2\141\1\60\1\uffff"+
-        "\1\156\1\122\1\uffff\1\107\1\164\1\145\1\162\1\145\1\60\1\145\1"+
-        "\156\1\151\1\164\1\157\1\uffff\1\157\1\141\2\145\1\124\1\143\1\60"+
-        "\1\145\1\162\1\60\1\145\1\154\1\60\1\145\1\uffff\1\154\1\156\2\60"+
-        "\1\162\1\60\2\145\1\157\1\145\1\147\1\145\1\141\1\60\2\155\1\156"+
+        "\1\60\1\147\1\154\1\60\1\157\1\165\1\147\1\145\1\60\1\141\1\142"+
+        "\1\147\2\164\1\141\1\171\1\151\1\uffff\1\151\1\145\1\uffff\1\151"+
+        "\1\60\1\141\1\157\1\156\1\145\1\123\1\164\1\156\1\141\1\uffff\1"+
+        "\154\1\156\1\144\1\143\1\uffff\1\156\1\164\1\146\1\153\1\171\1\165"+
+        "\1\162\1\147\1\151\1\164\1\143\1\60\1\154\2\157\1\151\1\164\1\60"+
+        "\1\126\1\60\1\145\1\143\1\160\1\172\1\uffff\1\145\1\60\1\uffff\1"+
+        "\165\2\145\1\164\1\uffff\1\164\1\165\1\124\1\60\1\151\1\162\1\160"+
+        "\1\164\1\143\1\156\1\170\1\uffff\1\142\1\165\1\143\1\120\1\145\1"+
+        "\163\1\155\1\142\1\145\1\143\1\60\2\164\2\151\1\141\1\160\1\162"+
+        "\1\141\1\165\1\157\1\145\1\105\1\uffff\1\163\2\165\1\157\1\145\1"+
+        "\uffff\1\141\1\uffff\1\103\1\145\1\154\1\141\1\60\1\uffff\1\156"+
+        "\1\107\1\60\1\145\1\151\1\164\1\157\1\uffff\1\157\1\141\2\145\1"+
+        "\124\1\143\1\60\1\154\1\156\1\145\1\162\1\145\1\60\1\145\1\154\1"+
+        "\60\1\145\1\uffff\2\60\1\157\1\145\1\147\1\145\1\141\2\155\1\156"+
         "\1\60\1\165\1\171\1\170\1\60\3\156\1\162\2\154\1\171\1\60\1\145"+
-        "\1\142\1\154\1\uffff\1\144\1\111\1\145\1\162\1\171\1\163\1\157\1"+
-        "\144\1\uffff\1\162\1\145\1\157\1\145\1\123\1\156\1\155\1\60\1\162"+
-        "\1\171\1\145\1\uffff\1\162\1\60\1\uffff\1\156\1\145\1\uffff\1\107"+
-        "\1\145\1\144\2\uffff\1\141\1\uffff\1\162\1\60\1\156\1\162\1\145"+
-        "\1\163\1\154\1\uffff\2\145\1\163\1\uffff\2\160\1\143\1\uffff\2\144"+
-        "\2\163\1\165\1\141\1\160\1\uffff\1\60\1\154\1\106\2\60\1\156\1\157"+
-        "\2\60\1\170\2\60\1\162\1\156\1\60\1\164\1\60\1\145\1\uffff\1\141"+
-        "\1\160\1\60\2\141\1\uffff\1\164\1\60\1\145\2\60\1\164\1\141\1\uffff"+
-        "\1\163\1\60\1\163\1\60\1\106\1\164\1\156\1\60\3\145\4\60\1\145\1"+
-        "\163\1\145\1\uffff\2\145\2\uffff\1\145\1\160\2\uffff\1\151\2\uffff"+
-        "\1\141\1\60\1\uffff\1\162\1\uffff\1\164\1\154\1\145\1\uffff\1\164"+
-        "\1\155\1\60\1\uffff\1\156\2\uffff\1\157\1\164\2\60\1\uffff\1\60"+
-        "\1\uffff\2\145\1\164\1\uffff\1\162\1\60\1\160\4\uffff\1\114\1\163"+
-        "\1\116\1\60\1\141\1\162\1\157\1\145\1\164\1\uffff\1\151\1\145\2"+
-        "\60\1\157\1\145\1\uffff\1\145\1\162\1\157\3\uffff\1\141\1\162\1"+
-        "\163\1\124\1\uffff\1\164\1\151\1\116\1\141\1\uffff\1\164\1\141\1"+
-        "\162\1\163\1\157\1\156\1\162\2\uffff\1\162\1\60\1\162\1\163\1\162"+
-        "\1\164\2\60\1\171\1\151\1\164\1\141\1\155\1\165\2\164\1\60\1\162"+
-        "\1\147\2\60\1\uffff\1\141\1\60\1\163\1\165\1\60\2\uffff\1\160\1"+
-        "\157\1\145\1\155\1\145\1\162\1\157\1\151\1\uffff\1\60\1\115\2\uffff"+
-        "\1\164\1\uffff\1\60\1\162\1\uffff\1\145\1\156\1\162\1\145\1\60\1"+
-        "\145\1\162\1\157\1\uffff\1\141\1\157\1\uffff\1\145\2\163\1\141\1"+
-        "\60\1\uffff\2\60\1\156\1\160\1\162\1\163\2\60\1\154\2\uffff\1\141"+
-        "\1\uffff\1\60\1\105\2\60\2\uffff\1\60\1\155\1\uffff\1\156\3\uffff"+
-        "\1\145\1\164\1\163\1\162\1\60\1\171\1\uffff\1\60\1\uffff";
+        "\1\142\1\uffff\1\144\1\145\1\162\1\uffff\1\162\1\157\1\145\1\123"+
+        "\1\156\1\155\1\60\1\162\1\171\1\145\1\uffff\1\145\1\144\1\163\1"+
+        "\157\1\144\1\uffff\1\156\1\145\1\uffff\1\107\2\uffff\1\156\1\162"+
+        "\1\145\1\163\1\154\2\145\1\163\1\uffff\2\160\1\143\1\uffff\2\144"+
+        "\2\163\1\165\1\141\1\160\1\uffff\1\60\1\154\1\60\1\156\1\157\1\60"+
+        "\1\156\1\60\1\164\1\60\1\145\1\uffff\1\141\1\160\4\60\1\170\1\60"+
+        "\1\164\1\60\1\145\1\163\1\60\1\163\1\60\1\106\1\164\1\156\1\60\3"+
+        "\145\4\60\1\145\1\163\1\145\1\uffff\1\145\1\uffff\1\145\1\160\1"+
+        "\uffff\1\60\1\uffff\1\162\1\uffff\1\164\1\154\1\145\4\uffff\1\151"+
+        "\1\uffff\1\60\1\uffff\1\156\2\60\1\uffff\1\60\1\uffff\2\145\1\164"+
+        "\1\uffff\1\162\1\60\1\160\4\uffff\1\114\1\163\1\116\1\60\1\162\1"+
+        "\157\1\uffff\1\151\1\145\2\60\1\145\1\uffff\1\145\3\uffff\1\141"+
+        "\1\162\1\163\1\124\1\uffff\1\164\1\151\1\116\1\141\1\uffff\1\141"+
+        "\1\162\1\156\1\162\2\uffff\1\163\1\162\1\164\2\60\1\171\1\151\1"+
+        "\164\1\141\1\155\2\164\1\147\2\60\1\141\1\165\1\60\2\uffff\1\160"+
+        "\1\157\1\145\1\155\1\145\1\157\1\151\1\115\2\uffff\1\164\1\162\1"+
+        "\uffff\1\145\1\156\1\162\1\145\1\60\1\162\1\157\1\141\1\157\1\145"+
+        "\2\163\1\141\1\60\1\uffff\1\60\1\156\1\160\1\162\1\163\2\60\1\154"+
+        "\1\uffff\1\141\1\uffff\1\60\1\105\2\60\2\uffff\1\60\1\155\1\uffff"+
+        "\1\156\3\uffff\1\145\1\164\1\163\1\162\1\60\1\171\1\uffff\1\60\1"+
+        "\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\157\2\162\1\163\1\145\1\164\1\141\2\uffff\1\164\1\157"+
-        "\2\141\1\uffff\1\157\1\uffff\1\156\1\165\1\151\1\145\2\uffff\1\157"+
-        "\1\145\1\157\1\145\1\104\1\162\1\160\1\142\1\172\2\uffff\2\uffff"+
-        "\1\57\2\uffff\1\143\1\uffff\1\165\1\154\1\172\1\145\2\172\1\156"+
-        "\1\154\1\165\1\162\1\171\1\160\1\145\2\157\1\160\1\145\1\170\1\141"+
-        "\2\172\1\164\1\172\1\164\2\uffff\2\162\1\165\1\156\1\164\1\167\1"+
-        "\143\1\144\1\uffff\1\157\1\163\1\156\1\uffff\1\141\1\164\1\154\2"+
-        "\164\1\160\1\171\1\141\1\156\2\145\1\125\1\155\1\145\1\156\2\uffff"+
-        "\1\156\1\141\1\171\2\154\1\146\1\172\1\144\1\163\1\160\1\163\5\uffff"+
-        "\1\141\1\145\1\156\1\163\1\uffff\1\154\1\151\2\uffff\1\156\1\141"+
-        "\1\160\1\162\1\157\2\160\1\156\1\165\1\164\1\167\1\160\1\171\1\143"+
-        "\1\162\2\141\1\151\2\uffff\1\164\1\145\1\uffff\1\141\1\144\1\151"+
-        "\1\165\1\160\1\162\1\147\1\145\1\141\1\145\1\153\1\126\1\164\1\145"+
-        "\1\157\1\144\1\162\1\151\1\141\1\156\1\164\1\162\1\152\1\145\1\160"+
-        "\1\164\1\165\1\156\1\146\1\122\1\162\1\142\1\154\1\145\1\164\1\156"+
-        "\1\172\1\165\1\141\1\145\1\uffff\1\145\1\161\2\145\1\164\1\154\1"+
-        "\172\1\163\1\145\1\144\1\164\1\157\1\163\1\160\1\145\1\165\1\162"+
-        "\1\145\1\162\1\157\1\145\1\156\3\145\1\163\1\145\1\141\1\151\1\165"+
-        "\1\166\1\141\1\162\1\123\1\172\1\141\1\143\1\172\1\143\1\165\1\162"+
-        "\1\154\1\162\2\141\1\105\1\162\1\154\1\157\1\153\1\141\1\164\1\163"+
-        "\1\157\1\162\1\151\1\145\1\162\1\145\1\141\1\155\2\145\1\111\2\145"+
-        "\1\144\1\162\1\145\1\147\1\uffff\1\145\1\164\2\162\1\165\1\164\2"+
-        "\162\1\145\1\uffff\1\151\1\172\1\116\1\171\1\164\1\163\1\141\1\162"+
-        "\1\143\1\122\1\172\1\141\1\163\1\162\1\144\3\162\1\172\1\160\1\155"+
-        "\2\154\1\145\1\156\1\146\1\141\1\uffff\1\154\1\164\1\uffff\1\145"+
-        "\2\141\1\145\1\102\1\147\1\154\1\156\1\145\1\166\1\155\1\141\1\155"+
-        "\1\171\1\163\1\164\1\151\1\156\1\143\1\141\1\120\1\124\1\172\2\162"+
-        "\1\172\1\146\1\162\1\107\1\141\1\156\1\151\1\145\1\172\1\151\3\145"+
-        "\1\164\1\102\1\141\1\172\1\145\1\uffff\1\145\1\141\1\172\1\141\1"+
-        "\151\1\143\1\124\1\164\2\141\1\162\1\uffff\1\164\2\151\1\163\1\141"+
-        "\2\102\1\uffff\1\164\1\145\1\163\1\164\1\144\1\143\1\141\1\155\1"+
-        "\151\1\165\1\172\1\147\1\154\1\172\1\157\1\145\1\165\1\164\1\156"+
-        "\1\145\1\123\1\147\1\145\1\107\1\172\1\141\1\142\1\147\2\164\1\141"+
-        "\1\171\1\151\1\uffff\1\151\1\145\1\uffff\1\151\1\172\1\145\2\164"+
-        "\1\156\1\141\1\uffff\1\154\1\156\1\144\1\172\1\141\1\157\1\143\1"+
-        "\uffff\2\156\1\155\1\145\1\141\1\uffff\1\164\1\146\1\153\1\171\1"+
-        "\165\1\164\1\162\1\147\1\151\1\164\1\143\1\172\1\154\2\157\1\151"+
-        "\1\164\1\172\1\126\1\172\1\145\1\143\1\160\1\172\1\162\1\uffff\1"+
-        "\145\1\172\1\uffff\1\165\1\172\1\145\1\151\1\143\1\120\2\145\1\164"+
-        "\1\145\1\uffff\1\164\1\165\1\124\1\172\1\151\1\162\1\160\1\164\1"+
-        "\143\1\156\1\170\1\uffff\1\156\1\157\1\163\1\155\1\142\1\145\1\143"+
-        "\1\172\1\uffff\1\142\1\165\2\164\2\145\1\156\1\155\2\151\1\141\1"+
-        "\160\1\162\1\145\1\141\1\165\1\157\1\145\1\124\1\uffff\1\163\2\165"+
-        "\1\157\1\145\1\uffff\1\141\1\uffff\1\124\1\145\1\154\2\141\1\172"+
-        "\1\uffff\1\156\1\122\1\uffff\1\120\1\164\1\145\1\162\1\145\1\172"+
-        "\1\145\1\156\1\151\1\164\1\157\1\uffff\1\157\1\141\2\145\1\124\1"+
-        "\143\1\172\1\145\1\162\1\172\1\145\1\154\1\172\1\145\1\uffff\1\154"+
-        "\1\156\2\172\1\162\1\172\2\145\1\157\1\145\1\147\1\145\1\141\1\172"+
-        "\2\155\1\156\1\172\1\165\1\171\1\170\1\172\3\156\1\162\2\154\1\171"+
-        "\1\172\1\145\1\142\1\154\1\uffff\1\144\1\111\1\145\1\162\1\171\1"+
-        "\163\1\157\1\144\1\uffff\1\162\1\145\1\157\1\145\1\123\1\156\1\155"+
-        "\1\172\1\162\1\171\1\145\1\uffff\1\162\1\172\1\uffff\1\156\1\145"+
-        "\1\uffff\1\107\1\145\1\144\2\uffff\1\141\1\uffff\1\162\1\172\1\156"+
-        "\1\162\1\145\1\163\1\154\1\uffff\2\145\1\163\1\uffff\2\160\1\143"+
-        "\1\uffff\2\144\2\163\1\165\1\141\1\160\1\uffff\1\172\1\154\1\106"+
-        "\2\172\1\156\1\157\2\172\1\170\2\172\1\162\1\156\1\172\1\164\1\172"+
-        "\1\145\1\uffff\1\141\1\160\1\172\2\141\1\uffff\1\164\1\172\1\145"+
-        "\2\172\1\164\1\141\1\uffff\1\163\1\172\1\163\1\172\1\106\1\164\1"+
-        "\156\1\172\3\145\4\172\1\145\1\163\1\145\1\uffff\2\145\2\uffff\1"+
-        "\145\1\160\2\uffff\1\151\2\uffff\1\141\1\172\1\uffff\1\162\1\uffff"+
-        "\1\164\1\154\1\145\1\uffff\1\164\1\155\1\172\1\uffff\1\156\2\uffff"+
-        "\1\157\1\164\2\172\1\uffff\1\172\1\uffff\2\145\1\164\1\uffff\1\162"+
-        "\1\172\1\160\4\uffff\1\114\1\163\1\116\1\172\1\141\1\162\1\157\1"+
-        "\145\1\164\1\uffff\1\151\1\145\2\172\1\157\1\145\1\uffff\1\145\1"+
-        "\162\1\157\3\uffff\1\141\1\162\1\163\1\124\1\uffff\1\164\1\151\1"+
-        "\116\1\141\1\uffff\1\164\1\141\1\162\1\163\1\157\1\156\1\162\2\uffff"+
-        "\1\162\1\172\1\162\1\163\1\162\1\164\2\172\1\171\1\151\1\164\1\141"+
-        "\1\155\1\165\2\164\1\172\1\162\1\147\2\172\1\uffff\1\141\1\172\1"+
-        "\163\1\165\1\172\2\uffff\1\160\1\157\1\145\1\155\1\145\1\162\1\157"+
-        "\1\151\1\uffff\1\172\1\115\2\uffff\1\164\1\uffff\1\172\1\162\1\uffff"+
-        "\1\145\1\156\1\162\1\145\1\172\1\145\1\162\1\157\1\uffff\1\141\1"+
-        "\157\1\uffff\1\145\2\163\1\141\1\172\1\uffff\2\172\1\156\1\160\1"+
-        "\162\1\163\2\172\1\154\2\uffff\1\141\1\uffff\1\172\1\105\2\172\2"+
-        "\uffff\1\172\1\155\1\uffff\1\156\3\uffff\1\145\1\164\1\163\1\162"+
+        "\1\uffff\1\157\2\162\1\163\1\145\1\164\1\141\1\uffff\1\164\1\157"+
+        "\1\156\1\uffff\1\141\2\uffff\1\124\1\163\1\uffff\1\163\1\151\1\40"+
+        "\2\uffff\1\145\1\157\1\145\1\157\1\145\1\162\1\142\1\172\2\uffff"+
+        "\2\uffff\1\57\2\uffff\1\143\1\uffff\1\165\1\154\1\172\1\162\2\172"+
+        "\1\156\1\154\1\165\1\171\1\160\1\145\2\157\1\160\1\145\1\170\1\141"+
+        "\2\172\1\164\1\172\1\164\1\uffff\1\162\1\165\1\145\1\156\1\164\1"+
+        "\167\1\40\1\172\1\uffff\1\144\2\uffff\1\141\1\154\2\164\1\160\1"+
+        "\171\1\141\1\156\2\145\1\125\1\uffff\1\145\1\163\1\160\1\164\3\uffff"+
+        "\1\163\2\156\1\141\1\171\2\154\1\146\1\144\1\163\5\uffff\1\141\1"+
+        "\145\1\156\1\163\1\uffff\1\172\2\uffff\1\156\1\141\1\160\1\162\2"+
+        "\160\1\156\1\165\1\164\1\167\1\160\1\171\1\143\1\162\2\141\1\151"+
+        "\2\uffff\1\164\1\145\1\uffff\1\141\1\144\1\151\1\162\1\160\1\147"+
+        "\1\145\1\141\1\145\2\uffff\1\126\1\162\1\141\1\156\1\164\1\162\1"+
+        "\152\1\145\1\160\1\164\1\165\1\156\1\146\1\122\1\162\1\172\1\161"+
+        "\2\145\1\150\1\145\1\157\1\144\1\164\1\156\1\172\1\165\1\141\2\145"+
+        "\1\164\1\154\1\172\1\163\1\145\1\uffff\1\157\1\163\1\160\1\145\1"+
+        "\165\1\145\1\162\1\157\1\145\1\156\3\145\1\163\1\145\1\141\1\151"+
+        "\1\165\1\166\1\141\1\162\1\123\1\172\1\141\1\143\1\172\1\165\1\162"+
+        "\1\154\1\162\1\141\1\153\1\141\1\163\1\157\1\162\1\151\1\145\1\162"+
+        "\1\145\1\141\1\155\2\145\1\111\1\145\1\uffff\1\165\1\164\1\162\1"+
+        "\40\1\162\1\154\1\157\1\145\1\147\1\uffff\1\145\1\164\3\162\1\145"+
+        "\1\uffff\1\151\1\172\1\164\1\163\1\141\1\162\1\143\1\172\1\141\1"+
+        "\163\1\162\1\144\3\162\1\172\1\160\1\155\2\154\1\145\1\156\1\146"+
+        "\1\141\1\uffff\1\154\1\145\1\uffff\2\141\1\145\1\102\1\154\1\141"+
+        "\1\155\1\163\1\164\1\151\1\156\1\143\1\141\1\120\1\124\1\172\2\162"+
+        "\1\172\1\146\1\145\1\164\1\102\1\uffff\1\145\1\166\1\155\1\156\1"+
+        "\151\1\145\1\172\1\151\2\145\1\141\1\172\1\145\1\uffff\1\141\1\151"+
+        "\1\143\1\124\1\164\1\141\1\162\1\uffff\1\164\2\151\1\163\1\141\2"+
+        "\102\1\uffff\1\164\1\145\1\163\1\164\1\144\1\143\1\141\1\155\1\151"+
+        "\1\172\1\147\1\154\1\172\1\157\1\165\1\147\1\145\1\172\1\141\1\142"+
+        "\1\147\2\164\1\141\1\171\1\151\1\uffff\1\151\1\145\1\uffff\1\151"+
+        "\1\172\1\141\1\157\1\156\1\145\1\123\1\164\1\156\1\141\1\uffff\1"+
+        "\154\1\156\1\144\1\143\1\uffff\1\156\1\164\1\146\1\153\1\171\1\165"+
+        "\1\162\1\147\1\151\1\164\1\143\1\172\1\154\2\157\1\151\1\164\1\172"+
+        "\1\126\1\172\1\145\1\143\1\160\1\172\1\uffff\1\145\1\172\1\uffff"+
+        "\1\165\2\145\1\164\1\uffff\1\164\1\165\1\124\1\172\1\151\1\162\1"+
+        "\160\1\164\1\143\1\156\1\170\1\uffff\1\142\1\165\1\143\1\120\1\145"+
+        "\1\163\1\155\1\142\1\145\1\143\1\172\2\164\2\151\1\141\1\160\1\162"+
+        "\1\141\1\165\1\157\1\145\1\124\1\uffff\1\163\2\165\1\157\1\145\1"+
+        "\uffff\1\141\1\uffff\1\124\1\145\1\154\1\141\1\172\1\uffff\1\156"+
+        "\1\120\1\172\1\145\1\151\1\164\1\157\1\uffff\1\157\1\141\2\145\1"+
+        "\124\1\143\1\172\1\154\1\156\1\145\1\162\1\145\1\172\1\145\1\154"+
+        "\1\172\1\145\1\uffff\2\172\1\157\1\145\1\147\1\145\1\141\2\155\1"+
+        "\156\1\172\1\165\1\171\1\170\1\172\3\156\1\162\2\154\1\171\1\172"+
+        "\1\145\1\142\1\uffff\1\144\1\145\1\162\1\uffff\1\162\1\157\1\145"+
+        "\1\123\1\156\1\155\1\172\1\162\1\171\1\145\1\uffff\1\145\1\144\1"+
+        "\163\1\157\1\144\1\uffff\1\156\1\145\1\uffff\1\107\2\uffff\1\156"+
+        "\1\162\1\145\1\163\1\154\2\145\1\163\1\uffff\2\160\1\143\1\uffff"+
+        "\2\144\2\163\1\165\1\141\1\160\1\uffff\1\172\1\154\1\172\1\156\1"+
+        "\157\1\172\1\156\1\172\1\164\1\172\1\145\1\uffff\1\141\1\160\4\172"+
+        "\1\170\1\172\1\164\1\172\1\145\1\163\1\172\1\163\1\172\1\106\1\164"+
+        "\1\156\1\172\3\145\4\172\1\145\1\163\1\145\1\uffff\1\145\1\uffff"+
+        "\1\145\1\160\1\uffff\1\172\1\uffff\1\162\1\uffff\1\164\1\154\1\145"+
+        "\4\uffff\1\151\1\uffff\1\172\1\uffff\1\156\2\172\1\uffff\1\172\1"+
+        "\uffff\2\145\1\164\1\uffff\1\162\1\172\1\160\4\uffff\1\114\1\163"+
+        "\1\116\1\172\1\162\1\157\1\uffff\1\151\1\145\2\172\1\145\1\uffff"+
+        "\1\145\3\uffff\1\141\1\162\1\163\1\124\1\uffff\1\164\1\151\1\116"+
+        "\1\141\1\uffff\1\141\1\162\1\156\1\162\2\uffff\1\163\1\162\1\164"+
+        "\2\172\1\171\1\151\1\164\1\141\1\155\2\164\1\147\2\172\1\141\1\165"+
+        "\1\172\2\uffff\1\160\1\157\1\145\1\155\1\145\1\157\1\151\1\115\2"+
+        "\uffff\1\164\1\162\1\uffff\1\145\1\156\1\162\1\145\1\172\1\162\1"+
+        "\157\1\141\1\157\1\145\2\163\1\141\1\172\1\uffff\1\172\1\156\1\160"+
+        "\1\162\1\163\2\172\1\154\1\uffff\1\141\1\uffff\1\172\1\105\2\172"+
+        "\2\uffff\1\172\1\155\1\uffff\1\156\3\uffff\1\145\1\164\1\163\1\162"+
         "\1\172\1\171\1\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\10\uffff\1\12\1\13\4\uffff\1\20\1\uffff\1\25\4\uffff\1\52\1\53"+
-        "\11\uffff\1\150\1\151\3\uffff\1\155\1\156\1\uffff\1\150\30\uffff"+
-        "\1\12\1\13\10\uffff\1\20\3\uffff\1\25\17\uffff\1\52\1\53\13\uffff"+
-        "\1\151\1\152\1\153\1\154\1\155\4\uffff\1\4\2\uffff\1\5\1\7\22\uffff"+
-        "\1\6\1\10\2\uffff\1\146\50\uffff\1\112\106\uffff\1\66\11\uffff\1"+
-        "\2\33\uffff\1\14\2\uffff\1\114\53\uffff\1\3\13\uffff\1\125\7\uffff"+
-        "\1\132\41\uffff\1\75\2\uffff\1\27\7\uffff\1\67\7\uffff\1\1\5\uffff"+
-        "\1\37\31\uffff\1\61\2\uffff\1\113\12\uffff\1\46\13\uffff\1\35\10"+
-        "\uffff\1\120\23\uffff\1\72\5\uffff\1\63\1\uffff\1\145\6\uffff\1"+
-        "\106\2\uffff\1\21\13\uffff\1\70\16\uffff\1\117\41\uffff\1\15\10"+
-        "\uffff\1\26\13\uffff\1\30\2\uffff\1\64\2\uffff\1\142\3\uffff\1\140"+
-        "\1\143\1\uffff\1\42\7\uffff\1\43\3\uffff\1\131\3\uffff\1\76\7\uffff"+
-        "\1\141\22\uffff\1\73\5\uffff\1\41\7\uffff\1\36\22\uffff\1\11\2\uffff"+
-        "\1\121\1\16\2\uffff\1\22\1\62\1\uffff\1\111\1\137\2\uffff\1\116"+
-        "\1\uffff\1\133\3\uffff\1\127\3\uffff\1\123\1\uffff\1\144\1\122\4"+
-        "\uffff\1\101\1\uffff\1\51\3\uffff\1\55\3\uffff\1\104\1\102\1\134"+
-        "\1\135\11\uffff\1\60\6\uffff\1\147\3\uffff\1\31\1\32\1\33\4\uffff"+
-        "\1\126\4\uffff\1\74\7\uffff\1\105\1\77\25\uffff\1\44\5\uffff\1\100"+
-        "\1\103\10\uffff\1\130\2\uffff\1\71\1\40\1\uffff\1\24\2\uffff\1\54"+
-        "\10\uffff\1\34\2\uffff\1\23\5\uffff\1\50\11\uffff\1\47\1\45\1\uffff"+
-        "\1\115\4\uffff\1\57\1\136\2\uffff\1\110\1\uffff\1\107\1\56\1\124"+
-        "\6\uffff\1\17\1\uffff\1\65";
+        "\10\uffff\1\13\3\uffff\1\17\1\uffff\1\21\1\22\2\uffff\1\31\3\uffff"+
+        "\1\41\1\42\10\uffff\1\137\1\140\3\uffff\1\144\1\145\1\uffff\1\137"+
+        "\27\uffff\1\13\10\uffff\1\17\1\uffff\1\21\1\22\13\uffff\1\31\4\uffff"+
+        "\1\34\1\41\1\42\12\uffff\1\140\1\141\1\142\1\143\1\144\4\uffff\1"+
+        "\4\1\uffff\1\5\1\7\21\uffff\1\6\1\10\2\uffff\1\135\11\uffff\1\16"+
+        "\1\101\43\uffff\1\12\56\uffff\1\32\11\uffff\1\55\6\uffff\1\2\30"+
+        "\uffff\1\14\2\uffff\1\103\27\uffff\1\33\15\uffff\1\3\7\uffff\1\114"+
+        "\7\uffff\1\121\32\uffff\1\64\2\uffff\1\24\12\uffff\1\56\4\uffff"+
+        "\1\1\30\uffff\1\50\2\uffff\1\102\4\uffff\1\35\13\uffff\1\107\27"+
+        "\uffff\1\61\5\uffff\1\52\1\uffff\1\134\5\uffff\1\75\7\uffff\1\57"+
+        "\21\uffff\1\106\31\uffff\1\15\3\uffff\1\23\12\uffff\1\25\5\uffff"+
+        "\1\53\2\uffff\1\131\1\uffff\1\127\1\132\10\uffff\1\120\3\uffff\1"+
+        "\65\7\uffff\1\130\13\uffff\1\62\35\uffff\1\11\1\uffff\1\110\2\uffff"+
+        "\1\126\1\uffff\1\105\1\uffff\1\122\3\uffff\1\116\1\133\1\111\1\51"+
+        "\1\uffff\1\100\1\uffff\1\112\3\uffff\1\70\1\uffff\1\40\3\uffff\1"+
+        "\44\3\uffff\1\73\1\71\1\123\1\124\6\uffff\1\47\5\uffff\1\136\1\uffff"+
+        "\1\26\1\27\1\30\4\uffff\1\115\4\uffff\1\63\4\uffff\1\74\1\66\22"+
+        "\uffff\1\67\1\72\10\uffff\1\60\1\117\2\uffff\1\43\16\uffff\1\37"+
+        "\10\uffff\1\36\1\uffff\1\104\4\uffff\1\46\1\125\2\uffff\1\77\1\uffff"+
+        "\1\76\1\45\1\113\6\uffff\1\20\1\uffff\1\54";
     static final String DFA12_specialS =
-        "\1\0\41\uffff\1\2\1\1\u034a\uffff}>";
+        "\1\2\41\uffff\1\0\1\1\u02d0\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\46\2\45\2\46\1\45\22\46\1\45\1\46\1\42\4\46\1\43\1\25\1"+
-            "\26\2\46\1\16\1\20\1\46\1\44\12\41\7\46\3\40\1\7\1\21\1\23\2"+
-            "\40\1\33\2\40\1\1\5\40\1\32\10\40\3\46\1\37\1\40\1\46\1\36\1"+
-            "\15\1\27\1\5\1\4\1\3\1\24\1\40\1\6\1\40\1\30\1\13\1\40\1\22"+
-            "\1\34\1\14\1\40\1\17\1\12\1\2\1\35\1\31\4\40\1\10\1\46\1\11"+
+            "\11\46\2\45\2\46\1\45\22\46\1\45\1\46\1\42\2\46\1\25\1\46\1"+
+            "\43\1\26\1\27\2\46\1\16\1\17\1\22\1\44\12\41\7\46\3\40\1\7\1"+
+            "\20\3\40\1\13\2\40\1\1\5\40\1\34\10\40\3\46\1\37\1\40\1\46\1"+
+            "\36\1\15\1\31\1\5\1\4\1\3\2\40\1\6\1\40\1\32\1\12\1\40\1\21"+
+            "\1\35\2\40\1\30\1\11\1\2\1\23\1\33\1\24\3\40\1\10\1\46\1\14"+
             "\uff82\46",
             "\1\47",
             "\1\51",
-            "\1\52\7\uffff\1\54\10\uffff\1\53",
-            "\1\57\1\66\1\60\1\uffff\1\72\1\uffff\1\65\3\uffff\1\71\1\67"+
-            "\2\uffff\1\64\1\73\2\uffff\1\61\1\63\1\70\30\uffff\1\55\3\uffff"+
-            "\1\62\1\56",
-            "\1\74",
-            "\1\77\51\uffff\1\76\5\uffff\1\75",
-            "\1\100",
+            "\1\52\15\uffff\1\54\2\uffff\1\53",
+            "\1\57\1\65\1\60\1\uffff\1\71\1\uffff\1\64\3\uffff\1\70\1\66"+
+            "\2\uffff\1\63\1\72\2\uffff\1\61\1\62\1\67\30\uffff\1\55\4\uffff"+
+            "\1\56",
+            "\1\73",
+            "\1\76\51\uffff\1\75\5\uffff\1\74",
+            "\1\77",
             "",
+            "\1\101\11\uffff\1\102\4\uffff\1\103",
+            "\1\104\7\uffff\1\105\5\uffff\1\106",
+            "\1\110\51\uffff\1\107",
             "",
-            "\1\103\11\uffff\1\105\4\uffff\1\104",
-            "\1\106\7\uffff\1\107\5\uffff\1\110",
-            "\1\111",
             "\1\112",
             "",
-            "\1\116\3\uffff\1\115\11\uffff\1\114",
             "",
-            "\1\123\1\uffff\1\122\1\127\1\130\1\uffff\1\131\7\uffff\1\125"+
-            "\1\120\1\uffff\1\132\1\124\1\126\31\uffff\1\121",
-            "\1\133\1\uffff\1\134",
+            "\1\117\1\uffff\1\116\1\123\1\124\1\uffff\1\125\7\uffff\1\121"+
+            "\1\115\1\uffff\1\126\1\120\1\122",
+            "\1\127",
+            "",
+            "\1\132\1\uffff\1\133\2\uffff\1\131",
+            "\1\134",
             "\1\135",
-            "\1\136",
             "",
             "",
-            "\1\142\6\uffff\1\141",
-            "\1\143",
-            "\1\144\15\uffff\1\145",
-            "\1\146",
+            "\1\141\3\uffff\1\140",
+            "\1\143\6\uffff\1\142",
+            "\1\144",
+            "\1\145\15\uffff\1\146",
             "\1\147",
             "\1\150",
-            "\1\151\1\uffff\1\152",
-            "\1\153",
+            "\1\151",
             "\32\50\4\uffff\1\50\1\uffff\32\50",
             "",
             "",
-            "\0\155",
-            "\0\155",
-            "\1\156\4\uffff\1\157",
+            "\0\153",
+            "\0\153",
+            "\1\154\4\uffff\1\155",
             "",
             "",
-            "\1\161",
+            "\1\157",
             "",
-            "\1\163\23\uffff\1\162",
+            "\1\161\23\uffff\1\160",
+            "\1\162",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\164",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\166",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\23\50\1\167\6\50",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\172",
+            "\1\167",
+            "\1\170",
+            "\1\172\1\171",
             "\1\173",
-            "\1\175\1\174",
+            "\1\174",
+            "\1\175",
             "\1\176",
-            "\1\177",
-            "\1\u0080",
+            "\1\177\5\uffff\1\u0080",
             "\1\u0081",
             "\1\u0082",
-            "\1\u0083\5\uffff\1\u0084",
-            "\1\u0085",
-            "\1\u0086",
-            "\1\u0087",
-            "\1\u0088",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\5\50\1\u008a\13\50"+
-            "\1\u008b\1\50\1\u0089\6\50",
+            "\1\u0083",
+            "\1\u0084",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\5\50\1\u0086\13\50"+
+            "\1\u0087\1\50\1\u0085\6\50",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u008e\1\u008f",
+            "\1\u008a\1\u008b",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u008d",
+            "",
+            "\1\u008e\14\uffff\1\u008f",
+            "\1\u0090",
             "\1\u0091",
-            "",
-            "",
-            "\1\u0092\14\uffff\1\u0093",
-            "\1\u0095\14\uffff\1\u0094",
+            "\1\u0092",
+            "\1\u0093",
+            "\1\u0094\23\uffff\1\u0095",
             "\1\u0096",
-            "\1\u0097",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
             "\1\u0098",
-            "\1\u0099\23\uffff\1\u009a",
-            "\1\u009b",
-            "\1\u009c",
             "",
+            "",
+            "\1\u0099",
+            "\1\u009a",
+            "\1\u009b\5\uffff\1\u009c",
             "\1\u009d",
-            "\1\u009e\14\uffff\1\u009f",
+            "\1\u009e\15\uffff\1\u009f",
             "\1\u00a0",
-            "",
             "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
-            "\1\u00a4\5\uffff\1\u00a5",
-            "\1\u00a6",
-            "\1\u00a7\15\uffff\1\u00a8",
-            "\1\u00a9",
+            "\1\u00a4",
+            "\1\u00a6\4\uffff\1\u00a5",
+            "",
+            "\1\u00a7",
+            "\1\u00a8\11\uffff\1\u00a9",
             "\1\u00aa",
             "\1\u00ab",
-            "\1\u00ac",
-            "\1\u00ad",
-            "\1\u00af\4\uffff\1\u00ae",
+            "",
+            "",
+            "",
+            "\1\u00ac\14\uffff\1\u00ad",
+            "\1\u00ae",
+            "\1\u00af",
             "\1\u00b0",
             "\1\u00b1",
             "\1\u00b2",
-            "",
-            "",
             "\1\u00b3",
             "\1\u00b4",
             "\1\u00b5",
             "\1\u00b6",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\u00b7",
             "\1\u00b8",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00b9",
             "\1\u00ba",
-            "\1\u00bb\11\uffff\1\u00bc",
+            "",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
+            "",
+            "\1\u00bc",
             "\1\u00bd",
-            "\1\u00be",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u00bf",
+            "\1\u00be\15\uffff\1\u00bf",
             "\1\u00c0",
             "\1\u00c1",
-            "\1\u00c2",
-            "",
-            "\1\u00c3",
+            "\1\u00c2\12\uffff\1\u00c3",
             "\1\u00c4",
-            "",
-            "",
             "\1\u00c5",
             "\1\u00c6",
-            "\1\u00c7\15\uffff\1\u00c8",
+            "\1\u00c7",
+            "\1\u00c8",
             "\1\u00c9",
             "\1\u00ca",
             "\1\u00cb",
-            "\1\u00cc\12\uffff\1\u00cd",
+            "\1\u00cc",
+            "\1\u00cd",
             "\1\u00ce",
+            "",
+            "",
             "\1\u00cf",
             "\1\u00d0",
+            "",
             "\1\u00d1",
             "\1\u00d2",
             "\1\u00d3",
@@ -3954,13 +3676,11 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u00d6",
             "\1\u00d7",
             "\1\u00d8",
-            "",
-            "",
             "\1\u00d9",
-            "\1\u00da",
             "",
-            "\1\u00db",
-            "\1\u00dc",
+            "",
+            "\1\u00da",
+            "\1\u00db\16\uffff\1\u00dc",
             "\1\u00dd",
             "\1\u00de",
             "\1\u00df",
@@ -3974,8 +3694,9 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u00e7",
             "\1\u00e8",
             "\1\u00e9",
-            "\1\u00ea",
-            "\1\u00eb\16\uffff\1\u00ec",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u00eb",
+            "\1\u00ec",
             "\1\u00ed",
             "\1\u00ee",
             "\1\u00ef",
@@ -3983,30 +3704,30 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u00f1",
             "\1\u00f2",
             "\1\u00f3",
-            "\1\u00f4",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00f5",
             "\1\u00f6",
             "\1\u00f7",
             "\1\u00f8",
             "\1\u00f9",
             "\1\u00fa",
-            "\1\u00fb",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u00fc",
             "\1\u00fd",
+            "",
             "\1\u00fe",
             "\1\u00ff",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0100",
             "\1\u0101",
             "\1\u0102",
             "\1\u0103",
-            "",
             "\1\u0104",
             "\1\u0105",
             "\1\u0106",
             "\1\u0107",
             "\1\u0108",
             "\1\u0109",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u010a",
             "\1\u010b",
             "\1\u010c",
             "\1\u010d",
@@ -4016,10 +3737,10 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u0111",
             "\1\u0112",
             "\1\u0113",
-            "\1\u0114",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0115",
             "\1\u0116",
-            "\1\u0117",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0118",
             "\1\u0119",
             "\1\u011a",
@@ -4034,12 +3755,13 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u0123",
             "\1\u0124",
             "\1\u0125",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0126",
             "\1\u0127",
             "\1\u0128",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0129",
             "\1\u012a",
             "\1\u012b",
+            "",
             "\1\u012c",
             "\1\u012d",
             "\1\u012e",
@@ -4047,43 +3769,45 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u0130",
             "\1\u0131",
             "\1\u0132",
-            "\1\u0133",
-            "\1\u0134",
+            "\1\u0134\3\uffff\1\u0133",
             "\1\u0135",
+            "",
             "\1\u0136",
             "\1\u0137",
             "\1\u0138",
             "\1\u0139",
             "\1\u013a",
             "\1\u013b",
+            "",
             "\1\u013c",
-            "\1\u013d",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u013e",
             "\1\u013f",
             "\1\u0140",
             "\1\u0141",
             "\1\u0142",
-            "\1\u0143",
-            "\1\u0144",
-            "\1\u0145",
+            "\12\50\7\uffff\1\u0144\16\50\1\u0143\12\50\4\uffff\1\50\1\uffff"+
+            "\32\50",
             "\1\u0146",
             "\1\u0147",
-            "\1\u0149\3\uffff\1\u0148",
+            "\1\u0148",
+            "\1\u0149",
             "\1\u014a",
-            "",
             "\1\u014b",
             "\1\u014c",
-            "\1\u014d",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u014e",
             "\1\u014f",
             "\1\u0150",
             "\1\u0151",
             "\1\u0152",
             "\1\u0153",
-            "",
             "\1\u0154",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0156\6\uffff\1\u0157",
+            "\1\u0155",
+            "",
+            "\1\u0156",
+            "\1\u0157",
+            "",
             "\1\u0158",
             "\1\u0159",
             "\1\u015a",
@@ -4091,37 +3815,38 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u015c",
             "\1\u015d",
             "\1\u015e",
-            "\12\50\7\uffff\1\u0160\16\50\1\u015f\12\50\4\uffff\1\50\1\uffff"+
-            "\32\50",
+            "\1\u015f",
+            "\1\u0160",
+            "\1\u0161",
             "\1\u0162",
             "\1\u0163",
             "\1\u0164",
             "\1\u0165",
             "\1\u0166",
-            "\1\u0167",
-            "\1\u0168",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\13\50\1\u0167\16\50\4\uffff\1\50\1\uffff\32"+
+            "\50",
+            "\1\u0169",
             "\1\u016a",
-            "\1\u016b",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u016c",
             "\1\u016d",
             "\1\u016e",
             "\1\u016f",
+            "",
             "\1\u0170",
             "\1\u0171",
-            "",
             "\1\u0172",
             "\1\u0173",
-            "",
             "\1\u0174",
             "\1\u0175",
-            "\1\u0176",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0177",
             "\1\u0178",
             "\1\u0179",
             "\1\u017a",
-            "\1\u017b",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u017c",
+            "",
             "\1\u017d",
             "\1\u017e",
             "\1\u017f",
@@ -4129,57 +3854,61 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u0181",
             "\1\u0182",
             "\1\u0183",
+            "",
             "\1\u0184",
             "\1\u0185",
             "\1\u0186",
             "\1\u0187",
             "\1\u0188",
             "\1\u0189",
-            "\12\50\7\uffff\13\50\1\u018a\16\50\4\uffff\1\50\1\uffff\32"+
-            "\50",
+            "\1\u018a",
+            "",
+            "\1\u018b",
             "\1\u018c",
             "\1\u018d",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u018e",
             "\1\u018f",
             "\1\u0190",
             "\1\u0191",
             "\1\u0192",
             "\1\u0193",
-            "\1\u0194",
-            "\1\u0195",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0197",
+            "\1\u0195",
+            "\1\u0196",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0198",
             "\1\u0199",
             "\1\u019a",
             "\1\u019b",
-            "\1\u019c",
-            "\1\u019d",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u019d",
+            "\1\u019e",
             "\1\u019f",
-            "",
             "\1\u01a0",
             "\1\u01a1",
-            "\12\50\7\uffff\6\50\1\u01a2\6\50\1\u01a3\14\50\4\uffff\1\50"+
-            "\1\uffff\32\50",
+            "\1\u01a2",
+            "\1\u01a3",
+            "\1\u01a4",
+            "",
             "\1\u01a5",
             "\1\u01a6",
+            "",
             "\1\u01a7",
-            "\1\u01a8",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u01a9",
             "\1\u01aa",
             "\1\u01ab",
             "\1\u01ac",
-            "",
             "\1\u01ad",
             "\1\u01ae",
             "\1\u01af",
             "\1\u01b0",
+            "",
             "\1\u01b1",
             "\1\u01b2",
             "\1\u01b3",
-            "",
             "\1\u01b4",
+            "",
             "\1\u01b5",
             "\1\u01b6",
             "\1\u01b7",
@@ -4189,35 +3918,36 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u01bb",
             "\1\u01bc",
             "\1\u01bd",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u01be",
             "\1\u01bf",
-            "\1\u01c0",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u01c1",
             "\1\u01c2",
             "\1\u01c3",
             "\1\u01c4",
             "\1\u01c5",
-            "\1\u01c6",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u01c7",
-            "\1\u01c8",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u01c9",
             "\1\u01ca",
             "\1\u01cb",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u01cc",
+            "",
             "\1\u01cd",
-            "\1\u01ce",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
             "\1\u01cf",
             "\1\u01d0",
             "\1\u01d1",
             "\1\u01d2",
+            "",
             "\1\u01d3",
             "\1\u01d4",
-            "",
             "\1\u01d5",
-            "\1\u01d6",
-            "",
-            "\1\u01d7",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u01d7",
+            "\1\u01d8",
             "\1\u01d9",
             "\1\u01da",
             "\1\u01db",
@@ -4227,17 +3957,15 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u01de",
             "\1\u01df",
             "\1\u01e0",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u01e1",
             "\1\u01e2",
             "\1\u01e3",
             "\1\u01e4",
-            "",
             "\1\u01e5",
             "\1\u01e6",
             "\1\u01e7",
-            "\1\u01e8",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u01e9",
-            "",
             "\1\u01ea",
             "\1\u01eb",
             "\1\u01ec",
@@ -4248,65 +3976,63 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u01f1",
             "\1\u01f2",
             "\1\u01f3",
-            "\1\u01f4",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u01f6",
+            "\1\u01f6\15\uffff\1\u01f4\1\u01f5",
+            "",
             "\1\u01f7",
             "\1\u01f8",
             "\1\u01f9",
             "\1\u01fa",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u01fb",
+            "",
             "\1\u01fc",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u01fe",
+            "",
+            "\1\u01fd\20\uffff\1\u01fe",
             "\1\u01ff",
             "\1\u0200",
             "\1\u0201",
-            "\1\u0202",
-            "",
-            "\1\u0203",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "",
-            "\1\u0205",
-            "\12\50\7\uffff\24\50\1\u0206\5\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0203",
+            "\1\u0204\10\uffff\1\u0205",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0207",
             "\1\u0208",
             "\1\u0209",
             "\1\u020a",
+            "",
             "\1\u020b",
             "\1\u020c",
             "\1\u020d",
             "\1\u020e",
             "\1\u020f",
-            "",
             "\1\u0210",
-            "\1\u0211",
-            "\1\u0212",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0212",
+            "\1\u0213",
             "\1\u0214",
             "\1\u0215",
             "\1\u0216",
-            "\1\u0217",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0218",
             "\1\u0219",
-            "\1\u021a",
-            "",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u021b",
-            "\1\u021c",
-            "\1\u021d",
+            "",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u021e",
             "\1\u021f",
             "\1\u0220",
             "\1\u0221",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
+            "\1\u0222",
             "\1\u0223",
             "\1\u0224",
             "\1\u0225",
-            "\1\u0226",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0227",
             "\1\u0228",
             "\1\u0229",
-            "\1\u022a",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u022b",
             "\1\u022c",
             "\1\u022d",
@@ -4314,386 +4040,249 @@ public class InternalDataSampleDSLLexer extends Lexer {
             "\1\u022f",
             "\1\u0230",
             "\1\u0231",
-            "\1\u0232",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0233",
             "\1\u0234",
-            "\1\u0237\15\uffff\1\u0235\1\u0236",
+            "",
+            "\1\u0235",
+            "\1\u0236",
+            "\1\u0237",
             "",
             "\1\u0238",
             "\1\u0239",
             "\1\u023a",
             "\1\u023b",
             "\1\u023c",
-            "",
             "\1\u023d",
-            "",
-            "\1\u023e\20\uffff\1\u023f",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u023f",
             "\1\u0240",
             "\1\u0241",
+            "",
             "\1\u0242",
             "\1\u0243",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
+            "\1\u0244",
             "\1\u0245",
             "\1\u0246",
             "",
-            "\1\u0247\10\uffff\1\u0248",
+            "\1\u0247",
+            "\1\u0248",
+            "",
             "\1\u0249",
+            "",
+            "",
             "\1\u024a",
             "\1\u024b",
             "\1\u024c",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u024d",
             "\1\u024e",
             "\1\u024f",
             "\1\u0250",
             "\1\u0251",
-            "\1\u0252",
             "",
+            "\1\u0252",
             "\1\u0253",
             "\1\u0254",
+            "",
             "\1\u0255",
             "\1\u0256",
             "\1\u0257",
             "\1\u0258",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0259",
             "\1\u025a",
             "\1\u025b",
+            "",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u025d",
-            "\1\u025e",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u025f",
             "\1\u0260",
-            "",
-            "\1\u0261",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0262",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0264",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0265",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u0266",
+            "",
             "\1\u0267",
             "\1\u0268",
-            "\1\u0269",
-            "\1\u026a",
-            "\1\u026b",
-            "\1\u026c",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u026d",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u026f",
-            "\1\u0270",
-            "\1\u0271",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0273",
-            "\1\u0274",
+            "\1\u0271",
+            "\1\u0272",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\22\50\1\u0273\7\50",
             "\1\u0275",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0277",
             "\1\u0278",
             "\1\u0279",
-            "\1\u027a",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u027b",
             "\1\u027c",
             "\1\u027d",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u027f",
-            "\1\u0280",
-            "\1\u0281",
-            "",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0282",
             "\1\u0283",
             "\1\u0284",
+            "",
             "\1\u0285",
+            "",
             "\1\u0286",
             "\1\u0287",
-            "\1\u0288",
+            "",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
             "\1\u0289",
             "",
             "\1\u028a",
             "\1\u028b",
             "\1\u028c",
+            "",
+            "",
+            "",
+            "",
             "\1\u028d",
-            "\1\u028e",
-            "\1\u028f",
-            "\1\u0290",
+            "",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0292",
+            "",
+            "\1\u028f",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
             "\1\u0293",
             "\1\u0294",
-            "",
             "\1\u0295",
-            "\12\50\7\uffff\15\50\1\u0296\14\50\4\uffff\1\50\1\uffff\32"+
-            "\50",
             "",
+            "\1\u0296",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u0298",
-            "\1\u0299",
             "",
+            "",
+            "",
+            "",
+            "\1\u0299",
             "\1\u029a",
             "\1\u029b",
-            "\1\u029c",
-            "",
-            "",
-            "\1\u029d",
-            "",
-            "\1\u029e",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u029d",
+            "\1\u029e",
+            "",
+            "\1\u029f",
             "\1\u02a0",
-            "\1\u02a1",
-            "\1\u02a2",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u02a3",
+            "",
             "\1\u02a4",
+            "",
+            "",
             "",
             "\1\u02a5",
             "\1\u02a6",
             "\1\u02a7",
-            "",
             "\1\u02a8",
+            "",
             "\1\u02a9",
             "\1\u02aa",
-            "",
             "\1\u02ab",
             "\1\u02ac",
+            "",
             "\1\u02ad",
             "\1\u02ae",
             "\1\u02af",
             "\1\u02b0",
-            "\1\u02b1",
             "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
+            "\1\u02b1",
+            "\1\u02b2",
             "\1\u02b3",
-            "\1\u02b4",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\22\50\1\u02b4\7\50",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u02b7",
             "\1\u02b8",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u02b9",
+            "\1\u02ba",
             "\1\u02bb",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u02bc",
+            "\1\u02bd",
             "\1\u02be",
-            "\1\u02bf",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u02c1",
+            "\1\u02c2",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u02c3",
+            "",
             "",
             "\1\u02c4",
             "\1\u02c5",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u02c6",
             "\1\u02c7",
             "\1\u02c8",
-            "",
             "\1\u02c9",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u02ca",
             "\1\u02cb",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
+            "",
+            "\1\u02cc",
+            "\1\u02cd",
+            "",
             "\1\u02ce",
             "\1\u02cf",
-            "",
             "\1\u02d0",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\22\50\1\u02d1\7\50",
-            "\1\u02d3",
+            "\1\u02d1",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u02d3",
+            "\1\u02d4",
             "\1\u02d5",
             "\1\u02d6",
             "\1\u02d7",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\1\u02d8",
             "\1\u02d9",
             "\1\u02da",
-            "\1\u02db",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "",
+            "\12\50\7\uffff\15\50\1\u02dc\14\50\4\uffff\1\50\1\uffff\32"+
+            "\50",
+            "\1\u02de",
+            "\1\u02df",
             "\1\u02e0",
             "\1\u02e1",
-            "\1\u02e2",
-            "",
-            "\1\u02e3",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u02e4",
             "",
-            "",
             "\1\u02e5",
-            "\1\u02e6",
             "",
-            "",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u02e7",
-            "",
-            "",
-            "\1\u02e8",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "",
-            "\1\u02ea",
             "",
+            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             "\1\u02eb",
-            "\1\u02ec",
-            "\1\u02ed",
             "",
+            "\1\u02ec",
+            "",
+            "",
+            "",
+            "\1\u02ed",
             "\1\u02ee",
             "\1\u02ef",
+            "\1\u02f0",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "\1\u02f1",
-            "",
-            "",
             "\1\u02f2",
-            "\1\u02f3",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "\1\u02f7",
-            "\1\u02f8",
-            "\1\u02f9",
-            "",
-            "\1\u02fa",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u02fc",
-            "",
-            "",
-            "",
-            "",
-            "\1\u02fd",
-            "\1\u02fe",
-            "\1\u02ff",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0301",
-            "\1\u0302",
-            "\1\u0303",
-            "\1\u0304",
-            "\1\u0305",
-            "",
-            "\1\u0306",
-            "\1\u0307",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u030a",
-            "\1\u030b",
-            "",
-            "\1\u030c",
-            "\1\u030d",
-            "\1\u030e",
-            "",
-            "",
-            "",
-            "\1\u030f",
-            "\1\u0310",
-            "\1\u0311",
-            "\1\u0312",
-            "",
-            "\1\u0313",
-            "\1\u0314",
-            "\1\u0315",
-            "\1\u0316",
-            "",
-            "\1\u0317",
-            "\1\u0318",
-            "\1\u0319",
-            "\1\u031a",
-            "\1\u031b",
-            "\1\u031c",
-            "\1\u031d",
-            "",
-            "",
-            "\1\u031e",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0320",
-            "\1\u0321",
-            "\1\u0322",
-            "\1\u0323",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\22\50\1\u0324\7\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0327",
-            "\1\u0328",
-            "\1\u0329",
-            "\1\u032a",
-            "\1\u032b",
-            "\1\u032c",
-            "\1\u032d",
-            "\1\u032e",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0330",
-            "\1\u0331",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "\1\u0334",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0336",
-            "\1\u0337",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "",
-            "\1\u0339",
-            "\1\u033a",
-            "\1\u033b",
-            "\1\u033c",
-            "\1\u033d",
-            "\1\u033e",
-            "\1\u033f",
-            "\1\u0340",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0342",
-            "",
-            "",
-            "\1\u0343",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0345",
-            "",
-            "\1\u0346",
-            "\1\u0347",
-            "\1\u0348",
-            "\1\u0349",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u034b",
-            "\1\u034c",
-            "\1\u034d",
-            "",
-            "\1\u034e",
-            "\1\u034f",
-            "",
-            "\1\u0350",
-            "\1\u0351",
-            "\1\u0352",
-            "\1\u0353",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\15\50\1\u0356\14\50\4\uffff\1\50\1\uffff\32"+
-            "\50",
-            "\1\u0358",
-            "\1\u0359",
-            "\1\u035a",
-            "\1\u035b",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u035e",
-            "",
-            "",
-            "\1\u035f",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0361",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "",
-            "",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u0365",
-            "",
-            "\1\u0366",
-            "",
-            "",
-            "",
-            "\1\u0367",
-            "\1\u0368",
-            "\1\u0369",
-            "\1\u036a",
-            "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
-            "\1\u036c",
             "",
             "\12\50\7\uffff\32\50\4\uffff\1\50\1\uffff\32\50",
             ""
@@ -4729,13 +4318,33 @@ public class InternalDataSampleDSLLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | T__105 | T__106 | T__107 | T__108 | T__109 | T__110 | T__111 | T__112 | T__113 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | T__66 | T__67 | T__68 | T__69 | T__70 | T__71 | T__72 | T__73 | T__74 | T__75 | T__76 | T__77 | T__78 | T__79 | T__80 | T__81 | T__82 | T__83 | T__84 | T__85 | T__86 | T__87 | T__88 | T__89 | T__90 | T__91 | T__92 | T__93 | T__94 | T__95 | T__96 | T__97 | T__98 | T__99 | T__100 | T__101 | T__102 | T__103 | T__104 | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA12_34 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_34>='\u0000' && LA12_34<='\uFFFF')) ) {s = 107;}
+
+                        else s = 38;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA12_35 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_35>='\u0000' && LA12_35<='\uFFFF')) ) {s = 107;}
+
+                        else s = 38;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -4755,53 +4364,53 @@ public class InternalDataSampleDSLLexer extends Lexer {
 
                         else if ( (LA12_0=='{') ) {s = 8;}
 
-                        else if ( (LA12_0=='}') ) {s = 9;}
+                        else if ( (LA12_0=='s') ) {s = 9;}
 
-                        else if ( (LA12_0=='s') ) {s = 10;}
+                        else if ( (LA12_0=='l') ) {s = 10;}
 
-                        else if ( (LA12_0=='l') ) {s = 11;}
+                        else if ( (LA12_0=='I') ) {s = 11;}
 
-                        else if ( (LA12_0=='p') ) {s = 12;}
+                        else if ( (LA12_0=='}') ) {s = 12;}
 
                         else if ( (LA12_0=='b') ) {s = 13;}
 
                         else if ( (LA12_0==',') ) {s = 14;}
 
-                        else if ( (LA12_0=='r') ) {s = 15;}
+                        else if ( (LA12_0=='-') ) {s = 15;}
 
-                        else if ( (LA12_0=='-') ) {s = 16;}
+                        else if ( (LA12_0=='E') ) {s = 16;}
 
-                        else if ( (LA12_0=='E') ) {s = 17;}
+                        else if ( (LA12_0=='n') ) {s = 17;}
 
-                        else if ( (LA12_0=='n') ) {s = 18;}
+                        else if ( (LA12_0=='.') ) {s = 18;}
 
-                        else if ( (LA12_0=='F') ) {s = 19;}
+                        else if ( (LA12_0=='u') ) {s = 19;}
 
-                        else if ( (LA12_0=='g') ) {s = 20;}
+                        else if ( (LA12_0=='w') ) {s = 20;}
 
-                        else if ( (LA12_0=='(') ) {s = 21;}
+                        else if ( (LA12_0=='%') ) {s = 21;}
 
-                        else if ( (LA12_0==')') ) {s = 22;}
+                        else if ( (LA12_0=='(') ) {s = 22;}
 
-                        else if ( (LA12_0=='c') ) {s = 23;}
+                        else if ( (LA12_0==')') ) {s = 23;}
 
-                        else if ( (LA12_0=='k') ) {s = 24;}
+                        else if ( (LA12_0=='r') ) {s = 24;}
 
-                        else if ( (LA12_0=='v') ) {s = 25;}
+                        else if ( (LA12_0=='c') ) {s = 25;}
 
-                        else if ( (LA12_0=='R') ) {s = 26;}
+                        else if ( (LA12_0=='k') ) {s = 26;}
 
-                        else if ( (LA12_0=='I') ) {s = 27;}
+                        else if ( (LA12_0=='v') ) {s = 27;}
 
-                        else if ( (LA12_0=='o') ) {s = 28;}
+                        else if ( (LA12_0=='R') ) {s = 28;}
 
-                        else if ( (LA12_0=='u') ) {s = 29;}
+                        else if ( (LA12_0=='o') ) {s = 29;}
 
                         else if ( (LA12_0=='a') ) {s = 30;}
 
                         else if ( (LA12_0=='^') ) {s = 31;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='C')||(LA12_0>='G' && LA12_0<='H')||(LA12_0>='J' && LA12_0<='K')||(LA12_0>='M' && LA12_0<='Q')||(LA12_0>='S' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='h'||LA12_0=='j'||LA12_0=='m'||LA12_0=='q'||(LA12_0>='w' && LA12_0<='z')) ) {s = 32;}
+                        else if ( ((LA12_0>='A' && LA12_0<='C')||(LA12_0>='F' && LA12_0<='H')||(LA12_0>='J' && LA12_0<='K')||(LA12_0>='M' && LA12_0<='Q')||(LA12_0>='S' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='g' && LA12_0<='h')||LA12_0=='j'||LA12_0=='m'||(LA12_0>='p' && LA12_0<='q')||(LA12_0>='x' && LA12_0<='z')) ) {s = 32;}
 
                         else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 33;}
 
@@ -4813,27 +4422,7 @@ public class InternalDataSampleDSLLexer extends Lexer {
 
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 37;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||LA12_0=='.'||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 38;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_35 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_35>='\u0000' && LA12_35<='\uFFFF')) ) {s = 109;}
-
-                        else s = 38;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA12_34 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_34>='\u0000' && LA12_34<='\uFFFF')) ) {s = 109;}
-
-                        else s = 38;
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='$')||LA12_0=='&'||(LA12_0>='*' && LA12_0<='+')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 38;}
 
                         if ( s>=0 ) return s;
                         break;

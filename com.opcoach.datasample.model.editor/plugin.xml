@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dataSample -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.opcoach.datasample.presentation.DatasampleModelWizardID"
+            name="%_UI_DatasampleModelWizard_label"
+            class="com.opcoach.datasample.presentation.DatasampleModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DatasampleModelFile.gif">
+         <description>%_UI_DatasampleModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dataSample -->
+      <editor
+            id="com.opcoach.datasample.presentation.DatasampleEditorID"
+            name="%_UI_DatasampleEditor_label"
+            icon="icons/full/obj16/DatasampleModelFile.gif"
+            extensions="datasample"
+            class="com.opcoach.datasample.presentation.DatasampleEditor"
+            contributorClass="com.opcoach.datasample.presentation.DatasampleActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
