@@ -132,7 +132,7 @@ public class DSGenPackageImpl extends DSGenBaseImpl implements DSGenPackage
 	{
 		if (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_PACKAGE__DSGEN_MODEL)
 			return null;
-		return (DSGenModel) eContainer();
+		return (DSGenModel) eInternalContainer();
 	}
 
 	/**

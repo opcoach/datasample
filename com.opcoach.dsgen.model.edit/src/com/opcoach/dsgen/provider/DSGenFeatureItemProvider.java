@@ -142,7 +142,7 @@ public class DSGenFeatureItemProvider extends DSGenTypedElementItemProvider impl
 	@Override
 	public String getText(Object object)
 	{
-		return ((DSGenFeature) object).getEcoreFeature().getName();
+		return getString("_UI_DSGenFeature_type");
 	}
 
 	/**

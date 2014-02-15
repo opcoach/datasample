@@ -147,7 +147,7 @@ public abstract class DSGenClassifierImpl extends DSGenBaseImpl implements DSGen
 	{
 		if (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_CLASSIFIER__DSGEN_PACKAGE)
 			return null;
-		return (DSGenPackage) eContainer();
+		return (DSGenPackage) eInternalContainer();
 	}
 
 	/**

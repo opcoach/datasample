@@ -58,7 +58,7 @@ public class DataSampleGenFactoryImpl extends EFactoryImpl implements DataSample
 		try
 		{
 			DataSampleGenFactory theDataSampleGenFactory = (DataSampleGenFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.opcoach.com/dsgen/1.0");
+					.getEFactory(DataSampleGenPackage.eNS_URI);
 			if (theDataSampleGenFactory != null)
 			{
 				return theDataSampleGenFactory;

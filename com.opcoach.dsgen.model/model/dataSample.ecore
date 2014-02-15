@@ -29,6 +29,7 @@
         defaultValueLiteral="0" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="generator" eType="#//generator/EObjectGenerator"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbInstances" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DSGenFeature" eSuperTypes="#//DSGenTypedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="dsgenClass" lowerBound="1"
@@ -83,7 +84,7 @@
       nsPrefix="dsgenerator">
     <eClassifiers xsi:type="ecore:EClass" name="EObjectGenerator">
       <eOperations name="getInstances" eType="#//generator/EObjectCollection">
-        <eParameters name="cl" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+        <eParameters name="cl" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="targetDSGenClass" eType="#//DSGenClass"/>
       <eGenericSuperTypes eClassifier="ecore:EClass ../../com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">

@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.opcoach.dsgen.DSGenClass#isRootObject <em>Root Object</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenClass#getNbAssociationRefTo <em>Nb Association Ref To</em>}</li>
  *   <li>{@link com.opcoach.dsgen.DSGenClass#getGenerator <em>Generator</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.DSGenClass#getNbInstances <em>Nb Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,5 +114,31 @@ public interface DSGenClass extends DSGenClassifier
 	 * @generated
 	 */
 	void setGenerator(EObjectGenerator value);
+
+	/**
+	 * Returns the value of the '<em><b>Nb Instances</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nb Instances</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nb Instances</em>' attribute.
+	 * @see #setNbInstances(int)
+	 * @see com.opcoach.dsgen.DataSampleGenPackage#getDSGenClass_NbInstances()
+	 * @model
+	 * @generated
+	 */
+	int getNbInstances();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.dsgen.DSGenClass#getNbInstances <em>Nb Instances</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nb Instances</em>' attribute.
+	 * @see #getNbInstances()
+	 * @generated
+	 */
+	void setNbInstances(int value);
 
 } // DSGenClass

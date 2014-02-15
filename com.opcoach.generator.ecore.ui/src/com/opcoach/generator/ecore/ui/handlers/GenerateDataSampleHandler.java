@@ -42,7 +42,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.osgi.framework.Bundle;
 
 import com.opcoach.dsgen.DSGenPackage;
-import com.opcoach.dsgen.helpers.DSGenHelper;
+import com.opcoach.dsgen.helpers.Ecore2DSGen;
 import com.opcoach.generator.ecore.ui.GeneratorEcoreUIActivator;
 
 /**
@@ -135,9 +135,10 @@ public class GenerateDataSampleHandler extends AbstractHandler
 		int ecorePos = ecoreName.lastIndexOf(".ecore");
 		String dsgenName = targetProj.getLocation() + "/src/" + ecoreName.substring(0,ecorePos) + ".dsgen";
 		DSGenPackage genPack = null;
+		Ecore2DSGen factory = new Ecore2DSGen();
 		try
 		{
-		 genPack = DSGenHelper.createDSGenPackage(rootPackage);
+		 genPack = factory.createDSGenPackage(rootPackage);
 		}
 		catch (Throwable t)
 		{

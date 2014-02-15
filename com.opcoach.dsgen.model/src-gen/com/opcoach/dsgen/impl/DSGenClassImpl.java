@@ -31,6 +31,7 @@ import com.opcoach.dsgen.generator.EObjectGenerator;
  *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#isRootObject <em>Root Object</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getNbAssociationRefTo <em>Nb Association Ref To</em>}</li>
  *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getGenerator <em>Generator</em>}</li>
+ *   <li>{@link com.opcoach.dsgen.impl.DSGenClassImpl#getNbInstances <em>Nb Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,6 +92,26 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	 * @ordered
 	 */
 	protected EObjectGenerator generator;
+
+	/**
+	 * The default value of the '{@link #getNbInstances() <em>Nb Instances</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NB_INSTANCES_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNbInstances() <em>Nb Instances</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbInstances()
+	 * @generated
+	 * @ordered
+	 */
+	protected int nbInstances = NB_INSTANCES_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -213,6 +234,30 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getNbInstances()
+	{
+		return nbInstances;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNbInstances(int newNbInstances)
+	{
+		int oldNbInstances = nbInstances;
+		nbInstances = newNbInstances;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DataSampleGenPackage.DS_GEN_CLASS__NB_INSTANCES, oldNbInstances,
+					nbInstances));
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -255,6 +300,8 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 			return getNbAssociationRefTo();
 		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
 			return getGenerator();
+		case DataSampleGenPackage.DS_GEN_CLASS__NB_INSTANCES:
+			return getNbInstances();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -278,6 +325,9 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
 			setGenerator((EObjectGenerator) newValue);
 			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__NB_INSTANCES:
+			setNbInstances((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -300,6 +350,9 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
 			setGenerator((EObjectGenerator) null);
 			return;
+		case DataSampleGenPackage.DS_GEN_CLASS__NB_INSTANCES:
+			setNbInstances(NB_INSTANCES_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -319,6 +372,8 @@ public class DSGenClassImpl extends DSGenClassifierImpl implements DSGenClass
 			return nbAssociationRefTo != NB_ASSOCIATION_REF_TO_EDEFAULT;
 		case DataSampleGenPackage.DS_GEN_CLASS__GENERATOR:
 			return generator != null;
+		case DataSampleGenPackage.DS_GEN_CLASS__NB_INSTANCES:
+			return nbInstances != NB_INSTANCES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

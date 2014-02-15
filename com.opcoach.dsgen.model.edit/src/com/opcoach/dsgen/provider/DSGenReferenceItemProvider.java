@@ -108,8 +108,8 @@ public class DSGenReferenceItemProvider extends DSGenFeatureItemProvider impleme
 	public String getText(Object object)
 	{
 		DSGenReference dsgr = (DSGenReference) object;
-		EReference ref = (EReference)dsgr.getEcoreFeature();
-		String type = ((ref.isContainment()?"Composition" : "Association"));
+		EReference ref = (EReference) dsgr.getEcoreFeature();
+		String type = ((ref.isContainment() ? "Composition" : "Association"));
 		int ub = ref.getUpperBound();
 		String card = ((ub == -1) || (ub > 1)) ? "*" : "1";
 		return super.getText(object) + " (" + type + " " + card + ")";

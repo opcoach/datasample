@@ -86,6 +86,18 @@ public class ChildrenGeneratorImpl extends ValueGeneratorImpl<Collection<EObject
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setLastGeneratedValue(Collection<EObject> newLastGeneratedValue)
+	{
+		super.setLastGeneratedValue(newLastGeneratedValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public int getMaxChildrenNumber()

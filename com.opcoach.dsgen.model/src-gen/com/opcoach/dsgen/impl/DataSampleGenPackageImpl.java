@@ -385,6 +385,16 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDSGenClass_NbInstances()
+	{
+		return (EAttribute) dsGenClassEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -676,6 +686,7 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		createEAttribute(dsGenClassEClass, DS_GEN_CLASS__ROOT_OBJECT);
 		createEAttribute(dsGenClassEClass, DS_GEN_CLASS__NB_ASSOCIATION_REF_TO);
 		createEReference(dsGenClassEClass, DS_GEN_CLASS__GENERATOR);
+		createEAttribute(dsGenClassEClass, DS_GEN_CLASS__NB_INSTANCES);
 
 		dsGenFeatureEClass = createEClass(DS_GEN_FEATURE);
 		createEReference(dsGenFeatureEClass, DS_GEN_FEATURE__DSGEN_CLASS);
@@ -808,6 +819,8 @@ public class DataSampleGenPackageImpl extends EPackageImpl implements DataSample
 		initEReference(getDSGenClass_Generator(), theDSGenGeneratorPackage.getEObjectGenerator(), null, "generator", null, 0, 1,
 				DSGenClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDSGenClass_NbInstances(), theEcorePackage.getEInt(), "nbInstances", null, 0, 1, DSGenClass.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dsGenFeatureEClass, DSGenFeature.class, "DSGenFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDSGenFeature_DsgenClass(), this.getDSGenClassifier(), this.getDSGenClassifier_DsgenFeatures(),

@@ -42,7 +42,7 @@ public class DSGenGeneratorFactoryImpl extends EFactoryImpl implements DSGenGene
 		try
 		{
 			DSGenGeneratorFactory theDSGenGeneratorFactory = (DSGenGeneratorFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.opcoach.com/dsgen/generator/1.0");
+					.getEFactory(DSGenGeneratorPackage.eNS_URI);
 			if (theDSGenGeneratorFactory != null)
 			{
 				return theDSGenGeneratorFactory;

@@ -40,6 +40,7 @@
           ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/nbAssociationRefTo"/>
       <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
           ecoreFeature="ecore:EReference dataSample.ecore#//DSGenClass/generator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DSGenClass/nbInstances"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//DSGenFeature">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference dataSample.ecore#//DSGenFeature/dsgenClass"/>

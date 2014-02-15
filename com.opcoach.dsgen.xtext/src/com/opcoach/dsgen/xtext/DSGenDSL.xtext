@@ -7,13 +7,15 @@ import "http://www.opcoach.com/dsgen/generator/1.0" as generator
 import "http://www.opcoach.generator/1.0" as generator0
 
 DSGenModel returns DSGenModel:
-	'DSGenModel'
+	'DataSample'
 	name=EString
 	'{'
-		('randomSeed' randomSeed=ELong)?
-		('language' language=EString)?
-		('dsgenPackages' '{' dsgenPackages+=DSGenPackage ( "," dsgenPackages+=DSGenPackage)* '}' )?
-		'badGenerators' badGenerators=BadValueGeneratorRegistry
+		('seed = ' randomSeed=ELong)?
+		('language =' language=EString)?
+		('package = ' dsgenPackages+=DSGenPackage2)?
+		'badValueGenerators : '  badGenerators=BadValueGeneratorRegistry
+		
+		'in root object generate ' // (DSGenClass2)
 	'}';
 
 
@@ -57,6 +59,9 @@ DSGenPackage returns DSGenPackage:
 		'ecorePackage' ecorePackage=[ecore::EPackage|EString]
 		('dsgenClassifiers' '{' dsgenClassifiers+=DSGenClassifier ( "," dsgenClassifiers+=DSGenClassifier)* '}' )?
 	'}';
+
+DSGenPackage2 returns DSGenPackage:
+	ecorePackage=[ecore::EPackage|EString];
 
 ELong returns ecore::ELong:
 	'-'? INT;
@@ -268,6 +273,16 @@ DSGenFeature_Impl returns DSGenFeature:
 		'ecoreFeature' ecoreFeature=[ecore::EStructuralFeature|EString]
 		('generator' generator=ValueGenerator)?
 	'}';
+
+DSGenClass2 returns DSGenClass:
+	'DSGenClass'
+	'{'
+	    'nbInstances' nbInstances=EInt
+		'ecoreClass' ecoreClass=[ecore::EClass|EString]
+		('dsgenFeatures' '{' dsgenFeatures+=DSGenFeature ( "," dsgenFeatures+=DSGenFeature)* '}' )?
+		('generator' generator=EObjectGenerator)?
+	'}';
+
 
 DSGenClass returns DSGenClass:
 	'DSGenClass'

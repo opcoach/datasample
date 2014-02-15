@@ -88,7 +88,7 @@ public class DSGenFeatureImpl extends DSGenTypedElementImpl implements DSGenFeat
 	{
 		if (eContainerFeatureID() != DataSampleGenPackage.DS_GEN_FEATURE__DSGEN_CLASS)
 			return null;
-		return (DSGenClassifier) eContainer();
+		return (DSGenClassifier) eInternalContainer();
 	}
 
 	/**

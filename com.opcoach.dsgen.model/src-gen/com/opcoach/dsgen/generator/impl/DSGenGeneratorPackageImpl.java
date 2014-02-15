@@ -309,6 +309,7 @@ public class DSGenGeneratorPackageImpl extends EPackageImpl implements DSGenGene
 		GeneratorPackage theGeneratorPackage = (GeneratorPackage) EPackage.Registry.INSTANCE.getEPackage(GeneratorPackage.eNS_URI);
 		DataSampleGenPackage theDataSampleGenPackage = (DataSampleGenPackage) EPackage.Registry.INSTANCE
 				.getEPackage(DataSampleGenPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -341,7 +342,7 @@ public class DSGenGeneratorPackageImpl extends EPackageImpl implements DSGenGene
 
 		EOperation op = addEOperation(eObjectGeneratorEClass, this.getEObjectCollection(), "getInstances", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
-		addEParameter(op, ecorePackage.getEClass(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theEcorePackage.getEClass(), "cl", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(childrenGeneratorEClass, ChildrenGenerator.class, "ChildrenGenerator", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

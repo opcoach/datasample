@@ -293,12 +293,21 @@ public interface DataSampleGenPackage extends EPackage
 	int DS_GEN_CLASS__GENERATOR = DS_GEN_CLASSIFIER_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Nb Instances</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DS_GEN_CLASS__NB_INSTANCES = DS_GEN_CLASSIFIER_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>DS Gen Class</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DS_GEN_CLASS_FEATURE_COUNT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 3;
+	int DS_GEN_CLASS_FEATURE_COUNT = DS_GEN_CLASSIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.dsgen.impl.DSGenTypedElementImpl <em>DS Gen Typed Element</em>}' class.
@@ -850,6 +859,17 @@ public interface DataSampleGenPackage extends EPackage
 	EReference getDSGenClass_Generator();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.dsgen.DSGenClass#getNbInstances <em>Nb Instances</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nb Instances</em>'.
+	 * @see com.opcoach.dsgen.DSGenClass#getNbInstances()
+	 * @see #getDSGenClass()
+	 * @generated
+	 */
+	EAttribute getDSGenClass_NbInstances();
+
+	/**
 	 * Returns the meta object for class '{@link com.opcoach.dsgen.DSGenFeature <em>DS Gen Feature</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>DS Gen Feature</em>'.
@@ -1254,6 +1274,14 @@ public interface DataSampleGenPackage extends EPackage
 		 * @generated
 		 */
 		EReference DS_GEN_CLASS__GENERATOR = eINSTANCE.getDSGenClass_Generator();
+
+		/**
+		 * The meta object literal for the '<em><b>Nb Instances</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DS_GEN_CLASS__NB_INSTANCES = eINSTANCE.getDSGenClass_NbInstances();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.dsgen.impl.DSGenFeatureImpl <em>DS Gen Feature</em>}' class.
