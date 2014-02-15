@@ -1042,7 +1042,7 @@ rule__DataSample__Group__3__Impl
 (
 { before(grammarAccess.getDataSampleAccess().getForKeyword_3()); }
 
-	'for' 
+	'for ' 
 
 { after(grammarAccess.getDataSampleAccess().getForKeyword_3()); }
 )

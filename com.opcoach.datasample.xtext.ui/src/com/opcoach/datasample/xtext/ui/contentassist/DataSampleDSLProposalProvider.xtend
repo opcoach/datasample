@@ -3,10 +3,26 @@
  */
 package com.opcoach.datasample.xtext.ui.contentassist
 
-import com.opcoach.datasample.xtext.ui.contentassist.AbstractDataSampleDSLProposalProvider
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EPackage
+import org.eclipse.xtext.Assignment
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
  */
 class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvider {
+
+	override completeDataSample_PackageURI(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+		super.completeDataSample_PackageURI(model, assignment, context, acceptor)
+
+		// Get all registry packages available in platform
+		val registry = EPackage.Registry.INSTANCE
+		for (k : registry.keySet)
+			acceptor.accept(createCompletionProposal(k, context));
+
+	}
+
 }

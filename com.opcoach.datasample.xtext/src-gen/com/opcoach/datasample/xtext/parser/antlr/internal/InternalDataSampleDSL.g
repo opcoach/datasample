@@ -106,7 +106,7 @@ ruleDataSample returns [EObject current=null]
 	    }
 
 )
-)	otherlv_3='for' 
+)	otherlv_3='for ' 
     {
     	newLeafNode(otherlv_3, grammarAccess.getDataSampleAccess().getForKeyword_3());
     }

@@ -61,14 +61,14 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//DataSample:
-		//	{DataSample} "DataSample" name=EString "for" packageURI=EString "{" "seed" seed=EInt "language" language=Language
+		//	{DataSample} "DataSample" name=EString "for " packageURI=EString "{" "seed" seed=EInt "language" language=Language
 		//	("badValueGeneratorNames" "{" badValueGeneratorNames+=EString ("," badValueGeneratorNames+=EString)* "}")? //	('package' package=[ecore::EPackage|EString])?
 		//	//	('rootEntity' rootEntity=[ecore::EClass|EString])?
 		//	"In the root object generate " entityGenerators+=EntityGenerator2 ("," entityGenerators+=EntityGenerator2)*
 		//	fieldGenerators+=FieldGenerator2 ("," fieldGenerators+=FieldGenerator2)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//{DataSample} "DataSample" name=EString "for" packageURI=EString "{" "seed" seed=EInt "language" language=Language
+		//{DataSample} "DataSample" name=EString "for " packageURI=EString "{" "seed" seed=EInt "language" language=Language
 		//("badValueGeneratorNames" "{" badValueGeneratorNames+=EString ("," badValueGeneratorNames+=EString)* "}")? //	('package' package=[ecore::EPackage|EString])?
 		////	('rootEntity' rootEntity=[ecore::EClass|EString])?
 		//"In the root object generate " entityGenerators+=EntityGenerator2 ("," entityGenerators+=EntityGenerator2)*
@@ -87,7 +87,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
-		//"for"
+		//"for "
 		public Keyword getForKeyword_3() { return cForKeyword_3; }
 
 		//packageURI=EString
@@ -3657,7 +3657,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//DataSample:
-	//	{DataSample} "DataSample" name=EString "for" packageURI=EString "{" "seed" seed=EInt "language" language=Language
+	//	{DataSample} "DataSample" name=EString "for " packageURI=EString "{" "seed" seed=EInt "language" language=Language
 	//	("badValueGeneratorNames" "{" badValueGeneratorNames+=EString ("," badValueGeneratorNames+=EString)* "}")? //	('package' package=[ecore::EPackage|EString])?
 	//	//	('rootEntity' rootEntity=[ecore::EClass|EString])?
 	//	"In the root object generate " entityGenerators+=EntityGenerator2 ("," entityGenerators+=EntityGenerator2)*
