@@ -53,6 +53,7 @@
       </wizard>
    </extension>
 
+null
    <extension point="org.eclipse.ui.editors">
       <editor
             id="com.opcoach.generator.basic.presentation.BasicEditorID"
