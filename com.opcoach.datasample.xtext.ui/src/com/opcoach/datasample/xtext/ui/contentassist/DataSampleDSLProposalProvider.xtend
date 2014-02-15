@@ -3,11 +3,16 @@
  */
 package com.opcoach.datasample.xtext.ui.contentassist
 
+import com.opcoach.datasample.DataSample
+import com.opcoach.datasample.EntityGenerator
+import com.opcoach.datasample.FieldGenerator
+import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -23,6 +28,40 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 		for (k : registry.keySet)
 			acceptor.accept(createCompletionProposal(k, context));
 
+	}
+
+	override completeEntityGenerator2_EntityName(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+
+		super.completeEntityGenerator2_EntityName(model, assignment, context, acceptor)
+
+		// Must propose only EClass whose name is not yet selected
+		// Must iterate in all packages
+		val epack = getEPackage(model as EntityGenerator)
+
+		val  classnames = epack.EClassInPackage
+		for (p : epack.ESubpackages)
+			classnames.addAll(p.EClassInPackage)
+
+		for (s : classnames)
+			acceptor.accept(createCompletionProposal(s.name, context));
+
+	}
+
+	def getEClassInPackage(EPackage pack) {
+		return pack.EClassifiers.filter(EClass).toList
+	}
+
+	def getEPackage(EntityGenerator egen) {
+		return getEPackage(egen.eContainer as DataSample)
+	}
+
+	def getEPackage(FieldGenerator fgen) {
+		return getEPackage(fgen.eContainer as DataSample)
+	}
+
+	def getEPackage(DataSample ds) {
+		return EPackage.Registry.INSTANCE.getEPackage(ds.packageURI)
 	}
 
 }
