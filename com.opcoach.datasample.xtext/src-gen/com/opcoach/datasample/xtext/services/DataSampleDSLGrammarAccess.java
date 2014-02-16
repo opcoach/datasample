@@ -22,7 +22,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DataSample");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDataSampleAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cDataSampleKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cSampleKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cForKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -61,14 +61,14 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//DataSample:
-		//	{DataSample} "DataSample" name=EString "for " packageURI=EString "{" "seed" seed=EInt "language" language=Language
+		//	{DataSample} "Sample" name=EString "for " packageURI=EString "{" "seed" seed=EInt "language" language=Language
 		//	("badValueGeneratorNames" "{" badValueGeneratorNames+=EString ("," badValueGeneratorNames+=EString)* "}")? //	('package' package=[ecore::EPackage|EString])?
 		//	//	('rootEntity' rootEntity=[ecore::EClass|EString])?
 		//	"In the root object generate " entityGenerators+=EntityGenerator2 ("," entityGenerators+=EntityGenerator2)*
 		//	fieldGenerators+=FieldGenerator2 ("," fieldGenerators+=FieldGenerator2)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//{DataSample} "DataSample" name=EString "for " packageURI=EString "{" "seed" seed=EInt "language" language=Language
+		//{DataSample} "Sample" name=EString "for " packageURI=EString "{" "seed" seed=EInt "language" language=Language
 		//("badValueGeneratorNames" "{" badValueGeneratorNames+=EString ("," badValueGeneratorNames+=EString)* "}")? //	('package' package=[ecore::EPackage|EString])?
 		////	('rootEntity' rootEntity=[ecore::EClass|EString])?
 		//"In the root object generate " entityGenerators+=EntityGenerator2 ("," entityGenerators+=EntityGenerator2)*
@@ -78,8 +78,8 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//{DataSample}
 		public Action getDataSampleAction_0() { return cDataSampleAction_0; }
 
-		//"DataSample"
-		public Keyword getDataSampleKeyword_1() { return cDataSampleKeyword_1; }
+		//"Sample"
+		public Keyword getSampleKeyword_1() { return cSampleKeyword_1; }
 
 		//name=EString
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -598,7 +598,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 	public class FieldGenerator2Elements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FieldGenerator2");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cForKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cForFieldKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cEntityNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cEntityNameEStringParserRuleCall_1_0 = (RuleCall)cEntityNameAssignment_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -616,16 +616,16 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cErrorGeneratorNameEStringParserRuleCall_6_3_0 = (RuleCall)cErrorGeneratorNameAssignment_6_3.eContents().get(0);
 		
 		//FieldGenerator2 returns FieldGenerator:
-		//	"for" entityName=EString "." fieldName=EString "use" generatorName=EString ("with errorRate=" errorRate=EInt
+		//	"forField" entityName=EString "." fieldName=EString "use" generatorName=EString ("with errorRate=" errorRate=EInt
 		//	"% generated with " errorGeneratorName=EString)?;
 		public ParserRule getRule() { return rule; }
 
-		//"for" entityName=EString "." fieldName=EString "use" generatorName=EString ("with errorRate=" errorRate=EInt
+		//"forField" entityName=EString "." fieldName=EString "use" generatorName=EString ("with errorRate=" errorRate=EInt
 		//"% generated with " errorGeneratorName=EString)?
 		public Group getGroup() { return cGroup; }
 
-		//"for"
-		public Keyword getForKeyword_0() { return cForKeyword_0; }
+		//"forField"
+		public Keyword getForFieldKeyword_0() { return cForFieldKeyword_0; }
 
 		//entityName=EString
 		public Assignment getEntityNameAssignment_1() { return cEntityNameAssignment_1; }
@@ -3657,7 +3657,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//DataSample:
-	//	{DataSample} "DataSample" name=EString "for " packageURI=EString "{" "seed" seed=EInt "language" language=Language
+	//	{DataSample} "Sample" name=EString "for " packageURI=EString "{" "seed" seed=EInt "language" language=Language
 	//	("badValueGeneratorNames" "{" badValueGeneratorNames+=EString ("," badValueGeneratorNames+=EString)* "}")? //	('package' package=[ecore::EPackage|EString])?
 	//	//	('rootEntity' rootEntity=[ecore::EClass|EString])?
 	//	"In the root object generate " entityGenerators+=EntityGenerator2 ("," entityGenerators+=EntityGenerator2)*
@@ -3765,7 +3765,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//FieldGenerator2 returns FieldGenerator:
-	//	"for" entityName=EString "." fieldName=EString "use" generatorName=EString ("with errorRate=" errorRate=EInt
+	//	"forField" entityName=EString "." fieldName=EString "use" generatorName=EString ("with errorRate=" errorRate=EInt
 	//	"% generated with " errorGeneratorName=EString)?;
 	public FieldGenerator2Elements getFieldGenerator2Access() {
 		return (pFieldGenerator2 != null) ? pFieldGenerator2 : (pFieldGenerator2 = new FieldGenerator2Elements());

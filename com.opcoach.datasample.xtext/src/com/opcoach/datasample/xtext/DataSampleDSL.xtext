@@ -7,7 +7,7 @@ import "http://www.opcoach.generator/1.0" as generator
 
 DataSample returns DataSample:
 	{DataSample}
-	'DataSample'
+	'Sample'
 	name=EString 'for ' packageURI=EString 
 	'{'
 		'seed' seed=EInt
@@ -80,7 +80,7 @@ EntityGenerator returns EntityGenerator:
 	'}';
 
 FieldGenerator2 returns FieldGenerator:
-	'for'  entityName=EString '.'  fieldName=EString 'use' generatorName=EString ('with errorRate=' errorRate=EInt '% generated with ' errorGeneratorName=EString )?
+	'forField' entityName=EString '.' fieldName=EString 'use' generatorName=EString ('with errorRate=' errorRate=EInt '% generated with ' errorGeneratorName=EString )?
 	;
 
 FieldGenerator returns FieldGenerator:

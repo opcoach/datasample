@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDataSampleDSLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Locale'", "'true'", "'false'", "'fr'", "'en'", "'de'", "'es'", "'it'", "'DataSample'", "'for '", "'{'", "'seed'", "'language'", "'In the root object generate '", "'}'", "'badValueGeneratorNames'", "','", "'-'", "'EPackage'", "'nsURI'", "'nsPrefix'", "'eAnnotations'", "'eClassifiers'", "'eSubpackages'", "'for'", "'.'", "'use'", "'with errorRate='", "'% generated with '", "'EClass'", "'instanceClassName'", "'instanceTypeName'", "'eSuperTypes'", "'('", "')'", "'eTypeParameters'", "'eOperations'", "'eStructuralFeatures'", "'eGenericSuperTypes'", "'EAnnotation'", "'source'", "'references'", "'details'", "'contents'", "'EStringToStringMapEntry'", "'key'", "'value'", "'EObject'", "'ETypeParameter'", "'eBounds'", "'EDataType'", "'serializable'", "'EEnum'", "'eLiterals'", "'EGenericType'", "'eTypeParameter'", "'eClassifier'", "'eUpperBound'", "'eTypeArguments'", "'eLowerBound'", "'EEnumLiteral'", "'literal'", "'ReferenceGenerator'", "'badValueProportion'", "'randomSeed'", "'ID'", "'locale'", "'step'", "'badValueGenerator'", "'EAttribute'", "'ordered'", "'unique'", "'lowerBound'", "'upperBound'", "'changeable'", "'defaultValueLiteral'", "'eType'", "'eGenericType'", "'EReference'", "'resolveProxies'", "'eOpposite'", "'eKeys'", "'EOperation'", "'eExceptions'", "'eParameters'", "'eGenericExceptions'", "'EParameter'", "'abstract'", "'interface'", "'volatile'", "'transient'", "'unsettable'", "'derived'", "'iD'", "'containment'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Locale'", "'true'", "'false'", "'fr'", "'en'", "'de'", "'es'", "'it'", "'Sample'", "'for '", "'{'", "'seed'", "'language'", "'In the root object generate '", "'}'", "'badValueGeneratorNames'", "','", "'-'", "'EPackage'", "'nsURI'", "'nsPrefix'", "'eAnnotations'", "'eClassifiers'", "'eSubpackages'", "'forField'", "'.'", "'use'", "'with errorRate='", "'% generated with '", "'EClass'", "'instanceClassName'", "'instanceTypeName'", "'eSuperTypes'", "'('", "')'", "'eTypeParameters'", "'eOperations'", "'eStructuralFeatures'", "'eGenericSuperTypes'", "'EAnnotation'", "'source'", "'references'", "'details'", "'contents'", "'EStringToStringMapEntry'", "'key'", "'value'", "'EObject'", "'ETypeParameter'", "'eBounds'", "'EDataType'", "'serializable'", "'EEnum'", "'eLiterals'", "'EGenericType'", "'eTypeParameter'", "'eClassifier'", "'eUpperBound'", "'eTypeArguments'", "'eLowerBound'", "'EEnumLiteral'", "'literal'", "'ReferenceGenerator'", "'badValueProportion'", "'randomSeed'", "'ID'", "'locale'", "'step'", "'badValueGenerator'", "'EAttribute'", "'ordered'", "'unique'", "'lowerBound'", "'upperBound'", "'changeable'", "'defaultValueLiteral'", "'eType'", "'eGenericType'", "'EReference'", "'resolveProxies'", "'eOpposite'", "'eKeys'", "'EOperation'", "'eExceptions'", "'eParameters'", "'eGenericExceptions'", "'EParameter'", "'abstract'", "'interface'", "'volatile'", "'transient'", "'unsettable'", "'derived'", "'iD'", "'containment'"
     };
     public static final int RULE_ID=5;
     public static final int T__29=29;
@@ -3054,21 +3054,21 @@ public class InternalDataSampleDSLParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__DataSample__Group__1__Impl"
-    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:977:1: rule__DataSample__Group__1__Impl : ( 'DataSample' ) ;
+    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:977:1: rule__DataSample__Group__1__Impl : ( 'Sample' ) ;
     public final void rule__DataSample__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:981:1: ( ( 'DataSample' ) )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:982:1: ( 'DataSample' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:981:1: ( ( 'Sample' ) )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:982:1: ( 'Sample' )
             {
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:982:1: ( 'DataSample' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:983:1: 'DataSample'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:982:1: ( 'Sample' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:983:1: 'Sample'
             {
-             before(grammarAccess.getDataSampleAccess().getDataSampleKeyword_1()); 
+             before(grammarAccess.getDataSampleAccess().getSampleKeyword_1()); 
             match(input,19,FollowSets000.FOLLOW_19_in_rule__DataSample__Group__1__Impl2045); 
-             after(grammarAccess.getDataSampleAccess().getDataSampleKeyword_1()); 
+             after(grammarAccess.getDataSampleAccess().getSampleKeyword_1()); 
 
             }
 
@@ -8520,21 +8520,21 @@ public class InternalDataSampleDSLParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__FieldGenerator2__Group__0__Impl"
-    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3110:1: rule__FieldGenerator2__Group__0__Impl : ( 'for' ) ;
+    // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3110:1: rule__FieldGenerator2__Group__0__Impl : ( 'forField' ) ;
     public final void rule__FieldGenerator2__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3114:1: ( ( 'for' ) )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3115:1: ( 'for' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3114:1: ( ( 'forField' ) )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3115:1: ( 'forField' )
             {
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3115:1: ( 'for' )
-            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3116:1: 'for'
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3115:1: ( 'forField' )
+            // ../com.opcoach.datasample.xtext.ui/src-gen/com/opcoach/datasample/xtext/ui/contentassist/antlr/internal/InternalDataSampleDSL.g:3116:1: 'forField'
             {
-             before(grammarAccess.getFieldGenerator2Access().getForKeyword_0()); 
+             before(grammarAccess.getFieldGenerator2Access().getForFieldKeyword_0()); 
             match(input,35,FollowSets000.FOLLOW_35_in_rule__FieldGenerator2__Group__0__Impl6235); 
-             after(grammarAccess.getFieldGenerator2Access().getForKeyword_0()); 
+             after(grammarAccess.getFieldGenerator2Access().getForFieldKeyword_0()); 
 
             }
 

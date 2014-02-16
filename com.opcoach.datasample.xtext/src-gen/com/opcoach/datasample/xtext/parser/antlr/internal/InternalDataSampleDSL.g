@@ -84,9 +84,9 @@ ruleDataSample returns [EObject current=null]
             grammarAccess.getDataSampleAccess().getDataSampleAction_0(),
             $current);
     }
-)	otherlv_1='DataSample' 
+)	otherlv_1='Sample' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getDataSampleAccess().getDataSampleKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getDataSampleAccess().getSampleKeyword_1());
     }
 (
 (
@@ -821,9 +821,9 @@ ruleFieldGenerator2 returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='for' 
+(	otherlv_0='forField' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getFieldGenerator2Access().getForKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getFieldGenerator2Access().getForFieldKeyword_0());
     }
 (
 (

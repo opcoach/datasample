@@ -980,11 +980,11 @@ rule__DataSample__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getDataSampleAccess().getDataSampleKeyword_1()); }
+{ before(grammarAccess.getDataSampleAccess().getSampleKeyword_1()); }
 
-	'DataSample' 
+	'Sample' 
 
-{ after(grammarAccess.getDataSampleAccess().getDataSampleKeyword_1()); }
+{ after(grammarAccess.getDataSampleAccess().getSampleKeyword_1()); }
 )
 
 ;
@@ -3113,11 +3113,11 @@ rule__FieldGenerator2__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getFieldGenerator2Access().getForKeyword_0()); }
+{ before(grammarAccess.getFieldGenerator2Access().getForFieldKeyword_0()); }
 
-	'for' 
+	'forField' 
 
-{ after(grammarAccess.getFieldGenerator2Access().getForKeyword_0()); }
+{ after(grammarAccess.getFieldGenerator2Access().getForFieldKeyword_0()); }
 )
 
 ;
