@@ -10,8 +10,8 @@ import java.util.Vector;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
-import com.opcoach.generator.GeneratorActivator;
 import com.opcoach.generator.basic.StringGenerator;
 
 // This class overrides the generated class and will be instantiated by factory
@@ -36,7 +36,7 @@ public class StringGeneratorImpl extends MStringGeneratorImpl implements StringG
 		if (rootData == null)
 		{
 			// Get root data from bundle (default value).
-			Bundle b = GeneratorActivator.getBundle();
+			Bundle b = FrameworkUtil.getBundle(getClass());
 			if (b == null)
 			{
 				System.out.println("-->> Not an OSGi runtime. No rootData initialized for String Generators");

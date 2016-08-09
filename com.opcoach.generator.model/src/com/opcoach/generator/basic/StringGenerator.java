@@ -4,4 +4,5 @@ package com.opcoach.generator.basic;
 public interface StringGenerator extends MStringGenerator
 {
 
+	public void addValue(String s);
 }
