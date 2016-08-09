@@ -144,10 +144,10 @@ public abstract class ValueGeneratorImpl<T> extends MValueGeneratorImpl<T> imple
 
 
 	/** Implements this method in subclasses to generate the next random value */
-	abstract protected T generateRandomValue();
+	 protected T generateRandomValue() {  return null; }
 
 	/** Implements this method in subclasses to generate the next simple value */
-	abstract protected T generateSimpleValue();
+	 protected T generateSimpleValue() {  return null; }
 
 
 }
