@@ -219,4 +219,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 		return result.toString();
 	}
 
+	@Override
+	protected T generateRandomValue()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected T generateSimpleValue()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 } //MReferenceGeneratorImpl
