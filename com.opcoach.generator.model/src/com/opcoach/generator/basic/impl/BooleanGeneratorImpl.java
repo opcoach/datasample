@@ -17,7 +17,6 @@ public class BooleanGeneratorImpl extends MBooleanGeneratorImpl implements Boole
 		lastGeneratedValue = Boolean.FALSE;
 	}
 
-	
 	@Override
 	protected Boolean generateRandomValue()
 	{
