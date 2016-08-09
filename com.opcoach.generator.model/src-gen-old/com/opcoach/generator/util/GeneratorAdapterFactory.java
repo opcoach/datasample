@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package com.opcoach.generator.util;
 
@@ -16,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see com.opcoach.generator.MGeneratorPackage
+ * @see com.opcoach.generator.GeneratorPackage
  * @generated
  */
 public class GeneratorAdapterFactory extends AdapterFactoryImpl
@@ -27,7 +31,7 @@ public class GeneratorAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static MGeneratorPackage modelPackage;
+	protected static GeneratorPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -39,7 +43,7 @@ public class GeneratorAdapterFactory extends AdapterFactoryImpl
 	{
 		if (modelPackage == null)
 		{
-			modelPackage = MGeneratorPackage.eINSTANCE;
+			modelPackage = GeneratorPackage.eINSTANCE;
 		}
 	}
 
@@ -75,17 +79,17 @@ public class GeneratorAdapterFactory extends AdapterFactoryImpl
 		new GeneratorSwitch<Adapter>()
 		{
 			@Override
-			public <T> Adapter caseValueGenerator(MValueGenerator<T> object)
+			public <T> Adapter caseValueGenerator(ValueGenerator<T> object)
 			{
 				return createValueGeneratorAdapter();
 			}
 			@Override
-			public <T> Adapter caseRangeGenerator(MRangeGenerator<T> object)
+			public <T> Adapter caseRangeGenerator(RangeGenerator<T> object)
 			{
 				return createRangeGeneratorAdapter();
 			}
 			@Override
-			public <T> Adapter caseReferenceGenerator(MReferenceGenerator<T> object)
+			public <T> Adapter caseReferenceGenerator(ReferenceGenerator<T> object)
 			{
 				return createReferenceGeneratorAdapter();
 			}
@@ -112,13 +116,13 @@ public class GeneratorAdapterFactory extends AdapterFactoryImpl
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.MValueGenerator <em>Value Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.ValueGenerator <em>Value Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.MValueGenerator
+	 * @see com.opcoach.generator.ValueGenerator
 	 * @generated
 	 */
 	public Adapter createValueGeneratorAdapter()
@@ -127,13 +131,13 @@ public class GeneratorAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.MRangeGenerator <em>Range Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.RangeGenerator <em>Range Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.MRangeGenerator
+	 * @see com.opcoach.generator.RangeGenerator
 	 * @generated
 	 */
 	public Adapter createRangeGeneratorAdapter()
@@ -142,13 +146,13 @@ public class GeneratorAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.MReferenceGenerator <em>Reference Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.ReferenceGenerator <em>Reference Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.MReferenceGenerator
+	 * @see com.opcoach.generator.ReferenceGenerator
 	 * @generated
 	 */
 	public Adapter createReferenceGeneratorAdapter()

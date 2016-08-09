@@ -1,4 +1,8 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package com.opcoach.generator.basic;
 
@@ -13,7 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Case Policy Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see com.opcoach.generator.basic.MBasicPackage#getCasePolicyType()
+ * @see com.opcoach.generator.basic.BasicPackage#getCasePolicyType()
  * @model
  * @generated
  */
@@ -120,8 +124,6 @@ public enum CasePolicyType implements Enumerator
 	 * Returns the '<em><b>Case Policy Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static CasePolicyType get(String literal)
@@ -141,8 +143,6 @@ public enum CasePolicyType implements Enumerator
 	 * Returns the '<em><b>Case Policy Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static CasePolicyType getByName(String name)
@@ -162,8 +162,6 @@ public enum CasePolicyType implements Enumerator
 	 * Returns the '<em><b>Case Policy Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static CasePolicyType get(int value)

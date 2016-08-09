@@ -1,10 +1,14 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package com.opcoach.generator.basic.util;
 
-import com.opcoach.generator.MRangeGenerator;
-import com.opcoach.generator.MReferenceGenerator;
-import com.opcoach.generator.MValueGenerator;
+import com.opcoach.generator.RangeGenerator;
+import com.opcoach.generator.ReferenceGenerator;
+import com.opcoach.generator.ValueGenerator;
 
 import com.opcoach.generator.basic.*;
 
@@ -20,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see com.opcoach.generator.basic.MBasicPackage
+ * @see com.opcoach.generator.basic.BasicPackage
  * @generated
  */
 public class BasicAdapterFactory extends AdapterFactoryImpl
@@ -31,7 +35,7 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static MBasicPackage modelPackage;
+	protected static BasicPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -43,7 +47,7 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	{
 		if (modelPackage == null)
 		{
-			modelPackage = MBasicPackage.eINSTANCE;
+			modelPackage = BasicPackage.eINSTANCE;
 		}
 	}
 
@@ -79,72 +83,72 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 		new BasicSwitch<Adapter>()
 		{
 			@Override
-			public Adapter caseBooleanGenerator(MBooleanGenerator object)
+			public Adapter caseBooleanGenerator(BooleanGenerator object)
 			{
 				return createBooleanGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseDateGenerator(MDateGenerator object)
+			public Adapter caseDateGenerator(DateGenerator object)
 			{
 				return createDateGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseDoubleGenerator(MDoubleGenerator object)
+			public Adapter caseDoubleGenerator(DoubleGenerator object)
 			{
 				return createDoubleGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseFloatGenerator(MFloatGenerator object)
+			public Adapter caseFloatGenerator(FloatGenerator object)
 			{
 				return createFloatGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseIDGenerator(MIDGenerator object)
+			public Adapter caseIDGenerator(IDGenerator object)
 			{
 				return createIDGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseIntGenerator(MIntGenerator object)
+			public Adapter caseIntGenerator(IntGenerator object)
 			{
 				return createIntGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseLongGenerator(MLongGenerator object)
+			public Adapter caseLongGenerator(LongGenerator object)
 			{
 				return createLongGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseNullValueGenerator(MNullValueGenerator object)
+			public Adapter caseNullValueGenerator(NullValueGenerator object)
 			{
 				return createNullValueGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseStringGenerator(MStringGenerator object)
+			public Adapter caseStringGenerator(StringGenerator object)
 			{
 				return createStringGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseTrueGenerator(MTrueGenerator object)
+			public Adapter caseTrueGenerator(TrueGenerator object)
 			{
 				return createTrueGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseFalseGenerator(MFalseGenerator object)
+			public Adapter caseFalseGenerator(FalseGenerator object)
 			{
 				return createFalseGeneratorAdapter();
 			}
 			@Override
-			public <T> Adapter caseValueGenerator(MValueGenerator<T> object)
+			public <T> Adapter caseValueGenerator(ValueGenerator<T> object)
 			{
 				return createValueGeneratorAdapter();
 			}
 			@Override
-			public <T> Adapter caseRangeGenerator(MRangeGenerator<T> object)
+			public <T> Adapter caseRangeGenerator(RangeGenerator<T> object)
 			{
 				return createRangeGeneratorAdapter();
 			}
 			@Override
-			public <T> Adapter caseReferenceGenerator(MReferenceGenerator<T> object)
+			public <T> Adapter caseReferenceGenerator(ReferenceGenerator<T> object)
 			{
 				return createReferenceGeneratorAdapter();
 			}
@@ -171,13 +175,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MBooleanGenerator <em>Boolean Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.BooleanGenerator <em>Boolean Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MBooleanGenerator
+	 * @see com.opcoach.generator.basic.BooleanGenerator
 	 * @generated
 	 */
 	public Adapter createBooleanGeneratorAdapter()
@@ -186,13 +190,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MDateGenerator <em>Date Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.DateGenerator <em>Date Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MDateGenerator
+	 * @see com.opcoach.generator.basic.DateGenerator
 	 * @generated
 	 */
 	public Adapter createDateGeneratorAdapter()
@@ -201,13 +205,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MDoubleGenerator <em>Double Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.DoubleGenerator <em>Double Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MDoubleGenerator
+	 * @see com.opcoach.generator.basic.DoubleGenerator
 	 * @generated
 	 */
 	public Adapter createDoubleGeneratorAdapter()
@@ -216,13 +220,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MFloatGenerator <em>Float Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.FloatGenerator <em>Float Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MFloatGenerator
+	 * @see com.opcoach.generator.basic.FloatGenerator
 	 * @generated
 	 */
 	public Adapter createFloatGeneratorAdapter()
@@ -231,13 +235,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MIDGenerator <em>ID Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.IDGenerator <em>ID Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MIDGenerator
+	 * @see com.opcoach.generator.basic.IDGenerator
 	 * @generated
 	 */
 	public Adapter createIDGeneratorAdapter()
@@ -246,13 +250,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MIntGenerator <em>Int Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.IntGenerator <em>Int Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MIntGenerator
+	 * @see com.opcoach.generator.basic.IntGenerator
 	 * @generated
 	 */
 	public Adapter createIntGeneratorAdapter()
@@ -261,13 +265,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MLongGenerator <em>Long Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.LongGenerator <em>Long Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MLongGenerator
+	 * @see com.opcoach.generator.basic.LongGenerator
 	 * @generated
 	 */
 	public Adapter createLongGeneratorAdapter()
@@ -276,13 +280,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MNullValueGenerator <em>Null Value Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.NullValueGenerator <em>Null Value Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MNullValueGenerator
+	 * @see com.opcoach.generator.basic.NullValueGenerator
 	 * @generated
 	 */
 	public Adapter createNullValueGeneratorAdapter()
@@ -291,13 +295,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MStringGenerator <em>String Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.StringGenerator <em>String Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MStringGenerator
+	 * @see com.opcoach.generator.basic.StringGenerator
 	 * @generated
 	 */
 	public Adapter createStringGeneratorAdapter()
@@ -306,13 +310,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MTrueGenerator <em>True Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.TrueGenerator <em>True Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MTrueGenerator
+	 * @see com.opcoach.generator.basic.TrueGenerator
 	 * @generated
 	 */
 	public Adapter createTrueGeneratorAdapter()
@@ -321,13 +325,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.MFalseGenerator <em>False Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.basic.FalseGenerator <em>False Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.basic.MFalseGenerator
+	 * @see com.opcoach.generator.basic.FalseGenerator
 	 * @generated
 	 */
 	public Adapter createFalseGeneratorAdapter()
@@ -336,13 +340,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.MValueGenerator <em>Value Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.ValueGenerator <em>Value Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.MValueGenerator
+	 * @see com.opcoach.generator.ValueGenerator
 	 * @generated
 	 */
 	public Adapter createValueGeneratorAdapter()
@@ -351,13 +355,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.MRangeGenerator <em>Range Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.RangeGenerator <em>Range Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.MRangeGenerator
+	 * @see com.opcoach.generator.RangeGenerator
 	 * @generated
 	 */
 	public Adapter createRangeGeneratorAdapter()
@@ -366,13 +370,13 @@ public class BasicAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.MReferenceGenerator <em>Reference Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.ReferenceGenerator <em>Reference Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.generator.MReferenceGenerator
+	 * @see com.opcoach.generator.ReferenceGenerator
 	 * @generated
 	 */
 	public Adapter createReferenceGeneratorAdapter()

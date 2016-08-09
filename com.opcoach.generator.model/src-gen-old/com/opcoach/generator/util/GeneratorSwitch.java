@@ -1,13 +1,20 @@
 /**
+ * <copyright>
+ * </copyright>
+ *
+ * $Id$
  */
 package com.opcoach.generator.util;
 
 import com.opcoach.generator.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import com.opcoach.generator.GeneratorPackage;
+import com.opcoach.generator.RangeGenerator;
+import com.opcoach.generator.ReferenceGenerator;
+import com.opcoach.generator.ValueGenerator;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +26,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see com.opcoach.generator.MGeneratorPackage
+ * @see com.opcoach.generator.GeneratorPackage
  * @generated
  */
 public class GeneratorSwitch<T1> extends Switch<T1>
@@ -30,7 +37,7 @@ public class GeneratorSwitch<T1> extends Switch<T1>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static MGeneratorPackage modelPackage;
+	protected static GeneratorPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -42,7 +49,7 @@ public class GeneratorSwitch<T1> extends Switch<T1>
 	{
 		if (modelPackage == null)
 		{
-			modelPackage = MGeneratorPackage.eINSTANCE;
+			modelPackage = GeneratorPackage.eINSTANCE;
 		}
 	}
 
@@ -50,7 +57,7 @@ public class GeneratorSwitch<T1> extends Switch<T1>
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param ePackage the package in question.
+	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -72,24 +79,24 @@ public class GeneratorSwitch<T1> extends Switch<T1>
 	{
 		switch (classifierID)
 		{
-			case MGeneratorPackage.VALUE_GENERATOR:
+			case GeneratorPackage.VALUE_GENERATOR:
 			{
-				MValueGenerator<?> valueGenerator = (MValueGenerator<?>)theEObject;
+				ValueGenerator<?> valueGenerator = (ValueGenerator<?>)theEObject;
 				T1 result = caseValueGenerator(valueGenerator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MGeneratorPackage.RANGE_GENERATOR:
+			case GeneratorPackage.RANGE_GENERATOR:
 			{
-				MRangeGenerator<?> rangeGenerator = (MRangeGenerator<?>)theEObject;
+				RangeGenerator<?> rangeGenerator = (RangeGenerator<?>)theEObject;
 				T1 result = caseRangeGenerator(rangeGenerator);
 				if (result == null) result = caseValueGenerator(rangeGenerator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MGeneratorPackage.REFERENCE_GENERATOR:
+			case GeneratorPackage.REFERENCE_GENERATOR:
 			{
-				MReferenceGenerator<?> referenceGenerator = (MReferenceGenerator<?>)theEObject;
+				ReferenceGenerator<?> referenceGenerator = (ReferenceGenerator<?>)theEObject;
 				T1 result = caseReferenceGenerator(referenceGenerator);
 				if (result == null) result = caseValueGenerator(referenceGenerator);
 				if (result == null) result = defaultCase(theEObject);
@@ -110,7 +117,7 @@ public class GeneratorSwitch<T1> extends Switch<T1>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T> T1 caseValueGenerator(MValueGenerator<T> object)
+	public <T> T1 caseValueGenerator(ValueGenerator<T> object)
 	{
 		return null;
 	}
@@ -126,7 +133,7 @@ public class GeneratorSwitch<T1> extends Switch<T1>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T> T1 caseRangeGenerator(MRangeGenerator<T> object)
+	public <T> T1 caseRangeGenerator(RangeGenerator<T> object)
 	{
 		return null;
 	}
@@ -142,7 +149,7 @@ public class GeneratorSwitch<T1> extends Switch<T1>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public <T> T1 caseReferenceGenerator(MReferenceGenerator<T> object)
+	public <T> T1 caseReferenceGenerator(ReferenceGenerator<T> object)
 	{
 		return null;
 	}

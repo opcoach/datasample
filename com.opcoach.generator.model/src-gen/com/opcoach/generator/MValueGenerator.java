@@ -1,13 +1,10 @@
 /**
- * <copyright>
- * </copyright>
- *
- * $Id$
  */
 package com.opcoach.generator;
 
 import java.util.Locale;
 import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -17,29 +14,25 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.opcoach.generator.ValueGenerator#getBadValueProportion <em>Bad Value Proportion</em>}</li>
- *   <li>{@link com.opcoach.generator.ValueGenerator#getBadValueGenerator <em>Bad Value Generator</em>}</li>
- *   <li>{@link com.opcoach.generator.ValueGenerator#getLastGeneratedValue <em>Last Generated Value</em>}</li>
- *   <li>{@link com.opcoach.generator.ValueGenerator#getRandomSeed <em>Random Seed</em>}</li>
- *   <li>{@link com.opcoach.generator.ValueGenerator#getDescription <em>Description</em>}</li>
- *   <li>{@link com.opcoach.generator.ValueGenerator#getID <em>ID</em>}</li>
- *   <li>{@link com.opcoach.generator.ValueGenerator#getLocale <em>Locale</em>}</li>
+ *   <li>{@link com.opcoach.generator.MValueGenerator#getBadValueProportion <em>Bad Value Proportion</em>}</li>
+ *   <li>{@link com.opcoach.generator.MValueGenerator#getBadValueGenerator <em>Bad Value Generator</em>}</li>
+ *   <li>{@link com.opcoach.generator.MValueGenerator#getLastGeneratedValue <em>Last Generated Value</em>}</li>
+ *   <li>{@link com.opcoach.generator.MValueGenerator#getRandomSeed <em>Random Seed</em>}</li>
+ *   <li>{@link com.opcoach.generator.MValueGenerator#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.opcoach.generator.MValueGenerator#getID <em>ID</em>}</li>
+ *   <li>{@link com.opcoach.generator.MValueGenerator#getLocale <em>Locale</em>}</li>
  * </ul>
  * </p>
  *
- * @see com.opcoach.generator.GeneratorPackage#getValueGenerator()
+ * @see com.opcoach.generator.MGeneratorPackage#getValueGenerator()
  * @model abstract="true"
  * @generated
  */
-public interface ValueGenerator<T> extends EObject
+public interface MValueGenerator<T> extends EObject
 {
 	/**
 	 * Returns the value of the '<em><b>Bad Value Proportion</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Bad Value Proportion</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The badValueProportion is the percent of bad values to be generated.
@@ -48,14 +41,14 @@ public interface ValueGenerator<T> extends EObject
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Bad Value Proportion</em>' attribute.
 	 * @see #setBadValueProportion(int)
-	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_BadValueProportion()
+	 * @see com.opcoach.generator.MGeneratorPackage#getValueGenerator_BadValueProportion()
 	 * @model
 	 * @generated
 	 */
 	int getBadValueProportion();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getBadValueProportion <em>Bad Value Proportion</em>}' attribute.
+	 * Sets the value of the '{@link com.opcoach.generator.MValueGenerator#getBadValueProportion <em>Bad Value Proportion</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Bad Value Proportion</em>' attribute.
@@ -67,10 +60,6 @@ public interface ValueGenerator<T> extends EObject
 	/**
 	 * Returns the value of the '<em><b>Bad Value Generator</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Bad Value Generator</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * A optionnal bad value generator when a bad value should be generated. 
@@ -78,15 +67,15 @@ public interface ValueGenerator<T> extends EObject
 	 * This generator must be set if the badValueProportion is defined (> 0)
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Bad Value Generator</em>' reference.
-	 * @see #setBadValueGenerator(ValueGenerator)
-	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_BadValueGenerator()
+	 * @see #setBadValueGenerator(MValueGenerator)
+	 * @see com.opcoach.generator.MGeneratorPackage#getValueGenerator_BadValueGenerator()
 	 * @model
 	 * @generated
 	 */
 	ValueGenerator<T> getBadValueGenerator();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getBadValueGenerator <em>Bad Value Generator</em>}' reference.
+	 * Sets the value of the '{@link com.opcoach.generator.MValueGenerator#getBadValueGenerator <em>Bad Value Generator</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Bad Value Generator</em>' reference.
@@ -105,14 +94,14 @@ public interface ValueGenerator<T> extends EObject
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Last Generated Value</em>' attribute.
 	 * @see #setLastGeneratedValue(Object)
-	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_LastGeneratedValue()
+	 * @see com.opcoach.generator.MGeneratorPackage#getValueGenerator_LastGeneratedValue()
 	 * @model derived="true"
 	 * @generated
 	 */
 	T getLastGeneratedValue();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getLastGeneratedValue <em>Last Generated Value</em>}' attribute.
+	 * Sets the value of the '{@link com.opcoach.generator.MValueGenerator#getLastGeneratedValue <em>Last Generated Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Last Generated Value</em>' attribute.
@@ -134,14 +123,14 @@ public interface ValueGenerator<T> extends EObject
 	 * @see #isSetRandomSeed()
 	 * @see #unsetRandomSeed()
 	 * @see #setRandomSeed(long)
-	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_RandomSeed()
+	 * @see com.opcoach.generator.MGeneratorPackage#getValueGenerator_RandomSeed()
 	 * @model default="0" unsettable="true"
 	 * @generated
 	 */
 	long getRandomSeed();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getRandomSeed <em>Random Seed</em>}' attribute.
+	 * Sets the value of the '{@link com.opcoach.generator.MValueGenerator#getRandomSeed <em>Random Seed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Random Seed</em>' attribute.
@@ -153,7 +142,7 @@ public interface ValueGenerator<T> extends EObject
 	void setRandomSeed(long value);
 
 	/**
-	 * Unsets the value of the '{@link com.opcoach.generator.ValueGenerator#getRandomSeed <em>Random Seed</em>}' attribute.
+	 * Unsets the value of the '{@link com.opcoach.generator.MValueGenerator#getRandomSeed <em>Random Seed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetRandomSeed()
@@ -164,7 +153,7 @@ public interface ValueGenerator<T> extends EObject
 	void unsetRandomSeed();
 
 	/**
-	 * Returns whether the value of the '{@link com.opcoach.generator.ValueGenerator#getRandomSeed <em>Random Seed</em>}' attribute is set.
+	 * Returns whether the value of the '{@link com.opcoach.generator.MValueGenerator#getRandomSeed <em>Random Seed</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Random Seed</em>' attribute is set.
@@ -184,7 +173,7 @@ public interface ValueGenerator<T> extends EObject
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_Description()
+	 * @see com.opcoach.generator.MGeneratorPackage#getValueGenerator_Description()
 	 * @model transient="true" changeable="false" derived="true"
 	 * @generated
 	 */
@@ -200,14 +189,14 @@ public interface ValueGenerator<T> extends EObject
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>ID</em>' attribute.
 	 * @see #setID(String)
-	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_ID()
+	 * @see com.opcoach.generator.MGeneratorPackage#getValueGenerator_ID()
 	 * @model
 	 * @generated
 	 */
 	String getID();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getID <em>ID</em>}' attribute.
+	 * Sets the value of the '{@link com.opcoach.generator.MValueGenerator#getID <em>ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>ID</em>' attribute.
@@ -226,14 +215,14 @@ public interface ValueGenerator<T> extends EObject
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Locale</em>' attribute.
 	 * @see #setLocale(Locale)
-	 * @see com.opcoach.generator.GeneratorPackage#getValueGenerator_Locale()
+	 * @see com.opcoach.generator.MGeneratorPackage#getValueGenerator_Locale()
 	 * @model dataType="com.opcoach.generator.Locale"
 	 * @generated
 	 */
 	Locale getLocale();
 
 	/**
-	 * Sets the value of the '{@link com.opcoach.generator.ValueGenerator#getLocale <em>Locale</em>}' attribute.
+	 * Sets the value of the '{@link com.opcoach.generator.MValueGenerator#getLocale <em>Locale</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Locale</em>' attribute.
@@ -250,4 +239,4 @@ public interface ValueGenerator<T> extends EObject
 	 */
 	T generateValue();
 
-} // ValueGenerator
+} // MValueGenerator
