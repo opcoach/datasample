@@ -3,12 +3,11 @@
  */
 package com.opcoach.dsgen.tests;
 
-import com.opcoach.dsgen.generator.tests.DSGenGeneratorTests;
-
 import junit.framework.Test;
 import junit.framework.TestSuite;
-
 import junit.textui.TestRunner;
+
+import com.opcoach.dsgen.generator.tests.DSGenGeneratorTests;
 
 /**
  * <!-- begin-user-doc -->

@@ -3,12 +3,11 @@
  */
 package com.opcoach.dsgen.tests;
 
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
+
 import com.opcoach.dsgen.BadValueGeneratorRegistry;
 import com.opcoach.dsgen.DataSampleGenFactory;
-
-import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

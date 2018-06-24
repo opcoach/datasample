@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see com.opcoach.datasample.DatasamplePackage
+ * @see com.opcoach.datasample.MDatasamplePackage
  * @generated
  */
 public class DatasampleSwitch<T> extends Switch<T>
@@ -30,7 +30,7 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static DatasamplePackage modelPackage;
+	protected static MDatasamplePackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -40,9 +40,8 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 */
 	public DatasampleSwitch()
 	{
-		if (modelPackage == null)
-		{
-			modelPackage = DatasamplePackage.eINSTANCE;
+		if (modelPackage == null) {
+			modelPackage = MDatasamplePackage.eINSTANCE;
 		}
 	}
 
@@ -50,7 +49,7 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * Checks whether this is a switch for the given package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @parameter ePackage the package in question.
+	 * @param ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
@@ -70,24 +69,20 @@ public class DatasampleSwitch<T> extends Switch<T>
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject)
 	{
-		switch (classifierID)
-		{
-			case DatasamplePackage.DATA_SAMPLE:
-			{
+		switch (classifierID) {
+			case MDatasamplePackage.DATA_SAMPLE: {
 				DataSample dataSample = (DataSample)theEObject;
 				T result = caseDataSample(dataSample);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DatasamplePackage.ENTITY_GENERATOR:
-			{
+			case MDatasamplePackage.ENTITY_GENERATOR: {
 				EntityGenerator entityGenerator = (EntityGenerator)theEObject;
 				T result = caseEntityGenerator(entityGenerator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DatasamplePackage.FIELD_GENERATOR:
-			{
+			case MDatasamplePackage.FIELD_GENERATOR: {
 				FieldGenerator fieldGenerator = (FieldGenerator)theEObject;
 				T result = caseFieldGenerator(fieldGenerator);
 				if (result == null) result = defaultCase(theEObject);

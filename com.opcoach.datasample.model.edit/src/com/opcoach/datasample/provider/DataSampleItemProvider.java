@@ -4,8 +4,8 @@ package com.opcoach.datasample.provider;
 
 
 import com.opcoach.datasample.DataSample;
-import com.opcoach.datasample.DatasampleFactory;
-import com.opcoach.datasample.DatasamplePackage;
+import com.opcoach.datasample.MDatasampleFactory;
+import com.opcoach.datasample.MDatasamplePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -29,28 +29,26 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.opcoach.datasample.DataSample} object.
+ * This is the item provider adapter for a {@link com.opcoach.datasample.MDataSample} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DataSampleItemProvider
+public class DataSampleItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
 		IItemLabelProvider,
-		IItemPropertySource
-{
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataSampleItemProvider(AdapterFactory adapterFactory)
-	{
+	public DataSampleItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,10 +59,8 @@ public class DataSampleItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -84,15 +80,14 @@ public class DataSampleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object)
-	{
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DataSample_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataSample_name_feature", "_UI_DataSample_type"),
-				 DatasamplePackage.Literals.DATA_SAMPLE__NAME,
+				 MDatasamplePackage.Literals.DATA_SAMPLE__NAME,
 				 true,
 				 false,
 				 false,
@@ -107,15 +102,14 @@ public class DataSampleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSeedPropertyDescriptor(Object object)
-	{
+	protected void addSeedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DataSample_seed_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataSample_seed_feature", "_UI_DataSample_type"),
-				 DatasamplePackage.Literals.DATA_SAMPLE__SEED,
+				 MDatasamplePackage.Literals.DATA_SAMPLE__SEED,
 				 true,
 				 false,
 				 false,
@@ -130,15 +124,14 @@ public class DataSampleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLanguagePropertyDescriptor(Object object)
-	{
+	protected void addLanguagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DataSample_language_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataSample_language_feature", "_UI_DataSample_type"),
-				 DatasamplePackage.Literals.DATA_SAMPLE__LANGUAGE,
+				 MDatasamplePackage.Literals.DATA_SAMPLE__LANGUAGE,
 				 true,
 				 false,
 				 false,
@@ -153,15 +146,14 @@ public class DataSampleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPackageURIPropertyDescriptor(Object object)
-	{
+	protected void addPackageURIPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DataSample_packageURI_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataSample_packageURI_feature", "_UI_DataSample_type"),
-				 DatasamplePackage.Literals.DATA_SAMPLE__PACKAGE_URI,
+				 MDatasamplePackage.Literals.DATA_SAMPLE__PACKAGE_URI,
 				 true,
 				 false,
 				 false,
@@ -176,15 +168,14 @@ public class DataSampleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPackagePropertyDescriptor(Object object)
-	{
+	protected void addPackagePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DataSample_package_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataSample_package_feature", "_UI_DataSample_type"),
-				 DatasamplePackage.Literals.DATA_SAMPLE__PACKAGE,
+				 MDatasamplePackage.Literals.DATA_SAMPLE__PACKAGE,
 				 true,
 				 false,
 				 true,
@@ -199,15 +190,14 @@ public class DataSampleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addRootEntityPropertyDescriptor(Object object)
-	{
+	protected void addRootEntityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DataSample_rootEntity_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataSample_rootEntity_feature", "_UI_DataSample_type"),
-				 DatasamplePackage.Literals.DATA_SAMPLE__ROOT_ENTITY,
+				 MDatasamplePackage.Literals.DATA_SAMPLE__ROOT_ENTITY,
 				 true,
 				 false,
 				 true,
@@ -222,15 +212,14 @@ public class DataSampleItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBadValueGeneratorNamesPropertyDescriptor(Object object)
-	{
+	protected void addBadValueGeneratorNamesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_DataSample_badValueGeneratorNames_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DataSample_badValueGeneratorNames_feature", "_UI_DataSample_type"),
-				 DatasamplePackage.Literals.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES,
+				 MDatasamplePackage.Literals.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES,
 				 true,
 				 false,
 				 false,
@@ -248,13 +237,11 @@ public class DataSampleItemProvider
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
-	{
-		if (childrenFeatures == null)
-		{
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DatasamplePackage.Literals.DATA_SAMPLE__ENTITY_GENERATORS);
-			childrenFeatures.add(DatasamplePackage.Literals.DATA_SAMPLE__FIELD_GENERATORS);
+			childrenFeatures.add(MDatasamplePackage.Literals.DATA_SAMPLE__ENTITY_GENERATORS);
+			childrenFeatures.add(MDatasamplePackage.Literals.DATA_SAMPLE__FIELD_GENERATORS);
 		}
 		return childrenFeatures;
 	}
@@ -265,8 +252,7 @@ public class DataSampleItemProvider
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child)
-	{
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
 		// Check the type of the specified child object and return the proper feature to use for
 		// adding (see {@link AddCommand}) it as a child.
 
@@ -280,8 +266,7 @@ public class DataSampleItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/DataSample"));
 	}
 
@@ -292,13 +277,13 @@ public class DataSampleItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((DataSample)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_DataSample_type") :
 			getString("_UI_DataSample_type") + " " + label;
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -308,21 +293,19 @@ public class DataSampleItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DataSample.class))
-		{
-			case DatasamplePackage.DATA_SAMPLE__NAME:
-			case DatasamplePackage.DATA_SAMPLE__SEED:
-			case DatasamplePackage.DATA_SAMPLE__LANGUAGE:
-			case DatasamplePackage.DATA_SAMPLE__PACKAGE_URI:
-			case DatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:
+		switch (notification.getFeatureID(DataSample.class)) {
+			case MDatasamplePackage.DATA_SAMPLE__NAME:
+			case MDatasamplePackage.DATA_SAMPLE__SEED:
+			case MDatasamplePackage.DATA_SAMPLE__LANGUAGE:
+			case MDatasamplePackage.DATA_SAMPLE__PACKAGE_URI:
+			case MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case DatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
-			case DatasamplePackage.DATA_SAMPLE__FIELD_GENERATORS:
+			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
+			case MDatasamplePackage.DATA_SAMPLE__FIELD_GENERATORS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -337,19 +320,18 @@ public class DataSampleItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DatasamplePackage.Literals.DATA_SAMPLE__ENTITY_GENERATORS,
-				 DatasampleFactory.eINSTANCE.createEntityGenerator()));
+				(MDatasamplePackage.Literals.DATA_SAMPLE__ENTITY_GENERATORS,
+				 MDatasampleFactory.eINSTANCE.createEntityGenerator()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DatasamplePackage.Literals.DATA_SAMPLE__FIELD_GENERATORS,
-				 DatasampleFactory.eINSTANCE.createFieldGenerator()));
+				(MDatasamplePackage.Literals.DATA_SAMPLE__FIELD_GENERATORS,
+				 MDatasampleFactory.eINSTANCE.createFieldGenerator()));
 	}
 
 	/**
@@ -359,8 +341,7 @@ public class DataSampleItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return DataSampleEditPlugin.INSTANCE;
 	}
 

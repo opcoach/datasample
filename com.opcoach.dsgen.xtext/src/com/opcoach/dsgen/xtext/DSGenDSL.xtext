@@ -10,12 +10,12 @@ DSGenModel returns DSGenModel:
 	'DataSample'
 	name=EString
 	'{'
-		('seed = ' randomSeed=ELong)?
-		('language =' language=EString)?
-		('package = ' dsgenPackages+=DSGenPackage2)?
-		'badValueGenerators : '  badGenerators=BadValueGeneratorRegistry
+		('seed' randomSeed=ELong)?
+		('language' language=EString)?
+		('package' dsgenPackages+=DSGenPackage2)?
+		'badValueGenerators'  badGenerators=BadValueGeneratorRegistry
 		
-		'in root object generate ' // (DSGenClass2)
+		'in_root_object_generate' // (DSGenClass2)
 	'}';
 
 

@@ -15,12 +15,14 @@ Require-Bundle: com.opcoach.datasample.xtext;visibility:=reexport,
  org.antlr.runtime,
  org.eclipse.xtext.common.types.ui,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.compare
+ org.eclipse.compare,
+ org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: com.opcoach.datasample.xtext.ui.quickfix,
  com.opcoach.datasample.xtext.ui.contentassist,
  com.opcoach.datasample.xtext.ui.contentassist.antlr,
- com.opcoach.datasample.xtext.ui.internal
+ com.opcoach.datasample.xtext.ui.internal,
+ com.opcoach.datasample.xtext.ui.contentassist.antlr.internal
 Bundle-Activator: com.opcoach.datasample.xtext.ui.internal.DataSampleDSLActivator

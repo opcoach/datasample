@@ -3,12 +3,11 @@
  */
 package com.opcoach.dsgen.generator.tests;
 
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
+
 import com.opcoach.dsgen.generator.DSGenGeneratorFactory;
 import com.opcoach.dsgen.generator.SingleAssociationGenerator;
-
-import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

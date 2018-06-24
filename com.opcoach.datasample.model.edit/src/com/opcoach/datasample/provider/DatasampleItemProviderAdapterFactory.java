@@ -32,8 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable
-{
+public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -64,8 +63,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DatasampleItemProviderAdapterFactory()
-	{
+	public DatasampleItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
@@ -74,7 +72,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.opcoach.datasample.DataSample} instances.
+	 * This keeps track of the one adapter used for all {@link com.opcoach.datasample.MDataSample} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -82,16 +80,14 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	protected DataSampleItemProvider dataSampleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link com.opcoach.datasample.DataSample}.
+	 * This creates an adapter for a {@link com.opcoach.datasample.MDataSample}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDataSampleAdapter()
-	{
-		if (dataSampleItemProvider == null)
-		{
+	public Adapter createDataSampleAdapter() {
+		if (dataSampleItemProvider == null) {
 			dataSampleItemProvider = new DataSampleItemProvider(this);
 		}
 
@@ -99,7 +95,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.opcoach.datasample.EntityGenerator} instances.
+	 * This keeps track of the one adapter used for all {@link com.opcoach.datasample.MEntityGenerator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -107,16 +103,14 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	protected EntityGeneratorItemProvider entityGeneratorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link com.opcoach.datasample.EntityGenerator}.
+	 * This creates an adapter for a {@link com.opcoach.datasample.MEntityGenerator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createEntityGeneratorAdapter()
-	{
-		if (entityGeneratorItemProvider == null)
-		{
+	public Adapter createEntityGeneratorAdapter() {
+		if (entityGeneratorItemProvider == null) {
 			entityGeneratorItemProvider = new EntityGeneratorItemProvider(this);
 		}
 
@@ -124,7 +118,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.opcoach.datasample.FieldGenerator} instances.
+	 * This keeps track of the one adapter used for all {@link com.opcoach.datasample.MFieldGenerator} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,16 +126,14 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	protected FieldGeneratorItemProvider fieldGeneratorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link com.opcoach.datasample.FieldGenerator}.
+	 * This creates an adapter for a {@link com.opcoach.datasample.MFieldGenerator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFieldGeneratorAdapter()
-	{
-		if (fieldGeneratorItemProvider == null)
-		{
+	public Adapter createFieldGeneratorAdapter() {
+		if (fieldGeneratorItemProvider == null) {
 			fieldGeneratorItemProvider = new FieldGeneratorItemProvider(this);
 		}
 
@@ -154,8 +146,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComposeableAdapterFactory getRootAdapterFactory()
-	{
+	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
 
@@ -165,8 +156,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
-	{
+	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
@@ -176,8 +166,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object type)
-	{
+	public boolean isFactoryForType(Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
 
@@ -188,8 +177,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Adapter adapt(Notifier notifier, Object type)
-	{
+	public Adapter adapt(Notifier notifier, Object type) {
 		return super.adapt(notifier, this);
 	}
 
@@ -199,13 +187,10 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * @generated
 	 */
 	@Override
-	public Object adapt(Object object, Object type)
-	{
-		if (isFactoryForType(type))
-		{
+	public Object adapt(Object object, Object type) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -219,8 +204,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void addListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
 
@@ -230,8 +214,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener)
-	{
+	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
@@ -241,12 +224,10 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void fireNotifyChanged(Notification notification)
-	{
+	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -257,8 +238,7 @@ public class DatasampleItemProviderAdapterFactory extends DatasampleAdapterFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void dispose()
-	{
+	public void dispose() {
 		if (dataSampleItemProvider != null) dataSampleItemProvider.dispose();
 		if (entityGeneratorItemProvider != null) entityGeneratorItemProvider.dispose();
 		if (fieldGeneratorItemProvider != null) fieldGeneratorItemProvider.dispose();

@@ -3,9 +3,9 @@
  */
 package com.opcoach.dsgen.tests;
 
-import com.opcoach.dsgen.DSGenBase;
-
 import junit.framework.TestCase;
+
+import com.opcoach.dsgen.DSGenBase;
 
 /**
  * <!-- begin-user-doc -->

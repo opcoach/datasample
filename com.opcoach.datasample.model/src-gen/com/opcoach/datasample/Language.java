@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Language</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see com.opcoach.datasample.DatasamplePackage#getLanguage()
+ * @see com.opcoach.datasample.MDatasamplePackage#getLanguage()
  * @model
  * @generated
  */
@@ -151,8 +151,7 @@ public enum Language implements Enumerator
 	 * @generated
 	 */
 	private static final Language[] VALUES_ARRAY =
-		new Language[]
-		{
+		new Language[] {
 			FR,
 			EN,
 			DE,
@@ -172,15 +171,15 @@ public enum Language implements Enumerator
 	 * Returns the '<em><b>Language</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static Language get(String literal)
 	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			Language result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal))
-			{
+			if (result.toString().equals(literal)) {
 				return result;
 			}
 		}
@@ -191,15 +190,15 @@ public enum Language implements Enumerator
 	 * Returns the '<em><b>Language</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static Language getByName(String name)
 	{
-		for (int i = 0; i < VALUES_ARRAY.length; ++i)
-		{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			Language result = VALUES_ARRAY[i];
-			if (result.getName().equals(name))
-			{
+			if (result.getName().equals(name)) {
 				return result;
 			}
 		}
@@ -210,12 +209,13 @@ public enum Language implements Enumerator
 	 * Returns the '<em><b>Language</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static Language get(int value)
 	{
-		switch (value)
-		{
+		switch (value) {
 			case FR_VALUE: return FR;
 			case EN_VALUE: return EN;
 			case DE_VALUE: return DE;

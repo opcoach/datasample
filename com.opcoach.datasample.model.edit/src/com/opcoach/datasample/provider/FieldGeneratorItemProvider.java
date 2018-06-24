@@ -3,8 +3,8 @@
 package com.opcoach.datasample.provider;
 
 
-import com.opcoach.datasample.DatasamplePackage;
 import com.opcoach.datasample.FieldGenerator;
+import com.opcoach.datasample.MDatasamplePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,28 +26,26 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.opcoach.datasample.FieldGenerator} object.
+ * This is the item provider adapter for a {@link com.opcoach.datasample.MFieldGenerator} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FieldGeneratorItemProvider
+public class FieldGeneratorItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
 		IItemLabelProvider,
-		IItemPropertySource
-{
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FieldGeneratorItemProvider(AdapterFactory adapterFactory)
-	{
+	public FieldGeneratorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,10 +56,8 @@ public class FieldGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addEntityNamePropertyDescriptor(object);
@@ -82,15 +78,14 @@ public class FieldGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEntityNamePropertyDescriptor(Object object)
-	{
+	protected void addEntityNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_FieldGenerator_entityName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FieldGenerator_entityName_feature", "_UI_FieldGenerator_type"),
-				 DatasamplePackage.Literals.FIELD_GENERATOR__ENTITY_NAME,
+				 MDatasamplePackage.Literals.FIELD_GENERATOR__ENTITY_NAME,
 				 true,
 				 false,
 				 false,
@@ -105,15 +100,14 @@ public class FieldGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFieldNamePropertyDescriptor(Object object)
-	{
+	protected void addFieldNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_FieldGenerator_fieldName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FieldGenerator_fieldName_feature", "_UI_FieldGenerator_type"),
-				 DatasamplePackage.Literals.FIELD_GENERATOR__FIELD_NAME,
+				 MDatasamplePackage.Literals.FIELD_GENERATOR__FIELD_NAME,
 				 true,
 				 false,
 				 false,
@@ -128,15 +122,14 @@ public class FieldGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGeneratorPropertyDescriptor(Object object)
-	{
+	protected void addGeneratorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_FieldGenerator_generator_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FieldGenerator_generator_feature", "_UI_FieldGenerator_type"),
-				 DatasamplePackage.Literals.FIELD_GENERATOR__GENERATOR,
+				 MDatasamplePackage.Literals.FIELD_GENERATOR__GENERATOR,
 				 true,
 				 false,
 				 true,
@@ -151,15 +144,14 @@ public class FieldGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStructuralFeaturePropertyDescriptor(Object object)
-	{
+	protected void addStructuralFeaturePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_FieldGenerator_structuralFeature_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FieldGenerator_structuralFeature_feature", "_UI_FieldGenerator_type"),
-				 DatasamplePackage.Literals.FIELD_GENERATOR__STRUCTURAL_FEATURE,
+				 MDatasamplePackage.Literals.FIELD_GENERATOR__STRUCTURAL_FEATURE,
 				 true,
 				 false,
 				 true,
@@ -174,15 +166,14 @@ public class FieldGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addErrorRatePropertyDescriptor(Object object)
-	{
+	protected void addErrorRatePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_FieldGenerator_errorRate_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FieldGenerator_errorRate_feature", "_UI_FieldGenerator_type"),
-				 DatasamplePackage.Literals.FIELD_GENERATOR__ERROR_RATE,
+				 MDatasamplePackage.Literals.FIELD_GENERATOR__ERROR_RATE,
 				 true,
 				 false,
 				 false,
@@ -197,15 +188,14 @@ public class FieldGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addGeneratorNamePropertyDescriptor(Object object)
-	{
+	protected void addGeneratorNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_FieldGenerator_generatorName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FieldGenerator_generatorName_feature", "_UI_FieldGenerator_type"),
-				 DatasamplePackage.Literals.FIELD_GENERATOR__GENERATOR_NAME,
+				 MDatasamplePackage.Literals.FIELD_GENERATOR__GENERATOR_NAME,
 				 true,
 				 false,
 				 false,
@@ -220,15 +210,14 @@ public class FieldGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addErrorGeneratorNamePropertyDescriptor(Object object)
-	{
+	protected void addErrorGeneratorNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_FieldGenerator_errorGeneratorName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FieldGenerator_errorGeneratorName_feature", "_UI_FieldGenerator_type"),
-				 DatasamplePackage.Literals.FIELD_GENERATOR__ERROR_GENERATOR_NAME,
+				 MDatasamplePackage.Literals.FIELD_GENERATOR__ERROR_GENERATOR_NAME,
 				 true,
 				 false,
 				 false,
@@ -243,15 +232,14 @@ public class FieldGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addErrorGeneratorPropertyDescriptor(Object object)
-	{
+	protected void addErrorGeneratorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_FieldGenerator_errorGenerator_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_FieldGenerator_errorGenerator_feature", "_UI_FieldGenerator_type"),
-				 DatasamplePackage.Literals.FIELD_GENERATOR__ERROR_GENERATOR,
+				 MDatasamplePackage.Literals.FIELD_GENERATOR__ERROR_GENERATOR,
 				 true,
 				 false,
 				 true,
@@ -267,8 +255,7 @@ public class FieldGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/FieldGenerator"));
 	}
 
@@ -279,13 +266,13 @@ public class FieldGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((FieldGenerator)object).getEntityName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_FieldGenerator_type") :
 			getString("_UI_FieldGenerator_type") + " " + label;
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -295,17 +282,15 @@ public class FieldGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(FieldGenerator.class))
-		{
-			case DatasamplePackage.FIELD_GENERATOR__ENTITY_NAME:
-			case DatasamplePackage.FIELD_GENERATOR__FIELD_NAME:
-			case DatasamplePackage.FIELD_GENERATOR__ERROR_RATE:
-			case DatasamplePackage.FIELD_GENERATOR__GENERATOR_NAME:
-			case DatasamplePackage.FIELD_GENERATOR__ERROR_GENERATOR_NAME:
+		switch (notification.getFeatureID(FieldGenerator.class)) {
+			case MDatasamplePackage.FIELD_GENERATOR__ENTITY_NAME:
+			case MDatasamplePackage.FIELD_GENERATOR__FIELD_NAME:
+			case MDatasamplePackage.FIELD_GENERATOR__ERROR_RATE:
+			case MDatasamplePackage.FIELD_GENERATOR__GENERATOR_NAME:
+			case MDatasamplePackage.FIELD_GENERATOR__ERROR_GENERATOR_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -320,8 +305,7 @@ public class FieldGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -332,8 +316,7 @@ public class FieldGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return DataSampleEditPlugin.INSTANCE;
 	}
 

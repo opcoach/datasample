@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public final class DataSampleEditPlugin extends EMFPlugin
-{
+public final class DataSampleEditPlugin extends EMFPlugin {
 	/**
 	 * Keep track of the singleton.
 	 * <!-- begin-user-doc -->
@@ -40,11 +39,9 @@ public final class DataSampleEditPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataSampleEditPlugin()
-	{
+	public DataSampleEditPlugin() {
 		super
-		  (new ResourceLocator [] 
-		   {
+		  (new ResourceLocator [] {
 		     EcoreEditPlugin.INSTANCE,
 		     GeneratorEditPlugin.INSTANCE,
 		   });
@@ -58,8 +55,7 @@ public final class DataSampleEditPlugin extends EMFPlugin
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getPluginResourceLocator()
-	{
+	public ResourceLocator getPluginResourceLocator() {
 		return plugin;
 	}
 
@@ -70,8 +66,7 @@ public final class DataSampleEditPlugin extends EMFPlugin
 	 * @return the singleton instance.
 	 * @generated
 	 */
-	public static Implementation getPlugin()
-	{
+	public static Implementation getPlugin() {
 		return plugin;
 	}
 
@@ -81,16 +76,14 @@ public final class DataSampleEditPlugin extends EMFPlugin
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static class Implementation extends EclipsePlugin
-	{
+	public static class Implementation extends EclipsePlugin {
 		/**
 		 * Creates an instance.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		public Implementation()
-		{
+		public Implementation() {
 			super();
 
 			// Remember the static instance.

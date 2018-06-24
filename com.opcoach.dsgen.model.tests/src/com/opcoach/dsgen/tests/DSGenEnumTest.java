@@ -3,10 +3,10 @@
  */
 package com.opcoach.dsgen.tests;
 
+import junit.textui.TestRunner;
+
 import com.opcoach.dsgen.DSGenEnum;
 import com.opcoach.dsgen.DataSampleGenFactory;
-
-import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->

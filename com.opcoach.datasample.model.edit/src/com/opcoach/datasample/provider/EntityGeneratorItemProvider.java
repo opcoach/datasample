@@ -3,8 +3,8 @@
 package com.opcoach.datasample.provider;
 
 
-import com.opcoach.datasample.DatasamplePackage;
 import com.opcoach.datasample.EntityGenerator;
+import com.opcoach.datasample.MDatasamplePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,28 +26,26 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.opcoach.datasample.EntityGenerator} object.
+ * This is the item provider adapter for a {@link com.opcoach.datasample.MEntityGenerator} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityGeneratorItemProvider
+public class EntityGeneratorItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
 		IItemLabelProvider,
-		IItemPropertySource
-{
+		IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EntityGeneratorItemProvider(AdapterFactory adapterFactory)
-	{
+	public EntityGeneratorItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,10 +56,8 @@ public class EntityGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
-	{
-		if (itemPropertyDescriptors == null)
-		{
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNumberPropertyDescriptor(object);
@@ -77,15 +73,14 @@ public class EntityGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNumberPropertyDescriptor(Object object)
-	{
+	protected void addNumberPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_EntityGenerator_number_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityGenerator_number_feature", "_UI_EntityGenerator_type"),
-				 DatasamplePackage.Literals.ENTITY_GENERATOR__NUMBER,
+				 MDatasamplePackage.Literals.ENTITY_GENERATOR__NUMBER,
 				 true,
 				 false,
 				 false,
@@ -100,15 +95,14 @@ public class EntityGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEntityNamePropertyDescriptor(Object object)
-	{
+	protected void addEntityNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_EntityGenerator_entityName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityGenerator_entityName_feature", "_UI_EntityGenerator_type"),
-				 DatasamplePackage.Literals.ENTITY_GENERATOR__ENTITY_NAME,
+				 MDatasamplePackage.Literals.ENTITY_GENERATOR__ENTITY_NAME,
 				 true,
 				 false,
 				 false,
@@ -123,15 +117,14 @@ public class EntityGeneratorItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEntityPropertyDescriptor(Object object)
-	{
+	protected void addEntityPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_EntityGenerator_entity_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_EntityGenerator_entity_feature", "_UI_EntityGenerator_type"),
-				 DatasamplePackage.Literals.ENTITY_GENERATOR__ENTITY,
+				 MDatasamplePackage.Literals.ENTITY_GENERATOR__ENTITY,
 				 true,
 				 false,
 				 true,
@@ -147,8 +140,7 @@ public class EntityGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object)
-	{
+	public Object getImage(Object object) {
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/EntityGenerator"));
 	}
 
@@ -159,13 +151,13 @@ public class EntityGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object)
-	{
+	public String getText(Object object) {
 		String label = ((EntityGenerator)object).getEntityName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_EntityGenerator_type") :
 			getString("_UI_EntityGenerator_type") + " " + label;
 	}
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -175,14 +167,12 @@ public class EntityGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification)
-	{
+	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EntityGenerator.class))
-		{
-			case DatasamplePackage.ENTITY_GENERATOR__NUMBER:
-			case DatasamplePackage.ENTITY_GENERATOR__ENTITY_NAME:
+		switch (notification.getFeatureID(EntityGenerator.class)) {
+			case MDatasamplePackage.ENTITY_GENERATOR__NUMBER:
+			case MDatasamplePackage.ENTITY_GENERATOR__ENTITY_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -197,8 +187,7 @@ public class EntityGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
-	{
+	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
@@ -209,8 +198,7 @@ public class EntityGeneratorItemProvider
 	 * @generated
 	 */
 	@Override
-	public ResourceLocator getResourceLocator()
-	{
+	public ResourceLocator getResourceLocator() {
 		return DataSampleEditPlugin.INSTANCE;
 	}
 

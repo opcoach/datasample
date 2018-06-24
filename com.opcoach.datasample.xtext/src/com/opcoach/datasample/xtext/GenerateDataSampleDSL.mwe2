@@ -14,13 +14,12 @@ Workflow {
 	bean = StandaloneSetup {
 		scanClassPath  = true
 		platformUri = "${runtimeProject}/.."
-		registerGeneratedEPackage = "com.opcoach.datasample.DatasamplePackage"
-		registerGeneratedEPackage = "com.opcoach.generator.GeneratorPackage"
+		registerGeneratedEPackage = "com.opcoach.datasample.MDatasamplePackage"
+		registerGeneratedEPackage = "com.opcoach.generator.MGeneratorPackage"
 		registerGeneratedEPackage = "org.eclipse.emf.ecore.EcorePackage"
 		
 		registerGenModelFile = "platform:/resource/com.opcoach.datasample.model/model/dataSample.genmodel"
 	    registerGenModelFile = "platform:/resource/com.opcoach.generator.model/model/generator.genmodel"
-		registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
 		
 	}
 

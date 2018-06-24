@@ -13,8 +13,6 @@ public class AbstractDataSampleDSLValidator extends org.eclipse.xtext.validation
 	protected List<EPackage> getEPackages() {
 	    List<EPackage> result = new ArrayList<EPackage>();
 	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.opcoach.com/datasample/1.0"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.eclipse.org/emf/2002/Ecore"));
-	    result.add(EPackage.Registry.INSTANCE.getEPackage("http://www.opcoach.generator/1.0"));
 		return result;
 	}
 }

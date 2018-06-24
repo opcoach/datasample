@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see com.opcoach.datasample.DatasamplePackage
+ * @see com.opcoach.datasample.MDatasamplePackage
  * @generated
  */
 public class DatasampleAdapterFactory extends AdapterFactoryImpl
@@ -27,7 +27,7 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static DatasamplePackage modelPackage;
+	protected static MDatasamplePackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -37,9 +37,8 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 */
 	public DatasampleAdapterFactory()
 	{
-		if (modelPackage == null)
-		{
-			modelPackage = DatasamplePackage.eINSTANCE;
+		if (modelPackage == null) {
+			modelPackage = MDatasamplePackage.eINSTANCE;
 		}
 	}
 
@@ -54,12 +53,10 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	@Override
 	public boolean isFactoryForType(Object object)
 	{
-		if (object == modelPackage)
-		{
+		if (object == modelPackage) {
 			return true;
 		}
-		if (object instanceof EObject)
-		{
+		if (object instanceof EObject) {
 			return ((EObject)object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
@@ -72,26 +69,21 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	protected DatasampleSwitch<Adapter> modelSwitch =
-		new DatasampleSwitch<Adapter>()
-		{
+		new DatasampleSwitch<Adapter>() {
 			@Override
-			public Adapter caseDataSample(DataSample object)
-			{
+			public Adapter caseDataSample(DataSample object) {
 				return createDataSampleAdapter();
 			}
 			@Override
-			public Adapter caseEntityGenerator(EntityGenerator object)
-			{
+			public Adapter caseEntityGenerator(EntityGenerator object) {
 				return createEntityGeneratorAdapter();
 			}
 			@Override
-			public Adapter caseFieldGenerator(FieldGenerator object)
-			{
+			public Adapter caseFieldGenerator(FieldGenerator object) {
 				return createFieldGeneratorAdapter();
 			}
 			@Override
-			public Adapter defaultCase(EObject object)
-			{
+			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
 		};
@@ -112,13 +104,13 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.datasample.DataSample <em>Data Sample</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.datasample.MDataSample <em>Data Sample</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.datasample.DataSample
+	 * @see com.opcoach.datasample.MDataSample
 	 * @generated
 	 */
 	public Adapter createDataSampleAdapter()
@@ -127,13 +119,13 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.datasample.EntityGenerator <em>Entity Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.datasample.MEntityGenerator <em>Entity Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.datasample.EntityGenerator
+	 * @see com.opcoach.datasample.MEntityGenerator
 	 * @generated
 	 */
 	public Adapter createEntityGeneratorAdapter()
@@ -142,13 +134,13 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link com.opcoach.datasample.FieldGenerator <em>Field Generator</em>}'.
+	 * Creates a new adapter for an object of class '{@link com.opcoach.datasample.MFieldGenerator <em>Field Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see com.opcoach.datasample.FieldGenerator
+	 * @see com.opcoach.datasample.MFieldGenerator
 	 * @generated
 	 */
 	public Adapter createFieldGeneratorAdapter()

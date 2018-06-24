@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
-
-<!--
--->
-
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated dataSample -->
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            uri="http://www.opcoach.com/datasample/1.0"
+            class="com.opcoach.datasample.impl.DatasampleFactoryImpl">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://www.opcoach.com/datasample/1.0"
-            class="com.opcoach.datasample.DatasamplePackage"
-            genModel="model/dataSample.genmodel"/>
+            class="com.opcoach.datasample.DatasamplePackage">
+      </package>
    </extension>
 
 </plugin>
