@@ -16,9 +16,7 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -38,25 +36,11 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 				sequence_DataSample(context, (DataSample) semanticObject); 
 				return; 
 			case MDatasamplePackage.ENTITY_GENERATOR:
-				if (rule == grammarAccess.getEntityGenerator2Rule()) {
-					sequence_EntityGenerator2(context, (EntityGenerator) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getEntityGeneratorRule()) {
-					sequence_EntityGenerator(context, (EntityGenerator) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_EntityGenerator(context, (EntityGenerator) semanticObject); 
+				return; 
 			case MDatasamplePackage.FIELD_GENERATOR:
-				if (rule == grammarAccess.getFieldGenerator2Rule()) {
-					sequence_FieldGenerator2(context, (FieldGenerator) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getFieldGeneratorRule()) {
-					sequence_FieldGenerator(context, (FieldGenerator) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_FieldGenerator(context, (FieldGenerator) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -67,17 +51,7 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *     DataSample returns DataSample
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=EString 
-	 *         packageURI=EString 
-	 *         seed=EInt 
-	 *         language=Language 
-	 *         (badValueGeneratorNames+=EString badValueGeneratorNames+=EString*)? 
-	 *         entityGenerators+=EntityGenerator2 
-	 *         entityGenerators+=EntityGenerator2* 
-	 *         fieldGenerators+=FieldGenerator2 
-	 *         fieldGenerators+=FieldGenerator2*
-	 *     )
+	 *     (name=EString packageURI=EString seed=EInt language=Language entityGenerators+=EntityGenerator*)
 	 */
 	protected void sequence_DataSample(ISerializationContext context, DataSample semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -86,45 +60,12 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	
 	/**
 	 * Contexts:
-	 *     EntityGenerator2 returns EntityGenerator
-	 *
-	 * Constraint:
-	 *     (number=EInt entityName=EString)
-	 */
-	protected void sequence_EntityGenerator2(ISerializationContext context, EntityGenerator semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MDatasamplePackage.Literals.ENTITY_GENERATOR__NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MDatasamplePackage.Literals.ENTITY_GENERATOR__NUMBER));
-			if (transientValues.isValueTransient(semanticObject, MDatasamplePackage.Literals.ENTITY_GENERATOR__ENTITY_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MDatasamplePackage.Literals.ENTITY_GENERATOR__ENTITY_NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEntityGenerator2Access().getNumberEIntParserRuleCall_1_0(), semanticObject.getNumber());
-		feeder.accept(grammarAccess.getEntityGenerator2Access().getEntityNameEStringParserRuleCall_2_0(), semanticObject.getEntityName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     EntityGenerator returns EntityGenerator
 	 *
 	 * Constraint:
-	 *     (number=EInt? entityName=EString? entity=[EClass|EString]?)
+	 *     (number=EInt entityName=EString fieldGenerators+=FieldGenerator*)
 	 */
 	protected void sequence_EntityGenerator(ISerializationContext context, EntityGenerator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     FieldGenerator2 returns FieldGenerator
-	 *
-	 * Constraint:
-	 *     (entityName=EString fieldName=EString generatorName=EString (errorRate=EInt errorGeneratorName=EString)?)
-	 */
-	protected void sequence_FieldGenerator2(ISerializationContext context, FieldGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -134,14 +75,7 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *     FieldGenerator returns FieldGenerator
 	 *
 	 * Constraint:
-	 *     (
-	 *         entityName=EString? 
-	 *         fieldName=EString? 
-	 *         errorRate=EInt? 
-	 *         generatorName=EString? 
-	 *         generator=[ValueGenerator|EString] 
-	 *         structuralFeature=[EStructuralFeature|EString]?
-	 *     )
+	 *     (fieldName=EString generatorName=EString (errorRate=EInt errorGeneratorName=EString)?)
 	 */
 	protected void sequence_FieldGenerator(ISerializationContext context, FieldGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
