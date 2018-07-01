@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.opcoach.datasample.MFieldGenerator#getEntityName <em>Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.MFieldGenerator#getFieldName <em>Field Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.MFieldGenerator#getGenerator <em>Generator</em>}</li>
  *   <li>{@link com.opcoach.datasample.MFieldGenerator#getStructuralFeature <em>Structural Feature</em>}</li>
@@ -31,32 +30,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  * @generated
  */
 public interface MFieldGenerator extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Entity Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entity Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Name</em>' attribute.
-	 * @see #setEntityName(String)
-	 * @see com.opcoach.datasample.MDatasamplePackage#getFieldGenerator_EntityName()
-	 * @model
-	 * @generated
-	 */
-	String getEntityName();
-
-	/**
-	 * Sets the value of the '{@link com.opcoach.datasample.MFieldGenerator#getEntityName <em>Entity Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entity Name</em>' attribute.
-	 * @see #getEntityName()
-	 * @generated
-	 */
-	void setEntityName(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Field Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

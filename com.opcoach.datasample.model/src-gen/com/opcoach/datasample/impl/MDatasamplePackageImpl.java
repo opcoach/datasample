@@ -189,7 +189,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataSample_FieldGenerators() {
+	public EReference getDataSample_RootEntity() {
 		return (EReference)dataSampleEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -198,17 +198,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataSample_RootEntity() {
-		return (EReference)dataSampleEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getDataSample_BadValueGeneratorNames() {
-		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -252,6 +243,15 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntityGenerator_FieldGenerators() {
+		return (EReference)entityGeneratorEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFieldGenerator() {
 		return fieldGeneratorEClass;
 	}
@@ -261,7 +261,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFieldGenerator_EntityName() {
+	public EAttribute getFieldGenerator_FieldName() {
 		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -270,17 +270,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFieldGenerator_FieldName() {
-		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getFieldGenerator_Generator() {
-		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(2);
+		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -289,7 +280,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	public EReference getFieldGenerator_StructuralFeature() {
-		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(3);
+		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -298,7 +289,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	public EAttribute getFieldGenerator_ErrorRate() {
-		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -307,7 +298,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	public EAttribute getFieldGenerator_GeneratorName() {
-		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -316,7 +307,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	public EAttribute getFieldGenerator_ErrorGeneratorName() {
-		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -325,7 +316,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	public EReference getFieldGenerator_ErrorGenerator() {
-		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(7);
+		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -372,7 +363,6 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEAttribute(dataSampleEClass, DATA_SAMPLE__PACKAGE_URI);
 		createEReference(dataSampleEClass, DATA_SAMPLE__PACKAGE);
 		createEReference(dataSampleEClass, DATA_SAMPLE__ENTITY_GENERATORS);
-		createEReference(dataSampleEClass, DATA_SAMPLE__FIELD_GENERATORS);
 		createEReference(dataSampleEClass, DATA_SAMPLE__ROOT_ENTITY);
 		createEAttribute(dataSampleEClass, DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES);
 
@@ -380,9 +370,9 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEAttribute(entityGeneratorEClass, ENTITY_GENERATOR__NUMBER);
 		createEAttribute(entityGeneratorEClass, ENTITY_GENERATOR__ENTITY_NAME);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__ENTITY);
+		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__FIELD_GENERATORS);
 
 		fieldGeneratorEClass = createEClass(FIELD_GENERATOR);
-		createEAttribute(fieldGeneratorEClass, FIELD_GENERATOR__ENTITY_NAME);
 		createEAttribute(fieldGeneratorEClass, FIELD_GENERATOR__FIELD_NAME);
 		createEReference(fieldGeneratorEClass, FIELD_GENERATOR__GENERATOR);
 		createEReference(fieldGeneratorEClass, FIELD_GENERATOR__STRUCTURAL_FEATURE);
@@ -436,7 +426,6 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEAttribute(getDataSample_PackageURI(), ecorePackage.getEString(), "packageURI", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataSample_Package(), theEcorePackage.getEPackage(), null, "package", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataSample_EntityGenerators(), this.getEntityGenerator(), null, "entityGenerators", null, 0, -1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataSample_FieldGenerators(), this.getFieldGenerator(), null, "fieldGenerators", null, 0, -1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataSample_RootEntity(), theEcorePackage.getEClass(), null, "rootEntity", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSample_BadValueGeneratorNames(), theEcorePackage.getEString(), "badValueGeneratorNames", null, 0, -1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -444,9 +433,9 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEAttribute(getEntityGenerator_Number(), ecorePackage.getEInt(), "number", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEntityGenerator_EntityName(), ecorePackage.getEString(), "entityName", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityGenerator_Entity(), theEcorePackage.getEClass(), null, "entity", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityGenerator_FieldGenerators(), this.getFieldGenerator(), null, "fieldGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fieldGeneratorEClass, FieldGenerator.class, "FieldGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFieldGenerator_EntityName(), ecorePackage.getEString(), "entityName", null, 0, 1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFieldGenerator_FieldName(), ecorePackage.getEString(), "fieldName", null, 0, 1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		EGenericType g1 = createEGenericType(theGeneratorPackage.getValueGenerator());
 		EGenericType g2 = createEGenericType();

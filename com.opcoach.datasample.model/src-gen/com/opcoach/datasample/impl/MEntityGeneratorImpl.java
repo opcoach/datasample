@@ -3,15 +3,21 @@
 package com.opcoach.datasample.impl;
 
 import com.opcoach.datasample.EntityGenerator;
+import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.MDatasamplePackage;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +30,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.opcoach.datasample.impl.MEntityGeneratorImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MEntityGeneratorImpl#getEntityName <em>Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MEntityGeneratorImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link com.opcoach.datasample.impl.MEntityGeneratorImpl#getFieldGenerators <em>Field Generators</em>}</li>
  * </ul>
  *
  * @generated
@@ -78,6 +85,16 @@ public class MEntityGeneratorImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected EClass entity;
+
+	/**
+	 * The cached value of the '{@link #getFieldGenerators() <em>Field Generators</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFieldGenerators()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FieldGenerator> fieldGenerators;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,6 +200,32 @@ public class MEntityGeneratorImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<FieldGenerator> getFieldGenerators() {
+		if (fieldGenerators == null) {
+			fieldGenerators = new EObjectContainmentEList<FieldGenerator>(FieldGenerator.class, this, MDatasamplePackage.ENTITY_GENERATOR__FIELD_GENERATORS);
+		}
+		return fieldGenerators;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MDatasamplePackage.ENTITY_GENERATOR__FIELD_GENERATORS:
+				return ((InternalEList<?>)getFieldGenerators()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -193,6 +236,8 @@ public class MEntityGeneratorImpl extends MinimalEObjectImpl.Container implement
 			case MDatasamplePackage.ENTITY_GENERATOR__ENTITY:
 				if (resolve) return getEntity();
 				return basicGetEntity();
+			case MDatasamplePackage.ENTITY_GENERATOR__FIELD_GENERATORS:
+				return getFieldGenerators();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,6 +247,7 @@ public class MEntityGeneratorImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -213,6 +259,10 @@ public class MEntityGeneratorImpl extends MinimalEObjectImpl.Container implement
 				return;
 			case MDatasamplePackage.ENTITY_GENERATOR__ENTITY:
 				setEntity((EClass)newValue);
+				return;
+			case MDatasamplePackage.ENTITY_GENERATOR__FIELD_GENERATORS:
+				getFieldGenerators().clear();
+				getFieldGenerators().addAll((Collection<? extends FieldGenerator>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,6 +285,9 @@ public class MEntityGeneratorImpl extends MinimalEObjectImpl.Container implement
 			case MDatasamplePackage.ENTITY_GENERATOR__ENTITY:
 				setEntity((EClass)null);
 				return;
+			case MDatasamplePackage.ENTITY_GENERATOR__FIELD_GENERATORS:
+				getFieldGenerators().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -253,6 +306,8 @@ public class MEntityGeneratorImpl extends MinimalEObjectImpl.Container implement
 				return ENTITY_NAME_EDEFAULT == null ? entityName != null : !ENTITY_NAME_EDEFAULT.equals(entityName);
 			case MDatasamplePackage.ENTITY_GENERATOR__ENTITY:
 				return entity != null;
+			case MDatasamplePackage.ENTITY_GENERATOR__FIELD_GENERATORS:
+				return fieldGenerators != null && !fieldGenerators.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

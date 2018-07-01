@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getEntityName <em>Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getFieldName <em>Field Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getGenerator <em>Generator</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getStructuralFeature <em>Structural Feature</em>}</li>
@@ -37,26 +36,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements FieldGenerator {
-	/**
-	 * The default value of the '{@link #getEntityName() <em>Entity Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String ENTITY_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEntityName() <em>Entity Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String entityName = ENTITY_NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFieldName() <em>Field Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -184,27 +163,6 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	protected EClass eStaticClass() {
 		return MDatasamplePackage.Literals.FIELD_GENERATOR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getEntityName() {
-		return entityName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEntityName(String newEntityName) {
-		String oldEntityName = entityName;
-		entityName = newEntityName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MDatasamplePackage.FIELD_GENERATOR__ENTITY_NAME, oldEntityName, entityName));
 	}
 
 	/**
@@ -413,8 +371,6 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MDatasamplePackage.FIELD_GENERATOR__ENTITY_NAME:
-				return getEntityName();
 			case MDatasamplePackage.FIELD_GENERATOR__FIELD_NAME:
 				return getFieldName();
 			case MDatasamplePackage.FIELD_GENERATOR__GENERATOR:
@@ -444,9 +400,6 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MDatasamplePackage.FIELD_GENERATOR__ENTITY_NAME:
-				setEntityName((String)newValue);
-				return;
 			case MDatasamplePackage.FIELD_GENERATOR__FIELD_NAME:
 				setFieldName((String)newValue);
 				return;
@@ -480,9 +433,6 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MDatasamplePackage.FIELD_GENERATOR__ENTITY_NAME:
-				setEntityName(ENTITY_NAME_EDEFAULT);
-				return;
 			case MDatasamplePackage.FIELD_GENERATOR__FIELD_NAME:
 				setFieldName(FIELD_NAME_EDEFAULT);
 				return;
@@ -516,8 +466,6 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MDatasamplePackage.FIELD_GENERATOR__ENTITY_NAME:
-				return ENTITY_NAME_EDEFAULT == null ? entityName != null : !ENTITY_NAME_EDEFAULT.equals(entityName);
 			case MDatasamplePackage.FIELD_GENERATOR__FIELD_NAME:
 				return FIELD_NAME_EDEFAULT == null ? fieldName != null : !FIELD_NAME_EDEFAULT.equals(fieldName);
 			case MDatasamplePackage.FIELD_GENERATOR__GENERATOR:
@@ -546,9 +494,7 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (entityName: ");
-		result.append(entityName);
-		result.append(", fieldName: ");
+		result.append(" (fieldName: ");
 		result.append(fieldName);
 		result.append(", errorRate: ");
 		result.append(errorRate);

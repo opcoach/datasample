@@ -6,7 +6,6 @@ import com.opcoach.datasample.EntityGenerator;
 public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityGenerator
 {
 
-	
 	public EntityGeneratorImpl() {
 		super();
 		System.out.println("Create an EntityGeneratorImpl");

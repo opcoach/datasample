@@ -40,7 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getPackageURI <em>Package URI</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getEntityGenerators <em>Entity Generators</em>}</li>
- *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getFieldGenerators <em>Field Generators</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getRootEntity <em>Root Entity</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getBadValueGeneratorNames <em>Bad Value Generator Names</em>}</li>
  * </ul>
@@ -147,16 +146,6 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 	 * @ordered
 	 */
 	protected EList<EntityGenerator> entityGenerators;
-
-	/**
-	 * The cached value of the '{@link #getFieldGenerators() <em>Field Generators</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFieldGenerators()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<FieldGenerator> fieldGenerators;
 
 	/**
 	 * The cached value of the '{@link #getRootEntity() <em>Root Entity</em>}' reference.
@@ -336,18 +325,6 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<FieldGenerator> getFieldGenerators() {
-		if (fieldGenerators == null) {
-			fieldGenerators = new EObjectContainmentEList<FieldGenerator>(FieldGenerator.class, this, MDatasamplePackage.DATA_SAMPLE__FIELD_GENERATORS);
-		}
-		return fieldGenerators;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRootEntity() {
 		if (rootEntity != null && rootEntity.eIsProxy()) {
 			InternalEObject oldRootEntity = (InternalEObject)rootEntity;
@@ -403,8 +380,6 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 		switch (featureID) {
 			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
 				return ((InternalEList<?>)getEntityGenerators()).basicRemove(otherEnd, msgs);
-			case MDatasamplePackage.DATA_SAMPLE__FIELD_GENERATORS:
-				return ((InternalEList<?>)getFieldGenerators()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -430,8 +405,6 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 				return basicGetPackage();
 			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
 				return getEntityGenerators();
-			case MDatasamplePackage.DATA_SAMPLE__FIELD_GENERATORS:
-				return getFieldGenerators();
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				if (resolve) return getRootEntity();
 				return basicGetRootEntity();
@@ -468,10 +441,6 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
 				getEntityGenerators().clear();
 				getEntityGenerators().addAll((Collection<? extends EntityGenerator>)newValue);
-				return;
-			case MDatasamplePackage.DATA_SAMPLE__FIELD_GENERATORS:
-				getFieldGenerators().clear();
-				getFieldGenerators().addAll((Collection<? extends FieldGenerator>)newValue);
 				return;
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				setRootEntity((EClass)newValue);
@@ -510,9 +479,6 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
 				getEntityGenerators().clear();
 				return;
-			case MDatasamplePackage.DATA_SAMPLE__FIELD_GENERATORS:
-				getFieldGenerators().clear();
-				return;
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				setRootEntity((EClass)null);
 				return;
@@ -543,8 +509,6 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 				return package_ != null;
 			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
 				return entityGenerators != null && !entityGenerators.isEmpty();
-			case MDatasamplePackage.DATA_SAMPLE__FIELD_GENERATORS:
-				return fieldGenerators != null && !fieldGenerators.isEmpty();
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				return rootEntity != null;
 			case MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:

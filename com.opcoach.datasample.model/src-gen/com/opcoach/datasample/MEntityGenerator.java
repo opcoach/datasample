@@ -2,6 +2,7 @@
  */
 package com.opcoach.datasample;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.opcoach.datasample.MEntityGenerator#getNumber <em>Number</em>}</li>
  *   <li>{@link com.opcoach.datasample.MEntityGenerator#getEntityName <em>Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.MEntityGenerator#getEntity <em>Entity</em>}</li>
+ *   <li>{@link com.opcoach.datasample.MEntityGenerator#getFieldGenerators <em>Field Generators</em>}</li>
  * </ul>
  *
  * @see com.opcoach.datasample.MDatasamplePackage#getEntityGenerator()
@@ -101,5 +103,21 @@ public interface MEntityGenerator extends EObject {
 	 * @generated
 	 */
 	void setEntity(EClass value);
+
+	/**
+	 * Returns the value of the '<em><b>Field Generators</b></em>' containment reference list.
+	 * The list contents are of type {@link com.opcoach.datasample.FieldGenerator}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Field Generators</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Field Generators</em>' containment reference list.
+	 * @see com.opcoach.datasample.MDatasamplePackage#getEntityGenerator_FieldGenerators()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<FieldGenerator> getFieldGenerators();
 
 } // MEntityGenerator

@@ -122,22 +122,13 @@ public interface MDatasamplePackage extends EPackage {
 	int DATA_SAMPLE__ENTITY_GENERATORS = 5;
 
 	/**
-	 * The feature id for the '<em><b>Field Generators</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SAMPLE__FIELD_GENERATORS = 6;
-
-	/**
 	 * The feature id for the '<em><b>Root Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE__ROOT_ENTITY = 7;
+	int DATA_SAMPLE__ROOT_ENTITY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Bad Value Generator Names</b></em>' attribute list.
@@ -146,7 +137,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES = 8;
+	int DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES = 7;
 
 	/**
 	 * The number of structural features of the '<em>Data Sample</em>' class.
@@ -155,7 +146,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE_FEATURE_COUNT = 9;
+	int DATA_SAMPLE_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Data Sample</em>' class.
@@ -204,13 +195,22 @@ public interface MDatasamplePackage extends EPackage {
 	int ENTITY_GENERATOR__ENTITY = 2;
 
 	/**
+	 * The feature id for the '<em><b>Field Generators</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_GENERATOR__FIELD_GENERATORS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Entity Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_GENERATOR_FEATURE_COUNT = 3;
+	int ENTITY_GENERATOR_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Entity Generator</em>' class.
@@ -232,22 +232,13 @@ public interface MDatasamplePackage extends EPackage {
 	int FIELD_GENERATOR = 2;
 
 	/**
-	 * The feature id for the '<em><b>Entity Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIELD_GENERATOR__ENTITY_NAME = 0;
-
-	/**
 	 * The feature id for the '<em><b>Field Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR__FIELD_NAME = 1;
+	int FIELD_GENERATOR__FIELD_NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Generator</b></em>' reference.
@@ -256,7 +247,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR__GENERATOR = 2;
+	int FIELD_GENERATOR__GENERATOR = 1;
 
 	/**
 	 * The feature id for the '<em><b>Structural Feature</b></em>' reference.
@@ -265,7 +256,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR__STRUCTURAL_FEATURE = 3;
+	int FIELD_GENERATOR__STRUCTURAL_FEATURE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Error Rate</b></em>' attribute.
@@ -274,7 +265,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR__ERROR_RATE = 4;
+	int FIELD_GENERATOR__ERROR_RATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Generator Name</b></em>' attribute.
@@ -283,7 +274,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR__GENERATOR_NAME = 5;
+	int FIELD_GENERATOR__GENERATOR_NAME = 4;
 
 	/**
 	 * The feature id for the '<em><b>Error Generator Name</b></em>' attribute.
@@ -292,7 +283,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR__ERROR_GENERATOR_NAME = 6;
+	int FIELD_GENERATOR__ERROR_GENERATOR_NAME = 5;
 
 	/**
 	 * The feature id for the '<em><b>Error Generator</b></em>' reference.
@@ -301,7 +292,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR__ERROR_GENERATOR = 7;
+	int FIELD_GENERATOR__ERROR_GENERATOR = 6;
 
 	/**
 	 * The number of structural features of the '<em>Field Generator</em>' class.
@@ -310,7 +301,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR_FEATURE_COUNT = 8;
+	int FIELD_GENERATOR_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Field Generator</em>' class.
@@ -409,17 +400,6 @@ public interface MDatasamplePackage extends EPackage {
 	EReference getDataSample_EntityGenerators();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.opcoach.datasample.MDataSample#getFieldGenerators <em>Field Generators</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Field Generators</em>'.
-	 * @see com.opcoach.datasample.MDataSample#getFieldGenerators()
-	 * @see #getDataSample()
-	 * @generated
-	 */
-	EReference getDataSample_FieldGenerators();
-
-	/**
 	 * Returns the meta object for the reference '{@link com.opcoach.datasample.MDataSample#getRootEntity <em>Root Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -485,6 +465,17 @@ public interface MDatasamplePackage extends EPackage {
 	EReference getEntityGenerator_Entity();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.opcoach.datasample.MEntityGenerator#getFieldGenerators <em>Field Generators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Field Generators</em>'.
+	 * @see com.opcoach.datasample.MEntityGenerator#getFieldGenerators()
+	 * @see #getEntityGenerator()
+	 * @generated
+	 */
+	EReference getEntityGenerator_FieldGenerators();
+
+	/**
 	 * Returns the meta object for class '{@link com.opcoach.datasample.MFieldGenerator <em>Field Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -493,17 +484,6 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getFieldGenerator();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.opcoach.datasample.MFieldGenerator#getEntityName <em>Entity Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Entity Name</em>'.
-	 * @see com.opcoach.datasample.MFieldGenerator#getEntityName()
-	 * @see #getFieldGenerator()
-	 * @generated
-	 */
-	EAttribute getFieldGenerator_EntityName();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.opcoach.datasample.MFieldGenerator#getFieldName <em>Field Name</em>}'.
@@ -674,14 +654,6 @@ public interface MDatasamplePackage extends EPackage {
 		EReference DATA_SAMPLE__ENTITY_GENERATORS = eINSTANCE.getDataSample_EntityGenerators();
 
 		/**
-		 * The meta object literal for the '<em><b>Field Generators</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_SAMPLE__FIELD_GENERATORS = eINSTANCE.getDataSample_FieldGenerators();
-
-		/**
 		 * The meta object literal for the '<em><b>Root Entity</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -732,6 +704,14 @@ public interface MDatasamplePackage extends EPackage {
 		EReference ENTITY_GENERATOR__ENTITY = eINSTANCE.getEntityGenerator_Entity();
 
 		/**
+		 * The meta object literal for the '<em><b>Field Generators</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_GENERATOR__FIELD_GENERATORS = eINSTANCE.getEntityGenerator_FieldGenerators();
+
+		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MFieldGeneratorImpl <em>Field Generator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -740,14 +720,6 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EClass FIELD_GENERATOR = eINSTANCE.getFieldGenerator();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FIELD_GENERATOR__ENTITY_NAME = eINSTANCE.getFieldGenerator_EntityName();
 
 		/**
 		 * The meta object literal for the '<em><b>Field Name</b></em>' attribute feature.

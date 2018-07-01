@@ -22,7 +22,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DataSample/packageURI"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DataSample/package"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DataSample/entityGenerators"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DataSample/fieldGenerators"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DataSample/rootEntity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DataSample/badValueGeneratorNames"/>
     </genClasses>
@@ -30,9 +29,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//EntityGenerator/number"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//EntityGenerator/entityName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/fieldGenerators"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//FieldGenerator">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//FieldGenerator/entityName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//FieldGenerator/fieldName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//FieldGenerator/generator"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//FieldGenerator/structuralFeature"/>
