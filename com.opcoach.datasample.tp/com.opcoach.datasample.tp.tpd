@@ -29,10 +29,11 @@ location "http://download.eclipse.org/releases/photon" {
 	
 }
 
+
 location "https://www.opcoach.com/repository/photon" {
 	com.opcoach.generator.feature.feature.group
 	
-}
+} 
 
 
 
