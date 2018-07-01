@@ -11,8 +11,9 @@
    <extension
          point="org.eclipse.emf.ecore.generated_package">
       <package
-            uri="http://www.opcoach.com/datasample/1.0"
-            class="com.opcoach.datasample.DatasamplePackage">
+            class="com.opcoach.datasample.MDatasamplePackage"
+            genModel="model/dataSample.genmodel"
+            uri="http://www.opcoach.com/datasample/1.0">
       </package>
    </extension>
 
