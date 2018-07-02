@@ -9,6 +9,7 @@ import com.opcoach.datasample.Language;
 import com.opcoach.datasample.MDatasampleFactory;
 import com.opcoach.datasample.MDatasamplePackage;
 
+import com.opcoach.datasample.Parameter;
 import com.opcoach.generator.MGeneratorPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -48,6 +49,13 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	private EClass fieldGeneratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -324,6 +332,42 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getFieldGenerator_Parameters() {
+		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParameter() {
+		return parameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParameter_Name() {
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParameter_Value() {
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getLanguage() {
 		return languageEEnum;
 	}
@@ -380,6 +424,11 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEAttribute(fieldGeneratorEClass, FIELD_GENERATOR__GENERATOR_NAME);
 		createEAttribute(fieldGeneratorEClass, FIELD_GENERATOR__ERROR_GENERATOR_NAME);
 		createEReference(fieldGeneratorEClass, FIELD_GENERATOR__ERROR_GENERATOR);
+		createEReference(fieldGeneratorEClass, FIELD_GENERATOR__PARAMETERS);
+
+		parameterEClass = createEClass(PARAMETER);
+		createEAttribute(parameterEClass, PARAMETER__NAME);
+		createEAttribute(parameterEClass, PARAMETER__VALUE);
 
 		// Create enums
 		languageEEnum = createEEnum(LANGUAGE);
@@ -449,6 +498,11 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEReference(getFieldGenerator_ErrorGenerator(), g1, null, "errorGenerator", null, 0, 1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFieldGenerator_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_Value(), theEcorePackage.getEString(), "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(languageEEnum, Language.class, "Language");

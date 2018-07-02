@@ -26,14 +26,18 @@ enum Language returns Language:
 
 EntityGenerator returns EntityGenerator:
 	{EntityGenerator}
-	'generate' number=EInt entityName=EString
+	'generate' number=EInt 'instancesOf' entityName=EString
 	'{'
 	fieldGenerators+=FieldGenerator*
 	'}';
 
 FieldGenerator returns FieldGenerator:
 	{FieldGenerator}
-	'forField' fieldName=EString 'use' generatorName=EString ('withErrorRate=' errorRate=EInt 'generatedWith'
+	'forField' fieldName=EString 'use' generatorName=EString ('(' parameters+=Parameter (',' parameters+=Parameter)* ')') ?  ('withErrorRate=' errorRate=EInt 'generatedWith'
 	errorGeneratorName=EString)?;
+
+Parameter returns Parameter:
+	name=ID '=' value=EString
+;
 
 

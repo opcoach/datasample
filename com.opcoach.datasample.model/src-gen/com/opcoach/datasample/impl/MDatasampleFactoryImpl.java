@@ -60,6 +60,7 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 			case MDatasamplePackage.DATA_SAMPLE: return createDataSample();
 			case MDatasamplePackage.ENTITY_GENERATOR: return createEntityGenerator();
 			case MDatasamplePackage.FIELD_GENERATOR: return createFieldGenerator();
+			case MDatasamplePackage.PARAMETER: return createParameter();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -123,6 +124,16 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	public FieldGenerator createFieldGenerator() {
 		FieldGeneratorImpl fieldGenerator = new FieldGeneratorImpl();
 		return fieldGenerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
 	}
 
 	/**

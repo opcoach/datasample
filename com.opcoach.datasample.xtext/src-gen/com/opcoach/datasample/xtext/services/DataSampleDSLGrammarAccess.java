@@ -144,22 +144,23 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cGenerateKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNumberAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNumberEIntParserRuleCall_2_0 = (RuleCall)cNumberAssignment_2.eContents().get(0);
-		private final Assignment cEntityNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cEntityNameEStringParserRuleCall_3_0 = (RuleCall)cEntityNameAssignment_3.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cFieldGeneratorsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cFieldGeneratorsFieldGeneratorParserRuleCall_5_0 = (RuleCall)cFieldGeneratorsAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cInstancesOfKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cEntityNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cEntityNameEStringParserRuleCall_4_0 = (RuleCall)cEntityNameAssignment_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cFieldGeneratorsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cFieldGeneratorsFieldGeneratorParserRuleCall_6_0 = (RuleCall)cFieldGeneratorsAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//EntityGenerator:
 		//	{EntityGenerator}
-		//	'generate' number=EInt entityName=EString
+		//	'generate' number=EInt 'instancesOf' entityName=EString
 		//	'{'
 		//	fieldGenerators+=FieldGenerator*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{EntityGenerator} 'generate' number=EInt entityName=EString '{' fieldGenerators+=FieldGenerator* '}'
+		//{EntityGenerator} 'generate' number=EInt 'instancesOf' entityName=EString '{' fieldGenerators+=FieldGenerator* '}'
 		public Group getGroup() { return cGroup; }
 
 		//{EntityGenerator}
@@ -174,23 +175,26 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getNumberEIntParserRuleCall_2_0() { return cNumberEIntParserRuleCall_2_0; }
 
+		//'instancesOf'
+		public Keyword getInstancesOfKeyword_3() { return cInstancesOfKeyword_3; }
+
 		//entityName=EString
-		public Assignment getEntityNameAssignment_3() { return cEntityNameAssignment_3; }
+		public Assignment getEntityNameAssignment_4() { return cEntityNameAssignment_4; }
 
 		//EString
-		public RuleCall getEntityNameEStringParserRuleCall_3_0() { return cEntityNameEStringParserRuleCall_3_0; }
+		public RuleCall getEntityNameEStringParserRuleCall_4_0() { return cEntityNameEStringParserRuleCall_4_0; }
 
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
 		//fieldGenerators+=FieldGenerator*
-		public Assignment getFieldGeneratorsAssignment_5() { return cFieldGeneratorsAssignment_5; }
+		public Assignment getFieldGeneratorsAssignment_6() { return cFieldGeneratorsAssignment_6; }
 
 		//FieldGenerator
-		public RuleCall getFieldGeneratorsFieldGeneratorParserRuleCall_5_0() { return cFieldGeneratorsFieldGeneratorParserRuleCall_5_0; }
+		public RuleCall getFieldGeneratorsFieldGeneratorParserRuleCall_6_0() { return cFieldGeneratorsFieldGeneratorParserRuleCall_6_0; }
 
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class FieldGeneratorElements extends AbstractParserRuleElementFinder {
@@ -204,21 +208,31 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cGeneratorNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cGeneratorNameEStringParserRuleCall_4_0 = (RuleCall)cGeneratorNameAssignment_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cWithErrorRateKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cErrorRateAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cErrorRateEIntParserRuleCall_5_1_0 = (RuleCall)cErrorRateAssignment_5_1.eContents().get(0);
-		private final Keyword cGeneratedWithKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
-		private final Assignment cErrorGeneratorNameAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
-		private final RuleCall cErrorGeneratorNameEStringParserRuleCall_5_3_0 = (RuleCall)cErrorGeneratorNameAssignment_5_3.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cParametersAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cParametersParameterParserRuleCall_5_1_0 = (RuleCall)cParametersAssignment_5_1.eContents().get(0);
+		private final Group cGroup_5_2 = (Group)cGroup_5.eContents().get(2);
+		private final Keyword cCommaKeyword_5_2_0 = (Keyword)cGroup_5_2.eContents().get(0);
+		private final Assignment cParametersAssignment_5_2_1 = (Assignment)cGroup_5_2.eContents().get(1);
+		private final RuleCall cParametersParameterParserRuleCall_5_2_1_0 = (RuleCall)cParametersAssignment_5_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cWithErrorRateKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cErrorRateAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cErrorRateEIntParserRuleCall_6_1_0 = (RuleCall)cErrorRateAssignment_6_1.eContents().get(0);
+		private final Keyword cGeneratedWithKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
+		private final Assignment cErrorGeneratorNameAssignment_6_3 = (Assignment)cGroup_6.eContents().get(3);
+		private final RuleCall cErrorGeneratorNameEStringParserRuleCall_6_3_0 = (RuleCall)cErrorGeneratorNameAssignment_6_3.eContents().get(0);
 		
 		//FieldGenerator:
 		//	{FieldGenerator}
-		//	'forField' fieldName=EString 'use' generatorName=EString ('withErrorRate=' errorRate=EInt 'generatedWith'
+		//	'forField' fieldName=EString 'use' generatorName=EString ('(' parameters+=Parameter (',' parameters+=Parameter)* ')')?
+		//	('withErrorRate=' errorRate=EInt 'generatedWith'
 		//	errorGeneratorName=EString)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{FieldGenerator} 'forField' fieldName=EString 'use' generatorName=EString ('withErrorRate=' errorRate=EInt
-		//'generatedWith' errorGeneratorName=EString)?
+		//{FieldGenerator} 'forField' fieldName=EString 'use' generatorName=EString ('(' parameters+=Parameter (','
+		//parameters+=Parameter)* ')')? ('withErrorRate=' errorRate=EInt 'generatedWith' errorGeneratorName=EString)?
 		public Group getGroup() { return cGroup; }
 
 		//{FieldGenerator}
@@ -242,26 +256,85 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getGeneratorNameEStringParserRuleCall_4_0() { return cGeneratorNameEStringParserRuleCall_4_0; }
 
-		//('withErrorRate=' errorRate=EInt 'generatedWith' errorGeneratorName=EString)?
+		//('(' parameters+=Parameter (',' parameters+=Parameter)* ')')?
 		public Group getGroup_5() { return cGroup_5; }
 
+		//'('
+		public Keyword getLeftParenthesisKeyword_5_0() { return cLeftParenthesisKeyword_5_0; }
+
+		//parameters+=Parameter
+		public Assignment getParametersAssignment_5_1() { return cParametersAssignment_5_1; }
+
+		//Parameter
+		public RuleCall getParametersParameterParserRuleCall_5_1_0() { return cParametersParameterParserRuleCall_5_1_0; }
+
+		//(',' parameters+=Parameter)*
+		public Group getGroup_5_2() { return cGroup_5_2; }
+
+		//','
+		public Keyword getCommaKeyword_5_2_0() { return cCommaKeyword_5_2_0; }
+
+		//parameters+=Parameter
+		public Assignment getParametersAssignment_5_2_1() { return cParametersAssignment_5_2_1; }
+
+		//Parameter
+		public RuleCall getParametersParameterParserRuleCall_5_2_1_0() { return cParametersParameterParserRuleCall_5_2_1_0; }
+
+		//')'
+		public Keyword getRightParenthesisKeyword_5_3() { return cRightParenthesisKeyword_5_3; }
+
+		//('withErrorRate=' errorRate=EInt 'generatedWith' errorGeneratorName=EString)?
+		public Group getGroup_6() { return cGroup_6; }
+
 		//'withErrorRate='
-		public Keyword getWithErrorRateKeyword_5_0() { return cWithErrorRateKeyword_5_0; }
+		public Keyword getWithErrorRateKeyword_6_0() { return cWithErrorRateKeyword_6_0; }
 
 		//errorRate=EInt
-		public Assignment getErrorRateAssignment_5_1() { return cErrorRateAssignment_5_1; }
+		public Assignment getErrorRateAssignment_6_1() { return cErrorRateAssignment_6_1; }
 
 		//EInt
-		public RuleCall getErrorRateEIntParserRuleCall_5_1_0() { return cErrorRateEIntParserRuleCall_5_1_0; }
+		public RuleCall getErrorRateEIntParserRuleCall_6_1_0() { return cErrorRateEIntParserRuleCall_6_1_0; }
 
 		//'generatedWith'
-		public Keyword getGeneratedWithKeyword_5_2() { return cGeneratedWithKeyword_5_2; }
+		public Keyword getGeneratedWithKeyword_6_2() { return cGeneratedWithKeyword_6_2; }
 
 		//errorGeneratorName=EString
-		public Assignment getErrorGeneratorNameAssignment_5_3() { return cErrorGeneratorNameAssignment_5_3; }
+		public Assignment getErrorGeneratorNameAssignment_6_3() { return cErrorGeneratorNameAssignment_6_3; }
 
 		//EString
-		public RuleCall getErrorGeneratorNameEStringParserRuleCall_5_3_0() { return cErrorGeneratorNameEStringParserRuleCall_5_3_0; }
+		public RuleCall getErrorGeneratorNameEStringParserRuleCall_6_3_0() { return cErrorGeneratorNameEStringParserRuleCall_6_3_0; }
+	}
+
+	public class ParameterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.opcoach.datasample.xtext.DataSampleDSL.Parameter");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueEStringParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		
+		//Parameter:
+		//	name=ID '=' value=EString;
+		@Override public ParserRule getRule() { return rule; }
+
+		//name=ID '=' value=EString
+		public Group getGroup() { return cGroup; }
+
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+
+		//value=EString
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//EString
+		public RuleCall getValueEStringParserRuleCall_2_0() { return cValueEStringParserRuleCall_2_0; }
 	}
 	
 	
@@ -323,6 +396,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final LanguageElements eLanguage;
 	private final EntityGeneratorElements pEntityGenerator;
 	private final FieldGeneratorElements pFieldGenerator;
+	private final ParameterElements pParameter;
 	
 	private final Grammar grammar;
 
@@ -339,6 +413,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.eLanguage = new LanguageElements();
 		this.pEntityGenerator = new EntityGeneratorElements();
 		this.pFieldGenerator = new FieldGeneratorElements();
+		this.pParameter = new ParameterElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -416,7 +491,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//EntityGenerator:
 	//	{EntityGenerator}
-	//	'generate' number=EInt entityName=EString
+	//	'generate' number=EInt 'instancesOf' entityName=EString
 	//	'{'
 	//	fieldGenerators+=FieldGenerator*
 	//	'}';
@@ -430,7 +505,8 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//FieldGenerator:
 	//	{FieldGenerator}
-	//	'forField' fieldName=EString 'use' generatorName=EString ('withErrorRate=' errorRate=EInt 'generatedWith'
+	//	'forField' fieldName=EString 'use' generatorName=EString ('(' parameters+=Parameter (',' parameters+=Parameter)* ')')?
+	//	('withErrorRate=' errorRate=EInt 'generatedWith'
 	//	errorGeneratorName=EString)?;
 	public FieldGeneratorElements getFieldGeneratorAccess() {
 		return pFieldGenerator;
@@ -438,6 +514,16 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getFieldGeneratorRule() {
 		return getFieldGeneratorAccess().getRule();
+	}
+
+	//Parameter:
+	//	name=ID '=' value=EString;
+	public ParameterElements getParameterAccess() {
+		return pParameter;
+	}
+	
+	public ParserRule getParameterRule() {
+		return getParameterAccess().getRule();
 	}
 
 	//terminal ID:

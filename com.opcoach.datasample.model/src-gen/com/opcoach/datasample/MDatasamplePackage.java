@@ -295,13 +295,22 @@ public interface MDatasamplePackage extends EPackage {
 	int FIELD_GENERATOR__ERROR_GENERATOR = 6;
 
 	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_GENERATOR__PARAMETERS = 7;
+
+	/**
 	 * The number of structural features of the '<em>Field Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR_FEATURE_COUNT = 7;
+	int FIELD_GENERATOR_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Field Generator</em>' class.
@@ -313,6 +322,52 @@ public interface MDatasamplePackage extends EPackage {
 	int FIELD_GENERATOR_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link com.opcoach.datasample.impl.MParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.datasample.impl.MParameterImpl
+	 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getParameter()
+	 * @generated
+	 */
+	int PARAMETER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link com.opcoach.datasample.Language <em>Language</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,7 +375,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getLanguage()
 	 * @generated
 	 */
-	int LANGUAGE = 3;
+	int LANGUAGE = 4;
 
 
 	/**
@@ -563,6 +618,49 @@ public interface MDatasamplePackage extends EPackage {
 	EReference getFieldGenerator_ErrorGenerator();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.opcoach.datasample.MFieldGenerator#getParameters <em>Parameters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see com.opcoach.datasample.MFieldGenerator#getParameters()
+	 * @see #getFieldGenerator()
+	 * @generated
+	 */
+	EReference getFieldGenerator_Parameters();
+
+	/**
+	 * Returns the meta object for class '{@link com.opcoach.datasample.MParameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see com.opcoach.datasample.MParameter
+	 * @generated
+	 */
+	EClass getParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.datasample.MParameter#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see com.opcoach.datasample.MParameter#getName()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.datasample.MParameter#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see com.opcoach.datasample.MParameter#getValue()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Value();
+
+	/**
 	 * Returns the meta object for enum '{@link com.opcoach.datasample.Language <em>Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -776,6 +874,40 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EReference FIELD_GENERATOR__ERROR_GENERATOR = eINSTANCE.getFieldGenerator_ErrorGenerator();
+
+		/**
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FIELD_GENERATOR__PARAMETERS = eINSTANCE.getFieldGenerator_Parameters();
+
+		/**
+		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.datasample.impl.MParameterImpl
+		 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getParameter()
+		 * @generated
+		 */
+		EClass PARAMETER = eINSTANCE.getParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.Language <em>Language</em>}' enum.

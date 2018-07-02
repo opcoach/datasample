@@ -5,16 +5,22 @@ package com.opcoach.datasample.impl;
 import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.MDatasamplePackage;
 
+import com.opcoach.datasample.Parameter;
 import com.opcoach.generator.ValueGenerator;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +37,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getGeneratorName <em>Generator Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getErrorGeneratorName <em>Error Generator Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getErrorGenerator <em>Error Generator</em>}</li>
+ *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -145,6 +152,16 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected ValueGenerator<?> errorGenerator;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -368,6 +385,32 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, MDatasamplePackage.FIELD_GENERATOR__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MDatasamplePackage.FIELD_GENERATOR__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -388,6 +431,8 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 			case MDatasamplePackage.FIELD_GENERATOR__ERROR_GENERATOR:
 				if (resolve) return getErrorGenerator();
 				return basicGetErrorGenerator();
+			case MDatasamplePackage.FIELD_GENERATOR__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -397,6 +442,7 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -420,6 +466,10 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case MDatasamplePackage.FIELD_GENERATOR__ERROR_GENERATOR:
 				setErrorGenerator((ValueGenerator<?>)newValue);
+				return;
+			case MDatasamplePackage.FIELD_GENERATOR__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -454,6 +504,9 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 			case MDatasamplePackage.FIELD_GENERATOR__ERROR_GENERATOR:
 				setErrorGenerator((ValueGenerator<?>)null);
 				return;
+			case MDatasamplePackage.FIELD_GENERATOR__PARAMETERS:
+				getParameters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -480,6 +533,8 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 				return ERROR_GENERATOR_NAME_EDEFAULT == null ? errorGeneratorName != null : !ERROR_GENERATOR_NAME_EDEFAULT.equals(errorGeneratorName);
 			case MDatasamplePackage.FIELD_GENERATOR__ERROR_GENERATOR:
 				return errorGenerator != null;
+			case MDatasamplePackage.FIELD_GENERATOR__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

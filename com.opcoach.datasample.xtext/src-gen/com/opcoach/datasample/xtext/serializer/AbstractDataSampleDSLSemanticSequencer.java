@@ -16,7 +16,9 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
+import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
+import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -40,6 +42,9 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 				return; 
 			case MDatasamplePackage.FIELD_GENERATOR:
 				sequence_FieldGenerator(context, (FieldGenerator) semanticObject); 
+				return; 
+			case MDatasamplePackage.PARAMETER:
+				sequence_Parameter(context, (com.opcoach.datasample.Parameter) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -75,10 +80,31 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *     FieldGenerator returns FieldGenerator
 	 *
 	 * Constraint:
-	 *     (fieldName=EString generatorName=EString (errorRate=EInt errorGeneratorName=EString)?)
+	 *     (fieldName=EString generatorName=EString (parameters+=Parameter parameters+=Parameter*)? (errorRate=EInt errorGeneratorName=EString)?)
 	 */
 	protected void sequence_FieldGenerator(ISerializationContext context, FieldGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Parameter returns Parameter
+	 *
+	 * Constraint:
+	 *     (name=ID value=EString)
+	 */
+	protected void sequence_Parameter(ISerializationContext context, com.opcoach.datasample.Parameter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MDatasamplePackage.Literals.PARAMETER__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MDatasamplePackage.Literals.PARAMETER__NAME));
+			if (transientValues.isValueTransient(semanticObject, MDatasamplePackage.Literals.PARAMETER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MDatasamplePackage.Literals.PARAMETER__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getParameterAccess().getValueEStringParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
