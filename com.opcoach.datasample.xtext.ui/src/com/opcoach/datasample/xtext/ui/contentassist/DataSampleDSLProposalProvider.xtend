@@ -104,6 +104,19 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 
 	}
 
+
+   // Propose only parameters available for generators. 
+	var String[] parameterList =  #[ "locale", "seed", "low", "high", "step"]
+	
+	override completeParameter_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		val fgen = model as FieldGenerator
+		val parametersInFg = fgen.parameters.map[name]
+		for (s : parameterList)
+		   if (!parametersInFg.contains(s))
+			acceptor.accept(createCompletionProposal(s, context))
+	}
+
+
 	var Map<String, Class<?>> generators
 
 	def getAvailableGenerators() {
