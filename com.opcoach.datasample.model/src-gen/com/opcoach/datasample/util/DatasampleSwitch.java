@@ -4,6 +4,8 @@ package com.opcoach.datasample.util;
 
 import com.opcoach.datasample.*;
 
+import com.opcoach.generator.ValueGenerator;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -22,8 +24,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * @see com.opcoach.datasample.MDatasamplePackage
  * @generated
  */
-public class DatasampleSwitch<T> extends Switch<T>
-{
+public class DatasampleSwitch<T1> extends Switch<T1> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
@@ -38,8 +39,7 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DatasampleSwitch()
-	{
+	public DatasampleSwitch() {
 		if (modelPackage == null) {
 			modelPackage = MDatasamplePackage.eINSTANCE;
 		}
@@ -54,8 +54,7 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	@Override
-	protected boolean isSwitchFor(EPackage ePackage)
-	{
+	protected boolean isSwitchFor(EPackage ePackage) {
 		return ePackage == modelPackage;
 	}
 
@@ -67,30 +66,32 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	@Override
-	protected T doSwitch(int classifierID, EObject theEObject)
-	{
+	protected T1 doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case MDatasamplePackage.DATA_SAMPLE: {
 				DataSample dataSample = (DataSample)theEObject;
-				T result = caseDataSample(dataSample);
+				T1 result = caseDataSample(dataSample);
+				if (result == null) result = caseValueGenerator(dataSample);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDatasamplePackage.ENTITY_GENERATOR: {
 				EntityGenerator entityGenerator = (EntityGenerator)theEObject;
-				T result = caseEntityGenerator(entityGenerator);
+				T1 result = caseEntityGenerator(entityGenerator);
+				if (result == null) result = caseValueGenerator(entityGenerator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDatasamplePackage.FIELD_GENERATOR: {
 				FieldGenerator fieldGenerator = (FieldGenerator)theEObject;
-				T result = caseFieldGenerator(fieldGenerator);
+				T1 result = caseFieldGenerator(fieldGenerator);
+				if (result == null) result = caseValueGenerator(fieldGenerator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case MDatasamplePackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
-				T result = caseParameter(parameter);
+				T1 result = caseParameter(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,8 +110,7 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDataSample(DataSample object)
-	{
+	public T1 caseDataSample(DataSample object) {
 		return null;
 	}
 
@@ -125,8 +125,7 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntityGenerator(EntityGenerator object)
-	{
+	public T1 caseEntityGenerator(EntityGenerator object) {
 		return null;
 	}
 
@@ -141,8 +140,7 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFieldGenerator(FieldGenerator object)
-	{
+	public T1 caseFieldGenerator(FieldGenerator object) {
 		return null;
 	}
 
@@ -157,7 +155,22 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseParameter(Parameter object) {
+	public T1 caseParameter(Parameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Value Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Value Generator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <T> T1 caseValueGenerator(ValueGenerator<T> object) {
 		return null;
 	}
 
@@ -173,8 +186,7 @@ public class DatasampleSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	@Override
-	public T defaultCase(EObject object)
-	{
+	public T1 defaultCase(EObject object) {
 		return null;
 	}
 

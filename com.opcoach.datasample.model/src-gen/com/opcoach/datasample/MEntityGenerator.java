@@ -2,7 +2,10 @@
  */
 package com.opcoach.datasample;
 
+import com.opcoach.generator.ValueGenerator;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
@@ -25,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface MEntityGenerator extends EObject {
+public interface MEntityGenerator extends ValueGenerator<EObject> {
 	/**
 	 * Returns the value of the '<em><b>Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -123,9 +126,9 @@ public interface MEntityGenerator extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model kind="operation"
 	 * @generated
 	 */
-	EObject generateSample();
+	void getInstances();
 
 } // MEntityGenerator

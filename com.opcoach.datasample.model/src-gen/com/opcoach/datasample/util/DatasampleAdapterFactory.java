@@ -4,6 +4,8 @@ package com.opcoach.datasample.util;
 
 import com.opcoach.datasample.*;
 
+import com.opcoach.generator.ValueGenerator;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -19,8 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @see com.opcoach.datasample.MDatasamplePackage
  * @generated
  */
-public class DatasampleAdapterFactory extends AdapterFactoryImpl
-{
+public class DatasampleAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
@@ -35,8 +36,7 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DatasampleAdapterFactory()
-	{
+	public DatasampleAdapterFactory() {
 		if (modelPackage == null) {
 			modelPackage = MDatasamplePackage.eINSTANCE;
 		}
@@ -51,8 +51,7 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object object)
-	{
+	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
 		}
@@ -87,6 +86,10 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 				return createParameterAdapter();
 			}
 			@Override
+			public <T> Adapter caseValueGenerator(ValueGenerator<T> object) {
+				return createValueGeneratorAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -101,8 +104,7 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	@Override
-	public Adapter createAdapter(Notifier target)
-	{
+	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
@@ -117,8 +119,7 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 * @see com.opcoach.datasample.MDataSample
 	 * @generated
 	 */
-	public Adapter createDataSampleAdapter()
-	{
+	public Adapter createDataSampleAdapter() {
 		return null;
 	}
 
@@ -132,8 +133,7 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 * @see com.opcoach.datasample.MEntityGenerator
 	 * @generated
 	 */
-	public Adapter createEntityGeneratorAdapter()
-	{
+	public Adapter createEntityGeneratorAdapter() {
 		return null;
 	}
 
@@ -147,8 +147,7 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 * @see com.opcoach.datasample.MFieldGenerator
 	 * @generated
 	 */
-	public Adapter createFieldGeneratorAdapter()
-	{
+	public Adapter createFieldGeneratorAdapter() {
 		return null;
 	}
 
@@ -167,6 +166,20 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link com.opcoach.generator.MValueGenerator <em>Value Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.opcoach.generator.MValueGenerator
+	 * @generated
+	 */
+	public Adapter createValueGeneratorAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
@@ -174,8 +187,7 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl
 	 * @return the new adapter.
 	 * @generated
 	 */
-	public Adapter createEObjectAdapter()
-	{
+	public Adapter createEObjectAdapter() {
 		return null;
 	}
 

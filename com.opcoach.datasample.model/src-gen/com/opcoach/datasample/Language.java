@@ -17,8 +17,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model
  * @generated
  */
-public enum Language implements Enumerator
-{
+public enum Language implements Enumerator {
 	/**
 	 * The '<em><b>Fr</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -175,8 +174,7 @@ public enum Language implements Enumerator
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Language get(String literal)
-	{
+	public static Language get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			Language result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
@@ -194,8 +192,7 @@ public enum Language implements Enumerator
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Language getByName(String name)
-	{
+	public static Language getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			Language result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
@@ -213,8 +210,7 @@ public enum Language implements Enumerator
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Language get(int value)
-	{
+	public static Language get(int value) {
 		switch (value) {
 			case FR_VALUE: return FR;
 			case EN_VALUE: return EN;
@@ -252,8 +248,7 @@ public enum Language implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Language(int value, String name, String literal)
-	{
+	private Language(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -264,8 +259,7 @@ public enum Language implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getValue()
-	{
+	public int getValue() {
 	  return value;
 	}
 
@@ -274,8 +268,7 @@ public enum Language implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName()
-	{
+	public String getName() {
 	  return name;
 	}
 
@@ -284,8 +277,7 @@ public enum Language implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getLiteral()
-	{
+	public String getLiteral() {
 	  return literal;
 	}
 
@@ -296,8 +288,7 @@ public enum Language implements Enumerator
 	 * @generated
 	 */
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return literal;
 	}
 	

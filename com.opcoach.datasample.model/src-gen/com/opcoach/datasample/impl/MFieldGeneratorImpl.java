@@ -4,22 +4,25 @@ package com.opcoach.datasample.impl;
 
 import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.MDatasamplePackage;
-
 import com.opcoach.datasample.Parameter;
+
 import com.opcoach.generator.ValueGenerator;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
+import com.opcoach.generator.impl.ValueGeneratorImpl;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -43,7 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements FieldGenerator {
+public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements FieldGenerator {
 	/**
 	 * The default value of the '{@link #getFieldName() <em>Field Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -398,17 +401,6 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object generateValue() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -549,20 +541,6 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case MDatasamplePackage.FIELD_GENERATOR___GENERATE_VALUE:
-				return generateValue();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -4,11 +4,12 @@ package com.opcoach.datasample.impl;
 
 import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.EntityGenerator;
-import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.Language;
 import com.opcoach.datasample.MDatasamplePackage;
 
+import com.opcoach.generator.impl.ValueGeneratorImpl;
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -43,12 +44,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getPackage <em>Package</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getEntityGenerators <em>Entity Generators</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getRootEntity <em>Root Entity</em>}</li>
+ *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getRootEntityName <em>Root Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getBadValueGeneratorNames <em>Bad Value Generator Names</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class MDataSampleImpl extends MinimalEObjectImpl.Container implements DataSample {
+public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements DataSample {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -160,6 +162,26 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 	protected EClass rootEntity;
 
 	/**
+	 * The default value of the '{@link #getRootEntityName() <em>Root Entity Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRootEntityName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ROOT_ENTITY_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRootEntityName() <em>Root Entity Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRootEntityName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String rootEntityName = ROOT_ENTITY_NAME_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getBadValueGeneratorNames() <em>Bad Value Generator Names</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,6 +208,17 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 	@Override
 	protected EClass eStaticClass() {
 		return MDatasamplePackage.Literals.DATA_SAMPLE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * This is specialized for the more specific type known in this context.
+	 * @generated
+	 */
+	@Override
+	public void setLastGeneratedValue(EObject newLastGeneratedValue) {
+		super.setLastGeneratedValue(newLastGeneratedValue);
 	}
 
 	/**
@@ -365,11 +398,8 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getBadValueGeneratorNames() {
-		if (badValueGeneratorNames == null) {
-			badValueGeneratorNames = new EDataTypeUniqueEList<String>(String.class, this, MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES);
-		}
-		return badValueGeneratorNames;
+	public String getRootEntityName() {
+		return rootEntityName;
 	}
 
 	/**
@@ -377,10 +407,23 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject generateSample() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public void setRootEntityName(String newRootEntityName) {
+		String oldRootEntityName = rootEntityName;
+		rootEntityName = newRootEntityName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY_NAME, oldRootEntityName, rootEntityName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<String> getBadValueGeneratorNames() {
+		if (badValueGeneratorNames == null) {
+			badValueGeneratorNames = new EDataTypeUniqueEList<String>(String.class, this, MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES);
+		}
+		return badValueGeneratorNames;
 	}
 
 	/**
@@ -421,6 +464,8 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				if (resolve) return getRootEntity();
 				return basicGetRootEntity();
+			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY_NAME:
+				return getRootEntityName();
 			case MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:
 				return getBadValueGeneratorNames();
 		}
@@ -457,6 +502,9 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 				return;
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				setRootEntity((EClass)newValue);
+				return;
+			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY_NAME:
+				setRootEntityName((String)newValue);
 				return;
 			case MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:
 				getBadValueGeneratorNames().clear();
@@ -495,6 +543,9 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				setRootEntity((EClass)null);
 				return;
+			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY_NAME:
+				setRootEntityName(ROOT_ENTITY_NAME_EDEFAULT);
+				return;
 			case MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:
 				getBadValueGeneratorNames().clear();
 				return;
@@ -524,24 +575,12 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 				return entityGenerators != null && !entityGenerators.isEmpty();
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				return rootEntity != null;
+			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY_NAME:
+				return ROOT_ENTITY_NAME_EDEFAULT == null ? rootEntityName != null : !ROOT_ENTITY_NAME_EDEFAULT.equals(rootEntityName);
 			case MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:
 				return badValueGeneratorNames != null && !badValueGeneratorNames.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case MDatasamplePackage.DATA_SAMPLE___GENERATE_SAMPLE:
-				return generateSample();
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -562,6 +601,8 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 		result.append(language);
 		result.append(", packageURI: ");
 		result.append(packageURI);
+		result.append(", rootEntityName: ");
+		result.append(rootEntityName);
 		result.append(", badValueGeneratorNames: ");
 		result.append(badValueGeneratorNames);
 		result.append(')');

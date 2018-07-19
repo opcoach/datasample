@@ -2,6 +2,7 @@
  */
 package com.opcoach.datasample;
 
+import com.opcoach.generator.ValueGenerator;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -24,6 +25,7 @@ import org.eclipse.emf.ecore.EPackage;
  *   <li>{@link com.opcoach.datasample.MDataSample#getPackage <em>Package</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getEntityGenerators <em>Entity Generators</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getRootEntity <em>Root Entity</em>}</li>
+ *   <li>{@link com.opcoach.datasample.MDataSample#getRootEntityName <em>Root Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getBadValueGeneratorNames <em>Bad Value Generator Names</em>}</li>
  * </ul>
  *
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.EPackage;
  * @model
  * @generated
  */
-public interface MDataSample extends EObject {
+public interface MDataSample extends ValueGenerator<EObject> {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -208,6 +210,32 @@ public interface MDataSample extends EObject {
 	void setRootEntity(EClass value);
 
 	/**
+	 * Returns the value of the '<em><b>Root Entity Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Root Entity Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Root Entity Name</em>' attribute.
+	 * @see #setRootEntityName(String)
+	 * @see com.opcoach.datasample.MDatasamplePackage#getDataSample_RootEntityName()
+	 * @model
+	 * @generated
+	 */
+	String getRootEntityName();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.datasample.MDataSample#getRootEntityName <em>Root Entity Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Root Entity Name</em>' attribute.
+	 * @see #getRootEntityName()
+	 * @generated
+	 */
+	void setRootEntityName(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Bad Value Generator Names</b></em>' attribute list.
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
@@ -222,13 +250,5 @@ public interface MDataSample extends EObject {
 	 * @generated
 	 */
 	EList<String> getBadValueGeneratorNames();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	EObject generateSample();
 
 } // MDataSample

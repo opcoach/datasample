@@ -8,8 +8,8 @@ import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.Language;
 import com.opcoach.datasample.MDatasampleFactory;
 import com.opcoach.datasample.MDatasamplePackage;
-
 import com.opcoach.datasample.Parameter;
+
 import com.opcoach.generator.MGeneratorPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -207,7 +207,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDataSample_BadValueGeneratorNames() {
+	public EAttribute getDataSample_RootEntityName() {
 		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -216,8 +216,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataSample__GenerateSample() {
-		return dataSampleEClass.getEOperations().get(0);
+	public EAttribute getDataSample_BadValueGeneratorNames() {
+		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -270,7 +270,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getEntityGenerator__GenerateSample() {
+	public EOperation getEntityGenerator__GetInstances() {
 		return entityGeneratorEClass.getEOperations().get(0);
 	}
 
@@ -360,15 +360,6 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getFieldGenerator__GenerateValue() {
-		return fieldGeneratorEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getParameter() {
 		return parameterEClass;
 	}
@@ -436,15 +427,15 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEReference(dataSampleEClass, DATA_SAMPLE__PACKAGE);
 		createEReference(dataSampleEClass, DATA_SAMPLE__ENTITY_GENERATORS);
 		createEReference(dataSampleEClass, DATA_SAMPLE__ROOT_ENTITY);
+		createEAttribute(dataSampleEClass, DATA_SAMPLE__ROOT_ENTITY_NAME);
 		createEAttribute(dataSampleEClass, DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES);
-		createEOperation(dataSampleEClass, DATA_SAMPLE___GENERATE_SAMPLE);
 
 		entityGeneratorEClass = createEClass(ENTITY_GENERATOR);
 		createEAttribute(entityGeneratorEClass, ENTITY_GENERATOR__NUMBER);
 		createEAttribute(entityGeneratorEClass, ENTITY_GENERATOR__ENTITY_NAME);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__ENTITY);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__FIELD_GENERATORS);
-		createEOperation(entityGeneratorEClass, ENTITY_GENERATOR___GENERATE_SAMPLE);
+		createEOperation(entityGeneratorEClass, ENTITY_GENERATOR___GET_INSTANCES);
 
 		fieldGeneratorEClass = createEClass(FIELD_GENERATOR);
 		createEAttribute(fieldGeneratorEClass, FIELD_GENERATOR__FIELD_NAME);
@@ -455,7 +446,6 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEAttribute(fieldGeneratorEClass, FIELD_GENERATOR__ERROR_GENERATOR_NAME);
 		createEReference(fieldGeneratorEClass, FIELD_GENERATOR__ERROR_GENERATOR);
 		createEReference(fieldGeneratorEClass, FIELD_GENERATOR__PARAMETERS);
-		createEOperation(fieldGeneratorEClass, FIELD_GENERATOR___GENERATE_VALUE);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
@@ -489,14 +479,26 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		MGeneratorPackage theGeneratorPackage = (MGeneratorPackage)EPackage.Registry.INSTANCE.getEPackage(MGeneratorPackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		EGenericType g1 = createEGenericType(theGeneratorPackage.getValueGenerator());
+		EGenericType g2 = createEGenericType(ecorePackage.getEObject());
+		g1.getETypeArguments().add(g2);
+		dataSampleEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theGeneratorPackage.getValueGenerator());
+		g2 = createEGenericType(ecorePackage.getEObject());
+		g1.getETypeArguments().add(g2);
+		entityGeneratorEClass.getEGenericSuperTypes().add(g1);
+		g1 = createEGenericType(theGeneratorPackage.getValueGenerator());
+		g2 = createEGenericType(theEcorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		fieldGeneratorEClass.getEGenericSuperTypes().add(g1);
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dataSampleEClass, DataSample.class, "DataSample", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -507,9 +509,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEReference(getDataSample_Package(), theEcorePackage.getEPackage(), null, "package", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataSample_EntityGenerators(), this.getEntityGenerator(), null, "entityGenerators", null, 0, -1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataSample_RootEntity(), theEcorePackage.getEClass(), null, "rootEntity", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataSample_RootEntityName(), ecorePackage.getEString(), "rootEntityName", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSample_BadValueGeneratorNames(), theEcorePackage.getEString(), "badValueGeneratorNames", null, 0, -1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getDataSample__GenerateSample(), theEcorePackage.getEObject(), "generateSample", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(entityGeneratorEClass, EntityGenerator.class, "EntityGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityGenerator_Number(), ecorePackage.getEInt(), "number", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -517,12 +518,12 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEReference(getEntityGenerator_Entity(), theEcorePackage.getEClass(), null, "entity", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityGenerator_FieldGenerators(), this.getFieldGenerator(), null, "fieldGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getEntityGenerator__GenerateSample(), theEcorePackage.getEObject(), "generateSample", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getEntityGenerator__GetInstances(), null, "getInstances", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(fieldGeneratorEClass, FieldGenerator.class, "FieldGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFieldGenerator_FieldName(), ecorePackage.getEString(), "fieldName", null, 0, 1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		EGenericType g1 = createEGenericType(theGeneratorPackage.getValueGenerator());
-		EGenericType g2 = createEGenericType();
+		g1 = createEGenericType(theGeneratorPackage.getValueGenerator());
+		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
 		initEReference(getFieldGenerator_Generator(), g1, null, "generator", null, 0, 1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFieldGenerator_StructuralFeature(), theEcorePackage.getEStructuralFeature(), null, "structuralFeature", null, 0, 1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -534,8 +535,6 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		g1.getETypeArguments().add(g2);
 		initEReference(getFieldGenerator_ErrorGenerator(), g1, null, "errorGenerator", null, 0, 1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFieldGenerator_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEOperation(getFieldGenerator__GenerateValue(), ecorePackage.getEJavaObject(), "generateValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

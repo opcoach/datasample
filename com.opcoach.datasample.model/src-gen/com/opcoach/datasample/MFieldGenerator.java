@@ -5,7 +5,7 @@ package com.opcoach.datasample;
 import com.opcoach.generator.ValueGenerator;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
@@ -28,10 +28,10 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  * </ul>
  *
  * @see com.opcoach.datasample.MDatasamplePackage#getFieldGenerator()
- * @model
+ * @model superTypes="com.opcoach.generator.ValueGenerator&lt;org.eclipse.emf.ecore.EJavaObject&gt;"
  * @generated
  */
-public interface MFieldGenerator extends EObject {
+public interface MFieldGenerator extends ValueGenerator<Object> {
 	/**
 	 * Returns the value of the '<em><b>Field Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -229,13 +229,5 @@ public interface MFieldGenerator extends EObject {
 	 * @generated
 	 */
 	EList<Parameter> getParameters();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	Object generateValue();
 
 } // MFieldGenerator
