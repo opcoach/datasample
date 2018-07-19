@@ -5,6 +5,7 @@ package com.opcoach.datasample;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -149,13 +150,22 @@ public interface MDatasamplePackage extends EPackage {
 	int DATA_SAMPLE_FEATURE_COUNT = 8;
 
 	/**
+	 * The operation id for the '<em>Generate Sample</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SAMPLE___GENERATE_SAMPLE = 0;
+
+	/**
 	 * The number of operations of the '<em>Data Sample</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE_OPERATION_COUNT = 0;
+	int DATA_SAMPLE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.datasample.impl.MEntityGeneratorImpl <em>Entity Generator</em>}' class.
@@ -213,13 +223,22 @@ public interface MDatasamplePackage extends EPackage {
 	int ENTITY_GENERATOR_FEATURE_COUNT = 4;
 
 	/**
+	 * The operation id for the '<em>Generate Sample</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_GENERATOR___GENERATE_SAMPLE = 0;
+
+	/**
 	 * The number of operations of the '<em>Entity Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_GENERATOR_OPERATION_COUNT = 0;
+	int ENTITY_GENERATOR_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.datasample.impl.MFieldGeneratorImpl <em>Field Generator</em>}' class.
@@ -313,13 +332,22 @@ public interface MDatasamplePackage extends EPackage {
 	int FIELD_GENERATOR_FEATURE_COUNT = 8;
 
 	/**
+	 * The operation id for the '<em>Generate Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_GENERATOR___GENERATE_VALUE = 0;
+
+	/**
 	 * The number of operations of the '<em>Field Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR_OPERATION_COUNT = 0;
+	int FIELD_GENERATOR_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link com.opcoach.datasample.impl.MParameterImpl <em>Parameter</em>}' class.
@@ -477,6 +505,16 @@ public interface MDatasamplePackage extends EPackage {
 	EAttribute getDataSample_BadValueGeneratorNames();
 
 	/**
+	 * Returns the meta object for the '{@link com.opcoach.datasample.MDataSample#generateSample() <em>Generate Sample</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Generate Sample</em>' operation.
+	 * @see com.opcoach.datasample.MDataSample#generateSample()
+	 * @generated
+	 */
+	EOperation getDataSample__GenerateSample();
+
+	/**
 	 * Returns the meta object for class '{@link com.opcoach.datasample.MEntityGenerator <em>Entity Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -529,6 +567,16 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntityGenerator_FieldGenerators();
+
+	/**
+	 * Returns the meta object for the '{@link com.opcoach.datasample.MEntityGenerator#generateSample() <em>Generate Sample</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Generate Sample</em>' operation.
+	 * @see com.opcoach.datasample.MEntityGenerator#generateSample()
+	 * @generated
+	 */
+	EOperation getEntityGenerator__GenerateSample();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.datasample.MFieldGenerator <em>Field Generator</em>}'.
@@ -627,6 +675,16 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getFieldGenerator_Parameters();
+
+	/**
+	 * Returns the meta object for the '{@link com.opcoach.datasample.MFieldGenerator#generateValue() <em>Generate Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Generate Value</em>' operation.
+	 * @see com.opcoach.datasample.MFieldGenerator#generateValue()
+	 * @generated
+	 */
+	EOperation getFieldGenerator__GenerateValue();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.datasample.MParameter <em>Parameter</em>}'.
@@ -768,6 +826,14 @@ public interface MDatasamplePackage extends EPackage {
 		EAttribute DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES = eINSTANCE.getDataSample_BadValueGeneratorNames();
 
 		/**
+		 * The meta object literal for the '<em><b>Generate Sample</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_SAMPLE___GENERATE_SAMPLE = eINSTANCE.getDataSample__GenerateSample();
+
+		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MEntityGeneratorImpl <em>Entity Generator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -808,6 +874,14 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY_GENERATOR__FIELD_GENERATORS = eINSTANCE.getEntityGenerator_FieldGenerators();
+
+		/**
+		 * The meta object literal for the '<em><b>Generate Sample</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY_GENERATOR___GENERATE_SAMPLE = eINSTANCE.getEntityGenerator__GenerateSample();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MFieldGeneratorImpl <em>Field Generator</em>}' class.
@@ -882,6 +956,14 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EReference FIELD_GENERATOR__PARAMETERS = eINSTANCE.getFieldGenerator_Parameters();
+
+		/**
+		 * The meta object literal for the '<em><b>Generate Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FIELD_GENERATOR___GENERATE_VALUE = eINSTANCE.getFieldGenerator__GenerateValue();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MParameterImpl <em>Parameter</em>}' class.

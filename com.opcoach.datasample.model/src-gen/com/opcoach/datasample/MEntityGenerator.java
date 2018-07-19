@@ -120,4 +120,12 @@ public interface MEntityGenerator extends EObject {
 	 */
 	EList<FieldGenerator> getFieldGenerators();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	EObject generateSample();
+
 } // MEntityGenerator

@@ -7,11 +7,11 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: com.opcoach.datasample,
-  com.opcoach.datasample.impl,
-  com.opcoach.datasample.util
+ com.opcoach.datasample.impl,
+ com.opcoach.datasample.util
 Require-Bundle: org.eclipse.core.runtime,
-  org.eclipse.emf.ecore;visibility:=reexport,
-  com.opcoach.generator.model;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ com.opcoach.generator.model;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Automatic-Module-Name: com.opcoach.datasample.model

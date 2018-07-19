@@ -230,4 +230,12 @@ public interface MFieldGenerator extends EObject {
 	 */
 	EList<Parameter> getParameters();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Object generateValue();
+
 } // MFieldGenerator

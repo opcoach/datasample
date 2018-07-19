@@ -8,6 +8,7 @@ import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.Language;
 import com.opcoach.datasample.MDatasamplePackage;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -375,6 +377,17 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EObject generateSample() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -515,6 +528,20 @@ public class MDataSampleImpl extends MinimalEObjectImpl.Container implements Dat
 				return badValueGeneratorNames != null && !badValueGeneratorNames.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case MDatasamplePackage.DATA_SAMPLE___GENERATE_SAMPLE:
+				return generateSample();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

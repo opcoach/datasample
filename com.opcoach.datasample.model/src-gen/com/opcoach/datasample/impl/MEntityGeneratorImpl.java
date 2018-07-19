@@ -6,12 +6,14 @@ import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.MDatasamplePackage;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -212,6 +214,17 @@ public class MEntityGeneratorImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EObject generateSample() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -310,6 +323,20 @@ public class MEntityGeneratorImpl extends MinimalEObjectImpl.Container implement
 				return fieldGenerators != null && !fieldGenerators.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case MDatasamplePackage.ENTITY_GENERATOR___GENERATE_SAMPLE:
+				return generateSample();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

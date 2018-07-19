@@ -223,4 +223,12 @@ public interface MDataSample extends EObject {
 	 */
 	EList<String> getBadValueGeneratorNames();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	EObject generateSample();
+
 } // MDataSample

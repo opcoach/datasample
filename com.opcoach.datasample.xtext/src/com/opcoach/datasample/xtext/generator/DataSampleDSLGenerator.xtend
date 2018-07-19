@@ -3,9 +3,10 @@
  */
 package com.opcoach.datasample.xtext.generator
 
+import com.opcoach.datasample.DataSample
 import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
 
 /**
  * Generates code from your model files on save.
@@ -15,10 +16,17 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 class DataSampleDSLGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
+		
+		val ds = resource.contents.head as DataSample
+		val generated = ds.generateSample
+		
+		println("Generated Object :" + generated.toString)
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
 //			resource.allContents
 //				.filter(typeof(Greeting))
 //				.map[name]
 //				.join(', '))
 	}
+	
+	
 }

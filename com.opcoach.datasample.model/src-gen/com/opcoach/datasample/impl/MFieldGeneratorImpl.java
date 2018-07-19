@@ -8,6 +8,7 @@ import com.opcoach.datasample.MDatasamplePackage;
 import com.opcoach.datasample.Parameter;
 import com.opcoach.generator.ValueGenerator;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -397,6 +398,17 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Object generateValue() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -537,6 +549,20 @@ public class MFieldGeneratorImpl extends MinimalEObjectImpl.Container implements
 				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case MDatasamplePackage.FIELD_GENERATOR___GENERATE_VALUE:
+				return generateValue();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
