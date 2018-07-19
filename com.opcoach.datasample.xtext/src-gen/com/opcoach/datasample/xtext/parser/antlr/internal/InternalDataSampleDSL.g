@@ -128,45 +128,67 @@ ruleDataSample returns [EObject current=null]
 	    }
 
 )
-)	otherlv_5='seed' 
+)	otherlv_5='generate' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getDataSampleAccess().getSeedKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getDataSampleAccess().getGenerateKeyword_5());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDataSampleAccess().getSeedEIntParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getDataSampleAccess().getRootEntityNameEStringParserRuleCall_6_0()); 
 	    }
-		lv_seed_6_0=ruleEInt		{
+		lv_rootEntityName_6_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDataSampleRule());
+	        }
+       		set(
+       			$current, 
+       			"rootEntityName",
+        		lv_rootEntityName_6_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_7='seed' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getDataSampleAccess().getSeedKeyword_7());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDataSampleAccess().getSeedEIntParserRuleCall_8_0()); 
+	    }
+		lv_seed_8_0=ruleEInt		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDataSampleRule());
 	        }
        		set(
        			$current, 
        			"seed",
-        		lv_seed_6_0, 
+        		lv_seed_8_0, 
         		"com.opcoach.datasample.xtext.DataSampleDSL.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_7='language' 
+)	otherlv_9='language' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getDataSampleAccess().getLanguageKeyword_7());
+    	newLeafNode(otherlv_9, grammarAccess.getDataSampleAccess().getLanguageKeyword_9());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDataSampleAccess().getLanguageLanguageEnumRuleCall_8_0()); 
+	        newCompositeNode(grammarAccess.getDataSampleAccess().getLanguageLanguageEnumRuleCall_10_0()); 
 	    }
-		lv_language_8_0=ruleLanguage		{
+		lv_language_10_0=ruleLanguage		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDataSampleRule());
 	        }
        		set(
        			$current, 
        			"language",
-        		lv_language_8_0, 
+        		lv_language_10_0, 
         		"com.opcoach.datasample.xtext.DataSampleDSL.Language");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -175,16 +197,16 @@ ruleDataSample returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDataSampleAccess().getEntityGeneratorsEntityGeneratorParserRuleCall_9_0()); 
+	        newCompositeNode(grammarAccess.getDataSampleAccess().getEntityGeneratorsEntityGeneratorParserRuleCall_11_0()); 
 	    }
-		lv_entityGenerators_9_0=ruleEntityGenerator		{
+		lv_entityGenerators_11_0=ruleEntityGenerator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDataSampleRule());
 	        }
        		add(
        			$current, 
        			"entityGenerators",
-        		lv_entityGenerators_9_0, 
+        		lv_entityGenerators_11_0, 
         		"com.opcoach.datasample.xtext.DataSampleDSL.EntityGenerator");
 	        afterParserOrEnumRuleCall();
 	    }

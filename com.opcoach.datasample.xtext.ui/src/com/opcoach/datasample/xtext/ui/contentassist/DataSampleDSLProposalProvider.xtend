@@ -33,6 +33,15 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 			acceptor.accept(createCompletionProposal(k, context))
 
 	}
+	
+	override completeDataSample_RootEntityName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		//super.completeDataSample_RootEntityName(model, assignment, context, acceptor)
+		val ds = model as DataSample
+		val pack = EPackage.Registry.INSTANCE.get(ds.packageURI) as EPackage
+		for (c : pack.EClassifiers.filter(EClass))
+			acceptor.accept(createCompletionProposal(c.name, context))
+		
+	}
 
 /* 	override completeDataSample_BadValueGeneratorNames(EObject model, Assignment assignment,
 		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {

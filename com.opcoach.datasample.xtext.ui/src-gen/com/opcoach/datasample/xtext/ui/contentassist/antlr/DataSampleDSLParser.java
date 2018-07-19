@@ -49,9 +49,10 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
 					put(grammarAccess.getDataSampleAccess().getNameAssignment_2(), "rule__DataSample__NameAssignment_2");
 					put(grammarAccess.getDataSampleAccess().getPackageURIAssignment_4(), "rule__DataSample__PackageURIAssignment_4");
-					put(grammarAccess.getDataSampleAccess().getSeedAssignment_6(), "rule__DataSample__SeedAssignment_6");
-					put(grammarAccess.getDataSampleAccess().getLanguageAssignment_8(), "rule__DataSample__LanguageAssignment_8");
-					put(grammarAccess.getDataSampleAccess().getEntityGeneratorsAssignment_9(), "rule__DataSample__EntityGeneratorsAssignment_9");
+					put(grammarAccess.getDataSampleAccess().getRootEntityNameAssignment_6(), "rule__DataSample__RootEntityNameAssignment_6");
+					put(grammarAccess.getDataSampleAccess().getSeedAssignment_8(), "rule__DataSample__SeedAssignment_8");
+					put(grammarAccess.getDataSampleAccess().getLanguageAssignment_10(), "rule__DataSample__LanguageAssignment_10");
+					put(grammarAccess.getDataSampleAccess().getEntityGeneratorsAssignment_11(), "rule__DataSample__EntityGeneratorsAssignment_11");
 					put(grammarAccess.getEntityGeneratorAccess().getNumberAssignment_2(), "rule__EntityGenerator__NumberAssignment_2");
 					put(grammarAccess.getEntityGeneratorAccess().getEntityNameAssignment_4(), "rule__EntityGenerator__EntityNameAssignment_4");
 					put(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsAssignment_6(), "rule__EntityGenerator__FieldGeneratorsAssignment_6");

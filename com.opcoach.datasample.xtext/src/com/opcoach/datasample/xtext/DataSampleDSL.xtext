@@ -9,7 +9,7 @@ DataSample returns DataSample:
 	{DataSample}
 	'Sample'
 	name=EString 'for' packageURI=EString
-	
+	'generate' rootEntityName=EString
 	'seed' seed=EInt
 	'language' language=Language
 	entityGenerators+=EntityGenerator* // ("," entityGenerators+=EntityGenerator)*

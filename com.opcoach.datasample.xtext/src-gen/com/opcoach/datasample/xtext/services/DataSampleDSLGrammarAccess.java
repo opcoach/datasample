@@ -28,27 +28,31 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cForKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cPackageURIAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cPackageURIEStringParserRuleCall_4_0 = (RuleCall)cPackageURIAssignment_4.eContents().get(0);
-		private final Keyword cSeedKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cSeedAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cSeedEIntParserRuleCall_6_0 = (RuleCall)cSeedAssignment_6.eContents().get(0);
-		private final Keyword cLanguageKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cLanguageAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cLanguageLanguageEnumRuleCall_8_0 = (RuleCall)cLanguageAssignment_8.eContents().get(0);
-		private final Assignment cEntityGeneratorsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cEntityGeneratorsEntityGeneratorParserRuleCall_9_0 = (RuleCall)cEntityGeneratorsAssignment_9.eContents().get(0);
+		private final Keyword cGenerateKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cRootEntityNameAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cRootEntityNameEStringParserRuleCall_6_0 = (RuleCall)cRootEntityNameAssignment_6.eContents().get(0);
+		private final Keyword cSeedKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cSeedAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cSeedEIntParserRuleCall_8_0 = (RuleCall)cSeedAssignment_8.eContents().get(0);
+		private final Keyword cLanguageKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cLanguageAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cLanguageLanguageEnumRuleCall_10_0 = (RuleCall)cLanguageAssignment_10.eContents().get(0);
+		private final Assignment cEntityGeneratorsAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cEntityGeneratorsEntityGeneratorParserRuleCall_11_0 = (RuleCall)cEntityGeneratorsAssignment_11.eContents().get(0);
 		
 		//DataSample:
 		//	{DataSample}
 		//	'Sample'
 		//	name=EString 'for' packageURI=EString
+		//	'generate' rootEntityName=EString
 		//	'seed' seed=EInt
 		//	'language' language=Language
 		//	entityGenerators+=EntityGenerator* // ("," entityGenerators+=EntityGenerator)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{DataSample} 'Sample' name=EString 'for' packageURI=EString 'seed' seed=EInt 'language' language=Language
-		//entityGenerators+=EntityGenerator*
+		//{DataSample} 'Sample' name=EString 'for' packageURI=EString 'generate' rootEntityName=EString 'seed' seed=EInt
+		//'language' language=Language entityGenerators+=EntityGenerator*
 		public Group getGroup() { return cGroup; }
 
 		//{DataSample}
@@ -72,29 +76,38 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//EString
 		public RuleCall getPackageURIEStringParserRuleCall_4_0() { return cPackageURIEStringParserRuleCall_4_0; }
 
+		//'generate'
+		public Keyword getGenerateKeyword_5() { return cGenerateKeyword_5; }
+
+		//rootEntityName=EString
+		public Assignment getRootEntityNameAssignment_6() { return cRootEntityNameAssignment_6; }
+
+		//EString
+		public RuleCall getRootEntityNameEStringParserRuleCall_6_0() { return cRootEntityNameEStringParserRuleCall_6_0; }
+
 		//'seed'
-		public Keyword getSeedKeyword_5() { return cSeedKeyword_5; }
+		public Keyword getSeedKeyword_7() { return cSeedKeyword_7; }
 
 		//seed=EInt
-		public Assignment getSeedAssignment_6() { return cSeedAssignment_6; }
+		public Assignment getSeedAssignment_8() { return cSeedAssignment_8; }
 
 		//EInt
-		public RuleCall getSeedEIntParserRuleCall_6_0() { return cSeedEIntParserRuleCall_6_0; }
+		public RuleCall getSeedEIntParserRuleCall_8_0() { return cSeedEIntParserRuleCall_8_0; }
 
 		//'language'
-		public Keyword getLanguageKeyword_7() { return cLanguageKeyword_7; }
+		public Keyword getLanguageKeyword_9() { return cLanguageKeyword_9; }
 
 		//language=Language
-		public Assignment getLanguageAssignment_8() { return cLanguageAssignment_8; }
+		public Assignment getLanguageAssignment_10() { return cLanguageAssignment_10; }
 
 		//Language
-		public RuleCall getLanguageLanguageEnumRuleCall_8_0() { return cLanguageLanguageEnumRuleCall_8_0; }
+		public RuleCall getLanguageLanguageEnumRuleCall_10_0() { return cLanguageLanguageEnumRuleCall_10_0; }
 
 		//entityGenerators+=EntityGenerator*
-		public Assignment getEntityGeneratorsAssignment_9() { return cEntityGeneratorsAssignment_9; }
+		public Assignment getEntityGeneratorsAssignment_11() { return cEntityGeneratorsAssignment_11; }
 
 		//EntityGenerator
-		public RuleCall getEntityGeneratorsEntityGeneratorParserRuleCall_9_0() { return cEntityGeneratorsEntityGeneratorParserRuleCall_9_0; }
+		public RuleCall getEntityGeneratorsEntityGeneratorParserRuleCall_11_0() { return cEntityGeneratorsEntityGeneratorParserRuleCall_11_0; }
 	}
 
 	public class EStringElements extends AbstractParserRuleElementFinder {
@@ -447,6 +460,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	{DataSample}
 	//	'Sample'
 	//	name=EString 'for' packageURI=EString
+	//	'generate' rootEntityName=EString
 	//	'seed' seed=EInt
 	//	'language' language=Language
 	//	entityGenerators+=EntityGenerator* // ("," entityGenerators+=EntityGenerator)*

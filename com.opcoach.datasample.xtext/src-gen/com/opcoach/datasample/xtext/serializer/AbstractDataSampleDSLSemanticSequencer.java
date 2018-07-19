@@ -56,7 +56,14 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *     DataSample returns DataSample
 	 *
 	 * Constraint:
-	 *     (name=EString packageURI=EString seed=EInt language=Language entityGenerators+=EntityGenerator*)
+	 *     (
+	 *         name=EString 
+	 *         packageURI=EString 
+	 *         rootEntityName=EString 
+	 *         seed=EInt 
+	 *         language=Language 
+	 *         entityGenerators+=EntityGenerator*
+	 *     )
 	 */
 	protected void sequence_DataSample(ISerializationContext context, DataSample semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

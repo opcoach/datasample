@@ -18,7 +18,7 @@ class DataSampleDSLGenerator implements IGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		
 		val ds = resource.contents.head as DataSample
-		val generated = ds.generateSample
+		val generated = ds.generateValue
 		
 		println("Generated Object :" + generated.toString)
 //		fsa.generateFile('greetings.txt', 'People to greet: ' + 
