@@ -128,9 +128,9 @@ ruleDataSample returns [EObject current=null]
 	    }
 
 )
-)	otherlv_5='generate' 
+)	otherlv_5='generateRootObject' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getDataSampleAccess().getGenerateKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getDataSampleAccess().getGenerateRootObjectKeyword_5());
     }
 (
 (
@@ -375,9 +375,27 @@ ruleEntityGenerator returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_7='}' 
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsEntityGeneratorParserRuleCall_7_0()); 
+	    }
+		lv_childGenerators_7_0=ruleEntityGenerator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEntityGeneratorRule());
+	        }
+       		add(
+       			$current, 
+       			"childGenerators",
+        		lv_childGenerators_7_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EntityGenerator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_8='}' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_8, grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;

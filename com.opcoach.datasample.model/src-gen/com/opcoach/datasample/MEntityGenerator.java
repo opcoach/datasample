@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.opcoach.datasample.MEntityGenerator#getEntityName <em>Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.MEntityGenerator#getEntity <em>Entity</em>}</li>
  *   <li>{@link com.opcoach.datasample.MEntityGenerator#getFieldGenerators <em>Field Generators</em>}</li>
+ *   <li>{@link com.opcoach.datasample.MEntityGenerator#getChildGenerators <em>Child Generators</em>}</li>
  * </ul>
  *
  * @see com.opcoach.datasample.MDatasamplePackage#getEntityGenerator()
@@ -122,6 +123,22 @@ public interface MEntityGenerator extends ValueGenerator<EObject> {
 	 * @generated
 	 */
 	EList<FieldGenerator> getFieldGenerators();
+
+	/**
+	 * Returns the value of the '<em><b>Child Generators</b></em>' containment reference list.
+	 * The list contents are of type {@link com.opcoach.datasample.EntityGenerator}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Child Generators</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Child Generators</em>' containment reference list.
+	 * @see com.opcoach.datasample.MDatasamplePackage#getEntityGenerator_ChildGenerators()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EntityGenerator> getChildGenerators();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -13,7 +13,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootEntityName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="badValueGeneratorNames"
         upperBound="-1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
       <eTypeArguments eClassifier="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
     </eGenericSuperTypes>
   </eClassifiers>
@@ -31,14 +31,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fieldGenerators" upperBound="-1"
         eType="#//FieldGenerator" containment="true"/>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childGenerators" upperBound="-1"
+        eType="#//EntityGenerator" containment="true"/>
+    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
       <eTypeArguments eClassifier="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
     </eGenericSuperTypes>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FieldGenerator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="generator">
-      <eGenericType eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+      <eGenericType eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
@@ -47,13 +49,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="generatorName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="errorGeneratorName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="errorGenerator">
-      <eGenericType eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+      <eGenericType eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
         <eTypeArguments/>
       </eGenericType>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
         eType="#//Parameter" containment="true"/>
-    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#//ValueGenerator">
+    <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/com.opcoach.generator.model/model/generator.ecore#_vHkHcBQDEd-QiqGdp3e77Q">
       <eTypeArguments eClassifier="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaObject"/>
     </eGenericSuperTypes>
   </eClassifiers>

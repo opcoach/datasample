@@ -69,7 +69,7 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 			presentNames.add(e.entityName)
 
 		// For all EClass defined in package, keep only those not yet used
-		for (s : epack.eAllContents.filter(EClass).toList)
+		for (s : epack.eAllContents.filter(EClass).filter([!isAbstract]).toList)
 			if (!presentNames.contains(s.name))
 				acceptor.accept(createCompletionProposal(s.name, context))
 

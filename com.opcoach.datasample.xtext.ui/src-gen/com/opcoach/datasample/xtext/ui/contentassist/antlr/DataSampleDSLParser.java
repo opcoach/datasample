@@ -56,6 +56,7 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityGeneratorAccess().getNumberAssignment_2(), "rule__EntityGenerator__NumberAssignment_2");
 					put(grammarAccess.getEntityGeneratorAccess().getEntityNameAssignment_4(), "rule__EntityGenerator__EntityNameAssignment_4");
 					put(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsAssignment_6(), "rule__EntityGenerator__FieldGeneratorsAssignment_6");
+					put(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsAssignment_7(), "rule__EntityGenerator__ChildGeneratorsAssignment_7");
 					put(grammarAccess.getFieldGeneratorAccess().getFieldNameAssignment_2(), "rule__FieldGenerator__FieldNameAssignment_2");
 					put(grammarAccess.getFieldGeneratorAccess().getGeneratorNameAssignment_4(), "rule__FieldGenerator__GeneratorNameAssignment_4");
 					put(grammarAccess.getFieldGeneratorAccess().getParametersAssignment_5_1(), "rule__FieldGenerator__ParametersAssignment_5_1");

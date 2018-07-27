@@ -482,11 +482,11 @@ rule__DataSample__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getDataSampleAccess().getGenerateKeyword_5()); }
+{ before(grammarAccess.getDataSampleAccess().getGenerateRootObjectKeyword_5()); }
 
-	'generate' 
+	'generateRootObject' 
 
-{ after(grammarAccess.getDataSampleAccess().getGenerateKeyword_5()); }
+{ after(grammarAccess.getDataSampleAccess().getGenerateRootObjectKeyword_5()); }
 )
 
 ;
@@ -976,6 +976,7 @@ rule__EntityGenerator__Group__7
     }
 :
 	rule__EntityGenerator__Group__7__Impl
+	rule__EntityGenerator__Group__8
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -987,17 +988,47 @@ rule__EntityGenerator__Group__7__Impl
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_7()); }
-
-	'}' 
-
-{ after(grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_7()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsAssignment_7()); }
+(rule__EntityGenerator__ChildGeneratorsAssignment_7)*
+{ after(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsAssignment_7()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__EntityGenerator__Group__8
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__EntityGenerator__Group__8__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__EntityGenerator__Group__8__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_8()); }
+
+	'}' 
+
+{ after(grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_8()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -1778,6 +1809,21 @@ rule__EntityGenerator__FieldGeneratorsAssignment_6
 (
 { before(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsFieldGeneratorParserRuleCall_6_0()); }
 	ruleFieldGenerator{ after(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsFieldGeneratorParserRuleCall_6_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__EntityGenerator__ChildGeneratorsAssignment_7
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsEntityGeneratorParserRuleCall_7_0()); }
+	ruleEntityGenerator{ after(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsEntityGeneratorParserRuleCall_7_0()); }
 )
 
 ;

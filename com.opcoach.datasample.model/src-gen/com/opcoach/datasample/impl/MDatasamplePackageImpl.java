@@ -270,6 +270,15 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntityGenerator_ChildGenerators() {
+		return (EReference)entityGeneratorEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getEntityGenerator__GetInstances() {
 		return entityGeneratorEClass.getEOperations().get(0);
 	}
@@ -435,6 +444,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEAttribute(entityGeneratorEClass, ENTITY_GENERATOR__ENTITY_NAME);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__ENTITY);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__FIELD_GENERATORS);
+		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__CHILD_GENERATORS);
 		createEOperation(entityGeneratorEClass, ENTITY_GENERATOR___GET_INSTANCES);
 
 		fieldGeneratorEClass = createEClass(FIELD_GENERATOR);
@@ -517,6 +527,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEAttribute(getEntityGenerator_EntityName(), ecorePackage.getEString(), "entityName", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityGenerator_Entity(), theEcorePackage.getEClass(), null, "entity", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityGenerator_FieldGenerators(), this.getFieldGenerator(), null, "fieldGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityGenerator_ChildGenerators(), this.getEntityGenerator(), null, "childGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getEntityGenerator__GetInstances(), null, "getInstances", 0, 1, IS_UNIQUE, IS_ORDERED);
 

@@ -33,7 +33,7 @@ public class DataSampleImpl extends MDataSampleImpl implements DataSample {
 		if (package_ == null) {
 			package_ = EPackage.Registry.INSTANCE.getEPackage(packageURI);
 		}
-		getExpectedChildren();
+		// getExpectedChildren();
 
 		return package_;
 

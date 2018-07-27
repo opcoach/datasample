@@ -351,13 +351,22 @@ public interface MDatasamplePackage extends EPackage {
 	int ENTITY_GENERATOR__FIELD_GENERATORS = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Child Generators</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_GENERATOR__CHILD_GENERATORS = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Entity Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_GENERATOR_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 4;
+	int ENTITY_GENERATOR_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Generate Value</em>' operation.
@@ -779,6 +788,17 @@ public interface MDatasamplePackage extends EPackage {
 	EReference getEntityGenerator_FieldGenerators();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.opcoach.datasample.MEntityGenerator#getChildGenerators <em>Child Generators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Child Generators</em>'.
+	 * @see com.opcoach.datasample.MEntityGenerator#getChildGenerators()
+	 * @see #getEntityGenerator()
+	 * @generated
+	 */
+	EReference getEntityGenerator_ChildGenerators();
+
+	/**
 	 * Returns the meta object for the '{@link com.opcoach.datasample.MEntityGenerator#getInstances() <em>Get Instances</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1074,6 +1094,14 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY_GENERATOR__FIELD_GENERATORS = eINSTANCE.getEntityGenerator_FieldGenerators();
+
+		/**
+		 * The meta object literal for the '<em><b>Child Generators</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_GENERATOR__CHILD_GENERATORS = eINSTANCE.getEntityGenerator_ChildGenerators();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Instances</b></em>' operation.
