@@ -9,6 +9,7 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import com.opcoach.datasample.util.ClassifierComparator;
 
@@ -32,7 +33,7 @@ public class DataSampleUtil {
 	
 	}
 	
-	public static List<EClassifier> getSortedClasses(EPackage p) {
+/*	public static List<EClassifier> getSortedClasses(EPackage p) {
 		Set<EClassifier> result = new HashSet<>();
 		
 		
@@ -49,6 +50,36 @@ public class DataSampleUtil {
 		System.out.println("------ Sorted list -----");
 		
 		return dest;
+	} */
+
+	/** Compute the list of direct ECLass for child for an Eclass
+	 * 
+	 * @param c the class to search for
+	 * @return a list of subclasses found in composition. Abstract classes are not returned.
+	 *   Compute the subclasses for them. 
+	 */
+	public static Set<EClass> getChildrenClasses(EClass c) {
+		Set<EClass> result = new HashSet<>();
+		
+		// Sort the list of dsgenClass (less referenced before...)
+		for (EReference r : c.getEAllContainments())
+		{
+			EClassifier refType = r.getEType();
+			if (refType instanceof EClass)
+			{
+				EClass rc = (EClass) refType; 
+				if (!rc.isAbstract())
+					result.add(rc);
+				else
+				{
+					// Compute abstract subclasses
+					Set<EClass> subc = getSubClasses(rc);
+					result.addAll(subc);
+				}
+			}
+		}
+		
+		return result;
 	}
 
 }
