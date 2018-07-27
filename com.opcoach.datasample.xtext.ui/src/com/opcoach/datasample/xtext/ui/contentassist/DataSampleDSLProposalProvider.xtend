@@ -4,13 +4,16 @@
 package com.opcoach.datasample.xtext.ui.contentassist
 
 import com.opcoach.datasample.DataSample
+import com.opcoach.datasample.DataSampleUtil
 import com.opcoach.datasample.EntityGenerator
 import com.opcoach.datasample.FieldGenerator
 import com.opcoach.generator.basic.IntGenerator
 import com.opcoach.generator.basic.StringGenerator
 import java.util.ArrayList
 import java.util.HashMap
+import java.util.List
 import java.util.Map
+import java.util.stream.Collectors
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EPackage
@@ -33,61 +36,65 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 			acceptor.accept(createCompletionProposal(k, context))
 
 	}
-	
-	override completeDataSample_RootEntityName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		//super.completeDataSample_RootEntityName(model, assignment, context, acceptor)
+
+	override completeDataSample_RootEntityName(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+		// super.completeDataSample_RootEntityName(model, assignment, context, acceptor)
 		val ds = model as DataSample
 		val pack = EPackage.Registry.INSTANCE.get(ds.packageURI) as EPackage
 		for (c : pack.EClassifiers.filter(EClass))
 			acceptor.accept(createCompletionProposal(c.name, context))
-		
+
 	}
 
-/* 	override completeDataSample_BadValueGeneratorNames(EObject model, Assignment assignment,
-		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		super.completeDataSample_BadValueGeneratorNames(model, assignment, context, acceptor)
+	/* 	override completeDataSample_BadValueGeneratorNames(EObject model, Assignment assignment,
+	 * 		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	 * 		super.completeDataSample_BadValueGeneratorNames(model, assignment, context, acceptor)
 
-		for (c : availableGenerators)
-			acceptor.accept(createCompletionProposal(c.name, context))
-	} */
-
+	 * 		for (c : availableGenerators)
+	 * 			acceptor.accept(createCompletionProposal(c.name, context))
+	 } */
 	// This is expected in :   generate XXX Customer for instance
 	// Customer must be proposed once if contained in package
-	def completeEntityGenerator2_EntityName(EObject model, Assignment assignment, ContentAssistContext context,
+	override completeEntityGenerator_EntityName(EObject model, Assignment assignment, ContentAssistContext context,
 		ICompletionProposalAcceptor acceptor) {
 
-		//super.completeEntityGenerator2_EntityName(model, assignment, context, acceptor)
+		// ENtityGeneraot is may be at first level or inside another EntityGenerator. 
+		val egen = model as EntityGenerator
+		val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
+		var EClass parentClass = null
+		if (egen.eContainer instanceof DataSample) {
+			// This is the main Entity Generator, sibling are in data sample
+			val ds = egen.eContainer as DataSample
+			ds.entityGenerators.forEach[if(entity !== null && entity.name !== null) egenSibling.add(entity.name)]
+			parentClass = ds.rootEntity
+		} else {
+			// This entity generator is already inside another one, must get sibling in parent/child generators
+			val egparent = egen.eContainer as EntityGenerator
+			egparent.childGenerators.forEach[if(entity !== null && entity.name !== null) egenSibling.add(entity.name)]
+			parentClass = egparent.entity
+		}
 
-		// Must propose only EClass whose name is not yet selected
-		// Must iterate in all packages
-		val epack = getEPackage(model as EntityGenerator)
-
-		// Get all name already used...
-		val DataSample ds = model.eContainer as DataSample // Voir comment le récupérer vu que c'est l'objet root
-		val presentNames = new ArrayList<String>()
-		for (e : ds.entityGenerators)
-			presentNames.add(e.entityName)
-
-		// For all EClass defined in package, keep only those not yet used
-		for (s : epack.eAllContents.filter(EClass).filter([!isAbstract]).toList)
-			if (!presentNames.contains(s.name))
-				acceptor.accept(createCompletionProposal(s.name, context))
+		// Must get all children classes of parentClass without the current siblings
+		if (parentClass !== null) {
+			for (c : DataSampleUtil.getChildrenClasses(parentClass)) {
+				if (!egenSibling.contains(c.name))
+					acceptor.accept(createCompletionProposal(c.name, context))
+			}
+		}
 
 	}
-	
-	
 
 	// Must propose here any kind of class in package
-/*	override completeFieldGenerator_EntityName(EObject model, Assignment assignment, ContentAssistContext context,
-		ICompletionProposalAcceptor acceptor) {
-		super.completeFieldGenerator_EntityName(model, assignment, context, acceptor)
+	/*	override completeFieldGenerator_EntityName(EObject model, Assignment assignment, ContentAssistContext context,
+	 * 		ICompletionProposalAcceptor acceptor) {
+	 * 		super.completeFieldGenerator_EntityName(model, assignment, context, acceptor)
 
-		val epack = getEPackage(model as DataSample)
-		for (cl : epack.eAllContents.filter(EClass).toList)
-			acceptor.accept(createCompletionProposal(cl.name, context))
+	 * 		val epack = getEPackage(model as DataSample)
+	 * 		for (cl : epack.eAllContents.filter(EClass).toList)
+	 * 			acceptor.accept(createCompletionProposal(cl.name, context))
 
-	} */
-
+	 } */
 	// Must propose only fields of current class (but only once)
 	override completeFieldGenerator_FieldName(EObject model, Assignment assignment, ContentAssistContext context,
 		ICompletionProposalAcceptor acceptor) {
@@ -99,32 +106,30 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 		val epack = currentField.EPackage
 
 		// Get all name already used for this entity...
-		val  ds = model.eContainer as EntityGenerator // Voir comment le récupérer vu que c'est l'objet root
+		val ds = model.eContainer as EntityGenerator // Voir comment le récupérer vu que c'est l'objet root
 		val presentNames = ds.fieldGenerators.map([fieldName])
-		//for (e : currentEntity.fieldGenerators)
-		//	if (e.entityName.equals(currentField.entityName))
-		//		presentNames.add(e.fieldName)
-
+		// for (e : currentEntity.fieldGenerators)
+		// if (e.entityName.equals(currentField.entityName))
+		// presentNames.add(e.fieldName)
 		// For all EStructuralFeature defined in EClass, keep only those not yet used
 		val EClass ecl = epack.eAllContents.filter(EClass).filter[it.name.equals(ds.entityName)].head
 		for (sf : ecl.EAllStructuralFeatures.toList)
-		   if (!presentNames.contains(sf.name))
+			if (!presentNames.contains(sf.name))
 				acceptor.accept(createCompletionProposal(sf.name, context))
 
 	}
 
+	// Propose only parameters available for generators. 
+	var String[] parameterList = #["locale", "seed", "low", "high", "step"]
 
-   // Propose only parameters available for generators. 
-	var String[] parameterList =  #[ "locale", "seed", "low", "high", "step"]
-	
-	override completeParameter_Name(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	override completeParameter_Name(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
 		val fgen = model as FieldGenerator
 		val parametersInFg = fgen.parameters.map[name]
 		for (s : parameterList)
-		   if (!parametersInFg.contains(s))
-			acceptor.accept(createCompletionProposal(s, context))
+			if (!parametersInFg.contains(s))
+				acceptor.accept(createCompletionProposal(s, context))
 	}
-
 
 	var Map<String, Class<?>> generators
 
@@ -165,19 +170,18 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 	}
 
 	// Compute the EPackage from an EntityGenerator
-	 def getEPackage(EntityGenerator egen) {
+	def getEPackage(EntityGenerator egen) {
 		getEPackage(egen.eContainer as DataSample)
 	}
 
 	// Compute the EPackage from a FieldGenerator
-	 def getEPackage(FieldGenerator fgen) {
+	def getEPackage(FieldGenerator fgen) {
 		getEPackage(fgen.eContainer.eContainer as DataSample)
 	}
 
 	// Compute the EPackage from the root object
-	 def getEPackage(DataSample ds) {
+	def getEPackage(DataSample ds) {
 		EPackage.Registry.INSTANCE.getEPackage(ds.packageURI)
 	}
 
-	
 }
