@@ -4,6 +4,8 @@
 package com.opcoach.datasample.xtext.serializer;
 
 import com.google.inject.Inject;
+import com.opcoach.datasample.AssociationGenerator;
+import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
@@ -34,6 +36,12 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MDatasamplePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case MDatasamplePackage.ASSOCIATION_GENERATOR:
+				sequence_AssociationGenerator(context, (AssociationGenerator) semanticObject); 
+				return; 
+			case MDatasamplePackage.CHILDREN_GENERATOR:
+				sequence_ChildrenGenerator(context, (ChildrenGenerator) semanticObject); 
+				return; 
 			case MDatasamplePackage.DATA_SAMPLE:
 				sequence_DataSample(context, (DataSample) semanticObject); 
 				return; 
@@ -50,6 +58,42 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     AssociationGenerator returns AssociationGenerator
+	 *
+	 * Constraint:
+	 *     (
+	 *         fieldName=EString 
+	 *         generatorName=EString 
+	 *         number=EInt? 
+	 *         (parameters+=Parameter parameters+=Parameter*)? 
+	 *         (errorRate=EInt errorGeneratorName=EString)?
+	 *     )
+	 */
+	protected void sequence_AssociationGenerator(ISerializationContext context, AssociationGenerator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChildrenGenerator returns ChildrenGenerator
+	 *
+	 * Constraint:
+	 *     (
+	 *         fieldName=EString 
+	 *         generatorName=EString 
+	 *         number=EInt? 
+	 *         (parameters+=Parameter parameters+=Parameter*)? 
+	 *         (errorRate=EInt errorGeneratorName=EString)?
+	 *     )
+	 */
+	protected void sequence_ChildrenGenerator(ISerializationContext context, ChildrenGenerator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -75,7 +119,7 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *     EntityGenerator returns EntityGenerator
 	 *
 	 * Constraint:
-	 *     (number=EInt entityName=EString fieldGenerators+=FieldGenerator* childGenerators+=EntityGenerator*)
+	 *     (number=EInt entityName=EString fieldGenerators+=FieldGenerator* childGenerators+=ChildrenGenerator* associationGenerators+=AssociationGenerator*)
 	 */
 	protected void sequence_EntityGenerator(ISerializationContext context, EntityGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -87,7 +131,13 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *     FieldGenerator returns FieldGenerator
 	 *
 	 * Constraint:
-	 *     (fieldName=EString generatorName=EString (parameters+=Parameter parameters+=Parameter*)? (errorRate=EInt errorGeneratorName=EString)?)
+	 *     (
+	 *         fieldName=EString 
+	 *         generatorName=EString 
+	 *         number=EInt? 
+	 *         (parameters+=Parameter parameters+=Parameter*)? 
+	 *         (errorRate=EInt errorGeneratorName=EString)?
+	 *     )
 	 */
 	protected void sequence_FieldGenerator(ISerializationContext context, FieldGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

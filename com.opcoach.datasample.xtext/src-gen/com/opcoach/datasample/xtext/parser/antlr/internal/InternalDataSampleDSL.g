@@ -378,9 +378,9 @@ ruleEntityGenerator returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsEntityGeneratorParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsChildrenGeneratorParserRuleCall_7_0()); 
 	    }
-		lv_childGenerators_7_0=ruleEntityGenerator		{
+		lv_childGenerators_7_0=ruleChildrenGenerator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEntityGeneratorRule());
 	        }
@@ -388,14 +388,32 @@ ruleEntityGenerator returns [EObject current=null]
        			$current, 
        			"childGenerators",
         		lv_childGenerators_7_0, 
-        		"com.opcoach.datasample.xtext.DataSampleDSL.EntityGenerator");
+        		"com.opcoach.datasample.xtext.DataSampleDSL.ChildrenGenerator");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_8='}' 
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssociationGeneratorParserRuleCall_8_0()); 
+	    }
+		lv_associationGenerators_8_0=ruleAssociationGenerator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEntityGeneratorRule());
+	        }
+       		add(
+       			$current, 
+       			"associationGenerators",
+        		lv_associationGenerators_8_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.AssociationGenerator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_9='}' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_9, grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;
@@ -424,9 +442,9 @@ ruleFieldGenerator returns [EObject current=null]
             grammarAccess.getFieldGeneratorAccess().getFieldGeneratorAction_0(),
             $current);
     }
-)	otherlv_1='forField' 
+)	otherlv_1='forTheField' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getFieldGeneratorAccess().getForFieldKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getFieldGeneratorAccess().getForTheFieldKeyword_1());
     }
 (
 (
@@ -468,36 +486,36 @@ ruleFieldGenerator returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_5='(' 
+)(	otherlv_5='cardinality' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getFieldGeneratorAccess().getLeftParenthesisKeyword_5_0());
+    	newLeafNode(otherlv_5, grammarAccess.getFieldGeneratorAccess().getCardinalityKeyword_5_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFieldGeneratorAccess().getParametersParameterParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getFieldGeneratorAccess().getNumberEIntParserRuleCall_5_1_0()); 
 	    }
-		lv_parameters_6_0=ruleParameter		{
+		lv_number_6_0=ruleEInt		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFieldGeneratorRule());
 	        }
-       		add(
+       		set(
        			$current, 
-       			"parameters",
-        		lv_parameters_6_0, 
-        		"com.opcoach.datasample.xtext.DataSampleDSL.Parameter");
+       			"number",
+        		lv_number_6_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_7=',' 
+))?(	otherlv_7='(' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getFieldGeneratorAccess().getCommaKeyword_5_2_0());
+    	newLeafNode(otherlv_7, grammarAccess.getFieldGeneratorAccess().getLeftParenthesisKeyword_6_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFieldGeneratorAccess().getParametersParameterParserRuleCall_5_2_1_0()); 
+	        newCompositeNode(grammarAccess.getFieldGeneratorAccess().getParametersParameterParserRuleCall_6_1_0()); 
 	    }
 		lv_parameters_8_0=ruleParameter		{
 	        if ($current==null) {
@@ -512,49 +530,441 @@ ruleFieldGenerator returns [EObject current=null]
 	    }
 
 )
-))*	otherlv_9=')' 
+)(	otherlv_9=',' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getFieldGeneratorAccess().getRightParenthesisKeyword_5_3());
-    }
-)?(	otherlv_10='withErrorRate=' 
-    {
-    	newLeafNode(otherlv_10, grammarAccess.getFieldGeneratorAccess().getWithErrorRateKeyword_6_0());
+    	newLeafNode(otherlv_9, grammarAccess.getFieldGeneratorAccess().getCommaKeyword_6_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFieldGeneratorAccess().getErrorRateEIntParserRuleCall_6_1_0()); 
+	        newCompositeNode(grammarAccess.getFieldGeneratorAccess().getParametersParameterParserRuleCall_6_2_1_0()); 
 	    }
-		lv_errorRate_11_0=ruleEInt		{
+		lv_parameters_10_0=ruleParameter		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getFieldGeneratorRule());
+	        }
+       		add(
+       			$current, 
+       			"parameters",
+        		lv_parameters_10_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.Parameter");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_11=')' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getFieldGeneratorAccess().getRightParenthesisKeyword_6_3());
+    }
+)?(	otherlv_12='withErrorRate=' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getFieldGeneratorAccess().getWithErrorRateKeyword_7_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getFieldGeneratorAccess().getErrorRateEIntParserRuleCall_7_1_0()); 
+	    }
+		lv_errorRate_13_0=ruleEInt		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFieldGeneratorRule());
 	        }
        		set(
        			$current, 
        			"errorRate",
-        		lv_errorRate_11_0, 
+        		lv_errorRate_13_0, 
         		"com.opcoach.datasample.xtext.DataSampleDSL.EInt");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_12='generatedWith' 
+)	otherlv_14='generatedWith' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getFieldGeneratorAccess().getGeneratedWithKeyword_6_2());
+    	newLeafNode(otherlv_14, grammarAccess.getFieldGeneratorAccess().getGeneratedWithKeyword_7_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getFieldGeneratorAccess().getErrorGeneratorNameEStringParserRuleCall_6_3_0()); 
+	        newCompositeNode(grammarAccess.getFieldGeneratorAccess().getErrorGeneratorNameEStringParserRuleCall_7_3_0()); 
 	    }
-		lv_errorGeneratorName_13_0=ruleEString		{
+		lv_errorGeneratorName_15_0=ruleEString		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getFieldGeneratorRule());
 	        }
        		set(
        			$current, 
        			"errorGeneratorName",
-        		lv_errorGeneratorName_13_0, 
+        		lv_errorGeneratorName_15_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
+;
+
+
+
+
+
+// Entry rule entryRuleChildrenGenerator
+entryRuleChildrenGenerator returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getChildrenGeneratorRule()); }
+	 iv_ruleChildrenGenerator=ruleChildrenGenerator 
+	 { $current=$iv_ruleChildrenGenerator.current; } 
+	 EOF 
+;
+
+// Rule ChildrenGenerator
+ruleChildrenGenerator returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getChildrenGeneratorAccess().getChildrenGeneratorAction_0(),
+            $current);
+    }
+)	otherlv_1='forTheComposition' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getChildrenGeneratorAccess().getForTheCompositionKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getFieldNameEStringParserRuleCall_2_0()); 
+	    }
+		lv_fieldName_2_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getChildrenGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"fieldName",
+        		lv_fieldName_2_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3='use' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getChildrenGeneratorAccess().getUseKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getGeneratorNameEStringParserRuleCall_4_0()); 
+	    }
+		lv_generatorName_4_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getChildrenGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"generatorName",
+        		lv_generatorName_4_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_5='cardinality' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getChildrenGeneratorAccess().getCardinalityKeyword_5_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getNumberEIntParserRuleCall_5_1_0()); 
+	    }
+		lv_number_6_0=ruleEInt		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getChildrenGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"number",
+        		lv_number_6_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EInt");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_7='(' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getChildrenGeneratorAccess().getLeftParenthesisKeyword_6_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getParametersParameterParserRuleCall_6_1_0()); 
+	    }
+		lv_parameters_8_0=ruleParameter		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getChildrenGeneratorRule());
+	        }
+       		add(
+       			$current, 
+       			"parameters",
+        		lv_parameters_8_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.Parameter");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_9=',' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getChildrenGeneratorAccess().getCommaKeyword_6_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getParametersParameterParserRuleCall_6_2_1_0()); 
+	    }
+		lv_parameters_10_0=ruleParameter		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getChildrenGeneratorRule());
+	        }
+       		add(
+       			$current, 
+       			"parameters",
+        		lv_parameters_10_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.Parameter");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_11=')' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getChildrenGeneratorAccess().getRightParenthesisKeyword_6_3());
+    }
+)?(	otherlv_12='withErrorRate=' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getChildrenGeneratorAccess().getWithErrorRateKeyword_7_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getErrorRateEIntParserRuleCall_7_1_0()); 
+	    }
+		lv_errorRate_13_0=ruleEInt		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getChildrenGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"errorRate",
+        		lv_errorRate_13_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EInt");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_14='generatedWith' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getChildrenGeneratorAccess().getGeneratedWithKeyword_7_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getErrorGeneratorNameEStringParserRuleCall_7_3_0()); 
+	    }
+		lv_errorGeneratorName_15_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getChildrenGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"errorGeneratorName",
+        		lv_errorGeneratorName_15_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?)
+;
+
+
+
+
+
+// Entry rule entryRuleAssociationGenerator
+entryRuleAssociationGenerator returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getAssociationGeneratorRule()); }
+	 iv_ruleAssociationGenerator=ruleAssociationGenerator 
+	 { $current=$iv_ruleAssociationGenerator.current; } 
+	 EOF 
+;
+
+// Rule AssociationGenerator
+ruleAssociationGenerator returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getAssociationGeneratorAccess().getAssociationGeneratorAction_0(),
+            $current);
+    }
+)	otherlv_1='forTheAssociation' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getAssociationGeneratorAccess().getForTheAssociationKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAssociationGeneratorAccess().getFieldNameEStringParserRuleCall_2_0()); 
+	    }
+		lv_fieldName_2_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAssociationGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"fieldName",
+        		lv_fieldName_2_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_3='use' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getAssociationGeneratorAccess().getUseKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAssociationGeneratorAccess().getGeneratorNameEStringParserRuleCall_4_0()); 
+	    }
+		lv_generatorName_4_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAssociationGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"generatorName",
+        		lv_generatorName_4_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EString");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_5='cardinality' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getAssociationGeneratorAccess().getCardinalityKeyword_5_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAssociationGeneratorAccess().getNumberEIntParserRuleCall_5_1_0()); 
+	    }
+		lv_number_6_0=ruleEInt		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAssociationGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"number",
+        		lv_number_6_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EInt");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?(	otherlv_7='(' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getAssociationGeneratorAccess().getLeftParenthesisKeyword_6_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAssociationGeneratorAccess().getParametersParameterParserRuleCall_6_1_0()); 
+	    }
+		lv_parameters_8_0=ruleParameter		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAssociationGeneratorRule());
+	        }
+       		add(
+       			$current, 
+       			"parameters",
+        		lv_parameters_8_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.Parameter");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_9=',' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getAssociationGeneratorAccess().getCommaKeyword_6_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAssociationGeneratorAccess().getParametersParameterParserRuleCall_6_2_1_0()); 
+	    }
+		lv_parameters_10_0=ruleParameter		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAssociationGeneratorRule());
+	        }
+       		add(
+       			$current, 
+       			"parameters",
+        		lv_parameters_10_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.Parameter");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_11=')' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getAssociationGeneratorAccess().getRightParenthesisKeyword_6_3());
+    }
+)?(	otherlv_12='withErrorRate=' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getAssociationGeneratorAccess().getWithErrorRateKeyword_7_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAssociationGeneratorAccess().getErrorRateEIntParserRuleCall_7_1_0()); 
+	    }
+		lv_errorRate_13_0=ruleEInt		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAssociationGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"errorRate",
+        		lv_errorRate_13_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EInt");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_14='generatedWith' 
+    {
+    	newLeafNode(otherlv_14, grammarAccess.getAssociationGeneratorAccess().getGeneratedWithKeyword_7_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getAssociationGeneratorAccess().getErrorGeneratorNameEStringParserRuleCall_7_3_0()); 
+	    }
+		lv_errorGeneratorName_15_0=ruleEString		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getAssociationGeneratorRule());
+	        }
+       		set(
+       			$current, 
+       			"errorGeneratorName",
+        		lv_errorGeneratorName_15_0, 
         		"com.opcoach.datasample.xtext.DataSampleDSL.EString");
 	        afterParserOrEnumRuleCall();
 	    }

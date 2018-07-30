@@ -29,13 +29,27 @@ EntityGenerator returns EntityGenerator:
 	'generate' number=EInt 'instancesOf' entityName=EString
 	'{'
 	fieldGenerators+=FieldGenerator*
-	childGenerators+=EntityGenerator*
+	childGenerators+=ChildrenGenerator*
+	associationGenerators+=AssociationGenerator*
 	'}';
+
 
 FieldGenerator returns FieldGenerator:
 	{FieldGenerator}
-	'forField' fieldName=EString 'use' generatorName=EString ('(' parameters+=Parameter (',' parameters+=Parameter)* ')') ?  ('withErrorRate=' errorRate=EInt 'generatedWith'
+	'forTheField' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)?('(' parameters+=Parameter (',' parameters+=Parameter)* ')') ?  ('withErrorRate=' errorRate=EInt 'generatedWith'
 	errorGeneratorName=EString)?;
+
+ChildrenGenerator returns ChildrenGenerator:
+	{ChildrenGenerator}
+	'forTheComposition' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)?('(' parameters+=Parameter (',' parameters+=Parameter)* ')') ?  ('withErrorRate=' errorRate=EInt 'generatedWith'
+	errorGeneratorName=EString)?;
+
+
+AssociationGenerator:
+	{AssociationGenerator}
+	'forTheAssociation' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)?('(' parameters+=Parameter (',' parameters+=Parameter)* ')') ?  ('withErrorRate=' errorRate=EInt 'generatedWith'
+	errorGeneratorName=EString)?;
+
 
 Parameter returns Parameter:
 	name=ID '=' value=EString
