@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.DataSampleUtil;
+import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.util.ClassifierComparator;
 
 // This class overrides the generated class and will be instantiated by factory
@@ -23,9 +24,16 @@ public class DataSampleImpl extends MDataSampleImpl implements DataSample {
 	@Override
 	public EObject generateValue() {
 		EClass root = getRootEntity();
-		EObject result = root.getEPackage().getEFactoryInstance().create(root);
-
-		return result;
+		// Find the EntityGenerator to use for it.
+		EntityGenerator gen = null;
+		for (EntityGenerator g : getEntityGenerators()) {
+			if (g.getEntityName().equals(root.getName())) {
+				gen = g;
+				break;
+			}
+		}
+		
+		return gen == null ? null : gen.generateValue();
 	}
 
 	@Override
@@ -54,20 +62,18 @@ public class DataSampleImpl extends MDataSampleImpl implements DataSample {
 	@Override
 	public Set<EClass> getExpectedChildren() {
 		Set<EClass> result = new HashSet<>();
-		
-		
+
 		// Sort the list of dsgenClass (less referenced before...)
 		List<EClassifier> dest = new ArrayList<>();
 		for (EClassifier c : getPackage().getEClassifiers())
 			dest.add(c);
-		
+
 		Collections.sort(dest, new ClassifierComparator());
-		
+
 		System.out.println("------ Sorted list -----");
 		for (EClassifier c : dest)
 			System.out.println(" Class = " + c.getName());
 		System.out.println("------ Sorted list -----");
-
 
 		getExpectedChildren(getRootEntity(), result);
 
