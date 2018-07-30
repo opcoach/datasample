@@ -58,6 +58,24 @@ public interface MDatasampleFactory extends EFactory {
 	Parameter createParameter();
 
 	/**
+	 * Returns a new object of class '<em>Association Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Association Generator</em>'.
+	 * @generated
+	 */
+	AssociationGenerator createAssociationGenerator();
+
+	/**
+	 * Returns a new object of class '<em>Children Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Children Generator</em>'.
+	 * @generated
+	 */
+	ChildrenGenerator createChildrenGenerator();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -95,6 +95,22 @@ public class DatasampleSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MDatasamplePackage.ASSOCIATION_GENERATOR: {
+				AssociationGenerator associationGenerator = (AssociationGenerator)theEObject;
+				T1 result = caseAssociationGenerator(associationGenerator);
+				if (result == null) result = caseFieldGenerator(associationGenerator);
+				if (result == null) result = caseValueGenerator(associationGenerator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MDatasamplePackage.CHILDREN_GENERATOR: {
+				ChildrenGenerator childrenGenerator = (ChildrenGenerator)theEObject;
+				T1 result = caseChildrenGenerator(childrenGenerator);
+				if (result == null) result = caseFieldGenerator(childrenGenerator);
+				if (result == null) result = caseValueGenerator(childrenGenerator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -156,6 +172,36 @@ public class DatasampleSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseParameter(Parameter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Association Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Association Generator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseAssociationGenerator(AssociationGenerator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Children Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Children Generator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 caseChildrenGenerator(ChildrenGenerator object) {
 		return null;
 	}
 

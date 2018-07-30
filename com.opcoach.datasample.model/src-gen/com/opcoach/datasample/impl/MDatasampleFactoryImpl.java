@@ -61,6 +61,8 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 			case MDatasamplePackage.ENTITY_GENERATOR: return createEntityGenerator();
 			case MDatasamplePackage.FIELD_GENERATOR: return createFieldGenerator();
 			case MDatasamplePackage.PARAMETER: return createParameter();
+			case MDatasamplePackage.ASSOCIATION_GENERATOR: return createAssociationGenerator();
+			case MDatasamplePackage.CHILDREN_GENERATOR: return createChildrenGenerator();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -134,6 +136,26 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	public Parameter createParameter() {
 		ParameterImpl parameter = new ParameterImpl();
 		return parameter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssociationGenerator createAssociationGenerator() {
+		AssociationGeneratorImpl associationGenerator = new AssociationGeneratorImpl();
+		return associationGenerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChildrenGenerator createChildrenGenerator() {
+		ChildrenGeneratorImpl childrenGenerator = new ChildrenGeneratorImpl();
+		return childrenGenerator;
 	}
 
 	/**

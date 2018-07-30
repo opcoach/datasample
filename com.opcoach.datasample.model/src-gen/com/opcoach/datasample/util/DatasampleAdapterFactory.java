@@ -86,6 +86,14 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl {
 				return createParameterAdapter();
 			}
 			@Override
+			public Adapter caseAssociationGenerator(AssociationGenerator object) {
+				return createAssociationGeneratorAdapter();
+			}
+			@Override
+			public Adapter caseChildrenGenerator(ChildrenGenerator object) {
+				return createChildrenGeneratorAdapter();
+			}
+			@Override
 			public <T> Adapter caseValueGenerator(ValueGenerator<T> object) {
 				return createValueGeneratorAdapter();
 			}
@@ -162,6 +170,34 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.opcoach.datasample.MAssociationGenerator <em>Association Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.opcoach.datasample.MAssociationGenerator
+	 * @generated
+	 */
+	public Adapter createAssociationGeneratorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.opcoach.datasample.MChildrenGenerator <em>Children Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.opcoach.datasample.MChildrenGenerator
+	 * @generated
+	 */
+	public Adapter createChildrenGeneratorAdapter() {
 		return null;
 	}
 

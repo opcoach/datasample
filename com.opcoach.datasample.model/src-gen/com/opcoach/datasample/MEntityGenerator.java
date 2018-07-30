@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.opcoach.datasample.MEntityGenerator#getEntity <em>Entity</em>}</li>
  *   <li>{@link com.opcoach.datasample.MEntityGenerator#getFieldGenerators <em>Field Generators</em>}</li>
  *   <li>{@link com.opcoach.datasample.MEntityGenerator#getChildGenerators <em>Child Generators</em>}</li>
+ *   <li>{@link com.opcoach.datasample.MEntityGenerator#getAssociationGenerators <em>Association Generators</em>}</li>
  * </ul>
  *
  * @see com.opcoach.datasample.MDatasamplePackage#getEntityGenerator()
@@ -126,7 +127,7 @@ public interface MEntityGenerator extends ValueGenerator<EObject> {
 
 	/**
 	 * Returns the value of the '<em><b>Child Generators</b></em>' containment reference list.
-	 * The list contents are of type {@link com.opcoach.datasample.EntityGenerator}.
+	 * The list contents are of type {@link com.opcoach.datasample.ChildrenGenerator}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Child Generators</em>' containment reference list isn't clear,
@@ -138,7 +139,23 @@ public interface MEntityGenerator extends ValueGenerator<EObject> {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EntityGenerator> getChildGenerators();
+	EList<ChildrenGenerator> getChildGenerators();
+
+	/**
+	 * Returns the value of the '<em><b>Association Generators</b></em>' containment reference list.
+	 * The list contents are of type {@link com.opcoach.datasample.AssociationGenerator}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Association Generators</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Association Generators</em>' containment reference list.
+	 * @see com.opcoach.datasample.MDatasamplePackage#getEntityGenerator_AssociationGenerators()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<AssociationGenerator> getAssociationGenerators();
 
 	/**
 	 * <!-- begin-user-doc -->

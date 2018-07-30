@@ -360,13 +360,22 @@ public interface MDatasamplePackage extends EPackage {
 	int ENTITY_GENERATOR__CHILD_GENERATORS = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Association Generators</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY_GENERATOR__ASSOCIATION_GENERATORS = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Entity Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_GENERATOR_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 5;
+	int ENTITY_GENERATOR_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Generate Value</em>' operation.
@@ -541,13 +550,22 @@ public interface MDatasamplePackage extends EPackage {
 	int FIELD_GENERATOR__PARAMETERS = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD_GENERATOR__NUMBER = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Field Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_GENERATOR_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 8;
+	int FIELD_GENERATOR_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Generate Value</em>' operation.
@@ -614,6 +632,368 @@ public interface MDatasamplePackage extends EPackage {
 	int PARAMETER_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link com.opcoach.datasample.impl.MAssociationGeneratorImpl <em>Association Generator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.datasample.impl.MAssociationGeneratorImpl
+	 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getAssociationGenerator()
+	 * @generated
+	 */
+	int ASSOCIATION_GENERATOR = 4;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Proportion</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__BAD_VALUE_PROPORTION = FIELD_GENERATOR__BAD_VALUE_PROPORTION;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__BAD_VALUE_GENERATOR = FIELD_GENERATOR__BAD_VALUE_GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Last Generated Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__LAST_GENERATED_VALUE = FIELD_GENERATOR__LAST_GENERATED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Random Seed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__RANDOM_SEED = FIELD_GENERATOR__RANDOM_SEED;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__DESCRIPTION = FIELD_GENERATOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__ID = FIELD_GENERATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__LOCALE = FIELD_GENERATOR__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Field Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__FIELD_NAME = FIELD_GENERATOR__FIELD_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Generator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__GENERATOR = FIELD_GENERATOR__GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Structural Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__STRUCTURAL_FEATURE = FIELD_GENERATOR__STRUCTURAL_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Error Rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__ERROR_RATE = FIELD_GENERATOR__ERROR_RATE;
+
+	/**
+	 * The feature id for the '<em><b>Generator Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__GENERATOR_NAME = FIELD_GENERATOR__GENERATOR_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Error Generator Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__ERROR_GENERATOR_NAME = FIELD_GENERATOR__ERROR_GENERATOR_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Error Generator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__ERROR_GENERATOR = FIELD_GENERATOR__ERROR_GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__PARAMETERS = FIELD_GENERATOR__PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR__NUMBER = FIELD_GENERATOR__NUMBER;
+
+	/**
+	 * The number of structural features of the '<em>Association Generator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR_FEATURE_COUNT = FIELD_GENERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Generate Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR___GENERATE_VALUE = FIELD_GENERATOR___GENERATE_VALUE;
+
+	/**
+	 * The number of operations of the '<em>Association Generator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION_GENERATOR_OPERATION_COUNT = FIELD_GENERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link com.opcoach.datasample.impl.MChildrenGeneratorImpl <em>Children Generator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.datasample.impl.MChildrenGeneratorImpl
+	 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getChildrenGenerator()
+	 * @generated
+	 */
+	int CHILDREN_GENERATOR = 5;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Proportion</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__BAD_VALUE_PROPORTION = FIELD_GENERATOR__BAD_VALUE_PROPORTION;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__BAD_VALUE_GENERATOR = FIELD_GENERATOR__BAD_VALUE_GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Last Generated Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__LAST_GENERATED_VALUE = FIELD_GENERATOR__LAST_GENERATED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Random Seed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__RANDOM_SEED = FIELD_GENERATOR__RANDOM_SEED;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__DESCRIPTION = FIELD_GENERATOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__ID = FIELD_GENERATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__LOCALE = FIELD_GENERATOR__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Field Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__FIELD_NAME = FIELD_GENERATOR__FIELD_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Generator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__GENERATOR = FIELD_GENERATOR__GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Structural Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__STRUCTURAL_FEATURE = FIELD_GENERATOR__STRUCTURAL_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Error Rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__ERROR_RATE = FIELD_GENERATOR__ERROR_RATE;
+
+	/**
+	 * The feature id for the '<em><b>Generator Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__GENERATOR_NAME = FIELD_GENERATOR__GENERATOR_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Error Generator Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__ERROR_GENERATOR_NAME = FIELD_GENERATOR__ERROR_GENERATOR_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Error Generator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__ERROR_GENERATOR = FIELD_GENERATOR__ERROR_GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__PARAMETERS = FIELD_GENERATOR__PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__NUMBER = FIELD_GENERATOR__NUMBER;
+
+	/**
+	 * The number of structural features of the '<em>Children Generator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR_FEATURE_COUNT = FIELD_GENERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Generate Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR___GENERATE_VALUE = FIELD_GENERATOR___GENERATE_VALUE;
+
+	/**
+	 * The number of operations of the '<em>Children Generator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR_OPERATION_COUNT = FIELD_GENERATOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link com.opcoach.datasample.Language <em>Language</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -621,7 +1001,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getLanguage()
 	 * @generated
 	 */
-	int LANGUAGE = 4;
+	int LANGUAGE = 6;
 
 
 	/**
@@ -799,6 +1179,17 @@ public interface MDatasamplePackage extends EPackage {
 	EReference getEntityGenerator_ChildGenerators();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.opcoach.datasample.MEntityGenerator#getAssociationGenerators <em>Association Generators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Association Generators</em>'.
+	 * @see com.opcoach.datasample.MEntityGenerator#getAssociationGenerators()
+	 * @see #getEntityGenerator()
+	 * @generated
+	 */
+	EReference getEntityGenerator_AssociationGenerators();
+
+	/**
 	 * Returns the meta object for the '{@link com.opcoach.datasample.MEntityGenerator#getInstances() <em>Get Instances</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -907,6 +1298,17 @@ public interface MDatasamplePackage extends EPackage {
 	EReference getFieldGenerator_Parameters();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.datasample.MFieldGenerator#getNumber <em>Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number</em>'.
+	 * @see com.opcoach.datasample.MFieldGenerator#getNumber()
+	 * @see #getFieldGenerator()
+	 * @generated
+	 */
+	EAttribute getFieldGenerator_Number();
+
+	/**
 	 * Returns the meta object for class '{@link com.opcoach.datasample.MParameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -937,6 +1339,26 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getParameter_Value();
+
+	/**
+	 * Returns the meta object for class '{@link com.opcoach.datasample.MAssociationGenerator <em>Association Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Association Generator</em>'.
+	 * @see com.opcoach.datasample.MAssociationGenerator
+	 * @generated
+	 */
+	EClass getAssociationGenerator();
+
+	/**
+	 * Returns the meta object for class '{@link com.opcoach.datasample.MChildrenGenerator <em>Children Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Children Generator</em>'.
+	 * @see com.opcoach.datasample.MChildrenGenerator
+	 * @generated
+	 */
+	EClass getChildrenGenerator();
 
 	/**
 	 * Returns the meta object for enum '{@link com.opcoach.datasample.Language <em>Language</em>}'.
@@ -1104,6 +1526,14 @@ public interface MDatasamplePackage extends EPackage {
 		EReference ENTITY_GENERATOR__CHILD_GENERATORS = eINSTANCE.getEntityGenerator_ChildGenerators();
 
 		/**
+		 * The meta object literal for the '<em><b>Association Generators</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY_GENERATOR__ASSOCIATION_GENERATORS = eINSTANCE.getEntityGenerator_AssociationGenerators();
+
+		/**
 		 * The meta object literal for the '<em><b>Get Instances</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1186,6 +1616,14 @@ public interface MDatasamplePackage extends EPackage {
 		EReference FIELD_GENERATOR__PARAMETERS = eINSTANCE.getFieldGenerator_Parameters();
 
 		/**
+		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIELD_GENERATOR__NUMBER = eINSTANCE.getFieldGenerator_Number();
+
+		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MParameterImpl <em>Parameter</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1210,6 +1648,26 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PARAMETER__VALUE = eINSTANCE.getParameter_Value();
+
+		/**
+		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MAssociationGeneratorImpl <em>Association Generator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.datasample.impl.MAssociationGeneratorImpl
+		 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getAssociationGenerator()
+		 * @generated
+		 */
+		EClass ASSOCIATION_GENERATOR = eINSTANCE.getAssociationGenerator();
+
+		/**
+		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MChildrenGeneratorImpl <em>Children Generator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.datasample.impl.MChildrenGeneratorImpl
+		 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getChildrenGenerator()
+		 * @generated
+		 */
+		EClass CHILDREN_GENERATOR = eINSTANCE.getChildrenGenerator();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.Language <em>Language</em>}' enum.

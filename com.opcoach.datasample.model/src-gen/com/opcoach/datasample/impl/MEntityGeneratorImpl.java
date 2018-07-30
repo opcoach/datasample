@@ -2,6 +2,8 @@
  */
 package com.opcoach.datasample.impl;
 
+import com.opcoach.datasample.AssociationGenerator;
+import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.MDatasamplePackage;
@@ -39,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.opcoach.datasample.impl.MEntityGeneratorImpl#getEntity <em>Entity</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MEntityGeneratorImpl#getFieldGenerators <em>Field Generators</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MEntityGeneratorImpl#getChildGenerators <em>Child Generators</em>}</li>
+ *   <li>{@link com.opcoach.datasample.impl.MEntityGeneratorImpl#getAssociationGenerators <em>Association Generators</em>}</li>
  * </ul>
  *
  * @generated
@@ -112,7 +115,17 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityGenerator> childGenerators;
+	protected EList<ChildrenGenerator> childGenerators;
+
+	/**
+	 * The cached value of the '{@link #getAssociationGenerators() <em>Association Generators</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssociationGenerators()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<AssociationGenerator> associationGenerators;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,11 +254,23 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EntityGenerator> getChildGenerators() {
+	public EList<ChildrenGenerator> getChildGenerators() {
 		if (childGenerators == null) {
-			childGenerators = new EObjectContainmentEList<EntityGenerator>(EntityGenerator.class, this, MDatasamplePackage.ENTITY_GENERATOR__CHILD_GENERATORS);
+			childGenerators = new EObjectContainmentEList<ChildrenGenerator>(ChildrenGenerator.class, this, MDatasamplePackage.ENTITY_GENERATOR__CHILD_GENERATORS);
 		}
 		return childGenerators;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<AssociationGenerator> getAssociationGenerators() {
+		if (associationGenerators == null) {
+			associationGenerators = new EObjectContainmentEList<AssociationGenerator>(AssociationGenerator.class, this, MDatasamplePackage.ENTITY_GENERATOR__ASSOCIATION_GENERATORS);
+		}
+		return associationGenerators;
 	}
 
 	/**
@@ -271,6 +296,8 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 				return ((InternalEList<?>)getFieldGenerators()).basicRemove(otherEnd, msgs);
 			case MDatasamplePackage.ENTITY_GENERATOR__CHILD_GENERATORS:
 				return ((InternalEList<?>)getChildGenerators()).basicRemove(otherEnd, msgs);
+			case MDatasamplePackage.ENTITY_GENERATOR__ASSOCIATION_GENERATORS:
+				return ((InternalEList<?>)getAssociationGenerators()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -294,6 +321,8 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 				return getFieldGenerators();
 			case MDatasamplePackage.ENTITY_GENERATOR__CHILD_GENERATORS:
 				return getChildGenerators();
+			case MDatasamplePackage.ENTITY_GENERATOR__ASSOCIATION_GENERATORS:
+				return getAssociationGenerators();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -322,7 +351,11 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 				return;
 			case MDatasamplePackage.ENTITY_GENERATOR__CHILD_GENERATORS:
 				getChildGenerators().clear();
-				getChildGenerators().addAll((Collection<? extends EntityGenerator>)newValue);
+				getChildGenerators().addAll((Collection<? extends ChildrenGenerator>)newValue);
+				return;
+			case MDatasamplePackage.ENTITY_GENERATOR__ASSOCIATION_GENERATORS:
+				getAssociationGenerators().clear();
+				getAssociationGenerators().addAll((Collection<? extends AssociationGenerator>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -351,6 +384,9 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 			case MDatasamplePackage.ENTITY_GENERATOR__CHILD_GENERATORS:
 				getChildGenerators().clear();
 				return;
+			case MDatasamplePackage.ENTITY_GENERATOR__ASSOCIATION_GENERATORS:
+				getAssociationGenerators().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -373,6 +409,8 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 				return fieldGenerators != null && !fieldGenerators.isEmpty();
 			case MDatasamplePackage.ENTITY_GENERATOR__CHILD_GENERATORS:
 				return childGenerators != null && !childGenerators.isEmpty();
+			case MDatasamplePackage.ENTITY_GENERATOR__ASSOCIATION_GENERATORS:
+				return associationGenerators != null && !associationGenerators.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

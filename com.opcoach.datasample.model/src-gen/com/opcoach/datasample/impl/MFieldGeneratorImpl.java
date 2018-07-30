@@ -42,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getErrorGeneratorName <em>Error Generator Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getErrorGenerator <em>Error Generator</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link com.opcoach.datasample.impl.MFieldGeneratorImpl#getNumber <em>Number</em>}</li>
  * </ul>
  *
  * @generated
@@ -166,6 +167,26 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * @ordered
 	 */
 	protected EList<Parameter> parameters;
+
+	/**
+	 * The default value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NUMBER_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected int number = NUMBER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -401,6 +422,27 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNumber() {
+		return number;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNumber(int newNumber) {
+		int oldNumber = number;
+		number = newNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDatasamplePackage.FIELD_GENERATOR__NUMBER, oldNumber, number));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -437,6 +479,8 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 				return basicGetErrorGenerator();
 			case MDatasamplePackage.FIELD_GENERATOR__PARAMETERS:
 				return getParameters();
+			case MDatasamplePackage.FIELD_GENERATOR__NUMBER:
+				return getNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -475,6 +519,9 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 				getParameters().clear();
 				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
+			case MDatasamplePackage.FIELD_GENERATOR__NUMBER:
+				setNumber((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -511,6 +558,9 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 			case MDatasamplePackage.FIELD_GENERATOR__PARAMETERS:
 				getParameters().clear();
 				return;
+			case MDatasamplePackage.FIELD_GENERATOR__NUMBER:
+				setNumber(NUMBER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -539,6 +589,8 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 				return errorGenerator != null;
 			case MDatasamplePackage.FIELD_GENERATOR__PARAMETERS:
 				return parameters != null && !parameters.isEmpty();
+			case MDatasamplePackage.FIELD_GENERATOR__NUMBER:
+				return number != NUMBER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -561,6 +613,8 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 		result.append(generatorName);
 		result.append(", errorGeneratorName: ");
 		result.append(errorGeneratorName);
+		result.append(", number: ");
+		result.append(number);
 		result.append(')');
 		return result.toString();
 	}

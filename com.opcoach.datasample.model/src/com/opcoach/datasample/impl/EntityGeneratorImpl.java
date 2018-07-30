@@ -87,8 +87,8 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 				// Bind this generator to its parent
 				if (eContainer() instanceof DataSample)
 					((DataSample)eContainer()).getEntityGenerators().add(childGen);
-				else
-					((EntityGenerator)eContainer()).getChildGenerators().add(childGen);
+			//TBD	else
+			//TBD		((EntityGenerator)eContainer()).getChildGenerators().add(childGen);
 			}
 
 			// Can now generate as many as expected children.
@@ -180,12 +180,12 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		EntityGenerator result = null;
 		String childType = r.getEReferenceType().getName();
 
-		for (EntityGenerator g : getChildGenerators()) {
+/*		for (EntityGenerator g : getChildGenerators()) {
 			if (childType.equals(g.getEntityName())) {
 				result = g;
 				break;
 			}
-		}
+		}*/
 		return result;
 	}
 

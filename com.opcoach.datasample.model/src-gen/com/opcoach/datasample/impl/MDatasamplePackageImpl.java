@@ -2,6 +2,8 @@
  */
 package com.opcoach.datasample.impl;
 
+import com.opcoach.datasample.AssociationGenerator;
+import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
@@ -57,6 +59,20 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	private EClass parameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass associationGeneratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass childrenGeneratorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -279,6 +295,15 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getEntityGenerator_AssociationGenerators() {
+		return (EReference)entityGeneratorEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getEntityGenerator__GetInstances() {
 		return entityGeneratorEClass.getEOperations().get(0);
 	}
@@ -369,6 +394,15 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getFieldGenerator_Number() {
+		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getParameter() {
 		return parameterEClass;
 	}
@@ -389,6 +423,24 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 */
 	public EAttribute getParameter_Value() {
 		return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAssociationGenerator() {
+		return associationGeneratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getChildrenGenerator() {
+		return childrenGeneratorEClass;
 	}
 
 	/**
@@ -445,6 +497,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__ENTITY);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__FIELD_GENERATORS);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__CHILD_GENERATORS);
+		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__ASSOCIATION_GENERATORS);
 		createEOperation(entityGeneratorEClass, ENTITY_GENERATOR___GET_INSTANCES);
 
 		fieldGeneratorEClass = createEClass(FIELD_GENERATOR);
@@ -456,10 +509,15 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEAttribute(fieldGeneratorEClass, FIELD_GENERATOR__ERROR_GENERATOR_NAME);
 		createEReference(fieldGeneratorEClass, FIELD_GENERATOR__ERROR_GENERATOR);
 		createEReference(fieldGeneratorEClass, FIELD_GENERATOR__PARAMETERS);
+		createEAttribute(fieldGeneratorEClass, FIELD_GENERATOR__NUMBER);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__NAME);
 		createEAttribute(parameterEClass, PARAMETER__VALUE);
+
+		associationGeneratorEClass = createEClass(ASSOCIATION_GENERATOR);
+
+		childrenGeneratorEClass = createEClass(CHILDREN_GENERATOR);
 
 		// Create enums
 		languageEEnum = createEEnum(LANGUAGE);
@@ -509,6 +567,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		g2 = createEGenericType(theEcorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		fieldGeneratorEClass.getEGenericSuperTypes().add(g1);
+		associationGeneratorEClass.getESuperTypes().add(this.getFieldGenerator());
+		childrenGeneratorEClass.getESuperTypes().add(this.getFieldGenerator());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dataSampleEClass, DataSample.class, "DataSample", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -527,7 +587,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEAttribute(getEntityGenerator_EntityName(), ecorePackage.getEString(), "entityName", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityGenerator_Entity(), theEcorePackage.getEClass(), null, "entity", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityGenerator_FieldGenerators(), this.getFieldGenerator(), null, "fieldGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityGenerator_ChildGenerators(), this.getEntityGenerator(), null, "childGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityGenerator_ChildGenerators(), this.getChildrenGenerator(), null, "childGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityGenerator_AssociationGenerators(), this.getAssociationGenerator(), null, "associationGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getEntityGenerator__GetInstances(), null, "getInstances", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -546,10 +607,15 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		g1.getETypeArguments().add(g2);
 		initEReference(getFieldGenerator_ErrorGenerator(), g1, null, "errorGenerator", null, 0, 1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFieldGenerator_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFieldGenerator_Number(), ecorePackage.getEInt(), "number", null, 0, 1, FieldGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getParameter_Value(), theEcorePackage.getEString(), "value", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(associationGeneratorEClass, AssociationGenerator.class, "AssociationGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(childrenGeneratorEClass, ChildrenGenerator.class, "ChildrenGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(languageEEnum, Language.class, "Language");

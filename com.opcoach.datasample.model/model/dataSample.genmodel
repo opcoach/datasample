@@ -32,6 +32,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/entity"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/fieldGenerators"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/childGenerators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/associationGenerators"/>
       <genOperations ecoreOperation="dataSample.ecore#//EntityGenerator/getInstances"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//FieldGenerator">
@@ -43,10 +44,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//FieldGenerator/errorGeneratorName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//FieldGenerator/errorGenerator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//FieldGenerator/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//FieldGenerator/number"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//Parameter/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//Parameter/value"/>
     </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//AssociationGenerator"/>
+    <genClasses ecoreClass="dataSample.ecore#//ChildrenGenerator"/>
   </genPackages>
 </genmodel:GenModel>

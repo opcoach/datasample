@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  *   <li>{@link com.opcoach.datasample.MFieldGenerator#getErrorGeneratorName <em>Error Generator Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.MFieldGenerator#getErrorGenerator <em>Error Generator</em>}</li>
  *   <li>{@link com.opcoach.datasample.MFieldGenerator#getParameters <em>Parameters</em>}</li>
+ *   <li>{@link com.opcoach.datasample.MFieldGenerator#getNumber <em>Number</em>}</li>
  * </ul>
  *
  * @see com.opcoach.datasample.MDatasamplePackage#getFieldGenerator()
@@ -229,5 +230,31 @@ public interface MFieldGenerator extends ValueGenerator<Object> {
 	 * @generated
 	 */
 	EList<Parameter> getParameters();
+
+	/**
+	 * Returns the value of the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Number</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Number</em>' attribute.
+	 * @see #setNumber(int)
+	 * @see com.opcoach.datasample.MDatasamplePackage#getFieldGenerator_Number()
+	 * @model
+	 * @generated
+	 */
+	int getNumber();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.datasample.MFieldGenerator#getNumber <em>Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Number</em>' attribute.
+	 * @see #getNumber()
+	 * @generated
+	 */
+	void setNumber(int value);
 
 } // MFieldGenerator
