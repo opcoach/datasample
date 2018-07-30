@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.DatasampleFactory;
 import com.opcoach.datasample.EntityGenerator;
@@ -80,13 +80,13 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		// First of all create compositions (to know objects for associations)
 		// ---------------------------------------------------------------------
 		for (EReference r : target.getEAllContainments()) {
-			EntityGenerator childGen = getChildGenerator(r);
+			ChildrenGenerator childGen = getChildGenerator(r);
 			if (childGen == null)
 			{
 				childGen = getDefaultChildGenerator(r);
 				// Bind this generator to its parent
-				if (eContainer() instanceof DataSample)
-					((DataSample)eContainer()).getEntityGenerators().add(childGen);
+			//	if (eContainer() instanceof DataSample)
+			//		((DataSample)eContainer()).getEntityGenerators().add(childGen);
 			//TBD	else
 			//TBD		((EntityGenerator)eContainer()).getChildGenerators().add(childGen);
 			}
@@ -94,7 +94,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 			// Can now generate as many as expected children.
 			List<EObject> children = new ArrayList<>();
 			for (int i = 0; i < childGen.getNumber(); i++) {
-				EObject child = childGen.generateValue();
+				EObject child = (EObject) childGen.generateValue();
 				remindInstance(child);
 				children.add(child);
 			}
@@ -176,24 +176,24 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 	 * @param r the EReference
 	 * @return the defined entity generator or null if none
 	 */
-	private EntityGenerator getChildGenerator(EReference r) {
-		EntityGenerator result = null;
+	private ChildrenGenerator getChildGenerator(EReference r) {
+		ChildrenGenerator result = null;
 		String childType = r.getEReferenceType().getName();
 
-/*		for (EntityGenerator g : getChildGenerators()) {
-			if (childType.equals(g.getEntityName())) {
+	for (ChildrenGenerator g : getChildGenerators()) {
+			if (childType.equals(g.getFieldName())) {
 				result = g;
 				break;
 			}
-		}*/
+		}
 		return result;
 	}
 
 	/** Return a default entity generator that creates 10 instances */
-	private EntityGenerator getDefaultChildGenerator(EReference r) {
+	private ChildrenGenerator getDefaultChildGenerator(EReference r) {
 
-		EntityGenerator result = DatasampleFactory.eINSTANCE.createEntityGenerator();
-		result.setEntityName(r.getEReferenceType().getName());
+		ChildrenGenerator result = DatasampleFactory.eINSTANCE.createChildrenGenerator();
+		result.setFieldName(r.getName());
 		result.setNumber(10);
 
 		return result;
@@ -201,6 +201,8 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 
 	/** Remember of all instances created to use them for associations */
 	private void remindInstance(EObject o) {
+		if (o == null)
+			return;
 		String cname = o.eClass().getName();
 		List<EObject> objects = availableObjects.get(cname);
 		if (objects == null) {

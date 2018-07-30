@@ -9,18 +9,33 @@ import com.opcoach.datasample.DataSample
 import com.opcoach.datasample.DataSampleUtil
 import com.opcoach.datasample.EntityGenerator
 import com.opcoach.datasample.FieldGenerator
+import com.opcoach.generator.basic.BooleanGenerator
+import com.opcoach.generator.basic.DateGenerator
+import com.opcoach.generator.basic.DoubleGenerator
+import com.opcoach.generator.basic.FalseGenerator
+import com.opcoach.generator.basic.FloatGenerator
+import com.opcoach.generator.basic.IDGenerator
 import com.opcoach.generator.basic.IntGenerator
+import com.opcoach.generator.basic.LongGenerator
+import com.opcoach.generator.basic.NullValueGenerator
 import com.opcoach.generator.basic.StringGenerator
+import com.opcoach.generator.basic.TrueGenerator
 import java.util.ArrayList
 import java.util.HashMap
 import java.util.List
 import java.util.Map
+import java.util.Set
+import org.eclipse.emf.ecore.EAttribute
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EPackage
+import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+import org.eclipse.emf.ecore.EReference
+import com.opcoach.generator.basic.BasicFactory
+import com.opcoach.datasample.DatasampleFactory
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -162,19 +177,95 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 				acceptor.accept(createCompletionProposal(s, context))
 	}
 
-	var Map<String, Class<?>> generators
-
-	def getAvailableGenerators() {
-		if (generators === null) {
-			generators = new HashMap
-
-			generators.put("EString", StringGenerator)
-			generators.put("EInt", IntGenerator)
+	override completeAssociationGenerator_GeneratorName(EObject model, Assignment assignment,
+		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		val ag = model as AssociationGenerator
+		val egen = ag.eContainer as EntityGenerator
+		// Search for the corresponding structural feature in ENtity. 
+		val eclass = egen.entity
+		val ref = eclass.EAllReferences.filter[!containment && !(derived)].filter[name == ag.fieldName].get(0)
+		for (g : ref.availableGenerators) {
+			val fullName = g.name
+			val pos = fullName.lastIndexOf('.')
+			acceptor.accept(createCompletionProposal(g.name.substring(pos + 1), context))
 
 		}
 
-		generators.values
+	}
 
+	override completeFieldGenerator_GeneratorName(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+		val fg = model as FieldGenerator
+		val egen = fg.eContainer as EntityGenerator
+		// Search for the corresponding structural feature in ENtity. 
+		val eclass = egen.entity
+		val att = eclass.EAllAttributes.filter[name == fg.fieldName].get(0)
+		if (att !== null)
+			for (g : att.availableGenerators) {
+				val fullName = g.name
+				val pos = fullName.lastIndexOf('.')
+				acceptor.accept(createCompletionProposal(g.name.substring(pos + 1), context))
+
+			}
+	}
+
+	override completeChildrenGenerator_GeneratorName(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+		val cg = model as ChildrenGenerator
+		val egen = cg.eContainer as EntityGenerator
+		// Search for the corresponding structural feature in ENtity. 
+		val eclass = egen.entity
+		val ref = eclass.EAllReferences.filter[containment && !(derived)].filter[name == cg.fieldName].get(0)
+		for (g : ref.availableGenerators) {
+			val fullName = g.name
+			val pos = fullName.lastIndexOf('.')
+			acceptor.accept(createCompletionProposal(g.name.substring(pos + 1), context))
+
+		}
+	}
+
+	// May be this init should be elsewhere...
+	var Map<String, Set<Class<?>>> generators
+
+	def getAvailableGenerators(EStructuralFeature f) {
+		var Set<Class<?>> result = null
+		if (generators === null) {
+			generators = new HashMap
+
+			generators.put("EString", #{StringGenerator, IDGenerator})
+			generators.put("EInt", #{IntGenerator})
+			generators.put("EBoolean", #{BooleanGenerator, TrueGenerator, FalseGenerator})
+			generators.put("EBooleanObject", #{BooleanGenerator, TrueGenerator, FalseGenerator, NullValueGenerator})
+			generators.put("EDate", #{DateGenerator, NullValueGenerator})
+			generators.put("EDouble", #{DoubleGenerator})
+			generators.put("EDoubleObject", #{DoubleGenerator, NullValueGenerator})
+			generators.put("EFloat", #{FloatGenerator})
+			generators.put("EFloatObject", #{FloatGenerator, NullValueGenerator})
+			generators.put("ELong", #{LongGenerator})
+			generators.put("ELongObject", #{LongGenerator, NullValueGenerator})
+			generators.put("EObject", #{NullValueGenerator})
+			generators.put("EJavaObject", #{NullValueGenerator})
+			generators.put("EDataType", #{NullValueGenerator})
+		}
+
+		if (f instanceof EAttribute)
+			result = generators.get(f.EType.name)
+		else {
+			// This is a reference
+			val r = f as EReference
+			if (r.isContainment) {
+				result = #{ChildrenGenerator}
+
+			} else
+				result = #{AssociationGenerator}
+		}
+
+		if (result == null)
+			#{}
+		else
+			result
+
+	// A ETUDIER
 	// Must check how to get all classes that extends ValueGenerator, 
 	// Or must use an extension point. 
 	/*val valgen = ValueGenerator 
