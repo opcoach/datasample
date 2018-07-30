@@ -3,6 +3,8 @@
  */
 package com.opcoach.datasample.xtext.ui.contentassist
 
+import com.opcoach.datasample.AssociationGenerator
+import com.opcoach.datasample.ChildrenGenerator
 import com.opcoach.datasample.DataSample
 import com.opcoach.datasample.DataSampleUtil
 import com.opcoach.datasample.EntityGenerator
@@ -13,7 +15,6 @@ import java.util.ArrayList
 import java.util.HashMap
 import java.util.List
 import java.util.Map
-import java.util.stream.Collectors
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EPackage
@@ -68,19 +69,49 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 			val ds = egen.eContainer as DataSample
 			ds.entityGenerators.forEach[if(entity !== null && entity.name !== null) egenSibling.add(entity.name)]
 			parentClass = ds.rootEntity
-		} else {
-			// This entity generator is already inside another one, must get sibling in parent/child generators
-			val egparent = egen.eContainer as EntityGenerator
-			egparent.childGenerators.forEach[if(entity !== null && entity.name !== null) egenSibling.add(entity.name)]
-			parentClass = egparent.entity
 		}
-
+		/*else {
+		 * 	// This entity generator is already inside another one, must get sibling in parent/child generators
+		 * 	val egparent = egen.eContainer as EntityGenerator
+		 * 	egparent.childGenerators.forEach[if(entity !== null && entity.name !== null) egenSibling.add(entity.name)]
+		 * 	parentClass = egparent.entity
+		 }*/
 		// Must get all children classes of parentClass without the current siblings
 		if (parentClass !== null) {
 			for (c : DataSampleUtil.getChildrenClasses(parentClass)) {
 				if (!egenSibling.contains(c.name))
 					acceptor.accept(createCompletionProposal(c.name, context))
 			}
+		}
+
+	}
+
+	override completeAssociationGenerator_FieldName(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+		val ag = model as AssociationGenerator
+		val egen = ag.eContainer as EntityGenerator
+		val c = egen.entity
+		val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
+		egen.associationGenerators.forEach[if(fieldName !== null) egenSibling.add(fieldName)]
+
+		for (r : c.EAllReferences.filter[!containment && (!isDerived)]) {
+			if (!egenSibling.contains(r.name))
+				acceptor.accept(createCompletionProposal(r.name, context))
+		}
+
+	}
+
+	override completeChildrenGenerator_FieldName(EObject model, Assignment assignment, ContentAssistContext context,
+		ICompletionProposalAcceptor acceptor) {
+		val cg = model as ChildrenGenerator
+		val egen = cg.eContainer as EntityGenerator
+		val c = egen.entity
+		val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
+		egen.childGenerators.forEach[if(fieldName !== null) egenSibling.add(fieldName)]
+
+		for (r : c.EAllReferences.filter[containment]) {
+			if (!egenSibling.contains(r.name))
+				acceptor.accept(createCompletionProposal(r.name, context))
 		}
 
 	}
@@ -113,7 +144,7 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 		// presentNames.add(e.fieldName)
 		// For all EStructuralFeature defined in EClass, keep only those not yet used
 		val EClass ecl = epack.eAllContents.filter(EClass).filter[it.name.equals(ds.entityName)].head
-		for (sf : ecl.EAllStructuralFeatures.toList)
+		for (sf : ecl.EAllAttributes.toList)
 			if (!presentNames.contains(sf.name))
 				acceptor.accept(createCompletionProposal(sf.name, context))
 
