@@ -51,6 +51,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//Parameter/value"/>
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//AssociationGenerator"/>
-    <genClasses ecoreClass="dataSample.ecore#//ChildrenGenerator"/>
+    <genClasses ecoreClass="dataSample.ecore#//ChildrenGenerator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//ChildrenGenerator/delegatedEntityGenerator"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

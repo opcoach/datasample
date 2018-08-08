@@ -13,7 +13,7 @@ DataSample returns DataSample:
 	'seed' seed=EInt
 	'language' language=Language
 	entityGenerators+=EntityGenerator* // ("," entityGenerators+=EntityGenerator)*
-	;
+;
 
 EString returns ecore::EString:
 	STRING | ID;
@@ -33,26 +33,25 @@ EntityGenerator returns EntityGenerator:
 	associationGenerators+=AssociationGenerator*
 	'}';
 
-
 FieldGenerator returns FieldGenerator:
 	{FieldGenerator}
-	'forTheField' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)?('(' parameters+=Parameter (',' parameters+=Parameter)* ')') ?  ('withErrorRate=' errorRate=EInt 'generatedWith'
+	'forTheField' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)? ('(' parameters+=Parameter
+	(',' parameters+=Parameter)* ')')? ('withErrorRate=' errorRate=EInt 'generatedWith'
 	errorGeneratorName=EString)?;
 
 ChildrenGenerator returns ChildrenGenerator:
 	{ChildrenGenerator}
-	'forTheComposition' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)?('(' parameters+=Parameter (',' parameters+=Parameter)* ')') ?  ('withErrorRate=' errorRate=EInt 'generatedWith'
+	'forTheComposition' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)? ('('
+	parameters+=Parameter (',' parameters+=Parameter)* ')')? ('withErrorRate=' errorRate=EInt 'generatedWith'
 	errorGeneratorName=EString)?;
-
 
 AssociationGenerator:
 	{AssociationGenerator}
-	'forTheAssociation' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)?('(' parameters+=Parameter (',' parameters+=Parameter)* ')') ?  ('withErrorRate=' errorRate=EInt 'generatedWith'
+	'forTheAssociation' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)? ('('
+	parameters+=Parameter (',' parameters+=Parameter)* ')')? ('withErrorRate=' errorRate=EInt 'generatedWith'
 	errorGeneratorName=EString)?;
 
-
 Parameter returns Parameter:
-	name=ID '=' value=EString
-;
+	name=ID '=' value=EString;
 
 

@@ -448,6 +448,15 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getChildrenGenerator_DelegatedEntityGenerator() {
+		return (EReference)childrenGeneratorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getLanguage() {
 		return languageEEnum;
 	}
@@ -518,6 +527,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		associationGeneratorEClass = createEClass(ASSOCIATION_GENERATOR);
 
 		childrenGeneratorEClass = createEClass(CHILDREN_GENERATOR);
+		createEReference(childrenGeneratorEClass, CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR);
 
 		// Create enums
 		languageEEnum = createEEnum(LANGUAGE);
@@ -616,6 +626,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEClass(associationGeneratorEClass, AssociationGenerator.class, "AssociationGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(childrenGeneratorEClass, ChildrenGenerator.class, "ChildrenGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChildrenGenerator_DelegatedEntityGenerator(), this.getEntityGenerator(), null, "delegatedEntityGenerator", null, 0, 1, ChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(languageEEnum, Language.class, "Language");

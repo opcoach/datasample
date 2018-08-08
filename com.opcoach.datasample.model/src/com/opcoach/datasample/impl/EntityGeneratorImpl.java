@@ -1,6 +1,7 @@
 package com.opcoach.datasample.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -79,75 +80,88 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		// ---------------------------------------------------------------------
 		// First of all create compositions (to know objects for associations)
 		// ---------------------------------------------------------------------
-		for (EReference r : target.getEAllContainments()) {
-			ChildrenGenerator childGen = getChildGenerator(r);
-			if (childGen == null)
-			{
-				childGen = getDefaultChildGenerator(r);
-				// Bind this generator to its parent
-			//	if (eContainer() instanceof DataSample)
-			//		((DataSample)eContainer()).getEntityGenerators().add(childGen);
-			//TBD	else
-			//TBD		((EntityGenerator)eContainer()).getChildGenerators().add(childGen);
-			}
+		for (EReference r : target.getEAllReferences()) {
+			if (r.isContainment()) {
+				ChildrenGenerator childGen = getChildGenerator(r);
+				if (childGen == null) {
+					childGen = getDefaultChildGenerator(r);
+					// Bind this generator to its parent
+					// if (eContainer() instanceof DataSample)
+					// ((DataSample)eContainer()).getEntityGenerators().add(childGen);
+					// TBD else
+					// TBD ((EntityGenerator)eContainer()).getChildGenerators().add(childGen);
+				}
 
-			// Can now generate as many as expected children.
-			List<EObject> children = new ArrayList<>();
-			for (int i = 0; i < childGen.getNumber(); i++) {
-				EObject child = (EObject) childGen.generateValue();
-				remindInstance(child);
-				children.add(child);
-			}
-			// Can set the EReference value.
-			if (r.getUpperBound() == 1) {
-				// Only one child, set the first value
-				result.eSet(r, children.get(0));
-			} else {
-				// More than one child
-				result.eSet(r, children);
+				// Can now generate as many as expected children.
+				Object o = childGen.generateValue();
+				if (o != null)
+				{
+
+					// we must remind of all child instances for later associations
+					// Children generator generates one EObject if number is 1 and a list of objects
+					// if number is > 1
+					if (childGen.getNumber() == 1) {
+						remindInstance((EObject) o);
+					} else {
+						// generated value is a list... iterate on it to remind of instances
+						List<?> children = (List<?>) o;
+						for (Object c : children)
+							if (c instanceof EObject)
+								remindInstance((EObject) c);
+					}
+
+					// Can set the EReference value, it depends on the number of generated values
+					// and the reference cardinality
+					Object valueToSet = o;
+					if ((r.getUpperBound() == 1) && (childGen.getNumber() > 1)) {
+						// child generated a list.. must keep the first element
+						valueToSet = ((List<?>) o).get(0);
+					}
+					if ((r.getUpperBound() > 1) && childGen.getNumber() == 1) {
+						// child generated is an EObject, must create a list...
+						valueToSet = Arrays.asList(o);
+					}
+
+					result.eSet(r, valueToSet);
+				}
 			}
 		}
 
 		// ---------------------------------------------------------------------
 		// Then can set the association references
 		// ---------------------------------------------------------------------
-		for (EReference r : target.getEAllContainments()) {
+		for (EReference r : target.getEAllReferences()) {
 			if (!r.isContainment()) {
-				
+
 				FieldGenerator fg = getFieldGenerator(r.getName());
 				if (!(fg instanceof ReferenceGenerator<?>)) {
 					DSLogger.warning("The generator for reference " + r.getName() + " in EClass "
 							+ ((EClass) r.eContainer()).getName() + " should be a reference Generator");
 					fg = null;
 				}
-				
-				
+
 				ReferenceGenerator<EObject> refGen = null;
 				if (fg != null && fg.getGenerator() instanceof ReferenceGenerator<?>)
-					refGen = (ReferenceGenerator<EObject>) fg.getGenerator() ;
-				
+					refGen = (ReferenceGenerator<EObject>) fg.getGenerator();
+
 				if (refGen == null) {
-					// Create a default one ! 
+					// Create a default one !
 					refGen = GeneratorFactory.eINSTANCE.createReferenceGenerator();
 					fg.setGenerator(refGen);
 				}
-				
+
 				refGen.setValues(availableObjects.get(r.getEReferenceType().getName()));
-				
+
 				Object value = null;
-				if (r.getUpperBound() != 1)
-				{
+				if (r.getUpperBound() != 1) {
 					// Generate some values inside (by default 10)
 					List<EObject> association = new ArrayList<EObject>();
-					for (int i = 0; i < 10; i++)
-					{
+					for (int i = 0; i < 10; i++) {
 						association.add(refGen.generateValue());
 					}
 					value = association;
-					
-				}
-				else
-				{
+
+				} else {
 					value = refGen.generateValue();
 				}
 				// Can set the value
@@ -180,7 +194,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		ChildrenGenerator result = null;
 		String childType = r.getEReferenceType().getName();
 
-	for (ChildrenGenerator g : getChildGenerators()) {
+		for (ChildrenGenerator g : getChildGenerators()) {
 			if (childType.equals(g.getFieldName())) {
 				result = g;
 				break;
@@ -189,12 +203,16 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		return result;
 	}
 
-	/** Return a default entity generator that creates 10 instances */
+	/** Return a default entity generator that creates 3 instances */
 	private ChildrenGenerator getDefaultChildGenerator(EReference r) {
 
 		ChildrenGenerator result = DatasampleFactory.eINSTANCE.createChildrenGenerator();
+		result.setStructuralFeature(r);
 		result.setFieldName(r.getName());
-		result.setNumber(10);
+		result.setNumber(3);
+
+		// Child generator must be inside this object
+		getChildGenerators().add(result);
 
 		return result;
 	}
@@ -211,16 +229,16 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		}
 		objects.add(o);
 	}
-	
+
 	private DataSample getDataSample() {
-		EObject current = this;
-		EObject result = null;
-		while ((result == null && current != null && (! (result instanceof DataSample))))
-		{
-		 result = current.eContainer();
-		 current = result;
+		EObject result = eContainer();
+		while ((result != null) && (!(result instanceof DataSample))) {
+			result = result.eContainer();
 		}
-		
+
+		if (result == null)
+			DSLogger.error("Error : no data sample found for EntityGenerator" + toString());
+
 		return (DataSample) result;
 	}
 }

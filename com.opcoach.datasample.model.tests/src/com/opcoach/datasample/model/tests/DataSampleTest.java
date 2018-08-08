@@ -14,6 +14,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 
+import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.DatasampleFactory;
 import com.opcoach.datasample.EntityGenerator;
@@ -23,7 +24,7 @@ class DataSampleTest extends DataSampleUtilTest  // extends to launch all tests 
 	
 	private static DataSample dataSample = null;
 	private static EntityGenerator rootGen = null;
-	private static EntityGenerator eclassGen = null;
+	private static ChildrenGenerator eclassGen = null;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -35,8 +36,8 @@ class DataSampleTest extends DataSampleUtilTest  // extends to launch all tests 
 		 rootGen.setEntityName("EPackage");
 		 dataSample.getEntityGenerators().add(rootGen);
 		 
-		 eclassGen = DatasampleFactory.eINSTANCE.createEntityGenerator();
-		 eclassGen.setEntityName("EClass");
+		 eclassGen = DatasampleFactory.eINSTANCE.createChildrenGenerator();
+		 eclassGen.setStructuralFeature(EcorePackage.Literals.EPACKAGE__ECLASSIFIERS);
 		 rootGen.getChildGenerators().add(eclassGen);
 		
 	}
@@ -94,7 +95,7 @@ class DataSampleTest extends DataSampleUtilTest  // extends to launch all tests 
 	@Test
 	@DisplayName("Entity generator inside packageGenerator must be set on EClass")
 	void testGetEClassInPackageGenerator() {
-		EClassifier gc = dataSample.getEntityGenerators().get(0).getChildGenerators().get(0).getEntity();
+		EClassifier gc = dataSample.getEntityGenerators().get(0).getChildGenerators().get(0).getDelegatedEntityGenerator().getEntity();
 		
 		// JUNIT 5 Ready 
 		// assertEquals(gc, EcorePackage.Literals.ECLASS, "EClass in first main generator must be set on EPackage");

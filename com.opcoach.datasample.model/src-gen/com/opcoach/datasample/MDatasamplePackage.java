@@ -967,13 +967,22 @@ public interface MDatasamplePackage extends EPackage {
 	int CHILDREN_GENERATOR__NUMBER = FIELD_GENERATOR__NUMBER;
 
 	/**
+	 * The feature id for the '<em><b>Delegated Entity Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR = FIELD_GENERATOR_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Children Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHILDREN_GENERATOR_FEATURE_COUNT = FIELD_GENERATOR_FEATURE_COUNT + 0;
+	int CHILDREN_GENERATOR_FEATURE_COUNT = FIELD_GENERATOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Generate Value</em>' operation.
@@ -1361,6 +1370,17 @@ public interface MDatasamplePackage extends EPackage {
 	EClass getChildrenGenerator();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link com.opcoach.datasample.MChildrenGenerator#getDelegatedEntityGenerator <em>Delegated Entity Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Delegated Entity Generator</em>'.
+	 * @see com.opcoach.datasample.MChildrenGenerator#getDelegatedEntityGenerator()
+	 * @see #getChildrenGenerator()
+	 * @generated
+	 */
+	EReference getChildrenGenerator_DelegatedEntityGenerator();
+
+	/**
 	 * Returns the meta object for enum '{@link com.opcoach.datasample.Language <em>Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1668,6 +1688,14 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CHILDREN_GENERATOR = eINSTANCE.getChildrenGenerator();
+
+		/**
+		 * The meta object literal for the '<em><b>Delegated Entity Generator</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR = eINSTANCE.getChildrenGenerator_DelegatedEntityGenerator();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.Language <em>Language</em>}' enum.
