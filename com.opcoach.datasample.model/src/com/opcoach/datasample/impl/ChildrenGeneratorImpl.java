@@ -38,7 +38,8 @@ public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements Chi
 				// Must generate a list of children
 				for (int i = 0; i < childnumber; i++) {
 					EObject child = deg.generateValue();
-					children.add(child);
+					if (child != null)
+						children.add(child);
 				}
 				result = children;
 			}
@@ -53,6 +54,9 @@ public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements Chi
 	 * one
 	 */
 	public EntityGenerator getDelegatedEntityGenerator() {
+		
+		// THIS SHOULD BE THE getGenerator overridden method ! Right ? 
+		
 		EntityGenerator result = super.getDelegatedEntityGenerator();
 		if (result == null) {
 			// create the default one but only if it is not recursive...

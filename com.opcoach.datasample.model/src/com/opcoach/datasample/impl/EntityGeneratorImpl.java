@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import com.opcoach.datasample.AssociationGenerator;
 import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.DatasampleFactory;
@@ -59,8 +60,15 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 	@Override
 	public EObject generateValue() {
 		EClass target = getEntity();
-		EObject result = target.getEPackage().getEFactoryInstance().create(target);
-
+		EObject result = null;
+		try {
+			result = target.getEPackage().getEFactoryInstance().create(target);
+		} catch (Exception e) {
+			DSLogger.error("Unable to create an entity instance for the class name : " + target.getName()
+					+ " check the generator : " + eContainer());
+			result = null;
+			return null;
+		}
 		// Fist initialize attributes values
 		for (EAttribute a : target.getEAllAttributes()) {
 			FieldGenerator fg = getFieldGenerator(a.getName());
@@ -94,8 +102,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 
 				// Can now generate as many as expected children.
 				Object o = childGen.generateValue();
-				if (o != null)
-				{
+				if (o != null) {
 
 					// we must remind of all child instances for later associations
 					// Children generator generates one EObject if number is 1 and a list of objects
@@ -113,16 +120,17 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 					// Can set the EReference value, it depends on the number of generated values
 					// and the reference cardinality
 					Object valueToSet = o;
-					if ((r.getUpperBound() == 1) && (childGen.getNumber() > 1)) {
+					if (!r.isMany() && (childGen.getNumber() > 1)) {
 						// child generated a list.. must keep the first element
-						valueToSet = ((List<?>) o).get(0);
+						List<?> childList = (List<?>) o;
+						valueToSet = childList.isEmpty() ? null : childList.get(0);
 					}
-					if ((r.getUpperBound() > 1) && childGen.getNumber() == 1) {
+					if (r.isMany() && childGen.getNumber() == 1) {
 						// child generated is an EObject, must create a list...
 						valueToSet = Arrays.asList(o);
 					}
-
-					result.eSet(r, valueToSet);
+					if (valueToSet != null)
+						result.eSet(r, valueToSet);
 				}
 			}
 		}
@@ -133,39 +141,35 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		for (EReference r : target.getEAllReferences()) {
 			if (!r.isContainment()) {
 
-				FieldGenerator fg = getFieldGenerator(r.getName());
-				if (!(fg instanceof ReferenceGenerator<?>)) {
+				AssociationGenerator ag = getAssociationGenerator(r);
+				if (!(ag instanceof AssociationGenerator)) {
 					DSLogger.warning("The generator for reference " + r.getName() + " in EClass "
-							+ ((EClass) r.eContainer()).getName() + " should be a reference Generator");
-					fg = null;
+							+ ((EClass) r.eContainer()).getName() + " should be an AssociationGenerator");
+					ag = null;
 				}
 
-				ReferenceGenerator<EObject> refGen = null;
-				if (fg != null && fg.getGenerator() instanceof ReferenceGenerator<?>)
-					refGen = (ReferenceGenerator<EObject>) fg.getGenerator();
+				if (ag == null)
+					ag = getDefaultAssociationGenerator(r);
 
-				if (refGen == null) {
-					// Create a default one !
-					refGen = GeneratorFactory.eINSTANCE.createReferenceGenerator();
-					fg.setGenerator(refGen);
+				String targetType = r.getEReferenceType().getName();
+				ag.setValues(availableObjects.get(targetType));
+
+				Object o = ag.generateValue();
+				// Can set the EReference value, it depends on the number of generated values
+				// and the reference cardinality
+				Object valueToSet = o;
+				if (!r.isMany() && (ag.getNumber() > 1)) {
+					// child generated a list.. must keep the first element
+					List<?> childList = (List<?>) o;
+					valueToSet = childList.isEmpty() ? null : childList.get(0);
+				}
+				if (r.isMany() && ag.getNumber() == 1) {
+					// child generated is an EObject, must create a list...
+					valueToSet = Arrays.asList(o);
 				}
 
-				refGen.setValues(availableObjects.get(r.getEReferenceType().getName()));
-
-				Object value = null;
-				if (r.getUpperBound() != 1) {
-					// Generate some values inside (by default 10)
-					List<EObject> association = new ArrayList<EObject>();
-					for (int i = 0; i < 10; i++) {
-						association.add(refGen.generateValue());
-					}
-					value = association;
-
-				} else {
-					value = refGen.generateValue();
-				}
-				// Can set the value
-				result.eSet(r, value);
+				if (valueToSet != null)
+					result.eSet(r, valueToSet);
 
 			}
 		}
@@ -181,6 +185,43 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 				result = fg;
 				break;
 			}
+
+		return result;
+	}
+
+	/**
+	 * Search for a defined association generator in the model. If none, returns
+	 * null
+	 * 
+	 * @param r the reference to be generated with this association generator
+	 * @return an AssocationGenerator or null if none is found
+	 */
+	private AssociationGenerator getAssociationGenerator(EReference r) {
+		AssociationGenerator result = null;
+		String fieldname = r.getName();
+		for (AssociationGenerator ag : getAssociationGenerators())
+			if (fieldname.equals(ag.getFieldName())) {
+				result = ag;
+				break;
+			}
+
+		return result;
+	}
+
+	/**
+	 * Return a default association generator that select up to 3 instances (if
+	 * upper bound is != 1)
+	 */
+	private AssociationGenerator getDefaultAssociationGenerator(EReference r) {
+
+		AssociationGenerator result = DatasampleFactory.eINSTANCE.createAssociationGenerator();
+		result.setStructuralFeature(r);
+		result.setFieldName(r.getName());
+		result.setNumber(Math.max(3, r.getUpperBound()));
+
+		// Child generator must be inside this object
+		// getChildGenerators().add(result);
+
 		return result;
 	}
 

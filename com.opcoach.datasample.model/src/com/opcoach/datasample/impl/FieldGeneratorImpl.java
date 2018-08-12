@@ -44,31 +44,18 @@ public class FieldGeneratorImpl extends MFieldGeneratorImpl implements FieldGene
 		return sb.toString();
 	}
 	
-	@Override
+	/*@Override
 	public ValueGenerator<?> getGenerator() {
 		if (generator == null)
 		{
-			String gname = getGeneratorName();
-			DSLogger.info("Must create generator for : " + gname);
-			DSLogger.info("Warning we create a Null value for the moment");
-			generator = BasicFactory.eINSTANCE.createNullValueGenerator();
+			// String gname = getGeneratorName();
+			//DSLogger.info("Must create generator for : " + gname);
+			//DSLogger.info("Warning we create a Null value for the moment");
+			generator = null; // BasicFactory.eINSTANCE.createNullValueGenerator();
 			
-		}
+		} 
 		return generator;
-	}
-	
-	
-	static ValueGenerator<?> getDefaultGenerator(EReference ref)
-	{
-		ValueGenerator<?> result = NULL_GENERATOR;
-		ReferenceGenerator<String> refGen = GeneratorFactory.eINSTANCE.createReferenceGenerator();
-		refGen.setValues(Arrays.asList(new String[] {"test1", "test"}));
-		return result;
-		
-	}
-	
-	
-	
+	}*/
 	
 	
 	
