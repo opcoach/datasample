@@ -19,10 +19,11 @@ Require-Bundle: com.opcoach.datasample.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-14
 Export-Package: com.opcoach.datasample.xtext.ui.quickfix,
  com.opcoach.datasample.xtext.ui.contentassist,
  com.opcoach.datasample.xtext.ui.contentassist.antlr,
  com.opcoach.datasample.xtext.ui.internal,
  com.opcoach.datasample.xtext.ui.contentassist.antlr.internal
 Bundle-Activator: com.opcoach.datasample.xtext.ui.internal.DataSampleDSLActivator
+Automatic-Module-Name: com.opcoach.datasample.xtext.ui

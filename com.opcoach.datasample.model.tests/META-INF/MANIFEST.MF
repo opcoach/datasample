@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: OPCOACH
 Fragment-Host: com.opcoach.datasample.model;bundle-version="1.0.0"
 Automatic-Module-Name: com.opoach.datasample.model.tests
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-14
 Require-Bundle: org.junit.platform.commons,
  org.junit,
  org.junit.jupiter.api

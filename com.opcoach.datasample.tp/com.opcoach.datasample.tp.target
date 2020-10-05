@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
-<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="DataSample Photon" sequenceNumber="1532853637">
+<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
+<target name="DataSample SimRel 2020-09" sequenceNumber="1601935737">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.xtext.sdk.feature.group" version="2.14.0.v20180523-0937"/>
-      <unit id="org.eclipse.xtend.sdk.feature.group" version="2.14.0.v20180523-0937"/>
-      <unit id="org.eclipse.xtext.xbase.feature.group" version="2.14.0.v20180523-0937"/>
-      <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.14.0/"/>
+      <unit id="org.eclipse.xtext.sdk.feature.group" version="2.23.0.v20200831-0926"/>
+      <unit id="org.eclipse.xtend.sdk.feature.group" version="2.23.0.v20200831-0926"/>
+      <unit id="org.eclipse.xtext.xbase.feature.group" version="2.23.0.v20200831-0926"/>
+      <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.23.0/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.rcp.feature.group" version="4.8.0.v20180611-0656"/>
-      <unit id="org.eclipse.ant.core" version="3.5.100.v20180512-1141"/>
-      <unit id="org.apache.commons.io" version="2.2.0.v201405211200"/>
-      <unit id="org.eclipse.pde.feature.group" version="3.13.100.v20180611-0826"/>
-      <unit id="org.eclipse.emf.ant" version="2.9.0.v20180125-1130"/>
-      <unit id="org.eclipse.emf.sdk.feature.group" version="2.14.0.v20180529-1157"/>
-      <unit id="org.eclipse.emf.codegen.ecore.feature.group" version="2.14.0.v20180418-0836"/>
-      <unit id="org.eclipse.emf.importer.ecore" version="2.9.0.v20180125-1130"/>
-      <unit id="org.eclipse.emf.importer" version="2.10.0.v20180131-0817"/>
-      <unit id="org.eclipse.ant.launching" version="1.2.100.v20180309-1840"/>
-      <unit id="org.eclipse.core.runtime" version="3.14.0.v20180417-0825"/>
-      <unit id="org.junit" version="4.12.0.v201504281640"/>
-      <unit id="org.eclipse.jdt.junit.runtime" version="3.4.700.v20171124-1029"/>
-      <unit id="org.eclipse.sdk.feature.group" version="4.8.0.v20180611-0826"/>
-      <unit id="org.junit.jupiter.api" version="5.1.0.v20180327-1502"/>
-      <unit id="org.junit.jupiter.engine" version="5.1.0.v20180327-1502"/>
-      <unit id="org.junit.platform.engine" version="1.1.0.v20180327-1502"/>
-      <unit id="org.junit.platform.commons" version="1.1.0.v20180327-1502"/>
-      <unit id="org.junit.platform.launcher" version="1.1.0.v20180327-1502"/>
-      <unit id="org.junit.platform.runner" version="1.1.0.v20180327-1502"/>
-      <unit id="org.junit.platform.suite.api" version="1.1.0.v20180327-1502"/>
-      <repository location="http://download.eclipse.org/releases/photon"/>
+      <unit id="org.eclipse.rcp.feature.group" version="4.17.0.v20200902-1800"/>
+      <unit id="org.eclipse.ant.core" version="3.5.800.v20200608-1251"/>
+      <unit id="org.apache.commons.io" version="2.6.0.v20190123-2029"/>
+      <unit id="org.eclipse.pde.feature.group" version="3.14.500.v20200902-1800"/>
+      <unit id="org.eclipse.emf.ant" version="2.11.0.v20200324-0723"/>
+      <unit id="org.eclipse.emf.sdk.feature.group" version="2.23.0.v20200822-0801"/>
+      <unit id="org.eclipse.emf.codegen.ecore.feature.group" version="2.23.0.v20200701-0840"/>
+      <unit id="org.eclipse.emf.importer.ecore" version="2.10.0.v20200324-0723"/>
+      <unit id="org.eclipse.emf.importer" version="2.12.0.v20190321-1539"/>
+      <unit id="org.eclipse.ant.launching" version="1.2.1000.v20200610-1458"/>
+      <unit id="org.eclipse.core.runtime" version="3.19.0.v20200724-1004"/>
+      <unit id="org.junit" version="4.13.0.v20200204-1500"/>
+      <unit id="org.eclipse.jdt.junit.runtime" version="3.5.300.v20200720-0748"/>
+      <unit id="org.eclipse.sdk.feature.group" version="4.17.0.v20200902-1800"/>
+      <unit id="org.junit.jupiter.api" version="5.6.0.v20200203-2009"/>
+      <unit id="org.junit.jupiter.engine" version="5.6.0.v20200203-2009"/>
+      <unit id="org.junit.platform.engine" version="1.6.0.v20200203-2009"/>
+      <unit id="org.junit.platform.commons" version="1.6.0.v20200203-2009"/>
+      <unit id="org.junit.platform.launcher" version="1.6.0.v20200203-2009"/>
+      <unit id="org.junit.platform.runner" version="1.6.0.v20200203-2009"/>
+      <unit id="org.junit.platform.suite.api" version="1.6.0.v20200203-2009"/>
+      <repository location="http://download.eclipse.org/releases/2020-09"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="com.opcoach.generator.feature.feature.group" version="1.0.0.201807191450"/>
-      <repository location="https://www.opcoach.com/repository/photon"/>
+      <unit id="com.opcoach.generator.feature.feature.group" version="1.0.0.202009281358"/>
+      <repository location="https://www.opcoach.com/repository/2020-09"/>
     </location>
   </locations>
 </target>
