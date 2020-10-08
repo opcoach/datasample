@@ -22,7 +22,7 @@ public interface FieldGenerator extends MFieldGenerator {
 		ValueGenerator<?> result = NULL_GENERATOR;
 		if ("EString".equals(att.getEType().getName())) {
 			StringGenerator sgen = BasicFactory.eINSTANCE.createStringGenerator();
-			sgen.addValue("Sample1 (defaultStringGenerator");
+			sgen.setID("Sample");
 			result = sgen;
 		} else if ("EInt".equals(att.getEType().getName()) || "EInteger".equals(att.getEType().getName())) {
 			IntGenerator igen = BasicFactory.eINSTANCE.createIntGenerator();
