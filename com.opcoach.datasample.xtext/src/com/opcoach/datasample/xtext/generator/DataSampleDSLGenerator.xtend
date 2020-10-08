@@ -33,7 +33,7 @@ class DataSampleDSLGenerator implements IGenerator {
 		res.contents.add(generated)
 		res.save(baos, null)
 		
-		fsa.generateFile("dataSampleGenerated.xml", baos.toString)
+		fsa.generateFile(ds.name + ".xml", baos.toString)
 		
 	}
 	
