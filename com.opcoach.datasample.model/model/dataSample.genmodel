@@ -54,5 +54,8 @@
     <genClasses ecoreClass="dataSample.ecore#//ChildrenGenerator">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//ChildrenGenerator/delegatedEntityGenerator"/>
     </genClasses>
+    <genClasses ecoreClass="dataSample.ecore#//PolymorphicChildrenGenerator">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//PolymorphicChildrenGenerator/childrenGenerators"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

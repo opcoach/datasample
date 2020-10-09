@@ -162,6 +162,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getNumber() {
 		return number;
 	}
@@ -171,6 +172,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNumber(int newNumber) {
 		int oldNumber = number;
 		number = newNumber;
@@ -183,6 +185,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getEntityName() {
 		return entityName;
 	}
@@ -192,6 +195,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntityName(String newEntityName) {
 		String oldEntityName = entityName;
 		entityName = newEntityName;
@@ -204,6 +208,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntity() {
 		if (entity != null && entity.eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -230,6 +235,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntity(EClass newEntity) {
 		EClass oldEntity = entity;
 		entity = newEntity;
@@ -242,6 +248,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<FieldGenerator> getFieldGenerators() {
 		if (fieldGenerators == null) {
 			fieldGenerators = new EObjectContainmentEList<FieldGenerator>(FieldGenerator.class, this, MDatasamplePackage.ENTITY_GENERATOR__FIELD_GENERATORS);
@@ -254,6 +261,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<ChildrenGenerator> getChildGenerators() {
 		if (childGenerators == null) {
 			childGenerators = new EObjectContainmentEList<ChildrenGenerator>(ChildrenGenerator.class, this, MDatasamplePackage.ENTITY_GENERATOR__CHILD_GENERATORS);
@@ -266,6 +274,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AssociationGenerator> getAssociationGenerators() {
 		if (associationGenerators == null) {
 			associationGenerators = new EObjectContainmentEList<AssociationGenerator>(AssociationGenerator.class, this, MDatasamplePackage.ENTITY_GENERATOR__ASSOCIATION_GENERATORS);
@@ -278,6 +287,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void getInstances() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT

@@ -226,6 +226,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -235,6 +236,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -247,6 +249,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getSeed() {
 		return seed;
 	}
@@ -256,6 +259,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSeed(int newSeed) {
 		int oldSeed = seed;
 		seed = newSeed;
@@ -268,6 +272,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Language getLanguage() {
 		return language;
 	}
@@ -277,6 +282,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLanguage(Language newLanguage) {
 		Language oldLanguage = language;
 		language = newLanguage == null ? LANGUAGE_EDEFAULT : newLanguage;
@@ -289,6 +295,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getPackageURI() {
 		return packageURI;
 	}
@@ -298,6 +305,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPackageURI(String newPackageURI) {
 		String oldPackageURI = packageURI;
 		packageURI = newPackageURI;
@@ -310,6 +318,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EPackage getPackage() {
 		if (package_ != null && package_.eIsProxy()) {
 			InternalEObject oldPackage = (InternalEObject)package_;
@@ -336,6 +345,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setPackage(EPackage newPackage) {
 		EPackage oldPackage = package_;
 		package_ = newPackage;
@@ -348,6 +358,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<EntityGenerator> getEntityGenerators() {
 		if (entityGenerators == null) {
 			entityGenerators = new EObjectContainmentEList<EntityGenerator>(EntityGenerator.class, this, MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS);
@@ -360,6 +371,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getRootEntity() {
 		if (rootEntity != null && rootEntity.eIsProxy()) {
 			InternalEObject oldRootEntity = (InternalEObject)rootEntity;
@@ -386,6 +398,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRootEntity(EClass newRootEntity) {
 		EClass oldRootEntity = rootEntity;
 		rootEntity = newRootEntity;
@@ -398,6 +411,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRootEntityName() {
 		return rootEntityName;
 	}
@@ -407,6 +421,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRootEntityName(String newRootEntityName) {
 		String oldRootEntityName = rootEntityName;
 		rootEntityName = newRootEntityName;
@@ -419,6 +434,7 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<String> getBadValueGeneratorNames() {
 		if (badValueGeneratorNames == null) {
 			badValueGeneratorNames = new EDataTypeUniqueEList<String>(String.class, this, MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES);

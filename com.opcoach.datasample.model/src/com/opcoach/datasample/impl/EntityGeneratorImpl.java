@@ -20,8 +20,6 @@ import com.opcoach.datasample.DatasampleFactory;
 import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.util.DSLogger;
-import com.opcoach.generator.GeneratorFactory;
-import com.opcoach.generator.ReferenceGenerator;
 import com.opcoach.generator.ValueGenerator;
 
 // This class overrides the generated class and will be instantiated by factory
@@ -32,7 +30,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 	 * be able to set associations values Key : EClass name, value : list of all
 	 * instances available for this type
 	 */
-	private static Map<String, List<EObject>> availableObjects = new HashMap();
+	private static Map<String, List<EObject>> availableObjects = new HashMap<String, List<EObject>>();
 
 	public EntityGeneratorImpl() {
 		super();
@@ -233,10 +231,10 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 	 */
 	private ChildrenGenerator getChildGenerator(EReference r) {
 		ChildrenGenerator result = null;
-		String childType = r.getEReferenceType().getName();
+		String refName = r.getEReferenceType().getName();
 
 		for (ChildrenGenerator g : getChildGenerators()) {
-			if (childType.equals(g.getFieldName())) {
+			if (refName.equals(g.getFieldName())) {
 				result = g;
 				break;
 			}
@@ -244,16 +242,26 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		return result;
 	}
 
-	/** Return a default entity generator that creates 3 instances */
+	/** Return a default entity generator that creates 3 instances or a polymorphic if type is abstract */
 	private ChildrenGenerator getDefaultChildGenerator(EReference r) {
 
-		ChildrenGenerator result = DatasampleFactory.eINSTANCE.createChildrenGenerator();
-		result.setStructuralFeature(r);
-		result.setFieldName(r.getName());
-		result.setNumber(3);
+		ChildrenGenerator result = null;
+
+		// Create a polymorphic  generator when the type of composition is abstract
+		if (r.getEReferenceType().isAbstract()) {
+			result = DatasampleFactory.eINSTANCE.createPolymorphicChildrenGenerator();
+
+		} else {
+			result = DatasampleFactory.eINSTANCE.createChildrenGenerator();
+			result.setNumber(3);
+		}
 
 		// Child generator must be inside this object
 		getChildGenerators().add(result);
+
+		result.setStructuralFeature(r);
+		result.setFieldName(r.getName());
+
 
 		return result;
 	}
@@ -271,7 +279,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		objects.add(o);
 	}
 
-	private DataSample getDataSample() {
+	public DataSample getDataSample() {
 		EObject result = eContainer();
 		while ((result != null) && (!(result instanceof DataSample))) {
 			result = result.eContainer();
@@ -281,5 +289,11 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 			DSLogger.error("Error : no data sample found for EntityGenerator" + toString());
 
 		return (DataSample) result;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "EntityGenerator for " + getEntityName() + " will generate " + getNumber() + " instances.";
 	}
 }

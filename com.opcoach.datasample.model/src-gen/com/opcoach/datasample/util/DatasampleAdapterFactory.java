@@ -94,6 +94,10 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl {
 				return createChildrenGeneratorAdapter();
 			}
 			@Override
+			public Adapter casePolymorphicChildrenGenerator(PolymorphicChildrenGenerator object) {
+				return createPolymorphicChildrenGeneratorAdapter();
+			}
+			@Override
 			public <T> Adapter caseValueGenerator(ValueGenerator<T> object) {
 				return createValueGeneratorAdapter();
 			}
@@ -198,6 +202,20 @@ public class DatasampleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createChildrenGeneratorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.opcoach.datasample.MPolymorphicChildrenGenerator <em>Polymorphic Children Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.opcoach.datasample.MPolymorphicChildrenGenerator
+	 * @generated
+	 */
+	public Adapter createPolymorphicChildrenGeneratorAdapter() {
 		return null;
 	}
 

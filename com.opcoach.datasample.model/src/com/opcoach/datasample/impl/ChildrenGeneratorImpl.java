@@ -75,7 +75,7 @@ public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements Chi
 		String result = super.getFieldName();
 		if (result == null) {
 			if (getStructuralFeature() == null)
-				DSLogger.warning("Should check why structural Feature is null here " + toString());
+				DSLogger.warning("Should check why structural Feature is null here." + description);
 			else
 				result = getStructuralFeature().getName();
 		}

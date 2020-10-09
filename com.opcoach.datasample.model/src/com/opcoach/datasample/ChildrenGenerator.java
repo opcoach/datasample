@@ -1,5 +1,7 @@
 package com.opcoach.datasample;
 
+import org.eclipse.emf.ecore.EReference;
+
 // This interface overrides the generated interface and will be returned by factory
 public interface ChildrenGenerator extends MChildrenGenerator
 {
@@ -9,4 +11,6 @@ public interface ChildrenGenerator extends MChildrenGenerator
 	// For instance : 
 	// default public void addSomething(Something foo) {} ;
 
+	/** The structural feature contained in a ChildrenGenerator is always an EReference */
+	default public EReference getEReference() { return (EReference) getStructuralFeature(); } 
 }

@@ -32,6 +32,16 @@ public interface FieldGenerator extends MFieldGenerator {
 		return result;
 
 	}
+	
+	/** Return the entity name for which this field generator is used */
+	default public String getParentEntityName() { return getParentEntityGenerator().getEntity().getName();}
+
+	/** Return the parent entity generator for which this field generator is used */
+	default public EntityGenerator getParentEntityGenerator() { return (EntityGenerator) eContainer();}
+	
+	/** Return the root data sample for any field generator */
+	default public DataSample getDataSample() { return getParentEntityGenerator().getDataSample();  } 
+
 
 
 }

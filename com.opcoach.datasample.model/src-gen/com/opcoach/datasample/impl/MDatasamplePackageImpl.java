@@ -12,6 +12,7 @@ import com.opcoach.datasample.MDatasampleFactory;
 import com.opcoach.datasample.MDatasamplePackage;
 import com.opcoach.datasample.Parameter;
 
+import com.opcoach.datasample.PolymorphicChildrenGenerator;
 import com.opcoach.generator.MGeneratorPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -73,6 +74,13 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	private EClass childrenGeneratorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass polymorphicChildrenGeneratorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -151,6 +159,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDataSample() {
 		return dataSampleEClass;
 	}
@@ -160,6 +169,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataSample_Name() {
 		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(0);
 	}
@@ -169,6 +179,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataSample_Seed() {
 		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(1);
 	}
@@ -178,6 +189,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataSample_Language() {
 		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(2);
 	}
@@ -187,6 +199,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataSample_PackageURI() {
 		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(3);
 	}
@@ -196,6 +209,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDataSample_Package() {
 		return (EReference)dataSampleEClass.getEStructuralFeatures().get(4);
 	}
@@ -205,6 +219,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDataSample_EntityGenerators() {
 		return (EReference)dataSampleEClass.getEStructuralFeatures().get(5);
 	}
@@ -214,6 +229,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDataSample_RootEntity() {
 		return (EReference)dataSampleEClass.getEStructuralFeatures().get(6);
 	}
@@ -223,6 +239,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataSample_RootEntityName() {
 		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(7);
 	}
@@ -232,6 +249,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDataSample_BadValueGeneratorNames() {
 		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(8);
 	}
@@ -241,6 +259,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getEntityGenerator() {
 		return entityGeneratorEClass;
 	}
@@ -250,6 +269,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEntityGenerator_Number() {
 		return (EAttribute)entityGeneratorEClass.getEStructuralFeatures().get(0);
 	}
@@ -259,6 +279,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getEntityGenerator_EntityName() {
 		return (EAttribute)entityGeneratorEClass.getEStructuralFeatures().get(1);
 	}
@@ -268,6 +289,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityGenerator_Entity() {
 		return (EReference)entityGeneratorEClass.getEStructuralFeatures().get(2);
 	}
@@ -277,6 +299,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityGenerator_FieldGenerators() {
 		return (EReference)entityGeneratorEClass.getEStructuralFeatures().get(3);
 	}
@@ -286,6 +309,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityGenerator_ChildGenerators() {
 		return (EReference)entityGeneratorEClass.getEStructuralFeatures().get(4);
 	}
@@ -295,6 +319,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getEntityGenerator_AssociationGenerators() {
 		return (EReference)entityGeneratorEClass.getEStructuralFeatures().get(5);
 	}
@@ -304,6 +329,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EOperation getEntityGenerator__GetInstances() {
 		return entityGeneratorEClass.getEOperations().get(0);
 	}
@@ -313,6 +339,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getFieldGenerator() {
 		return fieldGeneratorEClass;
 	}
@@ -322,6 +349,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFieldGenerator_FieldName() {
 		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(0);
 	}
@@ -331,6 +359,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFieldGenerator_Generator() {
 		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(1);
 	}
@@ -340,6 +369,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFieldGenerator_StructuralFeature() {
 		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(2);
 	}
@@ -349,6 +379,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFieldGenerator_ErrorRate() {
 		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(3);
 	}
@@ -358,6 +389,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFieldGenerator_GeneratorName() {
 		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(4);
 	}
@@ -367,6 +399,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFieldGenerator_ErrorGeneratorName() {
 		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(5);
 	}
@@ -376,6 +409,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFieldGenerator_ErrorGenerator() {
 		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(6);
 	}
@@ -385,6 +419,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getFieldGenerator_Parameters() {
 		return (EReference)fieldGeneratorEClass.getEStructuralFeatures().get(7);
 	}
@@ -394,6 +429,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFieldGenerator_Number() {
 		return (EAttribute)fieldGeneratorEClass.getEStructuralFeatures().get(8);
 	}
@@ -403,6 +439,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getParameter() {
 		return parameterEClass;
 	}
@@ -412,6 +449,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameter_Name() {
 		return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
 	}
@@ -421,6 +459,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameter_Value() {
 		return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
 	}
@@ -430,6 +469,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAssociationGenerator() {
 		return associationGeneratorEClass;
 	}
@@ -439,6 +479,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getChildrenGenerator() {
 		return childrenGeneratorEClass;
 	}
@@ -448,6 +489,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getChildrenGenerator_DelegatedEntityGenerator() {
 		return (EReference)childrenGeneratorEClass.getEStructuralFeatures().get(0);
 	}
@@ -457,6 +499,27 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EClass getPolymorphicChildrenGenerator() {
+		return polymorphicChildrenGeneratorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getPolymorphicChildrenGenerator_ChildrenGenerators() {
+		return (EReference)polymorphicChildrenGeneratorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getLanguage() {
 		return languageEEnum;
 	}
@@ -466,6 +529,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDatasampleFactory getDatasampleFactory() {
 		return (MDatasampleFactory)getEFactoryInstance();
 	}
@@ -529,6 +593,9 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		childrenGeneratorEClass = createEClass(CHILDREN_GENERATOR);
 		createEReference(childrenGeneratorEClass, CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR);
 
+		polymorphicChildrenGeneratorEClass = createEClass(POLYMORPHIC_CHILDREN_GENERATOR);
+		createEReference(polymorphicChildrenGeneratorEClass, POLYMORPHIC_CHILDREN_GENERATOR__CHILDREN_GENERATORS);
+
 		// Create enums
 		languageEEnum = createEEnum(LANGUAGE);
 	}
@@ -579,6 +646,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		fieldGeneratorEClass.getEGenericSuperTypes().add(g1);
 		associationGeneratorEClass.getESuperTypes().add(this.getFieldGenerator());
 		childrenGeneratorEClass.getESuperTypes().add(this.getFieldGenerator());
+		polymorphicChildrenGeneratorEClass.getESuperTypes().add(this.getChildrenGenerator());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dataSampleEClass, DataSample.class, "DataSample", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -627,6 +695,9 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 
 		initEClass(childrenGeneratorEClass, ChildrenGenerator.class, "ChildrenGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChildrenGenerator_DelegatedEntityGenerator(), this.getEntityGenerator(), null, "delegatedEntityGenerator", null, 0, 1, ChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(polymorphicChildrenGeneratorEClass, PolymorphicChildrenGenerator.class, "PolymorphicChildrenGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPolymorphicChildrenGenerator_ChildrenGenerators(), this.getChildrenGenerator(), null, "childrenGenerators", null, 0, -1, PolymorphicChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(languageEEnum, Language.class, "Language");

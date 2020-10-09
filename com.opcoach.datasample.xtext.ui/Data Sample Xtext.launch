@@ -20,7 +20,7 @@
     </listAttribute>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_SHOW_CODEDETAILS_IN_EXCEPTION_MESSAGES" value="true"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
-    <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+    <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-14"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -clean"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
     <stringAttribute key="pde.version" value="3.3"/>
@@ -163,7 +163,7 @@
         <setEntry value="org.eclipse.pde.ds.lib@default:default"/>
         <setEntry value="org.eclipse.platform@default:default"/>
         <setEntry value="org.eclipse.search@default:default"/>
-        <setEntry value="org.eclipse.swt.browser.chromium.cocoa.macosx.x86_64@default:default"/>
+        <setEntry value="org.eclipse.swt.browser.chromium.cocoa.macosx.x86_64@default:false"/>
         <setEntry value="org.eclipse.swt.cocoa.macosx.x86_64@default:false"/>
         <setEntry value="org.eclipse.swt@default:default"/>
         <setEntry value="org.eclipse.team.core@default:default"/>
@@ -233,7 +233,6 @@
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
         <setEntry value="com.opcoach.datasample.model.tests@default:false"/>
-        <setEntry value="com.opcoach.datasample.model2.test@default:false"/>
         <setEntry value="com.opcoach.datasample.model@default:default"/>
         <setEntry value="com.opcoach.datasample.xtext.ui@default:default"/>
         <setEntry value="com.opcoach.datasample.xtext@default:default"/>

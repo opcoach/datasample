@@ -19,8 +19,8 @@ public class AssociationGeneratorImpl extends MAssociationGeneratorImpl implemen
 		Object result = (ValueGenerator<EObject>) super.getGenerator();
 		if (result == null || !(result instanceof ReferenceGenerator)) {
 
-			DSLogger.warning("Warning : the associated generator for " + getStructuralFeature().toString()
-					+ " is not a reference generator -> OVERRIDEN WITH CORRECT GENERATOR");
+			DSLogger.warning("Warning : the associated generator for the EReference '" + getStructuralFeature().getName()
+					+ "' is not a reference generator -> OVERRIDEN WITH CORRECT GENERATOR");
 			ReferenceGenerator<EObject> refgen = GeneratorFactory.eINSTANCE.createReferenceGenerator();
 			result = refgen;
 			setGenerator(refgen);

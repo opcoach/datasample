@@ -24,7 +24,7 @@ class DataSampleDSLGenerator implements IGenerator {
 		val ds = resource.contents.head as DataSample
 		val generated = ds.generateValue
 		
-		println("Generated Object :" + generated.toString)
+		println("Generated Object :" + ((generated === null) ? "null" : generated.toString))
 		
 		val rset= new ResourceSetImpl
 		rset.resourceFactoryRegistry.extensionToFactoryMap.put("xml", new XMIResourceFactoryImpl)

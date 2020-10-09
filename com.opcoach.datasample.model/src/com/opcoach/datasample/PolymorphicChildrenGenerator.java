@@ -1,15 +1,13 @@
 package com.opcoach.datasample;
 
 // This interface overrides the generated interface and will be returned by factory
-public interface EntityGenerator extends MEntityGenerator
+/** PolymorphicChildrenGenerator are composed of all ChildrenGenerators expected for the polymorphic compositions */
+public interface PolymorphicChildrenGenerator extends MPolymorphicChildrenGenerator
 {
 	// You can write additional methods using an empty default java 8 notation 
 	// because the generated implemented class extends this interface and is not abstract
 	//
 	// For instance : 
 	// default public void addSomething(Something foo) {} ;
-	
-	
-	default public DataSample getDataSample() { return null;  }  // Implemented in subclass
 
 }

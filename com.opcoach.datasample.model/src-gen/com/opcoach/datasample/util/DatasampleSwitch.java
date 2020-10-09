@@ -111,6 +111,15 @@ public class DatasampleSwitch<T1> extends Switch<T1> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MDatasamplePackage.POLYMORPHIC_CHILDREN_GENERATOR: {
+				PolymorphicChildrenGenerator polymorphicChildrenGenerator = (PolymorphicChildrenGenerator)theEObject;
+				T1 result = casePolymorphicChildrenGenerator(polymorphicChildrenGenerator);
+				if (result == null) result = caseChildrenGenerator(polymorphicChildrenGenerator);
+				if (result == null) result = caseFieldGenerator(polymorphicChildrenGenerator);
+				if (result == null) result = caseValueGenerator(polymorphicChildrenGenerator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -202,6 +211,21 @@ public class DatasampleSwitch<T1> extends Switch<T1> {
 	 * @generated
 	 */
 	public T1 caseChildrenGenerator(ChildrenGenerator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Polymorphic Children Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Polymorphic Children Generator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T1 casePolymorphicChildrenGenerator(PolymorphicChildrenGenerator object) {
 		return null;
 	}
 

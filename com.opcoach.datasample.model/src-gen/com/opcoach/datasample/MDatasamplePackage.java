@@ -1003,6 +1003,205 @@ public interface MDatasamplePackage extends EPackage {
 	int CHILDREN_GENERATOR_OPERATION_COUNT = FIELD_GENERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link com.opcoach.datasample.impl.MPolymorphicChildrenGeneratorImpl <em>Polymorphic Children Generator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.opcoach.datasample.impl.MPolymorphicChildrenGeneratorImpl
+	 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getPolymorphicChildrenGenerator()
+	 * @generated
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR = 6;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Proportion</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__BAD_VALUE_PROPORTION = CHILDREN_GENERATOR__BAD_VALUE_PROPORTION;
+
+	/**
+	 * The feature id for the '<em><b>Bad Value Generator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__BAD_VALUE_GENERATOR = CHILDREN_GENERATOR__BAD_VALUE_GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Last Generated Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__LAST_GENERATED_VALUE = CHILDREN_GENERATOR__LAST_GENERATED_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Random Seed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__RANDOM_SEED = CHILDREN_GENERATOR__RANDOM_SEED;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__DESCRIPTION = CHILDREN_GENERATOR__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__ID = CHILDREN_GENERATOR__ID;
+
+	/**
+	 * The feature id for the '<em><b>Locale</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__LOCALE = CHILDREN_GENERATOR__LOCALE;
+
+	/**
+	 * The feature id for the '<em><b>Field Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__FIELD_NAME = CHILDREN_GENERATOR__FIELD_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Generator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__GENERATOR = CHILDREN_GENERATOR__GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Structural Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__STRUCTURAL_FEATURE = CHILDREN_GENERATOR__STRUCTURAL_FEATURE;
+
+	/**
+	 * The feature id for the '<em><b>Error Rate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__ERROR_RATE = CHILDREN_GENERATOR__ERROR_RATE;
+
+	/**
+	 * The feature id for the '<em><b>Generator Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__GENERATOR_NAME = CHILDREN_GENERATOR__GENERATOR_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Error Generator Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__ERROR_GENERATOR_NAME = CHILDREN_GENERATOR__ERROR_GENERATOR_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Error Generator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__ERROR_GENERATOR = CHILDREN_GENERATOR__ERROR_GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__PARAMETERS = CHILDREN_GENERATOR__PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__NUMBER = CHILDREN_GENERATOR__NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Delegated Entity Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR = CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR;
+
+	/**
+	 * The feature id for the '<em><b>Children Generators</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR__CHILDREN_GENERATORS = CHILDREN_GENERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Polymorphic Children Generator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR_FEATURE_COUNT = CHILDREN_GENERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Generate Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR___GENERATE_VALUE = CHILDREN_GENERATOR___GENERATE_VALUE;
+
+	/**
+	 * The number of operations of the '<em>Polymorphic Children Generator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POLYMORPHIC_CHILDREN_GENERATOR_OPERATION_COUNT = CHILDREN_GENERATOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link com.opcoach.datasample.Language <em>Language</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1010,7 +1209,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getLanguage()
 	 * @generated
 	 */
-	int LANGUAGE = 6;
+	int LANGUAGE = 7;
 
 
 	/**
@@ -1381,6 +1580,27 @@ public interface MDatasamplePackage extends EPackage {
 	EReference getChildrenGenerator_DelegatedEntityGenerator();
 
 	/**
+	 * Returns the meta object for class '{@link com.opcoach.datasample.MPolymorphicChildrenGenerator <em>Polymorphic Children Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Polymorphic Children Generator</em>'.
+	 * @see com.opcoach.datasample.MPolymorphicChildrenGenerator
+	 * @generated
+	 */
+	EClass getPolymorphicChildrenGenerator();
+
+	/**
+	 * Returns the meta object for the reference list '{@link com.opcoach.datasample.MPolymorphicChildrenGenerator#getChildrenGenerators <em>Children Generators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Children Generators</em>'.
+	 * @see com.opcoach.datasample.MPolymorphicChildrenGenerator#getChildrenGenerators()
+	 * @see #getPolymorphicChildrenGenerator()
+	 * @generated
+	 */
+	EReference getPolymorphicChildrenGenerator_ChildrenGenerators();
+
+	/**
 	 * Returns the meta object for enum '{@link com.opcoach.datasample.Language <em>Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1696,6 +1916,24 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EReference CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR = eINSTANCE.getChildrenGenerator_DelegatedEntityGenerator();
+
+		/**
+		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MPolymorphicChildrenGeneratorImpl <em>Polymorphic Children Generator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.opcoach.datasample.impl.MPolymorphicChildrenGeneratorImpl
+		 * @see com.opcoach.datasample.impl.MDatasamplePackageImpl#getPolymorphicChildrenGenerator()
+		 * @generated
+		 */
+		EClass POLYMORPHIC_CHILDREN_GENERATOR = eINSTANCE.getPolymorphicChildrenGenerator();
+
+		/**
+		 * The meta object literal for the '<em><b>Children Generators</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference POLYMORPHIC_CHILDREN_GENERATOR__CHILDREN_GENERATORS = eINSTANCE.getPolymorphicChildrenGenerator_ChildrenGenerators();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.Language <em>Language</em>}' enum.

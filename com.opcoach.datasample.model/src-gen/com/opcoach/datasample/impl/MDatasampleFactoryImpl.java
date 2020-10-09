@@ -63,6 +63,7 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 			case MDatasamplePackage.PARAMETER: return createParameter();
 			case MDatasamplePackage.ASSOCIATION_GENERATOR: return createAssociationGenerator();
 			case MDatasamplePackage.CHILDREN_GENERATOR: return createChildrenGenerator();
+			case MDatasamplePackage.POLYMORPHIC_CHILDREN_GENERATOR: return createPolymorphicChildrenGenerator();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -103,6 +104,7 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataSample createDataSample() {
 		DataSampleImpl dataSample = new DataSampleImpl();
 		return dataSample;
@@ -113,6 +115,7 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityGenerator createEntityGenerator() {
 		EntityGeneratorImpl entityGenerator = new EntityGeneratorImpl();
 		return entityGenerator;
@@ -123,6 +126,7 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public FieldGenerator createFieldGenerator() {
 		FieldGeneratorImpl fieldGenerator = new FieldGeneratorImpl();
 		return fieldGenerator;
@@ -133,6 +137,7 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Parameter createParameter() {
 		ParameterImpl parameter = new ParameterImpl();
 		return parameter;
@@ -143,6 +148,7 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AssociationGenerator createAssociationGenerator() {
 		AssociationGeneratorImpl associationGenerator = new AssociationGeneratorImpl();
 		return associationGenerator;
@@ -153,9 +159,21 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ChildrenGenerator createChildrenGenerator() {
 		ChildrenGeneratorImpl childrenGenerator = new ChildrenGeneratorImpl();
 		return childrenGenerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PolymorphicChildrenGenerator createPolymorphicChildrenGenerator() {
+		PolymorphicChildrenGeneratorImpl polymorphicChildrenGenerator = new PolymorphicChildrenGeneratorImpl();
+		return polymorphicChildrenGenerator;
 	}
 
 	/**
@@ -183,6 +201,7 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public MDatasamplePackage getDatasamplePackage() {
 		return (MDatasamplePackage)getEPackage();
 	}

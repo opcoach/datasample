@@ -76,6 +76,15 @@ public interface MDatasampleFactory extends EFactory {
 	ChildrenGenerator createChildrenGenerator();
 
 	/**
+	 * Returns a new object of class '<em>Polymorphic Children Generator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Polymorphic Children Generator</em>'.
+	 * @generated
+	 */
+	PolymorphicChildrenGenerator createPolymorphicChildrenGenerator();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

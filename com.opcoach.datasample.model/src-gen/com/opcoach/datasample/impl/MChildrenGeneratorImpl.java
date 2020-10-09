@@ -60,6 +60,7 @@ public class MChildrenGeneratorImpl extends FieldGeneratorImpl implements Childr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EntityGenerator getDelegatedEntityGenerator() {
 		return delegatedEntityGenerator;
 	}
@@ -84,6 +85,7 @@ public class MChildrenGeneratorImpl extends FieldGeneratorImpl implements Childr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDelegatedEntityGenerator(EntityGenerator newDelegatedEntityGenerator) {
 		if (newDelegatedEntityGenerator != delegatedEntityGenerator) {
 			NotificationChain msgs = null;

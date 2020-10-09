@@ -212,6 +212,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFieldName() {
 		return fieldName;
 	}
@@ -221,6 +222,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFieldName(String newFieldName) {
 		String oldFieldName = fieldName;
 		fieldName = newFieldName;
@@ -233,6 +235,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ValueGenerator<?> getGenerator() {
 		if (generator != null && generator.eIsProxy()) {
 			InternalEObject oldGenerator = (InternalEObject)generator;
@@ -259,6 +262,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGenerator(ValueGenerator<?> newGenerator) {
 		ValueGenerator<?> oldGenerator = generator;
 		generator = newGenerator;
@@ -271,6 +275,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EStructuralFeature getStructuralFeature() {
 		if (structuralFeature != null && structuralFeature.eIsProxy()) {
 			InternalEObject oldStructuralFeature = (InternalEObject)structuralFeature;
@@ -297,6 +302,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStructuralFeature(EStructuralFeature newStructuralFeature) {
 		EStructuralFeature oldStructuralFeature = structuralFeature;
 		structuralFeature = newStructuralFeature;
@@ -309,6 +315,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getErrorRate() {
 		return errorRate;
 	}
@@ -318,6 +325,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setErrorRate(int newErrorRate) {
 		int oldErrorRate = errorRate;
 		errorRate = newErrorRate;
@@ -330,6 +338,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getGeneratorName() {
 		return generatorName;
 	}
@@ -339,6 +348,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGeneratorName(String newGeneratorName) {
 		String oldGeneratorName = generatorName;
 		generatorName = newGeneratorName;
@@ -351,6 +361,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getErrorGeneratorName() {
 		return errorGeneratorName;
 	}
@@ -360,6 +371,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setErrorGeneratorName(String newErrorGeneratorName) {
 		String oldErrorGeneratorName = errorGeneratorName;
 		errorGeneratorName = newErrorGeneratorName;
@@ -372,6 +384,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ValueGenerator<?> getErrorGenerator() {
 		if (errorGenerator != null && errorGenerator.eIsProxy()) {
 			InternalEObject oldErrorGenerator = (InternalEObject)errorGenerator;
@@ -398,6 +411,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setErrorGenerator(ValueGenerator<?> newErrorGenerator) {
 		ValueGenerator<?> oldErrorGenerator = errorGenerator;
 		errorGenerator = newErrorGenerator;
@@ -410,6 +424,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Parameter> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, MDatasamplePackage.FIELD_GENERATOR__PARAMETERS);
@@ -422,6 +437,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getNumber() {
 		return number;
 	}
@@ -431,6 +447,7 @@ public class MFieldGeneratorImpl extends ValueGeneratorImpl<Object> implements F
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNumber(int newNumber) {
 		int oldNumber = number;
 		number = newNumber;
