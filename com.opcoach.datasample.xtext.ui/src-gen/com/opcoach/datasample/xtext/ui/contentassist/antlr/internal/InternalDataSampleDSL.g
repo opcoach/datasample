@@ -895,9 +895,9 @@ rule__EntityGenerator__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getNumberAssignment_2()); }
-(rule__EntityGenerator__NumberAssignment_2)
-{ after(grammarAccess.getEntityGeneratorAccess().getNumberAssignment_2()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getGroup_2()); }
+(rule__EntityGenerator__Group_2__0)?
+{ after(grammarAccess.getEntityGeneratorAccess().getGroup_2()); }
 )
 
 ;
@@ -924,11 +924,9 @@ rule__EntityGenerator__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getInstancesOfKeyword_3()); }
-
-	'instancesOf' 
-
-{ after(grammarAccess.getEntityGeneratorAccess().getInstancesOfKeyword_3()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getEntityNameAssignment_3()); }
+(rule__EntityGenerator__EntityNameAssignment_3)
+{ after(grammarAccess.getEntityGeneratorAccess().getEntityNameAssignment_3()); }
 )
 
 ;
@@ -955,9 +953,11 @@ rule__EntityGenerator__Group__4__Impl
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getEntityNameAssignment_4()); }
-(rule__EntityGenerator__EntityNameAssignment_4)
-{ after(grammarAccess.getEntityGeneratorAccess().getEntityNameAssignment_4()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getLeftCurlyBracketKeyword_4()); }
+
+	'{' 
+
+{ after(grammarAccess.getEntityGeneratorAccess().getLeftCurlyBracketKeyword_4()); }
 )
 
 ;
@@ -984,11 +984,9 @@ rule__EntityGenerator__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getLeftCurlyBracketKeyword_5()); }
-
-	'{' 
-
-{ after(grammarAccess.getEntityGeneratorAccess().getLeftCurlyBracketKeyword_5()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsAssignment_5()); }
+(rule__EntityGenerator__FieldGeneratorsAssignment_5)*
+{ after(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsAssignment_5()); }
 )
 
 ;
@@ -1015,9 +1013,9 @@ rule__EntityGenerator__Group__6__Impl
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsAssignment_6()); }
-(rule__EntityGenerator__FieldGeneratorsAssignment_6)*
-{ after(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsAssignment_6()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsAssignment_6()); }
+(rule__EntityGenerator__ChildGeneratorsAssignment_6)*
+{ after(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsAssignment_6()); }
 )
 
 ;
@@ -1044,9 +1042,9 @@ rule__EntityGenerator__Group__7__Impl
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsAssignment_7()); }
-(rule__EntityGenerator__ChildGeneratorsAssignment_7)*
-{ after(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsAssignment_7()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssignment_7()); }
+(rule__EntityGenerator__AssociationGeneratorsAssignment_7)*
+{ after(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssignment_7()); }
 )
 
 ;
@@ -1061,7 +1059,6 @@ rule__EntityGenerator__Group__8
     }
 :
 	rule__EntityGenerator__Group__8__Impl
-	rule__EntityGenerator__Group__9
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1073,9 +1070,11 @@ rule__EntityGenerator__Group__8__Impl
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssignment_8()); }
-(rule__EntityGenerator__AssociationGeneratorsAssignment_8)*
-{ after(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssignment_8()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_8()); }
+
+	'}' 
+
+{ after(grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_8()); }
 )
 
 ;
@@ -1084,28 +1083,45 @@ finally {
 }
 
 
-rule__EntityGenerator__Group__9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rule__EntityGenerator__Group_2__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__EntityGenerator__Group__9__Impl
+	rule__EntityGenerator__Group_2__0__Impl
+	rule__EntityGenerator__Group_2__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__EntityGenerator__Group__9__Impl
+rule__EntityGenerator__Group_2__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_9()); }
-
-	'}' 
-
-{ after(grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_9()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getNumberAssignment_2_0()); }
+(rule__EntityGenerator__NumberAssignment_2_0)
+{ after(grammarAccess.getEntityGeneratorAccess().getNumberAssignment_2_0()); }
 )
 
 ;
@@ -1114,20 +1130,34 @@ finally {
 }
 
 
+rule__EntityGenerator__Group_2__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__EntityGenerator__Group_2__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
+rule__EntityGenerator__Group_2__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEntityGeneratorAccess().getInstancesOfKeyword_2_1()); }
 
+	'instancesOf' 
 
+{ after(grammarAccess.getEntityGeneratorAccess().getInstancesOfKeyword_2_1()); }
+)
 
-
-
-
-
-
-
-
-
-
-
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 
@@ -3218,14 +3248,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__EntityGenerator__NumberAssignment_2
+rule__EntityGenerator__NumberAssignment_2_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getNumberEIntParserRuleCall_2_0()); }
-	ruleEInt{ after(grammarAccess.getEntityGeneratorAccess().getNumberEIntParserRuleCall_2_0()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getNumberEIntParserRuleCall_2_0_0()); }
+	ruleEInt{ after(grammarAccess.getEntityGeneratorAccess().getNumberEIntParserRuleCall_2_0_0()); }
 )
 
 ;
@@ -3233,14 +3263,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__EntityGenerator__EntityNameAssignment_4
+rule__EntityGenerator__EntityNameAssignment_3
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getEntityNameEStringParserRuleCall_4_0()); }
-	ruleEString{ after(grammarAccess.getEntityGeneratorAccess().getEntityNameEStringParserRuleCall_4_0()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getEntityNameEStringParserRuleCall_3_0()); }
+	ruleEString{ after(grammarAccess.getEntityGeneratorAccess().getEntityNameEStringParserRuleCall_3_0()); }
 )
 
 ;
@@ -3248,14 +3278,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__EntityGenerator__FieldGeneratorsAssignment_6
+rule__EntityGenerator__FieldGeneratorsAssignment_5
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsFieldGeneratorParserRuleCall_6_0()); }
-	ruleFieldGenerator{ after(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsFieldGeneratorParserRuleCall_6_0()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsFieldGeneratorParserRuleCall_5_0()); }
+	ruleFieldGenerator{ after(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsFieldGeneratorParserRuleCall_5_0()); }
 )
 
 ;
@@ -3263,14 +3293,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__EntityGenerator__ChildGeneratorsAssignment_7
+rule__EntityGenerator__ChildGeneratorsAssignment_6
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsChildrenGeneratorParserRuleCall_7_0()); }
-	ruleChildrenGenerator{ after(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsChildrenGeneratorParserRuleCall_7_0()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsChildrenGeneratorParserRuleCall_6_0()); }
+	ruleChildrenGenerator{ after(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsChildrenGeneratorParserRuleCall_6_0()); }
 )
 
 ;
@@ -3278,14 +3308,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__EntityGenerator__AssociationGeneratorsAssignment_8
+rule__EntityGenerator__AssociationGeneratorsAssignment_7
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssociationGeneratorParserRuleCall_8_0()); }
-	ruleAssociationGenerator{ after(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssociationGeneratorParserRuleCall_8_0()); }
+{ before(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssociationGeneratorParserRuleCall_7_0()); }
+	ruleAssociationGenerator{ after(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssociationGeneratorParserRuleCall_7_0()); }
 )
 
 ;

@@ -55,7 +55,7 @@ public class MEntityGeneratorImpl extends ValueGeneratorImpl<EObject> implements
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int NUMBER_EDEFAULT = 0;
+	protected static final int NUMBER_EDEFAULT = 1;
 
 	/**
 	 * The cached value of the '{@link #getNumber() <em>Number</em>}' attribute.

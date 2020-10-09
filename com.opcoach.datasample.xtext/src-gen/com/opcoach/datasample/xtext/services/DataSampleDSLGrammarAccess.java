@@ -155,23 +155,24 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cEntityGeneratorAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cGenerateKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNumberAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNumberEIntParserRuleCall_2_0 = (RuleCall)cNumberAssignment_2.eContents().get(0);
-		private final Keyword cInstancesOfKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cEntityNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cEntityNameEStringParserRuleCall_4_0 = (RuleCall)cEntityNameAssignment_4.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cFieldGeneratorsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cFieldGeneratorsFieldGeneratorParserRuleCall_6_0 = (RuleCall)cFieldGeneratorsAssignment_6.eContents().get(0);
-		private final Assignment cChildGeneratorsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cChildGeneratorsChildrenGeneratorParserRuleCall_7_0 = (RuleCall)cChildGeneratorsAssignment_7.eContents().get(0);
-		private final Assignment cAssociationGeneratorsAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cAssociationGeneratorsAssociationGeneratorParserRuleCall_8_0 = (RuleCall)cAssociationGeneratorsAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cNumberAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cNumberEIntParserRuleCall_2_0_0 = (RuleCall)cNumberAssignment_2_0.eContents().get(0);
+		private final Keyword cInstancesOfKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cEntityNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cEntityNameEStringParserRuleCall_3_0 = (RuleCall)cEntityNameAssignment_3.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cFieldGeneratorsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cFieldGeneratorsFieldGeneratorParserRuleCall_5_0 = (RuleCall)cFieldGeneratorsAssignment_5.eContents().get(0);
+		private final Assignment cChildGeneratorsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cChildGeneratorsChildrenGeneratorParserRuleCall_6_0 = (RuleCall)cChildGeneratorsAssignment_6.eContents().get(0);
+		private final Assignment cAssociationGeneratorsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cAssociationGeneratorsAssociationGeneratorParserRuleCall_7_0 = (RuleCall)cAssociationGeneratorsAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//EntityGenerator:
 		//	{EntityGenerator}
-		//	'generate' number=EInt 'instancesOf' entityName=EString
+		//	'generate' (number=EInt 'instancesOf')? entityName=EString
 		//	'{'
 		//	fieldGenerators+=FieldGenerator*
 		//	childGenerators+=ChildrenGenerator*
@@ -179,7 +180,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 
-		//{EntityGenerator} 'generate' number=EInt 'instancesOf' entityName=EString '{' fieldGenerators+=FieldGenerator*
+		//{EntityGenerator} 'generate' (number=EInt 'instancesOf')? entityName=EString '{' fieldGenerators+=FieldGenerator*
 		//childGenerators+=ChildrenGenerator* associationGenerators+=AssociationGenerator* '}'
 		public Group getGroup() { return cGroup; }
 
@@ -189,44 +190,47 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'generate'
 		public Keyword getGenerateKeyword_1() { return cGenerateKeyword_1; }
 
+		//(number=EInt 'instancesOf')?
+		public Group getGroup_2() { return cGroup_2; }
+
 		//number=EInt
-		public Assignment getNumberAssignment_2() { return cNumberAssignment_2; }
+		public Assignment getNumberAssignment_2_0() { return cNumberAssignment_2_0; }
 
 		//EInt
-		public RuleCall getNumberEIntParserRuleCall_2_0() { return cNumberEIntParserRuleCall_2_0; }
+		public RuleCall getNumberEIntParserRuleCall_2_0_0() { return cNumberEIntParserRuleCall_2_0_0; }
 
 		//'instancesOf'
-		public Keyword getInstancesOfKeyword_3() { return cInstancesOfKeyword_3; }
+		public Keyword getInstancesOfKeyword_2_1() { return cInstancesOfKeyword_2_1; }
 
 		//entityName=EString
-		public Assignment getEntityNameAssignment_4() { return cEntityNameAssignment_4; }
+		public Assignment getEntityNameAssignment_3() { return cEntityNameAssignment_3; }
 
 		//EString
-		public RuleCall getEntityNameEStringParserRuleCall_4_0() { return cEntityNameEStringParserRuleCall_4_0; }
+		public RuleCall getEntityNameEStringParserRuleCall_3_0() { return cEntityNameEStringParserRuleCall_3_0; }
 
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
 		//fieldGenerators+=FieldGenerator*
-		public Assignment getFieldGeneratorsAssignment_6() { return cFieldGeneratorsAssignment_6; }
+		public Assignment getFieldGeneratorsAssignment_5() { return cFieldGeneratorsAssignment_5; }
 
 		//FieldGenerator
-		public RuleCall getFieldGeneratorsFieldGeneratorParserRuleCall_6_0() { return cFieldGeneratorsFieldGeneratorParserRuleCall_6_0; }
+		public RuleCall getFieldGeneratorsFieldGeneratorParserRuleCall_5_0() { return cFieldGeneratorsFieldGeneratorParserRuleCall_5_0; }
 
 		//childGenerators+=ChildrenGenerator*
-		public Assignment getChildGeneratorsAssignment_7() { return cChildGeneratorsAssignment_7; }
+		public Assignment getChildGeneratorsAssignment_6() { return cChildGeneratorsAssignment_6; }
 
 		//ChildrenGenerator
-		public RuleCall getChildGeneratorsChildrenGeneratorParserRuleCall_7_0() { return cChildGeneratorsChildrenGeneratorParserRuleCall_7_0; }
+		public RuleCall getChildGeneratorsChildrenGeneratorParserRuleCall_6_0() { return cChildGeneratorsChildrenGeneratorParserRuleCall_6_0; }
 
 		//associationGenerators+=AssociationGenerator*
-		public Assignment getAssociationGeneratorsAssignment_8() { return cAssociationGeneratorsAssignment_8; }
+		public Assignment getAssociationGeneratorsAssignment_7() { return cAssociationGeneratorsAssignment_7; }
 
 		//AssociationGenerator
-		public RuleCall getAssociationGeneratorsAssociationGeneratorParserRuleCall_8_0() { return cAssociationGeneratorsAssociationGeneratorParserRuleCall_8_0; }
+		public RuleCall getAssociationGeneratorsAssociationGeneratorParserRuleCall_7_0() { return cAssociationGeneratorsAssociationGeneratorParserRuleCall_7_0; }
 
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class FieldGeneratorElements extends AbstractParserRuleElementFinder {
@@ -795,7 +799,7 @@ public class DataSampleDSLGrammarAccess extends AbstractGrammarElementFinder {
 
 	//EntityGenerator:
 	//	{EntityGenerator}
-	//	'generate' number=EInt 'instancesOf' entityName=EString
+	//	'generate' (number=EInt 'instancesOf')? entityName=EString
 	//	'{'
 	//	fieldGenerators+=FieldGenerator*
 	//	childGenerators+=ChildrenGenerator*

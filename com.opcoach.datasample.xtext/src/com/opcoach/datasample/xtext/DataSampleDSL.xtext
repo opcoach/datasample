@@ -26,7 +26,7 @@ enum Language returns Language:
 
 EntityGenerator returns EntityGenerator:
 	{EntityGenerator}
-	'generate' number=EInt 'instancesOf' entityName=EString
+	'generate' (number=EInt 'instancesOf') ? entityName=EString
 	'{'
 	fieldGenerators+=FieldGenerator*
 	childGenerators+=ChildrenGenerator*

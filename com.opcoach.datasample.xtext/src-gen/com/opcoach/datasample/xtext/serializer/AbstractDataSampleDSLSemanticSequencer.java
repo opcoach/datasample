@@ -119,7 +119,13 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *     EntityGenerator returns EntityGenerator
 	 *
 	 * Constraint:
-	 *     (number=EInt entityName=EString fieldGenerators+=FieldGenerator* childGenerators+=ChildrenGenerator* associationGenerators+=AssociationGenerator*)
+	 *     (
+	 *         number=EInt? 
+	 *         entityName=EString 
+	 *         fieldGenerators+=FieldGenerator* 
+	 *         childGenerators+=ChildrenGenerator* 
+	 *         associationGenerators+=AssociationGenerator*
+	 *     )
 	 */
 	protected void sequence_EntityGenerator(ISerializationContext context, EntityGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

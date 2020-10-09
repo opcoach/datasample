@@ -11,7 +11,7 @@ Require-Bundle: com.opcoach.datasample.xtext,
  org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional,
  org.eclipse.xtext.xbase.lib,
- org.objectweb.asm;resolution:=optional
+ org.objectweb.asm;bundle-version="[8.0.1,8.1.0)";resolution:=optional
 Import-Package: org.apache.log4j,
  org.junit;version="4.5.0",
  org.junit.runner;version="4.5.0",

@@ -16,14 +16,14 @@
 'generate'=22
 'generateRootObject'=18
 'generatedWith'=33
-'instancesOf'=23
+'instancesOf'=25
 'it'=15
 'language'=20
 'seed'=19
 'use'=27
 'withErrorRate='=32
-'{'=24
-'}'=25
+'{'=23
+'}'=24
 RULE_ANY_OTHER=10
 RULE_ID=5
 RULE_INT=6

@@ -18,24 +18,24 @@ import java.io.ByteArrayOutputStream
  * see http://www.eclipse.org/Xtext/documentation.html#TutorialCodeGeneration
  */
 class DataSampleDSLGenerator implements IGenerator {
-	
+
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		
+
 		val ds = resource.contents.head as DataSample
 		val generated = ds.generateValue
-		
-		println("Generated Object :" + ((generated === null) ? "null" : generated.toString))
-		
-		val rset= new ResourceSetImpl
-		rset.resourceFactoryRegistry.extensionToFactoryMap.put("xml", new XMIResourceFactoryImpl)
-		val res = rset.createResource(URI.createFileURI("tmp.xml"));
-		val baos= new ByteArrayOutputStream
-		res.contents.add(generated)
-		res.save(baos, null)
-		
-		fsa.generateFile(ds.name + ".xml", baos.toString)
-		
+
+		println("Generated Object :" + ((generated === null) ? "null -> NO FILE GENERATED" : generated.toString))
+
+		if (generated !== null) {
+			val rset = new ResourceSetImpl
+			rset.resourceFactoryRegistry.extensionToFactoryMap.put("xml", new XMIResourceFactoryImpl)
+			val res = rset.createResource(URI.createFileURI("tmp.xml"));
+			val baos = new ByteArrayOutputStream
+			res.contents.add(generated)
+			res.save(baos, null)
+
+			fsa.generateFile(ds.name + ".xml", baos.toString)
+		}
 	}
-	
-	
+
 }
