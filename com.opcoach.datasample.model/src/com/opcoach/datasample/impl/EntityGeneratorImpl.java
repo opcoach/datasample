@@ -2,6 +2,7 @@ package com.opcoach.datasample.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.opcoach.datasample.AssociationGenerator;
 import com.opcoach.datasample.ChildrenGenerator;
@@ -50,7 +52,8 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 				setEntity(result);
 			}
 		}
-		System.out.println("Return EClass : " + result + " for entity name " + getEntityName());
+		// System.out.println("Return EClass : " + result + " for entity name " +
+		// getEntityName());
 		return result;
 
 	}
@@ -69,16 +72,12 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		}
 		// Fist initialize attributes values
 		for (EAttribute a : target.getEAllAttributes()) {
-			FieldGenerator fg = getFieldGenerator(a.getName());
-			ValueGenerator<?> gen = (fg == null) ? null : fg.getGenerator();
+			if (a.isChangeable()) {
 
-			if (gen == null) {
-				gen = FieldGenerator.getDefaultGenerator(a);
+				FieldGenerator fg = getFieldGenerator(a);
+				generateAndSetValue(result, a, fg);
+
 			}
-
-			Object v = gen.generateValue();
-			DSLogger.info("Setting this value " + v + " on this attribute : " + a.getName());
-			result.eSet(a, v);
 		}
 
 		// Then create reference values.
@@ -87,49 +86,10 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		// First of all create compositions (to know objects for associations)
 		// ---------------------------------------------------------------------
 		for (EReference r : target.getEAllReferences()) {
-			if (r.isContainment()) {
+			if (r.isContainment() && r.isChangeable()) {
 				ChildrenGenerator childGen = getChildGenerator(r);
-				if (childGen == null) {
-					childGen = getDefaultChildGenerator(r);
-					// Bind this generator to its parent
-					// if (eContainer() instanceof DataSample)
-					// ((DataSample)eContainer()).getEntityGenerators().add(childGen);
-					// TBD else
-					// TBD ((EntityGenerator)eContainer()).getChildGenerators().add(childGen);
-				}
+				generateAndSetValue(result, r, childGen);
 
-				// Can now generate as many as expected children.
-				Object o = childGen.generateValue();
-				if (o != null) {
-
-					// we must remind of all child instances for later associations
-					// Children generator generates one EObject if number is 1 and a list of objects
-					// if number is > 1
-					if (childGen.getNumber() == 1) {
-						remindInstance((EObject) o);
-					} else {
-						// generated value is a list... iterate on it to remind of instances
-						List<?> children = (List<?>) o;
-						for (Object c : children)
-							if (c instanceof EObject)
-								remindInstance((EObject) c);
-					}
-
-					// Can set the EReference value, it depends on the number of generated values
-					// and the reference cardinality
-					Object valueToSet = o;
-					if (!r.isMany() && (childGen.getNumber() > 1)) {
-						// child generated a list.. must keep the first element
-						List<?> childList = (List<?>) o;
-						valueToSet = childList.isEmpty() ? null : childList.get(0);
-					}
-					if (r.isMany() && childGen.getNumber() == 1) {
-						// child generated is an EObject, must create a list...
-						valueToSet = Arrays.asList(o);
-					}
-					if (valueToSet != null)
-						result.eSet(r, valueToSet);
-				}
 			}
 		}
 
@@ -137,7 +97,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		// Then can set the association references
 		// ---------------------------------------------------------------------
 		for (EReference r : target.getEAllReferences()) {
-			if (!r.isContainment()) {
+			if (!r.isContainment() && r.isChangeable()) {
 
 				AssociationGenerator ag = getAssociationGenerator(r);
 				if (!(ag instanceof AssociationGenerator)) {
@@ -146,45 +106,92 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 					ag = null;
 				}
 
-				if (ag == null)
-					ag = getDefaultAssociationGenerator(r);
-
 				String targetType = r.getEReferenceType().getName();
 				ag.setValues(availableObjects.get(targetType));
 
-				Object o = ag.generateValue();
-				// Can set the EReference value, it depends on the number of generated values
-				// and the reference cardinality
-				Object valueToSet = o;
-				if (!r.isMany() && (ag.getNumber() > 1)) {
-					// child generated a list.. must keep the first element
-					List<?> childList = (List<?>) o;
-					valueToSet = childList.isEmpty() ? null : childList.get(0);
-				}
-				if (r.isMany() && ag.getNumber() == 1) {
-					// child generated is an EObject, must create a list...
-					valueToSet = Arrays.asList(o);
-				}
-
-				if (valueToSet != null)
-					result.eSet(r, valueToSet);
+				generateAndSetValue(result, r, ag);
 
 			}
 		}
 
+		// we must remind of all child instances for later associations
+		if (result != null)
+			remindInstance(result);
+
 		return result;
 	}
 
-	private FieldGenerator getFieldGenerator(String fieldname) {
-		FieldGenerator result = null;
+	/**
+	 * Generate a value using a generator and set this value on the
+	 * StructuralFeature of current instance.
+	 *
+	 * 
+	 * @param targetObject : the EObject that must be set
+	 * @param sf           : the EStructural feature to setup
+	 * @param fg           : the field generator to use to generate the value
+	 */
+	private void generateAndSetValue(EObject targetObject, EStructuralFeature sf, FieldGenerator fg) {
 
+		if ((targetObject == null) || (fg == null))
+			return;
+
+		Object generated = fg.generateValue();
+		
+		if (generated == null) return;  // If nothing is generated, nothing to setup
+		
+		Object valueToSet = generated;
+
+		if (!sf.isMany() && (fg.isMany())) {
+			// generated is a list.. must keep the first element
+			List<?> childList = (List<?>) generated;
+			valueToSet = (childList == null || childList.isEmpty()) ? null : childList.get(0);
+		}
+		if (sf.isMany() && fg.getNumber() == 1) {
+			// generated is an EObject, must create a list with it ...
+			valueToSet = Arrays.asList(generated);
+		}
+
+		try {
+			if (valueToSet != null)
+				targetObject.eSet(sf, valueToSet);
+		} catch (Exception e) {
+			DSLogger.error("Unable to set value on " + sf.getName(), e);
+		}
+
+	}
+
+	@Override
+	public Collection<EObject> generateValues() {
+		Collection<EObject> result = new ArrayList<>();
+		for (int i = 0; i < getNumber(); i++)
+			result.add(generateValue());
+		return result;
+	}
+
+	private FieldGenerator getFieldGenerator(EAttribute a) {
+
+		String aName = a.getName();
 		for (FieldGenerator fg : getFieldGenerators())
-			if (fieldname.equals(fg.getFieldName())) {
-				result = fg;
-				break;
+			if (aName.equals(fg.getFieldName())) {
+				// Setup structural feature if null
+				if (fg.getStructuralFeature() == null)
+					fg.setStructuralFeature(a);
+				return fg;
 			}
 
+		return getDefaultFieldGenerator(a);
+	}
+
+	private FieldGenerator getDefaultFieldGenerator(EAttribute a) {
+		FieldGenerator result = DatasampleFactory.eINSTANCE.createFieldGenerator();
+		result.setStructuralFeature(a);
+		result.setNumber(a.getUpperBound());
+
+		// Child generator must be inside this entity generator
+		getFieldGenerators().add(result);
+
 		return result;
+
 	}
 
 	/**
@@ -195,15 +202,15 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 	 * @return an AssocationGenerator or null if none is found
 	 */
 	private AssociationGenerator getAssociationGenerator(EReference r) {
-		AssociationGenerator result = null;
 		String fieldname = r.getName();
 		for (AssociationGenerator ag : getAssociationGenerators())
 			if (fieldname.equals(ag.getFieldName())) {
-				result = ag;
-				break;
+				if (ag.getStructuralFeature() == null)
+					ag.setStructuralFeature(r);
+				return ag;
 			}
 
-		return result;
+		return getDefaultAssociationGenerator(r);
 	}
 
 	/**
@@ -214,10 +221,11 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 
 		AssociationGenerator result = DatasampleFactory.eINSTANCE.createAssociationGenerator();
 		result.setStructuralFeature(r);
-		result.setFieldName(r.getName());
 		result.setNumber(Math.max(3, r.getUpperBound()));
 
-		// Child generator must be inside this object
+		// Child generator belongs to this entity generator
+		getAssociationGenerators().add(result);
+
 		// getChildGenerators().add(result);
 
 		return result;
@@ -230,38 +238,39 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 	 * @return the defined entity generator or null if none
 	 */
 	private ChildrenGenerator getChildGenerator(EReference r) {
-		ChildrenGenerator result = null;
-		String refName = r.getEReferenceType().getName();
 
 		for (ChildrenGenerator g : getChildGenerators()) {
-			if (refName.equals(g.getFieldName())) {
-				result = g;
-				break;
+			if (g.canGenerate(r)) {
+				if (g.getStructuralFeature() == null)
+					g.setStructuralFeature(r);
+				return g;
 			}
 		}
-		return result;
+
+		return getDefaultChildGenerator(r);
 	}
 
-	/** Return a default entity generator that creates 3 instances or a polymorphic if type is abstract */
+	/**
+	 * Return a default entity generator that creates 1 instances or a polymorphic
+	 * if type is abstract
+	 */
 	private ChildrenGenerator getDefaultChildGenerator(EReference r) {
 
 		ChildrenGenerator result = null;
 
-		// Create a polymorphic  generator when the type of composition is abstract
+		// Create a polymorphic generator when the type of composition is abstract
 		if (r.getEReferenceType().isAbstract()) {
 			result = DatasampleFactory.eINSTANCE.createPolymorphicChildrenGenerator();
 
 		} else {
 			result = DatasampleFactory.eINSTANCE.createChildrenGenerator();
-			result.setNumber(3);
+			result.setNumber(1);
 		}
 
-		// Child generator must be inside this object
+		// Child generator belongs to this entity generator.
 		getChildGenerators().add(result);
 
 		result.setStructuralFeature(r);
-		result.setFieldName(r.getName());
-
 
 		return result;
 	}
@@ -290,7 +299,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 
 		return (DataSample) result;
 	}
-	
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

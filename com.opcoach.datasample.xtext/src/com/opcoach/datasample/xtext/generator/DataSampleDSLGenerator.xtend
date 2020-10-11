@@ -27,14 +27,16 @@ class DataSampleDSLGenerator implements IGenerator {
 		println("Generated Object :" + ((generated === null) ? "null -> NO FILE GENERATED" : generated.toString))
 
 		if (generated !== null) {
+			val ext = ds.fileExtension
+			val filename = ds.name + "." + ext
 			val rset = new ResourceSetImpl
-			rset.resourceFactoryRegistry.extensionToFactoryMap.put("xml", new XMIResourceFactoryImpl)
-			val res = rset.createResource(URI.createFileURI("tmp.xml"));
+			rset.resourceFactoryRegistry.extensionToFactoryMap.put(ext, new XMIResourceFactoryImpl)
+			val res = rset.createResource(URI.createFileURI(filename));
 			val baos = new ByteArrayOutputStream
 			res.contents.add(generated)
 			res.save(baos, null)
 
-			fsa.generateFile(ds.name + ".xml", baos.toString)
+			fsa.generateFile(filename, baos.toString)
 		}
 	}
 

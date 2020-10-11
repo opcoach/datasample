@@ -23,16 +23,9 @@ public class DataSampleImpl extends MDataSampleImpl implements DataSample {
 
 	@Override
 	public EObject generateValue() {
-		EClass root = getRootEntity();
-		// Find the EntityGenerator to use for it.
-		EntityGenerator gen = null;
-		for (EntityGenerator g : getEntityGenerators()) {
-			if (g.getEntityName().equals(root.getName())) {
-				gen = g;
-				break;
-			}
-		}
 		
+		EntityGenerator gen = getRootGenerator();
+			
 		return gen == null ? null : gen.generateValue();
 	}
 

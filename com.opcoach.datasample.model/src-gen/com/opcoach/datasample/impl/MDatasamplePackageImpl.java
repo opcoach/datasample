@@ -260,6 +260,26 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	@Override
+	public EReference getDataSample_RootGenerator() {
+		return (EReference)dataSampleEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getDataSample_FileExtension() {
+		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEntityGenerator() {
 		return entityGeneratorEClass;
 	}
@@ -563,6 +583,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEReference(dataSampleEClass, DATA_SAMPLE__ROOT_ENTITY);
 		createEAttribute(dataSampleEClass, DATA_SAMPLE__ROOT_ENTITY_NAME);
 		createEAttribute(dataSampleEClass, DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES);
+		createEReference(dataSampleEClass, DATA_SAMPLE__ROOT_GENERATOR);
+		createEAttribute(dataSampleEClass, DATA_SAMPLE__FILE_EXTENSION);
 
 		entityGeneratorEClass = createEClass(ENTITY_GENERATOR);
 		createEAttribute(entityGeneratorEClass, ENTITY_GENERATOR__NUMBER);
@@ -659,6 +681,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEReference(getDataSample_RootEntity(), theEcorePackage.getEClass(), null, "rootEntity", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSample_RootEntityName(), ecorePackage.getEString(), "rootEntityName", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSample_BadValueGeneratorNames(), theEcorePackage.getEString(), "badValueGeneratorNames", null, 0, -1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDataSample_RootGenerator(), this.getEntityGenerator(), null, "rootGenerator", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDataSample_FileExtension(), theEcorePackage.getEString(), "fileExtension", "xmi", 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityGeneratorEClass, EntityGenerator.class, "EntityGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEntityGenerator_Number(), ecorePackage.getEInt(), "number", "1", 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -697,7 +721,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEReference(getChildrenGenerator_DelegatedEntityGenerator(), this.getEntityGenerator(), null, "delegatedEntityGenerator", null, 0, 1, ChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(polymorphicChildrenGeneratorEClass, PolymorphicChildrenGenerator.class, "PolymorphicChildrenGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPolymorphicChildrenGenerator_ChildrenGenerators(), this.getChildrenGenerator(), null, "childrenGenerators", null, 0, -1, PolymorphicChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPolymorphicChildrenGenerator_ChildrenGenerators(), this.getEntityGenerator(), null, "childrenGenerators", null, 0, -1, PolymorphicChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(languageEEnum, Language.class, "Language");

@@ -22,15 +22,15 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface MPolymorphicChildrenGenerator extends ChildrenGenerator {
 	/**
-	 * Returns the value of the '<em><b>Children Generators</b></em>' reference list.
-	 * The list contents are of type {@link com.opcoach.datasample.ChildrenGenerator}.
+	 * Returns the value of the '<em><b>Children Generators</b></em>' containment reference list.
+	 * The list contents are of type {@link com.opcoach.datasample.EntityGenerator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Children Generators</em>' reference list.
+	 * @return the value of the '<em>Children Generators</em>' containment reference list.
 	 * @see com.opcoach.datasample.MDatasamplePackage#getPolymorphicChildrenGenerator_ChildrenGenerators()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ChildrenGenerator> getChildrenGenerators();
+	EList<EntityGenerator> getChildrenGenerators();
 
 } // MPolymorphicChildrenGenerator

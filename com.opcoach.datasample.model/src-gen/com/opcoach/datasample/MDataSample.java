@@ -27,6 +27,8 @@ import org.eclipse.emf.ecore.EPackage;
  *   <li>{@link com.opcoach.datasample.MDataSample#getRootEntity <em>Root Entity</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getRootEntityName <em>Root Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getBadValueGeneratorNames <em>Bad Value Generator Names</em>}</li>
+ *   <li>{@link com.opcoach.datasample.MDataSample#getRootGenerator <em>Root Generator</em>}</li>
+ *   <li>{@link com.opcoach.datasample.MDataSample#getFileExtension <em>File Extension</em>}</li>
  * </ul>
  *
  * @see com.opcoach.datasample.MDatasamplePackage#getDataSample()
@@ -250,5 +252,50 @@ public interface MDataSample extends ValueGenerator<EObject> {
 	 * @generated
 	 */
 	EList<String> getBadValueGeneratorNames();
+
+	/**
+	 * Returns the value of the '<em><b>Root Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Root Generator</em>' containment reference.
+	 * @see #setRootGenerator(EntityGenerator)
+	 * @see com.opcoach.datasample.MDatasamplePackage#getDataSample_RootGenerator()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EntityGenerator getRootGenerator();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.datasample.MDataSample#getRootGenerator <em>Root Generator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Root Generator</em>' containment reference.
+	 * @see #getRootGenerator()
+	 * @generated
+	 */
+	void setRootGenerator(EntityGenerator value);
+
+	/**
+	 * Returns the value of the '<em><b>File Extension</b></em>' attribute.
+	 * The default value is <code>"xmi"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>File Extension</em>' attribute.
+	 * @see #setFileExtension(String)
+	 * @see com.opcoach.datasample.MDatasamplePackage#getDataSample_FileExtension()
+	 * @model default="xmi"
+	 * @generated
+	 */
+	String getFileExtension();
+
+	/**
+	 * Sets the value of the '{@link com.opcoach.datasample.MDataSample#getFileExtension <em>File Extension</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>File Extension</em>' attribute.
+	 * @see #getFileExtension()
+	 * @generated
+	 */
+	void setFileExtension(String value);
 
 } // MDataSample

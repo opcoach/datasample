@@ -38,8 +38,12 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+					put(grammarAccess.getChildAccess().getAlternatives(), "rule__Child__Alternatives");
 					put(grammarAccess.getLanguageAccess().getAlternatives(), "rule__Language__Alternatives");
 					put(grammarAccess.getDataSampleAccess().getGroup(), "rule__DataSample__Group__0");
+					put(grammarAccess.getDataSampleAccess().getGroup_7(), "rule__DataSample__Group_7__0");
+					put(grammarAccess.getDataSampleAccess().getGroup_8(), "rule__DataSample__Group_8__0");
+					put(grammarAccess.getDataSampleAccess().getGroup_9(), "rule__DataSample__Group_9__0");
 					put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 					put(grammarAccess.getEntityGeneratorAccess().getGroup(), "rule__EntityGenerator__Group__0");
 					put(grammarAccess.getEntityGeneratorAccess().getGroup_2(), "rule__EntityGenerator__Group_2__0");
@@ -49,10 +53,7 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFieldGeneratorAccess().getGroup_6_2(), "rule__FieldGenerator__Group_6_2__0");
 					put(grammarAccess.getFieldGeneratorAccess().getGroup_7(), "rule__FieldGenerator__Group_7__0");
 					put(grammarAccess.getChildrenGeneratorAccess().getGroup(), "rule__ChildrenGenerator__Group__0");
-					put(grammarAccess.getChildrenGeneratorAccess().getGroup_5(), "rule__ChildrenGenerator__Group_5__0");
-					put(grammarAccess.getChildrenGeneratorAccess().getGroup_6(), "rule__ChildrenGenerator__Group_6__0");
-					put(grammarAccess.getChildrenGeneratorAccess().getGroup_6_2(), "rule__ChildrenGenerator__Group_6_2__0");
-					put(grammarAccess.getChildrenGeneratorAccess().getGroup_7(), "rule__ChildrenGenerator__Group_7__0");
+					put(grammarAccess.getPolymorphicChildrenGeneratorAccess().getGroup(), "rule__PolymorphicChildrenGenerator__Group__0");
 					put(grammarAccess.getAssociationGeneratorAccess().getGroup(), "rule__AssociationGenerator__Group__0");
 					put(grammarAccess.getAssociationGeneratorAccess().getGroup_5(), "rule__AssociationGenerator__Group_5__0");
 					put(grammarAccess.getAssociationGeneratorAccess().getGroup_6(), "rule__AssociationGenerator__Group_6__0");
@@ -62,9 +63,10 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataSampleAccess().getNameAssignment_2(), "rule__DataSample__NameAssignment_2");
 					put(grammarAccess.getDataSampleAccess().getPackageURIAssignment_4(), "rule__DataSample__PackageURIAssignment_4");
 					put(grammarAccess.getDataSampleAccess().getRootEntityNameAssignment_6(), "rule__DataSample__RootEntityNameAssignment_6");
-					put(grammarAccess.getDataSampleAccess().getSeedAssignment_8(), "rule__DataSample__SeedAssignment_8");
-					put(grammarAccess.getDataSampleAccess().getLanguageAssignment_10(), "rule__DataSample__LanguageAssignment_10");
-					put(grammarAccess.getDataSampleAccess().getEntityGeneratorsAssignment_11(), "rule__DataSample__EntityGeneratorsAssignment_11");
+					put(grammarAccess.getDataSampleAccess().getSeedAssignment_7_1(), "rule__DataSample__SeedAssignment_7_1");
+					put(grammarAccess.getDataSampleAccess().getLanguageAssignment_8_1(), "rule__DataSample__LanguageAssignment_8_1");
+					put(grammarAccess.getDataSampleAccess().getFileExtensionAssignment_9_1(), "rule__DataSample__FileExtensionAssignment_9_1");
+					put(grammarAccess.getDataSampleAccess().getRootGeneratorAssignment_11(), "rule__DataSample__RootGeneratorAssignment_11");
 					put(grammarAccess.getEntityGeneratorAccess().getNumberAssignment_2_0(), "rule__EntityGenerator__NumberAssignment_2_0");
 					put(grammarAccess.getEntityGeneratorAccess().getEntityNameAssignment_3(), "rule__EntityGenerator__EntityNameAssignment_3");
 					put(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsAssignment_5(), "rule__EntityGenerator__FieldGeneratorsAssignment_5");
@@ -78,12 +80,9 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFieldGeneratorAccess().getErrorRateAssignment_7_1(), "rule__FieldGenerator__ErrorRateAssignment_7_1");
 					put(grammarAccess.getFieldGeneratorAccess().getErrorGeneratorNameAssignment_7_3(), "rule__FieldGenerator__ErrorGeneratorNameAssignment_7_3");
 					put(grammarAccess.getChildrenGeneratorAccess().getFieldNameAssignment_2(), "rule__ChildrenGenerator__FieldNameAssignment_2");
-					put(grammarAccess.getChildrenGeneratorAccess().getGeneratorNameAssignment_4(), "rule__ChildrenGenerator__GeneratorNameAssignment_4");
-					put(grammarAccess.getChildrenGeneratorAccess().getNumberAssignment_5_1(), "rule__ChildrenGenerator__NumberAssignment_5_1");
-					put(grammarAccess.getChildrenGeneratorAccess().getParametersAssignment_6_1(), "rule__ChildrenGenerator__ParametersAssignment_6_1");
-					put(grammarAccess.getChildrenGeneratorAccess().getParametersAssignment_6_2_1(), "rule__ChildrenGenerator__ParametersAssignment_6_2_1");
-					put(grammarAccess.getChildrenGeneratorAccess().getErrorRateAssignment_7_1(), "rule__ChildrenGenerator__ErrorRateAssignment_7_1");
-					put(grammarAccess.getChildrenGeneratorAccess().getErrorGeneratorNameAssignment_7_3(), "rule__ChildrenGenerator__ErrorGeneratorNameAssignment_7_3");
+					put(grammarAccess.getChildrenGeneratorAccess().getDelegatedEntityGeneratorAssignment_3(), "rule__ChildrenGenerator__DelegatedEntityGeneratorAssignment_3");
+					put(grammarAccess.getPolymorphicChildrenGeneratorAccess().getFieldNameAssignment_2(), "rule__PolymorphicChildrenGenerator__FieldNameAssignment_2");
+					put(grammarAccess.getPolymorphicChildrenGeneratorAccess().getChildrenGeneratorsAssignment_5(), "rule__PolymorphicChildrenGenerator__ChildrenGeneratorsAssignment_5");
 					put(grammarAccess.getAssociationGeneratorAccess().getFieldNameAssignment_2(), "rule__AssociationGenerator__FieldNameAssignment_2");
 					put(grammarAccess.getAssociationGeneratorAccess().getGeneratorNameAssignment_4(), "rule__AssociationGenerator__GeneratorNameAssignment_4");
 					put(grammarAccess.getAssociationGeneratorAccess().getNumberAssignment_5_1(), "rule__AssociationGenerator__NumberAssignment_5_1");

@@ -9,6 +9,7 @@ import com.opcoach.datasample.DataSample
 import com.opcoach.datasample.DataSampleUtil
 import com.opcoach.datasample.EntityGenerator
 import com.opcoach.datasample.FieldGenerator
+import com.opcoach.datasample.PolymorphicChildrenGenerator
 import com.opcoach.generator.basic.BooleanGenerator
 import com.opcoach.generator.basic.DateGenerator
 import com.opcoach.generator.basic.DoubleGenerator
@@ -29,13 +30,11 @@ import org.eclipse.emf.ecore.EAttribute
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EPackage
+import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
-import org.eclipse.emf.ecore.EReference
-import com.opcoach.generator.basic.BasicFactory
-import com.opcoach.datasample.DatasampleFactory
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -124,11 +123,29 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 		val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
 		egen.childGenerators.forEach[if(fieldName !== null) egenSibling.add(fieldName)]
 
-		for (r : c.EAllReferences.filter[containment]) {
+		// Keep only composition with concrete types
+		for (r : c.EAllReferences.filter[containment].filter[!EReferenceType.abstract]) {
 			if (!egenSibling.contains(r.name))
 				acceptor.accept(createCompletionProposal(r.name, context))
 		}
 
+	}
+	
+	override completePolymorphicChildrenGenerator_FieldName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		//super.completePolymorphicChildrenGenerator_FieldName(model, assignment, context, acceptor)
+		val cg = model as ChildrenGenerator
+		val egen = cg.eContainer as EntityGenerator
+		val c = egen.entity
+		val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
+		egen.childGenerators.forEach[if(fieldName !== null) egenSibling.add(fieldName)]
+
+		// Keep only composition with abstract types
+		for (r : c.EAllReferences.filter[containment].filter[EReferenceType.abstract]) {
+			if (!egenSibling.contains(r.name))
+				acceptor.accept(createCompletionProposal(r.name, context))
+		}
+
+	
 	}
 
 	// Must propose here any kind of class in package
@@ -209,7 +226,7 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 			}
 	}
 
-	override completeChildrenGenerator_GeneratorName(EObject model, Assignment assignment, ContentAssistContext context,
+/* 	override completeChildrenGenerator_GeneratorName(EObject model, Assignment assignment, ContentAssistContext context,
 		ICompletionProposalAcceptor acceptor) {
 		val cg = model as ChildrenGenerator
 		val egen = cg.eContainer as EntityGenerator
@@ -222,7 +239,7 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 			acceptor.accept(createCompletionProposal(g.name.substring(pos + 1), context))
 
 		}
-	}
+	} */
 
 	// May be this init should be elsewhere...
 	var Map<String, Set<Class<?>>> generators

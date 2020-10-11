@@ -10,9 +10,11 @@ DataSample returns DataSample:
 	'Sample'
 	name=EString 'for' packageURI=EString
 	'generateRootObject' rootEntityName=EString
-	'seed' seed=EInt
-	'language' language=Language
-	entityGenerators+=EntityGenerator* // ("," entityGenerators+=EntityGenerator)*
+	('seed' seed=EInt)?
+	('language' language=Language)?
+	('fileExtension' fileExtension=EString)?
+	'rootGenerator' rootGenerator=EntityGenerator
+	//entityGenerators+=EntityGenerator* // ("," entityGenerators+=EntityGenerator)*
 ;
 
 EString returns ecore::EString:
@@ -29,7 +31,7 @@ EntityGenerator returns EntityGenerator:
 	'generate' (number=EInt 'instancesOf') ? entityName=EString
 	'{'
 	fieldGenerators+=FieldGenerator*
-	childGenerators+=ChildrenGenerator*
+	childGenerators+=Child* 
 	associationGenerators+=AssociationGenerator*
 	'}';
 
@@ -39,11 +41,17 @@ FieldGenerator returns FieldGenerator:
 	(',' parameters+=Parameter)* ')')? ('withErrorRate=' errorRate=EInt 'generatedWith'
 	errorGeneratorName=EString)?;
 
+Child  returns ChildrenGenerator: ChildrenGenerator | PolymorphicChildrenGenerator;
+
 ChildrenGenerator returns ChildrenGenerator:
 	{ChildrenGenerator}
-	'forTheComposition' fieldName=EString 'use' generatorName=EString ('cardinality' number=EInt)? ('('
-	parameters+=Parameter (',' parameters+=Parameter)* ')')? ('withErrorRate=' errorRate=EInt 'generatedWith'
-	errorGeneratorName=EString)?;
+	'forTheComposition' fieldName=EString delegatedEntityGenerator=EntityGenerator;
+
+PolymorphicChildrenGenerator returns PolymorphicChildrenGenerator:
+	{PolymorphicChildrenGenerator}
+	'forTheAbstractComposition' fieldName=EString 'use' '{' childrenGenerators+= EntityGenerator* '}' ;
+  
+
 
 AssociationGenerator:
 	{AssociationGenerator}

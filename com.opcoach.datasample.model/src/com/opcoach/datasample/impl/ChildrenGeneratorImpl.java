@@ -1,8 +1,6 @@
 package com.opcoach.datasample.impl;
 
-import java.util.ArrayList;
-
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 
 import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DatasampleFactory;
@@ -31,18 +29,7 @@ public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements Chi
 		int childnumber = getNumber();
 		EntityGenerator deg = getDelegatedEntityGenerator();
 		if (deg != null) {
-			if (childnumber == 1)
-				result = deg.generateValue();
-			else {
-				ArrayList<EObject> children = new ArrayList<>(getNumber());
-				// Must generate a list of children
-				for (int i = 0; i < childnumber; i++) {
-					EObject child = deg.generateValue();
-					if (child != null)
-						children.add(child);
-				}
-				result = children;
-			}
+			result = (childnumber == 1) ? deg.generateValue() :deg.generateValues();
 		}
 
 		return result;
@@ -93,6 +80,14 @@ public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements Chi
 
 		return sb.toString();
 
+	}
+	
+	@Override
+	public boolean canGenerate(EReference r) {
+		
+		String refName = r.getEReferenceType().getName();
+		return refName.equals(getFieldName());
+		
 	}
 
 }

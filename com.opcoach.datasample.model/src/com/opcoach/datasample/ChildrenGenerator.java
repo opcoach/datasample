@@ -12,5 +12,8 @@ public interface ChildrenGenerator extends MChildrenGenerator
 	// default public void addSomething(Something foo) {} ;
 
 	/** The structural feature contained in a ChildrenGenerator is always an EReference */
-	default public EReference getEReference() { return (EReference) getStructuralFeature(); } 
+	default public EReference getEReference() { return (EReference) getStructuralFeature(); }
+	
+	/** Check if this childrenGenerator is compliant to generate a given ERefernce */
+	default public boolean canGenerate(EReference r) { return false; };
 }

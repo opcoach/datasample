@@ -46,6 +46,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getRootEntity <em>Root Entity</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getRootEntityName <em>Root Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getBadValueGeneratorNames <em>Bad Value Generator Names</em>}</li>
+ *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getRootGenerator <em>Root Generator</em>}</li>
+ *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getFileExtension <em>File Extension</em>}</li>
  * </ul>
  *
  * @generated
@@ -190,6 +192,36 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * @ordered
 	 */
 	protected EList<String> badValueGeneratorNames;
+
+	/**
+	 * The cached value of the '{@link #getRootGenerator() <em>Root Generator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRootGenerator()
+	 * @generated
+	 * @ordered
+	 */
+	protected EntityGenerator rootGenerator;
+
+	/**
+	 * The default value of the '{@link #getFileExtension() <em>File Extension</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFileExtension()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FILE_EXTENSION_EDEFAULT = "xmi";
+
+	/**
+	 * The cached value of the '{@link #getFileExtension() <em>File Extension</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFileExtension()
+	 * @generated
+	 * @ordered
+	 */
+	protected String fileExtension = FILE_EXTENSION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -448,10 +480,80 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * @generated
 	 */
 	@Override
+	public EntityGenerator getRootGenerator() {
+		return rootGenerator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRootGenerator(EntityGenerator newRootGenerator, NotificationChain msgs) {
+		EntityGenerator oldRootGenerator = rootGenerator;
+		rootGenerator = newRootGenerator;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR, oldRootGenerator, newRootGenerator);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRootGenerator(EntityGenerator newRootGenerator) {
+		if (newRootGenerator != rootGenerator) {
+			NotificationChain msgs = null;
+			if (rootGenerator != null)
+				msgs = ((InternalEObject)rootGenerator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR, null, msgs);
+			if (newRootGenerator != null)
+				msgs = ((InternalEObject)newRootGenerator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR, null, msgs);
+			msgs = basicSetRootGenerator(newRootGenerator, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR, newRootGenerator, newRootGenerator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getFileExtension() {
+		return fileExtension;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setFileExtension(String newFileExtension) {
+		String oldFileExtension = fileExtension;
+		fileExtension = newFileExtension;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MDatasamplePackage.DATA_SAMPLE__FILE_EXTENSION, oldFileExtension, fileExtension));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
 				return ((InternalEList<?>)getEntityGenerators()).basicRemove(otherEnd, msgs);
+			case MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR:
+				return basicSetRootGenerator(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -484,6 +586,10 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 				return getRootEntityName();
 			case MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:
 				return getBadValueGeneratorNames();
+			case MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR:
+				return getRootGenerator();
+			case MDatasamplePackage.DATA_SAMPLE__FILE_EXTENSION:
+				return getFileExtension();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -526,6 +632,12 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 				getBadValueGeneratorNames().clear();
 				getBadValueGeneratorNames().addAll((Collection<? extends String>)newValue);
 				return;
+			case MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR:
+				setRootGenerator((EntityGenerator)newValue);
+				return;
+			case MDatasamplePackage.DATA_SAMPLE__FILE_EXTENSION:
+				setFileExtension((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -565,6 +677,12 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 			case MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:
 				getBadValueGeneratorNames().clear();
 				return;
+			case MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR:
+				setRootGenerator((EntityGenerator)null);
+				return;
+			case MDatasamplePackage.DATA_SAMPLE__FILE_EXTENSION:
+				setFileExtension(FILE_EXTENSION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -595,6 +713,10 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 				return ROOT_ENTITY_NAME_EDEFAULT == null ? rootEntityName != null : !ROOT_ENTITY_NAME_EDEFAULT.equals(rootEntityName);
 			case MDatasamplePackage.DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES:
 				return badValueGeneratorNames != null && !badValueGeneratorNames.isEmpty();
+			case MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR:
+				return rootGenerator != null;
+			case MDatasamplePackage.DATA_SAMPLE__FILE_EXTENSION:
+				return FILE_EXTENSION_EDEFAULT == null ? fileExtension != null : !FILE_EXTENSION_EDEFAULT.equals(fileExtension);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -621,6 +743,8 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 		result.append(rootEntityName);
 		result.append(", badValueGeneratorNames: ");
 		result.append(badValueGeneratorNames);
+		result.append(", fileExtension: ");
+		result.append(fileExtension);
 		result.append(')');
 		return result.toString();
 	}

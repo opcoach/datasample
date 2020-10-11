@@ -10,6 +10,7 @@ import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.MDatasamplePackage;
+import com.opcoach.datasample.PolymorphicChildrenGenerator;
 import com.opcoach.datasample.xtext.services.DataSampleDSLGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -54,6 +55,9 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 			case MDatasamplePackage.PARAMETER:
 				sequence_Parameter(context, (com.opcoach.datasample.Parameter) semanticObject); 
 				return; 
+			case MDatasamplePackage.POLYMORPHIC_CHILDREN_GENERATOR:
+				sequence_PolymorphicChildrenGenerator(context, (PolymorphicChildrenGenerator) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -79,19 +83,23 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	
 	/**
 	 * Contexts:
+	 *     Child returns ChildrenGenerator
 	 *     ChildrenGenerator returns ChildrenGenerator
 	 *
 	 * Constraint:
-	 *     (
-	 *         fieldName=EString 
-	 *         generatorName=EString 
-	 *         number=EInt? 
-	 *         (parameters+=Parameter parameters+=Parameter*)? 
-	 *         (errorRate=EInt errorGeneratorName=EString)?
-	 *     )
+	 *     (fieldName=EString delegatedEntityGenerator=EntityGenerator)
 	 */
 	protected void sequence_ChildrenGenerator(ISerializationContext context, ChildrenGenerator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MDatasamplePackage.Literals.FIELD_GENERATOR__FIELD_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MDatasamplePackage.Literals.FIELD_GENERATOR__FIELD_NAME));
+			if (transientValues.isValueTransient(semanticObject, MDatasamplePackage.Literals.CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MDatasamplePackage.Literals.CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getChildrenGeneratorAccess().getFieldNameEStringParserRuleCall_2_0(), semanticObject.getFieldName());
+		feeder.accept(grammarAccess.getChildrenGeneratorAccess().getDelegatedEntityGeneratorEntityGeneratorParserRuleCall_3_0(), semanticObject.getDelegatedEntityGenerator());
+		feeder.finish();
 	}
 	
 	
@@ -104,9 +112,10 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *         name=EString 
 	 *         packageURI=EString 
 	 *         rootEntityName=EString 
-	 *         seed=EInt 
-	 *         language=Language 
-	 *         entityGenerators+=EntityGenerator*
+	 *         seed=EInt? 
+	 *         language=Language? 
+	 *         fileExtension=EString? 
+	 *         rootGenerator=EntityGenerator
 	 *     )
 	 */
 	protected void sequence_DataSample(ISerializationContext context, DataSample semanticObject) {
@@ -119,13 +128,7 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *     EntityGenerator returns EntityGenerator
 	 *
 	 * Constraint:
-	 *     (
-	 *         number=EInt? 
-	 *         entityName=EString 
-	 *         fieldGenerators+=FieldGenerator* 
-	 *         childGenerators+=ChildrenGenerator* 
-	 *         associationGenerators+=AssociationGenerator*
-	 *     )
+	 *     (number=EInt? entityName=EString fieldGenerators+=FieldGenerator* childGenerators+=Child* associationGenerators+=AssociationGenerator*)
 	 */
 	protected void sequence_EntityGenerator(ISerializationContext context, EntityGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -168,6 +171,19 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 		feeder.accept(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getParameterAccess().getValueEStringParserRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Child returns PolymorphicChildrenGenerator
+	 *     PolymorphicChildrenGenerator returns PolymorphicChildrenGenerator
+	 *
+	 * Constraint:
+	 *     (fieldName=EString childrenGenerators+=EntityGenerator*)
+	 */
+	protected void sequence_PolymorphicChildrenGenerator(ISerializationContext context, PolymorphicChildrenGenerator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

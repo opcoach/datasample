@@ -17,6 +17,6 @@ public interface DataSample extends MDataSample
 	/** This method returns all EClasses that are expected from the current root object
 	 *   For instance an EPackage will expect EClass, EOperation ...
 	 *   This method is recursive  */
-	default public Set<EClass> getExpectedChildren() { return Collections.EMPTY_SET; }
+	default public Set<EClass> getExpectedChildren() { return Collections.emptySet(); }
 
 }

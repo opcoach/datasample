@@ -215,13 +215,31 @@ public interface MDatasamplePackage extends EPackage {
 	int DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Root Generator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SAMPLE__ROOT_GENERATOR = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>File Extension</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_SAMPLE__FILE_EXTENSION = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 10;
+
+	/**
 	 * The number of structural features of the '<em>Data Sample</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 9;
+	int DATA_SAMPLE_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 11;
 
 	/**
 	 * The operation id for the '<em>Generate Value</em>' operation.
@@ -1166,7 +1184,7 @@ public interface MDatasamplePackage extends EPackage {
 	int POLYMORPHIC_CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR = CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR;
 
 	/**
-	 * The feature id for the '<em><b>Children Generators</b></em>' reference list.
+	 * The feature id for the '<em><b>Children Generators</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1320,6 +1338,28 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDataSample_BadValueGeneratorNames();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.opcoach.datasample.MDataSample#getRootGenerator <em>Root Generator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Root Generator</em>'.
+	 * @see com.opcoach.datasample.MDataSample#getRootGenerator()
+	 * @see #getDataSample()
+	 * @generated
+	 */
+	EReference getDataSample_RootGenerator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.opcoach.datasample.MDataSample#getFileExtension <em>File Extension</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>File Extension</em>'.
+	 * @see com.opcoach.datasample.MDataSample#getFileExtension()
+	 * @see #getDataSample()
+	 * @generated
+	 */
+	EAttribute getDataSample_FileExtension();
 
 	/**
 	 * Returns the meta object for class '{@link com.opcoach.datasample.MEntityGenerator <em>Entity Generator</em>}'.
@@ -1590,10 +1630,10 @@ public interface MDatasamplePackage extends EPackage {
 	EClass getPolymorphicChildrenGenerator();
 
 	/**
-	 * Returns the meta object for the reference list '{@link com.opcoach.datasample.MPolymorphicChildrenGenerator#getChildrenGenerators <em>Children Generators</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.opcoach.datasample.MPolymorphicChildrenGenerator#getChildrenGenerators <em>Children Generators</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Children Generators</em>'.
+	 * @return the meta object for the containment reference list '<em>Children Generators</em>'.
 	 * @see com.opcoach.datasample.MPolymorphicChildrenGenerator#getChildrenGenerators()
 	 * @see #getPolymorphicChildrenGenerator()
 	 * @generated
@@ -1714,6 +1754,22 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES = eINSTANCE.getDataSample_BadValueGeneratorNames();
+
+		/**
+		 * The meta object literal for the '<em><b>Root Generator</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA_SAMPLE__ROOT_GENERATOR = eINSTANCE.getDataSample_RootGenerator();
+
+		/**
+		 * The meta object literal for the '<em><b>File Extension</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATA_SAMPLE__FILE_EXTENSION = eINSTANCE.getDataSample_FileExtension();
 
 		/**
 		 * The meta object literal for the '{@link com.opcoach.datasample.impl.MEntityGeneratorImpl <em>Entity Generator</em>}' class.
@@ -1928,7 +1984,7 @@ public interface MDatasamplePackage extends EPackage {
 		EClass POLYMORPHIC_CHILDREN_GENERATOR = eINSTANCE.getPolymorphicChildrenGenerator();
 
 		/**
-		 * The meta object literal for the '<em><b>Children Generators</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Children Generators</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

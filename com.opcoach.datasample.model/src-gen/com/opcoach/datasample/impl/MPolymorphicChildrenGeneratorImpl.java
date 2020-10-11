@@ -3,16 +3,21 @@
 package com.opcoach.datasample.impl;
 
 import com.opcoach.datasample.ChildrenGenerator;
+import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.MDatasamplePackage;
 import com.opcoach.datasample.PolymorphicChildrenGenerator;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,14 +34,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public class MPolymorphicChildrenGeneratorImpl extends ChildrenGeneratorImpl implements PolymorphicChildrenGenerator {
 	/**
-	 * The cached value of the '{@link #getChildrenGenerators() <em>Children Generators</em>}' reference list.
+	 * The cached value of the '{@link #getChildrenGenerators() <em>Children Generators</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getChildrenGenerators()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ChildrenGenerator> childrenGenerators;
+	protected EList<EntityGenerator> childrenGenerators;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,11 +68,25 @@ public class MPolymorphicChildrenGeneratorImpl extends ChildrenGeneratorImpl imp
 	 * @generated
 	 */
 	@Override
-	public EList<ChildrenGenerator> getChildrenGenerators() {
+	public EList<EntityGenerator> getChildrenGenerators() {
 		if (childrenGenerators == null) {
-			childrenGenerators = new EObjectResolvingEList<ChildrenGenerator>(ChildrenGenerator.class, this, MDatasamplePackage.POLYMORPHIC_CHILDREN_GENERATOR__CHILDREN_GENERATORS);
+			childrenGenerators = new EObjectContainmentEList<EntityGenerator>(EntityGenerator.class, this, MDatasamplePackage.POLYMORPHIC_CHILDREN_GENERATOR__CHILDREN_GENERATORS);
 		}
 		return childrenGenerators;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MDatasamplePackage.POLYMORPHIC_CHILDREN_GENERATOR__CHILDREN_GENERATORS:
+				return ((InternalEList<?>)getChildrenGenerators()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -95,7 +114,7 @@ public class MPolymorphicChildrenGeneratorImpl extends ChildrenGeneratorImpl imp
 		switch (featureID) {
 			case MDatasamplePackage.POLYMORPHIC_CHILDREN_GENERATOR__CHILDREN_GENERATORS:
 				getChildrenGenerators().clear();
-				getChildrenGenerators().addAll((Collection<? extends ChildrenGenerator>)newValue);
+				getChildrenGenerators().addAll((Collection<? extends EntityGenerator>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
