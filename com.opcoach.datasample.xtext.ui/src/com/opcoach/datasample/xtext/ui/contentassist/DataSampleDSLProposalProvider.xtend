@@ -9,7 +9,6 @@ import com.opcoach.datasample.DataSample
 import com.opcoach.datasample.DataSampleUtil
 import com.opcoach.datasample.EntityGenerator
 import com.opcoach.datasample.FieldGenerator
-import com.opcoach.datasample.PolymorphicChildrenGenerator
 import com.opcoach.generator.basic.BooleanGenerator
 import com.opcoach.generator.basic.DateGenerator
 import com.opcoach.generator.basic.DoubleGenerator
@@ -32,6 +31,7 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
+import org.eclipse.emf.ecore.plugin.RegistryReader
 import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
@@ -41,7 +41,7 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
  */
 class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvider {
 
-	// Expect any kind of package URI...
+// Expect any kind of package URI...
 	override completeDataSample_PackageURI(EObject model, Assignment assignment, ContentAssistContext context,
 		ICompletionProposalAcceptor acceptor) {
 		super.completeDataSample_PackageURI(model, assignment, context, acceptor)
@@ -56,9 +56,14 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 		ICompletionProposalAcceptor acceptor) {
 		// super.completeDataSample_RootEntityName(model, assignment, context, acceptor)
 		val ds = model as DataSample
-		val pack = EPackage.Registry.INSTANCE.get(ds.packageURI) as EPackage
-		for (c : pack.EClassifiers.filter(EClass))
-			acceptor.accept(createCompletionProposal(c.name, context))
+		val pack = EPackage.Registry.INSTANCE.getEPackage(ds.packageURI)
+
+		if (pack !== null)
+			for (c : pack.EClassifiers.filter(EClass))
+				acceptor.accept(createCompletionProposal(c.name, context))
+				else
+								acceptor.accept(createCompletionProposal("No package found for this URI", context))
+				
 
 	}
 
@@ -130,9 +135,10 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 		}
 
 	}
-	
-	override completePolymorphicChildrenGenerator_FieldName(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		//super.completePolymorphicChildrenGenerator_FieldName(model, assignment, context, acceptor)
+
+	override completePolymorphicChildrenGenerator_FieldName(EObject model, Assignment assignment,
+		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		// super.completePolymorphicChildrenGenerator_FieldName(model, assignment, context, acceptor)
 		val cg = model as ChildrenGenerator
 		val egen = cg.eContainer as EntityGenerator
 		val c = egen.entity
@@ -145,7 +151,6 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 				acceptor.accept(createCompletionProposal(r.name, context))
 		}
 
-	
 	}
 
 	// Must propose here any kind of class in package
@@ -226,21 +231,20 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 			}
 	}
 
-/* 	override completeChildrenGenerator_GeneratorName(EObject model, Assignment assignment, ContentAssistContext context,
-		ICompletionProposalAcceptor acceptor) {
-		val cg = model as ChildrenGenerator
-		val egen = cg.eContainer as EntityGenerator
-		// Search for the corresponding structural feature in ENtity. 
-		val eclass = egen.entity
-		val ref = eclass.EAllReferences.filter[containment && !(derived)].filter[name == cg.fieldName].get(0)
-		for (g : ref.availableGenerators) {
-			val fullName = g.name
-			val pos = fullName.lastIndexOf('.')
-			acceptor.accept(createCompletionProposal(g.name.substring(pos + 1), context))
+	/* 	override completeChildrenGenerator_GeneratorName(EObject model, Assignment assignment, ContentAssistContext context,
+	 * 		ICompletionProposalAcceptor acceptor) {
+	 * 		val cg = model as ChildrenGenerator
+	 * 		val egen = cg.eContainer as EntityGenerator
+	 * 		// Search for the corresponding structural feature in ENtity. 
+	 * 		val eclass = egen.entity
+	 * 		val ref = eclass.EAllReferences.filter[containment && !(derived)].filter[name == cg.fieldName].get(0)
+	 * 		for (g : ref.availableGenerators) {
+	 * 			val fullName = g.name
+	 * 			val pos = fullName.lastIndexOf('.')
+	 * 			acceptor.accept(createCompletionProposal(g.name.substring(pos + 1), context))
 
-		}
-	} */
-
+	 * 		}
+	 } */
 	// May be this init should be elsewhere...
 	var Map<String, Set<Class<?>>> generators
 
