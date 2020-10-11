@@ -24,9 +24,13 @@ public class DataSampleImpl extends MDataSampleImpl implements DataSample {
 	@Override
 	public EObject generateValue() {
 		
+		GenerationCatalog gcat = new GenerationCatalog();
 		EntityGenerator gen = getRootGenerator();
-			
-		return gen == null ? null : gen.generateValue();
+		EObject result =  gen.generateValue(gcat);
+		if (result != null)
+			gcat.bindAssociations();
+		
+		return result;
 	}
 
 	@Override

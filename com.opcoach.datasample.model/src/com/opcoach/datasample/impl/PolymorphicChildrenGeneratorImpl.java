@@ -53,11 +53,11 @@ public class PolymorphicChildrenGeneratorImpl extends MPolymorphicChildrenGenera
 	 *         returns a list<EObject>
 	 */
 	@Override
-	public Object generateValue() {
+	public Object generateValue(GenerationCatalog gcat) {
 
 		ArrayList<EObject> children = new ArrayList<>();
 		for (EntityGenerator eg : getChildrenGenerators()) {
-			children.addAll(eg.generateValues());
+			children.addAll(eg.generateValues(gcat));
 		}
 
 		return children;

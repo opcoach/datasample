@@ -1,5 +1,6 @@
 package com.opcoach.datasample.impl;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 
 import com.opcoach.datasample.ChildrenGenerator;
@@ -15,6 +16,13 @@ import com.opcoach.generator.ValueGenerator;
  */
 public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements ChildrenGenerator {
 
+	
+	
+	@Override
+	public Object generateValue() {
+		throw new UnsupportedOperationException("Must call generateValue with a GenerationCatalog");
+	}
+
 	/**
 	 * Generate value for children must generate a list of instances or only one
 	 * instance depending on the number of expected children.
@@ -23,13 +31,13 @@ public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements Chi
 	 *         returns a list<EObject>
 	 */
 	@Override
-	public Object generateValue() {
+	public Object generateValue(GenerationCatalog gcat) {
 		// We must use a delegated entity generator to instantiate any child.
 		Object result = null;
 		int childnumber = getNumber();
 		EntityGenerator deg = getDelegatedEntityGenerator();
 		if (deg != null) {
-			result = (childnumber == 1) ? deg.generateValue() :deg.generateValues();
+			result = (childnumber == 1) ? deg.generateValue(gcat) :deg.generateValues(gcat);
 		}
 
 		return result;

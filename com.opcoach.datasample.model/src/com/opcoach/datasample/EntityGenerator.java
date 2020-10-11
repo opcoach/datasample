@@ -5,6 +5,8 @@ import java.util.Collections;
 
 import org.eclipse.emf.ecore.EObject;
 
+import com.opcoach.datasample.impl.GenerationCatalog;
+
 // This interface overrides the generated interface and will be returned by factory
 public interface EntityGenerator extends MEntityGenerator
 {
@@ -18,6 +20,12 @@ public interface EntityGenerator extends MEntityGenerator
 	default public DataSample getDataSample() { return null;  }  // Implemented in subclass
 	
 	/** Generate number values in a collection */
-	default public Collection<EObject> generateValues() {return Collections.emptyList(); };
+	default public Collection<EObject> generateValues(GenerationCatalog c) {return Collections.emptyList(); };
+	
+
+	/** Generate the value with a catalog */
+	default public EObject generateValue(GenerationCatalog c) { return null; };
+	
+	
 
 }

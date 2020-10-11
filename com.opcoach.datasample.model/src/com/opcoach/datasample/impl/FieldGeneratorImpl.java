@@ -22,6 +22,11 @@ import com.opcoach.generator.basic.StringGenerator;
 // This class overrides the generated class and will be instantiated by factory
 public class FieldGeneratorImpl extends MFieldGeneratorImpl implements FieldGenerator {
 
+	
+	/** For field generator catalog is useless */
+	 public Object generateValue(GenerationCatalog gcat) { return generateValue(); }
+
+
 	@Override
 	public Object generateValue() {
 		Object result = null;
@@ -69,7 +74,7 @@ public class FieldGeneratorImpl extends MFieldGeneratorImpl implements FieldGene
 
 		case "EString": {
 			StringGenerator sgen = BasicFactory.eINSTANCE.createStringGenerator();
-			sgen.setID(getParentEntityName());
+			sgen.setID(getStructuralFeature().getName().toUpperCase());
 			return sgen;
 		}
 		case "EInt":

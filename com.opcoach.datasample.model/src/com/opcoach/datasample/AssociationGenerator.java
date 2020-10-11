@@ -14,6 +14,7 @@ public interface AssociationGenerator extends MAssociationGenerator
 	// For instance : 
 	// default public void addSomething(Something foo) {} ;
 	
+	/** To generate an association, possible existing values must be known */
 	default public void setValues(Collection<EObject> possibleValues) {};
 	
 	

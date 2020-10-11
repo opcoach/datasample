@@ -1,11 +1,7 @@
 package com.opcoach.datasample.impl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -13,7 +9,6 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.opcoach.datasample.AssociationGenerator;
 import com.opcoach.datasample.ChildrenGenerator;
@@ -22,17 +17,12 @@ import com.opcoach.datasample.DatasampleFactory;
 import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.util.DSLogger;
-import com.opcoach.generator.ValueGenerator;
+import com.opcoach.datasample.util.DataSampleHelper;
+import com.opcoach.generator.GeneratorFactory;
+import com.opcoach.generator.ReferenceGenerator;
 
 // This class overrides the generated class and will be instantiated by factory
 public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityGenerator {
-
-	/**
-	 * Entity Generator must globally remind of all child instances created so as to
-	 * be able to set associations values Key : EClass name, value : list of all
-	 * instances available for this type
-	 */
-	private static Map<String, List<EObject>> availableObjects = new HashMap<String, List<EObject>>();
 
 	public EntityGeneratorImpl() {
 		super();
@@ -60,6 +50,11 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 
 	@Override
 	public EObject generateValue() {
+		throw new UnsupportedOperationException("Must call generateValue with a GenerationCatalog");
+	}
+
+	@Override
+	public EObject generateValue(GenerationCatalog gcat) {
 		EClass target = getEntity();
 		EObject result = null;
 		try {
@@ -75,7 +70,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 			if (a.isChangeable()) {
 
 				FieldGenerator fg = getFieldGenerator(a);
-				generateAndSetValue(result, a, fg);
+				DataSampleHelper.generateAndSetValue(result, a, fg, gcat);
 
 			}
 		}
@@ -88,13 +83,13 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		for (EReference r : target.getEAllReferences()) {
 			if (r.isContainment() && r.isChangeable()) {
 				ChildrenGenerator childGen = getChildGenerator(r);
-				generateAndSetValue(result, r, childGen);
+				DataSampleHelper.generateAndSetValue(result, r, childGen, gcat);
 
 			}
 		}
 
 		// ---------------------------------------------------------------------
-		// Then can set the association references
+		// Just setup association generators, but do not yet generate (see bindAssociations in GenerationCatalog
 		// ---------------------------------------------------------------------
 		for (EReference r : target.getEAllReferences()) {
 			if (!r.isContainment() && r.isChangeable()) {
@@ -106,65 +101,21 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 					ag = null;
 				}
 
-				String targetType = r.getEReferenceType().getName();
-				ag.setValues(availableObjects.get(targetType));
-
-				generateAndSetValue(result, r, ag);
-
 			}
-		}
+		} 
 
 		// we must remind of all child instances for later associations
 		if (result != null)
-			remindInstance(result);
+			gcat.registerObject(result, this);
 
 		return result;
 	}
 
-	/**
-	 * Generate a value using a generator and set this value on the
-	 * StructuralFeature of current instance.
-	 *
-	 * 
-	 * @param targetObject : the EObject that must be set
-	 * @param sf           : the EStructural feature to setup
-	 * @param fg           : the field generator to use to generate the value
-	 */
-	private void generateAndSetValue(EObject targetObject, EStructuralFeature sf, FieldGenerator fg) {
-
-		if ((targetObject == null) || (fg == null))
-			return;
-
-		Object generated = fg.generateValue();
-		
-		if (generated == null) return;  // If nothing is generated, nothing to setup
-		
-		Object valueToSet = generated;
-
-		if (!sf.isMany() && (fg.isMany())) {
-			// generated is a list.. must keep the first element
-			List<?> childList = (List<?>) generated;
-			valueToSet = (childList == null || childList.isEmpty()) ? null : childList.get(0);
-		}
-		if (sf.isMany() && fg.getNumber() == 1) {
-			// generated is an EObject, must create a list with it ...
-			valueToSet = Arrays.asList(generated);
-		}
-
-		try {
-			if (valueToSet != null)
-				targetObject.eSet(sf, valueToSet);
-		} catch (Exception e) {
-			DSLogger.error("Unable to set value on " + sf.getName(), e);
-		}
-
-	}
-
 	@Override
-	public Collection<EObject> generateValues() {
+	public Collection<EObject> generateValues(GenerationCatalog gcat) {
 		Collection<EObject> result = new ArrayList<>();
 		for (int i = 0; i < getNumber(); i++)
-			result.add(generateValue());
+			result.add(generateValue(gcat));
 		return result;
 	}
 
@@ -222,6 +173,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		AssociationGenerator result = DatasampleFactory.eINSTANCE.createAssociationGenerator();
 		result.setStructuralFeature(r);
 		result.setNumber(Math.max(3, r.getUpperBound()));
+		ReferenceGenerator<EObject> refGen = GeneratorFactory.eINSTANCE.createReferenceGenerator();
 
 		// Child generator belongs to this entity generator
 		getAssociationGenerators().add(result);
@@ -273,19 +225,6 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		result.setStructuralFeature(r);
 
 		return result;
-	}
-
-	/** Remember of all instances created to use them for associations */
-	private void remindInstance(EObject o) {
-		if (o == null)
-			return;
-		String cname = o.eClass().getName();
-		List<EObject> objects = availableObjects.get(cname);
-		if (objects == null) {
-			objects = new ArrayList<>();
-			availableObjects.put(cname, objects);
-		}
-		objects.add(o);
 	}
 
 	public DataSample getDataSample() {
