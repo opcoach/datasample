@@ -1,17 +1,11 @@
 package com.opcoach.datasample;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import com.opcoach.datasample.util.ClassifierComparator;
 
 public class DataSampleUtil {
 
