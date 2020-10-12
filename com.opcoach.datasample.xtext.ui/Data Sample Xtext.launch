@@ -234,6 +234,8 @@
     <setAttribute key="selected_workspace_bundles">
         <setEntry value="com.opcoach.datasample.model.tests@default:false"/>
         <setEntry value="com.opcoach.datasample.model@default:default"/>
+        <setEntry value="com.opcoach.datasample.template.generator.ui@default:default"/>
+        <setEntry value="com.opcoach.datasample.template.generator@default:default"/>
         <setEntry value="com.opcoach.datasample.xtext.ui@default:default"/>
         <setEntry value="com.opcoach.datasample.xtext@default:default"/>
     </setAttribute>

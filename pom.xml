@@ -69,6 +69,8 @@
 	<modules>
 		<module>com.opcoach.datasample.tp</module>
 		<module>com.opcoach.datasample.model</module>
+		<module>com.opcoach.datasample.template.generator</module>
+		<module>com.opcoach.datasample.template.generator.ui</module>
 		<module>com.opcoach.datasample.model.tests</module>
 	 	<!-- <module>com.opcoach.datasample.xtext</module>
 		<module>com.opcoach.datasample.xtext.sdk</module>

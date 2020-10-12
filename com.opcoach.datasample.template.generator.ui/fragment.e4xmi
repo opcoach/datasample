@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_5CDi8AywEeuHLYVCt3xCyw">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_58ej0AywEeuHLYVCt3xCyw" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_7pEBcAywEeuHLYVCt3xCyw" elementId="com.opcoach.datasample.template.generator.ui.menucontribution.0" positionInParent="after=additions" parentId="popup">
+      <children xsi:type="menu:DirectMenuItem" xmi:id="_lOXgkAyxEeuHLYVCt3xCyw" elementId="id.generatedatasampleconfiguration" label="Generate DataSample Configuration" iconURI="platform:/plugin/com.opcoach.datasample.template.generator.ui/icons/opcoach.png" contributionURI="bundleclass://com.opcoach.datasample.template.generator.ui/com.opcoach.datasample.template.generator.ui.GenerateDataSampleTemplateHandler"/>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_vmvQUAy2EeuHLYVCt3xCyw" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_wbOoUAy2EeuHLYVCt3xCyw" elementId="com.opcoach.datasample.template.generator.ui.handler.0" contributionURI="bundleclass://com.opcoach.datasample.template.generator.ui/com.opcoach.datasample.template.generator.ui.GenerateDataSampleTemplateHandler"/>
+  </fragments>
+</fragment:ModelFragments>
