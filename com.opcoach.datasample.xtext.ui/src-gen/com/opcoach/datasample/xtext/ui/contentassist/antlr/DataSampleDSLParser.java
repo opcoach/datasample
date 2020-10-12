@@ -47,6 +47,7 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 					put(grammarAccess.getEntityGeneratorAccess().getGroup(), "rule__EntityGenerator__Group__0");
 					put(grammarAccess.getEntityGeneratorAccess().getGroup_2(), "rule__EntityGenerator__Group_2__0");
+					put(grammarAccess.getEntityGeneratorAccess().getGroup_4(), "rule__EntityGenerator__Group_4__0");
 					put(grammarAccess.getFieldGeneratorAccess().getGroup(), "rule__FieldGenerator__Group__0");
 					put(grammarAccess.getFieldGeneratorAccess().getGroup_5(), "rule__FieldGenerator__Group_5__0");
 					put(grammarAccess.getFieldGeneratorAccess().getGroup_6(), "rule__FieldGenerator__Group_6__0");
@@ -69,9 +70,9 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDataSampleAccess().getRootGeneratorAssignment_11(), "rule__DataSample__RootGeneratorAssignment_11");
 					put(grammarAccess.getEntityGeneratorAccess().getNumberAssignment_2_0(), "rule__EntityGenerator__NumberAssignment_2_0");
 					put(grammarAccess.getEntityGeneratorAccess().getEntityNameAssignment_3(), "rule__EntityGenerator__EntityNameAssignment_3");
-					put(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsAssignment_5(), "rule__EntityGenerator__FieldGeneratorsAssignment_5");
-					put(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsAssignment_6(), "rule__EntityGenerator__ChildGeneratorsAssignment_6");
-					put(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssignment_7(), "rule__EntityGenerator__AssociationGeneratorsAssignment_7");
+					put(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsAssignment_4_1(), "rule__EntityGenerator__FieldGeneratorsAssignment_4_1");
+					put(grammarAccess.getEntityGeneratorAccess().getChildrenGeneratorsAssignment_4_2(), "rule__EntityGenerator__ChildrenGeneratorsAssignment_4_2");
+					put(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssignment_4_3(), "rule__EntityGenerator__AssociationGeneratorsAssignment_4_3");
 					put(grammarAccess.getFieldGeneratorAccess().getFieldNameAssignment_2(), "rule__FieldGenerator__FieldNameAssignment_2");
 					put(grammarAccess.getFieldGeneratorAccess().getGeneratorNameAssignment_4(), "rule__FieldGenerator__GeneratorNameAssignment_4");
 					put(grammarAccess.getFieldGeneratorAccess().getNumberAssignment_5_1(), "rule__FieldGenerator__NumberAssignment_5_1");

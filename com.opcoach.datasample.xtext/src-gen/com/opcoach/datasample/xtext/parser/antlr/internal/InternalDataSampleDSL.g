@@ -379,14 +379,14 @@ ruleEntityGenerator returns [EObject current=null]
 	    }
 
 )
-)	otherlv_5='{' 
+)(	otherlv_5='{' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getEntityGeneratorAccess().getLeftCurlyBracketKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getEntityGeneratorAccess().getLeftCurlyBracketKeyword_4_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsFieldGeneratorParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getFieldGeneratorsFieldGeneratorParserRuleCall_4_1_0()); 
 	    }
 		lv_fieldGenerators_6_0=ruleFieldGenerator		{
 	        if ($current==null) {
@@ -404,16 +404,16 @@ ruleEntityGenerator returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsChildrenGeneratorParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getChildrenGeneratorsChildrenGeneratorParserRuleCall_4_2_0()); 
 	    }
-		lv_childGenerators_7_0=ruleChildrenGenerator		{
+		lv_childrenGenerators_7_0=ruleChildrenGenerator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEntityGeneratorRule());
 	        }
        		add(
        			$current, 
-       			"childGenerators",
-        		lv_childGenerators_7_0, 
+       			"childrenGenerators",
+        		lv_childrenGenerators_7_0, 
         		"com.opcoach.datasample.xtext.DataSampleDSL.ChildrenGenerator");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -422,7 +422,7 @@ ruleEntityGenerator returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssociationGeneratorParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getAssociationGeneratorsAssociationGeneratorParserRuleCall_4_3_0()); 
 	    }
 		lv_associationGenerators_8_0=ruleAssociationGenerator		{
 	        if ($current==null) {
@@ -439,9 +439,9 @@ ruleEntityGenerator returns [EObject current=null]
 )
 )*	otherlv_9='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_9, grammarAccess.getEntityGeneratorAccess().getRightCurlyBracketKeyword_4_4());
     }
-)
+)?)
 ;
 
 
@@ -650,7 +650,7 @@ ruleChildrenGenerator returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getChildrenGeneratorAccess().getPolymorphicChildrenGeneratorAction_0(),
+            grammarAccess.getChildrenGeneratorAccess().getChildrenGeneratorAction_0(),
             $current);
     }
 )	otherlv_1='forTheComposition' 

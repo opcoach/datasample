@@ -1,8 +1,10 @@
 package com.opcoach.datasample.util;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
@@ -32,7 +34,7 @@ public class DataSampleHelper {
 		
 		Object valueToSet = generated;
 
-		if (!sf.isMany() && (fg.isMany())) {
+		if (!sf.isMany() && (fg.isMany() && generated instanceof List<?>)) {
 			// generated is a list.. must keep the first element
 			List<?> childList = (List<?>) generated;
 			valueToSet = (childList == null || childList.isEmpty()) ? null : childList.get(0);
@@ -42,8 +44,18 @@ public class DataSampleHelper {
 			valueToSet = Arrays.asList(generated);
 		}
 
+		// At this point, valueToSet is either a List or an EObject
+		// If sf is many, must get the value (a list) and add all the results...
 		try {
-			if (valueToSet != null)
+			/*if (sf.isMany())
+			{
+				if (valueToSet instanceof List<?>)
+				{
+					EList<?> featureValue = (EList<?>) targetObject.eGet(sf);
+					Collection<?> valuesToSet = (Collection<?>) valueToSet;
+					featureValue.addAll((Collection<?>) valuesToSet);
+				}}
+				else */
 				targetObject.eSet(sf, valueToSet);
 		} catch (Exception e) {
 			DSLogger.error("Unable to set value on " + sf.getName(), e);

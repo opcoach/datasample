@@ -2,6 +2,7 @@ package com.opcoach.datasample.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -13,6 +14,7 @@ import org.eclipse.emf.ecore.EReference;
 import com.opcoach.datasample.AssociationGenerator;
 import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
+import com.opcoach.datasample.DataSampleUtil;
 import com.opcoach.datasample.DatasampleFactory;
 import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
@@ -84,7 +86,8 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		}
 
 		// ---------------------------------------------------------------------
-		// Just setup association generators, but do not yet generate (see bindAssociations in GenerationCatalog
+		// Just setup association generators, but do not yet generate (see
+		// bindAssociations in GenerationCatalog
 		// ---------------------------------------------------------------------
 		for (EReference r : target.getEAllReferences()) {
 			if (!r.isContainment() && r.isChangeable()) {
@@ -97,7 +100,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 				}
 
 			}
-		} 
+		}
 
 		// we must remind of all child instances for later associations
 		if (result != null)
@@ -168,12 +171,9 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		AssociationGenerator result = DatasampleFactory.eINSTANCE.createAssociationGenerator();
 		result.setStructuralFeature(r);
 		result.setNumber(Math.max(3, r.getUpperBound()));
-		ReferenceGenerator<EObject> refGen = GeneratorFactory.eINSTANCE.createReferenceGenerator();
 
 		// Child generator belongs to this entity generator
 		getAssociationGenerators().add(result);
-
-		// getChildGenerators().add(result);
 
 		return result;
 	}
@@ -186,7 +186,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 	 */
 	private ChildrenGenerator getChildGenerator(EReference r) {
 
-		for (ChildrenGenerator g : getChildGenerators()) {
+		for (ChildrenGenerator g : getChildrenGenerators()) {
 			if (g.canGenerate(r)) {
 				if (g.getStructuralFeature() == null)
 					g.setStructuralFeature(r);
@@ -194,30 +194,42 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 			}
 		}
 
-		return getDefaultChildGenerator(r);
+		return getDefaultChildrenGenerator(r);
 	}
 
 	/**
 	 * Return a default entity generator that creates 1 instances or a polymorphic
-	 * if type is abstract
+	 * if type is abstract                            
 	 */
-	private ChildrenGenerator getDefaultChildGenerator(EReference r) {
+	private ChildrenGenerator getDefaultChildrenGenerator(EReference r) {
 
 		ChildrenGenerator result = null;
 
-		// Create a polymorphic generator when the type of composition is abstract
-		if (r.getEReferenceType().isAbstract()) {
-			result = DatasampleFactory.eINSTANCE.createPolymorphicChildrenGenerator();
-
-		} else {
-			result = DatasampleFactory.eINSTANCE.createChildrenGenerator();
-			result.setNumber(1);
-		}
+		result = DatasampleFactory.eINSTANCE.createChildrenGenerator();
+		result.setNumber(1);
 
 		// Child generator belongs to this entity generator.
-		getChildGenerators().add(result);
-
+		getChildrenGenerators().add(result);
 		result.setStructuralFeature(r);
+
+		// Must create a default entity generator for this child. 
+	/*	EntityGenerator defaultEntityGen = DatasampleFactory.eINSTANCE.createEntityGenerator();
+		EClass classToGenerate = r.getEReferenceType();
+		if (classToGenerate.isAbstract())
+		{
+			// Set up the first subclass to be generated... 
+			Set<EClass> subClasses = DataSampleUtil.getSubClasses(classToGenerate);
+			if (!subClasses.isEmpty())
+				defaultEntityGen.setEntity(subClasses.stream().findFirst().get());
+		}
+		else
+		{
+			defaultEntityGen.setEntity(classToGenerate);
+
+		}
+		defaultEntityGen.setNumber(1);
+		result.getChildrenGenerators().add(defaultEntityGen);
+		*/
 
 		return result;
 	}

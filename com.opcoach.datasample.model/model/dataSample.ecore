@@ -34,7 +34,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fieldGenerators" upperBound="-1"
         eType="#//FieldGenerator" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="childGenerators" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childrenGenerators" upperBound="-1"
         eType="#//ChildrenGenerator" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="associationGenerators"
         upperBound="-1" eType="#//AssociationGenerator" containment="true"/>
@@ -71,15 +71,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssociationGenerator" eSuperTypes="#//FieldGenerator"/>
   <eClassifiers xsi:type="ecore:EClass" name="ChildrenGenerator" eSuperTypes="#//FieldGenerator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="delegatedEntityGenerator"
-        eType="#//EntityGenerator" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="polymorphic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="A children generator is polymorphic if the expected type in the ereference has subclasses. In this case, it is possible to provide several childrenGenerators."/>
       </eAnnotations>
     </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PolymorphicChildrenGenerator" eSuperTypes="#//ChildrenGenerator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="childrenGenerators" upperBound="-1"
         eType="#//EntityGenerator" containment="true"/>
   </eClassifiers>

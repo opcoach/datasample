@@ -1,12 +1,12 @@
 package com.opcoach.datasample.impl;
 
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 
 import com.opcoach.datasample.ChildrenGenerator;
-import com.opcoach.datasample.DatasampleFactory;
 import com.opcoach.datasample.EntityGenerator;
-import com.opcoach.datasample.util.DSLogger;
-import com.opcoach.generator.ValueGenerator;
 
 // This class overrides the generated class and will be instantiated by factory
 /**
@@ -15,8 +15,14 @@ import com.opcoach.generator.ValueGenerator;
  */
 public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements ChildrenGenerator {
 
-	
-	
+	@Override
+	public int getNumber() {
+		int result = 0;
+		for (EntityGenerator cg : getChildrenGenerators())
+			result += cg.getNumber();
+		return result;
+	}
+
 	@Override
 	public Object generateValue() {
 		throw new UnsupportedOperationException("Must call generateValue with a GenerationCatalog");
@@ -33,57 +39,53 @@ public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements Chi
 	public Object generateValue(GenerationCatalog gcat) {
 		// We must use a delegated entity generator to instantiate any child.
 		Object result = null;
-		int childnumber = getNumber();
-		EntityGenerator deg = getDelegatedEntityGenerator();
-		if (deg != null) {
-			result = (childnumber == 1) ? deg.generateValue(gcat) :deg.generateValues(gcat);
-		}
 
-		return result;
-
-	}
-
-	/**
-	 * use the described entity generator to instanciate a child or create a default
-	 * one
-	 */
-	public EntityGenerator getDelegatedEntityGenerator() {
-		
-		// THIS SHOULD BE THE getGenerator overridden method ! Right ? 
-		
-		EntityGenerator result = super.getDelegatedEntityGenerator();
-		if (result == null) {
-			// create the default one but only if it is not recursive...
-			String entityName = getStructuralFeature().getEType().getName();
-			if (!entityName.equals(((EntityGenerator) eContainer).getEntityName())) {
-				result = DatasampleFactory.eINSTANCE.createEntityGenerator();
-				result.setEntityName(entityName);
-				setDelegatedEntityGenerator(result);
+		if (getEReference().getUpperBound() == 1) {
+			// Generate only 1 value using the first generator if any
+			if (!getChildrenGenerators().isEmpty())
+			{
+				EntityGenerator gen = getChildrenGenerators().get(0);
+				result = gen.generateValue(gcat);
 			}
-		}
-		return result;
-	}
+		} else {
+			// Generate all values for all children generators.
+			ArrayList<EObject> children = new ArrayList<>();
+			for (EntityGenerator eg : getChildrenGenerators()) {
+				children.addAll(eg.generateValues(gcat));
+			}
+			result = children;
 
+		}
+
+		return result;
+
+	}
 
 	@Override
 	public String toString() {
 		EntityGenerator eg = (EntityGenerator) eContainer;
 		StringBuilder sb = new StringBuilder("ChildrenGenerator for ").append(eg.getEntityName()).append(".")
 				.append(getFieldName());
-		ValueGenerator<?> gen = getGenerator();
-		sb.append(
-				"\n Generator : " + ((gen == null) ? " NO GENERATOR FOUND (will use default)" : gen.getDescription()));
+		sb.append("\n The children reference has a polymorphic type. This children generator contains : ");
+		for (EntityGenerator cg : getChildrenGenerators()) {
+			sb.append("\n For type : ").append(cg.getEntityName()).append(" use : ").append(cg);
+		}
 
 		return sb.toString();
 
 	}
-	
+
 	@Override
 	public boolean canGenerate(EReference r) {
-		
-		String refName = r.getEReferenceType().getName();
-		return refName.equals(getFieldName());
-		
+
+		// Must search for the generator in the possible generators
+		for (EntityGenerator eg : getChildrenGenerators()) {
+			if (r.getEReferenceType().isSuperTypeOf(eg.getEntity()))
+				return true;
+		}
+
+		return false;
+
 	}
 
 }

@@ -2,6 +2,16 @@
  */
 package com.opcoach.datasample.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import com.opcoach.datasample.AssociationGenerator;
 import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
@@ -11,20 +21,7 @@ import com.opcoach.datasample.Language;
 import com.opcoach.datasample.MDatasampleFactory;
 import com.opcoach.datasample.MDatasamplePackage;
 import com.opcoach.datasample.Parameter;
-
-import com.opcoach.datasample.PolymorphicChildrenGenerator;
 import com.opcoach.generator.MGeneratorPackage;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,13 +71,6 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	private EClass childrenGeneratorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass polymorphicChildrenGeneratorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -320,7 +310,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	@Override
-	public EReference getEntityGenerator_ChildGenerators() {
+	public EReference getEntityGenerator_ChildrenGenerators() {
 		return (EReference)entityGeneratorEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -500,8 +490,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	@Override
-	public EReference getChildrenGenerator_DelegatedEntityGenerator() {
-		return (EReference)childrenGeneratorEClass.getEStructuralFeatures().get(0);
+	public EAttribute getChildrenGenerator_Polymorphic() {
+		return (EAttribute)childrenGeneratorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -510,18 +500,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	@Override
-	public EClass getPolymorphicChildrenGenerator() {
-		return polymorphicChildrenGeneratorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPolymorphicChildrenGenerator_ChildrenGenerators() {
-		return (EReference)polymorphicChildrenGeneratorEClass.getEStructuralFeatures().get(0);
+	public EReference getChildrenGenerator_ChildrenGenerators() {
+		return (EReference)childrenGeneratorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -580,7 +560,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEAttribute(entityGeneratorEClass, ENTITY_GENERATOR__ENTITY_NAME);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__ENTITY);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__FIELD_GENERATORS);
-		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__CHILD_GENERATORS);
+		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__CHILDREN_GENERATORS);
 		createEReference(entityGeneratorEClass, ENTITY_GENERATOR__ASSOCIATION_GENERATORS);
 		createEOperation(entityGeneratorEClass, ENTITY_GENERATOR___GET_INSTANCES);
 
@@ -602,10 +582,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		associationGeneratorEClass = createEClass(ASSOCIATION_GENERATOR);
 
 		childrenGeneratorEClass = createEClass(CHILDREN_GENERATOR);
-		createEReference(childrenGeneratorEClass, CHILDREN_GENERATOR__DELEGATED_ENTITY_GENERATOR);
-
-		polymorphicChildrenGeneratorEClass = createEClass(POLYMORPHIC_CHILDREN_GENERATOR);
-		createEReference(polymorphicChildrenGeneratorEClass, POLYMORPHIC_CHILDREN_GENERATOR__CHILDREN_GENERATORS);
+		createEAttribute(childrenGeneratorEClass, CHILDREN_GENERATOR__POLYMORPHIC);
+		createEReference(childrenGeneratorEClass, CHILDREN_GENERATOR__CHILDREN_GENERATORS);
 
 		// Create enums
 		languageEEnum = createEEnum(LANGUAGE);
@@ -657,7 +635,6 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		fieldGeneratorEClass.getEGenericSuperTypes().add(g1);
 		associationGeneratorEClass.getESuperTypes().add(this.getFieldGenerator());
 		childrenGeneratorEClass.getESuperTypes().add(this.getFieldGenerator());
-		polymorphicChildrenGeneratorEClass.getESuperTypes().add(this.getChildrenGenerator());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dataSampleEClass, DataSample.class, "DataSample", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -677,7 +654,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEAttribute(getEntityGenerator_EntityName(), ecorePackage.getEString(), "entityName", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityGenerator_Entity(), theEcorePackage.getEClass(), null, "entity", null, 0, 1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityGenerator_FieldGenerators(), this.getFieldGenerator(), null, "fieldGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntityGenerator_ChildGenerators(), this.getChildrenGenerator(), null, "childGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntityGenerator_ChildrenGenerators(), this.getChildrenGenerator(), null, "childrenGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntityGenerator_AssociationGenerators(), this.getAssociationGenerator(), null, "associationGenerators", null, 0, -1, EntityGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getEntityGenerator__GetInstances(), null, "getInstances", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -706,10 +683,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEClass(associationGeneratorEClass, AssociationGenerator.class, "AssociationGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(childrenGeneratorEClass, ChildrenGenerator.class, "ChildrenGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getChildrenGenerator_DelegatedEntityGenerator(), this.getEntityGenerator(), null, "delegatedEntityGenerator", null, 0, 1, ChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(polymorphicChildrenGeneratorEClass, PolymorphicChildrenGenerator.class, "PolymorphicChildrenGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPolymorphicChildrenGenerator_ChildrenGenerators(), this.getEntityGenerator(), null, "childrenGenerators", null, 0, -1, PolymorphicChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChildrenGenerator_Polymorphic(), ecorePackage.getEBoolean(), "polymorphic", null, 0, 1, ChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getChildrenGenerator_ChildrenGenerators(), this.getEntityGenerator(), null, "childrenGenerators", null, 0, -1, ChildrenGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(languageEEnum, Language.class, "Language");

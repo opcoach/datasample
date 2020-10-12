@@ -32,7 +32,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//EntityGenerator/entityName"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/entity"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/fieldGenerators"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/childGenerators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/childrenGenerators"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//EntityGenerator/associationGenerators"/>
       <genOperations ecoreOperation="dataSample.ecore#//EntityGenerator/getInstances"/>
     </genClasses>
@@ -53,11 +53,8 @@
     </genClasses>
     <genClasses ecoreClass="dataSample.ecore#//AssociationGenerator"/>
     <genClasses ecoreClass="dataSample.ecore#//ChildrenGenerator">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//ChildrenGenerator/delegatedEntityGenerator"/>
-    </genClasses>
-    <genClasses ecoreClass="dataSample.ecore#//PolymorphicChildrenGenerator">
-      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
-          ecoreFeature="ecore:EReference dataSample.ecore#//PolymorphicChildrenGenerator/childrenGenerators"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//ChildrenGenerator/polymorphic"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//ChildrenGenerator/childrenGenerators"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

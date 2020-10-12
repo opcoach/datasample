@@ -5,11 +5,11 @@ package com.opcoach.datasample.xtext.serializer;
 
 import com.google.inject.Inject;
 import com.opcoach.datasample.AssociationGenerator;
+import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.MDatasamplePackage;
-import com.opcoach.datasample.PolymorphicChildrenGenerator;
 import com.opcoach.datasample.xtext.services.DataSampleDSLGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -39,6 +39,9 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 			case MDatasamplePackage.ASSOCIATION_GENERATOR:
 				sequence_AssociationGenerator(context, (AssociationGenerator) semanticObject); 
 				return; 
+			case MDatasamplePackage.CHILDREN_GENERATOR:
+				sequence_ChildrenGenerator(context, (ChildrenGenerator) semanticObject); 
+				return; 
 			case MDatasamplePackage.DATA_SAMPLE:
 				sequence_DataSample(context, (DataSample) semanticObject); 
 				return; 
@@ -50,9 +53,6 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 				return; 
 			case MDatasamplePackage.PARAMETER:
 				sequence_Parameter(context, (com.opcoach.datasample.Parameter) semanticObject); 
-				return; 
-			case MDatasamplePackage.POLYMORPHIC_CHILDREN_GENERATOR:
-				sequence_ChildrenGenerator(context, (PolymorphicChildrenGenerator) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -79,12 +79,12 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	
 	/**
 	 * Contexts:
-	 *     ChildrenGenerator returns PolymorphicChildrenGenerator
+	 *     ChildrenGenerator returns ChildrenGenerator
 	 *
 	 * Constraint:
 	 *     (fieldName=EString (childrenGenerators+=EntityGenerator | childrenGenerators+=EntityGenerator+)?)
 	 */
-	protected void sequence_ChildrenGenerator(ISerializationContext context, PolymorphicChildrenGenerator semanticObject) {
+	protected void sequence_ChildrenGenerator(ISerializationContext context, ChildrenGenerator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -118,7 +118,7 @@ public abstract class AbstractDataSampleDSLSemanticSequencer extends AbstractDel
 	 *         number=EInt? 
 	 *         entityName=EString 
 	 *         fieldGenerators+=FieldGenerator* 
-	 *         childGenerators+=ChildrenGenerator* 
+	 *         childrenGenerators+=ChildrenGenerator* 
 	 *         associationGenerators+=AssociationGenerator*
 	 *     )
 	 */

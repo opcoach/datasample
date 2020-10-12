@@ -63,7 +63,6 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 			case MDatasamplePackage.PARAMETER: return createParameter();
 			case MDatasamplePackage.ASSOCIATION_GENERATOR: return createAssociationGenerator();
 			case MDatasamplePackage.CHILDREN_GENERATOR: return createChildrenGenerator();
-			case MDatasamplePackage.POLYMORPHIC_CHILDREN_GENERATOR: return createPolymorphicChildrenGenerator();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -163,17 +162,6 @@ public class MDatasampleFactoryImpl extends EFactoryImpl implements MDatasampleF
 	public ChildrenGenerator createChildrenGenerator() {
 		ChildrenGeneratorImpl childrenGenerator = new ChildrenGeneratorImpl();
 		return childrenGenerator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public PolymorphicChildrenGenerator createPolymorphicChildrenGenerator() {
-		PolymorphicChildrenGeneratorImpl polymorphicChildrenGenerator = new PolymorphicChildrenGeneratorImpl();
-		return polymorphicChildrenGenerator;
 	}
 
 	/**

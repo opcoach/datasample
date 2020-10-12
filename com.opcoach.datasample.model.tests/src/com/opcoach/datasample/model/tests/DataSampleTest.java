@@ -19,10 +19,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
 import com.opcoach.datasample.DatasampleFactory;
 import com.opcoach.datasample.EntityGenerator;
-import com.opcoach.datasample.PolymorphicChildrenGenerator;
 
 class DataSampleTest  // extends to launch all tests together (bug in eclipse launch config)
 {
@@ -40,7 +40,7 @@ class DataSampleTest  // extends to launch all tests together (bug in eclipse la
 		 rootGen.setEntityName("EPackage");
 		 dataSample.setRootGenerator(rootGen);
 		 
-		 PolymorphicChildrenGenerator eclassifierGen = DatasampleFactory.eINSTANCE.createPolymorphicChildrenGenerator();
+		 ChildrenGenerator eclassifierGen = DatasampleFactory.eINSTANCE.createChildrenGenerator();
 		 eclassifierGen.setStructuralFeature(EcorePackage.Literals.EPACKAGE__ECLASSIFIERS);
 		 
 		 EntityGenerator eclassGen = DatasampleFactory.eINSTANCE.createEntityGenerator();
@@ -56,7 +56,7 @@ class DataSampleTest  // extends to launch all tests together (bug in eclipse la
 		 eclassifierGen.getChildrenGenerators().add(eclassGen);
 		 eclassifierGen.getChildrenGenerators().add(datatypegen);
 		 
-		 rootGen.getChildGenerators().add(eclassifierGen);
+		 rootGen.getChildrenGenerators().add(eclassifierGen);
 		 
 		 generatedPackage = (EPackage) dataSample.generateValue();
 		

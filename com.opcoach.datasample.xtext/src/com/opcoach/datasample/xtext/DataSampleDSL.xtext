@@ -28,11 +28,11 @@ enum Language returns Language:
 EntityGenerator returns EntityGenerator:
 	{EntityGenerator}
 	'generate' (number=EInt 'instancesOf') ? entityName=EString
-	'{'
+	('{'
 	fieldGenerators+=FieldGenerator*
-	childGenerators+=ChildrenGenerator* 
+	childrenGenerators+=ChildrenGenerator* 
 	associationGenerators+=AssociationGenerator*
-	'}';
+	'}')?;
 
 FieldGenerator returns FieldGenerator:
 	{FieldGenerator}
@@ -40,17 +40,10 @@ FieldGenerator returns FieldGenerator:
 	(',' parameters+=Parameter)* ')')? ('withErrorRate=' errorRate=EInt 'generatedWith'
 	errorGeneratorName=EString)?;
 
-//Child  returns ChildrenGenerator: ChildrenGenerator | PolymorphicChildrenGenerator;
 
-ChildrenGenerator returns PolymorphicChildrenGenerator:
-	{PolymorphicChildrenGenerator}
-	//'forTheComposition' fieldName=EString (delegatedEntityGenerator=EntityGenerator | 'use' '{' childrenGenerators+= EntityGenerator* '}' );
+ChildrenGenerator returns ChildrenGenerator:
+	{ChildrenGenerator}
 	'forTheComposition' fieldName=EString (childrenGenerators+=EntityGenerator | 'use' '{' childrenGenerators+= EntityGenerator* '}' );
-
-/*PolymorphicChildrenGenerator returns PolymorphicChildrenGenerator:
-	{PolymorphicChildrenGenerator}
-	'forTheAbstractComposition' fieldName=EString 'use' '{' childrenGenerators+= EntityGenerator* '}' ;
- */ 
 
 
 AssociationGenerator:

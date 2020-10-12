@@ -34,7 +34,6 @@ import org.eclipse.emf.ecore.EStructuralFeature
 import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
-import com.opcoach.datasample.PolymorphicChildrenGenerator
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -85,7 +84,7 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 			val ds = egen.eContainer as DataSample
 			acceptor.accept(createCompletionProposal(ds.rootEntityName, context))
 		} else {
-			// This entity generator is already inside another one, it can be another EntityGenerator or a polymorphicChildrenGenerator
+			// This entity generator is already inside another one, it can be another EntityGenerator or a childrenGenerator
 			val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
 			var EClass parentClass = null
 
@@ -94,13 +93,10 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 				val parent = egparent as EntityGenerator
 				parentClass = parent.entity
 
-			/* 	egparent.childGenerators.forEach [
-			 * 		if(entity !== null && entity.name !== null) egenSibling.add(entity.name)
-			 ]*/
 			} else {
-				// This is a Polymorphic child generator
-				if (egparent instanceof PolymorphicChildrenGenerator) {
-					val pcg = egparent as PolymorphicChildrenGenerator
+				// This is a children generator
+				if (egparent instanceof ChildrenGenerator) {
+					val pcg = egparent as ChildrenGenerator
 					parentClass = pcg.EReference.EType as EClass
 					for (cg : pcg.childrenGenerators)
 					   egenSibling.add(cg.entityName)
@@ -154,33 +150,7 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 
 	}
 
-/* 	override completePolymorphicChildrenGenerator_FieldName(EObject model, Assignment assignment,
-		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		// super.completePolymorphicChildrenGenerator_FieldName(model, assignment, context, acceptor)
-		val cg = model as ChildrenGenerator
-		val egen = cg.eContainer as EntityGenerator
-		val c = egen.entity
-		val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
-		egen.childGenerators.forEach[if(fieldName !== null) egenSibling.add(fieldName)]
 
-		// Keep only composition with abstract types
-		for (r : c.EAllReferences.filter[containment].filter[EReferenceType.abstract]) {
-			if (!egenSibling.contains(r.name))
-				acceptor.accept(createCompletionProposal(r.name, context))
-		}
-
-	} */
-
-	// Must propose here any kind of class in package
-	/*	override completeFieldGenerator_EntityName(EObject model, Assignment assignment, ContentAssistContext context,
-	 * 		ICompletionProposalAcceptor acceptor) {
-	 * 		super.completeFieldGenerator_EntityName(model, assignment, context, acceptor)
-
-	 * 		val epack = getEPackage(model as DataSample)
-	 * 		for (cl : epack.eAllContents.filter(EClass).toList)
-	 * 			acceptor.accept(createCompletionProposal(cl.name, context))
-
-	 } */
 	// Must propose only fields of current class (but only once)
 	override completeFieldGenerator_FieldName(EObject model, Assignment assignment, ContentAssistContext context,
 		ICompletionProposalAcceptor acceptor) {
