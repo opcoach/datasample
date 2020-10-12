@@ -5,7 +5,6 @@ import java.util.Collection;
 import java.util.Date;
 
 import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.opcoach.datasample.EntityGenerator;
@@ -47,11 +46,23 @@ public class FieldGeneratorImpl extends MFieldGeneratorImpl implements FieldGene
 
 		return result;
 	}
+	
+	
+	@Override
+	public EStructuralFeature getStructuralFeature() {
+		EStructuralFeature result = super.getStructuralFeature();
+		if (result == null)
+		{
+			// Find the structural feature in the parent entity
+			result = getParentEntity().getEStructuralFeature(fieldName);
+		}
+		return result;
+	}
 
 	@Override
 	public void setStructuralFeature(EStructuralFeature newStructuralFeature) {
 		super.setStructuralFeature(newStructuralFeature);
-		if (newStructuralFeature != null)
+		if ((newStructuralFeature != null) && ! newStructuralFeature.getName().equals(getFieldName()))
 			setFieldName(newStructuralFeature.getName());
 	}
 

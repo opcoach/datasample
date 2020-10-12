@@ -2,7 +2,7 @@
 ')'=32
 ','=33
 '-'=23
-'='=39
+'='=38
 'Sample'=16
 'cardinality'=30
 'de'=13
@@ -10,8 +10,7 @@
 'es'=14
 'fileExtension'=22
 'for'=17
-'forTheAbstractComposition'=37
-'forTheAssociation'=38
+'forTheAssociation'=37
 'forTheComposition'=36
 'forTheField'=28
 'fr'=11
@@ -62,4 +61,3 @@ T__35=35
 T__36=36
 T__37=37
 T__38=38
-T__39=39

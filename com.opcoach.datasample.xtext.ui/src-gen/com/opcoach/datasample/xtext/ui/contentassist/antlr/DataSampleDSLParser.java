@@ -38,7 +38,7 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-					put(grammarAccess.getChildAccess().getAlternatives(), "rule__Child__Alternatives");
+					put(grammarAccess.getChildrenGeneratorAccess().getAlternatives_3(), "rule__ChildrenGenerator__Alternatives_3");
 					put(grammarAccess.getLanguageAccess().getAlternatives(), "rule__Language__Alternatives");
 					put(grammarAccess.getDataSampleAccess().getGroup(), "rule__DataSample__Group__0");
 					put(grammarAccess.getDataSampleAccess().getGroup_7(), "rule__DataSample__Group_7__0");
@@ -53,7 +53,7 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFieldGeneratorAccess().getGroup_6_2(), "rule__FieldGenerator__Group_6_2__0");
 					put(grammarAccess.getFieldGeneratorAccess().getGroup_7(), "rule__FieldGenerator__Group_7__0");
 					put(grammarAccess.getChildrenGeneratorAccess().getGroup(), "rule__ChildrenGenerator__Group__0");
-					put(grammarAccess.getPolymorphicChildrenGeneratorAccess().getGroup(), "rule__PolymorphicChildrenGenerator__Group__0");
+					put(grammarAccess.getChildrenGeneratorAccess().getGroup_3_1(), "rule__ChildrenGenerator__Group_3_1__0");
 					put(grammarAccess.getAssociationGeneratorAccess().getGroup(), "rule__AssociationGenerator__Group__0");
 					put(grammarAccess.getAssociationGeneratorAccess().getGroup_5(), "rule__AssociationGenerator__Group_5__0");
 					put(grammarAccess.getAssociationGeneratorAccess().getGroup_6(), "rule__AssociationGenerator__Group_6__0");
@@ -80,9 +80,8 @@ public class DataSampleDSLParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFieldGeneratorAccess().getErrorRateAssignment_7_1(), "rule__FieldGenerator__ErrorRateAssignment_7_1");
 					put(grammarAccess.getFieldGeneratorAccess().getErrorGeneratorNameAssignment_7_3(), "rule__FieldGenerator__ErrorGeneratorNameAssignment_7_3");
 					put(grammarAccess.getChildrenGeneratorAccess().getFieldNameAssignment_2(), "rule__ChildrenGenerator__FieldNameAssignment_2");
-					put(grammarAccess.getChildrenGeneratorAccess().getDelegatedEntityGeneratorAssignment_3(), "rule__ChildrenGenerator__DelegatedEntityGeneratorAssignment_3");
-					put(grammarAccess.getPolymorphicChildrenGeneratorAccess().getFieldNameAssignment_2(), "rule__PolymorphicChildrenGenerator__FieldNameAssignment_2");
-					put(grammarAccess.getPolymorphicChildrenGeneratorAccess().getChildrenGeneratorsAssignment_5(), "rule__PolymorphicChildrenGenerator__ChildrenGeneratorsAssignment_5");
+					put(grammarAccess.getChildrenGeneratorAccess().getChildrenGeneratorsAssignment_3_0(), "rule__ChildrenGenerator__ChildrenGeneratorsAssignment_3_0");
+					put(grammarAccess.getChildrenGeneratorAccess().getChildrenGeneratorsAssignment_3_1_2(), "rule__ChildrenGenerator__ChildrenGeneratorsAssignment_3_1_2");
 					put(grammarAccess.getAssociationGeneratorAccess().getFieldNameAssignment_2(), "rule__AssociationGenerator__FieldNameAssignment_2");
 					put(grammarAccess.getAssociationGeneratorAccess().getGeneratorNameAssignment_4(), "rule__AssociationGenerator__GeneratorNameAssignment_4");
 					put(grammarAccess.getAssociationGeneratorAccess().getNumberAssignment_5_1(), "rule__AssociationGenerator__NumberAssignment_5_1");

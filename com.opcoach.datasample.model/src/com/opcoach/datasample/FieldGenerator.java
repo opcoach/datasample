@@ -1,5 +1,7 @@
 package com.opcoach.datasample;
 
+import org.eclipse.emf.ecore.EClass;
+
 import com.opcoach.datasample.impl.GenerationCatalog;
 
 // This interface overrides the generated interface and will be returned by factory
@@ -13,9 +15,14 @@ public interface FieldGenerator extends MFieldGenerator {
 
 
 
+	/** Return the entity for which this field generator is used */
+	default public EClass getParentEntity() {
+		return getParentEntityGenerator().getEntity();
+	}
+
 	/** Return the entity name for which this field generator is used */
 	default public String getParentEntityName() {
-		return getParentEntityGenerator().getEntity().getName();
+		return getParentEntity().getName();
 	}
 
 	/** Return the parent entity generator for which this field generator is used */

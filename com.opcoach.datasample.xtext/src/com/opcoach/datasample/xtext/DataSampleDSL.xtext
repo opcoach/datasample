@@ -4,7 +4,7 @@ grammar com.opcoach.datasample.xtext.DataSampleDSL with org.eclipse.xtext.common
 import "http://www.opcoach.com/datasample/1.0"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://www.opcoach.generator/1.0" as generator
-
+ 
 DataSample returns DataSample:
 	{DataSample}
 	'Sample'
@@ -14,7 +14,6 @@ DataSample returns DataSample:
 	('language' language=Language)?
 	('fileExtension' fileExtension=EString)?
 	'rootGenerator' rootGenerator=EntityGenerator
-	//entityGenerators+=EntityGenerator* // ("," entityGenerators+=EntityGenerator)*
 ;
 
 EString returns ecore::EString:
@@ -31,7 +30,7 @@ EntityGenerator returns EntityGenerator:
 	'generate' (number=EInt 'instancesOf') ? entityName=EString
 	'{'
 	fieldGenerators+=FieldGenerator*
-	childGenerators+=Child* 
+	childGenerators+=ChildrenGenerator* 
 	associationGenerators+=AssociationGenerator*
 	'}';
 
@@ -41,16 +40,17 @@ FieldGenerator returns FieldGenerator:
 	(',' parameters+=Parameter)* ')')? ('withErrorRate=' errorRate=EInt 'generatedWith'
 	errorGeneratorName=EString)?;
 
-Child  returns ChildrenGenerator: ChildrenGenerator | PolymorphicChildrenGenerator;
+//Child  returns ChildrenGenerator: ChildrenGenerator | PolymorphicChildrenGenerator;
 
-ChildrenGenerator returns ChildrenGenerator:
-	{ChildrenGenerator}
-	'forTheComposition' fieldName=EString delegatedEntityGenerator=EntityGenerator;
+ChildrenGenerator returns PolymorphicChildrenGenerator:
+	{PolymorphicChildrenGenerator}
+	//'forTheComposition' fieldName=EString (delegatedEntityGenerator=EntityGenerator | 'use' '{' childrenGenerators+= EntityGenerator* '}' );
+	'forTheComposition' fieldName=EString (childrenGenerators+=EntityGenerator | 'use' '{' childrenGenerators+= EntityGenerator* '}' );
 
-PolymorphicChildrenGenerator returns PolymorphicChildrenGenerator:
+/*PolymorphicChildrenGenerator returns PolymorphicChildrenGenerator:
 	{PolymorphicChildrenGenerator}
 	'forTheAbstractComposition' fieldName=EString 'use' '{' childrenGenerators+= EntityGenerator* '}' ;
-  
+ */ 
 
 
 AssociationGenerator:

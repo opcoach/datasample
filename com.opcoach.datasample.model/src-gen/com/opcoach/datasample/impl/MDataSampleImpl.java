@@ -42,7 +42,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getLanguage <em>Language</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getPackageURI <em>Package URI</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getPackage <em>Package</em>}</li>
- *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getEntityGenerators <em>Entity Generators</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getRootEntity <em>Root Entity</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getRootEntityName <em>Root Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.impl.MDataSampleImpl#getBadValueGeneratorNames <em>Bad Value Generator Names</em>}</li>
@@ -142,16 +141,6 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * @ordered
 	 */
 	protected EPackage package_;
-
-	/**
-	 * The cached value of the '{@link #getEntityGenerators() <em>Entity Generators</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntityGenerators()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EntityGenerator> entityGenerators;
 
 	/**
 	 * The cached value of the '{@link #getRootEntity() <em>Root Entity</em>}' reference.
@@ -391,19 +380,6 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	 * @generated
 	 */
 	@Override
-	public EList<EntityGenerator> getEntityGenerators() {
-		if (entityGenerators == null) {
-			entityGenerators = new EObjectContainmentEList<EntityGenerator>(EntityGenerator.class, this, MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS);
-		}
-		return entityGenerators;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getRootEntity() {
 		if (rootEntity != null && rootEntity.eIsProxy()) {
 			InternalEObject oldRootEntity = (InternalEObject)rootEntity;
@@ -550,8 +526,6 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
-				return ((InternalEList<?>)getEntityGenerators()).basicRemove(otherEnd, msgs);
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_GENERATOR:
 				return basicSetRootGenerator(null, msgs);
 		}
@@ -577,8 +551,6 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 			case MDatasamplePackage.DATA_SAMPLE__PACKAGE:
 				if (resolve) return getPackage();
 				return basicGetPackage();
-			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
-				return getEntityGenerators();
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				if (resolve) return getRootEntity();
 				return basicGetRootEntity();
@@ -617,10 +589,6 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 				return;
 			case MDatasamplePackage.DATA_SAMPLE__PACKAGE:
 				setPackage((EPackage)newValue);
-				return;
-			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
-				getEntityGenerators().clear();
-				getEntityGenerators().addAll((Collection<? extends EntityGenerator>)newValue);
 				return;
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				setRootEntity((EClass)newValue);
@@ -665,9 +633,6 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 			case MDatasamplePackage.DATA_SAMPLE__PACKAGE:
 				setPackage((EPackage)null);
 				return;
-			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
-				getEntityGenerators().clear();
-				return;
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				setRootEntity((EClass)null);
 				return;
@@ -705,8 +670,6 @@ public class MDataSampleImpl extends ValueGeneratorImpl<EObject> implements Data
 				return PACKAGE_URI_EDEFAULT == null ? packageURI != null : !PACKAGE_URI_EDEFAULT.equals(packageURI);
 			case MDatasamplePackage.DATA_SAMPLE__PACKAGE:
 				return package_ != null;
-			case MDatasamplePackage.DATA_SAMPLE__ENTITY_GENERATORS:
-				return entityGenerators != null && !entityGenerators.isEmpty();
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY:
 				return rootEntity != null;
 			case MDatasamplePackage.DATA_SAMPLE__ROOT_ENTITY_NAME:

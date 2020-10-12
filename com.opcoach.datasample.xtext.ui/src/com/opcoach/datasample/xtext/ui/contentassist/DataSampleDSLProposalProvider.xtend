@@ -31,10 +31,10 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EPackage
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.emf.ecore.EStructuralFeature
-import org.eclipse.emf.ecore.plugin.RegistryReader
 import org.eclipse.xtext.Assignment
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor
+import com.opcoach.datasample.PolymorphicChildrenGenerator
 
 /**
  * see http://www.eclipse.org/Xtext/documentation.html#contentAssist on how to customize content assistant
@@ -61,9 +61,8 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 		if (pack !== null)
 			for (c : pack.EClassifiers.filter(EClass))
 				acceptor.accept(createCompletionProposal(c.name, context))
-				else
-								acceptor.accept(createCompletionProposal("No package found for this URI", context))
-				
+		else
+			acceptor.accept(createCompletionProposal("No package found for this URI", context))
 
 	}
 
@@ -74,32 +73,50 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 	 * 		for (c : availableGenerators)
 	 * 			acceptor.accept(createCompletionProposal(c.name, context))
 	 } */
-	// This is expected in :   generate XXX Customer for instance
-	// Customer must be proposed once if contained in package
+// This is expected in :   generate XXX Customer for instance
+// Customer must be proposed once if contained in package
 	override completeEntityGenerator_EntityName(EObject model, Assignment assignment, ContentAssistContext context,
 		ICompletionProposalAcceptor acceptor) {
 
-		// ENtityGeneraot is may be at first level or inside another EntityGenerator. 
+		// EntityGenerator is may be at first level or inside another EntityGenerator. 
 		val egen = model as EntityGenerator
-		val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
-		var EClass parentClass = null
 		if (egen.eContainer instanceof DataSample) {
-			// This is the main Entity Generator, sibling are in data sample
+			// This is the root Entity Generator, only the root entityName object is possible
 			val ds = egen.eContainer as DataSample
-			ds.entityGenerators.forEach[if(entity !== null && entity.name !== null) egenSibling.add(entity.name)]
-			parentClass = ds.rootEntity
-		}
-		/*else {
-		 * 	// This entity generator is already inside another one, must get sibling in parent/child generators
-		 * 	val egparent = egen.eContainer as EntityGenerator
-		 * 	egparent.childGenerators.forEach[if(entity !== null && entity.name !== null) egenSibling.add(entity.name)]
-		 * 	parentClass = egparent.entity
-		 }*/
-		// Must get all children classes of parentClass without the current siblings
-		if (parentClass !== null) {
-			for (c : DataSampleUtil.getChildrenClasses(parentClass)) {
-				if (!egenSibling.contains(c.name))
-					acceptor.accept(createCompletionProposal(c.name, context))
+			acceptor.accept(createCompletionProposal(ds.rootEntityName, context))
+		} else {
+			// This entity generator is already inside another one, it can be another EntityGenerator or a polymorphicChildrenGenerator
+			val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
+			var EClass parentClass = null
+
+			val egparent = egen.eContainer
+			if (egparent instanceof EntityGenerator) {
+				val parent = egparent as EntityGenerator
+				parentClass = parent.entity
+
+			/* 	egparent.childGenerators.forEach [
+			 * 		if(entity !== null && entity.name !== null) egenSibling.add(entity.name)
+			 ]*/
+			} else {
+				// This is a Polymorphic child generator
+				if (egparent instanceof PolymorphicChildrenGenerator) {
+					val pcg = egparent as PolymorphicChildrenGenerator
+					parentClass = pcg.EReference.EType as EClass
+					for (cg : pcg.childrenGenerators)
+					   egenSibling.add(cg.entityName)
+
+				}
+			}
+
+			// Must get all children classes of parentClass without the current siblings
+			if (parentClass !== null) {
+				if (! parentClass.isAbstract)
+					acceptor.accept(createCompletionProposal(parentClass.name, context))
+
+				for (c : DataSampleUtil.getSubClasses(parentClass)) {
+					if (!egenSibling.contains(c.name))
+						acceptor.accept(createCompletionProposal(c.name, context))
+				}
 			}
 		}
 
@@ -129,14 +146,15 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 		egen.childGenerators.forEach[if(fieldName !== null) egenSibling.add(fieldName)]
 
 		// Keep only composition with concrete types
-		for (r : c.EAllReferences.filter[containment].filter[!EReferenceType.abstract]) {
+		for (r : c.EAllReferences.filter[containment]) // .filter[!EReferenceType.abstract]) 
+		{
 			if (!egenSibling.contains(r.name))
 				acceptor.accept(createCompletionProposal(r.name, context))
 		}
 
 	}
 
-	override completePolymorphicChildrenGenerator_FieldName(EObject model, Assignment assignment,
+/* 	override completePolymorphicChildrenGenerator_FieldName(EObject model, Assignment assignment,
 		ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		// super.completePolymorphicChildrenGenerator_FieldName(model, assignment, context, acceptor)
 		val cg = model as ChildrenGenerator
@@ -151,7 +169,7 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 				acceptor.accept(createCompletionProposal(r.name, context))
 		}
 
-	}
+	} */
 
 	// Must propose here any kind of class in package
 	/*	override completeFieldGenerator_EntityName(EObject model, Assignment assignment, ContentAssistContext context,
@@ -281,7 +299,7 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 				result = #{AssociationGenerator}
 		}
 
-		if (result == null)
+		if (result === null)
 			#{}
 		else
 			result
@@ -314,12 +332,12 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 
 	// Compute the EPackage from an EntityGenerator
 	def getEPackage(EntityGenerator egen) {
-		getEPackage(egen.eContainer as DataSample)
+		getEPackage(egen.dataSample)
 	}
 
 	// Compute the EPackage from a FieldGenerator
 	def getEPackage(FieldGenerator fgen) {
-		getEPackage(fgen.eContainer.eContainer as DataSample)
+		getEPackage(fgen.dataSample)
 	}
 
 	// Compute the EPackage from the root object

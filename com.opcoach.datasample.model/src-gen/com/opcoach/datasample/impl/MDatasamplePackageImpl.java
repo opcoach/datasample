@@ -220,7 +220,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	@Override
-	public EReference getDataSample_EntityGenerators() {
+	public EReference getDataSample_RootEntity() {
 		return (EReference)dataSampleEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -230,18 +230,8 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 * @generated
 	 */
 	@Override
-	public EReference getDataSample_RootEntity() {
-		return (EReference)dataSampleEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getDataSample_RootEntityName() {
-		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -251,7 +241,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 */
 	@Override
 	public EAttribute getDataSample_BadValueGeneratorNames() {
-		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -261,7 +251,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 */
 	@Override
 	public EReference getDataSample_RootGenerator() {
-		return (EReference)dataSampleEClass.getEStructuralFeatures().get(9);
+		return (EReference)dataSampleEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -271,7 +261,7 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 	 */
 	@Override
 	public EAttribute getDataSample_FileExtension() {
-		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)dataSampleEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -579,7 +569,6 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		createEAttribute(dataSampleEClass, DATA_SAMPLE__LANGUAGE);
 		createEAttribute(dataSampleEClass, DATA_SAMPLE__PACKAGE_URI);
 		createEReference(dataSampleEClass, DATA_SAMPLE__PACKAGE);
-		createEReference(dataSampleEClass, DATA_SAMPLE__ENTITY_GENERATORS);
 		createEReference(dataSampleEClass, DATA_SAMPLE__ROOT_ENTITY);
 		createEAttribute(dataSampleEClass, DATA_SAMPLE__ROOT_ENTITY_NAME);
 		createEAttribute(dataSampleEClass, DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES);
@@ -677,7 +666,6 @@ public class MDatasamplePackageImpl extends EPackageImpl implements MDatasampleP
 		initEAttribute(getDataSample_Language(), this.getLanguage(), "language", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSample_PackageURI(), ecorePackage.getEString(), "packageURI", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataSample_Package(), theEcorePackage.getEPackage(), null, "package", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataSample_EntityGenerators(), this.getEntityGenerator(), null, "entityGenerators", null, 0, -1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDataSample_RootEntity(), theEcorePackage.getEClass(), null, "rootEntity", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSample_RootEntityName(), ecorePackage.getEString(), "rootEntityName", null, 0, 1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDataSample_BadValueGeneratorNames(), theEcorePackage.getEString(), "badValueGeneratorNames", null, 0, -1, DataSample.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

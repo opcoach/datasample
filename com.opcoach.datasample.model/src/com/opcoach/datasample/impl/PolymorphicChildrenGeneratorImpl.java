@@ -20,29 +20,6 @@ public class PolymorphicChildrenGeneratorImpl extends MPolymorphicChildrenGenera
 		return result;
 	}
 
-/*	@Override
-	public EList<EntityGenerator> getChildrenGenerators() {
-		if (childrenGenerators == null) {
-			childrenGenerators = super.getChildrenGenerators();
-
-			for (EntityGenerator eg : getDataSample().getEntityGenerators()) {
-				EClass abstractType = getEReference().getEReferenceType();
-				if (abstractType.isSuperTypeOf(eg.getEntity())) {
-					// This entity generator is compliant with the polymorphic type
-					// Create a child generator for it...
-
-					// Must create a sub entity generator (delegated entity generator is a
-					// composition)
-					EntityGenerator deg = DatasampleFactory.eINSTANCE.createEntityGenerator();
-					deg.setEntityName(eg.getEntityName());
-					deg.setNumber(10); // By default create 10 objects of this type
-					childrenGenerators.add(deg);
-				}
-
-			}
-		}
-		return childrenGenerators;
-	} */
 
 	/**
 	 * Generate values for all the expected children polymorphic types. It must
@@ -54,6 +31,9 @@ public class PolymorphicChildrenGeneratorImpl extends MPolymorphicChildrenGenera
 	 */
 	@Override
 	public Object generateValue(GenerationCatalog gcat) {
+		
+		if (getChildrenGenerators().isEmpty())
+			return super.generateValue(gcat);
 
 		ArrayList<EObject> children = new ArrayList<>();
 		for (EntityGenerator eg : getChildrenGenerators()) {

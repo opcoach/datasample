@@ -21,7 +21,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DataSample/language"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DataSample/packageURI"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DataSample/package"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataSample.ecore#//DataSample/entityGenerators"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dataSample.ecore#//DataSample/rootEntity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DataSample/rootEntityName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataSample.ecore#//DataSample/badValueGeneratorNames"/>

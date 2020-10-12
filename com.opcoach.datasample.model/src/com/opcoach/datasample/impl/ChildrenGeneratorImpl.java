@@ -1,6 +1,5 @@
 package com.opcoach.datasample.impl;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 
 import com.opcoach.datasample.ChildrenGenerator;
@@ -65,17 +64,6 @@ public class ChildrenGeneratorImpl extends MChildrenGeneratorImpl implements Chi
 		return result;
 	}
 
-	@Override
-	public String getFieldName() {
-		String result = super.getFieldName();
-		if (result == null) {
-			if (getStructuralFeature() == null)
-				DSLogger.warning("Should check why structural Feature is null here." + description);
-			else
-				result = getStructuralFeature().getName();
-		}
-		return result;
-	}
 
 	@Override
 	public String toString() {

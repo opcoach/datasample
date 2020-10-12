@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.EPackage;
  *   <li>{@link com.opcoach.datasample.MDataSample#getLanguage <em>Language</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getPackageURI <em>Package URI</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getPackage <em>Package</em>}</li>
- *   <li>{@link com.opcoach.datasample.MDataSample#getEntityGenerators <em>Entity Generators</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getRootEntity <em>Root Entity</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getRootEntityName <em>Root Entity Name</em>}</li>
  *   <li>{@link com.opcoach.datasample.MDataSample#getBadValueGeneratorNames <em>Bad Value Generator Names</em>}</li>
@@ -168,22 +167,6 @@ public interface MDataSample extends ValueGenerator<EObject> {
 	 * @generated
 	 */
 	void setPackage(EPackage value);
-
-	/**
-	 * Returns the value of the '<em><b>Entity Generators</b></em>' containment reference list.
-	 * The list contents are of type {@link com.opcoach.datasample.EntityGenerator}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entity Generators</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity Generators</em>' containment reference list.
-	 * @see com.opcoach.datasample.MDatasamplePackage#getDataSample_EntityGenerators()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<EntityGenerator> getEntityGenerators();
 
 	/**
 	 * Returns the value of the '<em><b>Root Entity</b></em>' reference.

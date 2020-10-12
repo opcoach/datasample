@@ -179,22 +179,13 @@ public interface MDatasamplePackage extends EPackage {
 	int DATA_SAMPLE__PACKAGE = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Entity Generators</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SAMPLE__ENTITY_GENERATORS = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Root Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE__ROOT_ENTITY = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 6;
+	int DATA_SAMPLE__ROOT_ENTITY = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Root Entity Name</b></em>' attribute.
@@ -203,7 +194,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE__ROOT_ENTITY_NAME = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 7;
+	int DATA_SAMPLE__ROOT_ENTITY_NAME = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Bad Value Generator Names</b></em>' attribute list.
@@ -212,7 +203,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 8;
+	int DATA_SAMPLE__BAD_VALUE_GENERATOR_NAMES = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Root Generator</b></em>' containment reference.
@@ -221,7 +212,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE__ROOT_GENERATOR = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 9;
+	int DATA_SAMPLE__ROOT_GENERATOR = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>File Extension</b></em>' attribute.
@@ -230,7 +221,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE__FILE_EXTENSION = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 10;
+	int DATA_SAMPLE__FILE_EXTENSION = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Data Sample</em>' class.
@@ -239,7 +230,7 @@ public interface MDatasamplePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SAMPLE_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 11;
+	int DATA_SAMPLE_FEATURE_COUNT = MGeneratorPackage.VALUE_GENERATOR_FEATURE_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Generate Value</em>' operation.
@@ -1296,17 +1287,6 @@ public interface MDatasamplePackage extends EPackage {
 	EReference getDataSample_Package();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.opcoach.datasample.MDataSample#getEntityGenerators <em>Entity Generators</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Entity Generators</em>'.
-	 * @see com.opcoach.datasample.MDataSample#getEntityGenerators()
-	 * @see #getDataSample()
-	 * @generated
-	 */
-	EReference getDataSample_EntityGenerators();
-
-	/**
 	 * Returns the meta object for the reference '{@link com.opcoach.datasample.MDataSample#getRootEntity <em>Root Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1722,14 +1702,6 @@ public interface MDatasamplePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_SAMPLE__PACKAGE = eINSTANCE.getDataSample_Package();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity Generators</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_SAMPLE__ENTITY_GENERATORS = eINSTANCE.getDataSample_EntityGenerators();
 
 		/**
 		 * The meta object literal for the '<em><b>Root Entity</b></em>' reference feature.

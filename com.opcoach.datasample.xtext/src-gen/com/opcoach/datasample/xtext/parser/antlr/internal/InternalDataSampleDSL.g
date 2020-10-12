@@ -404,9 +404,9 @@ ruleEntityGenerator returns [EObject current=null]
 )*(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsChildParserRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getEntityGeneratorAccess().getChildGeneratorsChildrenGeneratorParserRuleCall_6_0()); 
 	    }
-		lv_childGenerators_7_0=ruleChild		{
+		lv_childGenerators_7_0=ruleChildrenGenerator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEntityGeneratorRule());
 	        }
@@ -414,7 +414,7 @@ ruleEntityGenerator returns [EObject current=null]
        			$current, 
        			"childGenerators",
         		lv_childGenerators_7_0, 
-        		"com.opcoach.datasample.xtext.DataSampleDSL.Child");
+        		"com.opcoach.datasample.xtext.DataSampleDSL.ChildrenGenerator");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -633,46 +633,6 @@ ruleFieldGenerator returns [EObject current=null]
 
 
 
-// Entry rule entryRuleChild
-entryRuleChild returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getChildRule()); }
-	 iv_ruleChild=ruleChild 
-	 { $current=$iv_ruleChild.current; } 
-	 EOF 
-;
-
-// Rule Child
-ruleChild returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getChildAccess().getChildrenGeneratorParserRuleCall_0()); 
-    }
-    this_ChildrenGenerator_0=ruleChildrenGenerator
-    { 
-        $current = $this_ChildrenGenerator_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getChildAccess().getPolymorphicChildrenGeneratorParserRuleCall_1()); 
-    }
-    this_PolymorphicChildrenGenerator_1=rulePolymorphicChildrenGenerator
-    { 
-        $current = $this_PolymorphicChildrenGenerator_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
-;
-
-
-
-
-
 // Entry rule entryRuleChildrenGenerator
 entryRuleChildrenGenerator returns [EObject current=null] 
 	:
@@ -690,7 +650,7 @@ ruleChildrenGenerator returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getChildrenGeneratorAccess().getChildrenGeneratorAction_0(),
+            grammarAccess.getChildrenGeneratorAccess().getPolymorphicChildrenGeneratorAction_0(),
             $current);
     }
 )	otherlv_1='forTheComposition' 
@@ -715,104 +675,56 @@ ruleChildrenGenerator returns [EObject current=null]
 	    }
 
 )
-)(
+)((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getDelegatedEntityGeneratorEntityGeneratorParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getChildrenGeneratorsEntityGeneratorParserRuleCall_3_0_0()); 
 	    }
-		lv_delegatedEntityGenerator_3_0=ruleEntityGenerator		{
+		lv_childrenGenerators_3_0=ruleEntityGenerator		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getChildrenGeneratorRule());
-	        }
-       		set(
-       			$current, 
-       			"delegatedEntityGenerator",
-        		lv_delegatedEntityGenerator_3_0, 
-        		"com.opcoach.datasample.xtext.DataSampleDSL.EntityGenerator");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRulePolymorphicChildrenGenerator
-entryRulePolymorphicChildrenGenerator returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getPolymorphicChildrenGeneratorRule()); }
-	 iv_rulePolymorphicChildrenGenerator=rulePolymorphicChildrenGenerator 
-	 { $current=$iv_rulePolymorphicChildrenGenerator.current; } 
-	 EOF 
-;
-
-// Rule PolymorphicChildrenGenerator
-rulePolymorphicChildrenGenerator returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getPolymorphicChildrenGeneratorAccess().getPolymorphicChildrenGeneratorAction_0(),
-            $current);
-    }
-)	otherlv_1='forTheAbstractComposition' 
-    {
-    	newLeafNode(otherlv_1, grammarAccess.getPolymorphicChildrenGeneratorAccess().getForTheAbstractCompositionKeyword_1());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPolymorphicChildrenGeneratorAccess().getFieldNameEStringParserRuleCall_2_0()); 
-	    }
-		lv_fieldName_2_0=ruleEString		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPolymorphicChildrenGeneratorRule());
-	        }
-       		set(
-       			$current, 
-       			"fieldName",
-        		lv_fieldName_2_0, 
-        		"com.opcoach.datasample.xtext.DataSampleDSL.EString");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_3='use' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getPolymorphicChildrenGeneratorAccess().getUseKeyword_3());
-    }
-	otherlv_4='{' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getPolymorphicChildrenGeneratorAccess().getLeftCurlyBracketKeyword_4());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getPolymorphicChildrenGeneratorAccess().getChildrenGeneratorsEntityGeneratorParserRuleCall_5_0()); 
-	    }
-		lv_childrenGenerators_5_0=ruleEntityGenerator		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getPolymorphicChildrenGeneratorRule());
 	        }
        		add(
        			$current, 
        			"childrenGenerators",
-        		lv_childrenGenerators_5_0, 
+        		lv_childrenGenerators_3_0, 
         		"com.opcoach.datasample.xtext.DataSampleDSL.EntityGenerator");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_6='}' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getPolymorphicChildrenGeneratorAccess().getRightCurlyBracketKeyword_6());
-    }
 )
+    |(	otherlv_4='use' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getChildrenGeneratorAccess().getUseKeyword_3_1_0());
+    }
+	otherlv_5='{' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getChildrenGeneratorAccess().getLeftCurlyBracketKeyword_3_1_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getChildrenGeneratorAccess().getChildrenGeneratorsEntityGeneratorParserRuleCall_3_1_2_0()); 
+	    }
+		lv_childrenGenerators_6_0=ruleEntityGenerator		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getChildrenGeneratorRule());
+	        }
+       		add(
+       			$current, 
+       			"childrenGenerators",
+        		lv_childrenGenerators_6_0, 
+        		"com.opcoach.datasample.xtext.DataSampleDSL.EntityGenerator");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getChildrenGeneratorAccess().getRightCurlyBracketKeyword_3_1_3());
+    }
+)))
 ;
 
 
