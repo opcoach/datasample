@@ -14,7 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import com.opcoach.datasample.DataSampleUtil;
+import com.opcoach.datasample.util.DataSampleUtil;
 
 class DataSampleUtilTest {
 

@@ -2,7 +2,6 @@ package com.opcoach.datasample.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Set;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -14,14 +13,11 @@ import org.eclipse.emf.ecore.EReference;
 import com.opcoach.datasample.AssociationGenerator;
 import com.opcoach.datasample.ChildrenGenerator;
 import com.opcoach.datasample.DataSample;
-import com.opcoach.datasample.DataSampleUtil;
 import com.opcoach.datasample.DatasampleFactory;
 import com.opcoach.datasample.EntityGenerator;
 import com.opcoach.datasample.FieldGenerator;
 import com.opcoach.datasample.util.DSLogger;
-import com.opcoach.datasample.util.DataSampleHelper;
-import com.opcoach.generator.GeneratorFactory;
-import com.opcoach.generator.ReferenceGenerator;
+import com.opcoach.datasample.util.DataSampleUtil;
 
 // This class overrides the generated class and will be instantiated by factory
 public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityGenerator {
@@ -67,7 +63,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 			if (a.isChangeable()) {
 
 				FieldGenerator fg = getFieldGenerator(a);
-				DataSampleHelper.generateAndSetValue(result, a, fg, gcat);
+				DataSampleUtil.generateAndSetValue(result, a, fg, gcat);
 
 			}
 		}
@@ -80,7 +76,7 @@ public class EntityGeneratorImpl extends MEntityGeneratorImpl implements EntityG
 		for (EReference r : target.getEAllReferences()) {
 			if (r.isContainment() && r.isChangeable()) {
 				ChildrenGenerator childGen = getChildGenerator(r);
-				DataSampleHelper.generateAndSetValue(result, r, childGen, gcat);
+				DataSampleUtil.generateAndSetValue(result, r, childGen, gcat);
 
 			}
 		}

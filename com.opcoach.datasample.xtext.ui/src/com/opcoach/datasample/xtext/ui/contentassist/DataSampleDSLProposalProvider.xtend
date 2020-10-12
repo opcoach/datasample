@@ -6,9 +6,9 @@ package com.opcoach.datasample.xtext.ui.contentassist
 import com.opcoach.datasample.AssociationGenerator
 import com.opcoach.datasample.ChildrenGenerator
 import com.opcoach.datasample.DataSample
-import com.opcoach.datasample.DataSampleUtil
 import com.opcoach.datasample.EntityGenerator
 import com.opcoach.datasample.FieldGenerator
+import com.opcoach.datasample.util.DataSampleUtil
 import com.opcoach.generator.basic.BooleanGenerator
 import com.opcoach.generator.basic.DateGenerator
 import com.opcoach.generator.basic.DoubleGenerator
@@ -25,7 +25,7 @@ import java.util.HashMap
 import java.util.List
 import java.util.Map
 import java.util.Set
-import org.eclipse.emf.ecore.EAttribute 
+import org.eclipse.emf.ecore.EAttribute
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EPackage

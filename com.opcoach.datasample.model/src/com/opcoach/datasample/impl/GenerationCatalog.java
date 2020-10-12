@@ -1,7 +1,6 @@
 package com.opcoach.datasample.impl;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -10,9 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 import com.opcoach.datasample.AssociationGenerator;
-import com.opcoach.datasample.DataSampleUtil;
 import com.opcoach.datasample.EntityGenerator;
-import com.opcoach.datasample.util.DataSampleHelper;
+import com.opcoach.datasample.util.DataSampleUtil;
 
 /**
  * Generation Catalog contains all objects created during generation. There is
@@ -92,7 +90,7 @@ public class GenerationCatalog {
 			System.out.println("Binding reference '" + ag.getEReference().getName() + "' of object :" + object);
 
 			
-			DataSampleHelper.generateAndSetValue(object, ag.getEReference(), ag, null);
+			DataSampleUtil.generateAndSetValue(object, ag.getEReference(), ag, null);
 		}
 	}
 
