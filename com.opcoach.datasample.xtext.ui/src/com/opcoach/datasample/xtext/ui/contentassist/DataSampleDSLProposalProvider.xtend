@@ -25,7 +25,7 @@ import java.util.HashMap
 import java.util.List
 import java.util.Map
 import java.util.Set
-import org.eclipse.emf.ecore.EAttribute
+import org.eclipse.emf.ecore.EAttribute 
 import org.eclipse.emf.ecore.EClass
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EPackage
@@ -139,7 +139,7 @@ class DataSampleDSLProposalProvider extends AbstractDataSampleDSLProposalProvide
 		val egen = cg.eContainer as EntityGenerator
 		val c = egen.entity
 		val List<String> egenSibling = new ArrayList // Define the sibling of this entity generator. 
-		egen.childGenerators.forEach[if(fieldName !== null) egenSibling.add(fieldName)]
+		egen.childrenGenerators.forEach[if(fieldName !== null) egenSibling.add(fieldName)]
 
 		// Keep only composition with concrete types
 		for (r : c.EAllReferences.filter[containment]) // .filter[!EReferenceType.abstract]) 
